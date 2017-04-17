@@ -1,4 +1,46 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_LOCALHOST",
+      "label": "localhost",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "4.1.2"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": []
   },
@@ -6,10 +48,486 @@
   "gnetId": null,
   "graphTooltip": 0,
   "hideControls": false,
-  "id": 14,
+  "id": null,
   "links": [],
   "refresh": false,
   "rows": [
+    {
+      "collapse": false,
+      "height": 67,
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_LOCALHOST}",
+          "description": "Total number of CPU cores",
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 14,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "minSpan": 2,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "expr": "count(count(node_cpu{instance=~\"$node:.*\"}) by (cpu))",
+              "intervalFactor": 1,
+              "refId": "A",
+              "step": 300
+            }
+          ],
+          "thresholds": "",
+          "title": "CPU Cores",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
+          "description": "Total RAM",
+          "format": "bytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 75,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "minSpan": 2,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "70%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "expr": "node_memory_MemTotal{instance=~\"$node:.*\"}",
+              "intervalFactor": 1,
+              "refId": "A",
+              "step": 300
+            }
+          ],
+          "thresholds": "",
+          "title": "Total RAM",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
+          "description": "Total SWAP",
+          "format": "bytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 18,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "minSpan": 2,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "70%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "expr": "node_memory_SwapTotal{instance=~\"$node:.*\"}",
+              "intervalFactor": 1,
+              "refId": "A",
+              "step": 300
+            }
+          ],
+          "thresholds": "",
+          "title": "Total SWAP",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
+          "description": "System Load (1m avg)",
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 17,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "minSpan": 1,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "expr": "node_load1{instance=~\"$node:.*\"}",
+              "hide": false,
+              "intervalFactor": 1,
+              "refId": "A",
+              "step": 300
+            }
+          ],
+          "thresholds": "",
+          "title": "System Load (1m avg)",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_LOCALHOST}",
+          "decimals": 1,
+          "description": "System uptime",
+          "format": "s",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
+          "id": 15,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "s",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "expr": "node_time{instance=~\"$node:.*\"} - node_boot_time{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "refId": "A",
+              "step": 600
+            }
+          ],
+          "thresholds": "",
+          "title": "Uptime",
+          "transparent": false,
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": "${DS_LOCALHOST}",
+          "decimals": null,
+          "description": "Used RootFS",
+          "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 23,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "minSpan": 2,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "expr": "((node_filesystem_size{device=~\"rootfs\",instance=~\"$node:.*\"} - node_filesystem_free{device=~\"rootfs\",instance=~\"$node:.*\"}) * 100 ) / (node_filesystem_size{device=~\"rootfs\",instance=~\"$node:.*\"})",
+              "hide": false,
+              "intervalFactor": 1,
+              "refId": "A",
+              "step": 300
+            }
+          ],
+          "thresholds": "70,90",
+          "title": "Used RootFS",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Basic CPU / Mem / Net Info",
+      "titleSize": "h6"
+    },
     {
       "collapse": false,
       "height": 188,
@@ -23,7 +541,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": null,
           "description": "Busy state of all CPU cores together",
           "format": "percent",
@@ -77,7 +595,7 @@
               "intervalFactor": 1,
               "legendFormat": "",
               "refId": "A",
-              "step": 60
+              "step": 300
             }
           ],
           "thresholds": "85,95",
@@ -102,7 +620,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 0,
           "description": "Used RAM Memory without swap and cache",
           "format": "percent",
@@ -154,7 +672,7 @@
               "expr": "((node_memory_MemTotal{instance=~\"$node:.*\"} - node_memory_MemFree{instance=~\"$node:.*\"} - node_memory_Cached{instance=~\"$node:.*\"}) / (node_memory_MemTotal{instance=~\"$node:.*\"} )) * 100",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 60
+              "step": 300
             }
           ],
           "thresholds": "80,90",
@@ -179,7 +697,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": null,
           "description": "Used Swap",
           "format": "percent",
@@ -231,7 +749,7 @@
               "expr": "((node_memory_SwapTotal{instance=~\"$node:.*\"} - node_memory_SwapFree{instance=~\"$node:.*\"}) / (node_memory_SwapTotal{instance=~\"$node:.*\"} )) * 100",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 60
+              "step": 300
             }
           ],
           "thresholds": "10,25",
@@ -256,7 +774,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": null,
           "description": "Busy state of all CPU cores together (1 min average)",
           "format": "percent",
@@ -309,7 +827,7 @@
               "hide": false,
               "intervalFactor": 1,
               "refId": "A",
-              "step": 60
+              "step": 300
             }
           ],
           "thresholds": "85, 95",
@@ -352,7 +870,7 @@
             "trans_errs_lo": "#890F02"
           },
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "Basic network info per interface.",
           "fill": 3,
           "id": 74,
@@ -422,14 +940,14 @@
               "intervalFactor": 2,
               "legendFormat": "recv bytes {{device}}",
               "refId": "A",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "irate(node_network_transmit_bytes{instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "trans bytes {{device}} ",
               "refId": "B",
-              "step": 30
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -478,482 +996,6 @@
     },
     {
       "collapse": false,
-      "height": 67,
-      "panels": [
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "localhost",
-          "description": "Total number of CPU cores",
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 14,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "minSpan": 2,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "targets": [
-            {
-              "expr": "count(count(node_cpu{instance=~\"$node:.*\"}) by (cpu))",
-              "intervalFactor": 1,
-              "refId": "A",
-              "step": 60
-            }
-          ],
-          "thresholds": "",
-          "title": "CPU Cores",
-          "type": "singlestat",
-          "valueFontSize": "50%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "localhost",
-          "decimals": 2,
-          "description": "Total RAM",
-          "format": "bytes",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 75,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "minSpan": 2,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "70%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "targets": [
-            {
-              "expr": "node_memory_MemTotal{instance=~\"$node:.*\"}",
-              "intervalFactor": 1,
-              "refId": "A",
-              "step": 60
-            }
-          ],
-          "thresholds": "",
-          "title": "Total RAM",
-          "type": "singlestat",
-          "valueFontSize": "50%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "localhost",
-          "decimals": 2,
-          "description": "Total SWAP",
-          "format": "bytes",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 18,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "minSpan": 2,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "70%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "targets": [
-            {
-              "expr": "node_memory_SwapTotal{instance=~\"$node:.*\"}",
-              "intervalFactor": 1,
-              "refId": "A",
-              "step": 60
-            }
-          ],
-          "thresholds": "",
-          "title": "Total SWAP",
-          "type": "singlestat",
-          "valueFontSize": "50%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "localhost",
-          "decimals": 2,
-          "description": "System Load (1m avg)",
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 17,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "minSpan": 1,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "targets": [
-            {
-              "expr": "node_load1{instance=~\"$node:.*\"}",
-              "hide": false,
-              "intervalFactor": 1,
-              "refId": "A",
-              "step": 60
-            }
-          ],
-          "thresholds": "",
-          "title": "System Load (1m avg)",
-          "type": "singlestat",
-          "valueFontSize": "50%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "localhost",
-          "decimals": 1,
-          "description": "System uptime",
-          "format": "s",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "hideTimeOverride": true,
-          "id": 15,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "s",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "targets": [
-            {
-              "expr": "node_time{instance=~\"$node:.*\"} - node_boot_time{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "refId": "A",
-              "step": 120
-            }
-          ],
-          "thresholds": "",
-          "title": "Uptime",
-          "transparent": false,
-          "type": "singlestat",
-          "valueFontSize": "50%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": true,
-          "colors": [
-            "rgba(50, 172, 45, 0.97)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(245, 54, 54, 0.9)"
-          ],
-          "datasource": "localhost",
-          "decimals": null,
-          "description": "Used RootFS",
-          "format": "percent",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 23,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "minSpan": 2,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "targets": [
-            {
-              "expr": "((node_filesystem_size{device=~\"rootfs\",instance=~\"$node:.*\"} - node_filesystem_free{device=~\"rootfs\",instance=~\"$node:.*\"}) * 100 ) / (node_filesystem_size{device=~\"rootfs\",instance=~\"$node:.*\"})",
-              "hide": false,
-              "intervalFactor": 1,
-              "refId": "A",
-              "step": 60
-            }
-          ],
-          "thresholds": "70,90",
-          "title": "Used RootFS",
-          "type": "singlestat",
-          "valueFontSize": "50%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "Basic CPU / Mem / Net Info",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
       "height": 290,
       "panels": [
         {
@@ -972,7 +1014,7 @@
             "user": "#5195CE"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "description": "Basic CPU info",
           "fill": 4,
@@ -1010,14 +1052,14 @@
               "intervalFactor": 2,
               "legendFormat": "Busy",
               "refId": "A",
-              "step": 20
+              "step": 60
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='idle',instance=~\"$node:.*\"}[5m]))",
               "intervalFactor": 2,
               "legendFormat": "Idle",
               "refId": "C",
-              "step": 20
+              "step": 60
             }
           ],
           "thresholds": [],
@@ -1079,7 +1121,7 @@
             "Unused": "#EAB839"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "description": "Basic memory usage",
           "fill": 4,
@@ -1121,7 +1163,7 @@
               "intervalFactor": 2,
               "legendFormat": "RAM Total",
               "refId": "A",
-              "step": 20
+              "step": 60
             },
             {
               "expr": "node_memory_MemTotal{instance=~\"$node:.*\"} - node_memory_MemFree{instance=~\"$node:.*\"} - node_memory_Cached{instance=~\"$node:.*\"} - node_memory_Buffers{instance=~\"$node:.*\"} - node_memory_Slab{instance=~\"$node:.*\"}",
@@ -1129,14 +1171,14 @@
               "intervalFactor": 2,
               "legendFormat": "RAM Used",
               "refId": "B",
-              "step": 20
+              "step": 60
             },
             {
               "expr": "(node_memory_SwapTotal{instance=~\"$node:.*\"} - node_memory_SwapFree{instance=~\"$node:.*\"})",
               "intervalFactor": 2,
               "legendFormat": "SWAP Used",
               "refId": "C",
-              "step": 20
+              "step": 60
             }
           ],
           "thresholds": [],
@@ -1242,7 +1284,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{ mountpoint }}",
               "refId": "A",
-              "step": 20
+              "step": 60
             }
           ],
           "title": "Filesystem Usage",
@@ -1294,7 +1336,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{ mountpoint }}",
               "refId": "A",
-              "step": 30
+              "step": 120
             }
           ],
           "title": "Filesystem Size",
@@ -1327,7 +1369,7 @@
             "user": "#5195CE"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "description": "CPU info",
           "fill": 9,
@@ -1374,56 +1416,56 @@
               "intervalFactor": 2,
               "legendFormat": "User - Normal processes executing in user mode",
               "refId": "B",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='nice',instance=~\"$node:.*\"}[5m]))",
               "intervalFactor": 2,
               "legendFormat": "Nice - Niced processes executing in user mode",
               "refId": "C",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='idle',instance=~\"$node:.*\"}[5m]))",
               "intervalFactor": 2,
               "legendFormat": "Idle - Waiting for something to happen",
               "refId": "F",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='iowait',instance=~\"$node:.*\"}[5m]))",
               "intervalFactor": 2,
               "legendFormat": "Iowait - Waiting for I/O to complete",
               "refId": "D",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='irq',instance=~\"$node:.*\"}[5m]))",
               "intervalFactor": 2,
               "legendFormat": "Irq - Servicing interrupts",
               "refId": "G",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='softirq',instance=~\"$node:.*\"}[5m]))",
               "intervalFactor": 2,
               "legendFormat": "Softirq - Servicing softirqs",
               "refId": "H",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='steal',instance=~\"$node:.*\"}[5m]))",
               "intervalFactor": 2,
               "legendFormat": "Steal - Time spent in other operating systems when running in a virtualized environment",
               "refId": "E",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='guest',instance=~\"$node:.*\"}[5m]))",
               "intervalFactor": 2,
               "legendFormat": "Guest - Time spent running a virtual CPU for a guest operating system",
               "refId": "I",
-              "step": 10
+              "step": 30
             }
           ],
           "thresholds": [],
@@ -1485,7 +1527,7 @@
             "Unused - Free memory unasigned": "#052B51"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "description": "Memory Stack",
           "fill": 4,
@@ -1559,7 +1601,7 @@
               "intervalFactor": 2,
               "legendFormat": "Apps - Memory used by processes",
               "refId": "Q",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "node_memory_PageTables{instance=~\"$node:.*\"}",
@@ -1567,14 +1609,14 @@
               "intervalFactor": 2,
               "legendFormat": "PageTables - Memory dedicated to the lowest page table level",
               "refId": "G",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "node_memory_SwapCached{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
               "legendFormat": "SwapCache - Swap used as cache memory",
               "refId": "F",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "node_memory_Slab{instance=~\"$node:.*\"}",
@@ -1582,7 +1624,7 @@
               "intervalFactor": 2,
               "legendFormat": "Slab - Memory used by the kernel to cache data structures for its own use",
               "refId": "E",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "node_memory_Cached{instance=~\"$node:.*\"}",
@@ -1590,7 +1632,7 @@
               "intervalFactor": 2,
               "legendFormat": "Cache - Physical RAM used as cache memory",
               "refId": "C",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "node_memory_Buffers{instance=~\"$node:.*\"}",
@@ -1598,7 +1640,7 @@
               "intervalFactor": 2,
               "legendFormat": "Buffers - Physical RAM used for file buffers",
               "refId": "B",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "node_memory_MemFree{instance=~\"$node:.*\"}",
@@ -1606,7 +1648,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unused - Free memory unasigned",
               "refId": "D",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "(node_memory_SwapTotal{instance=~\"$node:.*\"} - node_memory_SwapFree{instance=~\"$node:.*\"})",
@@ -1614,7 +1656,7 @@
               "intervalFactor": 2,
               "legendFormat": "Swap - Swap memory usage",
               "refId": "I",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "node_memory_Committed_AS{instance=~\"$node:.*\"}",
@@ -1732,7 +1774,7 @@
             "transmit_packets_lo": "#E24D42"
           },
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 2,
           "id": 84,
           "legend": {
@@ -1797,14 +1839,14 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} receive",
               "refId": "O",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "irate(node_network_transmit_bytes{instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} transmit",
               "refId": "P",
-              "step": 10
+              "step": 30
             }
           ],
           "thresholds": [],
@@ -1847,7 +1889,7 @@
             "io time": "#890F02"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 3,
           "description": "",
           "fill": 3,
@@ -1890,7 +1932,7 @@
               "intervalFactor": 2,
               "legendFormat": "successfully read bytes {{device}}",
               "refId": "A",
-              "step": 10
+              "step": 30
             },
             {
               "expr": "irate(node_disk_bytes_written{instance=~\"$node:.*\",device=~\"[a-z]*[a-z]\"}[5m])",
@@ -1898,7 +1940,7 @@
               "intervalFactor": 2,
               "legendFormat": "successfully written bytes {{device}}",
               "refId": "B",
-              "step": 10
+              "step": 30
             }
           ],
           "thresholds": [],
@@ -1941,7 +1983,7 @@
             "io time": "#890F02"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 3,
           "description": "",
           "fill": 3,
@@ -1984,7 +2026,7 @@
               "intervalFactor": 2,
               "legendFormat": "milliseconds spent doing I/Os {{device}}",
               "refId": "C",
-              "step": 10
+              "step": 30
             }
           ],
           "thresholds": [],
@@ -2025,7 +2067,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 3,
           "description": "Disk space used of all filesystems mounted",
           "fill": 1,
@@ -2063,7 +2105,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}}",
               "refId": "A",
-              "step": 10
+              "step": 30
             }
           ],
           "thresholds": [],
@@ -2134,7 +2176,7 @@
             "Unused": "#EAB839"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "fill": 1,
           "id": 79,
@@ -2317,7 +2359,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "id": 22,
           "legend": {
@@ -2422,7 +2464,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "fill": 1,
           "id": 47,
@@ -2540,7 +2582,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "fill": 1,
           "id": 70,
@@ -2652,7 +2694,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "fill": 1,
           "id": 71,
@@ -2780,7 +2822,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "fill": 1,
           "id": 128,
@@ -2909,7 +2951,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "fill": 1,
           "id": 129,
@@ -3035,7 +3077,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "fill": 1,
           "id": 130,
@@ -3154,7 +3196,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "fill": 1,
           "id": 131,
@@ -3273,7 +3315,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "fill": 1,
           "id": 132,
@@ -3377,7 +3419,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "id": 8,
           "legend": {
@@ -3399,13 +3441,6 @@
           "points": false,
           "renderer": "flot",
           "repeat": "node",
-          "scopedVars": {
-            "node": {
-              "selected": true,
-              "text": "10.80.230.7",
-              "value": "10.80.230.7"
-            }
-          },
           "seriesOverrides": [],
           "span": 12,
           "stack": false,
@@ -3471,7 +3506,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "id": 7,
           "legend": {
@@ -3493,13 +3528,6 @@
           "points": false,
           "renderer": "flot",
           "repeat": "node",
-          "scopedVars": {
-            "node": {
-              "selected": true,
-              "text": "10.80.230.7",
-              "value": "10.80.230.7"
-            }
-          },
           "seriesOverrides": [],
           "span": 12,
           "stack": false,
@@ -3565,7 +3593,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "id": 62,
           "legend": {
@@ -3657,7 +3685,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "id": 64,
           "legend": {
@@ -3738,7 +3766,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "id": 65,
           "legend": {
@@ -3838,7 +3866,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "description": "The total number of bytes read / write successfully.",
           "fill": 2,
           "id": 33,
@@ -3926,7 +3954,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "description": "Total number of reads / writes completed successfully",
           "fill": 2,
           "id": 9,
@@ -4015,7 +4043,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "description": "The weighted # of milliseconds spent doing I/Os. This field is incremented at each I/O start, I/O completion, I/O  merge, or read of these stats by the number of I/Os in progress times the number of milliseconds spent doing I/O since the last update of this field. This can provide an easy measure of both I/O completion time and the backlog that may be accumulating.",
           "fill": 3,
           "id": 35,
@@ -4093,7 +4121,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "description": "The total number of milliseconds spent by all reads / writes.",
           "fill": 3,
           "id": 37,
@@ -4185,7 +4213,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "description": "The total number of  reads merged. See https://www.kernel.org/doc/Documentation/iostats.txt.",
           "fill": 2,
           "id": 133,
@@ -4275,7 +4303,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "description": "The number of I/Os currently in progress.",
           "fill": 3,
           "id": 34,
@@ -4353,7 +4381,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "description": "The total number of reads / writes completed successfully. See https://www.kernel.org/doc/Documentation/iostats.txt.",
           "fill": 2,
           "id": 38,
@@ -4445,7 +4473,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "description": "Milliseconds spent doing I/Os.",
           "fill": 3,
           "id": 36,
@@ -4523,7 +4551,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "description": "1 if there was an error opening or reading a file, 0 otherwise",
           "fill": 2,
           "id": 66,
@@ -4598,7 +4626,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "description": "The total number of sectors read successfully.",
           "fill": 2,
           "id": 80,
@@ -4698,7 +4726,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 3,
           "description": "Filesystem space available to non-root users in bytes. Filesystem free space in bytes. Filesystem read-only status. Filesystem size in bytes.",
           "fill": 1,
@@ -4792,7 +4820,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "Filesystem total file nodes.",
           "fill": 1,
           "id": 41,
@@ -4867,7 +4895,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "description": "File descriptor statistics: allocated.",
           "fill": 1,
           "id": 28,
@@ -4949,7 +4977,7 @@
             "/ ReadOnly": "#890F02"
           },
           "bars": false,
-          "datasource": "localhost",
+          "datasource": "${DS_LOCALHOST}",
           "decimals": 0,
           "description": "Filesystem read-only status.",
           "fill": 1,
@@ -5044,7 +5072,7 @@
             "transmit_packets_lo": "#E24D42"
           },
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 2,
           "id": 60,
           "legend": {
@@ -5158,7 +5186,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "id": 58,
           "legend": {
@@ -5488,7 +5516,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "id": 61,
           "legend": {
@@ -5580,7 +5608,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "id": 63,
           "legend": {
@@ -5691,7 +5719,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "id": 124,
           "legend": {
@@ -5788,7 +5816,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "id": 126,
           "legend": {
@@ -5864,7 +5892,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "id": 125,
           "legend": {
@@ -5966,7 +5994,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 2,
           "height": "",
           "id": 118,
@@ -6018,56 +6046,56 @@
               "intervalFactor": 2,
               "legendFormat": "InDiscards",
               "refId": "J",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_Ip_InHdrErrors{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "InHdrErrors",
               "refId": "K",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_Ip_InUnknownProtos{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "InUnknownProtos",
               "refId": "M",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_Ip_OutDiscards{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "OutDiscards",
               "refId": "N",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_Ip_OutNoRoutes{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "OutNoRoutes",
               "refId": "O",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_InNoRoutes{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "InNoRoutes",
               "refId": "C",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_InCsumErrors{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "InCsumErrors",
               "refId": "A",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_InTruncatedPkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "InTruncatedPkts",
               "refId": "B",
-              "step": 10
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -6108,7 +6136,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 2,
           "height": "",
           "id": 49,
@@ -6161,7 +6189,7 @@
               "intervalFactor": 2,
               "legendFormat": "InReceives",
               "refId": "A",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_Ip_DefaultTTL{instance=~\"$node..*\"}[5m])",
@@ -6176,7 +6204,7 @@
               "intervalFactor": 2,
               "legendFormat": "InDelivers",
               "refId": "I",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_Ip_OutRequests{instance=~\"$node..*\"}[5m])",
@@ -6184,7 +6212,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutRequests",
               "refId": "P",
-              "step": 10
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -6225,7 +6253,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 2,
           "height": "",
           "id": 119,
@@ -6289,28 +6317,28 @@
               "intervalFactor": 2,
               "legendFormat": "InBcastOctets",
               "refId": "A",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_InBcastPkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "InBcastPkts",
               "refId": "B",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_OutBcastOctets{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "OutBcastOctets",
               "refId": "M",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_OutBcastPkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "OutBcastPkts",
               "refId": "N",
-              "step": 10
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -6351,7 +6379,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 2,
           "height": "",
           "id": 120,
@@ -6416,7 +6444,7 @@
               "intervalFactor": 2,
               "legendFormat": "InMcastOctets",
               "refId": "G",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_InMcastPkts{instance=~\"$node..*\"}[5m])",
@@ -6424,7 +6452,7 @@
               "intervalFactor": 2,
               "legendFormat": "InMcastPkts",
               "refId": "H",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_OutMcastOctets{instance=~\"$node..*\"}[5m])",
@@ -6432,7 +6460,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutMcastOctets",
               "refId": "O",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_OutMcastPkts{instance=~\"$node..*\"}[5m])",
@@ -6440,7 +6468,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutMcastPkts",
               "refId": "P",
-              "step": 10
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -6481,7 +6509,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 2,
           "height": "",
           "id": 51,
@@ -6545,42 +6573,42 @@
               "intervalFactor": 2,
               "legendFormat": "InCEPkts",
               "refId": "C",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_InECT0Pkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "InECT0Pkts",
               "refId": "E",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_InECT1Pkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "InECT1Pkt",
               "refId": "F",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_InOctets{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "InOctets",
               "refId": "K",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_OutOctets{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "OutOctets",
               "refId": "Q",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_IpExt_InNoECTPkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "InNoECTPkts",
               "refId": "A",
-              "step": 10
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -6621,7 +6649,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 81,
@@ -6660,14 +6688,14 @@
               "intervalFactor": 2,
               "legendFormat": "ForwDatagrams",
               "refId": "C",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_Ip_Forwarding{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Forwarding",
               "refId": "D",
-              "step": 10
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -6708,7 +6736,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 123,
@@ -6747,28 +6775,28 @@
               "intervalFactor": 2,
               "legendFormat": "ReasmFails",
               "refId": "Q",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_Ip_ReasmOKs{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "ReasmOKs",
               "refId": "R",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_Ip_ReasmReqds{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "ReasmReqds",
               "refId": "S",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_Ip_ReasmTimeout{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "ReasmTimeout",
               "refId": "T",
-              "step": 10
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -6809,7 +6837,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 122,
@@ -6848,21 +6876,21 @@
               "intervalFactor": 2,
               "legendFormat": "FragCreates",
               "refId": "E",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_Ip_FragFails{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "FragFails",
               "refId": "F",
-              "step": 10
+              "step": 20
             },
             {
               "expr": "irate(node_netstat_Ip_FragOKs{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "FragOKs",
               "refId": "G",
-              "step": 10
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -6915,7 +6943,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 2,
           "height": "",
           "id": 85,
@@ -7001,7 +7029,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 2,
           "height": "",
           "id": 52,
@@ -7124,7 +7152,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 2,
           "height": "",
           "id": 82,
@@ -7222,7 +7250,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 86,
@@ -7328,7 +7356,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 1,
           "height": "",
@@ -7425,7 +7453,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 1,
           "height": "",
@@ -7537,7 +7565,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 1,
           "height": "",
@@ -7633,7 +7661,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 1,
           "height": "",
@@ -7727,7 +7755,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "decimals": null,
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 2,
@@ -7848,7 +7876,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "decimals": null,
           "description": "Any documented found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 2,
@@ -7949,7 +7977,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "decimals": null,
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 2,
@@ -8078,7 +8106,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "decimals": null,
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 2,
@@ -8165,7 +8193,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 1,
           "height": "",
@@ -8267,7 +8295,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "decimals": null,
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 2,
@@ -8364,7 +8392,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "decimals": null,
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 2,
@@ -8453,7 +8481,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 100,
@@ -8548,7 +8576,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 1,
           "height": "",
@@ -8644,7 +8672,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 1,
           "height": "",
@@ -8730,7 +8758,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 1,
           "height": "",
@@ -8817,7 +8845,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 1,
           "height": "",
@@ -8918,7 +8946,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 1,
           "height": "",
@@ -9005,7 +9033,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 1,
           "height": "",
@@ -9113,7 +9141,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 1,
           "height": "",
@@ -9262,7 +9290,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "No documentation found for this values more than the definition in the kernel source code: https://github.com/torvalds/linux/blob/master/include/uapi/linux/snmp.h",
           "fill": 1,
           "height": "",
@@ -9387,7 +9415,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 55,
@@ -9481,7 +9509,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 57,
@@ -9571,7 +9599,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 109,
@@ -9679,7 +9707,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 110,
@@ -9783,7 +9811,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "300px",
           "id": 108,
@@ -9861,7 +9889,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "300px",
           "id": 111,
@@ -9951,7 +9979,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 115,
@@ -10055,7 +10083,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 50,
@@ -10180,7 +10208,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 114,
@@ -10284,7 +10312,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 112,
@@ -10388,7 +10416,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 113,
@@ -10492,7 +10520,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 116,
@@ -10596,7 +10624,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "fill": 1,
           "height": "",
           "id": 117,
@@ -10698,7 +10726,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "${DS_LOCALHOST}",
           "description": "node_exporter: Duration of a scrape job.",
           "fill": 1,
           "id": 40,
@@ -10783,11 +10811,8 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-          "text": "10.80.230.7",
-          "value": "10.80.230.7"
-        },
-        "datasource": "localhost",
+        "current": {},
+        "datasource": "${DS_LOCALHOST}",
         "hide": 0,
         "includeAll": false,
         "label": "Host:",
@@ -10807,8 +10832,8 @@
     ]
   },
   "time": {
-    "from": "2017-04-17T08:28:14.859Z",
-    "to": "2017-04-17T10:28:14.859Z"
+    "from": "now-6h",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
