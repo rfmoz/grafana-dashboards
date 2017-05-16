@@ -1151,6 +1151,10 @@
             {
               "alias": "/.*RAM Used*./",
               "stack": false
+            },
+            {
+              "alias": "/.*SWAP Used*./",
+              "stack": false
             }
           ],
           "span": 6,
@@ -11631,5 +11635,5 @@
   },
   "timezone": "browser",
   "title": "Node Exporter Full",
-  "version": 10
+  "version": 11
 }
