@@ -43,7 +43,7 @@
   "rows": [
     {
       "collapse": false,
-      "height": 153,
+      "height": 127,
       "panels": [
         {
           "aliasColors": {},
@@ -335,14 +335,14 @@
               "intervalFactor": 2,
               "legendFormat": "IN Back",
               "refId": "C",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "sum(rate(haproxy_backend_bytes_out_total{instance=~\"$host:$port\"}[5m])*8) by (instance)",
               "intervalFactor": 2,
               "legendFormat": "OUT Back",
               "refId": "D",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1323,111 +1323,6 @@
           "error": false,
           "fill": 2,
           "grid": {},
-          "id": 46,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "minSpan": 12,
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "/.*Error.*/",
-              "transform": "negative-Y"
-            },
-            {
-              "alias": "/.*Denied.*/",
-              "transform": "negative-Y"
-            }
-          ],
-          "span": 6,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "deriv(haproxy_frontend_http_requests_total{frontend=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
-              "interval": "$interval",
-              "intervalFactor": 1,
-              "legendFormat": "{{ frontend }}",
-              "metric": "",
-              "refId": "A",
-              "step": 30
-            },
-            {
-              "expr": "deriv(haproxy_frontend_request_errors_total{frontend=~\"$frontend\", instance=~\"$host:$port\"}[5m])",
-              "intervalFactor": 2,
-              "legendFormat": "{{ frontend }} Error",
-              "refId": "B",
-              "step": 600
-            },
-            {
-              "expr": "deriv(haproxy_frontend_requests_denied_total{frontend=~\"$frontend\", instance=~\"$host:$port\"}[5m])",
-              "intervalFactor": 2,
-              "legendFormat": "{{ frontend }} Denied",
-              "refId": "C",
-              "step": 600
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Front - Total HTTP requests OK / Error / Denied",
-          "tooltip": {
-            "msResolution": true,
-            "shared": true,
-            "sort": 2,
-            "value_type": "individual"
-          },
-          "transparent": false,
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": 0,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_LOCALHOST}",
-          "description": "",
-          "editable": true,
-          "error": false,
-          "fill": 2,
-          "grid": {},
           "id": 35,
           "legend": {
             "alignAsTable": true,
@@ -1483,7 +1378,7 @@
               "intervalFactor": 2,
               "legendFormat": "Error {{ backend }}",
               "refId": "C",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1496,6 +1391,111 @@
             "sort": 2,
             "value_type": "individual"
           },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "${DS_LOCALHOST}",
+          "description": "",
+          "editable": true,
+          "error": false,
+          "fill": 2,
+          "grid": {},
+          "id": 46,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "minSpan": 12,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/.*Error.*/",
+              "transform": "negative-Y"
+            },
+            {
+              "alias": "/.*Denied.*/",
+              "transform": "negative-Y"
+            }
+          ],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "deriv(haproxy_frontend_http_requests_total{frontend=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
+              "interval": "$interval",
+              "intervalFactor": 1,
+              "legendFormat": "{{ frontend }}",
+              "metric": "",
+              "refId": "A",
+              "step": 30
+            },
+            {
+              "expr": "deriv(haproxy_frontend_request_errors_total{frontend=~\"$frontend\", instance=~\"$host:$port\"}[5m])",
+              "intervalFactor": 2,
+              "legendFormat": "{{ frontend }} Error",
+              "refId": "B",
+              "step": 240
+            },
+            {
+              "expr": "deriv(haproxy_frontend_requests_denied_total{frontend=~\"$frontend\", instance=~\"$host:$port\"}[5m])",
+              "intervalFactor": 2,
+              "legendFormat": "{{ frontend }} Denied",
+              "refId": "C",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Front - Total HTTP requests OK / Error / Denied",
+          "tooltip": {
+            "msResolution": true,
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "transparent": false,
           "type": "graph",
           "xaxis": {
             "mode": "time",
@@ -1708,7 +1708,7 @@
     },
     {
       "collapse": true,
-      "height": 376,
+      "height": 372,
       "panels": [
         {
           "aliasColors": {},
@@ -2066,8 +2066,13 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 3,
+          "seriesOverrides": [
+            {
+              "alias": "/.*limit.*/",
+              "fill": 0
+            }
+          ],
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -2080,94 +2085,19 @@
               "metric": "",
               "refId": "A",
               "step": 30
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Back - Maximum observed number of active sessions",
-          "tooltip": {
-            "msResolution": true,
-            "shared": false,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": 0,
-              "show": true
             },
             {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": 0,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_LOCALHOST}",
-          "description": "",
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "grid": {},
-          "id": 31,
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "max": false,
-            "min": false,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "minSpan": 3,
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 3,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
               "expr": "haproxy_backend_limit_sessions{backend=~\"$backend\",instance=~\"$host:$port\"}",
-              "hide": false,
-              "interval": "$interval",
-              "intervalFactor": 1,
-              "legendFormat": "{{ backend }}",
-              "metric": "haproxy_backend_current_queue",
-              "refId": "A",
-              "step": 30
+              "intervalFactor": 2,
+              "legendFormat": "{{ backend }} limit",
+              "refId": "B",
+              "step": 240
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Back - Configured session limit",
+          "title": "Back - Maximum observed number of active sessions and limit",
           "tooltip": {
             "msResolution": true,
             "shared": false,
@@ -2230,8 +2160,13 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 3,
+          "seriesOverrides": [
+            {
+              "alias": "/.*limit.*/",
+              "fill": 0
+            }
+          ],
+          "span": 6,
           "stack": true,
           "steppedLine": false,
           "targets": [
@@ -2244,94 +2179,19 @@
               "metric": "",
               "refId": "A",
               "step": 30
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Front - Maximum observed number of active sessions",
-          "tooltip": {
-            "msResolution": true,
-            "shared": false,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": 0,
-              "show": true
             },
             {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": 0,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_LOCALHOST}",
-          "description": "",
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "grid": {},
-          "id": 49,
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "max": false,
-            "min": false,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "minSpan": 3,
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 3,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
               "expr": "haproxy_frontend_limit_sessions{frontend=~\"$frontend\",instance=~\"$host:$port\"}",
-              "hide": false,
-              "interval": "$interval",
-              "intervalFactor": 1,
-              "legendFormat": "{{ frontend }}",
-              "metric": "",
-              "refId": "A",
-              "step": 30
+              "intervalFactor": 2,
+              "legendFormat": "{{ frontend }} limit",
+              "refId": "B",
+              "step": 240
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Front - Configured session limit",
+          "title": "Front - Maximum observed number of active sessions and limit",
           "tooltip": {
             "msResolution": true,
             "shared": false,
@@ -2395,7 +2255,7 @@
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
-          "span": 5,
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -2476,8 +2336,13 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 4,
+          "seriesOverrides": [
+            {
+              "alias": "/.*limit.*/",
+              "fill": 0
+            }
+          ],
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -2490,94 +2355,19 @@
               "metric": "",
               "refId": "A",
               "step": 30
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Front - Maximum number of sessions rate per second",
-          "tooltip": {
-            "msResolution": true,
-            "shared": false,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": 0,
-              "show": true
             },
             {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": 0,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_LOCALHOST}",
-          "description": "",
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "grid": {},
-          "id": 48,
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "max": false,
-            "min": false,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "minSpan": 3,
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 3,
-          "stack": true,
-          "steppedLine": false,
-          "targets": [
-            {
               "expr": "haproxy_frontend_limit_session_rate{frontend=~\"$frontend\",instance=~\"$host:$port\"}",
-              "hide": false,
-              "interval": "$interval",
-              "intervalFactor": 1,
-              "legendFormat": "{{ frontend }}",
-              "metric": "",
-              "refId": "A",
-              "step": 30
+              "intervalFactor": 2,
+              "legendFormat": "{{ frontend }} limit",
+              "refId": "B",
+              "step": 240
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Front - Configured limit on new sessions per second",
+          "title": "Front - Maximum number of sessions rate per second and limit",
           "tooltip": {
             "msResolution": true,
             "shared": false,
@@ -4658,7 +4448,7 @@
     ]
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-30h",
     "to": "now"
   },
   "timepicker": {
@@ -4688,5 +4478,5 @@
   },
   "timezone": "browser",
   "title": "HAproxy",
-  "version": 115
+  "version": 119
 }
