@@ -50,7 +50,7 @@
   "hideControls": false,
   "id": null,
   "links": [],
-  "refresh": false,
+  "refresh": "5m",
   "rows": [
     {
       "collapse": false,
@@ -119,7 +119,7 @@
               "intervalFactor": 1,
               "legendFormat": "",
               "refId": "A",
-              "step": 300
+              "step": 900
             }
           ],
           "thresholds": "85,95",
@@ -196,7 +196,7 @@
               "expr": "((node_memory_MemTotal{instance=~\"$node:.*\"} - node_memory_MemFree{instance=~\"$node:.*\"} - node_memory_Cached{instance=~\"$node:.*\"}) / (node_memory_MemTotal{instance=~\"$node:.*\"} )) * 100",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 300
+              "step": 900
             }
           ],
           "thresholds": "80,90",
@@ -273,7 +273,7 @@
               "expr": "((node_memory_SwapTotal{instance=~\"$node:.*\"} - node_memory_SwapFree{instance=~\"$node:.*\"}) / (node_memory_SwapTotal{instance=~\"$node:.*\"} )) * 100",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 300
+              "step": 900
             }
           ],
           "thresholds": "10,25",
@@ -351,7 +351,7 @@
               "hide": false,
               "intervalFactor": 1,
               "refId": "A",
-              "step": 300
+              "step": 900
             }
           ],
           "thresholds": "85, 95",
@@ -464,14 +464,14 @@
               "intervalFactor": 2,
               "legendFormat": "recv bytes {{device}}",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_network_transmit_bytes{instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "trans bytes {{device}} ",
               "refId": "B",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -582,7 +582,7 @@
               "expr": "count(count(node_cpu{instance=~\"$node:.*\"}) by (cpu))",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 300
+              "step": 900
             }
           ],
           "thresholds": "",
@@ -659,7 +659,7 @@
               "expr": "node_memory_MemTotal{instance=~\"$node:.*\"}",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 300
+              "step": 900
             }
           ],
           "thresholds": "",
@@ -736,7 +736,7 @@
               "expr": "node_memory_SwapTotal{instance=~\"$node:.*\"}",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 300
+              "step": 900
             }
           ],
           "thresholds": "",
@@ -814,7 +814,7 @@
               "hide": false,
               "intervalFactor": 1,
               "refId": "A",
-              "step": 300
+              "step": 900
             }
           ],
           "thresholds": "",
@@ -891,7 +891,7 @@
               "expr": "node_time{instance=~\"$node:.*\"} - node_boot_time{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
               "refId": "A",
-              "step": 600
+              "step": 1800
             }
           ],
           "thresholds": "",
@@ -970,7 +970,7 @@
               "hide": false,
               "intervalFactor": 1,
               "refId": "A",
-              "step": 300
+              "step": 900
             }
           ],
           "thresholds": "70,90",
@@ -1048,18 +1048,18 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum ( irate(node_cpu{mode!='idle',instance=~\"$node:.*\"}[5m]))",
+              "expr": "sum (rate(node_cpu{mode!='idle',instance=~\"$node:.*\"}[5m])) * 100",
               "intervalFactor": 2,
               "legendFormat": "Busy",
               "refId": "A",
-              "step": 60
+              "step": 240
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='idle',instance=~\"$node:.*\"}[5m]))",
+              "expr": "sum by (mode)(rate(node_cpu{mode='idle',instance=~\"$node:.*\"}[5m])) * 100",
               "intervalFactor": 2,
               "legendFormat": "Idle",
               "refId": "C",
-              "step": 60
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1149,7 +1149,8 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "/.*RAM Used*./",
+              "alias": "RAM Total",
+              "fill": 0,
               "stack": false
             }
           ],
@@ -1163,22 +1164,28 @@
               "intervalFactor": 2,
               "legendFormat": "RAM Total",
               "refId": "A",
-              "step": 60
+              "step": 240
             },
             {
-              "expr": "node_memory_MemTotal{instance=~\"$node:.*\"} - node_memory_MemFree{instance=~\"$node:.*\"} - node_memory_Cached{instance=~\"$node:.*\"} - node_memory_Buffers{instance=~\"$node:.*\"} - node_memory_Slab{instance=~\"$node:.*\"}",
-              "hide": false,
+              "expr": "node_memory_MemTotal{instance=~\"$node:.*\"} - node_memory_MemFree{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
               "legendFormat": "RAM Used",
-              "refId": "B",
-              "step": 60
+              "refId": "D",
+              "step": 240
+            },
+            {
+              "expr": "node_memory_MemFree{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "legendFormat": "RAM Free",
+              "refId": "F",
+              "step": 240
             },
             {
               "expr": "(node_memory_SwapTotal{instance=~\"$node:.*\"} - node_memory_SwapFree{instance=~\"$node:.*\"})",
               "intervalFactor": 2,
               "legendFormat": "SWAP Used",
-              "refId": "C",
-              "step": 60
+              "refId": "G",
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1188,7 +1195,7 @@
           "tooltip": {
             "shared": true,
             "sort": 0,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "type": "graph",
           "xaxis": {
@@ -1226,7 +1233,7 @@
     },
     {
       "collapse": false,
-      "height": 95,
+      "height": 150,
       "panels": [
         {
           "columns": [
@@ -1252,7 +1259,7 @@
           "scroll": true,
           "showHeader": true,
           "sort": {
-            "col": 2,
+            "col": 3,
             "desc": true
           },
           "span": 8,
@@ -1281,11 +1288,11 @@
           ],
           "targets": [
             {
-              "expr": "100 - (node_filesystem_free{instance=~\"$node:.*\",fstype=~\"xfs|ext4\"} / node_filesystem_size{instance=~\"$node:.*\",fstype=~\"xfs|ext4\"} * 100)",
+              "expr": "100 - (node_filesystem_free{instance=~\"$node:.*\",fstype=~\"xfs|ext4|tmpfs\"} / node_filesystem_size{instance=~\"$node:.*\",fstype=~\"xfs|ext4|tmpfs\"} * 100)",
               "intervalFactor": 2,
               "legendFormat": "{{ mountpoint }}",
               "refId": "A",
-              "step": 60
+              "step": 240
             }
           ],
           "title": "Filesystem Usage",
@@ -1338,7 +1345,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{ mountpoint }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             }
           ],
           "title": "Filesystem Size",
@@ -1355,7 +1362,7 @@
     },
     {
       "collapse": true,
-      "height": 392,
+      "height": 562,
       "panels": [
         {
           "aliasColors": {
@@ -1406,7 +1413,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode=\"system\",instance=~\"$node:.*\"}[5m]))",
+              "expr": "sum by (mode)(irate(node_cpu{mode=\"system\",instance=~\"$node:.*\"}[5m])) * 100",
               "interval": "10s",
               "intervalFactor": 2,
               "legendFormat": "System - Processes executing in kernel mode",
@@ -1414,60 +1421,60 @@
               "step": 20
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='user',instance=~\"$node:.*\"}[5m]))",
+              "expr": "sum by (mode)(irate(node_cpu{mode='user',instance=~\"$node:.*\"}[5m])) * 100",
               "intervalFactor": 2,
               "legendFormat": "User - Normal processes executing in user mode",
               "refId": "B",
-              "step": 30
+              "step": 120
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='nice',instance=~\"$node:.*\"}[5m]))",
+              "expr": "sum by (mode)(irate(node_cpu{mode='nice',instance=~\"$node:.*\"}[5m])) * 100",
               "intervalFactor": 2,
               "legendFormat": "Nice - Niced processes executing in user mode",
               "refId": "C",
-              "step": 30
+              "step": 120
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='idle',instance=~\"$node:.*\"}[5m]))",
+              "expr": "sum by (mode)(irate(node_cpu{mode='idle',instance=~\"$node:.*\"}[5m])) * 100",
               "intervalFactor": 2,
               "legendFormat": "Idle - Waiting for something to happen",
               "refId": "F",
-              "step": 30
+              "step": 120
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='iowait',instance=~\"$node:.*\"}[5m]))",
+              "expr": "sum by (mode)(irate(node_cpu{mode='iowait',instance=~\"$node:.*\"}[5m])) * 100",
               "intervalFactor": 2,
               "legendFormat": "Iowait - Waiting for I/O to complete",
               "refId": "D",
-              "step": 30
+              "step": 120
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='irq',instance=~\"$node:.*\"}[5m]))",
+              "expr": "sum by (mode)(irate(node_cpu{mode='irq',instance=~\"$node:.*\"}[5m])) * 100",
               "intervalFactor": 2,
               "legendFormat": "Irq - Servicing interrupts",
               "refId": "G",
-              "step": 30
+              "step": 120
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='softirq',instance=~\"$node:.*\"}[5m]))",
+              "expr": "sum by (mode)(irate(node_cpu{mode='softirq',instance=~\"$node:.*\"}[5m])) * 100",
               "intervalFactor": 2,
               "legendFormat": "Softirq - Servicing softirqs",
               "refId": "H",
-              "step": 30
+              "step": 120
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='steal',instance=~\"$node:.*\"}[5m]))",
+              "expr": "sum by (mode)(irate(node_cpu{mode='steal',instance=~\"$node:.*\"}[5m])) * 100",
               "intervalFactor": 2,
               "legendFormat": "Steal - Time spent in other operating systems when running in a virtualized environment",
               "refId": "E",
-              "step": 30
+              "step": 120
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='guest',instance=~\"$node:.*\"}[5m]))",
+              "expr": "sum by (mode)(irate(node_cpu{mode='guest',instance=~\"$node:.*\"}[5m])) * 100",
               "intervalFactor": 2,
               "legendFormat": "Guest - Time spent running a virtual CPU for a guest operating system",
               "refId": "I",
-              "step": 30
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -1543,6 +1550,8 @@
             "rightSide": false,
             "show": true,
             "sideWidth": 350,
+            "sort": null,
+            "sortDesc": null,
             "total": false,
             "values": true
           },
@@ -1557,39 +1566,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "/.*Committed - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*Mapped - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*Active - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*Inactive - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*VmallocUsed - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*Commit Limit - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*Dirty - *./",
-              "stack": false
-            },
-            {
               "alias": "/.*Harware Corrupted - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*Unevictable - *./",
               "stack": false
             }
           ],
@@ -1601,48 +1578,48 @@
               "expr": "node_memory_MemTotal{instance=~\"$node:.*\"} - node_memory_MemFree{instance=~\"$node:.*\"} - node_memory_Buffers{instance=~\"$node:.*\"} - node_memory_Cached{instance=~\"$node:.*\"} - node_memory_Slab{instance=~\"$node:.*\"} - node_memory_PageTables{instance=~\"$node:.*\"} - node_memory_SwapCached{instance=~\"$node:.*\"}",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "Apps - Memory used by processes",
+              "legendFormat": "Apps - Memory used by user-space applications.",
               "refId": "Q",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "node_memory_PageTables{instance=~\"$node:.*\"}",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "PageTables - Memory dedicated to the lowest page table level",
+              "legendFormat": "PageTables - Memory used to map between virtual and physical memory addresses.",
               "refId": "G",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "node_memory_SwapCached{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
-              "legendFormat": "SwapCache - Swap used as cache memory",
+              "legendFormat": "SwapCache - Memory that keeps track of pages that have been fetched from swap but not yet been modified.",
               "refId": "F",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "node_memory_Slab{instance=~\"$node:.*\"}",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "Slab - Memory used by the kernel to cache data structures for its own use",
+              "legendFormat": "Slab - Memory used by the kernel to cache data structures for its own use (caches like inode, dentry, etc).",
               "refId": "E",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "node_memory_Cached{instance=~\"$node:.*\"}",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "Cache - Physical RAM used as cache memory",
+              "legendFormat": "Cache - Parked file data (file content) cache.",
               "refId": "C",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "node_memory_Buffers{instance=~\"$node:.*\"}",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "Buffers - Physical RAM used for file buffers",
+              "legendFormat": "Buffers - Block device (e.g. harddisk) cache.",
               "refId": "B",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "node_memory_MemFree{instance=~\"$node:.*\"}",
@@ -1650,87 +1627,23 @@
               "intervalFactor": 2,
               "legendFormat": "Unused - Free memory unasigned",
               "refId": "D",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "(node_memory_SwapTotal{instance=~\"$node:.*\"} - node_memory_SwapFree{instance=~\"$node:.*\"})",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "Swap - Swap memory usage",
+              "legendFormat": "Swap - Swap space used.",
               "refId": "I",
-              "step": 30
-            },
-            {
-              "expr": "node_memory_Committed_AS{instance=~\"$node:.*\"}",
-              "hide": true,
-              "intervalFactor": 2,
-              "legendFormat": "Committed - The amount of memory presently allocated on the system",
-              "refId": "A",
-              "step": 4
-            },
-            {
-              "expr": "node_memory_Mapped{instance=~\"$node:.*\"}",
-              "hide": true,
-              "intervalFactor": 2,
-              "legendFormat": "Mapped - Files which have been mmaped, such as libraries",
-              "refId": "H",
-              "step": 4
-            },
-            {
-              "expr": "node_memory_Active{instance=~\"$node:.*\"}",
-              "hide": true,
-              "intervalFactor": 2,
-              "legendFormat": "Active - Memory that has been used more recently and usually not reclaimed unless absolutely necessary",
-              "refId": "J",
-              "step": 4
-            },
-            {
-              "expr": "node_memory_Inactive{instance=~\"$node:.*\"}",
-              "hide": true,
-              "intervalFactor": 2,
-              "legendFormat": "Inactive - Memory which has been less recently used.  It is more eligible to be reclaimed for other purposes",
-              "refId": "K",
-              "step": 4
-            },
-            {
-              "expr": "node_memory_VmallocUsed{instance=~\"$node:.*\"}",
-              "hide": true,
-              "intervalFactor": 2,
-              "legendFormat": "VmallocUsed - Memory of used virtual address space",
-              "refId": "L",
-              "step": 4
-            },
-            {
-              "expr": "node_memory_CommitLimit{instance=~\"$node:.*\"}",
-              "hide": true,
-              "intervalFactor": 2,
-              "legendFormat": "Commit Limit - Total amount of  memory currently available to be allocated on the system",
-              "refId": "M",
-              "step": 4
-            },
-            {
-              "expr": "node_memory_Dirty{instance=~\"$node:.*\"}",
-              "hide": true,
-              "intervalFactor": 2,
-              "legendFormat": "Dirty - Memory which is waiting to get written back to the disk",
-              "refId": "N",
-              "step": 4
+              "step": 120
             },
             {
               "expr": "node_memory_HardwareCorrupted{instance=~\"$node:.*\"}",
-              "hide": true,
+              "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Harware Corrupted - Amount of RAM that the kernel identified as corrupted / not working",
               "refId": "O",
-              "step": 4
-            },
-            {
-              "expr": "node_memory_Unevictable{instance=~\"$node:.*\"}",
-              "hide": true,
-              "intervalFactor": 2,
-              "legendFormat": "Unevictable - Unevictable pages can't be swapped out for a variety of reasons",
-              "refId": "P",
-              "step": 4
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -1740,7 +1653,7 @@
           "tooltip": {
             "shared": true,
             "sort": 0,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "type": "graph",
           "xaxis": {
@@ -1841,14 +1754,14 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} receive",
               "refId": "O",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "irate(node_network_transmit_bytes{instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} transmit",
               "refId": "P",
-              "step": 30
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -1954,7 +1867,7 @@
               "intervalFactor": 2,
               "legendFormat": "successfully read bytes {{device}}",
               "refId": "A",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "irate(node_disk_bytes_written{instance=~\"$node:.*\",device=~\"[a-z]*[a-z]\"}[5m])",
@@ -1962,7 +1875,7 @@
               "intervalFactor": 2,
               "legendFormat": "successfully written bytes {{device}}",
               "refId": "B",
-              "step": 30
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -2068,7 +1981,7 @@
               "intervalFactor": 2,
               "legendFormat": "milliseconds spent doing I/Os {{device}}",
               "refId": "C",
-              "step": 30
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -2147,7 +2060,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}}",
               "refId": "A",
-              "step": 30
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -2195,209 +2108,8 @@
     },
     {
       "collapse": true,
-      "height": 378,
+      "height": 346,
       "panels": [
-        {
-          "aliasColors": {
-            "Apps": "#629E51",
-            "Buffers": "#614D93",
-            "Cache": "#6D1F62",
-            "Cached": "#511749",
-            "Committed": "#508642",
-            "Free": "#0A437C",
-            "Harware Corrupted - Amount of RAM that the kernel identified as corrupted / not working": "#CFFAFF",
-            "Inactive": "#584477",
-            "PageTables": "#0A50A1",
-            "Page_Tables": "#0A50A1",
-            "RAM_Free": "#E0F9D7",
-            "Slab": "#806EB7",
-            "Slab_Cache": "#E0752D",
-            "Swap": "#BF1B00",
-            "Swap_Cache": "#C15C17",
-            "Swap_Free": "#2F575E",
-            "Unused": "#EAB839"
-          },
-          "bars": false,
-          "datasource": "${DS_LOCALHOST}",
-          "decimals": 2,
-          "fill": 1,
-          "id": 79,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "sideWidth": 350,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "minSpan": 2,
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "/.*Committed - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*Mapped - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*Active - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*Inactive - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*VmallocUsed - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*Commit Limit - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*Dirty - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*Harware Corrupted - *./",
-              "stack": false
-            },
-            {
-              "alias": "/.*Unevictable - *./",
-              "stack": false
-            }
-          ],
-          "span": 12,
-          "stack": true,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "node_memory_Committed_AS{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "Committed - The amount of memory presently allocated on the system",
-              "refId": "A",
-              "step": 30
-            },
-            {
-              "expr": "node_memory_Mapped{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "Mapped - Files which have been mmaped, such as libraries",
-              "refId": "H",
-              "step": 30
-            },
-            {
-              "expr": "node_memory_Active{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "Active - Memory that has been used more recently and usually not reclaimed unless absolutely necessary",
-              "refId": "J",
-              "step": 30
-            },
-            {
-              "expr": "node_memory_Inactive{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "Inactive - Memory which has been less recently used.  It is more eligible to be reclaimed for other purposes",
-              "refId": "K",
-              "step": 30
-            },
-            {
-              "expr": "node_memory_VmallocUsed{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "VmallocUsed - Memory of used virtual address space",
-              "refId": "L",
-              "step": 30
-            },
-            {
-              "expr": "node_memory_CommitLimit{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "Commit Limit - Total amount of  memory currently available to be allocated on the system",
-              "refId": "M",
-              "step": 30
-            },
-            {
-              "expr": "node_memory_Dirty{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "Dirty - Memory which is waiting to get written back to the disk",
-              "refId": "N",
-              "step": 30
-            },
-            {
-              "expr": "node_memory_HardwareCorrupted{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "Harware Corrupted - Amount of RAM that the kernel identified as corrupted / not working",
-              "refId": "O",
-              "step": 30
-            },
-            {
-              "expr": "node_memory_Unevictable{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "Unevictable - Unevictable pages can't be swapped out for a variety of reasons",
-              "refId": "P",
-              "step": 30
-            },
-            {
-              "expr": "node_memory_Shmem{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "Shared mem - Total memory used by shared memory (shmem) and tmpfs",
-              "refId": "B",
-              "step": 30
-            },
-            {
-              "expr": "node_memory_Mlocked{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "MLocked - Pages locked to memory using the mlock() system call",
-              "refId": "C",
-              "step": 30
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Memory Usage",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "bytes",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": "0",
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
-        },
         {
           "aliasColors": {},
           "bars": false,
@@ -2439,14 +2151,14 @@
               "intervalFactor": 2,
               "legendFormat": "swap_in - Pages per second int",
               "refId": "A",
-              "step": 60
+              "step": 240
             },
             {
               "expr": "irate(node_vmstat_pswpout{instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "swap_out - Pages per second out",
               "refId": "B",
-              "step": 60
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2486,31 +2198,29 @@
         },
         {
           "aliasColors": {
-            "Active": "#99440A",
-            "Buffers": "#58140C",
+            "Apps": "#629E51",
+            "Buffers": "#614D93",
             "Cache": "#6D1F62",
             "Cached": "#511749",
             "Committed": "#508642",
-            "Dirty": "#6ED0E0",
-            "Free": "#B7DBAB",
-            "Inactive": "#EA6460",
-            "Mapped": "#052B51",
+            "Free": "#0A437C",
+            "Harware Corrupted - Amount of RAM that the kernel identified as corrupted / not working": "#CFFAFF",
+            "Inactive": "#584477",
             "PageTables": "#0A50A1",
             "Page_Tables": "#0A50A1",
-            "Slab_Cache": "#EAB839",
+            "RAM_Free": "#E0F9D7",
+            "Slab": "#806EB7",
+            "Slab_Cache": "#E0752D",
             "Swap": "#BF1B00",
             "Swap_Cache": "#C15C17",
-            "Total": "#511749",
-            "Total RAM": "#052B51",
-            "Total RAM + Swap": "#052B51",
-            "Total Swap": "#614D93",
-            "VmallocUsed": "#EA6460"
+            "Swap_Free": "#2F575E",
+            "Unused": "#EAB839"
           },
           "bars": false,
           "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "fill": 1,
-          "id": 130,
+          "id": 137,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -2519,7 +2229,7 @@
             "min": true,
             "rightSide": false,
             "show": true,
-            "sideWidth": null,
+            "sideWidth": 350,
             "total": false,
             "values": true
           },
@@ -2538,44 +2248,333 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_MemTotal{instance=~\"$node:.*\"}",
-              "hide": true,
+              "expr": "node_memory_Unevictable{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
-              "legendFormat": "Total RAM",
-              "refId": "A",
-              "step": 10
+              "legendFormat": "Unevictable - Unevictable pages can't be swapped out for a variety of reasons",
+              "refId": "P",
+              "step": 240
             },
             {
-              "expr": "node_memory_MemTotal{instance=~\"$node:.*\"} + (node_memory_SwapTotal{instance=~\"$node:.*\"})",
-              "hide": true,
+              "expr": "node_memory_Mlocked{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
-              "legendFormat": "Total RAM + Swap",
-              "refId": "B",
-              "step": 10
-            },
-            {
-              "expr": "node_memory_Writeback{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "Writeback - Memory which is actively being written back to disk",
-              "refId": "J",
-              "step": 60
-            },
-            {
-              "expr": "node_memory_WritebackTmp{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "WritebackTmp - Memory used by FUSE for temporary writeback buffers",
-              "refId": "K",
-              "step": 60
+              "legendFormat": "MLocked - Pages locked to memory using the mlock() system call",
+              "refId": "C",
+              "step": 240
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Memory Writeback",
+          "title": "Memory Ram Resident",
           "tooltip": {
             "shared": true,
             "sort": 0,
-            "value_type": "individual"
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bytes",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "Apps": "#629E51",
+            "Buffers": "#614D93",
+            "Cache": "#6D1F62",
+            "Cached": "#511749",
+            "Committed": "#508642",
+            "Free": "#0A437C",
+            "Harware Corrupted - Amount of RAM that the kernel identified as corrupted / not working": "#CFFAFF",
+            "Inactive": "#584477",
+            "PageTables": "#0A50A1",
+            "Page_Tables": "#0A50A1",
+            "RAM_Free": "#E0F9D7",
+            "Slab": "#806EB7",
+            "Slab_Cache": "#E0752D",
+            "Swap": "#BF1B00",
+            "Swap_Cache": "#C15C17",
+            "Swap_Free": "#2F575E",
+            "Unused": "#EAB839"
+          },
+          "bars": false,
+          "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
+          "fill": 1,
+          "id": 138,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": 350,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 2,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "node_memory_Mapped{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "legendFormat": "Mapped - Files which have been mmaped, such as libraries",
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "expr": "node_memory_Shmem{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "legendFormat": "Shared mem - Total memory used by shared memory (shmem) and tmpfs",
+              "refId": "B",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Memory Shared and Mapped",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bytes",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "Apps": "#629E51",
+            "Buffers": "#614D93",
+            "Cache": "#6D1F62",
+            "Cached": "#511749",
+            "Committed": "#508642",
+            "Free": "#0A437C",
+            "Harware Corrupted - Amount of RAM that the kernel identified as corrupted / not working": "#CFFAFF",
+            "Inactive": "#584477",
+            "PageTables": "#0A50A1",
+            "Page_Tables": "#0A50A1",
+            "RAM_Free": "#E0F9D7",
+            "Slab": "#806EB7",
+            "Slab_Cache": "#E0752D",
+            "Swap": "#BF1B00",
+            "Swap_Cache": "#C15C17",
+            "Swap_Free": "#2F575E",
+            "Unused": "#EAB839"
+          },
+          "bars": false,
+          "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
+          "fill": 1,
+          "id": 139,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": 350,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 2,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "node_memory_Dirty{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "legendFormat": "Dirty - Memory which is waiting to get written back to the disk",
+              "refId": "N",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Memory Dirty",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bytes",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "Apps": "#629E51",
+            "Buffers": "#614D93",
+            "Cache": "#6D1F62",
+            "Cached": "#511749",
+            "Committed": "#508642",
+            "Free": "#0A437C",
+            "Harware Corrupted - Amount of RAM that the kernel identified as corrupted / not working": "#CFFAFF",
+            "Inactive": "#584477",
+            "PageTables": "#0A50A1",
+            "Page_Tables": "#0A50A1",
+            "RAM_Free": "#E0F9D7",
+            "Slab": "#806EB7",
+            "Slab_Cache": "#E0752D",
+            "Swap": "#BF1B00",
+            "Swap_Cache": "#C15C17",
+            "Swap_Free": "#2F575E",
+            "Unused": "#EAB839"
+          },
+          "bars": false,
+          "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
+          "fill": 1,
+          "id": 135,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": 350,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 2,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/.*Committed - *./"
+            },
+            {
+              "alias": "/.*Commit Limit - *./",
+              "color": "#BF1B00",
+              "fill": 0
+            }
+          ],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "node_memory_Committed_AS{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "legendFormat": "Committed - The amount of memory presently allocated on the system",
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "expr": "node_memory_CommitLimit{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "legendFormat": "Commit Limit - Total amount of  memory currently available to be allocated on the system",
+              "refId": "M",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Memory Commited",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
           },
           "type": "graph",
           "xaxis": {
@@ -2622,13 +2621,14 @@
             "Total": "#511749",
             "Total RAM": "#052B51",
             "Total RAM + Swap": "#052B51",
+            "Total Swap": "#614D93",
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
           "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "fill": 1,
-          "id": 47,
+          "id": 131,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -2650,46 +2650,35 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [],
+          "seriesOverrides": [
+            {
+              "alias": "/.*SUnreclaim - *./",
+              "transform": "negative-Y"
+            }
+          ],
           "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_MemTotal{instance=~\"$node:.*\"}",
-              "hide": true,
+              "expr": "node_memory_SReclaimable{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
-              "legendFormat": "Total RAM",
-              "refId": "A",
-              "step": 10
+              "legendFormat": "SReclaimable - Part of Slab, that might be reclaimed, such as caches",
+              "refId": "N",
+              "step": 240
             },
             {
-              "expr": "node_memory_MemTotal{instance=~\"$node:.*\"} + (node_memory_SwapTotal{instance=~\"$node:.*\"})",
-              "hide": true,
+              "expr": "node_memory_SUnreclaim{instance=~\"$node:.*\"} * 10",
               "intervalFactor": 2,
-              "legendFormat": "Total RAM + Swap",
-              "refId": "B",
-              "step": 10
-            },
-            {
-              "expr": "node_memory_Active_file{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "Active File - File-backed memory on active LRU list",
-              "refId": "I",
-              "step": 60
-            },
-            {
-              "expr": "node_memory_Inactive_file{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "Inactive File - File-backed memory on inactive LRU list",
-              "refId": "M",
-              "step": 60
+              "legendFormat": "SUnreclaim - Part of Slab, that cannot be reclaimed on memory pressure",
+              "refId": "O",
+              "step": 240
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Memory Active / Inactive File",
+          "title": "Memory Reclaimed",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -2779,7 +2768,7 @@
               "intervalFactor": 2,
               "legendFormat": "VmallocChunk - Largest contiguous block of vmalloc area which is free",
               "refId": "H",
-              "step": 60
+              "step": 240
             },
             {
               "expr": "node_memory_VmallocTotal{instance=~\"$node:.*\"}",
@@ -2787,7 +2776,7 @@
               "intervalFactor": 2,
               "legendFormat": "VmallocTotal - Total size of vmalloc memory area",
               "refId": "I",
-              "step": 60
+              "step": 240
             },
             {
               "expr": "node_memory_VmallocUsed{instance=~\"$node:.*\"}",
@@ -2795,7 +2784,7 @@
               "intervalFactor": 2,
               "legendFormat": "VmallocUsed - Amount of vmalloc area which is used",
               "refId": "O",
-              "step": 60
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2826,134 +2815,6 @@
             {
               "format": "short",
               "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {
-            "Active": "#99440A",
-            "Buffers": "#58140C",
-            "Cache": "#6D1F62",
-            "Cached": "#511749",
-            "Committed": "#508642",
-            "Dirty": "#6ED0E0",
-            "Free": "#B7DBAB",
-            "Inactive": "#EA6460",
-            "Mapped": "#052B51",
-            "PageTables": "#0A50A1",
-            "Page_Tables": "#0A50A1",
-            "Slab_Cache": "#EAB839",
-            "Swap": "#BF1B00",
-            "Swap_Cache": "#C15C17",
-            "Total": "#511749",
-            "Total RAM": "#806EB7",
-            "Total RAM + Swap": "#806EB7",
-            "VmallocUsed": "#EA6460"
-          },
-          "bars": false,
-          "datasource": "${DS_LOCALHOST}",
-          "decimals": 2,
-          "fill": 1,
-          "id": 71,
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "sideWidth": null,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "minSpan": 2,
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "/.*Number of huge pages.*/",
-              "yaxis": 2
-            }
-          ],
-          "span": 6,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "node_memory_HugePages_Free{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "HugePages Free - Number of huge pages in the pool that are not yet allocated",
-              "refId": "I",
-              "step": 60
-            },
-            {
-              "expr": "node_memory_HugePages_Rsvd{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "HugePages Reserved - Number of huge pages for                 which a commitment to allocate from the pool has been made,                 but no allocation has yet been made",
-              "refId": "J",
-              "step": 60
-            },
-            {
-              "expr": "node_memory_HugePages_Surp{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "HugePages Surp - Number of huge pages in                 the pool above the value in /proc/sys/vm/nr_hugepages",
-              "refId": "K",
-              "step": 60
-            },
-            {
-              "expr": "node_memory_HugePages_Total{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "HugePages - Total size of the pool of huge pages",
-              "refId": "L",
-              "step": 60
-            },
-            {
-              "expr": "node_memory_Hugepagesize{instance=~\"$node:.*\"}",
-              "intervalFactor": 2,
-              "legendFormat": "Hugepagesize - Huge Page size",
-              "refId": "D",
-              "step": 60
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Memory Usage HugePages",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "bytes",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "none",
-              "label": "",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -3036,7 +2897,7 @@
               "intervalFactor": 2,
               "legendFormat": "DirectMap1G - Amount of pages mapped as this size",
               "refId": "J",
-              "step": 60
+              "step": 240
             },
             {
               "expr": "node_memory_DirectMap2M{instance=~\"$node:.*\"}",
@@ -3044,7 +2905,7 @@
               "intervalFactor": 2,
               "legendFormat": "DirectMap2M - Amount of pages mapped as this size",
               "refId": "K",
-              "step": 60
+              "step": 240
             },
             {
               "expr": "node_memory_DirectMap4k{instance=~\"$node:.*\"}",
@@ -3052,7 +2913,7 @@
               "intervalFactor": 2,
               "legendFormat": "DirectMap4K  - Amount of pages mapped as this size",
               "refId": "L",
-              "step": 60
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -3107,15 +2968,118 @@
             "Swap": "#BF1B00",
             "Swap_Cache": "#C15C17",
             "Total": "#511749",
-            "Total RAM": "#052B51",
-            "Total RAM + Swap": "#052B51",
+            "Total RAM": "#806EB7",
+            "Total RAM + Swap": "#806EB7",
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
           "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "fill": 1,
-          "id": 129,
+          "id": 71,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": null,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 2,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "node_memory_HugePages_Total{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "legendFormat": "HugePages - Total size of the pool of huge pages",
+              "refId": "L",
+              "step": 240
+            },
+            {
+              "expr": "node_memory_Hugepagesize{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "legendFormat": "Hugepagesize - Huge Page size",
+              "refId": "D",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Memory HugePages Size",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bytes",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "none",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "Active": "#99440A",
+            "Buffers": "#58140C",
+            "Cache": "#6D1F62",
+            "Cached": "#511749",
+            "Committed": "#508642",
+            "Dirty": "#6ED0E0",
+            "Free": "#B7DBAB",
+            "Inactive": "#EA6460",
+            "Mapped": "#052B51",
+            "PageTables": "#0A50A1",
+            "Page_Tables": "#0A50A1",
+            "Slab_Cache": "#EAB839",
+            "Swap": "#BF1B00",
+            "Swap_Cache": "#C15C17",
+            "Total": "#511749",
+            "Total RAM": "#052B51",
+            "Total RAM + Swap": "#052B51",
+            "Total Swap": "#614D93",
+            "VmallocUsed": "#EA6460"
+          },
+          "bars": false,
+          "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
+          "fill": 1,
+          "id": 130,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -3159,25 +3123,238 @@
               "step": 10
             },
             {
+              "expr": "node_memory_Writeback{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "legendFormat": "Writeback - Memory which is actively being written back to disk",
+              "refId": "J",
+              "step": 240
+            },
+            {
+              "expr": "node_memory_WritebackTmp{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "legendFormat": "WritebackTmp - Memory used by FUSE for temporary writeback buffers",
+              "refId": "K",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Memory Writeback",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bytes",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "Active": "#99440A",
+            "Buffers": "#58140C",
+            "Cache": "#6D1F62",
+            "Cached": "#511749",
+            "Committed": "#508642",
+            "Dirty": "#6ED0E0",
+            "Free": "#B7DBAB",
+            "Inactive": "#EA6460",
+            "Mapped": "#052B51",
+            "PageTables": "#0A50A1",
+            "Page_Tables": "#0A50A1",
+            "Slab_Cache": "#EAB839",
+            "Swap": "#BF1B00",
+            "Swap_Cache": "#C15C17",
+            "Total": "#511749",
+            "Total RAM": "#806EB7",
+            "Total RAM + Swap": "#806EB7",
+            "VmallocUsed": "#EA6460"
+          },
+          "bars": false,
+          "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
+          "fill": 1,
+          "id": 140,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": null,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 2,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "node_memory_HugePages_Free{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "legendFormat": "HugePages Free - Number of huge pages in the pool that are not yet allocated",
+              "refId": "I",
+              "step": 240
+            },
+            {
+              "expr": "node_memory_HugePages_Rsvd{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "legendFormat": "HugePages Reserved - Number of huge pages for                 which a commitment to allocate from the pool has been made,                 but no allocation has yet been made",
+              "refId": "J",
+              "step": 240
+            },
+            {
+              "expr": "node_memory_HugePages_Surp{instance=~\"$node:.*\"}",
+              "intervalFactor": 2,
+              "legendFormat": "HugePages Surp - Number of huge pages in                 the pool above the value in /proc/sys/vm/nr_hugepages",
+              "refId": "K",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Memory HugePages Count",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "none",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "Active": "#99440A",
+            "Buffers": "#58140C",
+            "Cache": "#6D1F62",
+            "Cached": "#511749",
+            "Committed": "#508642",
+            "Dirty": "#6ED0E0",
+            "Free": "#B7DBAB",
+            "Inactive": "#EA6460",
+            "Mapped": "#052B51",
+            "PageTables": "#0A50A1",
+            "Page_Tables": "#0A50A1",
+            "Slab_Cache": "#EAB839",
+            "Swap": "#BF1B00",
+            "Swap_Cache": "#C15C17",
+            "Total": "#511749",
+            "Total RAM": "#052B51",
+            "Total RAM + Swap": "#052B51",
+            "VmallocUsed": "#EA6460"
+          },
+          "bars": false,
+          "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
+          "fill": 1,
+          "id": 129,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": null,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 2,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {}
+          ],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
               "expr": "node_memory_AnonHugePages{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
               "legendFormat": "Anon Huge Pages - Non-file backed huge pages mapped into userspace page tables",
               "refId": "D",
-              "step": 60
+              "step": 240
             },
             {
               "expr": "node_memory_AnonPages{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
               "legendFormat": "Anon Pages - Non-file backed pages mapped into userspace page tables",
               "refId": "G",
-              "step": 60
+              "step": 240
             },
             {
               "expr": "node_memory_Active_anon{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
               "legendFormat": "Inactive Anon - Anonymous and swap cache on inactive LRU list, including tmpfs (shmem)",
               "refId": "H",
-              "step": 60
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -3217,31 +3394,29 @@
         },
         {
           "aliasColors": {
-            "Active": "#99440A",
-            "Buffers": "#58140C",
+            "Apps": "#629E51",
+            "Buffers": "#614D93",
             "Cache": "#6D1F62",
             "Cached": "#511749",
             "Committed": "#508642",
-            "Dirty": "#6ED0E0",
-            "Free": "#B7DBAB",
-            "Inactive": "#EA6460",
-            "Mapped": "#052B51",
+            "Free": "#0A437C",
+            "Harware Corrupted - Amount of RAM that the kernel identified as corrupted / not working": "#CFFAFF",
+            "Inactive": "#584477",
             "PageTables": "#0A50A1",
             "Page_Tables": "#0A50A1",
-            "Slab_Cache": "#EAB839",
+            "RAM_Free": "#E0F9D7",
+            "Slab": "#806EB7",
+            "Slab_Cache": "#E0752D",
             "Swap": "#BF1B00",
             "Swap_Cache": "#C15C17",
-            "Total": "#511749",
-            "Total RAM": "#052B51",
-            "Total RAM + Swap": "#052B51",
-            "Total Swap": "#614D93",
-            "VmallocUsed": "#EA6460"
+            "Swap_Free": "#2F575E",
+            "Unused": "#EAB839"
           },
           "bars": false,
           "datasource": "${DS_LOCALHOST}",
           "decimals": 2,
           "fill": 1,
-          "id": 131,
+          "id": 136,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -3250,7 +3425,7 @@
             "min": true,
             "rightSide": false,
             "show": true,
-            "sideWidth": null,
+            "sideWidth": 350,
             "total": false,
             "values": true
           },
@@ -3263,50 +3438,57 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [],
+          "seriesOverrides": [
+            {
+              "alias": "/.*Inactive - *./",
+              "transform": "negative-Y"
+            },
+            {
+              "alias": "/.*Inactive File - *./",
+              "transform": "negative-Y"
+            }
+          ],
           "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_MemTotal{instance=~\"$node:.*\"}",
-              "hide": true,
+              "expr": "node_memory_Active{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
-              "legendFormat": "Total RAM",
-              "refId": "A",
-              "step": 10
+              "legendFormat": "Active - Memory that has been used more recently and usually not reclaimed unless absolutely necessary",
+              "refId": "J",
+              "step": 240
             },
             {
-              "expr": "node_memory_MemTotal{instance=~\"$node:.*\"} + (node_memory_SwapTotal{instance=~\"$node:.*\"})",
-              "hide": true,
+              "expr": "node_memory_Active_file{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
-              "legendFormat": "Total RAM + Swap",
+              "legendFormat": "Active File - File-backed memory on active LRU list",
               "refId": "B",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "node_memory_SReclaimable{instance=~\"$node:.*\"}",
+              "expr": "node_memory_Inactive{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
-              "legendFormat": "SReclaimable - Part of Slab, that might be reclaimed, such as caches",
-              "refId": "N",
-              "step": 60
+              "legendFormat": "Inactive - Memory which has been less recently used.  It is more eligible to be reclaimed for other purposes",
+              "refId": "K",
+              "step": 240
             },
             {
-              "expr": "node_memory_SUnreclaim{instance=~\"$node:.*\"}",
+              "expr": "node_memory_Inactive_file{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
-              "legendFormat": "SUnreclaim - Part of Slab, that cannot be reclaimed on memory pressure",
-              "refId": "O",
-              "step": 60
+              "legendFormat": "Inactive File - File-backed memory on inactive LRU list",
+              "refId": "A",
+              "step": 240
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Memory Reclaimed",
+          "title": "Memory Active / Inactive",
           "tooltip": {
             "shared": true,
             "sort": 0,
-            "value_type": "individual"
+            "value_type": "cumulative"
           },
           "type": "graph",
           "xaxis": {
@@ -3408,7 +3590,7 @@
               "intervalFactor": 2,
               "legendFormat": "NFS Unstable - NFS pages sent to the server, but not yet commited to the storage",
               "refId": "L",
-              "step": 60
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -3494,21 +3676,21 @@
               "intervalFactor": 2,
               "legendFormat": "Context switches",
               "refId": "A",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "irate(node_intr{instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Interrupts",
               "refId": "B",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "node_entropy_available_bits{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
               "legendFormat": "Entropy",
               "refId": "C",
-              "step": 30
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -3582,21 +3764,21 @@
               "intervalFactor": 4,
               "legendFormat": "Load 1m",
               "refId": "A",
-              "step": 60
+              "step": 240
             },
             {
               "expr": "node_load5{instance=~\"$node:.*\"}",
               "intervalFactor": 4,
               "legendFormat": "Load 5m",
               "refId": "B",
-              "step": 60
+              "step": 240
             },
             {
               "expr": "node_load15{instance=~\"$node:.*\"}",
               "intervalFactor": 4,
               "legendFormat": "Load 15m",
               "refId": "C",
-              "step": 60
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -3674,14 +3856,14 @@
               "intervalFactor": 2,
               "legendFormat": "Processes blocked waiting for I/O to complete",
               "refId": "A",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "node_procs_running{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
               "legendFormat": "Processes in runnable state",
               "refId": "B",
-              "step": 30
+              "step": 120
             },
             {
               "expr": "increase(node_forks{instance=~\"$node:.*\"}[5m])",
@@ -3689,7 +3871,7 @@
               "intervalFactor": 2,
               "legendFormat": "Processes forks",
               "refId": "C",
-              "step": 30
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -3762,7 +3944,7 @@
               "intervalFactor": 2,
               "legendFormat": "Max file descriptors",
               "refId": "A",
-              "step": 60
+              "step": 240
             },
             {
               "expr": "process_open_fds{instance=~\"$node:.*\"}",
@@ -3770,7 +3952,7 @@
               "intervalFactor": 2,
               "legendFormat": "Open file descriptors",
               "refId": "B",
-              "step": 60
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -3843,7 +4025,7 @@
               "intervalFactor": 2,
               "legendFormat": "Resident memory size in bytes",
               "refId": "A",
-              "step": 60
+              "step": 240
             },
             {
               "expr": "process_start_time_seconds{instance=~\"$node:.*\"}",
@@ -3851,7 +4033,7 @@
               "intervalFactor": 2,
               "legendFormat": "Start time of the process since unix epoch in seconds",
               "refId": "B",
-              "step": 60
+              "step": 240
             },
             {
               "expr": "process_virtual_memory_bytes{instance=~\"$node:.*\"}",
@@ -3859,7 +4041,7 @@
               "intervalFactor": 2,
               "legendFormat": "Virtual memory size in bytes",
               "refId": "C",
-              "step": 60
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -4032,14 +4214,14 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}}_read",
               "refId": "A",
-              "step": 60
+              "step": 120
             },
             {
               "expr": "irate(node_disk_bytes_written{instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}}_written",
               "refId": "B",
-              "step": 30
+              "step": 60
             }
           ],
           "thresholds": [],
@@ -4201,14 +4383,14 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}}_read",
               "refId": "A",
-              "step": 60
+              "step": 120
             },
             {
               "expr": "irate(node_disk_writes_completed{instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}}_write",
               "refId": "B",
-              "step": 30
+              "step": 60
             }
           ],
           "thresholds": [],
@@ -4372,7 +4554,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}}_read",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_disk_write_time_ms{instance=~\"$node:.*\"}[5m])",
@@ -4380,7 +4562,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}}_write",
               "refId": "B",
-              "step": 60
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -4539,7 +4721,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}}",
               "refId": "A",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -4702,14 +4884,14 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}}_merged_read",
               "refId": "C",
-              "step": 60
+              "step": 120
             },
             {
               "expr": "irate(node_disk_writes_mergedd{instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}}_merged_write",
               "refId": "D",
-              "step": 60
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -4868,7 +5050,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}} ",
               "refId": "A",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -5032,7 +5214,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}}_completed_read",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_disk_writes_completed{instance=~\"$node:.*\"}[5m])",
@@ -5040,7 +5222,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}}_completed_write",
               "refId": "B",
-              "step": 60
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -5199,7 +5381,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}}",
               "refId": "A",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -5363,7 +5545,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}}_read",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_disk_sectors_written{instance=~\"$node.*\"}[5m])",
@@ -5371,7 +5553,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}}_written",
               "refId": "B",
-              "step": 60
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -5527,7 +5709,7 @@
               "intervalFactor": 4,
               "legendFormat": "read error",
               "refId": "A",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -5617,7 +5799,7 @@
               "legendFormat": "{{mountpoint}} Available",
               "metric": "",
               "refId": "A",
-              "step": 30
+              "step": 60
             },
             {
               "expr": "node_filesystem_free{instance=~\"$node:.*\",device!~'rootfs'}",
@@ -5708,7 +5890,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}}",
               "refId": "A",
-              "step": 30
+              "step": 60
             }
           ],
           "thresholds": [],
@@ -5782,14 +5964,14 @@
               "intervalFactor": 4,
               "legendFormat": "max open files",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "node_filefd_allocated{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
               "legendFormat": "open files",
               "refId": "B",
-              "step": 60
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -5869,7 +6051,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}} ReadOnly",
               "refId": "C",
-              "step": 60
+              "step": 120
             }
           ],
           "thresholds": [],
@@ -5993,14 +6175,14 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} receive",
               "refId": "O",
-              "step": 30
+              "step": 60
             },
             {
               "expr": "irate(node_network_transmit_packets{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} transmit",
               "refId": "P",
-              "step": 30
+              "step": 60
             }
           ],
           "thresholds": [],
@@ -6251,56 +6433,56 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} receive compressed",
               "refId": "C",
-              "step": 30
+              "step": 60
             },
             {
               "expr": "irate(node_network_transmit_compressed{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} transmit compressed",
               "refId": "D",
-              "step": 30
+              "step": 60
             },
             {
               "expr": "irate(node_network_receive_errs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} receive errors",
               "refId": "E",
-              "step": 30
+              "step": 60
             },
             {
               "expr": "irate(node_network_transmit_errs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} transmit errors",
               "refId": "F",
-              "step": 30
+              "step": 60
             },
             {
               "expr": "irate(node_network_receive_drop{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} receive drop",
               "refId": "G",
-              "step": 30
+              "step": 60
             },
             {
               "expr": "irate(node_network_transmit_drop{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} transmit drop",
               "refId": "H",
-              "step": 30
+              "step": 60
             },
             {
               "expr": "irate(node_network_receive_fifo{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} receive fifo",
               "refId": "I",
-              "step": 30
+              "step": 60
             },
             {
               "expr": "irate(node_network_transmit_fifo{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} transmit fifo",
               "refId": "J",
-              "step": 30
+              "step": 60
             },
             {
               "expr": "irate(node_network_receive_frame{instance=~\"$node.*\"}[5m])",
@@ -6323,14 +6505,14 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} receive multicast",
               "refId": "M",
-              "step": 30
+              "step": 60
             },
             {
               "expr": "irate(node_network_transmit_multicast{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} transmit multicast",
               "refId": "N",
-              "step": 30
+              "step": 60
             }
           ],
           "thresholds": [],
@@ -6403,14 +6585,14 @@
               "intervalFactor": 2,
               "legendFormat": "nf conntrack entries",
               "refId": "O",
-              "step": 30
+              "step": 60
             },
             {
               "expr": "node_nf_conntrack_entries_limit{instance=~\"$node.*\"}",
               "intervalFactor": 2,
               "legendFormat": "nf conntrack limit",
               "refId": "P",
-              "step": 30
+              "step": 60
             }
           ],
           "thresholds": [],
@@ -7835,7 +8017,7 @@
               "intervalFactor": 2,
               "legendFormat": "CurrEstab - Number of TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT",
               "refId": "C",
-              "step": 30
+              "step": 240
             },
             {
               "expr": "node_netstat_Tcp_MaxConn{instance=~\"$node.*\"}",
@@ -7843,7 +8025,7 @@
               "intervalFactor": 2,
               "legendFormat": "MaxConn - Limit on the total number of TCP connections the entity can support (Dinamic is \"-1\")",
               "refId": "H",
-              "step": 30
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -7935,7 +8117,7 @@
               "intervalFactor": 2,
               "legendFormat": "InCsumErrors - ",
               "refId": "E",
-              "step": 30
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Tcp_InErrs{instance=~\"$node.*\"}[5m])",
@@ -7943,7 +8125,7 @@
               "intervalFactor": 2,
               "legendFormat": "InErrs - Number of segments received in error (e.g., bad TCP checksums)",
               "refId": "F",
-              "step": 30
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Tcp_InSegs{instance=~\"$node.*\"}[5m])",
@@ -7951,7 +8133,7 @@
               "intervalFactor": 2,
               "legendFormat": "InSegs - Number of segments received, including those received in error. This count includes segments received on currently established connections",
               "refId": "G",
-              "step": 30
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Tcp_OutRsts{instance=~\"$node.*\"}[5m])",
@@ -7959,7 +8141,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutRsts - Number of TCP segments sent containing the RST flag",
               "refId": "I",
-              "step": 30
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Tcp_OutSegs{instance=~\"$node.*\"}[5m])",
@@ -7967,14 +8149,14 @@
               "intervalFactor": 2,
               "legendFormat": "OutSegs - Number of segments sent, including those on current connections but excluding those containing only retransmitted octets",
               "refId": "J",
-              "step": 30
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Tcp_RetransSegs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "RetransSegs - Number of segments retransmitted - that is, the number of TCP segments transmitted containing one or more previously transmitted octets",
               "refId": "A",
-              "step": 30
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -8051,28 +8233,28 @@
               "intervalFactor": 2,
               "legendFormat": "ActiveOpens - TCP connections that have made a direct transition to the SYN-SENT state from the CLOSED state",
               "refId": "A",
-              "step": 30
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Tcp_AttemptFails{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "AttemptFails - TCP connections that have made a direct transition to the CLOSED state from either the SYN-SENT and SYN-RCVD",
               "refId": "B",
-              "step": 30
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Tcp_EstabResets{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "EstabResets - TCP connections that have made a direct transition to the CLOSED state from either the ESTABLISHED state or the CLOSE-WAIT state",
               "refId": "D",
-              "step": 30
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Tcp_PassiveOpens{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "PassiveOpens - TCP connections that have made a direct transition to the SYN-RCVD state from the LISTEN state",
               "refId": "K",
-              "step": 30
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -8158,7 +8340,7 @@
               "intervalFactor": 2,
               "legendFormat": "RtoMax - Maximum value permitted by a TCP implementation for the retransmission timeout, measured in milliseconds",
               "refId": "N",
-              "step": 30
+              "step": 240
             },
             {
               "expr": "node_netstat_Tcp_RtoMin{instance=~\"$node.*\"}",
@@ -8166,7 +8348,7 @@
               "intervalFactor": 2,
               "legendFormat": "RtoMin - Minimum value permitted by a TCP implementation for the retransmission timeout, measured in milliseconds",
               "refId": "O",
-              "step": 30
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -8259,7 +8441,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPAbortOnClose - Connections aborted due to early user close",
               "refId": "V",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPAbortOnData{instance=~\"$node.*\"}[5m])",
@@ -8267,7 +8449,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPAbortOnData - Connections aborted due to unexpected data",
               "refId": "W",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPAbortOnLinger{instance=~\"$node.*\"}[5m])",
@@ -8275,7 +8457,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPAbortOnLinger - Connections aborted in lingered state after being closed",
               "refId": "X",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPAbortOnMemory{instance=~\"$node.*\"}[5m])",
@@ -8283,28 +8465,28 @@
               "intervalFactor": 2,
               "legendFormat": "TCPAbortOnMemory - Connections aborted before attached to a socket",
               "refId": "Y",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPAbortOnTimeout{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPAbortOnTimeout - Connections aborted due timeout",
               "refId": "B",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPAbortFailed{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPAbortFailed - Connections that need to be aborted but the kernel can't do it",
               "refId": "A",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPTimeouts{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPTimeouts - TCP timeouts events",
               "refId": "C",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -8384,21 +8566,21 @@
               "intervalFactor": 2,
               "legendFormat": "DelayedACKLocked - Delayed acks further delayed because of locked socket",
               "refId": "C",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_DelayedACKLost{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "DelayedACKLost - Times quick ack mode was activated",
               "refId": "D",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_DelayedACKs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "DelayedACKs - Delayed acks sent",
               "refId": "E",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -8492,7 +8674,7 @@
               "intervalFactor": 2,
               "legendFormat": "SyncookiesFailed - Invalid SYN cookies received",
               "refId": "R",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_SyncookiesRecv{instance=~\"$node.*\"}[5m])",
@@ -8500,7 +8682,7 @@
               "intervalFactor": 2,
               "legendFormat": "SyncookiesRecv - SYN cookies received",
               "refId": "S",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_SyncookiesSent{instance=~\"$node.*\"}[5m])",
@@ -8508,7 +8690,7 @@
               "intervalFactor": 2,
               "legendFormat": "SyncookiesSent - SYN cookies sent",
               "refId": "T",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -8589,7 +8771,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPLossFailures - TCP data loss events",
               "refId": "C",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPLossProbeRecovery{instance=~\"$node.*\"}[5m])",
@@ -8597,7 +8779,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPLossProbeRecovery -",
               "refId": "D",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -8677,35 +8859,35 @@
               "intervalFactor": 2,
               "legendFormat": "ListenDrops - SYNs to LISTEN sockets ignored",
               "refId": "H",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_LockDroppedIcmps{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "LockDroppedIcmps - ICMP packets dropped because socket was locked",
               "refId": "J",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDeferAcceptDrop{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPDeferAcceptDrop -",
               "refId": "D",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPBacklogDrop{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPBacklogDrop - Packets dropped bacause the socket's receive queue was full",
               "refId": "P",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_OutOfWindowIcmps{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "OutOfWindowIcmps - ICMP pkts dropped because they were out-of-window",
               "refId": "A",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -8785,7 +8967,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPForwardRetrans - Packets losts retransmitted with Forward RTO-Recovery",
               "refId": "O",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSlowStartRetrans{instance=~\"$node.*\"}[5m])",
@@ -8793,7 +8975,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSlowStartRetrans - Packets losts retransmitted after a slow start",
               "refId": "P",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSynRetrans{instance=~\"$node.*\"}[5m])",
@@ -8801,28 +8983,28 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSynRetrans -",
               "refId": "Q",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSpuriousRTOs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPSpuriousRTOs -",
               "refId": "A",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSpuriousRtxHostQueues{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPSpuriousRtxHostQueues -",
               "refId": "B",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFullUndo{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPFullUndo - Retransmits that undid the CWND reduction",
               "refId": "C",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -8903,7 +9085,7 @@
               "intervalFactor": 2,
               "legendFormat": "PruneCalled - Pkts pruned from recv queue because of soc buf overrun",
               "refId": "P",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_RcvPruned{instance=~\"$node.*\"}[5m])",
@@ -8911,14 +9093,14 @@
               "intervalFactor": 2,
               "legendFormat": "RcvPruned - Packets pruned from receive queue",
               "refId": "Q",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_OfoPruned{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "OfoPruned - Packets dropped from out-of-order queue because of socket buffer overrun",
               "refId": "A",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -8998,14 +9180,14 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDirectCopyFromBacklog - Packets directly received from backlog",
               "refId": "M",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDirectCopyFromPrequeue{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPDirectCopyFromPrequeue - Packets directly received from prequeue",
               "refId": "N",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -9084,7 +9266,7 @@
               "intervalFactor": 2,
               "legendFormat": "TW - TCP sockets finished time wait in fast timer",
               "refId": "O",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TWKilled{instance=~\"$node.*\"}[5m])",
@@ -9092,7 +9274,7 @@
               "intervalFactor": 2,
               "legendFormat": "TWKilled - TCP sockets finished time wait in slow timer",
               "refId": "P",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TWRecycled{instance=~\"$node.*\"}[5m])",
@@ -9100,14 +9282,14 @@
               "intervalFactor": 2,
               "legendFormat": "TWRecycled - Time wait sockets recycled by time stamp",
               "refId": "Q",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPTimeWaitOverflow{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPTimeWaitOverflow -",
               "refId": "A",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -9188,7 +9370,7 @@
               "intervalFactor": 2,
               "legendFormat": "PAWSActive - Active connections rejected because of time stamp",
               "refId": "M",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_PAWSEstab{instance=~\"$node.*\"}[5m])",
@@ -9196,7 +9378,7 @@
               "intervalFactor": 2,
               "legendFormat": "PAWSEstab - Pkts rejects in estab connections because of timestamp",
               "refId": "N",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_PAWSPassive{instance=~\"$node.*\"}[5m])",
@@ -9204,7 +9386,7 @@
               "intervalFactor": 2,
               "legendFormat": "PAWSPassive - Passive connections rejected because of time stamp",
               "refId": "O",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -9285,7 +9467,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKIgnoredOld - Discarded packets with duplicate SACK while retransmitting",
               "refId": "F",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDSACKOfoRecv{instance=~\"$node.*\"}[5m])",
@@ -9293,7 +9475,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKOfoRecv -",
               "refId": "G",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDSACKOfoSent{instance=~\"$node.*\"}[5m])",
@@ -9301,7 +9483,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKOfoSent -",
               "refId": "H",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDSACKOldSent{instance=~\"$node.*\"}[5m])",
@@ -9309,7 +9491,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKOldSent - DSACKs sent for old packets",
               "refId": "I",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDSACKRecv{instance=~\"$node.*\"}[5m])",
@@ -9317,7 +9499,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKRecv -",
               "refId": "J",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDSACKUndo{instance=~\"$node.*\"}[5m])",
@@ -9325,14 +9507,14 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKUndo - Discarded packets with erroneous retransmit",
               "refId": "K",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDSACKIgnoredNoUndo{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKIgnoredNoUndo - Discarded packets with duplicate SACK",
               "refId": "A",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -9412,28 +9594,28 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSackRecovery - Packets lost and recovered using selective ACK",
               "refId": "E",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSackRecoveryFail{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPSackRecoveryFail - Issue while recovering packets lost using selective ACK",
               "refId": "F",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSackShiftFallback{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPSackShiftFallback -",
               "refId": "G",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSackShifted{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPSackShifted -",
               "refId": "H",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -9514,7 +9696,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastOpenActive -",
               "refId": "P",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFastOpenActiveFail{instance=~\"$node.*\"}[5m])",
@@ -9522,7 +9704,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastOpenActiveFail -",
               "refId": "Q",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFastOpenCookieReqd{instance=~\"$node.*\"}[5m])",
@@ -9530,7 +9712,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastOpenCookieReqd -",
               "refId": "R",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFastOpenListenOverflow{instance=~\"$node.*\"}[5m])",
@@ -9538,7 +9720,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastOpenListenOverflow -",
               "refId": "S",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFastOpenPassive{instance=~\"$node.*\"}[5m])",
@@ -9546,7 +9728,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastOpenPassive -",
               "refId": "T",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFastOpenPassiveFail{instance=~\"$node.*\"}[5m])",
@@ -9554,7 +9736,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastOpenPassiveFail -",
               "refId": "U",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFastRetrans{instance=~\"$node.*\"}[5m])",
@@ -9562,7 +9744,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastRetrans - Packets lost fast-retransmitted",
               "refId": "V",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -9643,7 +9825,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPHPAcks - Acknowledgments not containing data received",
               "refId": "Z",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPHPHits{instance=~\"$node.*\"}[5m])",
@@ -9651,7 +9833,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPHPHits - Packets header predicted",
               "refId": "A",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPHPHitsToUser{instance=~\"$node.*\"}[5m])",
@@ -9659,7 +9841,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPHPHitsToUser - Packets header predicted and directly queued to user",
               "refId": "B",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -9739,21 +9921,21 @@
               "intervalFactor": 2,
               "legendFormat": "TCPToZeroWindowAdv -",
               "refId": "V",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPWantZeroWindowAdv{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPWantZeroWindowAdv -",
               "refId": "W",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFromZeroWindowAdv{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPFromZeroWindowAdv -",
               "refId": "A",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -9833,14 +10015,14 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFACKReorder - Detected packets with re-ordering using FACK",
               "refId": "E",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPTSReorder{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPTSReorder - Detected packets with re-ordering using timestamp option",
               "refId": "S",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -9920,35 +10102,35 @@
               "intervalFactor": 2,
               "legendFormat": "ArpFilter - ",
               "refId": "A",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_BusyPollRxPackets{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "BusyPollRxPackets - ",
               "refId": "B",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_EmbryonicRsts{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "EmbryonicRsts - Resets received for embryonic SYN_RECV sockets",
               "refId": "F",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_IPReversePathFilter{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "IPReversePathFilter -",
               "refId": "G",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_ListenOverflows{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "ListenOverflows - Times the listen queue of a socket overflowed",
               "refId": "I",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -10029,21 +10211,21 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSchedulerFailed -",
               "refId": "O",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPAutoCorking{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPAutoCorking -",
               "refId": "A",
-              "step": 120
+              "step": 600
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPChallengeACK{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPChallengeACK -",
               "refId": "B",
-              "step": 120
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -11301,7 +11483,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -11331,5 +11513,5 @@
   },
   "timezone": "browser",
   "title": "Node Exporter Full",
-  "version": 64
+  "version": 99
 }
