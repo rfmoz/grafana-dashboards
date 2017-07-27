@@ -1,7 +1,7 @@
 # grafana-dashboards
 Grafana dashboards
 
-Only requires the default job_name: node, add as many targets as you need.
+Only requires the default job_name: node, add as many targets as you need in '/etc/prometheus/prometheus.yml'.
 
 
 ```
