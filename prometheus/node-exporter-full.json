@@ -1,8 +1,8 @@
 {
   "__inputs": [
     {
-      "name": "DS_LOCALHOST",
-      "label": "localhost",
+      "name": "DS_LOCAL",
+      "label": "local",
       "description": "",
       "type": "datasource",
       "pluginId": "prometheus",
@@ -14,7 +14,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.2.0"
+      "version": "4.4.1"
     },
     {
       "type": "panel",
@@ -59,7 +59,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "description": "Busy state of all CPU cores together",
           "format": "percent",
@@ -106,6 +106,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": true
           },
+          "tableColumn": "",
           "targets": [
             {
               "expr": "(((count(count(node_cpu{instance=~\"$node:$port\"}) by (cpu))) - avg(sum by (mode)(irate(node_cpu{mode='idle',instance=~\"$node:$port\"}[5m])))) * 100) / count(count(node_cpu{instance=~\"$node:$port\"}) by (cpu))",
@@ -138,7 +139,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 0,
           "description": "Used RAM Memory without swap and cache",
           "format": "percent",
@@ -185,6 +186,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": true
           },
+          "tableColumn": "",
           "targets": [
             {
               "expr": "((node_memory_MemTotal{instance=~\"$node:$port\"} - node_memory_MemFree{instance=~\"$node:$port\"}) / (node_memory_MemTotal{instance=~\"$node:$port\"} )) * 100",
@@ -215,7 +217,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "description": "Used Swap",
           "format": "percent",
@@ -262,6 +264,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": true
           },
+          "tableColumn": "",
           "targets": [
             {
               "expr": "((node_memory_SwapTotal{instance=~\"$node:$port\"} - node_memory_SwapFree{instance=~\"$node:$port\"}) / (node_memory_SwapTotal{instance=~\"$node:$port\"} )) * 100",
@@ -292,7 +295,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "description": "Used Root FS",
           "format": "percent",
@@ -339,6 +342,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": true
           },
+          "tableColumn": "",
           "targets": [
             {
               "expr": "100 - ((node_filesystem_avail{instance=~\"$node:$port\",device=~'rootfs'} * 100) / node_filesystem_size{instance=~\"$node:$port\",device=~'rootfs'})",
@@ -369,7 +373,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "description": "Busy state of all CPU cores together (1 min average)",
           "format": "percent",
@@ -416,6 +420,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": true
           },
+          "tableColumn": "",
           "targets": [
             {
               "expr": "avg(node_load1{instance=~\"$node:$port\"}) /  count(count(node_cpu{instance=~\"$node:$port\"}) by (cpu)) * 100",
@@ -447,7 +452,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "description": "Busy state of all CPU cores together (5 min average)",
           "format": "percent",
@@ -494,6 +499,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": true
           },
+          "tableColumn": "",
           "targets": [
             {
               "expr": "avg(node_load5{instance=~\"$node:$port\"}) /  count(count(node_cpu{instance=~\"$node:$port\"}) by (cpu)) * 100",
@@ -537,7 +543,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "Total number of CPU cores",
           "format": "none",
           "gauge": {
@@ -583,6 +589,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
+          "tableColumn": "",
           "targets": [
             {
               "expr": "count(count(node_cpu{instance=~\"$node:$port\"}) by (cpu))",
@@ -613,7 +620,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "description": "Total RAM",
           "format": "bytes",
@@ -660,6 +667,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
+          "tableColumn": "",
           "targets": [
             {
               "expr": "node_memory_MemTotal{instance=~\"$node:$port\"}",
@@ -690,7 +698,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "description": "Total SWAP",
           "format": "bytes",
@@ -737,6 +745,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
+          "tableColumn": "",
           "targets": [
             {
               "expr": "node_memory_SwapTotal{instance=~\"$node:$port\"}",
@@ -767,7 +776,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "description": "Total RootFS",
           "format": "bytes",
@@ -814,6 +823,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
+          "tableColumn": "",
           "targets": [
             {
               "expr": "node_filesystem_size{instance=~\"$node:$port\",device=~'rootfs'}",
@@ -845,7 +855,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "description": "System Load (1m avg)",
           "format": "none",
@@ -892,6 +902,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
+          "tableColumn": "",
           "targets": [
             {
               "expr": "node_load1{instance=~\"$node:$port\"}",
@@ -923,7 +934,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 1,
           "description": "System uptime",
           "format": "s",
@@ -970,6 +981,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
+          "tableColumn": "",
           "targets": [
             {
               "expr": "node_time{instance=~\"$node:$port\"} - node_boot_time{instance=~\"$node:$port\"}",
@@ -1022,7 +1034,9 @@
             "user": "#5195CE"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "description": "Basic CPU info",
           "fill": 4,
@@ -1072,6 +1086,7 @@
               "color": "#6D1F62"
             }
           ],
+          "spaceLength": 10,
           "span": 6,
           "stack": true,
           "steppedLine": false,
@@ -1133,6 +1148,7 @@
           "transparent": false,
           "type": "graph",
           "xaxis": {
+            "buckets": null,
             "mode": "time",
             "name": null,
             "show": true,
@@ -1180,7 +1196,9 @@
             "Unused": "#EAB839"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "description": "Basic memory usage",
           "fill": 4,
@@ -1222,6 +1240,7 @@
               "color": "#7EB26D"
             }
           ],
+          "spaceLength": 10,
           "span": 6,
           "stack": true,
           "steppedLine": false,
@@ -1274,6 +1293,7 @@
           },
           "type": "graph",
           "xaxis": {
+            "buckets": null,
             "mode": "time",
             "name": null,
             "show": true,
@@ -1337,7 +1357,9 @@
             "trans_errs_lo": "#890F02"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCAL}",
           "description": "Basic network info per interface.",
           "fill": 4,
           "id": 74,
@@ -1398,6 +1420,7 @@
               "color": "#BA43A9"
             }
           ],
+          "spaceLength": 10,
           "span": 6,
           "stack": false,
           "steppedLine": false,
@@ -1429,6 +1452,7 @@
           "transparent": false,
           "type": "graph",
           "xaxis": {
+            "buckets": null,
             "mode": "time",
             "name": null,
             "show": true,
@@ -1456,7 +1480,9 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCAL}",
           "decimals": 3,
           "description": "Disk space used of all filesystems mounted",
           "fill": 4,
@@ -1485,6 +1511,7 @@
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
+          "spaceLength": 10,
           "span": 6,
           "stack": false,
           "steppedLine": false,
@@ -1508,6 +1535,7 @@
           },
           "type": "graph",
           "xaxis": {
+            "buckets": null,
             "mode": "time",
             "name": null,
             "show": true,
@@ -1558,7 +1586,7 @@
             "user": "#5195CE"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "description": "CPU info",
           "fill": 4,
@@ -1716,7 +1744,7 @@
             "Unused - Free memory unasigned": "#052B51"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "description": "Memory Stack",
           "fill": 4,
@@ -1869,7 +1897,7 @@
             "transmit_packets_lo": "#E24D42"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 4,
           "id": 84,
           "legend": {
@@ -1982,7 +2010,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 3,
           "description": "Disk space used of all filesystems mounted",
           "fill": 4,
@@ -2063,7 +2091,7 @@
             "io time": "#890F02"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 3,
           "description": "",
           "fill": 4,
@@ -2177,7 +2205,7 @@
             "io time": "#890F02"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 3,
           "description": "",
           "fill": 4,
@@ -2293,7 +2321,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 22,
           "legend": {
@@ -2397,7 +2425,7 @@
             "Unused": "#EAB839"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "fill": 2,
           "id": 137,
@@ -2498,7 +2526,7 @@
             "Unused": "#EAB839"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "fill": 2,
           "id": 138,
@@ -2599,7 +2627,7 @@
             "Unused": "#EAB839"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "fill": 2,
           "id": 139,
@@ -2693,7 +2721,7 @@
             "Unused": "#EAB839"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "fill": 2,
           "id": 135,
@@ -2805,7 +2833,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "fill": 2,
           "id": 131,
@@ -2912,7 +2940,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "fill": 2,
           "id": 70,
@@ -3024,7 +3052,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "fill": 2,
           "id": 128,
@@ -3137,7 +3165,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "fill": 2,
           "id": 71,
@@ -3240,7 +3268,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "fill": 2,
           "id": 130,
@@ -3342,7 +3370,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "fill": 2,
           "id": 140,
@@ -3451,7 +3479,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "fill": 2,
           "id": 129,
@@ -3561,7 +3589,7 @@
             "Unused": "#EAB839"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "fill": 2,
           "id": 136,
@@ -3687,7 +3715,7 @@
             "VmallocUsed": "#EA6460"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 2,
           "fill": 2,
           "id": 132,
@@ -3775,7 +3803,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 8,
           "legend": {
@@ -3856,7 +3884,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 151,
           "legend": {
@@ -3929,7 +3957,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 7,
           "legend": {
@@ -4017,7 +4045,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 64,
           "legend": {
@@ -4104,7 +4132,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 62,
           "legend": {
@@ -4184,7 +4212,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 148,
           "legend": {
@@ -4258,7 +4286,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 149,
           "legend": {
@@ -4339,7 +4367,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "",
           "fill": 2,
           "id": 150,
@@ -4425,7 +4453,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "The total number of bytes read / write successfully.",
           "fill": 2,
           "id": 33,
@@ -4593,7 +4621,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "Total number of reads / writes completed successfully",
           "fill": 2,
           "id": 9,
@@ -4762,7 +4790,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "The total number of milliseconds spent by all reads / writes.",
           "fill": 3,
           "id": 37,
@@ -4934,7 +4962,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "The weighted # of milliseconds spent doing I/Os. This field is incremented at each I/O start, I/O completion, I/O  merge, or read of these stats by the number of I/Os in progress times the number of milliseconds spent doing I/O since the last update of this field. This can provide an easy measure of both I/O completion time and the backlog that may be accumulating.",
           "fill": 2,
           "id": 35,
@@ -5093,7 +5121,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "The total number of  reads merged. See https://www.kernel.org/doc/Documentation/iostats.txt.",
           "fill": 2,
           "id": 133,
@@ -5263,7 +5291,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "The number of I/Os currently in progress.",
           "fill": 2,
           "id": 34,
@@ -5422,7 +5450,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "The total number of reads / writes completed successfully. See https://www.kernel.org/doc/Documentation/iostats.txt.",
           "fill": 2,
           "id": 38,
@@ -5594,7 +5622,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "Milliseconds spent doing I/Os.",
           "fill": 3,
           "id": 36,
@@ -5753,7 +5781,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "The total number of sectors read successfully.",
           "fill": 2,
           "id": 134,
@@ -5925,7 +5953,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "1 if there was an error opening or reading a file, 0 otherwise",
           "fill": 2,
           "id": 66,
@@ -6093,7 +6121,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": 3,
           "description": "Filesystem space available to non-root users in bytes. Filesystem free space in bytes. Filesystem read-only status. Filesystem size in bytes.",
           "fill": 2,
@@ -6187,7 +6215,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "Filesystem total file nodes.",
           "fill": 2,
           "id": 41,
@@ -6262,7 +6290,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "File descriptor statistics: allocated.",
           "fill": 2,
           "id": 28,
@@ -6345,7 +6373,7 @@
             "/ ReadOnly": "#890F02"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "description": "Filesystem read-only status.",
           "fill": 2,
@@ -6440,7 +6468,7 @@
             "transmit_packets_lo": "#E24D42"
           },
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 60,
           "legend": {
@@ -6554,7 +6582,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 61,
           "legend": {
@@ -6634,7 +6662,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 141,
           "legend": {
@@ -6752,7 +6780,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 142,
           "legend": {
@@ -6870,7 +6898,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 143,
           "legend": {
@@ -6988,7 +7016,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 144,
           "legend": {
@@ -7106,7 +7134,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 145,
           "legend": {
@@ -7226,7 +7254,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 146,
           "legend": {
@@ -7356,7 +7384,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 63,
           "legend": {
@@ -7467,7 +7495,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 124,
           "legend": {
@@ -7564,7 +7592,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 126,
           "legend": {
@@ -7640,7 +7668,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "id": 125,
           "legend": {
@@ -7742,7 +7770,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 118,
@@ -7884,7 +7912,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 49,
@@ -8001,7 +8029,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 119,
@@ -8127,7 +8155,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 120,
@@ -8257,7 +8285,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 51,
@@ -8397,7 +8425,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 81,
@@ -8484,7 +8512,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 123,
@@ -8585,7 +8613,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 122,
@@ -8691,7 +8719,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 52,
@@ -8822,7 +8850,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 85,
@@ -8908,7 +8936,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 86,
@@ -9002,7 +9030,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 82,
@@ -9112,7 +9140,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -9238,7 +9266,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -9332,7 +9360,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -9442,7 +9470,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -9531,7 +9559,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -9639,7 +9667,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -9756,7 +9784,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -9852,7 +9880,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -9939,7 +9967,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 100,
@@ -10041,7 +10069,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -10138,7 +10166,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -10266,7 +10294,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -10367,7 +10395,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -10496,7 +10524,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -10593,7 +10621,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -10687,7 +10715,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -10774,7 +10802,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -10882,7 +10910,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -10989,7 +11017,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -11088,7 +11116,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 109,
@@ -11207,7 +11235,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 57,
@@ -11301,7 +11329,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "fill": 2,
           "height": "",
           "id": 110,
@@ -11428,7 +11456,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -11633,7 +11661,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -11842,7 +11870,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -11955,7 +11983,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -12068,7 +12096,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -12181,7 +12209,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -12306,7 +12334,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_LOCAL}",
           "description": "node_exporter: Duration of a scrape job.",
           "fill": 2,
           "id": 40,
@@ -12392,14 +12420,14 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_LOCALHOST}",
+        "datasource": "${DS_LOCAL}",
         "hide": 0,
         "includeAll": false,
         "label": "Host:",
         "multi": false,
         "name": "node",
         "options": [],
-        "query": "label_values(node_boot_time{job=\"node-exporter\"}, instance)",
+        "query": "label_values(node_boot_time{job=\"node\"}, instance)",
         "refresh": 1,
         "regex": "/([^:]+):.*/",
         "sort": 0,
@@ -12412,7 +12440,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_LOCALHOST}",
+        "datasource": "${DS_LOCAL}",
         "hide": 2,
         "includeAll": false,
         "label": "port",
@@ -12462,5 +12490,5 @@
   },
   "timezone": "browser",
   "title": "Node Exporter Full",
-  "version": 28
+  "version": 7
 }
