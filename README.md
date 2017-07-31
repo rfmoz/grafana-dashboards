@@ -21,3 +21,8 @@ Only requires the default job_name: node, add as many targets as you need in '/e
 For haproxy_exporter
 
 Only requires a configured target under any job_name.
+
+
+
+Note:
+Thanks to the PCP project for document the values reported by the kernel in /proc (in their /pmdas/linux/help src file mainly). Url --> http://pcp.io
