@@ -32,7 +32,7 @@
   "annotations": {
     "list": []
   },
-  "description": "HAproxy backend servers",
+  "description": "HAProxy backend servers",
   "editable": true,
   "gnetId": 367,
   "graphTooltip": 1,
@@ -947,7 +947,7 @@
       "repeatIteration": null,
       "repeatRowId": null,
       "showTitle": false,
-      "title": "Troughtput",
+      "title": "Throughput",
       "titleSize": "h6"
     },
     {
@@ -2689,7 +2689,7 @@
       "repeatIteration": null,
       "repeatRowId": null,
       "showTitle": false,
-      "title": "By Server Troughtput",
+      "title": "By Server Throughput",
       "titleSize": "h6"
     },
     {
@@ -4477,6 +4477,6 @@
     ]
   },
   "timezone": "browser",
-  "title": "HAproxy",
+  "title": "HAProxy",
   "version": 119
 }
