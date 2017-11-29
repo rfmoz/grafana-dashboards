@@ -1254,7 +1254,7 @@
               "color": "#7EB26D"
             },
             {
-              "alias": "Avaliable",
+              "alias": "Available",
               "color": "#DEDAF7",
               "fill": 0,
               "stack": false
@@ -1783,7 +1783,7 @@
             "Swap_Cache": "#C15C17",
             "Swap_Free": "#2F575E",
             "Unused": "#EAB839",
-            "Unused - Free memory unasigned": "#052B51"
+            "Unused - Free memory unassigned": "#052B51"
           },
           "bars": false,
           "dashLength": 10,
@@ -1885,7 +1885,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "Unused - Free memory unasigned",
+              "legendFormat": "Unused - Free memory unassigned",
               "refId": "D",
               "step": 240
             },
@@ -2560,7 +2560,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Memory Commited",
+          "title": "Memory Committed",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -3113,7 +3113,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "VmallocChunk - Largest contigious block of vmalloc area which is free",
+              "legendFormat": "VmallocChunk - Largest contiguous block of vmalloc area which is free",
               "refId": "H",
               "step": 240
             },
@@ -3994,7 +3994,7 @@
               "expr": "node_memory_NFS_Unstable{instance=~\"$node:$port\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "NFS Unstable - Memory in NFS pages sent to the server, but not yet commited to the storage",
+              "legendFormat": "NFS Unstable - Memory in NFS pages sent to the server, but not yet committed to the storage",
               "refId": "L",
               "step": 240
             }
@@ -4426,7 +4426,7 @@
               "expr": "irate(node_vmstat_pgfault{instance=~\"$node:$port\"}[5m])  - irate(node_vmstat_pgmajfault{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "Pgminfault - Minnor page fault operations",
+              "legendFormat": "Pgminfault - Minor page fault operations",
               "refId": "A",
               "step": 240
             }
@@ -12001,7 +12001,7 @@
               "expr": "irate(node_network_transmit_errs{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{device}} - Rransmit errors",
+              "legendFormat": "{{device}} - Transmit errors",
               "refId": "F",
               "step": 600
             }
@@ -13315,7 +13315,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "InReceives - Ip inreceives",
+              "legendFormat": "InReceives - IP InReceives",
               "refId": "A",
               "step": 600
             },
@@ -13332,7 +13332,7 @@
               "expr": "irate(node_netstat_Ip_InDelivers{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "InDelivers - Ip indelivers",
+              "legendFormat": "InDelivers - IP InDelivers",
               "refId": "I",
               "step": 600
             },
@@ -13341,7 +13341,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "OutRequests - Ip outrequests",
+              "legendFormat": "OutRequests - IP OutRequests",
               "refId": "P",
               "step": 600
             }
@@ -14020,7 +14020,7 @@
               "expr": "irate(node_netstat_Ip_ForwDatagrams{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "ForwDatagrams - Ip outforwdatagrams",
+              "legendFormat": "ForwDatagrams - IP OutForwDatagrams",
               "refId": "C",
               "step": 600
             },
@@ -14028,7 +14028,7 @@
               "expr": "irate(node_netstat_Ip_Forwarding{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "Forwarding - Ip forwarding",
+              "legendFormat": "Forwarding - IP forwarding",
               "refId": "D",
               "step": 600
             }
@@ -14113,7 +14113,7 @@
               "expr": "irate(node_netstat_Ip_FragCreates{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "FragCreates - Ip fragmentation creations",
+              "legendFormat": "FragCreates - IP fragmentation creations",
               "refId": "E",
               "step": 600
             },
@@ -14121,7 +14121,7 @@
               "expr": "irate(node_netstat_Ip_FragFails{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "FragFails - Ip fragmentation failures",
+              "legendFormat": "FragFails - IP fragmentation failures",
               "refId": "F",
               "step": 600
             },
@@ -14129,7 +14129,7 @@
               "expr": "irate(node_netstat_Ip_FragOKs{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "FragOKs - Ip fragmentation oks",
+              "legendFormat": "FragOKs - IP fragmentation oks",
               "refId": "G",
               "step": 600
             }
@@ -14323,7 +14323,7 @@
               "expr": "irate(node_netstat_Ip_ReasmFails{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "ReasmFails - Ip reassembly failures",
+              "legendFormat": "ReasmFails - IP reassembly failures",
               "refId": "Q",
               "step": 600
             },
@@ -14331,7 +14331,7 @@
               "expr": "irate(node_netstat_Ip_ReasmOKs{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "ReasmOKs - Ip reassembly oks",
+              "legendFormat": "ReasmOKs - IP reassembly oks",
               "refId": "R",
               "step": 600
             },
@@ -14339,7 +14339,7 @@
               "expr": "irate(node_netstat_Ip_ReasmReqds{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "ReasmReqds - Ip reassembly requireds",
+              "legendFormat": "ReasmReqds - IP reassembly requireds",
               "refId": "S",
               "step": 600
             },
@@ -14347,7 +14347,7 @@
               "expr": "irate(node_netstat_Ip_ReasmTimeout{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "ReasmTimeout - Ip reasmtimeout",
+              "legendFormat": "ReasmTimeout - IP reassembly timeouts",
               "refId": "T",
               "step": 600
             }
@@ -14355,7 +14355,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Netstat IP Reasambled",
+          "title": "Netstat IP Reassembled",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -14445,7 +14445,7 @@
               "expr": "irate(node_netstat_Ip_InDiscards{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "InDiscards - Ip indiscards",
+              "legendFormat": "InDiscards - IP InDiscards",
               "refId": "J",
               "step": 600
             },
@@ -14453,7 +14453,7 @@
               "expr": "irate(node_netstat_Ip_InHdrErrors{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "InHdrErrors - Ip inhdrerrors",
+              "legendFormat": "InHdrErrors - IP InHdrErrors",
               "refId": "K",
               "step": 600
             },
@@ -14461,7 +14461,7 @@
               "expr": "irate(node_netstat_Ip_InUnknownProtos{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "InUnknownProtos - Ip inunknownprotos",
+              "legendFormat": "InUnknownProtos - IP InUnknownProtos",
               "refId": "M",
               "step": 600
             },
@@ -14469,7 +14469,7 @@
               "expr": "irate(node_netstat_Ip_OutDiscards{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "OutDiscards - Ip outdiscards",
+              "legendFormat": "OutDiscards - IP OutDiscards",
               "refId": "N",
               "step": 600
             },
@@ -14477,7 +14477,7 @@
               "expr": "irate(node_netstat_Ip_OutNoRoutes{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "OutNoRoutes - Ip outnoroutes",
+              "legendFormat": "OutNoRoutes - IP OutNoRoutes",
               "refId": "O",
               "step": 600
             },
@@ -14509,7 +14509,7 @@
               "expr": "irate(node_netstat_Ip_InAddrErrors{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "InAddrErrors - Ip inaddrerrors",
+              "legendFormat": "InAddrErrors - IP InAddrErrors",
               "refId": "D",
               "step": 600
             }
@@ -14760,7 +14760,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "MaxConn - Limit on the total number of TCP connections the entity can support (Dinamic is \"-1\")",
+              "legendFormat": "MaxConn - Limit on the total number of TCP connections the entity can support (Dynamic is \"-1\")",
               "refId": "H",
               "step": 600
             }
@@ -15108,7 +15108,7 @@
               "expr": "irate(node_netstat_TcpExt_TCPAbortFailed{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "TCPAbortFailed - Connections aborted without send RST due insuffient memory",
+              "legendFormat": "TCPAbortFailed - Connections aborted without send RST due insufficient memory",
               "refId": "A",
               "step": 600
             },
@@ -15124,7 +15124,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "TCP Aborts / Tiemouts",
+          "title": "TCP Aborts / Timeouts",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -15201,7 +15201,7 @@
               "expr": "irate(node_netstat_TcpExt_DelayedACKLocked{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "DelayedACKLocked - Delayed acks further delayed because of locked socket",
+              "legendFormat": "DelayedACKLocked - Delayed ACKs further delayed because of locked socket",
               "refId": "C",
               "step": 600
             },
@@ -15209,7 +15209,7 @@
               "expr": "irate(node_netstat_TcpExt_DelayedACKLost{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "DelayedACKLost - Times quick ack mode was activated",
+              "legendFormat": "DelayedACKLost - Times quick ACK mode was activated",
               "refId": "D",
               "step": 600
             },
@@ -15217,7 +15217,7 @@
               "expr": "irate(node_netstat_TcpExt_DelayedACKs{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "DelayedACKs - Delayed acks sent",
+              "legendFormat": "DelayedACKs - Delayed ACKs sent",
               "refId": "E",
               "step": 600
             }
@@ -15461,7 +15461,7 @@
               "expr": "irate(node_netstat_TcpExt_TCPLossUndo{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "TCPLossUndo - Congestion windows recovered without slow start after partial ack",
+              "legendFormat": "TCPLossUndo - Congestion windows recovered without slow start after partial ACK",
               "refId": "B",
               "step": 600
             },
@@ -15578,7 +15578,7 @@
               "expr": "irate(node_netstat_TcpExt_TCPBacklogDrop{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "TCPBacklogDrop - Packets dropped bacause the socket's receive queue was full",
+              "legendFormat": "TCPBacklogDrop - Packets dropped because the socket's receive queue was full",
               "refId": "P",
               "step": 600
             },
@@ -15823,7 +15823,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "PruneCalled - Pkts pruned from recv queue because of soc buf overrun",
+              "legendFormat": "PruneCalled - Packets pruned from receive queue because of socket buffer overrun",
               "refId": "P",
               "step": 600
             },
@@ -16051,7 +16051,7 @@
               "expr": "irate(node_netstat_TcpExt_TCPTimeWaitOverflow{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "TCPTimeWaitOverflow - Occurences of time wait bucket overflow",
+              "legendFormat": "TCPTimeWaitOverflow - Occurrences of time wait bucket overflow",
               "refId": "A",
               "step": 600
             }
@@ -16146,7 +16146,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "PAWSEstab - Pkts rejects in estab connections because of timestamp",
+              "legendFormat": "PAWSEstab - Packets rejected in established connections because of timestamp",
               "refId": "N",
               "step": 600
             },
@@ -16967,7 +16967,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "TCPRenoFailures  - Timeouts after reno fast retransmit",
+              "legendFormat": "TCPRenoFailures  - Timeouts after Reno fast retransmit",
               "refId": "O",
               "step": 600
             },
@@ -16983,7 +16983,7 @@
               "expr": "irate(node_netstat_TcpExt_TCPRenoRecoveryFail{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "TCPRenoRecoveryFail - Times reno fast retransmits failed",
+              "legendFormat": "TCPRenoRecoveryFail - Times Reno fast retransmits failed",
               "refId": "B",
               "step": 600
             },
@@ -16991,7 +16991,7 @@
               "expr": "irate(node_netstat_TcpExt_TCPRenoReorder{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "TCPRenoReorder - Times detected reordering using reno fast retransmit",
+              "legendFormat": "TCPRenoReorder - Times detected reordering using Reno fast retransmit",
               "refId": "C",
               "step": 600
             }
@@ -17643,7 +17643,7 @@
               "expr": "irate(node_netstat_TcpExt_ArpFilter{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "ArpFilter - Arp packets filtered",
+              "legendFormat": "ArpFilter - ARP packets filtered",
               "refId": "A",
               "step": 600
             },
