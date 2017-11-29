@@ -14347,7 +14347,7 @@
               "expr": "irate(node_netstat_Ip_ReasmTimeout{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "ReasmTimeout - Ip reasmtimeout",
+              "legendFormat": "ReasmTimeout - IP reassembly timeouts",
               "refId": "T",
               "step": 600
             }
@@ -15823,7 +15823,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "PruneCalled - Pkts pruned from recv queue because of soc buf overrun",
+              "legendFormat": "PruneCalled - Packets pruned from receive queue because of socket buffer overrun",
               "refId": "P",
               "step": 600
             },
@@ -16146,7 +16146,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "PAWSEstab - Pkts rejects in estab connections because of timestamp",
+              "legendFormat": "PAWSEstab - Packets rejected in established connections because of timestamp",
               "refId": "N",
               "step": 600
             },
