@@ -44,7 +44,7 @@
   "hideControls": false,
   "id": null,
   "links": [],
-  "refresh": false,
+  "refresh": "1m",
   "rows": [
     {
       "collapse": false,
@@ -241,6 +241,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
           "fill": 1,
           "id": 3,
           "legend": {
@@ -308,7 +309,7 @@
               "logBase": 1,
               "max": null,
               "min": null,
-              "show": true
+              "show": false
             }
           ]
         },
@@ -318,6 +319,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
           "fill": 1,
           "id": 1,
           "legend": {
@@ -385,7 +387,7 @@
               "logBase": 1,
               "max": null,
               "min": null,
-              "show": true
+              "show": false
             }
           ]
         }
@@ -407,6 +409,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
           "fill": 1,
           "id": 2,
           "legend": {
@@ -497,6 +500,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
           "fill": 1,
           "id": 7,
           "legend": {
@@ -564,7 +568,7 @@
               "logBase": 1,
               "max": null,
               "min": null,
-              "show": true
+              "show": false
             }
           ]
         },
@@ -574,6 +578,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_LOCALHOST}",
+          "decimals": 2,
           "fill": 1,
           "id": 4,
           "legend": {
@@ -632,7 +637,7 @@
               "label": null,
               "logBase": 1,
               "max": null,
-              "min": null,
+              "min": "0",
               "show": true
             },
             {
@@ -641,7 +646,7 @@
               "logBase": 1,
               "max": null,
               "min": null,
-              "show": true
+              "show": false
             }
           ]
         }
@@ -670,7 +675,7 @@
         "name": "host",
         "options": [],
         "query": "label_values(apache_up, instance)",
-        "refresh": 1,
+        "refresh": 2,
         "regex": "/([^:]+):.*/",
         "sort": 1,
         "tagValuesQuery": "",
@@ -702,8 +707,8 @@
     ]
   },
   "time": {
-    "from": "2017-11-29T23:22:25.133Z",
-    "to": "2017-11-30T23:22:25.133Z"
+    "from": "now-24h",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -732,5 +737,5 @@
   },
   "timezone": "",
   "title": "Apache",
-  "version": 7
+  "version": 10
 }
