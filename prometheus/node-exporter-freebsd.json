@@ -1078,7 +1078,7 @@
               "intervalFactor": 2,
               "legendFormat": "System - Processes executing in kernel mode",
               "refId": "B",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode='user',instance=~\"$node:$port\"}[5m])) * 100",
@@ -1087,7 +1087,7 @@
               "intervalFactor": 2,
               "legendFormat": "User - Normal processes executing in user mode",
               "refId": "D",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"$node:$port\"}[5m])) * 100",
@@ -1095,7 +1095,7 @@
               "intervalFactor": 2,
               "legendFormat": "Idle - Waiting for something to happen",
               "refId": "C",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='interrupt',instance=~\"$node:$port\"}[5m])) * 100",
@@ -1103,7 +1103,7 @@
               "intervalFactor": 2,
               "legendFormat": "Interrupt - Servicing interrupts",
               "refId": "E",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='nice',instance=~\"$node:$port\"}[5m])) * 100",
@@ -1111,7 +1111,7 @@
               "intervalFactor": 2,
               "legendFormat": "Nice - Niced processes executing in user mode",
               "refId": "F",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1200,7 +1200,7 @@
           "links": [],
           "minSpan": 2,
           "nullPointMode": "null",
-          "percentage": false,
+          "percentage": true,
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -1222,7 +1222,7 @@
               "intervalFactor": 2,
               "legendFormat": "Inactive - Memory that is completely free and ready to use",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "node_memory_active_bytes{instance=~\"$node:$port\"}",
@@ -1231,7 +1231,7 @@
               "intervalFactor": 2,
               "legendFormat": "Active - Memory currently being used by a process",
               "refId": "C",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "node_memory_buffer_bytes{instance=~\"$node:$port\"}",
@@ -1240,7 +1240,7 @@
               "intervalFactor": 2,
               "legendFormat": "Buffers - Disk cache",
               "refId": "D",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "node_memory_cache_bytes{instance=~\"$node:$port\"}",
@@ -1258,7 +1258,7 @@
               "intervalFactor": 2,
               "legendFormat": "Wired - Memory in use by the Kernel",
               "refId": "I",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "node_memory_free_bytes{instance=~\"$node:$port\"}",
@@ -1266,7 +1266,7 @@
               "intervalFactor": 2,
               "legendFormat": "Free -  Memory that has been freed but is still cached since it may be used again",
               "refId": "E",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1370,7 +1370,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive",
               "refId": "O",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_network_transmit_bytes{instance=~\"$node:$port\"}[5m])",
@@ -1378,7 +1378,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit",
               "refId": "P",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1466,7 +1466,7 @@
               "intervalFactor": 2,
               "legendFormat": "Swap in",
               "refId": "O",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_memory_swap_out_bytes_total{instance=~\"$node:$port\"}[5m])",
@@ -1474,7 +1474,7 @@
               "intervalFactor": 2,
               "legendFormat": "Swap out",
               "refId": "P",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1558,7 +1558,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - {{mountpoint}} ",
               "refId": "A",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1655,7 +1655,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - {{mountpoint}} - Used",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "node_filesystem_free{instance=~\"$node:$port\"}",
@@ -1672,7 +1672,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - {{mountpoint}} - Available",
               "refId": "C",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -3238,7 +3238,7 @@
         "multi": false,
         "name": "node",
         "options": [],
-        "query": "label_values(node_boot_time{job=\"node\"}, instance)",
+        "query": "label_values(node_time{job=\"node\"}, instance)",
         "refresh": 1,
         "regex": "/([^:]+):.*/",
         "sort": 0,
@@ -3258,7 +3258,7 @@
         "multi": false,
         "name": "port",
         "options": [],
-        "query": "label_values(node_boot_time, instance)",
+        "query": "label_values(node_time, instance)",
         "refresh": 1,
         "regex": "/[^:]+:(.*)/",
         "sort": 0,
@@ -3301,5 +3301,5 @@
   },
   "timezone": "browser",
   "title": "Node Exporter FreeBSD",
-  "version": 21
+  "version": 23
 }
