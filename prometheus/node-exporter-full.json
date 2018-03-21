@@ -114,7 +114,7 @@
               "intervalFactor": 1,
               "legendFormat": "",
               "refId": "A",
-              "step": 10800
+              "step": 900
             }
           ],
           "thresholds": "85,95",
@@ -203,7 +203,7 @@
               "hide": false,
               "intervalFactor": 1,
               "refId": "B",
-              "step": 10800
+              "step": 900
             }
           ],
           "thresholds": "80,90",
@@ -275,7 +275,7 @@
               "expr": "((node_memory_SwapTotal{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapFree{instance=~\"$node:$port\",job=~\"$job\"}) / (node_memory_SwapTotal{instance=~\"$node:$port\",job=~\"$job\"} )) * 100",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 10800
+              "step": 900
             }
           ],
           "thresholds": "10,25",
@@ -354,7 +354,7 @@
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 10800
+              "step": 900
             }
           ],
           "thresholds": "80,90",
@@ -433,7 +433,7 @@
               "hide": false,
               "intervalFactor": 1,
               "refId": "A",
-              "step": 10800
+              "step": 900
             }
           ],
           "thresholds": "85, 95",
@@ -513,7 +513,7 @@
               "hide": false,
               "intervalFactor": 1,
               "refId": "A",
-              "step": 10800
+              "step": 900
             }
           ],
           "thresholds": "85, 95",
@@ -602,7 +602,7 @@
               "expr": "count(count(node_cpu{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu))",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 10800
+              "step": 900
             }
           ],
           "thresholds": "",
@@ -680,7 +680,7 @@
               "expr": "node_memory_MemTotal{instance=~\"$node:$port\",job=~\"$job\"}",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 10800
+              "step": 900
             }
           ],
           "thresholds": "",
@@ -758,7 +758,7 @@
               "expr": "node_memory_SwapTotal{instance=~\"$node:$port\",job=~\"$job\"}",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 10800
+              "step": 900
             }
           ],
           "thresholds": "",
@@ -838,7 +838,7 @@
               "hide": false,
               "intervalFactor": 1,
               "refId": "A",
-              "step": 10800
+              "step": 900
             }
           ],
           "thresholds": "70,90",
@@ -917,7 +917,7 @@
               "hide": false,
               "intervalFactor": 1,
               "refId": "A",
-              "step": 10800
+              "step": 900
             }
           ],
           "thresholds": "",
@@ -995,7 +995,7 @@
               "expr": "node_time{instance=~\"$node:$port\",job=~\"$job\"} - node_boot_time{instance=~\"$node:$port\",job=~\"$job\"}",
               "intervalFactor": 2,
               "refId": "A",
-              "step": 21600
+              "step": 1800
             }
           ],
           "thresholds": "",
@@ -1106,7 +1106,7 @@
               "intervalFactor": 2,
               "legendFormat": "Busy System",
               "refId": "B",
-              "step": 3600
+              "step": 240
             },
             {
               "expr": "sum by (instance)(rate(node_cpu{mode='user',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1115,7 +1115,7 @@
               "intervalFactor": 2,
               "legendFormat": "Busy User",
               "refId": "D",
-              "step": 3600
+              "step": 240
             },
             {
               "expr": "sum by (instance)(rate(node_cpu{mode='iowait',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1123,7 +1123,7 @@
               "intervalFactor": 2,
               "legendFormat": "Busy Iowait",
               "refId": "E",
-              "step": 3600
+              "step": 240
             },
             {
               "expr": "sum by (instance)(rate(node_cpu{mode=~\".*irq\",instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1131,7 +1131,7 @@
               "intervalFactor": 2,
               "legendFormat": "Busy IRQs",
               "refId": "F",
-              "step": 3600
+              "step": 240
             },
             {
               "expr": "sum (rate(node_cpu{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1139,7 +1139,7 @@
               "intervalFactor": 2,
               "legendFormat": "Busy Other",
               "refId": "A",
-              "step": 3600
+              "step": 240
             },
             {
               "expr": "sum by (mode)(rate(node_cpu{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1147,7 +1147,7 @@
               "intervalFactor": 2,
               "legendFormat": "Idle",
               "refId": "C",
-              "step": 3600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1272,7 +1272,7 @@
               "intervalFactor": 2,
               "legendFormat": "RAM Total",
               "refId": "A",
-              "step": 3600
+              "step": 240
             },
             {
               "expr": "node_memory_MemTotal{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_MemFree{instance=~\"$node:$port\",job=~\"$job\"} - (node_memory_Cached{instance=~\"$node:$port\",job=~\"$job\"} + node_memory_Buffers{instance=~\"$node:$port\",job=~\"$job\"})",
@@ -1281,7 +1281,7 @@
               "intervalFactor": 2,
               "legendFormat": "RAM Used",
               "refId": "D",
-              "step": 3600
+              "step": 240
             },
             {
               "expr": "node_memory_Cached{instance=~\"$node:$port\",job=~\"$job\"} + node_memory_Buffers{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1289,7 +1289,7 @@
               "intervalFactor": 2,
               "legendFormat": "RAM Cache + Buffer",
               "refId": "B",
-              "step": 3600
+              "step": 240
             },
             {
               "expr": "node_memory_MemFree{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1297,7 +1297,7 @@
               "intervalFactor": 2,
               "legendFormat": "RAM Free",
               "refId": "F",
-              "step": 3600
+              "step": 240
             },
             {
               "expr": "(node_memory_SwapTotal{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapFree{instance=~\"$node:$port\",job=~\"$job\"})",
@@ -1305,7 +1305,7 @@
               "intervalFactor": 2,
               "legendFormat": "SWAP Used",
               "refId": "G",
-              "step": 3600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1457,7 +1457,7 @@
               "intervalFactor": 2,
               "legendFormat": "recv {{device}}",
               "refId": "A",
-              "step": 3600
+              "step": 240
             },
             {
               "expr": "rate(node_network_transmit_bytes{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -1465,7 +1465,7 @@
               "intervalFactor": 2,
               "legendFormat": "trans {{device}} ",
               "refId": "B",
-              "step": 3600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1550,7 +1550,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}}",
               "refId": "A",
-              "step": 3600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -19520,8 +19520,8 @@
     ]
   },
   "time": {
-    "from": "2018-03-07T08:50:35.035Z",
-    "to": "2018-03-21T08:50:35.035Z"
+    "from": "now-24h",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -19550,5 +19550,5 @@
   },
   "timezone": "browser",
   "title": "Node Exporter Full",
-  "version": 7
+  "version": 8
 }
