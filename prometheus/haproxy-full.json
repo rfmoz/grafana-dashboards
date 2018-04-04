@@ -364,7 +364,7 @@
           },
           "yaxes": [
             {
-              "format": "bps",
+              "format": "Bps",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -829,7 +829,7 @@
           },
           "yaxes": [
             {
-              "format": "bps",
+              "format": "Bps",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -925,7 +925,7 @@
           },
           "yaxes": [
             {
-              "format": "bps",
+              "format": "Bps",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -4398,6 +4398,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
+          "selected": true,
           "text": "30s",
           "value": "30s"
         },
@@ -4478,5 +4479,5 @@
   },
   "timezone": "browser",
   "title": "HAProxy",
-  "version": 3
+  "version": 4
 }
