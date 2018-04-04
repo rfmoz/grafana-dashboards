@@ -20,6 +20,14 @@ Thanks to the PCP project for document the values reported by the kernel in /pro
 
 
 
+### Node Exporter FreeBSD
+
+For node_exporter in FreeBSD system
+
+Only requires a configured target under any job_name.
+
+
+
 ### Haproxy Full
 
 For haproxy_exporter
@@ -28,9 +36,9 @@ Only requires a configured target under any job_name.
 
 
 
-### MySQL Full
+### Apache Full
 
-For mysql_exporter
+For apache_exporter
 
 Only requires a configured target under any job_name.
 
