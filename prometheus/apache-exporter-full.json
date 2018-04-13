@@ -84,7 +84,7 @@
             }
           ],
           "maxDataPoints": 100,
-          "nullPointMode": "null",
+          "nullPointMode": "connected",
           "nullText": null,
           "postfix": "s",
           "postfixFontSize": "50%",
@@ -179,7 +179,7 @@
               "step": 120
             },
             {
-              "expr": "count(apache_up{instance=~\"$host:$port\"} == 0)",
+              "expr": "count_scalar(apache_up{instance=~\"$host:$port\"} == 0)",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Apache Down",
@@ -438,7 +438,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(apache_scoreboard{instance=~\"$host:$port\"}[5m])",
+              "expr": "apache_scoreboard{instance=~\"$host:$port\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{ state }}",
@@ -528,7 +528,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(apache_workers{instance=~\"$host:$port\"}[5m])",
+              "expr": "apache_workers{instance=~\"$host:$port\"}\n",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{ state }}",
@@ -606,7 +606,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(apache_cpuload{instance=~\"$host:$port\"}[5m])",
+              "expr": "apache_cpuload{instance=~\"$host:$port\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Load",
@@ -737,5 +737,5 @@
   },
   "timezone": "",
   "title": "Apache",
-  "version": 10
+  "version": 11
 }
