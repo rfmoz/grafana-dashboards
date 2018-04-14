@@ -434,7 +434,7 @@
           "seriesOverrides": [],
           "spaceLength": 10,
           "span": 12,
-          "stack": false,
+          "stack": true,
           "steppedLine": false,
           "targets": [
             {
@@ -524,7 +524,7 @@
           "seriesOverrides": [],
           "spaceLength": 10,
           "span": 6,
-          "stack": false,
+          "stack": true,
           "steppedLine": false,
           "targets": [
             {
@@ -737,5 +737,5 @@
   },
   "timezone": "",
   "title": "Apache",
-  "version": 11
+  "version": 13
 }
