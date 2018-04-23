@@ -1599,7 +1599,7 @@
     },
     {
       "collapse": true,
-      "height": "450",
+      "height": 462,
       "panels": [
         {
           "aliasColors": {
@@ -1659,7 +1659,7 @@
               "intervalFactor": 2,
               "legendFormat": "System - Processes executing in kernel mode",
               "refId": "A",
-              "step": 55
+              "step": 20
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='user',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1667,7 +1667,7 @@
               "intervalFactor": 2,
               "legendFormat": "User - Normal processes executing in user mode",
               "refId": "B",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='nice',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1675,7 +1675,7 @@
               "intervalFactor": 2,
               "legendFormat": "Nice - Niced processes executing in user mode",
               "refId": "C",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1683,7 +1683,7 @@
               "intervalFactor": 2,
               "legendFormat": "Idle - Waiting for something to happen",
               "refId": "F",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='iowait',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1691,7 +1691,7 @@
               "intervalFactor": 2,
               "legendFormat": "Iowait - Waiting for I/O to complete",
               "refId": "D",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='irq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1699,7 +1699,7 @@
               "intervalFactor": 2,
               "legendFormat": "Irq - Servicing interrupts",
               "refId": "G",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='softirq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1707,7 +1707,7 @@
               "intervalFactor": 2,
               "legendFormat": "Softirq - Servicing softirqs",
               "refId": "H",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='steal',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1715,7 +1715,7 @@
               "intervalFactor": 2,
               "legendFormat": "Steal - Time spent in other operating systems when running in a virtualized environment",
               "refId": "E",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "sum by (mode)(irate(node_cpu{mode='guest',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1723,7 +1723,7 @@
               "intervalFactor": 2,
               "legendFormat": "Guest - Time spent running a virtual CPU for a guest operating system",
               "refId": "I",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -1834,7 +1834,7 @@
               "intervalFactor": 2,
               "legendFormat": "Apps - Memory used by user-space applications",
               "refId": "Q",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "node_memory_PageTables{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1843,7 +1843,7 @@
               "intervalFactor": 2,
               "legendFormat": "PageTables - Memory used to map between virtual and physical memory addresses",
               "refId": "G",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "node_memory_SwapCached{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1851,7 +1851,7 @@
               "intervalFactor": 2,
               "legendFormat": "SwapCache - Memory that keeps track of pages that have been fetched from swap but not yet been modified",
               "refId": "F",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "node_memory_Slab{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1860,7 +1860,7 @@
               "intervalFactor": 2,
               "legendFormat": "Slab - Memory used by the kernel to cache data structures for its own use (caches like inode, dentry, etc)",
               "refId": "E",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "node_memory_Cached{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1869,7 +1869,7 @@
               "intervalFactor": 2,
               "legendFormat": "Cache - Parked file data (file content) cache",
               "refId": "C",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "node_memory_Buffers{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1878,7 +1878,7 @@
               "intervalFactor": 2,
               "legendFormat": "Buffers - Block device (e.g. harddisk) cache",
               "refId": "B",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "node_memory_MemFree{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1887,7 +1887,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unused - Free memory unasigned",
               "refId": "D",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "(node_memory_SwapTotal{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapFree{instance=~\"$node:$port\",job=~\"$job\"})",
@@ -1896,7 +1896,7 @@
               "intervalFactor": 2,
               "legendFormat": "Swap - Swap space used",
               "refId": "I",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "node_memory_HardwareCorrupted{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1905,7 +1905,7 @@
               "intervalFactor": 2,
               "legendFormat": "Harware Corrupted - Amount of RAM that the kernel identified as corrupted / not working",
               "refId": "O",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -2021,7 +2021,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive",
               "refId": "O",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_network_transmit_bytes{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -2029,7 +2029,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit",
               "refId": "P",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -2113,7 +2113,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}}",
               "refId": "A",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -2140,6 +2140,178 @@
               "logBase": 1,
               "max": null,
               "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCALHOST}",
+          "description": "",
+          "fill": 2,
+          "id": 229,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "minSpan": 2,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/.*Read.*/",
+              "transform": "negative-Y"
+            },
+            {
+              "alias": "/.*sda_.*/",
+              "color": "#7EB26D"
+            },
+            {
+              "alias": "/.*sdb_.*/",
+              "color": "#EAB839"
+            },
+            {
+              "alias": "/.*sdc_.*/",
+              "color": "#6ED0E0"
+            },
+            {
+              "alias": "/.*sdd_.*/",
+              "color": "#EF843C"
+            },
+            {
+              "alias": "/.*sde_.*/",
+              "color": "#E24D42"
+            },
+            {
+              "alias": "/.*sda1.*/",
+              "color": "#584477"
+            },
+            {
+              "alias": "/.*sda2_.*/",
+              "color": "#BA43A9"
+            },
+            {
+              "alias": "/.*sda3_.*/",
+              "color": "#F4D598"
+            },
+            {
+              "alias": "/.*sdb1.*/",
+              "color": "#0A50A1"
+            },
+            {
+              "alias": "/.*sdb2.*/",
+              "color": "#BF1B00"
+            },
+            {
+              "alias": "/.*sdb3.*/",
+              "color": "#E0752D"
+            },
+            {
+              "alias": "/.*sdc1.*/",
+              "color": "#962D82"
+            },
+            {
+              "alias": "/.*sdc2.*/",
+              "color": "#614D93"
+            },
+            {
+              "alias": "/.*sdc3.*/",
+              "color": "#9AC48A"
+            },
+            {
+              "alias": "/.*sdd1.*/",
+              "color": "#65C5DB"
+            },
+            {
+              "alias": "/.*sdd2.*/",
+              "color": "#F9934E"
+            },
+            {
+              "alias": "/.*sdd3.*/",
+              "color": "#EA6460"
+            },
+            {
+              "alias": "/.*sde1.*/",
+              "color": "#E0F9D7"
+            },
+            {
+              "alias": "/.*sdd2.*/",
+              "color": "#FCEACA"
+            },
+            {
+              "alias": "/.*sde3.*/",
+              "color": "#F9E2D2"
+            }
+          ],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_disk_reads_completed{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
+              "intervalFactor": 4,
+              "legendFormat": "{{device}} - Reads completed",
+              "refId": "A",
+              "step": 20
+            },
+            {
+              "expr": "irate(node_disk_writes_completed{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
+              "intervalFactor": 2,
+              "legendFormat": "{{device}} - Writes completed",
+              "refId": "B",
+              "step": 10
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Disk IOps",
+          "tooltip": {
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "iops",
+              "label": "IO read (-) / write (+)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
               "show": true
             },
             {
@@ -2224,7 +2396,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Successfully read bytes",
               "refId": "A",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_disk_bytes_written{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
@@ -2233,7 +2405,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Successfully written bytes",
               "refId": "B",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -2319,7 +2491,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Milliseconds spent doing I/Os",
               "refId": "C",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -2430,7 +2602,7 @@
               "intervalFactor": 2,
               "legendFormat": "Inactive - Memory which has been less recently used.  It is more eligible to be reclaimed for other purposes",
               "refId": "K",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_Active{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2438,7 +2610,7 @@
               "intervalFactor": 2,
               "legendFormat": "Active - Memory that has been used more recently and usually not reclaimed unless absolutely necessary",
               "refId": "J",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -2546,7 +2718,7 @@
               "intervalFactor": 2,
               "legendFormat": "Committed_AS - Amount of memory presently allocated on the system",
               "refId": "A",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_CommitLimit{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2554,7 +2726,7 @@
               "intervalFactor": 2,
               "legendFormat": "CommitLimit - Amount of  memory currently available to be allocated on the system",
               "refId": "M",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -2654,7 +2826,7 @@
               "intervalFactor": 2,
               "legendFormat": "Inactive_file - File-backed memory on inactive LRU list",
               "refId": "A",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_Inactive_anon{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2663,7 +2835,7 @@
               "intervalFactor": 2,
               "legendFormat": "Inactive_anon - Anonymous and swap cache on inactive LRU list, including tmpfs (shmem)",
               "refId": "D",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_Active_file{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2672,7 +2844,7 @@
               "intervalFactor": 2,
               "legendFormat": "Active_file - File-backed memory on active LRU list",
               "refId": "B",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_Active_anon{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2681,7 +2853,7 @@
               "intervalFactor": 2,
               "legendFormat": "Active_anon - Anonymous and swap cache on active least-recently-used (LRU) list, including tmpfs",
               "refId": "C",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -2782,7 +2954,7 @@
               "intervalFactor": 2,
               "legendFormat": "Writeback - Memory which is actively being written back to disk",
               "refId": "J",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_WritebackTmp{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2790,7 +2962,7 @@
               "intervalFactor": 2,
               "legendFormat": "WritebackTmp - Memory used by FUSE for temporary writeback buffers",
               "refId": "K",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_Dirty{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2798,7 +2970,7 @@
               "intervalFactor": 2,
               "legendFormat": "Dirty - Memory which is waiting to get written back to the disk",
               "refId": "A",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -2897,7 +3069,7 @@
               "intervalFactor": 2,
               "legendFormat": "Mapped - Used memory in mapped pages files which have been mmaped, such as libraries",
               "refId": "A",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_Shmem{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2905,7 +3077,7 @@
               "intervalFactor": 2,
               "legendFormat": "Shmem - Used shared memory (shared between several processes, thus including RAM disks)",
               "refId": "B",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -3006,7 +3178,7 @@
               "intervalFactor": 2,
               "legendFormat": "SUnreclaim - Part of Slab, that cannot be reclaimed on memory pressure",
               "refId": "O",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_SReclaimable{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3014,7 +3186,7 @@
               "intervalFactor": 2,
               "legendFormat": "SReclaimable - Part of Slab, that might be reclaimed, such as caches",
               "refId": "N",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -3115,7 +3287,7 @@
               "intervalFactor": 2,
               "legendFormat": "VmallocChunk - Largest contigious block of vmalloc area which is free",
               "refId": "H",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_VmallocTotal{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3124,7 +3296,7 @@
               "intervalFactor": 2,
               "legendFormat": "VmallocTotal - Total size of vmalloc memory area",
               "refId": "I",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_VmallocUsed{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3133,7 +3305,7 @@
               "intervalFactor": 2,
               "legendFormat": "VmallocUsed - Amount of vmalloc area which is used",
               "refId": "O",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -3232,7 +3404,7 @@
               "intervalFactor": 2,
               "legendFormat": "Bounce - Memory used for block device bounce buffers",
               "refId": "N",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -3337,7 +3509,7 @@
               "intervalFactor": 2,
               "legendFormat": "AnonHugePages - Memory in anonymous huge pages",
               "refId": "D",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_AnonPages{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3345,7 +3517,7 @@
               "intervalFactor": 2,
               "legendFormat": "AnonPages - Memory in user pages not backed by files",
               "refId": "G",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -3444,7 +3616,7 @@
               "intervalFactor": 2,
               "legendFormat": "KernelStack - Kernel memory stack. This is not reclaimable",
               "refId": "N",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -3544,7 +3716,7 @@
               "intervalFactor": 2,
               "legendFormat": "HugePages_Free - Huge pages in the pool that are not yet allocated",
               "refId": "I",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_HugePages_Rsvd{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3552,7 +3724,7 @@
               "intervalFactor": 2,
               "legendFormat": "HugePages_Rsvd - Huge pages for which a commitment to allocate from the pool has been made, but no allocation has yet been made",
               "refId": "J",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_HugePages_Surp{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3560,7 +3732,7 @@
               "intervalFactor": 2,
               "legendFormat": "HugePages_Surp - Huge pages in the pool above the value in /proc/sys/vm/nr_hugepages",
               "refId": "K",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -3660,7 +3832,7 @@
               "intervalFactor": 2,
               "legendFormat": "HugePages - Total size of the pool of huge pages",
               "refId": "L",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_Hugepagesize{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3668,7 +3840,7 @@
               "intervalFactor": 2,
               "legendFormat": "Hugepagesize - Huge Page size",
               "refId": "D",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -3770,7 +3942,7 @@
               "intervalFactor": 2,
               "legendFormat": "DirectMap1G - Amount of pages mapped as this size",
               "refId": "J",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_DirectMap2M{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3779,7 +3951,7 @@
               "intervalFactor": 2,
               "legendFormat": "DirectMap2M - Amount of pages mapped as this size",
               "refId": "K",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_DirectMap4k{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3788,7 +3960,7 @@
               "intervalFactor": 2,
               "legendFormat": "DirectMap4K - Amount of pages mapped as this size",
               "refId": "L",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -3887,7 +4059,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable - Amount of unevictable memory that can't be swapped out for a variety of reasons",
               "refId": "P",
-              "step": 240
+              "step": 10
             },
             {
               "expr": "node_memory_Mlocked{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3895,7 +4067,7 @@
               "intervalFactor": 2,
               "legendFormat": "MLocked - Size of pages locked to memory using the mlock() system call",
               "refId": "C",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -3996,7 +4168,7 @@
               "intervalFactor": 2,
               "legendFormat": "NFS Unstable - Memory in NFS pages sent to the server, but not yet commited to the storage",
               "refId": "L",
-              "step": 240
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -4092,7 +4264,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pagesin - Page in operations",
               "refId": "A",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgpgout{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4100,7 +4272,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pagesout - Page out operations",
               "refId": "B",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -4184,7 +4356,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pswpin - Pages swapped in",
               "refId": "A",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pswpout{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4192,7 +4364,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pswpout - Pages swapped out",
               "refId": "B",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -4291,7 +4463,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgdeactivate - Pages moved from active to inactive",
               "refId": "B",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgfree{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4299,7 +4471,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgfree - Page free operations",
               "refId": "D",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgactivate{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4307,7 +4479,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgactivate - Pages moved from inactive to active",
               "refId": "A",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -4412,7 +4584,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgfault - Page major and minor fault operations",
               "refId": "C",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgmajfault{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4420,7 +4592,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgmajfault - Major page fault operations",
               "refId": "F",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgfault{instance=~\"$node:$port\",job=~\"$job\"}[5m])  - irate(node_vmstat_pgmajfault{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4428,7 +4600,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgminfault - Minnor page fault operations",
               "refId": "A",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -4527,7 +4699,7 @@
               "intervalFactor": 2,
               "legendFormat": "Kswapd_inodesteal - Pages reclaimed via kswapd inode freeing",
               "refId": "A",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pginodesteal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4535,7 +4707,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgindesteal - Pages reclaimed via inode freeing",
               "refId": "B",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -4634,21 +4806,21 @@
               "intervalFactor": 2,
               "legendFormat": "Pageoutrun - Kswapd calls to page reclaim",
               "refId": "A",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_allocstall{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Allocstall - Direct reclaim calls",
               "refId": "B",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_zone_reclaim_failed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Zone_reclaim_failed - Zone reclaim failures",
               "refId": "C",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -4747,7 +4919,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrotated - Pages rotated to tail of the LRU",
               "refId": "D",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -4846,7 +5018,7 @@
               "intervalFactor": 2,
               "legendFormat": "Drop_pagecache - Calls to drop page cache pages",
               "refId": "N",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "node_vmstat_drop_slab{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -4854,7 +5026,7 @@
               "intervalFactor": 2,
               "legendFormat": "Drop_slab - Calls to drop slab cache pages",
               "refId": "A",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -4953,7 +5125,7 @@
               "intervalFactor": 2,
               "legendFormat": "Slabs_scanned - Slab pages scanned",
               "refId": "B",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -5052,7 +5224,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_cleared - Unevictable pages cleared",
               "refId": "B",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_culled{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5060,7 +5232,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_culled - Unevictable pages culled",
               "refId": "C",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_mlocked{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5068,7 +5240,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_mlocked - Unevictable pages mlocked",
               "refId": "D",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_munlocked{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5076,7 +5248,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_munlocked - Unevictable pages munlocked",
               "refId": "E",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_rescued{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5084,7 +5256,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_rescued- Unevictable pages rescued",
               "refId": "F",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_scanned{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5092,7 +5264,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_scanned - Unevictable pages scanned",
               "refId": "G",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_stranded{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5100,7 +5272,7 @@
               "intervalFactor": 2,
               "legendFormat": "unevictable_pgs_stranded - Unevictable pages stranded",
               "refId": "H",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -5199,7 +5371,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgalloc_dma - Dma mem page allocations",
               "refId": "A",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgalloc_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5207,7 +5379,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgalloc_dma32 - Dma32 mem page allocations",
               "refId": "B",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgalloc_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5215,7 +5387,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgalloc_movable - Movable mem page allocations",
               "refId": "C",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgalloc_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5223,7 +5395,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgalloc_normal - Normal mem page allocations",
               "refId": "D",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -5322,7 +5494,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrefill_dma - Dma mem pages inspected in refill_inactive_zone",
               "refId": "B",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgrefill_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5330,7 +5502,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrefill_dma32 - Dma32 mem pages inspected in refill_inactive_zone",
               "refId": "C",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgrefill_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5338,7 +5510,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrefill_movable - Movable mem pages inspected in refill_inactive_zone",
               "refId": "D",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgrefill_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5346,7 +5518,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrefill_normal - Normal mem pages inspected in refill_inactive_zone",
               "refId": "E",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -5445,7 +5617,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_direct_dma - Dma mem pages stealed",
               "refId": "B",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgsteal_direct_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5453,7 +5625,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_direct_dma32 - Dma32 mem pages scanned",
               "refId": "C",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgsteal_direct_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5461,7 +5633,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_direct_movable - Movable mem pages scanned",
               "refId": "D",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgsteal_direct_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5469,7 +5641,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_direct_normal - Normal mem pages scanned",
               "refId": "E",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -5568,7 +5740,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_kswapd_dma - Dma mem pages scanned by kswapd",
               "refId": "F",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgsteal_kswapd_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5576,7 +5748,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_kswapd_dma32 - Dma32 mem pages scanned by kswapd",
               "refId": "G",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgsteal_kswapd_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5584,7 +5756,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_kswapd_movable - Movable mem pages scanned by kswapd",
               "refId": "H",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgsteal_kswapd_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5592,7 +5764,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_kswapd_normal - Normal mem pages scanned by kswapd",
               "refId": "I",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -5691,7 +5863,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_direct_dma - Dma mem pages scanned",
               "refId": "A",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgscan_direct_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5699,7 +5871,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_direct_dma32 - Dma32 mem pages scanned",
               "refId": "C",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgscan_direct_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5707,7 +5879,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_direct_movable - Movable mem pages scanned",
               "refId": "D",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgscan_direct_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5715,7 +5887,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_direct_normal - Normal mem pages scanned",
               "refId": "E",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgscan_direct_throttle{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5823,7 +5995,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_kswapd_dma - Dma mem pages scanned by kswapd",
               "refId": "B",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgscan_kswapd_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5831,7 +6003,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_kswapd_dma32 - Dma32 mem pages scanned by kswapd",
               "refId": "G",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgscan_kswapd_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5839,7 +6011,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_kswapd_movable - Movable mem pages scanned by kswapd",
               "refId": "H",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgscan_kswapd_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5847,7 +6019,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_kswapd_normal - Normal mem pages scanned by kswapd",
               "refId": "I",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -5953,7 +6125,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_free_scanned - Pages scanned for freeing by compaction daemon",
               "refId": "B",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_compact_isolated{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5961,7 +6133,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_isolated - Page isolations for memory compaction",
               "refId": "C",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_compact_migrate_scanned{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5969,7 +6141,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_migrate_scanned - Pages scanned for migration by compaction daemon",
               "refId": "D",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -6075,7 +6247,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_fail - Unsuccessful compactions for high order allocations",
               "refId": "A",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_compact_stall{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6083,7 +6255,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_stall - Failures to even start compacting",
               "refId": "E",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_compact_success{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6091,7 +6263,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_sucess - Successful compactions for high order allocations",
               "refId": "F",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -6190,7 +6362,7 @@
               "intervalFactor": 2,
               "legendFormat": "Kswapd_high_wmark_hit_quickly - Times high watermark reached quickly",
               "refId": "N",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "node_vmstat_kswapd_low_wmark_hit_quickly{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -6198,7 +6370,7 @@
               "intervalFactor": 2,
               "legendFormat": "Kswapd_low_wmark_hit_quickly - Times low watermark reached quickly",
               "refId": "B",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -6297,7 +6469,7 @@
               "intervalFactor": 2,
               "legendFormat": "Htlb_buddy_alloc_fail - Huge TLB page buddy allocation failures",
               "refId": "N",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "node_vmstat_htlb_buddy_alloc_success{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -6305,7 +6477,7 @@
               "intervalFactor": 2,
               "legendFormat": "Htlb_buddy_alloc_success - Huge TLB page buddy allocation successes",
               "refId": "A",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -6404,7 +6576,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_foreign - Foreign NUMA zone allocations",
               "refId": "A",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_numa_hit{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6412,7 +6584,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_hit - Successful allocations from preferred NUMA zone",
               "refId": "D",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_numa_interleave{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6420,7 +6592,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_interleave - Interleaved NUMA allocations in each zone for each NUMA node",
               "refId": "F",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_numa_local{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6428,7 +6600,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_local - Successful allocations from local NUMA zone",
               "refId": "G",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_numa_miss{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6436,7 +6608,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_miss - Unsuccessful allocations from preferred NUMA zona",
               "refId": "H",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_numa_other{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6444,7 +6616,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_other - Unsuccessful allocations from local NUMA zone",
               "refId": "I",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -6549,7 +6721,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_pages_migrated - NUMA page migrations",
               "refId": "J",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgmigrate_fail{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6557,7 +6729,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgmigrate_fail - Unsuccessful NUMA page migrations",
               "refId": "A",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_pgmigrate_success{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6565,7 +6737,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgmigrate_success - Successful NUMA page migrations",
               "refId": "B",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -6664,7 +6836,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_hint_faults - NUMA hint faults trapped",
               "refId": "B",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_numa_hint_faults_local{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6672,7 +6844,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_hint_faults_local - Hinting faults to local nodes",
               "refId": "C",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -6771,14 +6943,14 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_pte_updates - NUMA page table entry updates",
               "refId": "K",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_numa_huge_pte_updates{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Numa_huge_pte_updates - NUMA huge page table entry updates",
               "refId": "A",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -6877,7 +7049,7 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_split - Transparent huge page splits",
               "refId": "F",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -6976,7 +7148,7 @@
               "intervalFactor": 2,
               "legendFormat": "Workingset_activate - Page activations to form the working set",
               "refId": "C",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_workingset_nodereclaim{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6984,7 +7156,7 @@
               "intervalFactor": 2,
               "legendFormat": "Workingset_nodereclaim - NUMA node working set page reclaims",
               "refId": "D",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_workingset_refault{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6992,7 +7164,7 @@
               "intervalFactor": 2,
               "legendFormat": "Workingset_refault - Refaults of previously evicted pages",
               "refId": "E",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -7091,7 +7263,7 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_collapse_alloc - Transparent huge page collapse allocations",
               "refId": "A",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_thp_collapse_alloc_failed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -7099,7 +7271,7 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_collapse_alloc_failed - Transparent huge page collapse allocation failures",
               "refId": "C",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_thp_zero_page_alloc{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -7107,7 +7279,7 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_zero_page_alloc - Transparent huge page zeroed page allocations",
               "refId": "G",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_thp_zero_page_alloc_failed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -7115,21 +7287,21 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_zero_page_alloc_failed - Transparent huge page zeroed page allocation failures",
               "refId": "H",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_thp_fault_alloc{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Thp_fault_alloc - Transparent huge page fault allocations",
               "refId": "B",
-              "step": 1800
+              "step": 10
             },
             {
               "expr": "irate(node_vmstat_thp_fault_fallback{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Thp_fault_fallback - Transparent huge page fault fallbacks",
               "refId": "D",
-              "step": 1800
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -9817,6 +9989,353 @@
           "dashes": false,
           "datasource": "${DS_LOCALHOST}",
           "description": "",
+          "fill": 2,
+          "id": 9,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "minSpan": 2,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "seriesOverrides": [
+            {
+              "alias": "/.*Read.*/",
+              "transform": "negative-Y"
+            },
+            {
+              "alias": "/.*sda_.*/",
+              "color": "#7EB26D"
+            },
+            {
+              "alias": "/.*sdb_.*/",
+              "color": "#EAB839"
+            },
+            {
+              "alias": "/.*sdc_.*/",
+              "color": "#6ED0E0"
+            },
+            {
+              "alias": "/.*sdd_.*/",
+              "color": "#EF843C"
+            },
+            {
+              "alias": "/.*sde_.*/",
+              "color": "#E24D42"
+            },
+            {
+              "alias": "/.*sda1.*/",
+              "color": "#584477"
+            },
+            {
+              "alias": "/.*sda2_.*/",
+              "color": "#BA43A9"
+            },
+            {
+              "alias": "/.*sda3_.*/",
+              "color": "#F4D598"
+            },
+            {
+              "alias": "/.*sdb1.*/",
+              "color": "#0A50A1"
+            },
+            {
+              "alias": "/.*sdb2.*/",
+              "color": "#BF1B00"
+            },
+            {
+              "alias": "/.*sdb3.*/",
+              "color": "#E0752D"
+            },
+            {
+              "alias": "/.*sdc1.*/",
+              "color": "#962D82"
+            },
+            {
+              "alias": "/.*sdc2.*/",
+              "color": "#614D93"
+            },
+            {
+              "alias": "/.*sdc3.*/",
+              "color": "#9AC48A"
+            },
+            {
+              "alias": "/.*sdd1.*/",
+              "color": "#65C5DB"
+            },
+            {
+              "alias": "/.*sdd2.*/",
+              "color": "#F9934E"
+            },
+            {
+              "alias": "/.*sdd3.*/",
+              "color": "#EA6460"
+            },
+            {
+              "alias": "/.*sde1.*/",
+              "color": "#E0F9D7"
+            },
+            {
+              "alias": "/.*sdd2.*/",
+              "color": "#FCEACA"
+            },
+            {
+              "alias": "/.*sde3.*/",
+              "color": "#F9E2D2"
+            }
+          ],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_disk_reads_completed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "intervalFactor": 4,
+              "legendFormat": "{{device}} - Reads completed",
+              "refId": "A",
+              "step": 20
+            },
+            {
+              "expr": "irate(node_disk_writes_completed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "intervalFactor": 2,
+              "legendFormat": "{{device}} - Writes completed",
+              "refId": "B",
+              "step": 10
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Disk IOps Completed",
+          "tooltip": {
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "iops",
+              "label": "IO read (-) / write (+)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCALHOST}",
+          "description": "",
+          "fill": 2,
+          "id": 33,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "minSpan": 2,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/.*Read.*/",
+              "transform": "negative-Y"
+            },
+            {
+              "alias": "/.*sda_.*/",
+              "color": "#7EB26D"
+            },
+            {
+              "alias": "/.*sdb_.*/",
+              "color": "#EAB839"
+            },
+            {
+              "alias": "/.*sdc_.*/",
+              "color": "#6ED0E0"
+            },
+            {
+              "alias": "/.*sdd_.*/",
+              "color": "#EF843C"
+            },
+            {
+              "alias": "/.*sde_.*/",
+              "color": "#E24D42"
+            },
+            {
+              "alias": "/.*sda1.*/",
+              "color": "#584477"
+            },
+            {
+              "alias": "/.*sda2_.*/",
+              "color": "#BA43A9"
+            },
+            {
+              "alias": "/.*sda3_.*/",
+              "color": "#F4D598"
+            },
+            {
+              "alias": "/.*sdb1.*/",
+              "color": "#0A50A1"
+            },
+            {
+              "alias": "/.*sdb2.*/",
+              "color": "#BF1B00"
+            },
+            {
+              "alias": "/.*sdb3.*/",
+              "color": "#E0752D"
+            },
+            {
+              "alias": "/.*sdc1.*/",
+              "color": "#962D82"
+            },
+            {
+              "alias": "/.*sdc2.*/",
+              "color": "#614D93"
+            },
+            {
+              "alias": "/.*sdc3.*/",
+              "color": "#9AC48A"
+            },
+            {
+              "alias": "/.*sdd1.*/",
+              "color": "#65C5DB"
+            },
+            {
+              "alias": "/.*sdd2.*/",
+              "color": "#F9934E"
+            },
+            {
+              "alias": "/.*sdd3.*/",
+              "color": "#EA6460"
+            },
+            {
+              "alias": "/.*sde1.*/",
+              "color": "#E0F9D7"
+            },
+            {
+              "alias": "/.*sdd2.*/",
+              "color": "#FCEACA"
+            },
+            {
+              "alias": "/.*sde3.*/",
+              "color": "#F9E2D2"
+            }
+          ],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_disk_bytes_read{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 4,
+              "legendFormat": "{{device}} - Read bytes",
+              "refId": "A",
+              "step": 20
+            },
+            {
+              "expr": "irate(node_disk_bytes_written{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "{{device}} - Writeen bytes",
+              "refId": "B",
+              "step": 10
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Disk R/W Data",
+          "tooltip": {
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "Bps",
+              "label": "Bytes read (-) / write (+)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCALHOST}",
+          "description": "",
           "fill": 3,
           "id": 37,
           "legend": {
@@ -9844,7 +10363,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "/.*read.*/",
+              "alias": "/.*Read.*/",
               "transform": "negative-Y"
             },
             {
@@ -9939,7 +10458,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}} - Read time ms",
               "refId": "A",
-              "step": 1200
+              "step": 20
             },
             {
               "expr": "irate(node_disk_write_time_ms{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -9947,7 +10466,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Write time ms",
               "refId": "B",
-              "step": 600
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -9973,354 +10492,7 @@
               "label": "Millisec. read (-) / write (+)",
               "logBase": 1,
               "max": null,
-              "min": "0",
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
               "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
-          "description": "",
-          "fill": 2,
-          "id": 33,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "minSpan": 2,
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "/.*read.*/",
-              "transform": "negative-Y"
-            },
-            {
-              "alias": "/.*sda_.*/",
-              "color": "#7EB26D"
-            },
-            {
-              "alias": "/.*sdb_.*/",
-              "color": "#EAB839"
-            },
-            {
-              "alias": "/.*sdc_.*/",
-              "color": "#6ED0E0"
-            },
-            {
-              "alias": "/.*sdd_.*/",
-              "color": "#EF843C"
-            },
-            {
-              "alias": "/.*sde_.*/",
-              "color": "#E24D42"
-            },
-            {
-              "alias": "/.*sda1.*/",
-              "color": "#584477"
-            },
-            {
-              "alias": "/.*sda2_.*/",
-              "color": "#BA43A9"
-            },
-            {
-              "alias": "/.*sda3_.*/",
-              "color": "#F4D598"
-            },
-            {
-              "alias": "/.*sdb1.*/",
-              "color": "#0A50A1"
-            },
-            {
-              "alias": "/.*sdb2.*/",
-              "color": "#BF1B00"
-            },
-            {
-              "alias": "/.*sdb3.*/",
-              "color": "#E0752D"
-            },
-            {
-              "alias": "/.*sdc1.*/",
-              "color": "#962D82"
-            },
-            {
-              "alias": "/.*sdc2.*/",
-              "color": "#614D93"
-            },
-            {
-              "alias": "/.*sdc3.*/",
-              "color": "#9AC48A"
-            },
-            {
-              "alias": "/.*sdd1.*/",
-              "color": "#65C5DB"
-            },
-            {
-              "alias": "/.*sdd2.*/",
-              "color": "#F9934E"
-            },
-            {
-              "alias": "/.*sdd3.*/",
-              "color": "#EA6460"
-            },
-            {
-              "alias": "/.*sde1.*/",
-              "color": "#E0F9D7"
-            },
-            {
-              "alias": "/.*sdd2.*/",
-              "color": "#FCEACA"
-            },
-            {
-              "alias": "/.*sde3.*/",
-              "color": "#F9E2D2"
-            }
-          ],
-          "spaceLength": 10,
-          "span": 6,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "irate(node_disk_bytes_read{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "format": "time_series",
-              "intervalFactor": 4,
-              "legendFormat": "{{device}} - Bytes read",
-              "refId": "A",
-              "step": 1200
-            },
-            {
-              "expr": "irate(node_disk_bytes_written{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "{{device}} - Bytes written",
-              "refId": "B",
-              "step": 600
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Disk R/W Data",
-          "tooltip": {
-            "shared": false,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "Bps",
-              "label": "Bytes read (-) / write (+)",
-              "logBase": 1,
-              "max": null,
-              "min": "0",
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
-          "description": "",
-          "fill": 2,
-          "id": 9,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "minSpan": 2,
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "repeat": null,
-          "seriesOverrides": [
-            {
-              "alias": "/.*read.*/",
-              "transform": "negative-Y"
-            },
-            {
-              "alias": "/.*sda_.*/",
-              "color": "#7EB26D"
-            },
-            {
-              "alias": "/.*sdb_.*/",
-              "color": "#EAB839"
-            },
-            {
-              "alias": "/.*sdc_.*/",
-              "color": "#6ED0E0"
-            },
-            {
-              "alias": "/.*sdd_.*/",
-              "color": "#EF843C"
-            },
-            {
-              "alias": "/.*sde_.*/",
-              "color": "#E24D42"
-            },
-            {
-              "alias": "/.*sda1.*/",
-              "color": "#584477"
-            },
-            {
-              "alias": "/.*sda2_.*/",
-              "color": "#BA43A9"
-            },
-            {
-              "alias": "/.*sda3_.*/",
-              "color": "#F4D598"
-            },
-            {
-              "alias": "/.*sdb1.*/",
-              "color": "#0A50A1"
-            },
-            {
-              "alias": "/.*sdb2.*/",
-              "color": "#BF1B00"
-            },
-            {
-              "alias": "/.*sdb3.*/",
-              "color": "#E0752D"
-            },
-            {
-              "alias": "/.*sdc1.*/",
-              "color": "#962D82"
-            },
-            {
-              "alias": "/.*sdc2.*/",
-              "color": "#614D93"
-            },
-            {
-              "alias": "/.*sdc3.*/",
-              "color": "#9AC48A"
-            },
-            {
-              "alias": "/.*sdd1.*/",
-              "color": "#65C5DB"
-            },
-            {
-              "alias": "/.*sdd2.*/",
-              "color": "#F9934E"
-            },
-            {
-              "alias": "/.*sdd3.*/",
-              "color": "#EA6460"
-            },
-            {
-              "alias": "/.*sde1.*/",
-              "color": "#E0F9D7"
-            },
-            {
-              "alias": "/.*sdd2.*/",
-              "color": "#FCEACA"
-            },
-            {
-              "alias": "/.*sde3.*/",
-              "color": "#F9E2D2"
-            }
-          ],
-          "spaceLength": 10,
-          "span": 6,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "irate(node_disk_reads_completed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "intervalFactor": 4,
-              "legendFormat": "{{device}} - Reads completed",
-              "refId": "A",
-              "step": 1200
-            },
-            {
-              "expr": "irate(node_disk_writes_completed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "intervalFactor": 2,
-              "legendFormat": "{{device}} - Writes completed",
-              "refId": "B",
-              "step": 600
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Disk IOs Completed",
-          "tooltip": {
-            "shared": false,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "iops",
-              "label": "IO read (-) / write (+)",
-              "logBase": 1,
-              "max": null,
-              "min": "0",
               "show": true
             },
             {
@@ -10367,7 +10539,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "/.*read.*/",
+              "alias": "/.*Read.*/",
               "transform": "negative-Y"
             },
             {
@@ -10461,18 +10633,18 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 4,
-              "legendFormat": "{{device}} - Sectors read",
+              "legendFormat": "{{device}} - Read sectors",
               "refId": "A",
-              "step": 1200
+              "step": 20
             },
             {
               "expr": "irate(node_disk_sectors_written{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "{{device}} - Sectors written",
+              "legendFormat": "{{device}} - Written sectors",
               "refId": "B",
-              "step": 600
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -10498,7 +10670,7 @@
               "label": "Sectors read (-) / write (+)",
               "logBase": 1,
               "max": null,
-              "min": "0",
+              "min": null,
               "show": true
             },
             {
@@ -10635,7 +10807,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO time weighted",
               "refId": "A",
-              "step": 1200
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -10708,7 +10880,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "/.*read.*/",
+              "alias": "/.*Read.*/",
               "transform": "negative-Y"
             },
             {
@@ -10800,16 +10972,16 @@
             {
               "expr": "irate(node_disk_reads_merged{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
-              "legendFormat": "{{device}} - Merged read",
+              "legendFormat": "{{device}} - Read merged",
               "refId": "C",
-              "step": 600
+              "step": 10
             },
             {
               "expr": "irate(node_disk_writes_merged{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
-              "legendFormat": "{{device}} - Merged write",
+              "legendFormat": "{{device}} - Write merged",
               "refId": "D",
-              "step": 600
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -10835,7 +11007,7 @@
               "label": "I/Os",
               "logBase": 1,
               "max": null,
-              "min": "0",
+              "min": null,
               "show": true
             },
             {
@@ -10972,7 +11144,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO time ms",
               "refId": "A",
-              "step": 1200
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -11135,7 +11307,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO now",
               "refId": "A",
-              "step": 1200
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -11295,7 +11467,7 @@
               "intervalFactor": 4,
               "legendFormat": "Textfile scrape error (1 = true)",
               "refId": "A",
-              "step": 1200
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -11390,7 +11562,7 @@
               "legendFormat": "{{mountpoint}} - Available",
               "metric": "",
               "refId": "A",
-              "step": 600
+              "step": 10
             },
             {
               "expr": "node_filesystem_free{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
@@ -11489,7 +11661,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}} - Free file nodes",
               "refId": "B",
-              "step": 600
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -11568,7 +11740,7 @@
               "intervalFactor": 4,
               "legendFormat": "Max open files",
               "refId": "A",
-              "step": 1200
+              "step": 20
             },
             {
               "expr": "node_filefd_allocated{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -11576,7 +11748,7 @@
               "intervalFactor": 2,
               "legendFormat": "Open files",
               "refId": "B",
-              "step": 600
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -11657,7 +11829,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}} - File nodes total",
               "refId": "A",
-              "step": 600
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -11742,7 +11914,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}} - ReadOnly",
               "refId": "C",
-              "step": 600
+              "step": 10
             }
           ],
           "thresholds": [],
@@ -11871,7 +12043,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive",
               "refId": "O",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_network_transmit_packets{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -11879,7 +12051,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit",
               "refId": "P",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -11995,7 +12167,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive errors",
               "refId": "E",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_network_transmit_errs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -12003,7 +12175,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Rransmit errors",
               "refId": "F",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -12119,7 +12291,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive drop",
               "refId": "G",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_network_transmit_drop{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -12127,7 +12299,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit drop",
               "refId": "H",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -12243,7 +12415,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive compressed",
               "refId": "C",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_network_transmit_compressed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -12251,7 +12423,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit compressed",
               "refId": "D",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -12367,7 +12539,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive multicast",
               "refId": "M",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_network_transmit_multicast{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -12375,7 +12547,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit multicast",
               "refId": "N",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -12491,7 +12663,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive fifo",
               "refId": "I",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_network_transmit_fifo{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -12499,7 +12671,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit fifo",
               "refId": "J",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -12616,7 +12788,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive frame",
               "refId": "K",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_network_transmit_frame{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -12625,7 +12797,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit frame",
               "refId": "L",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -12709,7 +12881,7 @@
               "intervalFactor": 2,
               "legendFormat": "NF conntrack entries",
               "refId": "O",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "node_nf_conntrack_entries_limit{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -12717,7 +12889,7 @@
               "intervalFactor": 2,
               "legendFormat": "NF conntrack limit",
               "refId": "P",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -13317,7 +13489,7 @@
               "intervalFactor": 2,
               "legendFormat": "InReceives - Ip inreceives",
               "refId": "A",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Ip_DefaultTTL{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -13334,7 +13506,7 @@
               "intervalFactor": 2,
               "legendFormat": "InDelivers - Ip indelivers",
               "refId": "I",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Ip_OutRequests{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -13343,7 +13515,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutRequests - Ip outrequests",
               "refId": "P",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -13453,7 +13625,7 @@
               "intervalFactor": 2,
               "legendFormat": "InOctets - Received octets",
               "refId": "K",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_IpExt_OutOctets{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -13461,7 +13633,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutOctets - Sent octets",
               "refId": "Q",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -13571,7 +13743,7 @@
               "intervalFactor": 2,
               "legendFormat": "InBcastPkts - Received IP broadcast datagrams",
               "refId": "B",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_IpExt_OutBcastPkts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -13579,7 +13751,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutBcastPkts - Sent IP broadcast datagrams",
               "refId": "N",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -13689,7 +13861,7 @@
               "intervalFactor": 2,
               "legendFormat": "InBcastOctets - Received IP broadcast octets",
               "refId": "A",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_IpExt_OutBcastOctets{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -13697,7 +13869,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutBcastOctets - Sent IP broadcast octects",
               "refId": "M",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -13808,7 +13980,7 @@
               "intervalFactor": 2,
               "legendFormat": "InMcastPkts - Received IP multicast datagrams",
               "refId": "H",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_IpExt_OutMcastPkts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -13817,7 +13989,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutMcastPkts - Sent IP multicast datagrams",
               "refId": "P",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -13928,7 +14100,7 @@
               "intervalFactor": 2,
               "legendFormat": "InMcastOctets - Received IP multicast octets",
               "refId": "G",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_IpExt_OutMcastOctets{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -13937,7 +14109,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutMcastOctets - Sent IP multicast octets",
               "refId": "O",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -14022,7 +14194,7 @@
               "intervalFactor": 2,
               "legendFormat": "ForwDatagrams - Ip outforwdatagrams",
               "refId": "C",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Ip_Forwarding{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14030,7 +14202,7 @@
               "intervalFactor": 2,
               "legendFormat": "Forwarding - Ip forwarding",
               "refId": "D",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -14115,7 +14287,7 @@
               "intervalFactor": 2,
               "legendFormat": "FragCreates - Ip fragmentation creations",
               "refId": "E",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Ip_FragFails{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14123,7 +14295,7 @@
               "intervalFactor": 2,
               "legendFormat": "FragFails - Ip fragmentation failures",
               "refId": "F",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Ip_FragOKs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14131,7 +14303,7 @@
               "intervalFactor": 2,
               "legendFormat": "FragOKs - Ip fragmentation oks",
               "refId": "G",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -14216,7 +14388,7 @@
               "intervalFactor": 2,
               "legendFormat": "InCEPkts - Congestion Experimented datagrams in",
               "refId": "C",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_IpExt_InECT0Pkts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14224,7 +14396,7 @@
               "intervalFactor": 2,
               "legendFormat": "InECT0Pkts - Datagrams received with ECT(0)",
               "refId": "E",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_IpExt_InECT1Pkts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14232,7 +14404,7 @@
               "intervalFactor": 2,
               "legendFormat": "InECT1Pkt - Datarams received with ECT(1)",
               "refId": "F",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_IpExt_InNoECTPkts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14240,7 +14412,7 @@
               "intervalFactor": 2,
               "legendFormat": "InNoECTPkts - Datagrams received with NOECT",
               "refId": "A",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -14325,7 +14497,7 @@
               "intervalFactor": 2,
               "legendFormat": "ReasmFails - Ip reassembly failures",
               "refId": "Q",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Ip_ReasmOKs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14333,7 +14505,7 @@
               "intervalFactor": 2,
               "legendFormat": "ReasmOKs - Ip reassembly oks",
               "refId": "R",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Ip_ReasmReqds{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14341,7 +14513,7 @@
               "intervalFactor": 2,
               "legendFormat": "ReasmReqds - Ip reassembly requireds",
               "refId": "S",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Ip_ReasmTimeout{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14349,7 +14521,7 @@
               "intervalFactor": 2,
               "legendFormat": "ReasmTimeout - Ip reasmtimeout",
               "refId": "T",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -14447,7 +14619,7 @@
               "intervalFactor": 2,
               "legendFormat": "InDiscards - Ip indiscards",
               "refId": "J",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Ip_InHdrErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14455,7 +14627,7 @@
               "intervalFactor": 2,
               "legendFormat": "InHdrErrors - Ip inhdrerrors",
               "refId": "K",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Ip_InUnknownProtos{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14463,7 +14635,7 @@
               "intervalFactor": 2,
               "legendFormat": "InUnknownProtos - Ip inunknownprotos",
               "refId": "M",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Ip_OutDiscards{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14471,7 +14643,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutDiscards - Ip outdiscards",
               "refId": "N",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Ip_OutNoRoutes{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14479,7 +14651,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutNoRoutes - Ip outnoroutes",
               "refId": "O",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_IpExt_InNoRoutes{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14487,7 +14659,7 @@
               "intervalFactor": 2,
               "legendFormat": "InNoRoutes - IP datagrams discarded due to no routes in forwarding path",
               "refId": "C",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_IpExt_InCsumErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14495,7 +14667,7 @@
               "intervalFactor": 2,
               "legendFormat": "InCsumErrors - IP datagrams with checksum errors",
               "refId": "A",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_IpExt_InTruncatedPkts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14503,7 +14675,7 @@
               "intervalFactor": 2,
               "legendFormat": "InTruncatedPkts - IP datagrams discarded due to frame not carrying enough data",
               "refId": "B",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_netstat_Ip_InAddrErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14511,7 +14683,7 @@
               "intervalFactor": 2,
               "legendFormat": "InAddrErrors - Ip inaddrerrors",
               "refId": "D",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -19550,5 +19722,5 @@
   },
   "timezone": "browser",
   "title": "Node Exporter Full",
-  "version": 8
+  "version": 4
 }

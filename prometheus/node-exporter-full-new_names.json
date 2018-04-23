@@ -1599,7 +1599,7 @@
     },
     {
       "collapse": true,
-      "height": "450",
+      "height": 483,
       "panels": [
         {
           "aliasColors": {
@@ -1659,7 +1659,7 @@
               "intervalFactor": 2,
               "legendFormat": "System - Processes executing in kernel mode",
               "refId": "A",
-              "step": 55
+              "step": 20
             },
             {
               "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='user',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1667,7 +1667,7 @@
               "intervalFactor": 2,
               "legendFormat": "User - Normal processes executing in user mode",
               "refId": "B",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='nice',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1675,7 +1675,7 @@
               "intervalFactor": 2,
               "legendFormat": "Nice - Niced processes executing in user mode",
               "refId": "C",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1683,7 +1683,7 @@
               "intervalFactor": 2,
               "legendFormat": "Idle - Waiting for something to happen",
               "refId": "F",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='iowait',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1691,7 +1691,7 @@
               "intervalFactor": 2,
               "legendFormat": "Iowait - Waiting for I/O to complete",
               "refId": "D",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='irq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1699,7 +1699,7 @@
               "intervalFactor": 2,
               "legendFormat": "Irq - Servicing interrupts",
               "refId": "G",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='softirq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1707,7 +1707,7 @@
               "intervalFactor": 2,
               "legendFormat": "Softirq - Servicing softirqs",
               "refId": "H",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='steal',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1715,7 +1715,7 @@
               "intervalFactor": 2,
               "legendFormat": "Steal - Time spent in other operating systems when running in a virtualized environment",
               "refId": "E",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='guest',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
@@ -1723,7 +1723,7 @@
               "intervalFactor": 2,
               "legendFormat": "Guest - Time spent running a virtual CPU for a guest operating system",
               "refId": "I",
-              "step": 1800
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1834,7 +1834,7 @@
               "intervalFactor": 2,
               "legendFormat": "Apps - Memory used by user-space applications",
               "refId": "Q",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "node_memory_PageTables_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1843,7 +1843,7 @@
               "intervalFactor": 2,
               "legendFormat": "PageTables - Memory used to map between virtual and physical memory addresses",
               "refId": "G",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "node_memory_SwapCached_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1851,7 +1851,7 @@
               "intervalFactor": 2,
               "legendFormat": "SwapCache - Memory that keeps track of pages that have been fetched from swap but not yet been modified",
               "refId": "F",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "node_memory_Slab_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1860,7 +1860,7 @@
               "intervalFactor": 2,
               "legendFormat": "Slab - Memory used by the kernel to cache data structures for its own use (caches like inode, dentry, etc)",
               "refId": "E",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "node_memory_Cached_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1869,7 +1869,7 @@
               "intervalFactor": 2,
               "legendFormat": "Cache - Parked file data (file content) cache",
               "refId": "C",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "node_memory_Buffers_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1878,7 +1878,7 @@
               "intervalFactor": 2,
               "legendFormat": "Buffers - Block device (e.g. harddisk) cache",
               "refId": "B",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "node_memory_MemFree_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1887,7 +1887,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unused - Free memory unasigned",
               "refId": "D",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "(node_memory_SwapTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapFree_bytes{instance=~\"$node:$port\",job=~\"$job\"})",
@@ -1896,7 +1896,7 @@
               "intervalFactor": 2,
               "legendFormat": "Swap - Swap space used",
               "refId": "I",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "node_memory_HardwareCorrupted_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -1905,7 +1905,7 @@
               "intervalFactor": 2,
               "legendFormat": "Harware Corrupted - Amount of RAM that the kernel identified as corrupted / not working",
               "refId": "O",
-              "step": 1800
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2021,7 +2021,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive",
               "refId": "O",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "irate(node_network_transmit_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -2029,7 +2029,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit",
               "refId": "P",
-              "step": 1800
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2113,7 +2113,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}}",
               "refId": "A",
-              "step": 1800
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2140,6 +2140,178 @@
               "logBase": 1,
               "max": null,
               "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCALHOST}",
+          "description": "",
+          "fill": 2,
+          "id": 229,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "minSpan": 2,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/.*Read.*/",
+              "transform": "negative-Y"
+            },
+            {
+              "alias": "/.*sda_.*/",
+              "color": "#7EB26D"
+            },
+            {
+              "alias": "/.*sdb_.*/",
+              "color": "#EAB839"
+            },
+            {
+              "alias": "/.*sdc_.*/",
+              "color": "#6ED0E0"
+            },
+            {
+              "alias": "/.*sdd_.*/",
+              "color": "#EF843C"
+            },
+            {
+              "alias": "/.*sde_.*/",
+              "color": "#E24D42"
+            },
+            {
+              "alias": "/.*sda1.*/",
+              "color": "#584477"
+            },
+            {
+              "alias": "/.*sda2_.*/",
+              "color": "#BA43A9"
+            },
+            {
+              "alias": "/.*sda3_.*/",
+              "color": "#F4D598"
+            },
+            {
+              "alias": "/.*sdb1.*/",
+              "color": "#0A50A1"
+            },
+            {
+              "alias": "/.*sdb2.*/",
+              "color": "#BF1B00"
+            },
+            {
+              "alias": "/.*sdb3.*/",
+              "color": "#E0752D"
+            },
+            {
+              "alias": "/.*sdc1.*/",
+              "color": "#962D82"
+            },
+            {
+              "alias": "/.*sdc2.*/",
+              "color": "#614D93"
+            },
+            {
+              "alias": "/.*sdc3.*/",
+              "color": "#9AC48A"
+            },
+            {
+              "alias": "/.*sdd1.*/",
+              "color": "#65C5DB"
+            },
+            {
+              "alias": "/.*sdd2.*/",
+              "color": "#F9934E"
+            },
+            {
+              "alias": "/.*sdd3.*/",
+              "color": "#EA6460"
+            },
+            {
+              "alias": "/.*sde1.*/",
+              "color": "#E0F9D7"
+            },
+            {
+              "alias": "/.*sdd2.*/",
+              "color": "#FCEACA"
+            },
+            {
+              "alias": "/.*sde3.*/",
+              "color": "#F9E2D2"
+            }
+          ],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_disk_reads_completed_total{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
+              "intervalFactor": 4,
+              "legendFormat": "{{device}} - Reads completed",
+              "refId": "A",
+              "step": 480
+            },
+            {
+              "expr": "irate(node_disk_writes_completed_total{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
+              "intervalFactor": 2,
+              "legendFormat": "{{device}} - Writes completed",
+              "refId": "B",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Disk IOps",
+          "tooltip": {
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "iops",
+              "label": "IO read (-) / write (+)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
               "show": true
             },
             {
@@ -2224,7 +2396,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Successfully read bytes",
               "refId": "A",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "irate(node_disk_written_bytes_total{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
@@ -2233,7 +2405,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Successfully written bytes",
               "refId": "B",
-              "step": 1800
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2319,7 +2491,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Milliseconds spent doing I/Os",
               "refId": "C",
-              "step": 1800
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -9817,6 +9989,353 @@
           "dashes": false,
           "datasource": "${DS_LOCALHOST}",
           "description": "",
+          "fill": 2,
+          "id": 9,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "minSpan": 2,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "seriesOverrides": [
+            {
+              "alias": "/.*Read.*/",
+              "transform": "negative-Y"
+            },
+            {
+              "alias": "/.*sda_.*/",
+              "color": "#7EB26D"
+            },
+            {
+              "alias": "/.*sdb_.*/",
+              "color": "#EAB839"
+            },
+            {
+              "alias": "/.*sdc_.*/",
+              "color": "#6ED0E0"
+            },
+            {
+              "alias": "/.*sdd_.*/",
+              "color": "#EF843C"
+            },
+            {
+              "alias": "/.*sde_.*/",
+              "color": "#E24D42"
+            },
+            {
+              "alias": "/.*sda1.*/",
+              "color": "#584477"
+            },
+            {
+              "alias": "/.*sda2_.*/",
+              "color": "#BA43A9"
+            },
+            {
+              "alias": "/.*sda3_.*/",
+              "color": "#F4D598"
+            },
+            {
+              "alias": "/.*sdb1.*/",
+              "color": "#0A50A1"
+            },
+            {
+              "alias": "/.*sdb2.*/",
+              "color": "#BF1B00"
+            },
+            {
+              "alias": "/.*sdb3.*/",
+              "color": "#E0752D"
+            },
+            {
+              "alias": "/.*sdc1.*/",
+              "color": "#962D82"
+            },
+            {
+              "alias": "/.*sdc2.*/",
+              "color": "#614D93"
+            },
+            {
+              "alias": "/.*sdc3.*/",
+              "color": "#9AC48A"
+            },
+            {
+              "alias": "/.*sdd1.*/",
+              "color": "#65C5DB"
+            },
+            {
+              "alias": "/.*sdd2.*/",
+              "color": "#F9934E"
+            },
+            {
+              "alias": "/.*sdd3.*/",
+              "color": "#EA6460"
+            },
+            {
+              "alias": "/.*sde1.*/",
+              "color": "#E0F9D7"
+            },
+            {
+              "alias": "/.*sdd2.*/",
+              "color": "#FCEACA"
+            },
+            {
+              "alias": "/.*sde3.*/",
+              "color": "#F9E2D2"
+            }
+          ],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_disk_reads_completed_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "intervalFactor": 4,
+              "legendFormat": "{{device}} - Reads completed",
+              "refId": "A",
+              "step": 480
+            },
+            {
+              "expr": "irate(node_disk_writes_completed_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "intervalFactor": 2,
+              "legendFormat": "{{device}} - Writes completed",
+              "refId": "B",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Disk IOps Completed",
+          "tooltip": {
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "iops",
+              "label": "IO read (-) / write (+)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCALHOST}",
+          "description": "",
+          "fill": 2,
+          "id": 33,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "minSpan": 2,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/.*Read.*/",
+              "transform": "negative-Y"
+            },
+            {
+              "alias": "/.*sda_.*/",
+              "color": "#7EB26D"
+            },
+            {
+              "alias": "/.*sdb_.*/",
+              "color": "#EAB839"
+            },
+            {
+              "alias": "/.*sdc_.*/",
+              "color": "#6ED0E0"
+            },
+            {
+              "alias": "/.*sdd_.*/",
+              "color": "#EF843C"
+            },
+            {
+              "alias": "/.*sde_.*/",
+              "color": "#E24D42"
+            },
+            {
+              "alias": "/.*sda1.*/",
+              "color": "#584477"
+            },
+            {
+              "alias": "/.*sda2_.*/",
+              "color": "#BA43A9"
+            },
+            {
+              "alias": "/.*sda3_.*/",
+              "color": "#F4D598"
+            },
+            {
+              "alias": "/.*sdb1.*/",
+              "color": "#0A50A1"
+            },
+            {
+              "alias": "/.*sdb2.*/",
+              "color": "#BF1B00"
+            },
+            {
+              "alias": "/.*sdb3.*/",
+              "color": "#E0752D"
+            },
+            {
+              "alias": "/.*sdc1.*/",
+              "color": "#962D82"
+            },
+            {
+              "alias": "/.*sdc2.*/",
+              "color": "#614D93"
+            },
+            {
+              "alias": "/.*sdc3.*/",
+              "color": "#9AC48A"
+            },
+            {
+              "alias": "/.*sdd1.*/",
+              "color": "#65C5DB"
+            },
+            {
+              "alias": "/.*sdd2.*/",
+              "color": "#F9934E"
+            },
+            {
+              "alias": "/.*sdd3.*/",
+              "color": "#EA6460"
+            },
+            {
+              "alias": "/.*sde1.*/",
+              "color": "#E0F9D7"
+            },
+            {
+              "alias": "/.*sdd2.*/",
+              "color": "#FCEACA"
+            },
+            {
+              "alias": "/.*sde3.*/",
+              "color": "#F9E2D2"
+            }
+          ],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_disk_read_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 4,
+              "legendFormat": "{{device}} - Read bytes",
+              "refId": "A",
+              "step": 480
+            },
+            {
+              "expr": "irate(node_disk_written_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "{{device}} - Written bytes",
+              "refId": "B",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Disk R/W Data",
+          "tooltip": {
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "Bps",
+              "label": "Bytes read (-) / write (+)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCALHOST}",
+          "description": "",
           "fill": 3,
           "id": 37,
           "legend": {
@@ -9844,7 +10363,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "/.*read.*/",
+              "alias": "/.*Read.*/",
               "transform": "negative-Y"
             },
             {
@@ -9939,7 +10458,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}} - Read time ms",
               "refId": "A",
-              "step": 1200
+              "step": 480
             },
             {
               "expr": "irate(node_disk_write_time_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -9947,7 +10466,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Write time ms",
               "refId": "B",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -9973,354 +10492,7 @@
               "label": "Millisec. read (-) / write (+)",
               "logBase": 1,
               "max": null,
-              "min": "0",
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
               "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
-          "description": "",
-          "fill": 2,
-          "id": 33,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "minSpan": 2,
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "/.*read.*/",
-              "transform": "negative-Y"
-            },
-            {
-              "alias": "/.*sda_.*/",
-              "color": "#7EB26D"
-            },
-            {
-              "alias": "/.*sdb_.*/",
-              "color": "#EAB839"
-            },
-            {
-              "alias": "/.*sdc_.*/",
-              "color": "#6ED0E0"
-            },
-            {
-              "alias": "/.*sdd_.*/",
-              "color": "#EF843C"
-            },
-            {
-              "alias": "/.*sde_.*/",
-              "color": "#E24D42"
-            },
-            {
-              "alias": "/.*sda1.*/",
-              "color": "#584477"
-            },
-            {
-              "alias": "/.*sda2_.*/",
-              "color": "#BA43A9"
-            },
-            {
-              "alias": "/.*sda3_.*/",
-              "color": "#F4D598"
-            },
-            {
-              "alias": "/.*sdb1.*/",
-              "color": "#0A50A1"
-            },
-            {
-              "alias": "/.*sdb2.*/",
-              "color": "#BF1B00"
-            },
-            {
-              "alias": "/.*sdb3.*/",
-              "color": "#E0752D"
-            },
-            {
-              "alias": "/.*sdc1.*/",
-              "color": "#962D82"
-            },
-            {
-              "alias": "/.*sdc2.*/",
-              "color": "#614D93"
-            },
-            {
-              "alias": "/.*sdc3.*/",
-              "color": "#9AC48A"
-            },
-            {
-              "alias": "/.*sdd1.*/",
-              "color": "#65C5DB"
-            },
-            {
-              "alias": "/.*sdd2.*/",
-              "color": "#F9934E"
-            },
-            {
-              "alias": "/.*sdd3.*/",
-              "color": "#EA6460"
-            },
-            {
-              "alias": "/.*sde1.*/",
-              "color": "#E0F9D7"
-            },
-            {
-              "alias": "/.*sdd2.*/",
-              "color": "#FCEACA"
-            },
-            {
-              "alias": "/.*sde3.*/",
-              "color": "#F9E2D2"
-            }
-          ],
-          "spaceLength": 10,
-          "span": 6,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "irate(node_disk_read_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "format": "time_series",
-              "intervalFactor": 4,
-              "legendFormat": "{{device}} - Bytes read",
-              "refId": "A",
-              "step": 1200
-            },
-            {
-              "expr": "irate(node_disk_written_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "{{device}} - Bytes written",
-              "refId": "B",
-              "step": 600
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Disk R/W Data",
-          "tooltip": {
-            "shared": false,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "Bps",
-              "label": "Bytes read (-) / write (+)",
-              "logBase": 1,
-              "max": null,
-              "min": "0",
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
-          "description": "",
-          "fill": 2,
-          "id": 9,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "minSpan": 2,
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "repeat": null,
-          "seriesOverrides": [
-            {
-              "alias": "/.*read.*/",
-              "transform": "negative-Y"
-            },
-            {
-              "alias": "/.*sda_.*/",
-              "color": "#7EB26D"
-            },
-            {
-              "alias": "/.*sdb_.*/",
-              "color": "#EAB839"
-            },
-            {
-              "alias": "/.*sdc_.*/",
-              "color": "#6ED0E0"
-            },
-            {
-              "alias": "/.*sdd_.*/",
-              "color": "#EF843C"
-            },
-            {
-              "alias": "/.*sde_.*/",
-              "color": "#E24D42"
-            },
-            {
-              "alias": "/.*sda1.*/",
-              "color": "#584477"
-            },
-            {
-              "alias": "/.*sda2_.*/",
-              "color": "#BA43A9"
-            },
-            {
-              "alias": "/.*sda3_.*/",
-              "color": "#F4D598"
-            },
-            {
-              "alias": "/.*sdb1.*/",
-              "color": "#0A50A1"
-            },
-            {
-              "alias": "/.*sdb2.*/",
-              "color": "#BF1B00"
-            },
-            {
-              "alias": "/.*sdb3.*/",
-              "color": "#E0752D"
-            },
-            {
-              "alias": "/.*sdc1.*/",
-              "color": "#962D82"
-            },
-            {
-              "alias": "/.*sdc2.*/",
-              "color": "#614D93"
-            },
-            {
-              "alias": "/.*sdc3.*/",
-              "color": "#9AC48A"
-            },
-            {
-              "alias": "/.*sdd1.*/",
-              "color": "#65C5DB"
-            },
-            {
-              "alias": "/.*sdd2.*/",
-              "color": "#F9934E"
-            },
-            {
-              "alias": "/.*sdd3.*/",
-              "color": "#EA6460"
-            },
-            {
-              "alias": "/.*sde1.*/",
-              "color": "#E0F9D7"
-            },
-            {
-              "alias": "/.*sdd2.*/",
-              "color": "#FCEACA"
-            },
-            {
-              "alias": "/.*sde3.*/",
-              "color": "#F9E2D2"
-            }
-          ],
-          "spaceLength": 10,
-          "span": 6,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "irate(node_disk_reads_completed_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "intervalFactor": 4,
-              "legendFormat": "{{device}} - Reads completed",
-              "refId": "A",
-              "step": 1200
-            },
-            {
-              "expr": "irate(node_disk_writes_completed_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "intervalFactor": 2,
-              "legendFormat": "{{device}} - Writes completed",
-              "refId": "B",
-              "step": 600
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Disk IOs Completed",
-          "tooltip": {
-            "shared": false,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "iops",
-              "label": "IO read (-) / write (+)",
-              "logBase": 1,
-              "max": null,
-              "min": "0",
               "show": true
             },
             {
@@ -10367,7 +10539,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "/.*read.*/",
+              "alias": "/.*Read.*/",
               "transform": "negative-Y"
             },
             {
@@ -10461,18 +10633,18 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 4,
-              "legendFormat": "{{device}} - Sectors read",
+              "legendFormat": "{{device}} - Read sectors",
               "refId": "A",
-              "step": 1200
+              "step": 480
             },
             {
               "expr": "irate(node_disk_sectors_written{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "{{device}} - Sectors written",
+              "legendFormat": "{{device}} - Written sectors",
               "refId": "B",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -10498,7 +10670,7 @@
               "label": "Sectors read (-) / write (+)",
               "logBase": 1,
               "max": null,
-              "min": "0",
+              "min": null,
               "show": true
             },
             {
@@ -10635,7 +10807,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO time weighted",
               "refId": "A",
-              "step": 1200
+              "step": 480
             }
           ],
           "thresholds": [],
@@ -10708,7 +10880,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
-              "alias": "/.*read.*/",
+              "alias": "/.*Read.*/",
               "transform": "negative-Y"
             },
             {
@@ -10800,16 +10972,16 @@
             {
               "expr": "irate(node_disk_reads_merged_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
-              "legendFormat": "{{device}} - Merged read",
+              "legendFormat": "{{device}} - Read merged",
               "refId": "C",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "irate(node_disk_writes_merged_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
-              "legendFormat": "{{device}} - Merged write",
+              "legendFormat": "{{device}} - Write merged",
               "refId": "D",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -10835,7 +11007,7 @@
               "label": "I/Os",
               "logBase": 1,
               "max": null,
-              "min": "0",
+              "min": null,
               "show": true
             },
             {
@@ -10972,7 +11144,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO time ms",
               "refId": "A",
-              "step": 1200
+              "step": 480
             }
           ],
           "thresholds": [],
@@ -11135,7 +11307,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO now",
               "refId": "A",
-              "step": 1200
+              "step": 480
             }
           ],
           "thresholds": [],
@@ -11295,7 +11467,7 @@
               "intervalFactor": 4,
               "legendFormat": "Textfile scrape error (1 = true)",
               "refId": "A",
-              "step": 1200
+              "step": 480
             }
           ],
           "thresholds": [],
@@ -19549,6 +19721,6 @@
     ]
   },
   "timezone": "browser",
-  "title": "Node Exporter Full",
-  "version": 8
+  "title": "Node Exporter Full New",
+  "version": 6
 }
