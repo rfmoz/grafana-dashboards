@@ -109,7 +109,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "(((count(count(node_cpu{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu))) - avg(sum by (mode)(irate(node_cpu{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])))) * 100) / count(count(node_cpu{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu))",
+              "expr": "(((count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu))) - avg(sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])))) * 100) / count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu))",
               "hide": false,
               "intervalFactor": 1,
               "legendFormat": "",
@@ -190,7 +190,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "((node_memory_MemTotal{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_MemFree{instance=~\"$node:$port\",job=~\"$job\"}) / (node_memory_MemTotal{instance=~\"$node:$port\",job=~\"$job\"} )) * 100",
+              "expr": "((node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_MemFree_bytes{instance=~\"$node:$port\",job=~\"$job\"}) / (node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} )) * 100",
               "format": "time_series",
               "hide": true,
               "intervalFactor": 1,
@@ -198,7 +198,7 @@
               "step": 900
             },
             {
-              "expr": "100 - ((node_memory_MemAvailable{instance=~\"$node:$port\",job=~\"$job\"} * 100) / node_memory_MemTotal{instance=~\"$node:$port\",job=~\"$job\"})",
+              "expr": "100 - ((node_memory_MemAvailable_bytes{instance=~\"$node:$port\",job=~\"$job\"} * 100) / node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"})",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -272,7 +272,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "((node_memory_SwapTotal{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapFree{instance=~\"$node:$port\",job=~\"$job\"}) / (node_memory_SwapTotal{instance=~\"$node:$port\",job=~\"$job\"} )) * 100",
+              "expr": "((node_memory_SwapTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapFree_bytes{instance=~\"$node:$port\",job=~\"$job\"}) / (node_memory_SwapTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} )) * 100",
               "intervalFactor": 1,
               "refId": "A",
               "step": 900
@@ -350,7 +350,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "100 - ((node_filesystem_avail{instance=~\"$node:$port\",job=~\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size{instance=~\"$node:$port\",job=~\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"})",
+              "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A",
@@ -429,7 +429,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "avg(node_load1{instance=~\"$node:$port\",job=~\"$job\"}) /  count(count(node_cpu{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu)) * 100",
+              "expr": "avg(node_load1{instance=~\"$node:$port\",job=~\"$job\"}) /  count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu)) * 100",
               "hide": false,
               "intervalFactor": 1,
               "refId": "A",
@@ -508,7 +508,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "avg(node_load5{instance=~\"$node:$port\",job=~\"$job\"}) /  count(count(node_cpu{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu)) * 100",
+              "expr": "avg(node_load5{instance=~\"$node:$port\",job=~\"$job\"}) /  count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu)) * 100",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -599,7 +599,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "count(count(node_cpu{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu))",
+              "expr": "count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu))",
               "intervalFactor": 1,
               "refId": "A",
               "step": 900
@@ -677,7 +677,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "node_memory_MemTotal{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "intervalFactor": 1,
               "refId": "A",
               "step": 900
@@ -755,7 +755,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "node_memory_SwapTotal{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_SwapTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "intervalFactor": 1,
               "refId": "A",
               "step": 900
@@ -833,7 +833,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "node_filesystem_size{instance=~\"$node:$port\",job=~\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"}",
+              "expr": "node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -992,7 +992,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "node_time{instance=~\"$node:$port\",job=~\"$job\"} - node_boot_time{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_time_seconds{instance=~\"$node:$port\",job=~\"$job\"} - node_boot_time_seconds{instance=~\"$node:$port\",job=~\"$job\"}",
               "intervalFactor": 2,
               "refId": "A",
               "step": 1800
@@ -1100,7 +1100,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum by (instance)(rate(node_cpu{mode=\"system\",instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=\"system\",instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -1109,7 +1109,7 @@
               "step": 240
             },
             {
-              "expr": "sum by (instance)(rate(node_cpu{mode='user',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='user',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -1118,7 +1118,7 @@
               "step": 240
             },
             {
-              "expr": "sum by (instance)(rate(node_cpu{mode='iowait',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='iowait',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Busy Iowait",
@@ -1126,7 +1126,7 @@
               "step": 240
             },
             {
-              "expr": "sum by (instance)(rate(node_cpu{mode=~\".*irq\",instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=~\".*irq\",instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Busy IRQs",
@@ -1134,7 +1134,7 @@
               "step": 240
             },
             {
-              "expr": "sum (rate(node_cpu{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum (rate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Busy Other",
@@ -1142,7 +1142,7 @@
               "step": 240
             },
             {
-              "expr": "sum by (mode)(rate(node_cpu{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Idle",
@@ -1266,7 +1266,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_MemTotal{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -1275,7 +1275,7 @@
               "step": 240
             },
             {
-              "expr": "node_memory_MemTotal{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_MemFree{instance=~\"$node:$port\",job=~\"$job\"} - (node_memory_Cached{instance=~\"$node:$port\",job=~\"$job\"} + node_memory_Buffers{instance=~\"$node:$port\",job=~\"$job\"})",
+              "expr": "node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_MemFree_bytes{instance=~\"$node:$port\",job=~\"$job\"} - (node_memory_Cached_bytes{instance=~\"$node:$port\",job=~\"$job\"} + node_memory_Buffers_bytes{instance=~\"$node:$port\",job=~\"$job\"})",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -1284,7 +1284,7 @@
               "step": 240
             },
             {
-              "expr": "node_memory_Cached{instance=~\"$node:$port\",job=~\"$job\"} + node_memory_Buffers{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Cached_bytes{instance=~\"$node:$port\",job=~\"$job\"} + node_memory_Buffers_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "RAM Cache + Buffer",
@@ -1292,7 +1292,7 @@
               "step": 240
             },
             {
-              "expr": "node_memory_MemFree{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_MemFree_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "RAM Free",
@@ -1300,7 +1300,7 @@
               "step": 240
             },
             {
-              "expr": "(node_memory_SwapTotal{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapFree{instance=~\"$node:$port\",job=~\"$job\"})",
+              "expr": "(node_memory_SwapTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapFree_bytes{instance=~\"$node:$port\",job=~\"$job\"})",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "SWAP Used",
@@ -1452,7 +1452,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_bytes{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "rate(node_network_receive_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "recv {{device}}",
@@ -1460,7 +1460,7 @@
               "step": 240
             },
             {
-              "expr": "rate(node_network_transmit_bytes{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "rate(node_network_transmit_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "trans {{device}} ",
@@ -1545,7 +1545,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "100 - ((node_filesystem_avail{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'} * 100) / node_filesystem_size{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'})",
+              "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'})",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}}",
@@ -1599,7 +1599,7 @@
     },
     {
       "collapse": true,
-      "height": 462,
+      "height": 470,
       "panels": [
         {
           "aliasColors": {
@@ -1653,7 +1653,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode=\"system\",instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode=\"system\",instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 2,
@@ -1662,68 +1662,68 @@
               "step": 20
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='user',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='user',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "User - Normal processes executing in user mode",
               "refId": "B",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='nice',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='nice',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Nice - Niced processes executing in user mode",
               "refId": "C",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Idle - Waiting for something to happen",
               "refId": "F",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='iowait',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='iowait',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Iowait - Waiting for I/O to complete",
               "refId": "D",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='irq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='irq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Irq - Servicing interrupts",
               "refId": "G",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='softirq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='softirq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Softirq - Servicing softirqs",
               "refId": "H",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='steal',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='steal',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Steal - Time spent in other operating systems when running in a virtualized environment",
               "refId": "E",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "sum by (mode)(irate(node_cpu{mode='guest',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='guest',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Guest - Time spent running a virtual CPU for a guest operating system",
               "refId": "I",
-              "step": 10
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1828,84 +1828,84 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_MemTotal{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_MemFree{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_Buffers{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_Cached{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_Slab{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_PageTables{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapCached{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_MemFree_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_Buffers_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_Cached_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_Slab_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_PageTables_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapCached_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Apps - Memory used by user-space applications",
               "refId": "Q",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "node_memory_PageTables{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_PageTables_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "PageTables - Memory used to map between virtual and physical memory addresses",
               "refId": "G",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "node_memory_SwapCached{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_SwapCached_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "SwapCache - Memory that keeps track of pages that have been fetched from swap but not yet been modified",
               "refId": "F",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "node_memory_Slab{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Slab_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Slab - Memory used by the kernel to cache data structures for its own use (caches like inode, dentry, etc)",
               "refId": "E",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "node_memory_Cached{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Cached_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Cache - Parked file data (file content) cache",
               "refId": "C",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "node_memory_Buffers{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Buffers_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Buffers - Block device (e.g. harddisk) cache",
               "refId": "B",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "node_memory_MemFree{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_MemFree_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Unused - Free memory unasigned",
               "refId": "D",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "(node_memory_SwapTotal{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapFree{instance=~\"$node:$port\",job=~\"$job\"})",
+              "expr": "(node_memory_SwapTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapFree_bytes{instance=~\"$node:$port\",job=~\"$job\"})",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Swap - Swap space used",
               "refId": "I",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "node_memory_HardwareCorrupted{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_HardwareCorrupted_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Harware Corrupted - Amount of RAM that the kernel identified as corrupted / not working",
               "refId": "O",
-              "step": 10
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2016,20 +2016,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_receive_bytes{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_receive_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive",
               "refId": "O",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "irate(node_network_transmit_bytes{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_transmit_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit",
               "refId": "P",
-              "step": 10
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2108,12 +2108,12 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_size{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'} - node_filesystem_avail{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'} - node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}}",
               "refId": "A",
-              "step": 10
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2274,18 +2274,18 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_disk_reads_completed{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
+              "expr": "irate(node_disk_reads_completed_total{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - Reads completed",
               "refId": "A",
-              "step": 20
+              "step": 480
             },
             {
-              "expr": "irate(node_disk_writes_completed{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
+              "expr": "irate(node_disk_writes_completed_total{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Writes completed",
               "refId": "B",
-              "step": 10
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2390,22 +2390,22 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_disk_bytes_read{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
+              "expr": "irate(node_disk_read_bytes_total{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Successfully read bytes",
               "refId": "A",
-              "step": 10
+              "step": 240
             },
             {
-              "expr": "irate(node_disk_bytes_written{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
+              "expr": "irate(node_disk_written_bytes_total{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"}[5m])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Successfully written bytes",
               "refId": "B",
-              "step": 10
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2485,13 +2485,13 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_disk_io_time_ms{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"} [5m])",
+              "expr": "irate(node_disk_io_time_seconds_total{instance=~\"$node:$port\",job=~\"$job\",device=~\"[a-z]*[a-z]\"} [5m])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Milliseconds spent doing I/Os",
               "refId": "C",
-              "step": 10
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2597,20 +2597,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Inactive{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Inactive_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Inactive - Memory which has been less recently used.  It is more eligible to be reclaimed for other purposes",
               "refId": "K",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_Active{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Active_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Active - Memory that has been used more recently and usually not reclaimed unless absolutely necessary",
               "refId": "J",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -2713,20 +2713,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Committed_AS{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Committed_AS_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Committed_AS - Amount of memory presently allocated on the system",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_CommitLimit{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_CommitLimit_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "CommitLimit - Amount of  memory currently available to be allocated on the system",
               "refId": "M",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -2820,40 +2820,40 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Inactive_file{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Inactive_file_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Inactive_file - File-backed memory on inactive LRU list",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_Inactive_anon{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Inactive_anon_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Inactive_anon - Anonymous and swap cache on inactive LRU list, including tmpfs (shmem)",
               "refId": "D",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_Active_file{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Active_file_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Active_file - File-backed memory on active LRU list",
               "refId": "B",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_Active_anon{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Active_anon_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Active_anon - Anonymous and swap cache on active least-recently-used (LRU) list, including tmpfs",
               "refId": "C",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -2949,28 +2949,28 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Writeback{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Writeback_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Writeback - Memory which is actively being written back to disk",
               "refId": "J",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_WritebackTmp{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_WritebackTmp_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "WritebackTmp - Memory used by FUSE for temporary writeback buffers",
               "refId": "K",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_Dirty{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Dirty_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Dirty - Memory which is waiting to get written back to the disk",
               "refId": "A",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3064,20 +3064,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Mapped{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Mapped_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Mapped - Used memory in mapped pages files which have been mmaped, such as libraries",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_Shmem{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Shmem_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Shmem - Used shared memory (shared between several processes, thus including RAM disks)",
               "refId": "B",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3173,20 +3173,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_SUnreclaim{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_SUnreclaim_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "SUnreclaim - Part of Slab, that cannot be reclaimed on memory pressure",
               "refId": "O",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_SReclaimable{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_SReclaimable_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "SReclaimable - Part of Slab, that might be reclaimed, such as caches",
               "refId": "N",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3281,31 +3281,31 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_VmallocChunk{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_VmallocChunk_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "VmallocChunk - Largest contigious block of vmalloc area which is free",
               "refId": "H",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_VmallocTotal{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_VmallocTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "VmallocTotal - Total size of vmalloc memory area",
               "refId": "I",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_VmallocUsed{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_VmallocUsed_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "VmallocUsed - Amount of vmalloc area which is used",
               "refId": "O",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3399,12 +3399,12 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Bounce{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Bounce_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Bounce - Memory used for block device bounce buffers",
               "refId": "N",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3504,20 +3504,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_AnonHugePages{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_AnonHugePages_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "AnonHugePages - Memory in anonymous huge pages",
               "refId": "D",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_AnonPages{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_AnonPages_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "AnonPages - Memory in user pages not backed by files",
               "refId": "G",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3611,12 +3611,12 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_KernelStack{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_KernelStack_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "KernelStack - Kernel memory stack. This is not reclaimable",
               "refId": "N",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3716,7 +3716,7 @@
               "intervalFactor": 2,
               "legendFormat": "HugePages_Free - Huge pages in the pool that are not yet allocated",
               "refId": "I",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "node_memory_HugePages_Rsvd{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3724,7 +3724,7 @@
               "intervalFactor": 2,
               "legendFormat": "HugePages_Rsvd - Huge pages for which a commitment to allocate from the pool has been made, but no allocation has yet been made",
               "refId": "J",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "node_memory_HugePages_Surp{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3732,7 +3732,7 @@
               "intervalFactor": 2,
               "legendFormat": "HugePages_Surp - Huge pages in the pool above the value in /proc/sys/vm/nr_hugepages",
               "refId": "K",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3832,15 +3832,15 @@
               "intervalFactor": 2,
               "legendFormat": "HugePages - Total size of the pool of huge pages",
               "refId": "L",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_Hugepagesize{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Hugepagesize_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Hugepagesize - Huge Page size",
               "refId": "D",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3942,25 +3942,25 @@
               "intervalFactor": 2,
               "legendFormat": "DirectMap1G - Amount of pages mapped as this size",
               "refId": "J",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_DirectMap2M{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_DirectMap2M_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "DirectMap2M - Amount of pages mapped as this size",
               "refId": "K",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_DirectMap4k{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_DirectMap4k_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "DirectMap4K - Amount of pages mapped as this size",
               "refId": "L",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4054,20 +4054,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Unevictable{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Unevictable_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Unevictable - Amount of unevictable memory that can't be swapped out for a variety of reasons",
               "refId": "P",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_memory_Mlocked{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_Mlocked_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "MLocked - Size of pages locked to memory using the mlock() system call",
               "refId": "C",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4163,12 +4163,12 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_NFS_Unstable{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_memory_NFS_Unstable_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "NFS Unstable - Memory in NFS pages sent to the server, but not yet commited to the storage",
               "refId": "L",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4264,7 +4264,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pagesin - Page in operations",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgpgout{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4272,7 +4272,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pagesout - Page out operations",
               "refId": "B",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4356,7 +4356,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pswpin - Pages swapped in",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pswpout{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4364,7 +4364,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pswpout - Pages swapped out",
               "refId": "B",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4463,7 +4463,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgdeactivate - Pages moved from active to inactive",
               "refId": "B",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgfree{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4471,7 +4471,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgfree - Page free operations",
               "refId": "D",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgactivate{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4479,7 +4479,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgactivate - Pages moved from inactive to active",
               "refId": "A",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4584,7 +4584,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgfault - Page major and minor fault operations",
               "refId": "C",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgmajfault{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4592,7 +4592,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgmajfault - Major page fault operations",
               "refId": "F",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgfault{instance=~\"$node:$port\",job=~\"$job\"}[5m])  - irate(node_vmstat_pgmajfault{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4600,7 +4600,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgminfault - Minnor page fault operations",
               "refId": "A",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4699,7 +4699,7 @@
               "intervalFactor": 2,
               "legendFormat": "Kswapd_inodesteal - Pages reclaimed via kswapd inode freeing",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pginodesteal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4707,7 +4707,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgindesteal - Pages reclaimed via inode freeing",
               "refId": "B",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4806,21 +4806,21 @@
               "intervalFactor": 2,
               "legendFormat": "Pageoutrun - Kswapd calls to page reclaim",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_allocstall{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Allocstall - Direct reclaim calls",
               "refId": "B",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_zone_reclaim_failed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Zone_reclaim_failed - Zone reclaim failures",
               "refId": "C",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4919,7 +4919,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrotated - Pages rotated to tail of the LRU",
               "refId": "D",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5018,7 +5018,7 @@
               "intervalFactor": 2,
               "legendFormat": "Drop_pagecache - Calls to drop page cache pages",
               "refId": "N",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "node_vmstat_drop_slab{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -5026,7 +5026,7 @@
               "intervalFactor": 2,
               "legendFormat": "Drop_slab - Calls to drop slab cache pages",
               "refId": "A",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5125,7 +5125,7 @@
               "intervalFactor": 2,
               "legendFormat": "Slabs_scanned - Slab pages scanned",
               "refId": "B",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5224,7 +5224,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_cleared - Unevictable pages cleared",
               "refId": "B",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_culled{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5232,7 +5232,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_culled - Unevictable pages culled",
               "refId": "C",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_mlocked{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5240,7 +5240,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_mlocked - Unevictable pages mlocked",
               "refId": "D",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_munlocked{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5248,7 +5248,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_munlocked - Unevictable pages munlocked",
               "refId": "E",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_rescued{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5256,7 +5256,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_rescued- Unevictable pages rescued",
               "refId": "F",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_scanned{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5264,7 +5264,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_scanned - Unevictable pages scanned",
               "refId": "G",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_stranded{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5272,7 +5272,7 @@
               "intervalFactor": 2,
               "legendFormat": "unevictable_pgs_stranded - Unevictable pages stranded",
               "refId": "H",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5371,7 +5371,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgalloc_dma - Dma mem page allocations",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgalloc_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5379,7 +5379,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgalloc_dma32 - Dma32 mem page allocations",
               "refId": "B",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgalloc_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5387,7 +5387,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgalloc_movable - Movable mem page allocations",
               "refId": "C",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgalloc_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5395,7 +5395,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgalloc_normal - Normal mem page allocations",
               "refId": "D",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5494,7 +5494,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrefill_dma - Dma mem pages inspected in refill_inactive_zone",
               "refId": "B",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgrefill_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5502,7 +5502,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrefill_dma32 - Dma32 mem pages inspected in refill_inactive_zone",
               "refId": "C",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgrefill_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5510,7 +5510,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrefill_movable - Movable mem pages inspected in refill_inactive_zone",
               "refId": "D",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgrefill_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5518,7 +5518,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrefill_normal - Normal mem pages inspected in refill_inactive_zone",
               "refId": "E",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5617,7 +5617,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_direct_dma - Dma mem pages stealed",
               "refId": "B",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgsteal_direct_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5625,7 +5625,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_direct_dma32 - Dma32 mem pages scanned",
               "refId": "C",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgsteal_direct_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5633,7 +5633,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_direct_movable - Movable mem pages scanned",
               "refId": "D",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgsteal_direct_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5641,7 +5641,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_direct_normal - Normal mem pages scanned",
               "refId": "E",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5740,7 +5740,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_kswapd_dma - Dma mem pages scanned by kswapd",
               "refId": "F",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgsteal_kswapd_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5748,7 +5748,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_kswapd_dma32 - Dma32 mem pages scanned by kswapd",
               "refId": "G",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgsteal_kswapd_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5756,7 +5756,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_kswapd_movable - Movable mem pages scanned by kswapd",
               "refId": "H",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgsteal_kswapd_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5764,7 +5764,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_kswapd_normal - Normal mem pages scanned by kswapd",
               "refId": "I",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5863,7 +5863,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_direct_dma - Dma mem pages scanned",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_direct_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5871,7 +5871,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_direct_dma32 - Dma32 mem pages scanned",
               "refId": "C",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_direct_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5879,7 +5879,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_direct_movable - Movable mem pages scanned",
               "refId": "D",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_direct_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5887,7 +5887,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_direct_normal - Normal mem pages scanned",
               "refId": "E",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_direct_throttle{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5995,7 +5995,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_kswapd_dma - Dma mem pages scanned by kswapd",
               "refId": "B",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_kswapd_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6003,7 +6003,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_kswapd_dma32 - Dma32 mem pages scanned by kswapd",
               "refId": "G",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_kswapd_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6011,7 +6011,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_kswapd_movable - Movable mem pages scanned by kswapd",
               "refId": "H",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_kswapd_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6019,7 +6019,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_kswapd_normal - Normal mem pages scanned by kswapd",
               "refId": "I",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6125,7 +6125,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_free_scanned - Pages scanned for freeing by compaction daemon",
               "refId": "B",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_compact_isolated{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6133,7 +6133,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_isolated - Page isolations for memory compaction",
               "refId": "C",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_compact_migrate_scanned{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6141,7 +6141,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_migrate_scanned - Pages scanned for migration by compaction daemon",
               "refId": "D",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6247,7 +6247,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_fail - Unsuccessful compactions for high order allocations",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_compact_stall{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6255,7 +6255,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_stall - Failures to even start compacting",
               "refId": "E",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_compact_success{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6263,7 +6263,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_sucess - Successful compactions for high order allocations",
               "refId": "F",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6362,7 +6362,7 @@
               "intervalFactor": 2,
               "legendFormat": "Kswapd_high_wmark_hit_quickly - Times high watermark reached quickly",
               "refId": "N",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "node_vmstat_kswapd_low_wmark_hit_quickly{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -6370,7 +6370,7 @@
               "intervalFactor": 2,
               "legendFormat": "Kswapd_low_wmark_hit_quickly - Times low watermark reached quickly",
               "refId": "B",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6469,7 +6469,7 @@
               "intervalFactor": 2,
               "legendFormat": "Htlb_buddy_alloc_fail - Huge TLB page buddy allocation failures",
               "refId": "N",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "node_vmstat_htlb_buddy_alloc_success{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -6477,7 +6477,7 @@
               "intervalFactor": 2,
               "legendFormat": "Htlb_buddy_alloc_success - Huge TLB page buddy allocation successes",
               "refId": "A",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6576,7 +6576,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_foreign - Foreign NUMA zone allocations",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_hit{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6584,7 +6584,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_hit - Successful allocations from preferred NUMA zone",
               "refId": "D",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_interleave{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6592,7 +6592,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_interleave - Interleaved NUMA allocations in each zone for each NUMA node",
               "refId": "F",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_local{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6600,7 +6600,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_local - Successful allocations from local NUMA zone",
               "refId": "G",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_miss{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6608,7 +6608,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_miss - Unsuccessful allocations from preferred NUMA zona",
               "refId": "H",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_other{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6616,7 +6616,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_other - Unsuccessful allocations from local NUMA zone",
               "refId": "I",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6721,7 +6721,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_pages_migrated - NUMA page migrations",
               "refId": "J",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgmigrate_fail{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6729,7 +6729,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgmigrate_fail - Unsuccessful NUMA page migrations",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgmigrate_success{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6737,7 +6737,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgmigrate_success - Successful NUMA page migrations",
               "refId": "B",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6836,7 +6836,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_hint_faults - NUMA hint faults trapped",
               "refId": "B",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_hint_faults_local{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6844,7 +6844,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_hint_faults_local - Hinting faults to local nodes",
               "refId": "C",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6943,14 +6943,14 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_pte_updates - NUMA page table entry updates",
               "refId": "K",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_huge_pte_updates{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Numa_huge_pte_updates - NUMA huge page table entry updates",
               "refId": "A",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -7049,7 +7049,7 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_split - Transparent huge page splits",
               "refId": "F",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -7148,7 +7148,7 @@
               "intervalFactor": 2,
               "legendFormat": "Workingset_activate - Page activations to form the working set",
               "refId": "C",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_workingset_nodereclaim{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -7156,7 +7156,7 @@
               "intervalFactor": 2,
               "legendFormat": "Workingset_nodereclaim - NUMA node working set page reclaims",
               "refId": "D",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_workingset_refault{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -7164,7 +7164,7 @@
               "intervalFactor": 2,
               "legendFormat": "Workingset_refault - Refaults of previously evicted pages",
               "refId": "E",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -7263,7 +7263,7 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_collapse_alloc - Transparent huge page collapse allocations",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_thp_collapse_alloc_failed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -7271,7 +7271,7 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_collapse_alloc_failed - Transparent huge page collapse allocation failures",
               "refId": "C",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_thp_zero_page_alloc{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -7279,7 +7279,7 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_zero_page_alloc - Transparent huge page zeroed page allocations",
               "refId": "G",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_thp_zero_page_alloc_failed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -7287,21 +7287,21 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_zero_page_alloc_failed - Transparent huge page zeroed page allocation failures",
               "refId": "H",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_thp_fault_alloc{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Thp_fault_alloc - Transparent huge page fault allocations",
               "refId": "B",
-              "step": 10
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_thp_fault_fallback{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Thp_fault_fallback - Transparent huge page fault fallbacks",
               "refId": "D",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -9184,20 +9184,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_context_switches{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_context_switches_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Context switches",
               "refId": "A",
-              "step": 1800
+              "step": 240
             },
             {
-              "expr": "irate(node_intr{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_intr_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Interrupts",
               "refId": "B",
-              "step": 1800
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -9221,84 +9221,6 @@
             {
               "format": "short",
               "label": "Counter",
-              "logBase": 1,
-              "max": null,
-              "min": "0",
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
-          "fill": 2,
-          "id": 151,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "max": true,
-            "min": true,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "minSpan": 2,
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "span": 6,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "node_entropy_available_bits{instance=~\"$node:$port\",job=~\"$job\"}",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "Entropy available to random number generators",
-              "refId": "C",
-              "step": 1800
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Entropy",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": "Entropy",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -9354,7 +9276,7 @@
               "intervalFactor": 4,
               "legendFormat": "Load 1m",
               "refId": "A",
-              "step": 3600
+              "step": 480
             },
             {
               "expr": "node_load5{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -9362,7 +9284,7 @@
               "intervalFactor": 4,
               "legendFormat": "Load 5m",
               "refId": "B",
-              "step": 3600
+              "step": 480
             },
             {
               "expr": "node_load15{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -9370,7 +9292,7 @@
               "intervalFactor": 4,
               "legendFormat": "Load 15m",
               "refId": "C",
-              "step": 3600
+              "step": 480
             }
           ],
           "thresholds": [],
@@ -9394,6 +9316,95 @@
             {
               "format": "short",
               "label": "Load",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCALHOST}",
+          "fill": 2,
+          "id": 259,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/.*Critical*./",
+              "color": "#E24D42",
+              "fill": 0
+            },
+            {
+              "alias": "/.*Max*./",
+              "color": "#EF843C",
+              "fill": 0
+            }
+          ],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_interrupts_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "{{ type }} - {{ info }}",
+              "refId": "A",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Interrupts Detail",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "Counter",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -9453,7 +9464,7 @@
               "intervalFactor": 2,
               "legendFormat": "Maximum open file descriptors",
               "refId": "A",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "process_open_fds{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -9461,7 +9472,7 @@
               "intervalFactor": 2,
               "legendFormat": "Open file descriptors",
               "refId": "B",
-              "step": 1800
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -9485,6 +9496,84 @@
             {
               "format": "short",
               "label": "Descriptors",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCALHOST}",
+          "fill": 2,
+          "id": 151,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "minSpan": 2,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "node_entropy_available_bits{instance=~\"$node:$port\",job=~\"$job\"}",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "Entropy available to random number generators",
+              "refId": "C",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Entropy",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "Entropy",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -9539,7 +9628,7 @@
               "intervalFactor": 2,
               "legendFormat": "Processes blocked waiting for I/O to complete",
               "refId": "A",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "node_procs_running{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -9547,7 +9636,7 @@
               "intervalFactor": 2,
               "legendFormat": "Processes in runnable state",
               "refId": "B",
-              "step": 1800
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -9620,13 +9709,13 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_forks{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "rate(node_forks_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Processes forks second",
               "refId": "C",
-              "step": 1800
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -9703,7 +9792,7 @@
               "intervalFactor": 2,
               "legendFormat": "Processes virtual memory size in bytes",
               "refId": "C",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "process_resident_memory_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -9711,7 +9800,7 @@
               "intervalFactor": 2,
               "legendFormat": "Processes resident memory size in bytes",
               "refId": "A",
-              "step": 1800
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -9789,27 +9878,133 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_time{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "node_timex_sync_status{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "Of reported time",
+              "legendFormat": "Is clock synchronized to a reliable server (1 = yes, 0 = no)",
               "refId": "B",
-              "step": 1800
+              "step": 240
             },
             {
-              "expr": "irate(process_start_time_seconds{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "node_timex_frequency_adjustment_ratio{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "Of the process since unix epoch in seconds",
+              "legendFormat": "Local clock frequency adjustment",
               "refId": "A",
-              "step": 1800
+              "step": 240
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Time Variation",
+          "title": "Time Syncronized Status",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "Counter",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCALHOST}",
+          "description": "",
+          "fill": 2,
+          "id": 260,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/.*Variation*./",
+              "color": "#890F02"
+            }
+          ],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "node_timex_estimated_error_seconds{instance=~\"$node:$port\",job=~\"$job\"}",
+              "format": "time_series",
+              "hide": false,
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "Estimated error in seconds",
+              "refId": "B",
+              "step": 240
+            },
+            {
+              "expr": "node_timex_offset_seconds{instance=~\"$node:$port\",job=~\"$job\"}",
+              "format": "time_series",
+              "hide": false,
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "Time offset in between local system and reference clock",
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "expr": "node_timex_maxerror_seconds{instance=~\"$node:$port\",job=~\"$job\"}",
+              "format": "time_series",
+              "hide": false,
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "Maximum error in seconds",
+              "refId": "C",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Time Syncronized Drift",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -9829,7 +10024,7 @@
               "label": "Seconds",
               "logBase": 1,
               "max": null,
-              "min": "0",
+              "min": null,
               "show": true
             },
             {
@@ -9892,7 +10087,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{ chip }} {{ sensor }} temp",
               "refId": "A",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "node_hwmon_temp_crit_alarm_celsius{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -9911,7 +10106,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{ chip }} {{ sensor }} Critical",
               "refId": "C",
-              "step": 1800
+              "step": 240
             },
             {
               "expr": "node_hwmon_temp_crit_hyst_celsius{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -10105,18 +10300,18 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_disk_reads_completed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_disk_reads_completed_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - Reads completed",
               "refId": "A",
-              "step": 20
+              "step": 8
             },
             {
-              "expr": "irate(node_disk_writes_completed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_disk_writes_completed_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Writes completed",
               "refId": "B",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -10277,20 +10472,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_disk_bytes_read{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_disk_read_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - Read bytes",
               "refId": "A",
-              "step": 20
+              "step": 8
             },
             {
-              "expr": "irate(node_disk_bytes_written{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_disk_written_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{device}} - Writeen bytes",
+              "legendFormat": "{{device}} - Written bytes",
               "refId": "B",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -10453,20 +10648,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_disk_read_time_ms{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_disk_read_time_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "hide": false,
               "intervalFactor": 4,
               "legendFormat": "{{device}} - Read time ms",
               "refId": "A",
-              "step": 20
+              "step": 8
             },
             {
-              "expr": "irate(node_disk_write_time_ms{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_disk_write_time_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Write time ms",
               "refId": "B",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -10490,184 +10685,6 @@
             {
               "format": "ms",
               "label": "Millisec. read (-) / write (+)",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
-          "description": "",
-          "fill": 2,
-          "id": 134,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "sort": "current",
-            "sortDesc": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "minSpan": 2,
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "/.*Read.*/",
-              "transform": "negative-Y"
-            },
-            {
-              "alias": "/.*sda_.*/",
-              "color": "#7EB26D"
-            },
-            {
-              "alias": "/.*sdb_.*/",
-              "color": "#EAB839"
-            },
-            {
-              "alias": "/.*sdc_.*/",
-              "color": "#6ED0E0"
-            },
-            {
-              "alias": "/.*sdd_.*/",
-              "color": "#EF843C"
-            },
-            {
-              "alias": "/.*sde_.*/",
-              "color": "#E24D42"
-            },
-            {
-              "alias": "/.*sda1.*/",
-              "color": "#584477"
-            },
-            {
-              "alias": "/.*sda2_.*/",
-              "color": "#BA43A9"
-            },
-            {
-              "alias": "/.*sda3_.*/",
-              "color": "#F4D598"
-            },
-            {
-              "alias": "/.*sdb1.*/",
-              "color": "#0A50A1"
-            },
-            {
-              "alias": "/.*sdb2.*/",
-              "color": "#BF1B00"
-            },
-            {
-              "alias": "/.*sdb3.*/",
-              "color": "#E0752D"
-            },
-            {
-              "alias": "/.*sdc1.*/",
-              "color": "#962D82"
-            },
-            {
-              "alias": "/.*sdc2.*/",
-              "color": "#614D93"
-            },
-            {
-              "alias": "/.*sdc3.*/",
-              "color": "#9AC48A"
-            },
-            {
-              "alias": "/.*sdd1.*/",
-              "color": "#65C5DB"
-            },
-            {
-              "alias": "/.*sdd2.*/",
-              "color": "#F9934E"
-            },
-            {
-              "alias": "/.*sdd3.*/",
-              "color": "#EA6460"
-            },
-            {
-              "alias": "/.*sde1.*/",
-              "color": "#E0F9D7"
-            },
-            {
-              "alias": "/.*sdd2.*/",
-              "color": "#FCEACA"
-            },
-            {
-              "alias": "/.*sde3.*/",
-              "color": "#F9E2D2"
-            }
-          ],
-          "spaceLength": 10,
-          "span": 6,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "irate(node_disk_sectors_read{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "format": "time_series",
-              "hide": false,
-              "intervalFactor": 4,
-              "legendFormat": "{{device}} - Read sectors",
-              "refId": "A",
-              "step": 20
-            },
-            {
-              "expr": "irate(node_disk_sectors_written{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "format": "time_series",
-              "hide": false,
-              "intervalFactor": 2,
-              "legendFormat": "{{device}} - Written sectors",
-              "refId": "B",
-              "step": 10
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Disk R/W Sectors",
-          "tooltip": {
-            "shared": false,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": "Sectors read (-) / write (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -10803,11 +10820,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_disk_io_time_weighted{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_disk_io_time_weighted_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO time weighted",
               "refId": "A",
-              "step": 20
+              "step": 8
             }
           ],
           "thresholds": [],
@@ -10970,18 +10987,18 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_disk_reads_merged{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_disk_reads_merged_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Read merged",
               "refId": "C",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "irate(node_disk_writes_merged{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_disk_writes_merged_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Write merged",
               "refId": "D",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -11140,11 +11157,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_disk_io_time_ms{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_disk_io_time_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO time ms",
               "refId": "A",
-              "step": 20
+              "step": 8
             }
           ],
           "thresholds": [],
@@ -11307,7 +11324,7 @@
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO now",
               "refId": "A",
-              "step": 20
+              "step": 8
             }
           ],
           "thresholds": [],
@@ -11467,7 +11484,7 @@
               "intervalFactor": 4,
               "legendFormat": "Textfile scrape error (1 = true)",
               "refId": "A",
-              "step": 20
+              "step": 8
             }
           ],
           "thresholds": [],
@@ -11555,17 +11572,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_avail{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}} - Available",
               "metric": "",
               "refId": "A",
-              "step": 10
+              "step": 4
             },
             {
-              "expr": "node_filesystem_free{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_free_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
               "format": "time_series",
               "hide": true,
               "intervalFactor": 2,
@@ -11574,7 +11591,7 @@
               "step": 2
             },
             {
-              "expr": "node_filesystem_size{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
               "format": "time_series",
               "hide": true,
               "intervalFactor": 2,
@@ -11661,7 +11678,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}} - Free file nodes",
               "refId": "B",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -11740,7 +11757,7 @@
               "intervalFactor": 4,
               "legendFormat": "Max open files",
               "refId": "A",
-              "step": 20
+              "step": 8
             },
             {
               "expr": "node_filefd_allocated{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -11748,7 +11765,7 @@
               "intervalFactor": 2,
               "legendFormat": "Open files",
               "refId": "B",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -11829,7 +11846,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}} - File nodes total",
               "refId": "A",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -11914,7 +11931,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}} - ReadOnly",
               "refId": "C",
-              "step": 10
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -12038,20 +12055,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_receive_packets{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_receive_packets_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive",
               "refId": "O",
-              "step": 240
+              "step": 4
             },
             {
-              "expr": "irate(node_network_transmit_packets{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_transmit_packets_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit",
               "refId": "P",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -12162,20 +12179,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_receive_errs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_receive_errs_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive errors",
               "refId": "E",
-              "step": 240
+              "step": 4
             },
             {
-              "expr": "irate(node_network_transmit_errs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_transmit_errs_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Rransmit errors",
               "refId": "F",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -12286,20 +12303,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_receive_drop{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_receive_drop_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive drop",
               "refId": "G",
-              "step": 240
+              "step": 4
             },
             {
-              "expr": "irate(node_network_transmit_drop{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_transmit_drop_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit drop",
               "refId": "H",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -12410,20 +12427,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_receive_compressed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_receive_compressed_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive compressed",
               "refId": "C",
-              "step": 240
+              "step": 4
             },
             {
-              "expr": "irate(node_network_transmit_compressed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_transmit_compressed_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit compressed",
               "refId": "D",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -12534,20 +12551,12 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_receive_multicast{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_receive_multicast_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive multicast",
               "refId": "M",
-              "step": 240
-            },
-            {
-              "expr": "irate(node_network_transmit_multicast{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "{{device}} - Transmit multicast",
-              "refId": "N",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -12658,20 +12667,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_receive_fifo{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_receive_fifo_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive fifo",
               "refId": "I",
-              "step": 240
+              "step": 4
             },
             {
-              "expr": "irate(node_network_transmit_fifo{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_transmit_fifo_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit fifo",
               "refId": "J",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -12782,22 +12791,13 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_receive_frame{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_receive_frame_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive frame",
               "refId": "K",
-              "step": 240
-            },
-            {
-              "expr": "irate(node_network_transmit_frame{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "format": "time_series",
-              "hide": false,
-              "intervalFactor": 2,
-              "legendFormat": "{{device}} - Transmit frame",
-              "refId": "L",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -12821,6 +12821,214 @@
             {
               "format": "pps",
               "label": "Packets out (-) / in (+)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCALHOST}",
+          "fill": 2,
+          "id": 231,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": 300,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/.*Trans.*/",
+              "transform": "negative-Y"
+            },
+            {
+              "alias": "/.*lo.*.carrier.*/",
+              "color": "#7EB26D"
+            },
+            {
+              "alias": "/.*eth0.*.carrier.*/",
+              "color": "#EAB839"
+            },
+            {
+              "alias": "/.*eth1.*.carrier.*/",
+              "color": "#6ED0E0"
+            },
+            {
+              "alias": "/.*eth2.*.carrier.*/",
+              "color": "#EF843C"
+            }
+          ],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_network_transmit_carrier_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "{{device}} - Statistic transmit_carrier",
+              "refId": "C",
+              "step": 4
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Network Traffic Carrier",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "Counter",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCALHOST}",
+          "fill": 2,
+          "id": 232,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": 300,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/.*Trans.*/",
+              "transform": "negative-Y"
+            },
+            {
+              "alias": "/.*lo.*.carrier.*/",
+              "color": "#7EB26D"
+            },
+            {
+              "alias": "/.*eth0.*.carrier.*/",
+              "color": "#EAB839"
+            },
+            {
+              "alias": "/.*eth1.*.carrier.*/",
+              "color": "#6ED0E0"
+            },
+            {
+              "alias": "/.*eth2.*.carrier.*/",
+              "color": "#EF843C"
+            }
+          ],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_network_transmit_colls_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "{{device}} - Transmit colls",
+              "refId": "C",
+              "step": 4
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Network Traffic Colls",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "Counter",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -12881,7 +13089,7 @@
               "intervalFactor": 2,
               "legendFormat": "NF conntrack entries",
               "refId": "O",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_nf_conntrack_entries_limit{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -12889,7 +13097,7 @@
               "intervalFactor": 2,
               "legendFormat": "NF conntrack limit",
               "refId": "P",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -12927,13 +13135,91 @@
               "show": false
             }
           ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_LOCALHOST}",
+          "fill": 2,
+          "id": 230,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "node_arp_entries{instance=~\"$node:$port\",job=~\"$job\"}",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "{{ device }} - ARP entries",
+              "refId": "O",
+              "step": 4
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "ARP Entries",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "Entries",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
         }
       ],
       "repeat": null,
       "repeatIteration": null,
       "repeatRowId": null,
       "showTitle": false,
-      "title": "Network traffic Detail",
+      "title": "Network Traffic Detail",
       "titleSize": "h6"
     },
     {
@@ -12982,7 +13268,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCP_alloc - Allocated sockets",
               "refId": "D",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "node_sockstat_TCP_inuse{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -12990,7 +13276,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCP_inuse - Tcp sockets currently in use",
               "refId": "E",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "node_sockstat_TCP_mem{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -12998,7 +13284,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCP_mem - Used memory for tcp",
               "refId": "F",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "node_sockstat_TCP_orphan{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -13006,7 +13292,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCP_orphan - Orphan sockets",
               "refId": "H",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "node_sockstat_TCP_tw{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -13014,7 +13300,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCP_tw - Sockets wating close",
               "refId": "I",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -13095,7 +13381,7 @@
               "intervalFactor": 2,
               "legendFormat": "UDPLITE_inuse - Udplite sockets currently in use",
               "refId": "J",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "node_sockstat_UDP_inuse{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -13103,7 +13389,7 @@
               "intervalFactor": 2,
               "legendFormat": "UDP_inuse - Udp sockets currently in use",
               "refId": "K",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "node_sockstat_UDP_mem{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -13111,7 +13397,7 @@
               "intervalFactor": 2,
               "legendFormat": "UDP_mem - Used memory for udp",
               "refId": "L",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -13192,7 +13478,7 @@
               "intervalFactor": 2,
               "legendFormat": "Sockets_used - Sockets currently in use",
               "refId": "N",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -13273,7 +13559,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCP_mem_bytes - ",
               "refId": "G",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "node_sockstat_UDP_mem_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -13281,7 +13567,7 @@
               "intervalFactor": 2,
               "legendFormat": "UDP_mem_bytes - ",
               "refId": "A",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -13362,7 +13648,7 @@
               "intervalFactor": 2,
               "legendFormat": "FRAG_inuse - Frag sockets currently in use",
               "refId": "A",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "node_sockstat_FRAG_memory{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -13370,7 +13656,7 @@
               "intervalFactor": 2,
               "legendFormat": "FRAG_memory - Used memory for frag",
               "refId": "B",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "node_sockstat_RAW_inuse{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -13378,7 +13664,7 @@
               "intervalFactor": 2,
               "legendFormat": "RAW_inuse - Raw sockets currently in use",
               "refId": "C",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -13487,9 +13773,9 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "InReceives - Ip inreceives",
+              "legendFormat": "InReceives - IP inreceives",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Ip_DefaultTTL{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -13504,18 +13790,18 @@
               "expr": "irate(node_netstat_Ip_InDelivers{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "InDelivers - Ip indelivers",
+              "legendFormat": "InDelivers - IP indelivers",
               "refId": "I",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Ip_OutRequests{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "OutRequests - Ip outrequests",
+              "legendFormat": "OutRequests - IP outrequests",
               "refId": "P",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -13625,7 +13911,7 @@
               "intervalFactor": 2,
               "legendFormat": "InOctets - Received octets",
               "refId": "K",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_IpExt_OutOctets{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -13633,7 +13919,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutOctets - Sent octets",
               "refId": "Q",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -13743,7 +14029,7 @@
               "intervalFactor": 2,
               "legendFormat": "InBcastPkts - Received IP broadcast datagrams",
               "refId": "B",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_IpExt_OutBcastPkts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -13751,7 +14037,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutBcastPkts - Sent IP broadcast datagrams",
               "refId": "N",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -13861,7 +14147,7 @@
               "intervalFactor": 2,
               "legendFormat": "InBcastOctets - Received IP broadcast octets",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_IpExt_OutBcastOctets{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -13869,7 +14155,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutBcastOctets - Sent IP broadcast octects",
               "refId": "M",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -13980,7 +14266,7 @@
               "intervalFactor": 2,
               "legendFormat": "InMcastPkts - Received IP multicast datagrams",
               "refId": "H",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_IpExt_OutMcastPkts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -13989,7 +14275,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutMcastPkts - Sent IP multicast datagrams",
               "refId": "P",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -14100,7 +14386,7 @@
               "intervalFactor": 2,
               "legendFormat": "InMcastOctets - Received IP multicast octets",
               "refId": "G",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_IpExt_OutMcastOctets{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14109,7 +14395,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutMcastOctets - Sent IP multicast octets",
               "refId": "O",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -14192,17 +14478,17 @@
               "expr": "irate(node_netstat_Ip_ForwDatagrams{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "ForwDatagrams - Ip outforwdatagrams",
+              "legendFormat": "ForwDatagrams - IP outforwdatagrams",
               "refId": "C",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Ip_Forwarding{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "Forwarding - Ip forwarding",
+              "legendFormat": "Forwarding - IP forwarding",
               "refId": "D",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -14285,25 +14571,25 @@
               "expr": "irate(node_netstat_Ip_FragCreates{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "FragCreates - Ip fragmentation creations",
+              "legendFormat": "FragCreates - IP fragmentation creations",
               "refId": "E",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Ip_FragFails{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "FragFails - Ip fragmentation failures",
+              "legendFormat": "FragFails - IP fragmentation failures",
               "refId": "F",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Ip_FragOKs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "FragOKs - Ip fragmentation oks",
+              "legendFormat": "FragOKs - IP fragmentation oks",
               "refId": "G",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -14388,7 +14674,7 @@
               "intervalFactor": 2,
               "legendFormat": "InCEPkts - Congestion Experimented datagrams in",
               "refId": "C",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_IpExt_InECT0Pkts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14396,7 +14682,7 @@
               "intervalFactor": 2,
               "legendFormat": "InECT0Pkts - Datagrams received with ECT(0)",
               "refId": "E",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_IpExt_InECT1Pkts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14404,7 +14690,7 @@
               "intervalFactor": 2,
               "legendFormat": "InECT1Pkt - Datarams received with ECT(1)",
               "refId": "F",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_IpExt_InNoECTPkts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14412,7 +14698,7 @@
               "intervalFactor": 2,
               "legendFormat": "InNoECTPkts - Datagrams received with NOECT",
               "refId": "A",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -14495,33 +14781,33 @@
               "expr": "irate(node_netstat_Ip_ReasmFails{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "ReasmFails - Ip reassembly failures",
+              "legendFormat": "ReasmFails - IP reassembly failures",
               "refId": "Q",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Ip_ReasmOKs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "ReasmOKs - Ip reassembly oks",
+              "legendFormat": "ReasmOKs - IP reassembly oks",
               "refId": "R",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Ip_ReasmReqds{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "ReasmReqds - Ip reassembly requireds",
+              "legendFormat": "ReasmReqds - IP reassembly requireds",
               "refId": "S",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Ip_ReasmTimeout{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "ReasmTimeout - Ip reasmtimeout",
+              "legendFormat": "ReasmTimeout - IP reasmtimeout",
               "refId": "T",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -14617,41 +14903,41 @@
               "expr": "irate(node_netstat_Ip_InDiscards{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "InDiscards - Ip indiscards",
+              "legendFormat": "InDiscards - IP indiscards",
               "refId": "J",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Ip_InHdrErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "InHdrErrors - Ip inhdrerrors",
+              "legendFormat": "InHdrErrors - IP inhdrerrors",
               "refId": "K",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Ip_InUnknownProtos{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "InUnknownProtos - Ip inunknownprotos",
+              "legendFormat": "InUnknownProtos - IP inunknownprotos",
               "refId": "M",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Ip_OutDiscards{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "OutDiscards - Ip outdiscards",
+              "legendFormat": "OutDiscards - IP outdiscards",
               "refId": "N",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Ip_OutNoRoutes{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "OutNoRoutes - Ip outnoroutes",
+              "legendFormat": "OutNoRoutes - IP outnoroutes",
               "refId": "O",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_IpExt_InNoRoutes{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14659,7 +14945,7 @@
               "intervalFactor": 2,
               "legendFormat": "InNoRoutes - IP datagrams discarded due to no routes in forwarding path",
               "refId": "C",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_IpExt_InCsumErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14667,7 +14953,7 @@
               "intervalFactor": 2,
               "legendFormat": "InCsumErrors - IP datagrams with checksum errors",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_IpExt_InTruncatedPkts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14675,15 +14961,15 @@
               "intervalFactor": 2,
               "legendFormat": "InTruncatedPkts - IP datagrams discarded due to frame not carrying enough data",
               "refId": "B",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Ip_InAddrErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "InAddrErrors - Ip inaddrerrors",
+              "legendFormat": "InAddrErrors - IP inaddrerrors",
               "refId": "D",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -14792,7 +15078,7 @@
               "intervalFactor": 2,
               "legendFormat": "InCsumErrors - Segments received with checksum errors",
               "refId": "E",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Tcp_InErrs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14801,7 +15087,7 @@
               "intervalFactor": 2,
               "legendFormat": "InErrs - Segments received in error (e.g., bad TCP checksums)",
               "refId": "F",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Tcp_InSegs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14810,7 +15096,7 @@
               "intervalFactor": 2,
               "legendFormat": "InSegs - Segments received, including those received in error. This count includes segments received on currently established connections",
               "refId": "G",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Tcp_OutRsts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14819,7 +15105,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutRsts - Segments sent containing the RST flag",
               "refId": "I",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Tcp_OutSegs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14828,7 +15114,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutSegs - Segments sent, including those on current connections but excluding those containing only retransmitted octets",
               "refId": "J",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Tcp_RetransSegs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -14836,7 +15122,7 @@
               "intervalFactor": 2,
               "legendFormat": "RetransSegs - Segments retransmitted - that is, the number of TCP segments transmitted containing one or more previously transmitted octets",
               "refId": "A",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -14925,7 +15211,7 @@
               "intervalFactor": 2,
               "legendFormat": "CurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT",
               "refId": "C",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "node_netstat_Tcp_MaxConn{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -14934,7 +15220,7 @@
               "intervalFactor": 2,
               "legendFormat": "MaxConn - Limit on the total number of TCP connections the entity can support (Dinamic is \"-1\")",
               "refId": "H",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -15026,7 +15312,7 @@
               "intervalFactor": 2,
               "legendFormat": "RtoMax - Maximum value permitted by a TCP implementation for the retransmission timeout, measured in milliseconds",
               "refId": "N",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "node_netstat_Tcp_RtoMin{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -15035,7 +15321,7 @@
               "intervalFactor": 2,
               "legendFormat": "RtoMin - Minimum value permitted by a TCP implementation for the retransmission timeout, measured in milliseconds",
               "refId": "O",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -15117,7 +15403,7 @@
               "intervalFactor": 2,
               "legendFormat": "ActiveOpens - TCP connections that have made a direct transition to the SYN-SENT state from the CLOSED state",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Tcp_AttemptFails{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15125,7 +15411,7 @@
               "intervalFactor": 2,
               "legendFormat": "AttemptFails - TCP connections that have made a direct transition to the CLOSED state from either the SYN-SENT and SYN-RCVD",
               "refId": "B",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Tcp_EstabResets{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15133,7 +15419,7 @@
               "intervalFactor": 2,
               "legendFormat": "EstabResets - TCP connections that have made a direct transition to the CLOSED state from either the ESTABLISHED state or the CLOSE-WAIT state",
               "refId": "D",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Tcp_PassiveOpens{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15141,7 +15427,7 @@
               "intervalFactor": 2,
               "legendFormat": "PassiveOpens - TCP connections that have made a direct transition to the SYN-RCVD state from the LISTEN state",
               "refId": "K",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -15239,7 +15525,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPAbortOnClose - Connections aborted due to early user close",
               "refId": "V",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPAbortOnData{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15248,7 +15534,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPAbortOnData - Connections aborted due to unexpected data",
               "refId": "W",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPAbortOnLinger{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15257,7 +15543,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPAbortOnLinger - Connections aborted in lingered state after being closed",
               "refId": "X",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPAbortOnMemory{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15266,7 +15552,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPAbortOnMemory - Connections aborted before attached to a socket",
               "refId": "Y",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPAbortOnTimeout{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15274,7 +15560,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPAbortOnTimeout - Connections aborted due timeout",
               "refId": "B",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPAbortFailed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15282,7 +15568,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPAbortFailed - Connections aborted without send RST due insuffient memory",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPTimeouts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15290,7 +15576,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPTimeouts - Other TCP connections timeouts",
               "refId": "C",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -15375,7 +15661,7 @@
               "intervalFactor": 2,
               "legendFormat": "DelayedACKLocked - Delayed acks further delayed because of locked socket",
               "refId": "C",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_DelayedACKLost{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15383,7 +15669,7 @@
               "intervalFactor": 2,
               "legendFormat": "DelayedACKLost - Times quick ack mode was activated",
               "refId": "D",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_DelayedACKs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15391,7 +15677,7 @@
               "intervalFactor": 2,
               "legendFormat": "DelayedACKs - Delayed acks sent",
               "refId": "E",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -15490,7 +15776,7 @@
               "intervalFactor": 2,
               "legendFormat": "SyncookiesFailed - Invalid SYN cookies received",
               "refId": "R",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_SyncookiesRecv{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15499,7 +15785,7 @@
               "intervalFactor": 2,
               "legendFormat": "SyncookiesRecv - SYN cookies received",
               "refId": "S",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_SyncookiesSent{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15508,7 +15794,7 @@
               "intervalFactor": 2,
               "legendFormat": "SyncookiesSent - SYN cookies sent",
               "refId": "T",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSYNChallenge{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15516,14 +15802,14 @@
               "intervalFactor": 2,
               "legendFormat": "SynChallenge - Challenge ACKs sent in response to SYN packets",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPChallengeACK{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPChallengeACK - Challenge ACKs sent (RFC 5961 3.2)",
               "refId": "B",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -15609,7 +15895,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPLossFailures - Timeouts in loss state",
               "refId": "C",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPLossProbeRecovery{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15618,7 +15904,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPLossProbeRecovery - TCP loss probe recoveries",
               "refId": "D",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPLossProbes{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15627,7 +15913,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPLossProbes - Sent TCP loss probes",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPLossUndo{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15635,7 +15921,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPLossUndo - Congestion windows recovered without slow start after partial ack",
               "refId": "B",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPLostRetransmit{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15643,7 +15929,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPLostRetransmit - Retransmits lost",
               "refId": "E",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -15728,7 +16014,7 @@
               "intervalFactor": 2,
               "legendFormat": "ListenDrops - SYNs to LISTEN sockets ignored",
               "refId": "H",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_LockDroppedIcmps{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15736,7 +16022,7 @@
               "intervalFactor": 2,
               "legendFormat": "LockDroppedIcmps - ICMP packets dropped because socket was locked",
               "refId": "J",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDeferAcceptDrop{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15744,7 +16030,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDeferAcceptDrop - Dropped ACK frames received by a socket in SYN_RECV state",
               "refId": "D",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPBacklogDrop{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15752,7 +16038,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPBacklogDrop - Packets dropped bacause the socket's receive queue was full",
               "refId": "P",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_OutOfWindowIcmps{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15760,7 +16046,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutOfWindowIcmps - ICMP packets dropped because they were out-of-window",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPMinTTLDrop{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15768,7 +16054,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPMinTTLDrop - TCP packets dropped under minTTL condition",
               "refId": "B",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -15853,7 +16139,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPForwardRetrans - Packets losts retransmitted with Forward RTO-Recovery",
               "refId": "O",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSlowStartRetrans{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15862,7 +16148,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSlowStartRetrans - Packets losts retransmitted after a slow start",
               "refId": "P",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSynRetrans{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15871,7 +16157,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSynRetrans - SYN-SYN/ACK retransmits to break down retransmissions in SYN, fast/timeout retransmits",
               "refId": "Q",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSpuriousRTOs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15879,7 +16165,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSpuriousRTOs - FRTO's successfully detected spurious RTOs",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSpuriousRtxHostQueues{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15887,7 +16173,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSpuriousRtxHostQueues - Times detected that the fast clone is not yet freed in tcp_transmit_skb()",
               "refId": "B",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFullUndo{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15895,7 +16181,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFullUndo - Retransmits that undid the CWND reduction",
               "refId": "C",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPRetransFail{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15903,7 +16189,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPRetransFail - Failed tcp_retransmit_skb() calls",
               "refId": "D",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPPartialUndo{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -15911,7 +16197,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPPartialUndo - Congestion windows partially recovered using Hoe heuristic",
               "refId": "E",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -15997,7 +16283,7 @@
               "intervalFactor": 2,
               "legendFormat": "PruneCalled - Pkts pruned from recv queue because of soc buf overrun",
               "refId": "P",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_RcvPruned{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16006,7 +16292,7 @@
               "intervalFactor": 2,
               "legendFormat": "RcvPruned - Packets pruned from receive queue",
               "refId": "Q",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_OfoPruned{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16014,15 +16300,7 @@
               "intervalFactor": 2,
               "legendFormat": "OfoPruned - Packets dropped from out-of-order queue because of socket buffer overrun",
               "refId": "A",
-              "step": 600
-            },
-            {
-              "expr": "irate(node_netstat_TcpExt_OfoPruned{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "OfoPruned - Packets dropped from out-of-order queue because of socket buffer overrun",
-              "refId": "B",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -16107,7 +16385,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDirectCopyFromBacklog - Packets directly received from backlog",
               "refId": "M",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDirectCopyFromPrequeue{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16115,7 +16393,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDirectCopyFromPrequeue - Packets directly received from prequeue",
               "refId": "N",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -16199,7 +16477,7 @@
               "intervalFactor": 2,
               "legendFormat": "TW - TCP sockets finished time wait in fast timer",
               "refId": "O",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TWKilled{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16208,7 +16486,7 @@
               "intervalFactor": 2,
               "legendFormat": "TWKilled - TCP sockets finished time wait in slow timer",
               "refId": "P",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TWRecycled{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16217,7 +16495,7 @@
               "intervalFactor": 2,
               "legendFormat": "TWRecycled - Time wait sockets recycled by time stamp",
               "refId": "Q",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPTimeWaitOverflow{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16225,7 +16503,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPTimeWaitOverflow - Occurences of time wait bucket overflow",
               "refId": "A",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -16311,7 +16589,7 @@
               "intervalFactor": 2,
               "legendFormat": "PAWSActive - Active connections rejected because of time stamp",
               "refId": "M",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_PAWSEstab{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16320,7 +16598,7 @@
               "intervalFactor": 2,
               "legendFormat": "PAWSEstab - Pkts rejects in estab connections because of timestamp",
               "refId": "N",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_PAWSPassive{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16329,7 +16607,7 @@
               "intervalFactor": 2,
               "legendFormat": "PAWSPassive - Passive connections rejected because of time stamp",
               "refId": "O",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -16414,7 +16692,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSackRecovery - Times recovered from packet loss by selective acknowledgements",
               "refId": "E",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSackRecoveryFail{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16422,7 +16700,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSackRecoveryFail - Issue while recovering packets lost using selective ACK",
               "refId": "F",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSackShiftFallback{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16430,7 +16708,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSackShiftFallback - SACKs fallbacks",
               "refId": "G",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSackShifted{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16438,7 +16716,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSackShifted - SACKs shifted",
               "refId": "H",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSACKDiscard{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16446,7 +16724,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSackDiscard -  Discarded due invalid SACK block.",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSackFailures{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16454,7 +16732,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSackFailures - Timeouts after SACK recovery",
               "refId": "B",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSackMerged{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16462,7 +16740,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSackMerged - SACKs merged",
               "refId": "C",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSACKReneging{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16470,7 +16748,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSACKReneging - Bad SACK blocks received",
               "refId": "D",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSACKReorder{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16478,7 +16756,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPSACKReorder - Times detected reordering using SACK",
               "refId": "I",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -16564,7 +16842,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKIgnoredOld - Discarded packets with duplicate SACK while retransmitting",
               "refId": "F",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDSACKOfoRecv{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16573,7 +16851,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKOfoRecv - DSACKs for out of order packets received",
               "refId": "G",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDSACKOfoSent{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16582,7 +16860,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKOfoSent - DSACKs sent for out of order packets",
               "refId": "H",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDSACKOldSent{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16591,7 +16869,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKOldSent - DSACKs sent for old packets",
               "refId": "I",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDSACKRecv{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16600,7 +16878,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKRecv - DSACKs received",
               "refId": "J",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDSACKUndo{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16609,7 +16887,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKUndo - Discarded packets with erroneous retransmit",
               "refId": "K",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPDSACKIgnoredNoUndo{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16617,7 +16895,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPDSACKIgnoredNoUndo - Discarded packets with duplicate SACK",
               "refId": "A",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -16703,7 +16981,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastOpenActive - Successful outbound TFO connections",
               "refId": "P",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFastOpenActiveFail{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16712,7 +16990,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastOpenActiveFail - SYN-ACK packets received that did not acknowledge data sent in the SYN packet and caused a retransmissions without SYN data",
               "refId": "Q",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFastOpenCookieReqd{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16721,7 +16999,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastOpenCookieReqd - Inbound SYN packets requesting TFO with TFO set but no cookie",
               "refId": "R",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFastOpenListenOverflow{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16730,7 +17008,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastOpenListenOverflow - Times the fastopen listen queue overflowed",
               "refId": "S",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFastOpenPassive{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16739,7 +17017,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastOpenPassive - Successful inbound TFO connections",
               "refId": "T",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFastOpenPassiveFail{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16748,7 +17026,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastOpenPassiveFail - Inbound SYN packets with TFO cookie that was invalid",
               "refId": "U",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFastRetrans{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16757,7 +17035,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFastRetrans - Packets lost fast-retransmitted",
               "refId": "V",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -16843,7 +17121,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPHPAcks - Acknowledgments not containing data received",
               "refId": "Z",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPHPHits{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16852,7 +17130,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPHPHits - Packets header predicted",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPHPHitsToUser{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16861,7 +17139,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPHPHitsToUser - Packets header predicted and directly queued to user",
               "refId": "B",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -16946,7 +17224,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPToZeroWindowAdv - Times window went from zero to non-zero",
               "refId": "V",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPWantZeroWindowAdv{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16954,7 +17232,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPWantZeroWindowAdv - Times zero window announced",
               "refId": "W",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPFromZeroWindowAdv{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -16962,7 +17240,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFromZeroWindowAdv - Times window went from zero to non-zero",
               "refId": "A",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -17047,7 +17325,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPFACKReorder - Detected packets with re-ordering using FACK",
               "refId": "E",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPTSReorder{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -17055,7 +17333,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPTSReorder - Times detected packets with re-ordering using timestamp option",
               "refId": "S",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -17141,7 +17419,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPRenoFailures  - Timeouts after reno fast retransmit",
               "refId": "O",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPRenoRecovery{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -17149,7 +17427,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPRenoRecovery - Times recovered from packet loss due to fast retransmit",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPRenoRecoveryFail{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -17157,7 +17435,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPRenoRecoveryFail - Times reno fast retransmits failed",
               "refId": "B",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPRenoReorder{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -17165,7 +17443,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPRenoReorder - Times detected reordering using reno fast retransmit",
               "refId": "C",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -17251,7 +17529,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPReqQFullDoCookies - Times SYNCOOKIE was replied to client",
               "refId": "O",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPReqQFullDrop{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -17259,7 +17537,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPReqQFullDrop - Times SYN request was dropped due to disabled syncookies",
               "refId": "A",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -17345,7 +17623,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPOFODrop - Packets meant to be queued in OFO but dropped because socket rcvbuf limit reached",
               "refId": "P",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPOFOMerge{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -17354,7 +17632,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPOFOMerge - Packets in OFO that were merged with other packets",
               "refId": "Q",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPOFOQueue{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -17362,7 +17640,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPOFOQueue - Packets queued in OFO queue",
               "refId": "B",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -17448,7 +17726,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPMD5NotFound - Times MD5 hash expected but not found",
               "refId": "Z",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPMD5Unexpected{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -17457,7 +17735,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPMD5Unexpected - Times MD5 hash unexpected but found",
               "refId": "A",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -17543,7 +17821,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPPrequeued - Packets directly queued to recvmsg prequeue",
               "refId": "Z",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPPrequeueDropped{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -17552,7 +17830,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPPrequeueDropped - Packets dropped from prequeue",
               "refId": "A",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -17638,7 +17916,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPRcvCoalesce - Times tried to coalesce the receive queue",
               "refId": "Z",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPRcvCollapsed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -17647,7 +17925,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPRcvCollapsed - Packets collapsed in receive queue due to low socket buffer",
               "refId": "A",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -17732,7 +18010,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPOrigDataSent - Outgoing packets with original data",
               "refId": "C",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -17817,7 +18095,7 @@
               "intervalFactor": 2,
               "legendFormat": "ArpFilter - Arp packets filtered",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_IPReversePathFilter{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -17825,7 +18103,7 @@
               "intervalFactor": 2,
               "legendFormat": "IPReversePathFilter - Packets arrive from non directly connected network",
               "refId": "G",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -17910,7 +18188,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPPureAcks - Acknowledgments not containing data payload received",
               "refId": "C",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -17995,7 +18273,7 @@
               "intervalFactor": 2,
               "legendFormat": "TCPAutoCorking - Times stack detected skb was underused and its flush was deferred",
               "refId": "A",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -18080,7 +18358,7 @@
               "intervalFactor": 2,
               "legendFormat": "BusyPollRxPackets - Low latency application-fetched packets",
               "refId": "B",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_EmbryonicRsts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18088,7 +18366,7 @@
               "intervalFactor": 2,
               "legendFormat": "EmbryonicRsts - Resets received for embryonic SYN_RECV sockets",
               "refId": "F",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_ListenOverflows{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18096,21 +18374,21 @@
               "intervalFactor": 2,
               "legendFormat": "ListenOverflows - Times the listen queue of a socket overflowed",
               "refId": "I",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSchedulerFailed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPSchedulerFailed - Times receiver scheduled too late for direct processing",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPMemoryPressures{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "TCPMemoryPressures - TCP ran low on memory",
               "refId": "C",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -18219,7 +18497,7 @@
               "intervalFactor": 2,
               "legendFormat": "InDatagrams - Datagrams received",
               "refId": "B",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Udp_OutDatagrams{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18227,7 +18505,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutDatagrams - Datagrams sent",
               "refId": "E",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -18323,7 +18601,7 @@
               "intervalFactor": 2,
               "legendFormat": "InCsumErrors - Datagrams with checksum errors",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Udp_InErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18331,7 +18609,7 @@
               "intervalFactor": 2,
               "legendFormat": "InErrors - Datagrams that could not be delivered to an application",
               "refId": "C",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Udp_RcvbufErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18339,7 +18617,7 @@
               "intervalFactor": 2,
               "legendFormat": "RcvbufErrors - Datagrams for which not enough socket buffer memory to receive",
               "refId": "F",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Udp_SndbufErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18347,7 +18625,7 @@
               "intervalFactor": 2,
               "legendFormat": "SndbufErrors - Datagrams for which not enough socket buffer memory to transmit",
               "refId": "G",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Udp_NoPorts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18355,7 +18633,7 @@
               "intervalFactor": 2,
               "legendFormat": "NoPorts - Datagrams received on a port with no listener",
               "refId": "B",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -18447,7 +18725,7 @@
               "intervalFactor": 2,
               "legendFormat": "InDatagrams - Packets received",
               "refId": "B",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_UdpLite_OutDatagrams{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18455,7 +18733,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutDatagrams - Packets sent",
               "refId": "E",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -18547,7 +18825,7 @@
               "intervalFactor": 2,
               "legendFormat": "InCsumErrors - Datagrams with checksum errors",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_UdpLite_InErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18555,7 +18833,7 @@
               "intervalFactor": 2,
               "legendFormat": "InErrors - Datagrams that could not be delivered to an application",
               "refId": "C",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_UdpLite_RcvbufErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18563,7 +18841,7 @@
               "intervalFactor": 2,
               "legendFormat": "RcvbufErrors - Datagrams for which not enough socket buffer memory to receive",
               "refId": "F",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_UdpLite_SndbufErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18571,7 +18849,7 @@
               "intervalFactor": 2,
               "legendFormat": "SndbufErrors - Datagrams for which not enough socket buffer memory to transmit",
               "refId": "G",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_UdpLite_NoPorts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18579,7 +18857,7 @@
               "intervalFactor": 2,
               "legendFormat": "NoPorts - Datagrams received on a port with no listener",
               "refId": "B",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -18708,7 +18986,7 @@
               "intervalFactor": 2,
               "legendFormat": "InErrors - Messages which the entity received but determined as having ICMP-specific errors (bad ICMP checksums, bad length, etc.)",
               "refId": "I",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18716,7 +18994,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutErrors - Messages which this entity did not send due to problems discovered within ICMP, such as a lack of buffers",
               "refId": "V",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_InDestUnreachs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18724,7 +19002,7 @@
               "intervalFactor": 2,
               "legendFormat": "InDestUnreachs - Destination Unreachable messages received",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutDestUnreachs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18732,7 +19010,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutDestUnreachs - Destination Unreachable messages sent",
               "refId": "B",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_IcmpMsg_InType3{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18741,7 +19019,7 @@
               "intervalFactor": 2,
               "legendFormat": "InType3 - Destination unreachable",
               "refId": "K",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_IcmpMsg_OutType3{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18750,7 +19028,16 @@
               "intervalFactor": 2,
               "legendFormat": "OutType3 - Destination unreachable",
               "refId": "L",
-              "step": 600
+              "step": 4
+            },
+            {
+              "expr": "irate(node_netstat_IcmpMsg_InType11{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "InType11 - Time Exceeded",
+              "refId": "C",
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -18868,7 +19155,7 @@
               "intervalFactor": 2,
               "legendFormat": "InCsumErrors - Messages with ICMP checksum errors",
               "refId": "E",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_InTimeExcds{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18877,7 +19164,7 @@
               "intervalFactor": 2,
               "legendFormat": "InTimeExcds - Time Exceeded messages received",
               "refId": "C",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutTimeExcds{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18886,7 +19173,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutTimeExcds - Time Exceeded messages sent",
               "refId": "D",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_InParmProbs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18895,7 +19182,7 @@
               "intervalFactor": 2,
               "legendFormat": "InParmProbs - Parameter Problem messages received",
               "refId": "F",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutParmProbs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18904,7 +19191,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutParmProb - Parameter Problem messages sent",
               "refId": "G",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_InSrcQuenchs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18913,7 +19200,7 @@
               "intervalFactor": 2,
               "legendFormat": "InSrcQuenchs - Source Quench messages received",
               "refId": "H",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutSrcQuenchs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -18922,7 +19209,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutSrcQuenchs - Source Quench messages sent",
               "refId": "J",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -19019,7 +19306,7 @@
               "intervalFactor": 2,
               "legendFormat": "InMsgs -  Messages which the entity received. Note that this counter includes all those counted by icmpInErrors",
               "refId": "J",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_InRedirects{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -19027,7 +19314,7 @@
               "intervalFactor": 2,
               "legendFormat": "InRedirects - Redirect messages received",
               "refId": "L",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutMsgs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -19035,7 +19322,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutMsgs - Messages which this entity attempted to send. Note that this counter includes all those counted by icmpOutErrors",
               "refId": "W",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutRedirects{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -19043,7 +19330,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutRedirects -  Redirect messages sent. For a host, this object will always be zero, since hosts do not send redirects",
               "refId": "Y",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -19140,7 +19427,7 @@
               "intervalFactor": 2,
               "legendFormat": "InTimestampReps - Timestamp Reply messages received",
               "refId": "O",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_InTimestamps{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -19148,7 +19435,7 @@
               "intervalFactor": 2,
               "legendFormat": "InTimestamps - Timestamp (request) messages received",
               "refId": "P",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutTimestampReps{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -19156,7 +19443,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutTimestampReps - Timestamp Reply messages sent",
               "refId": "A",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutTimestamps{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -19164,7 +19451,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutTimestamps - Timestamp (request) messages sent",
               "refId": "B",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -19261,7 +19548,7 @@
               "intervalFactor": 2,
               "legendFormat": "InEchoReps - Echo Reply messages received",
               "refId": "G",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_InEchos{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -19269,7 +19556,7 @@
               "intervalFactor": 2,
               "legendFormat": "InEchos - Echo (request) messages received",
               "refId": "H",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutEchoReps{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -19277,7 +19564,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutEchoReps - Echo Reply messages sent",
               "refId": "T",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutEchos{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -19285,7 +19572,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutEchos - Echo (request) messages sent",
               "refId": "U",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -19382,7 +19669,7 @@
               "intervalFactor": 2,
               "legendFormat": "InAddrMaskReps - Address Mask Reply messages received",
               "refId": "C",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_InAddrMasks{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -19390,7 +19677,7 @@
               "intervalFactor": 2,
               "legendFormat": "InAddrMasks - Address Mask Request messages received",
               "refId": "D",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutAddrMaskReps{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -19398,7 +19685,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutAddrMaskReps - Address Mask Reply messages sent",
               "refId": "Q",
-              "step": 600
+              "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutAddrMasks{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -19406,7 +19693,7 @@
               "intervalFactor": 2,
               "legendFormat": "OutAddrMasks - Address Mask Request messages sent",
               "refId": "R",
-              "step": 600
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -19491,13 +19778,13 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_exporter_scrape_duration_seconds_sum{instance=~\"$node:$port\",job=~\"$job\",result=\"success\"}[5m])",
+              "expr": "node_scrape_collector_duration_seconds{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{collector}} - Scrape duration",
               "refId": "A",
-              "step": 1800
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -19570,19 +19857,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_exporter_scrape_duration_seconds_count{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "node_scrape_collector_success{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "{{collector}} - Scrape duration count",
+              "legendFormat": "{{collector}} - Scrape success",
               "refId": "A",
-              "step": 1800
+              "step": 4
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Node Exporter Scrape Counter",
+          "title": "Node Exporter Scrape Success",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -19639,7 +19926,7 @@
         "multi": false,
         "name": "job",
         "options": [],
-        "query": "label_values(node_boot_time, job)",
+        "query": "label_values(node_boot_time_seconds, job)",
         "refresh": 1,
         "regex": "",
         "sort": 1,
@@ -19659,7 +19946,7 @@
         "multi": false,
         "name": "node",
         "options": [],
-        "query": "label_values(node_boot_time{job=~\"$job\"}, instance)",
+        "query": "label_values(node_boot_time_seconds{job=~\"$job\"}, instance)",
         "refresh": 1,
         "regex": "/([^:]+):.*/",
         "sort": 1,
@@ -19679,7 +19966,7 @@
         "multi": false,
         "name": "port",
         "options": [],
-        "query": "label_values(node_boot_time{instance=~\"$node:(.*)\"}, instance)",
+        "query": "label_values(node_boot_time_seconds{instance=~\"$node:(.*)\"}, instance)",
         "refresh": 1,
         "regex": "/[^:]+:(.*)/",
         "sort": 3,
@@ -19721,6 +20008,6 @@
     ]
   },
   "timezone": "browser",
-  "title": "Node Exporter Full",
-  "version": 4
+  "title": "Node Exporter Full New",
+  "version": 57
 }
