@@ -19926,7 +19926,7 @@
         "multi": false,
         "name": "job",
         "options": [],
-        "query": "label_values(node_boot_time_seconds, job)",
+        "query": "label_values(node_exporter_build_info, job)",
         "refresh": 1,
         "regex": "",
         "sort": 1,
@@ -19946,7 +19946,7 @@
         "multi": false,
         "name": "node",
         "options": [],
-        "query": "label_values(node_boot_time_seconds{job=~\"$job\"}, instance)",
+        "query": "label_values(node_exporter_build_info{job=~\"$job\"}, instance)",
         "refresh": 1,
         "regex": "/([^:]+):.*/",
         "sort": 1,
@@ -19966,7 +19966,7 @@
         "multi": false,
         "name": "port",
         "options": [],
-        "query": "label_values(node_boot_time_seconds{instance=~\"$node:(.*)\"}, instance)",
+        "query": "label_values(node_exporter_build_info{instance=~\"$node:(.*)\"}, instance)",
         "refresh": 1,
         "regex": "/[^:]+:(.*)/",
         "sort": 3,
@@ -20008,6 +20008,6 @@
     ]
   },
   "timezone": "browser",
-  "title": "Node Exporter Full New",
-  "version": 57
+  "title": "Node Exporter Full",
+  "version": 61
 }
