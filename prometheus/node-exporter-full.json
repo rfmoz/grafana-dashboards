@@ -4598,7 +4598,7 @@
               "expr": "irate(node_vmstat_pgfault{instance=~\"$node:$port\",job=~\"$job\"}[5m])  - irate(node_vmstat_pgmajfault{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "Pgminfault - Minnor page fault operations",
+              "legendFormat": "Pgminfault - Minor page fault operations",
               "refId": "A",
               "step": 4
             }
