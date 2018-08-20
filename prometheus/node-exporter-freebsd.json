@@ -1159,7 +1159,7 @@
             "Cached": "#511749",
             "Committed": "#508642",
             "Free": "#0A437C",
-            "Harware Corrupted - Amount of RAM that the kernel identified as corrupted / not working": "#CFFAFF",
+            "Hardware Corrupted - Amount of RAM that the kernel identified as corrupted / not working": "#CFFAFF",
             "Inactive": "#584477",
             "PageTables": "#0A50A1",
             "Page_Tables": "#0A50A1",
