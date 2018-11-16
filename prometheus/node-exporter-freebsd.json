@@ -343,7 +343,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "100 - ((node_filesystem_avail_bytes_bytes{instance=~\"$node:$port\",mountpoint=\"/\"} * 100) / node_filesystem_size_bytes_bytes_bytes{instance=~\"$node:$port\",mountpoint=\"/\"})",
+              "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"$node:$port\",mountpoint=\"/\"} * 100) / node_filesystem_size_bytes{instance=~\"$node:$port\",mountpoint=\"/\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A",
@@ -826,7 +826,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "node_filesystem_size_bytes_bytes_bytes{instance=~\"$node:$port\",mountpoint=\"/\"}",
+              "expr": "node_filesystem_size_bytes{instance=~\"$node:$port\",mountpoint=\"/\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -1553,7 +1553,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "100 - ((node_filesystem_avail_bytes_bytes{instance=~\"$node:$port\",mountpoint=\"/\"} * 100) / node_filesystem_size_bytes_bytes_bytes{instance=~\"$node:$port\",mountpoint=\"/\"})",
+              "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"$node:$port\",mountpoint=\"/\"} * 100) / node_filesystem_size_bytes{instance=~\"$node:$port\",mountpoint=\"/\"})",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - {{mountpoint}} ",
@@ -1650,7 +1650,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_size_bytes_bytes_bytes{instance=~\"$node:$port\"} - node_filesystem_free_bytes_bytes{instance=~\"$node:$port\"}",
+              "expr": "node_filesystem_size_bytes{instance=~\"$node:$port\"} - node_filesystem_free_bytes{instance=~\"$node:$port\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - {{mountpoint}} - Used",
@@ -1658,7 +1658,7 @@
               "step": 240
             },
             {
-              "expr": "node_filesystem_free_bytes_bytes{instance=~\"$node:$port\"}",
+              "expr": "node_filesystem_free_bytes{instance=~\"$node:$port\"}",
               "format": "time_series",
               "hide": true,
               "intervalFactor": 2,
@@ -1667,7 +1667,7 @@
               "step": 30
             },
             {
-              "expr": "node_filesystem_avail_bytes_bytes{instance=~\"$node:$port\"}",
+              "expr": "node_filesystem_avail_bytes{instance=~\"$node:$port\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - {{mountpoint}} - Available",
@@ -2811,7 +2811,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_avail_bytes_bytes{instance=~\"$node:$port\",device!~'rootfs'}",
+              "expr": "node_filesystem_avail_bytes{instance=~\"$node:$port\",device!~'rootfs'}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
