@@ -343,7 +343,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "100 - ((node_filesystem_avail{instance=~\"$node:$port\",mountpoint=\"/\"} * 100) / node_filesystem_size{instance=~\"$node:$port\",mountpoint=\"/\"})",
+              "expr": "100 - ((node_filesystem_avail_bytes_bytes{instance=~\"$node:$port\",mountpoint=\"/\"} * 100) / node_filesystem_size_bytes_bytes_bytes{instance=~\"$node:$port\",mountpoint=\"/\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A",
@@ -826,7 +826,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "node_filesystem_size{instance=~\"$node:$port\",mountpoint=\"/\"}",
+              "expr": "node_filesystem_size_bytes_bytes_bytes{instance=~\"$node:$port\",mountpoint=\"/\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -985,7 +985,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "node_time{instance=~\"$node:$port\"} - node_boot_time{instance=~\"$node:$port\"}",
+              "expr": "node_time_seconds{instance=~\"$node:$port\"} - node_boot_time_seconds{instance=~\"$node:$port\"}",
               "intervalFactor": 2,
               "refId": "A",
               "step": 1800
@@ -1365,7 +1365,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_receive_bytes{instance=~\"$node:$port\"}[5m])",
+              "expr": "irate(node_network_receive_bytes_total{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive",
@@ -1373,7 +1373,7 @@
               "step": 240
             },
             {
-              "expr": "irate(node_network_transmit_bytes{instance=~\"$node:$port\"}[5m])",
+              "expr": "irate(node_network_transmit_bytes_total{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit",
@@ -1553,7 +1553,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "100 - ((node_filesystem_avail{instance=~\"$node:$port\",mountpoint=\"/\"} * 100) / node_filesystem_size{instance=~\"$node:$port\",mountpoint=\"/\"})",
+              "expr": "100 - ((node_filesystem_avail_bytes_bytes{instance=~\"$node:$port\",mountpoint=\"/\"} * 100) / node_filesystem_size_bytes_bytes_bytes{instance=~\"$node:$port\",mountpoint=\"/\"})",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - {{mountpoint}} ",
@@ -1650,7 +1650,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_size{instance=~\"$node:$port\"} - node_filesystem_free{instance=~\"$node:$port\"}",
+              "expr": "node_filesystem_size_bytes_bytes_bytes{instance=~\"$node:$port\"} - node_filesystem_free_bytes_bytes{instance=~\"$node:$port\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - {{mountpoint}} - Used",
@@ -1658,7 +1658,7 @@
               "step": 240
             },
             {
-              "expr": "node_filesystem_free{instance=~\"$node:$port\"}",
+              "expr": "node_filesystem_free_bytes_bytes{instance=~\"$node:$port\"}",
               "format": "time_series",
               "hide": true,
               "intervalFactor": 2,
@@ -1667,7 +1667,7 @@
               "step": 30
             },
             {
-              "expr": "node_filesystem_avail{instance=~\"$node:$port\"}",
+              "expr": "node_filesystem_avail_bytes_bytes{instance=~\"$node:$port\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - {{mountpoint}} - Available",
@@ -1783,7 +1783,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_transmit_packets{instance=~\"$node:$port\"}[5m])",
+              "expr": "irate(node_network_transmit_packets_total{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit packets",
@@ -1791,7 +1791,7 @@
               "step": 240
             },
             {
-              "expr": "irate(node_network_receive_packets{instance=~\"$node:$port\"}[5m])",
+              "expr": "irate(node_network_receive_packets_total{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive packets",
@@ -1895,7 +1895,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_receive_drop{instance=~\"$node:$port\"}[5m])",
+              "expr": "irate(node_network_receive_drop_total{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive drop",
@@ -1903,7 +1903,7 @@
               "step": 240
             },
             {
-              "expr": "irate(node_network_transmit_drop{instance=~\"$node:$port\"}[5m])",
+              "expr": "irate(node_network_transmit_drop_total{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit drop",
@@ -2007,7 +2007,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_transmit_errs{instance=~\"$node:$port\"}[5m])",
+              "expr": "irate(node_network_transmit_errs_total{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit errors",
@@ -2015,7 +2015,7 @@
               "step": 240
             },
             {
-              "expr": "irate(node_network_receive_errs{instance=~\"$node:$port\"}[5m])",
+              "expr": "irate(node_network_receive_errs_total{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive errors",
@@ -2119,7 +2119,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_transmit_multicast{instance=~\"$node:$port\"}[5m])",
+              "expr": "irate(node_network_transmit_multicast_total{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit multicast",
@@ -2127,7 +2127,7 @@
               "step": 240
             },
             {
-              "expr": "irate(node_network_receive_multicast{instance=~\"$node:$port\"}[5m])",
+              "expr": "irate(node_network_receive_multicast_total{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive multicast",
@@ -2717,7 +2717,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_time{instance=~\"$node:$port\"}[5m])",
+              "expr": "irate(node_time_seconds{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -2811,7 +2811,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_avail{instance=~\"$node:$port\",device!~'rootfs'}",
+              "expr": "node_filesystem_avail_bytes_bytes{instance=~\"$node:$port\",device!~'rootfs'}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -3238,7 +3238,7 @@
         "multi": false,
         "name": "node",
         "options": [],
-        "query": "label_values(node_time{job=\"node\"}, instance)",
+        "query": "label_values(node_time_seconds_seconds,{job=\"node\"}, instance)",
         "refresh": 1,
         "regex": "/([^:]+):.*/",
         "sort": 0,
@@ -3258,7 +3258,7 @@
         "multi": false,
         "name": "port",
         "options": [],
-        "query": "label_values(node_time, instance)",
+        "query": "label_values(node_time_seconds_seconds, instance)",
         "refresh": 1,
         "regex": "/[^:]+:(.*)/",
         "sort": 0,
