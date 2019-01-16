@@ -179,7 +179,7 @@
               "step": 120
             },
             {
-              "expr": "count_scalar(apache_up{instance=~\"$host:$port\"} == 0)",
+              "expr": "scalar(count(apache_up{instance=~\"$host:$port\"} == 0))",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Apache Down",
