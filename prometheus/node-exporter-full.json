@@ -33,12 +33,6 @@
       "id": "singlestat",
       "name": "Singlestat",
       "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "table",
-      "name": "Table",
-      "version": ""
     }
   ],
   "annotations": {
@@ -2535,54 +2529,6 @@
               "show": false
             }
           ]
-        },
-        {
-          "columns": [
-            {
-              "text": "Current",
-              "value": "current"
-            }
-          ],
-          "filterNull": false,
-          "fontSize": "100%",
-          "id": 261,
-          "links": [],
-          "pageSize": null,
-          "scroll": true,
-          "showHeader": true,
-          "sort": {
-            "col": 1,
-            "desc": false
-          },
-          "span": 6,
-          "styles": [
-            {
-              "colorMode": null,
-              "colors": [
-                "rgba(245, 54, 54, 0.9)",
-                "rgba(237, 129, 40, 0.89)",
-                "rgba(50, 172, 45, 0.97)"
-              ],
-              "decimals": 2,
-              "pattern": "/.*/",
-              "thresholds": [],
-              "type": "number",
-              "unit": "s"
-            }
-          ],
-          "targets": [
-            {
-              "expr": "(node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'} - node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}) / deriv(node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}[3d]) > 0",
-              "intervalFactor": 2,
-              "legendFormat": "{{mountpoint}}",
-              "refId": "A",
-              "step": 240
-            }
-          ],
-          "timeFrom": null,
-          "title": "FileSystem Fill Up Time",
-          "transform": "timeseries_aggregations",
-          "type": "table"
         }
       ],
       "repeat": null,
@@ -4270,7 +4216,7 @@
       "titleSize": "h6"
     },
     {
-      "collapse": true,
+      "collapse": false,
       "height": "375",
       "panels": [
         {
@@ -20063,5 +20009,5 @@
   },
   "timezone": "browser",
   "title": "Node Exporter Full",
-  "version": 1
+  "version": 62
 }
