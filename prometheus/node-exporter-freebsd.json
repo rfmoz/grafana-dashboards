@@ -2555,7 +2555,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_exec_forks_total{instance=~\"$node:$port\"}[5m])",
+              "expr": "irate(node_exec_forks_total{instance=~\"$node:$port\"}[5m])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
