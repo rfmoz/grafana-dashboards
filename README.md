@@ -54,6 +54,16 @@ Only requires a configured target under any job_name.
 
 
 
+### Haproxy 2.0 Full
+
+For Haproxy compiled with Prometheus support
+
+Monitor Haproxy service direct.
+
+Only requires a configured target under any job_name.
+
+
+
 ### Apache Full
 
 For apache_exporter
