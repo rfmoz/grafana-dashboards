@@ -2489,7 +2489,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "{{device}} - Milliseconds spent doing I/Os",
+              "legendFormat": "{{device}} - Time spent doing I/Os",
               "refId": "C",
               "step": 240
             }
@@ -2513,15 +2513,15 @@
           },
           "yaxes": [
             {
-              "format": "ms",
-              "label": "Milliseconds",
+              "format": "s",
+              "label": "Time",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
-              "format": "ms",
+              "format": "s",
               "label": "",
               "logBase": 1,
               "max": null,
@@ -10651,7 +10651,7 @@
               "expr": "irate(node_disk_read_time_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "hide": false,
               "intervalFactor": 4,
-              "legendFormat": "{{device}} - Read time ms",
+              "legendFormat": "{{device}} - Read time",
               "refId": "A",
               "step": 8
             },
@@ -10659,7 +10659,7 @@
               "expr": "irate(node_disk_write_time_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "{{device}} - Write time ms",
+              "legendFormat": "{{device}} - Write time",
               "refId": "B",
               "step": 4
             }
@@ -10683,8 +10683,8 @@
           },
           "yaxes": [
             {
-              "format": "ms",
-              "label": "Millisec. read (-) / write (+)",
+              "format": "s",
+              "label": "Time. read (-) / write (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -10846,8 +10846,8 @@
           },
           "yaxes": [
             {
-              "format": "ms",
-              "label": "Milliseconds",
+              "format": "s",
+              "label": "Time",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -11159,7 +11159,7 @@
             {
               "expr": "irate(node_disk_io_time_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 4,
-              "legendFormat": "{{device}} - IO time ms",
+              "legendFormat": "{{device}} - IO time",
               "refId": "A",
               "step": 8
             }
@@ -11167,7 +11167,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Milliseconds Spent Doing I/Os",
+          "title": "Time Spent Doing I/Os",
           "tooltip": {
             "shared": false,
             "sort": 0,
@@ -11183,8 +11183,8 @@
           },
           "yaxes": [
             {
-              "format": "ms",
-              "label": "Milliseconds",
+              "format": "s",
+              "label": "Time",
               "logBase": 1,
               "max": null,
               "min": "0",
