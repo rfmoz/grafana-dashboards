@@ -1100,7 +1100,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=\"system\",instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode=\"system\",instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -1109,7 +1109,7 @@
               "step": 240
             },
             {
-              "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='user',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode='user',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -1118,7 +1118,7 @@
               "step": 240
             },
             {
-              "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='iowait',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode='iowait',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Busy Iowait",
@@ -1126,7 +1126,7 @@
               "step": 240
             },
             {
-              "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=~\".*irq\",instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (instance)(irate(node_cpu_seconds_total{mode=~\".*irq\",instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Busy IRQs",
@@ -1134,7 +1134,7 @@
               "step": 240
             },
             {
-              "expr": "sum (rate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum (irate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Busy Other",
@@ -1142,7 +1142,7 @@
               "step": 240
             },
             {
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
+              "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])) * 100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Idle",
@@ -1452,7 +1452,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_receive_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "recv {{device}}",
@@ -1460,7 +1460,7 @@
               "step": 240
             },
             {
-              "expr": "rate(node_network_transmit_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_network_transmit_bytes_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "trans {{device}} ",
@@ -9709,7 +9709,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_forks_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "irate(node_forks_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -20029,5 +20029,5 @@
   },
   "timezone": "browser",
   "title": "Node Exporter Full",
-  "version": 63
+  "version": 64
 }
