@@ -1,8 +1,8 @@
 {
   "__inputs": [
     {
-      "name": "DS_LOCALHOST",
-      "label": "localhost",
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
       "description": "",
       "type": "datasource",
       "pluginId": "prometheus",
@@ -14,7 +14,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.2.0"
+      "version": "v4.4.3"
     },
     {
       "type": "panel",
@@ -59,7 +59,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "Busy state of all CPU cores together",
           "format": "percent",
@@ -139,7 +139,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 0,
           "description": "Non available RAM memory",
           "format": "percent",
@@ -222,7 +222,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "Used Swap",
           "format": "percent",
@@ -300,7 +300,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "Used Root FS",
           "format": "percent",
@@ -379,7 +379,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "Busy state of all CPU cores together (1 min average)",
           "format": "percent",
@@ -458,7 +458,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "Busy state of all CPU cores together (5 min average)",
           "format": "percent",
@@ -550,7 +550,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "Total number of CPU cores",
           "format": "short",
           "gauge": {
@@ -627,7 +627,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "Total RAM",
           "format": "bytes",
@@ -705,7 +705,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "Total SWAP",
           "format": "bytes",
@@ -783,7 +783,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "Total RootFS",
           "format": "bytes",
@@ -863,7 +863,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "System Load (1m avg)",
           "format": "short",
@@ -942,7 +942,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 1,
           "description": "System uptime",
           "format": "s",
@@ -1044,7 +1044,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "Basic CPU info",
           "fill": 4,
@@ -1212,7 +1212,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "Basic memory usage",
           "fill": 4,
@@ -1385,7 +1385,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "Basic network info per interface",
           "fill": 4,
           "id": 74,
@@ -1510,7 +1510,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 3,
           "description": "Disk space used of all filesystems mounted",
           "fill": 4,
@@ -1617,7 +1617,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "",
           "fill": 4,
@@ -1788,7 +1788,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "description": "",
           "fill": 4,
@@ -1954,7 +1954,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 4,
           "id": 84,
           "legend": {
@@ -2073,7 +2073,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 3,
           "description": "",
           "fill": 4,
@@ -2157,7 +2157,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 229,
@@ -2331,7 +2331,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 3,
           "description": "",
           "fill": 4,
@@ -2451,7 +2451,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 3,
           "description": "",
           "fill": 4,
@@ -2565,7 +2565,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 136,
@@ -2602,7 +2602,7 @@
               "intervalFactor": 2,
               "legendFormat": "Inactive - Memory which has been less recently used.  It is more eligible to be reclaimed for other purposes",
               "refId": "K",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_Active_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2610,7 +2610,7 @@
               "intervalFactor": 2,
               "legendFormat": "Active - Memory that has been used more recently and usually not reclaimed unless absolutely necessary",
               "refId": "J",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -2672,7 +2672,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 135,
@@ -2718,7 +2718,7 @@
               "intervalFactor": 2,
               "legendFormat": "Committed_AS - Amount of memory presently allocated on the system",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_CommitLimit_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2726,7 +2726,7 @@
               "intervalFactor": 2,
               "legendFormat": "CommitLimit - Amount of  memory currently available to be allocated on the system",
               "refId": "M",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -2788,7 +2788,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 191,
@@ -2826,7 +2826,7 @@
               "intervalFactor": 2,
               "legendFormat": "Inactive_file - File-backed memory on inactive LRU list",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_Inactive_anon_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2835,7 +2835,7 @@
               "intervalFactor": 2,
               "legendFormat": "Inactive_anon - Anonymous and swap cache on inactive LRU list, including tmpfs (shmem)",
               "refId": "D",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_Active_file_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2844,7 +2844,7 @@
               "intervalFactor": 2,
               "legendFormat": "Active_file - File-backed memory on active LRU list",
               "refId": "B",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_Active_anon_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2853,7 +2853,7 @@
               "intervalFactor": 2,
               "legendFormat": "Active_anon - Anonymous and swap cache on active least-recently-used (LRU) list, including tmpfs",
               "refId": "C",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -2917,7 +2917,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 130,
@@ -2954,7 +2954,7 @@
               "intervalFactor": 2,
               "legendFormat": "Writeback - Memory which is actively being written back to disk",
               "refId": "J",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_WritebackTmp_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2962,7 +2962,7 @@
               "intervalFactor": 2,
               "legendFormat": "WritebackTmp - Memory used by FUSE for temporary writeback buffers",
               "refId": "K",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_Dirty_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -2970,7 +2970,7 @@
               "intervalFactor": 2,
               "legendFormat": "Dirty - Memory which is waiting to get written back to the disk",
               "refId": "A",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3032,7 +3032,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 138,
@@ -3069,7 +3069,7 @@
               "intervalFactor": 2,
               "legendFormat": "Mapped - Used memory in mapped pages files which have been mmaped, such as libraries",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_Shmem_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3077,7 +3077,7 @@
               "intervalFactor": 2,
               "legendFormat": "Shmem - Used shared memory (shared between several processes, thus including RAM disks)",
               "refId": "B",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3141,7 +3141,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 131,
@@ -3178,7 +3178,7 @@
               "intervalFactor": 2,
               "legendFormat": "SUnreclaim - Part of Slab, that cannot be reclaimed on memory pressure",
               "refId": "O",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_SReclaimable_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3186,7 +3186,7 @@
               "intervalFactor": 2,
               "legendFormat": "SReclaimable - Part of Slab, that might be reclaimed, such as caches",
               "refId": "N",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3249,7 +3249,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 70,
@@ -3287,7 +3287,7 @@
               "intervalFactor": 2,
               "legendFormat": "VmallocChunk - Largest contigious block of vmalloc area which is free",
               "refId": "H",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_VmallocTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3296,7 +3296,7 @@
               "intervalFactor": 2,
               "legendFormat": "VmallocTotal - Total size of vmalloc memory area",
               "refId": "I",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_VmallocUsed_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3305,7 +3305,7 @@
               "intervalFactor": 2,
               "legendFormat": "VmallocUsed - Amount of vmalloc area which is used",
               "refId": "O",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3367,7 +3367,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 159,
@@ -3404,7 +3404,7 @@
               "intervalFactor": 2,
               "legendFormat": "Bounce - Memory used for block device bounce buffers",
               "refId": "N",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3467,7 +3467,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 129,
@@ -3509,7 +3509,7 @@
               "intervalFactor": 2,
               "legendFormat": "AnonHugePages - Memory in anonymous huge pages",
               "refId": "D",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_AnonPages_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3517,7 +3517,7 @@
               "intervalFactor": 2,
               "legendFormat": "AnonPages - Memory in user pages not backed by files",
               "refId": "G",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3579,7 +3579,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 160,
@@ -3616,7 +3616,7 @@
               "intervalFactor": 2,
               "legendFormat": "KernelStack - Kernel memory stack. This is not reclaimable",
               "refId": "N",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3679,7 +3679,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 140,
@@ -3716,7 +3716,7 @@
               "intervalFactor": 2,
               "legendFormat": "HugePages_Free - Huge pages in the pool that are not yet allocated",
               "refId": "I",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_HugePages_Rsvd{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3724,7 +3724,7 @@
               "intervalFactor": 2,
               "legendFormat": "HugePages_Rsvd - Huge pages for which a commitment to allocate from the pool has been made, but no allocation has yet been made",
               "refId": "J",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_HugePages_Surp{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3732,7 +3732,7 @@
               "intervalFactor": 2,
               "legendFormat": "HugePages_Surp - Huge pages in the pool above the value in /proc/sys/vm/nr_hugepages",
               "refId": "K",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3795,7 +3795,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 71,
@@ -3832,7 +3832,7 @@
               "intervalFactor": 2,
               "legendFormat": "HugePages - Total size of the pool of huge pages",
               "refId": "L",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_Hugepagesize_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3840,7 +3840,7 @@
               "intervalFactor": 2,
               "legendFormat": "Hugepagesize - Huge Page size",
               "refId": "D",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -3903,7 +3903,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 128,
@@ -3942,7 +3942,7 @@
               "intervalFactor": 2,
               "legendFormat": "DirectMap1G - Amount of pages mapped as this size",
               "refId": "J",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_DirectMap2M_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3951,7 +3951,7 @@
               "intervalFactor": 2,
               "legendFormat": "DirectMap2M - Amount of pages mapped as this size",
               "refId": "K",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_DirectMap4k_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -3960,7 +3960,7 @@
               "intervalFactor": 2,
               "legendFormat": "DirectMap4K - Amount of pages mapped as this size",
               "refId": "L",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4022,7 +4022,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 137,
@@ -4059,7 +4059,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable - Amount of unevictable memory that can't be swapped out for a variety of reasons",
               "refId": "P",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_memory_Mlocked_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -4067,7 +4067,7 @@
               "intervalFactor": 2,
               "legendFormat": "MLocked - Size of pages locked to memory using the mlock() system call",
               "refId": "C",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4131,7 +4131,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 132,
@@ -4168,7 +4168,7 @@
               "intervalFactor": 2,
               "legendFormat": "NFS Unstable - Memory in NFS pages sent to the server, but not yet commited to the storage",
               "refId": "L",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4216,7 +4216,7 @@
       "titleSize": "h6"
     },
     {
-      "collapse": false,
+      "collapse": true,
       "height": "375",
       "panels": [
         {
@@ -4224,7 +4224,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 176,
           "legend": {
@@ -4264,7 +4264,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pagesin - Page in operations",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgpgout{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4272,7 +4272,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pagesout - Page out operations",
               "refId": "B",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4316,7 +4316,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 22,
           "legend": {
@@ -4356,7 +4356,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pswpin - Pages swapped in",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pswpout{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4364,7 +4364,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pswpout - Pages swapped out",
               "refId": "B",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4426,7 +4426,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 197,
@@ -4463,7 +4463,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgdeactivate - Pages moved from active to inactive",
               "refId": "B",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgfree{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4471,7 +4471,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgfree - Page free operations",
               "refId": "D",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgactivate{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4479,7 +4479,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgactivate - Pages moved from inactive to active",
               "refId": "A",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4541,7 +4541,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 175,
@@ -4584,7 +4584,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgfault - Page major and minor fault operations",
               "refId": "C",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgmajfault{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4592,15 +4592,15 @@
               "intervalFactor": 2,
               "legendFormat": "Pgmajfault - Major page fault operations",
               "refId": "F",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgfault{instance=~\"$node:$port\",job=~\"$job\"}[5m])  - irate(node_vmstat_pgmajfault{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "Pgminfault - Minnor page fault operations",
+              "legendFormat": "Pgminfault - Minor page fault operations",
               "refId": "A",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4662,7 +4662,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 172,
@@ -4699,7 +4699,7 @@
               "intervalFactor": 2,
               "legendFormat": "Kswapd_inodesteal - Pages reclaimed via kswapd inode freeing",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pginodesteal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -4707,7 +4707,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgindesteal - Pages reclaimed via inode freeing",
               "refId": "B",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4769,7 +4769,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 184,
@@ -4806,21 +4806,21 @@
               "intervalFactor": 2,
               "legendFormat": "Pageoutrun - Kswapd calls to page reclaim",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_allocstall{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Allocstall - Direct reclaim calls",
               "refId": "B",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_zone_reclaim_failed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Zone_reclaim_failed - Zone reclaim failures",
               "refId": "C",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4882,7 +4882,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 200,
@@ -4919,7 +4919,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrotated - Pages rotated to tail of the LRU",
               "refId": "D",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -4981,7 +4981,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 170,
@@ -5018,7 +5018,7 @@
               "intervalFactor": 2,
               "legendFormat": "Drop_pagecache - Calls to drop page cache pages",
               "refId": "N",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_vmstat_drop_slab{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -5026,7 +5026,7 @@
               "intervalFactor": 2,
               "legendFormat": "Drop_slab - Calls to drop slab cache pages",
               "refId": "A",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5088,7 +5088,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 183,
@@ -5125,7 +5125,7 @@
               "intervalFactor": 2,
               "legendFormat": "Slabs_scanned - Slab pages scanned",
               "refId": "B",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5187,7 +5187,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 181,
@@ -5224,7 +5224,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_cleared - Unevictable pages cleared",
               "refId": "B",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_culled{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5232,7 +5232,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_culled - Unevictable pages culled",
               "refId": "C",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_mlocked{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5240,7 +5240,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_mlocked - Unevictable pages mlocked",
               "refId": "D",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_munlocked{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5248,7 +5248,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_munlocked - Unevictable pages munlocked",
               "refId": "E",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_rescued{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5256,7 +5256,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_rescued- Unevictable pages rescued",
               "refId": "F",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_scanned{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5264,7 +5264,7 @@
               "intervalFactor": 2,
               "legendFormat": "Unevictable_pgs_scanned - Unevictable pages scanned",
               "refId": "G",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_unevictable_pgs_stranded{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5272,7 +5272,7 @@
               "intervalFactor": 2,
               "legendFormat": "unevictable_pgs_stranded - Unevictable pages stranded",
               "refId": "H",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5334,7 +5334,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 174,
@@ -5371,7 +5371,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgalloc_dma - Dma mem page allocations",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgalloc_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5379,7 +5379,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgalloc_dma32 - Dma32 mem page allocations",
               "refId": "B",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgalloc_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5387,7 +5387,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgalloc_movable - Movable mem page allocations",
               "refId": "C",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgalloc_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5395,7 +5395,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgalloc_normal - Normal mem page allocations",
               "refId": "D",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5457,7 +5457,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 177,
@@ -5494,7 +5494,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrefill_dma - Dma mem pages inspected in refill_inactive_zone",
               "refId": "B",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgrefill_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5502,7 +5502,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrefill_dma32 - Dma32 mem pages inspected in refill_inactive_zone",
               "refId": "C",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgrefill_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5510,7 +5510,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrefill_movable - Movable mem pages inspected in refill_inactive_zone",
               "refId": "D",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgrefill_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5518,7 +5518,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgrefill_normal - Normal mem pages inspected in refill_inactive_zone",
               "refId": "E",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5580,7 +5580,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 179,
@@ -5617,7 +5617,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_direct_dma - Dma mem pages stealed",
               "refId": "B",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgsteal_direct_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5625,7 +5625,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_direct_dma32 - Dma32 mem pages scanned",
               "refId": "C",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgsteal_direct_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5633,7 +5633,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_direct_movable - Movable mem pages scanned",
               "refId": "D",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgsteal_direct_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5641,7 +5641,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_direct_normal - Normal mem pages scanned",
               "refId": "E",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5703,7 +5703,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 198,
@@ -5740,7 +5740,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_kswapd_dma - Dma mem pages scanned by kswapd",
               "refId": "F",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgsteal_kswapd_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5748,7 +5748,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_kswapd_dma32 - Dma32 mem pages scanned by kswapd",
               "refId": "G",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgsteal_kswapd_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5756,7 +5756,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_kswapd_movable - Movable mem pages scanned by kswapd",
               "refId": "H",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgsteal_kswapd_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5764,7 +5764,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgsteal_kswapd_normal - Normal mem pages scanned by kswapd",
               "refId": "I",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -5826,7 +5826,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 192,
@@ -5863,7 +5863,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_direct_dma - Dma mem pages scanned",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_direct_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5871,7 +5871,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_direct_dma32 - Dma32 mem pages scanned",
               "refId": "C",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_direct_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5879,7 +5879,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_direct_movable - Movable mem pages scanned",
               "refId": "D",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_direct_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5887,7 +5887,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_direct_normal - Normal mem pages scanned",
               "refId": "E",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_direct_throttle{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -5958,7 +5958,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 178,
@@ -5995,7 +5995,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_kswapd_dma - Dma mem pages scanned by kswapd",
               "refId": "B",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_kswapd_dma32{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6003,7 +6003,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_kswapd_dma32 - Dma32 mem pages scanned by kswapd",
               "refId": "G",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_kswapd_movable{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6011,7 +6011,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_kswapd_movable - Movable mem pages scanned by kswapd",
               "refId": "H",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgscan_kswapd_normal{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6019,7 +6019,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgscan_kswapd_normal - Normal mem pages scanned by kswapd",
               "refId": "I",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6083,7 +6083,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 169,
@@ -6125,7 +6125,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_free_scanned - Pages scanned for freeing by compaction daemon",
               "refId": "B",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_compact_isolated{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6133,7 +6133,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_isolated - Page isolations for memory compaction",
               "refId": "C",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_compact_migrate_scanned{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6141,7 +6141,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_migrate_scanned - Pages scanned for migration by compaction daemon",
               "refId": "D",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6205,7 +6205,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 189,
@@ -6247,7 +6247,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_fail - Unsuccessful compactions for high order allocations",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_compact_stall{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6255,7 +6255,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_stall - Failures to even start compacting",
               "refId": "E",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_compact_success{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6263,7 +6263,7 @@
               "intervalFactor": 2,
               "legendFormat": "Compact_sucess - Successful compactions for high order allocations",
               "refId": "F",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6325,7 +6325,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 190,
@@ -6362,7 +6362,7 @@
               "intervalFactor": 2,
               "legendFormat": "Kswapd_high_wmark_hit_quickly - Times high watermark reached quickly",
               "refId": "N",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_vmstat_kswapd_low_wmark_hit_quickly{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -6370,7 +6370,7 @@
               "intervalFactor": 2,
               "legendFormat": "Kswapd_low_wmark_hit_quickly - Times low watermark reached quickly",
               "refId": "B",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6432,7 +6432,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 171,
@@ -6469,7 +6469,7 @@
               "intervalFactor": 2,
               "legendFormat": "Htlb_buddy_alloc_fail - Huge TLB page buddy allocation failures",
               "refId": "N",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "node_vmstat_htlb_buddy_alloc_success{instance=~\"$node:$port\",job=~\"$job\"}",
@@ -6477,7 +6477,7 @@
               "intervalFactor": 2,
               "legendFormat": "Htlb_buddy_alloc_success - Huge TLB page buddy allocation successes",
               "refId": "A",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6539,7 +6539,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 173,
@@ -6576,7 +6576,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_foreign - Foreign NUMA zone allocations",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_hit{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6584,7 +6584,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_hit - Successful allocations from preferred NUMA zone",
               "refId": "D",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_interleave{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6592,7 +6592,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_interleave - Interleaved NUMA allocations in each zone for each NUMA node",
               "refId": "F",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_local{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6600,7 +6600,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_local - Successful allocations from local NUMA zone",
               "refId": "G",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_miss{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6608,7 +6608,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_miss - Unsuccessful allocations from preferred NUMA zona",
               "refId": "H",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_other{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6616,7 +6616,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_other - Unsuccessful allocations from local NUMA zone",
               "refId": "I",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6678,7 +6678,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 193,
@@ -6721,7 +6721,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_pages_migrated - NUMA page migrations",
               "refId": "J",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgmigrate_fail{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6729,7 +6729,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgmigrate_fail - Unsuccessful NUMA page migrations",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_pgmigrate_success{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6737,7 +6737,7 @@
               "intervalFactor": 2,
               "legendFormat": "Pgmigrate_success - Successful NUMA page migrations",
               "refId": "B",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6799,7 +6799,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 194,
@@ -6836,7 +6836,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_hint_faults - NUMA hint faults trapped",
               "refId": "B",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_hint_faults_local{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -6844,7 +6844,7 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_hint_faults_local - Hinting faults to local nodes",
               "refId": "C",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -6906,7 +6906,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 196,
@@ -6943,14 +6943,14 @@
               "intervalFactor": 2,
               "legendFormat": "Numa_pte_updates - NUMA page table entry updates",
               "refId": "K",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_numa_huge_pte_updates{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Numa_huge_pte_updates - NUMA huge page table entry updates",
               "refId": "A",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -7012,7 +7012,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 199,
@@ -7049,20 +7049,13 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_split - Transparent huge page splits",
               "refId": "F",
-              "step": 240
-            },
-            {
-              "expr": "irate(node_vmstat_thp_fault_fallback{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
-              "intervalFactor": 2,
-              "legendFormat": "Thp_fault_fallback - Transparent huge page fault fallbacks",
-              "refId": "A",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Memory THP Splits / Faults",
+          "title": "Memory THP Splits",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -7118,7 +7111,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 182,
@@ -7155,7 +7148,7 @@
               "intervalFactor": 2,
               "legendFormat": "Workingset_activate - Page activations to form the working set",
               "refId": "C",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_workingset_nodereclaim{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -7163,7 +7156,7 @@
               "intervalFactor": 2,
               "legendFormat": "Workingset_nodereclaim - NUMA node working set page reclaims",
               "refId": "D",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_workingset_refault{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -7171,7 +7164,7 @@
               "intervalFactor": 2,
               "legendFormat": "Workingset_refault - Refaults of previously evicted pages",
               "refId": "E",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -7233,7 +7226,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 180,
@@ -7270,7 +7263,7 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_collapse_alloc - Transparent huge page collapse allocations",
               "refId": "A",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_thp_collapse_alloc_failed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -7278,7 +7271,7 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_collapse_alloc_failed - Transparent huge page collapse allocation failures",
               "refId": "C",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_thp_zero_page_alloc{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -7286,7 +7279,7 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_zero_page_alloc - Transparent huge page zeroed page allocations",
               "refId": "G",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_thp_zero_page_alloc_failed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
@@ -7294,14 +7287,21 @@
               "intervalFactor": 2,
               "legendFormat": "Thp_zero_page_alloc_failed - Transparent huge page zeroed page allocation failures",
               "refId": "H",
-              "step": 240
+              "step": 4
             },
             {
               "expr": "irate(node_vmstat_thp_fault_alloc{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "Thp_fault_alloc - Transparent huge page fault allocations",
               "refId": "B",
-              "step": 240
+              "step": 4
+            },
+            {
+              "expr": "irate(node_vmstat_thp_fault_fallback{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "intervalFactor": 2,
+              "legendFormat": "Thp_fault_fallback - Transparent huge page fault fallbacks",
+              "refId": "D",
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -7375,7 +7375,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 185,
@@ -7482,7 +7482,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 228,
@@ -7587,7 +7587,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 188,
@@ -7694,7 +7694,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 186,
@@ -7799,7 +7799,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 218,
@@ -7905,7 +7905,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 201,
@@ -8011,7 +8011,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 214,
@@ -8117,7 +8117,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 212,
@@ -8216,7 +8216,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 203,
@@ -8323,7 +8323,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 205,
@@ -8422,7 +8422,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 206,
@@ -8529,7 +8529,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 208,
@@ -8635,7 +8635,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 209,
@@ -8734,7 +8734,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 217,
@@ -8833,7 +8833,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 213,
@@ -8940,7 +8940,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 216,
@@ -9047,7 +9047,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "fill": 2,
           "id": 204,
@@ -9154,7 +9154,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 8,
           "legend": {
@@ -9241,7 +9241,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 7,
           "legend": {
@@ -9336,7 +9336,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 259,
           "legend": {
@@ -9425,7 +9425,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 64,
           "legend": {
@@ -9516,7 +9516,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 151,
           "legend": {
@@ -9594,7 +9594,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 62,
           "legend": {
@@ -9680,7 +9680,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 148,
           "legend": {
@@ -9759,7 +9759,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 149,
           "legend": {
@@ -9844,7 +9844,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 168,
@@ -9937,7 +9937,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 260,
@@ -10042,7 +10042,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 158,
           "legend": {
@@ -10182,7 +10182,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 9,
@@ -10355,7 +10355,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 33,
@@ -10529,7 +10529,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 3,
           "id": 37,
@@ -10705,7 +10705,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 35,
@@ -10868,7 +10868,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 133,
@@ -11042,7 +11042,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 3,
           "id": 36,
@@ -11205,7 +11205,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 34,
@@ -11368,7 +11368,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 66,
@@ -11540,7 +11540,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 3,
           "description": "",
           "fill": 2,
@@ -11641,7 +11641,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 41,
@@ -11722,7 +11722,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 28,
@@ -11809,7 +11809,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 219,
@@ -11892,7 +11892,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -11992,7 +11992,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 60,
           "legend": {
@@ -12112,7 +12112,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 142,
           "legend": {
@@ -12236,7 +12236,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 143,
           "legend": {
@@ -12360,7 +12360,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 141,
           "legend": {
@@ -12484,7 +12484,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 146,
           "legend": {
@@ -12600,7 +12600,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 144,
           "legend": {
@@ -12724,7 +12724,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 145,
           "legend": {
@@ -12841,7 +12841,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 231,
           "legend": {
@@ -12945,7 +12945,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 232,
           "legend": {
@@ -13049,7 +13049,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 61,
           "legend": {
@@ -13141,7 +13141,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 230,
           "legend": {
@@ -13231,7 +13231,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 63,
           "legend": {
@@ -13344,7 +13344,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 124,
           "legend": {
@@ -13441,7 +13441,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 126,
           "legend": {
@@ -13522,7 +13522,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 220,
           "legend": {
@@ -13611,7 +13611,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "id": 125,
           "legend": {
@@ -13720,7 +13720,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 49,
@@ -13845,7 +13845,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 221,
@@ -13963,7 +13963,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 119,
@@ -14081,7 +14081,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 222,
@@ -14199,7 +14199,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 120,
@@ -14319,7 +14319,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 223,
@@ -14439,7 +14439,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 81,
@@ -14532,7 +14532,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 122,
@@ -14633,7 +14633,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 51,
@@ -14742,7 +14742,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 123,
@@ -14851,7 +14851,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 118,
@@ -15025,7 +15025,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 52,
@@ -15166,7 +15166,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 85,
@@ -15264,7 +15264,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 86,
@@ -15365,7 +15365,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 82,
@@ -15483,7 +15483,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -15620,7 +15620,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -15721,7 +15721,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -15853,7 +15853,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -15973,7 +15973,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -16098,7 +16098,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -16241,7 +16241,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -16344,7 +16344,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -16437,7 +16437,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 100,
@@ -16547,7 +16547,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -16651,7 +16651,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -16800,7 +16800,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -16939,7 +16939,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -17079,7 +17079,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -17183,7 +17183,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -17284,7 +17284,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -17377,7 +17377,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -17487,7 +17487,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -17581,7 +17581,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -17684,7 +17684,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -17779,7 +17779,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -17874,7 +17874,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "description": "",
           "fill": 2,
@@ -17969,7 +17969,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -18054,7 +18054,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -18147,7 +18147,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -18232,7 +18232,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -18317,7 +18317,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "height": "",
@@ -18444,7 +18444,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -18549,7 +18549,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 109,
@@ -18677,7 +18677,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 57,
@@ -18777,7 +18777,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 2,
           "height": "",
           "id": 110,
@@ -18913,7 +18913,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -19081,7 +19081,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -19253,7 +19253,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -19374,7 +19374,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -19495,7 +19495,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -19616,7 +19616,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "fill": 2,
           "height": "",
@@ -19749,7 +19749,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 40,
@@ -19828,7 +19828,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_LOCALHOST}",
+          "datasource": "${DS_PROMETHEUS}",
           "description": "",
           "fill": 2,
           "id": 157,
@@ -19919,14 +19919,14 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_LOCALHOST}",
+        "datasource": "${DS_PROMETHEUS}",
         "hide": 0,
         "includeAll": false,
         "label": "Job",
         "multi": false,
         "name": "job",
         "options": [],
-        "query": "label_values(node_exporter_build_info, job)",
+        "query": "label_values(node_uname_info, job)",
         "refresh": 1,
         "regex": "",
         "sort": 1,
@@ -19939,14 +19939,34 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_LOCALHOST}",
+        "datasource": "${DS_PROMETHEUS}",
         "hide": 0,
+        "includeAll": false,
+        "label": "Host:",
+        "multi": false,
+        "name": "name",
+        "options": [],
+        "query": "label_values(node_uname_info{job=~\"$job\"}, nodename)",
+        "refresh": 1,
+        "regex": "",
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_PROMETHEUS}",
+        "hide": 2,
         "includeAll": false,
         "label": "Host:",
         "multi": false,
         "name": "node",
         "options": [],
-        "query": "label_values(node_exporter_build_info{job=~\"$job\"}, instance)",
+        "query": "label_values(node_uname_info{nodename=\"$name\"}, instance)",
         "refresh": 1,
         "regex": "/([^:]+):.*/",
         "sort": 1,
@@ -19959,14 +19979,14 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_LOCALHOST}",
+        "datasource": "${DS_PROMETHEUS}",
         "hide": 0,
         "includeAll": false,
         "label": "Port",
         "multi": false,
         "name": "port",
         "options": [],
-        "query": "label_values(node_exporter_build_info{instance=~\"$node:(.*)\"}, instance)",
+        "query": "label_values(node_uname_info{instance=~\"$node:(.*)\"}, instance)",
         "refresh": 1,
         "regex": "/[^:]+:(.*)/",
         "sort": 3,
@@ -20009,5 +20029,5 @@
   },
   "timezone": "browser",
   "title": "Node Exporter Full",
-  "version": 62
+  "version": 63
 }
