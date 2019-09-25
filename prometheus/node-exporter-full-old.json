@@ -15296,7 +15296,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "TCP Aborts / Tiemouts",
+          "title": "TCP Aborts / Timeouts",
           "tooltip": {
             "shared": true,
             "sort": 0,
