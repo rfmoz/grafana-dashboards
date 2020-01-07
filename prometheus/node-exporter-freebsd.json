@@ -1171,7 +1171,7 @@
             "Swap_Cache": "#C15C17",
             "Swap_Free": "#2F575E",
             "Unused": "#EAB839",
-            "Unused - Free memory unasigned": "#052B51"
+            "Unused - Free memory unassigned": "#052B51"
           },
           "bars": false,
           "dashLength": 10,
