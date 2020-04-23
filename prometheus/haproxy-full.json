@@ -364,7 +364,7 @@
           },
           "yaxes": [
             {
-              "format": "bytes",
+              "format": "bits",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -829,7 +829,7 @@
           },
           "yaxes": [
             {
-              "format": "bytes",
+              "format": "bits",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -925,7 +925,7 @@
           },
           "yaxes": [
             {
-              "format": "bytes",
+              "format": "bits",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -2667,7 +2667,7 @@
           },
           "yaxes": [
             {
-              "format": "bytes",
+              "format": "bits",
               "label": null,
               "logBase": 1,
               "max": null,
