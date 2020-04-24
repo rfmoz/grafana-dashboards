@@ -100,3 +100,9 @@ Only requires a configured target under any job_name. For example:
         - targets:
            - server_hostname:9119
 ```
+
+
+## Donation
+If you find this dashboards helpful or/and get from them any comercial profit, maybe you can give me a tip. I will try to continue them with the same quality  :) 
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YPMGFHEDMA6SJ)
