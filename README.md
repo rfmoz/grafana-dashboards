@@ -85,3 +85,18 @@ Check that the process was started with the arguments "--collector.nfs" and "--c
 The same as Node Exporter Full. Only requires the default job_name: node, add as many targets as you need in '/etc/prometheus/prometheus.yml'.
 
 
+
+### Bind9 Full
+
+For prometheus-bind-exporter
+
+Monitor Bind9 service.
+
+Only requires a configured target under any job_name. For example:
+
+```
+  - job_name: 'bind'
+    static_configs:
+        - targets:
+           - server_hostname:9119
+```
