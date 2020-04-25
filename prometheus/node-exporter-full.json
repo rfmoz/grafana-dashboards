@@ -59,7 +59,7 @@
   "gnetId": 1860,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1587820452338,
+  "iteration": 1587820452341,
   "links": [],
   "panels": [
     {
@@ -13133,7 +13133,7 @@
     ]
   },
   "time": {
-    "from": "now-12h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -13167,5 +13167,5 @@
   "variables": {
     "list": []
   },
-  "version": 31
+  "version": 32
 }
