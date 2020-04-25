@@ -20,7 +20,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.5.3"
+      "version": "6.7.3"
     },
     {
       "type": "panel",
@@ -44,6 +44,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:1058",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -58,7 +59,7 @@
   "gnetId": 1860,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1579366471372,
+  "iteration": 1587820452338,
   "links": [],
   "panels": [
     {
@@ -94,6 +95,9 @@
             "lastNotNull"
           ],
           "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
             "mappings": [
               {
                 "id": 0,
@@ -106,30 +110,33 @@
             "max": 100,
             "min": 0,
             "nullValueMode": "null",
-            "thresholds": [
-              {
-                "color": "rgba(50, 172, 45, 0.97)",
-                "value": null
-              },
-              {
-                "color": "rgba(237, 129, 40, 0.89)",
-                "value": 85
-              },
-              {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": 95
-              }
-            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "rgba(50, 172, 45, 0.97)",
+                  "value": null
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 85
+                },
+                {
+                  "color": "rgba(245, 54, 54, 0.9)",
+                  "value": 95
+                }
+              ]
+            },
             "unit": "percent"
           },
-          "override": {},
+          "overrides": [],
           "values": false
         },
         "orientation": "horizontal",
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "6.5.3",
+      "pluginVersion": "6.7.3",
       "targets": [
         {
           "expr": "(((count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu))) - avg(sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"$node:$port\",job=~\"$job\"}[5m])))) * 100) / count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu))",
@@ -161,6 +168,9 @@
             "lastNotNull"
           ],
           "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
             "mappings": [
               {
                 "id": 0,
@@ -173,30 +183,33 @@
             "max": 100,
             "min": 0,
             "nullValueMode": "null",
-            "thresholds": [
-              {
-                "color": "rgba(50, 172, 45, 0.97)",
-                "value": null
-              },
-              {
-                "color": "rgba(237, 129, 40, 0.89)",
-                "value": 85
-              },
-              {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": 95
-              }
-            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "rgba(50, 172, 45, 0.97)",
+                  "value": null
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 85
+                },
+                {
+                  "color": "rgba(245, 54, 54, 0.9)",
+                  "value": 95
+                }
+              ]
+            },
             "unit": "percent"
           },
-          "override": {},
+          "overrides": [],
           "values": false
         },
         "orientation": "horizontal",
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "6.5.3",
+      "pluginVersion": "6.7.3",
       "targets": [
         {
           "expr": "avg(node_load5{instance=~\"$node:$port\",job=~\"$job\"}) /  count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu)) * 100",
@@ -228,6 +241,9 @@
             "lastNotNull"
           ],
           "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
             "mappings": [
               {
                 "id": 0,
@@ -240,30 +256,33 @@
             "max": 100,
             "min": 0,
             "nullValueMode": "null",
-            "thresholds": [
-              {
-                "color": "rgba(50, 172, 45, 0.97)",
-                "value": null
-              },
-              {
-                "color": "rgba(237, 129, 40, 0.89)",
-                "value": 85
-              },
-              {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": 95
-              }
-            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "rgba(50, 172, 45, 0.97)",
+                  "value": null
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 85
+                },
+                {
+                  "color": "rgba(245, 54, 54, 0.9)",
+                  "value": 95
+                }
+              ]
+            },
             "unit": "percent"
           },
-          "override": {},
+          "overrides": [],
           "values": false
         },
         "orientation": "horizontal",
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "6.5.3",
+      "pluginVersion": "6.7.3",
       "targets": [
         {
           "expr": "avg(node_load15{instance=~\"$node:$port\",job=~\"$job\"}) /  count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu)) * 100",
@@ -295,35 +314,41 @@
             "lastNotNull"
           ],
           "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
             "decimals": 0,
             "mappings": [],
             "max": 100,
             "min": 0,
             "nullValueMode": "null",
-            "thresholds": [
-              {
-                "color": "rgba(50, 172, 45, 0.97)",
-                "value": null
-              },
-              {
-                "color": "rgba(237, 129, 40, 0.89)",
-                "value": 80
-              },
-              {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": 90
-              }
-            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "rgba(50, 172, 45, 0.97)",
+                  "value": null
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 80
+                },
+                {
+                  "color": "rgba(245, 54, 54, 0.9)",
+                  "value": 90
+                }
+              ]
+            },
             "unit": "percent"
           },
-          "override": {},
+          "overrides": [],
           "values": false
         },
         "orientation": "horizontal",
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "6.5.3",
+      "pluginVersion": "6.7.3",
       "targets": [
         {
           "expr": "((node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_MemFree_bytes{instance=~\"$node:$port\",job=~\"$job\"}) / (node_memory_MemTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} )) * 100",
@@ -363,6 +388,9 @@
             "lastNotNull"
           ],
           "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
             "mappings": [
               {
                 "id": 0,
@@ -375,30 +403,33 @@
             "max": 100,
             "min": 0,
             "nullValueMode": "null",
-            "thresholds": [
-              {
-                "color": "rgba(50, 172, 45, 0.97)",
-                "value": null
-              },
-              {
-                "color": "rgba(237, 129, 40, 0.89)",
-                "value": 10
-              },
-              {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": 25
-              }
-            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "rgba(50, 172, 45, 0.97)",
+                  "value": null
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 10
+                },
+                {
+                  "color": "rgba(245, 54, 54, 0.9)",
+                  "value": 25
+                }
+              ]
+            },
             "unit": "percent"
           },
-          "override": {},
+          "overrides": [],
           "values": false
         },
         "orientation": "horizontal",
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "6.5.3",
+      "pluginVersion": "6.7.3",
       "targets": [
         {
           "expr": "((node_memory_SwapTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} - node_memory_SwapFree_bytes{instance=~\"$node:$port\",job=~\"$job\"}) / (node_memory_SwapTotal_bytes{instance=~\"$node:$port\",job=~\"$job\"} )) * 100",
@@ -428,6 +459,9 @@
             "lastNotNull"
           ],
           "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
             "mappings": [
               {
                 "id": 0,
@@ -440,30 +474,33 @@
             "max": 100,
             "min": 0,
             "nullValueMode": "null",
-            "thresholds": [
-              {
-                "color": "rgba(50, 172, 45, 0.97)",
-                "value": null
-              },
-              {
-                "color": "rgba(237, 129, 40, 0.89)",
-                "value": 80
-              },
-              {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": 90
-              }
-            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "rgba(50, 172, 45, 0.97)",
+                  "value": null
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 80
+                },
+                {
+                  "color": "rgba(245, 54, 54, 0.9)",
+                  "value": 90
+                }
+              ]
+            },
             "unit": "percent"
           },
-          "override": {},
+          "overrides": [],
           "values": false
         },
         "orientation": "horizontal",
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "6.5.3",
+      "pluginVersion": "6.7.3",
       "targets": [
         {
           "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"})",
@@ -519,7 +556,6 @@
       "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -541,13 +577,186 @@
       "targets": [
         {
           "expr": "count(count(node_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}) by (cpu))",
+          "interval": "",
           "intervalFactor": 1,
+          "legendFormat": "",
           "refId": "A",
           "step": 900
         }
       ],
       "thresholds": "",
       "title": "CPU Cores",
+      "type": "singlestat",
+      "valueFontSize": "50%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "${DS_PROMETHEUS}",
+      "decimals": 1,
+      "description": "System uptime",
+      "format": "s",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 4,
+        "x": 20,
+        "y": 1
+      },
+      "hideTimeOverride": true,
+      "id": 15,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "$$hashKey": "object:1094",
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "$$hashKey": "object:1095",
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "null",
+      "nullText": null,
+      "postfix": "s",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "node_time_seconds{instance=~\"$node:$port\",job=~\"$job\"} - node_boot_time_seconds{instance=~\"$node:$port\",job=~\"$job\"}",
+          "intervalFactor": 2,
+          "refId": "A",
+          "step": 1800
+        }
+      ],
+      "thresholds": "",
+      "title": "Uptime",
+      "type": "singlestat",
+      "valueFontSize": "50%",
+      "valueMaps": [
+        {
+          "$$hashKey": "object:1097",
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(50, 172, 45, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "datasource": "${DS_PROMETHEUS}",
+      "decimals": 0,
+      "description": "Total RootFS",
+      "format": "bytes",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 18,
+        "y": 3
+      },
+      "id": 23,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "maxPerRow": 6,
+      "nullPointMode": "null",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"}",
+          "format": "time_series",
+          "hide": false,
+          "intervalFactor": 1,
+          "refId": "A",
+          "step": 900
+        }
+      ],
+      "thresholds": "70,90",
+      "title": "RootFS Total",
       "type": "singlestat",
       "valueFontSize": "50%",
       "valueMaps": [
@@ -583,7 +792,7 @@
         "h": 2,
         "w": 2,
         "x": 20,
-        "y": 1
+        "y": 3
       },
       "id": 75,
       "interval": null,
@@ -603,7 +812,6 @@
       "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "70%",
       "prefix": "",
@@ -667,7 +875,7 @@
         "h": 2,
         "w": 2,
         "x": 22,
-        "y": 1
+        "y": 3
       },
       "id": 18,
       "interval": null,
@@ -687,7 +895,6 @@
       "maxPerRow": 6,
       "nullPointMode": "null",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "70%",
       "prefix": "",
@@ -718,261 +925,6 @@
       "title": "SWAP Total",
       "type": "singlestat",
       "valueFontSize": "50%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": false,
-      "colors": [
-        "rgba(245, 54, 54, 0.9)",
-        "rgba(237, 129, 40, 0.89)",
-        "rgba(50, 172, 45, 0.97)"
-      ],
-      "datasource": "${DS_PROMETHEUS}",
-      "decimals": 2,
-      "description": "System Load (1m avg)",
-      "format": "short",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 18,
-        "y": 3
-      },
-      "id": 17,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "maxPerRow": 12,
-      "nullPointMode": "null",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "expr": "node_load1{instance=~\"$node:$port\",job=~\"$job\"}",
-          "hide": false,
-          "intervalFactor": 1,
-          "refId": "A",
-          "step": 900
-        }
-      ],
-      "thresholds": "",
-      "title": "Sys Load (1m avg)",
-      "type": "singlestat",
-      "valueFontSize": "50%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": false,
-      "colors": [
-        "rgba(50, 172, 45, 0.97)",
-        "rgba(237, 129, 40, 0.89)",
-        "rgba(245, 54, 54, 0.9)"
-      ],
-      "datasource": "${DS_PROMETHEUS}",
-      "decimals": 0,
-      "description": "Total RootFS",
-      "format": "bytes",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 20,
-        "y": 3
-      },
-      "id": 23,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "maxPerRow": 6,
-      "nullPointMode": "null",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "expr": "node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"}",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "refId": "A",
-          "step": 900
-        }
-      ],
-      "thresholds": "70,90",
-      "title": "RootFS Total",
-      "type": "singlestat",
-      "valueFontSize": "50%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": false,
-      "colors": [
-        "rgba(245, 54, 54, 0.9)",
-        "rgba(237, 129, 40, 0.89)",
-        "rgba(50, 172, 45, 0.97)"
-      ],
-      "datasource": "${DS_PROMETHEUS}",
-      "decimals": 1,
-      "description": "System uptime",
-      "format": "s",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 22,
-        "y": 3
-      },
-      "hideTimeOverride": true,
-      "id": 15,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "null",
-      "nullText": null,
-      "options": {},
-      "postfix": "s",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "expr": "node_time_seconds{instance=~\"$node:$port\",job=~\"$job\"} - node_boot_time_seconds{instance=~\"$node:$port\",job=~\"$job\"}",
-          "intervalFactor": 2,
-          "refId": "A",
-          "step": 1800
-        }
-      ],
-      "thresholds": "",
-      "title": "Uptime",
-      "type": "singlestat",
-      "valueFontSize": "30%",
       "valueMaps": [
         {
           "op": "=",
@@ -1088,7 +1040,7 @@
           "hide": false,
           "intervalFactor": 2,
           "legendFormat": "Busy System",
-          "refId": "B",
+          "refId": "A",
           "step": 240
         },
         {
@@ -1097,7 +1049,7 @@
           "hide": false,
           "intervalFactor": 2,
           "legendFormat": "Busy User",
-          "refId": "D",
+          "refId": "B",
           "step": 240
         },
         {
@@ -1105,7 +1057,7 @@
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "Busy Iowait",
-          "refId": "E",
+          "refId": "C",
           "step": 240
         },
         {
@@ -1113,7 +1065,7 @@
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "Busy IRQs",
-          "refId": "F",
+          "refId": "D",
           "step": 240
         },
         {
@@ -1121,7 +1073,7 @@
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "Busy Other",
-          "refId": "A",
+          "refId": "E",
           "step": 240
         },
         {
@@ -1129,7 +1081,7 @@
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "Idle",
-          "refId": "C",
+          "refId": "F",
           "step": 240
         }
       ],
@@ -1277,7 +1229,7 @@
           "hide": false,
           "intervalFactor": 2,
           "legendFormat": "RAM Used",
-          "refId": "D",
+          "refId": "B",
           "step": 240
         },
         {
@@ -1285,7 +1237,7 @@
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "RAM Cache + Buffer",
-          "refId": "B",
+          "refId": "C",
           "step": 240
         },
         {
@@ -1293,7 +1245,7 @@
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "RAM Free",
-          "refId": "F",
+          "refId": "D",
           "step": 240
         },
         {
@@ -1301,7 +1253,7 @@
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "SWAP Used",
-          "refId": "G",
+          "refId": "E",
           "step": 240
         }
       ],
@@ -1616,7 +1568,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 21
+            "y": 3
           },
           "hiddenSeries": false,
           "id": 3,
@@ -1682,7 +1634,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Idle - Waiting for something to happen",
-              "refId": "F",
+              "refId": "D",
               "step": 240
             },
             {
@@ -1690,7 +1642,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Iowait - Waiting for I/O to complete",
-              "refId": "D",
+              "refId": "E",
               "step": 240
             },
             {
@@ -1698,7 +1650,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Irq - Servicing interrupts",
-              "refId": "G",
+              "refId": "F",
               "step": 240
             },
             {
@@ -1706,7 +1658,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Softirq - Servicing softirqs",
-              "refId": "H",
+              "refId": "G",
               "step": 240
             },
             {
@@ -1714,7 +1666,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Steal - Time spent in other operating systems when running in a virtualized environment",
-              "refId": "E",
+              "refId": "H",
               "step": 240
             },
             {
@@ -1747,7 +1699,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Percentage",
+              "label": "percentage",
               "logBase": 1,
               "max": "100",
               "min": "0",
@@ -1801,7 +1753,7 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 21
+            "y": 3
           },
           "hiddenSeries": false,
           "id": 24,
@@ -1847,7 +1799,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Apps - Memory used by user-space applications",
-              "refId": "Q",
+              "refId": "A",
               "step": 240
             },
             {
@@ -1856,7 +1808,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "PageTables - Memory used to map between virtual and physical memory addresses",
-              "refId": "G",
+              "refId": "B",
               "step": 240
             },
             {
@@ -1864,7 +1816,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "SwapCache - Memory that keeps track of pages that have been fetched from swap but not yet been modified",
-              "refId": "F",
+              "refId": "C",
               "step": 240
             },
             {
@@ -1873,7 +1825,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Slab - Memory used by the kernel to cache data structures for its own use (caches like inode, dentry, etc)",
-              "refId": "E",
+              "refId": "D",
               "step": 240
             },
             {
@@ -1882,7 +1834,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Cache - Parked file data (file content) cache",
-              "refId": "C",
+              "refId": "E",
               "step": 240
             },
             {
@@ -1891,7 +1843,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Buffers - Block device (e.g. harddisk) cache",
-              "refId": "B",
+              "refId": "F",
               "step": 240
             },
             {
@@ -1900,7 +1852,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Unused - Free memory unassigned",
-              "refId": "D",
+              "refId": "G",
               "step": 240
             },
             {
@@ -1909,7 +1861,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Swap - Swap space used",
-              "refId": "I",
+              "refId": "H",
               "step": 240
             },
             {
@@ -1918,7 +1870,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Hardware Corrupted - Amount of RAM that the kernel identified as corrupted / not working",
-              "refId": "O",
+              "refId": "I",
               "step": 240
             }
           ],
@@ -1943,7 +1895,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -1980,7 +1932,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 33
+            "y": 15
           },
           "hiddenSeries": false,
           "id": 84,
@@ -2008,6 +1960,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
+              "$$hashKey": "object:5871",
               "alias": "/.*Trans.*/",
               "transform": "negative-Y"
             }
@@ -2021,7 +1974,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive",
-              "refId": "O",
+              "refId": "A",
               "step": 240
             },
             {
@@ -2029,7 +1982,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit",
-              "refId": "P",
+              "refId": "B",
               "step": 240
             }
           ],
@@ -2053,14 +2006,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:5884",
               "format": "bps",
-              "label": "Bits out (-) / in (+)",
+              "label": "bits out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
               "show": true
             },
             {
+              "$$hashKey": "object:5885",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -2088,7 +2043,7 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 33
+            "y": 15
           },
           "height": "",
           "hiddenSeries": false,
@@ -2153,7 +2108,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -2186,7 +2141,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 45
+            "y": 27
           },
           "hiddenSeries": false,
           "id": 229,
@@ -2380,7 +2335,7 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 45
+            "y": 27
           },
           "hiddenSeries": false,
           "id": 42,
@@ -2479,7 +2434,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes read (-) / write (+)",
+              "label": "bytes read (-) / write (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -2515,7 +2470,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 57
+            "y": 39
           },
           "hiddenSeries": false,
           "id": 127,
@@ -2555,7 +2510,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Time spent doing I/Os",
-              "refId": "C",
+              "refId": "A",
               "step": 240
             }
           ],
@@ -2580,7 +2535,7 @@
           "yaxes": [
             {
               "format": "s",
-              "label": "Time",
+              "label": "time",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -2647,7 +2602,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 8
+            "y": 4
           },
           "hiddenSeries": false,
           "id": 136,
@@ -2685,7 +2640,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Inactive - Memory which has been less recently used.  It is more eligible to be reclaimed for other purposes",
-              "refId": "K",
+              "refId": "A",
               "step": 4
             },
             {
@@ -2693,7 +2648,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Active - Memory that has been used more recently and usually not reclaimed unless absolutely necessary",
-              "refId": "J",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -2718,7 +2673,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -2769,7 +2724,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 8
+            "y": 4
           },
           "hiddenSeries": false,
           "id": 135,
@@ -2824,7 +2779,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "CommitLimit - Amount of  memory currently available to be allocated on the system",
-              "refId": "M",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -2849,7 +2804,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -2900,7 +2855,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 18
+            "y": 14
           },
           "hiddenSeries": false,
           "id": 191,
@@ -2948,7 +2903,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Inactive_anon - Anonymous and swap cache on inactive LRU list, including tmpfs (shmem)",
-              "refId": "D",
+              "refId": "B",
               "step": 4
             },
             {
@@ -2957,7 +2912,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Active_file - File-backed memory on active LRU list",
-              "refId": "B",
+              "refId": "C",
               "step": 4
             },
             {
@@ -2966,7 +2921,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Active_anon - Anonymous and swap cache on active least-recently-used (LRU) list, including tmpfs",
-              "refId": "C",
+              "refId": "D",
               "step": 4
             }
           ],
@@ -2991,7 +2946,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -3044,7 +2999,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 18
+            "y": 14
           },
           "hiddenSeries": false,
           "id": 130,
@@ -3082,7 +3037,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Writeback - Memory which is actively being written back to disk",
-              "refId": "J",
+              "refId": "A",
               "step": 4
             },
             {
@@ -3090,7 +3045,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "WritebackTmp - Memory used by FUSE for temporary writeback buffers",
-              "refId": "K",
+              "refId": "B",
               "step": 4
             },
             {
@@ -3098,7 +3053,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Dirty - Memory which is waiting to get written back to the disk",
-              "refId": "A",
+              "refId": "C",
               "step": 4
             }
           ],
@@ -3123,7 +3078,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -3174,7 +3129,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 28
+            "y": 24
           },
           "hiddenSeries": false,
           "id": 138,
@@ -3202,7 +3157,18 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [],
+          "seriesOverrides": [
+            {
+              "$$hashKey": "object:4131",
+              "alias": "ShmemHugePages - Memory used by shared memory (shmem) and tmpfs allocated  with huge pages",
+              "fill": 0
+            },
+            {
+              "$$hashKey": "object:4138",
+              "alias": "ShmemHugePages - Memory used by shared memory (shmem) and tmpfs allocated  with huge pages",
+              "fill": 0
+            }
+          ],
           "spaceLength": 10,
           "stack": false,
           "steppedLine": false,
@@ -3221,6 +3187,24 @@
               "intervalFactor": 2,
               "legendFormat": "Shmem - Used shared memory (shared between several processes, thus including RAM disks)",
               "refId": "B",
+              "step": 4
+            },
+            {
+              "expr": "node_memory_ShmemHugePages_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "ShmemHugePages - Memory used by shared memory (shmem) and tmpfs allocated  with huge pages",
+              "refId": "C",
+              "step": 4
+            },
+            {
+              "expr": "node_memory_ShmemPmdMapped_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "ShmemPmdMapped - Ammount of shared (shmem/tmpfs) memory backed by huge pages",
+              "refId": "D",
               "step": 4
             }
           ],
@@ -3244,14 +3228,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:4106",
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:4107",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -3298,7 +3284,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 28
+            "y": 24
           },
           "hiddenSeries": false,
           "id": 131,
@@ -3336,7 +3322,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "SUnreclaim - Part of Slab, that cannot be reclaimed on memory pressure",
-              "refId": "O",
+              "refId": "A",
               "step": 4
             },
             {
@@ -3344,7 +3330,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "SReclaimable - Part of Slab, that might be reclaimed, such as caches",
-              "refId": "N",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -3369,7 +3355,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -3421,7 +3407,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 38
+            "y": 34
           },
           "hiddenSeries": false,
           "id": 70,
@@ -3460,7 +3446,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "VmallocChunk - Largest contigious block of vmalloc area which is free",
-              "refId": "H",
+              "refId": "A",
               "step": 4
             },
             {
@@ -3469,7 +3455,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "VmallocTotal - Total size of vmalloc memory area",
-              "refId": "I",
+              "refId": "B",
               "step": 4
             },
             {
@@ -3478,7 +3464,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "VmallocUsed - Amount of vmalloc area which is used",
-              "refId": "O",
+              "refId": "C",
               "step": 4
             }
           ],
@@ -3503,7 +3489,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -3554,7 +3540,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 38
+            "y": 34
           },
           "hiddenSeries": false,
           "id": 159,
@@ -3592,7 +3578,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Bounce - Memory used for block device bounce buffers",
-              "refId": "N",
+              "refId": "A",
               "step": 4
             }
           ],
@@ -3617,7 +3603,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -3669,7 +3655,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 48
+            "y": 44
           },
           "hiddenSeries": false,
           "id": 129,
@@ -3712,7 +3698,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "AnonHugePages - Memory in anonymous huge pages",
-              "refId": "D",
+              "refId": "A",
               "step": 4
             },
             {
@@ -3720,7 +3706,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "AnonPages - Memory in user pages not backed by files",
-              "refId": "G",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -3745,7 +3731,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -3796,7 +3782,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 48
+            "y": 44
           },
           "hiddenSeries": false,
           "id": 160,
@@ -3834,7 +3820,16 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "KernelStack - Kernel memory stack. This is not reclaimable",
-              "refId": "N",
+              "refId": "A",
+              "step": 4
+            },
+            {
+              "expr": "node_memory_Percpu_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "PerCPU - Per CPU memory allocated dynamically by loadable modules",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -3842,7 +3837,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Memory Kernel",
+          "title": "Memory Kernel / CPU",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -3859,7 +3854,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -3911,7 +3906,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 58
+            "y": 54
           },
           "hiddenSeries": false,
           "id": 140,
@@ -3949,7 +3944,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "HugePages_Free - Huge pages in the pool that are not yet allocated",
-              "refId": "I",
+              "refId": "A",
               "step": 4
             },
             {
@@ -3957,7 +3952,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "HugePages_Rsvd - Huge pages for which a commitment to allocate from the pool has been made, but no allocation has yet been made",
-              "refId": "J",
+              "refId": "B",
               "step": 4
             },
             {
@@ -3965,7 +3960,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "HugePages_Surp - Huge pages in the pool above the value in /proc/sys/vm/nr_hugepages",
-              "refId": "K",
+              "refId": "C",
               "step": 4
             }
           ],
@@ -3990,7 +3985,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Pages",
+              "label": "pages",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -4042,7 +4037,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 58
+            "y": 54
           },
           "hiddenSeries": false,
           "id": 71,
@@ -4080,7 +4075,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "HugePages - Total size of the pool of huge pages",
-              "refId": "L",
+              "refId": "A",
               "step": 4
             },
             {
@@ -4088,7 +4083,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Hugepagesize - Huge Page size",
-              "refId": "D",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -4113,7 +4108,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -4165,7 +4160,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 68
+            "y": 64
           },
           "hiddenSeries": false,
           "id": 128,
@@ -4205,7 +4200,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "DirectMap1G - Amount of pages mapped as this size",
-              "refId": "J",
+              "refId": "A",
               "step": 4
             },
             {
@@ -4214,7 +4209,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "DirectMap2M - Amount of pages mapped as this size",
-              "refId": "K",
+              "refId": "B",
               "step": 4
             },
             {
@@ -4223,7 +4218,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "DirectMap4K - Amount of pages mapped as this size",
-              "refId": "L",
+              "refId": "C",
               "step": 4
             }
           ],
@@ -4248,7 +4243,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -4299,7 +4294,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 68
+            "y": 64
           },
           "hiddenSeries": false,
           "id": 137,
@@ -4337,7 +4332,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Unevictable - Amount of unevictable memory that can't be swapped out for a variety of reasons",
-              "refId": "P",
+              "refId": "A",
               "step": 4
             },
             {
@@ -4345,7 +4340,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "MLocked - Size of pages locked to memory using the mlock() system call",
-              "refId": "C",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -4370,7 +4365,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -4423,7 +4418,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 78
+            "y": 74
           },
           "hiddenSeries": false,
           "id": 132,
@@ -4461,7 +4456,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "NFS Unstable - Memory in NFS pages sent to the server, but not yet commited to the storage",
-              "refId": "L",
+              "refId": "A",
               "step": 4
             }
           ],
@@ -4486,7 +4481,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -4609,7 +4604,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Pages out (-) / in (+)",
+              "label": "pages out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -4716,7 +4711,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Pages out (-) / in (+)",
+              "label": "pages out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -4766,7 +4761,7 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 12,
+            "x": 0,
             "y": 15
           },
           "hiddenSeries": false,
@@ -4797,6 +4792,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
+              "$$hashKey": "object:6118",
               "alias": "Pgfault - Page major and minor fault operations",
               "fill": 0,
               "stack": false
@@ -4811,7 +4807,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Pgfault - Page major and minor fault operations",
-              "refId": "C",
+              "refId": "A",
               "step": 4
             },
             {
@@ -4819,7 +4815,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Pgmajfault - Major page fault operations",
-              "refId": "F",
+              "refId": "B",
               "step": 4
             },
             {
@@ -4827,7 +4823,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Pgminfault - Minor page fault operations",
-              "refId": "A",
+              "refId": "C",
               "step": 4
             }
           ],
@@ -4851,14 +4847,135 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:6133",
               "format": "short",
-              "label": "Faults",
+              "label": "faults",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:6134",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {
+            "Active": "#99440A",
+            "Buffers": "#58140C",
+            "Cache": "#6D1F62",
+            "Cached": "#511749",
+            "Committed": "#508642",
+            "Dirty": "#6ED0E0",
+            "Free": "#B7DBAB",
+            "Inactive": "#EA6460",
+            "Mapped": "#052B51",
+            "PageTables": "#0A50A1",
+            "Page_Tables": "#0A50A1",
+            "Slab_Cache": "#EAB839",
+            "Swap": "#BF1B00",
+            "Swap_Cache": "#C15C17",
+            "Total": "#511749",
+            "Total RAM": "#052B51",
+            "Total RAM + Swap": "#052B51",
+            "Total Swap": "#614D93",
+            "VmallocUsed": "#EA6460"
+          },
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "decimals": 2,
+          "fill": 2,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 15
+          },
+          "hiddenSeries": false,
+          "id": 307,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": null,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "maxPerRow": 6,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_vmstat_oom_kill{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "oom killer invocations ",
+              "refId": "A",
+              "step": 4
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "OOM Killer",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:5373",
+              "format": "short",
+              "label": "counter",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "$$hashKey": "object:5374",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -4943,7 +5060,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Estimated error in seconds",
-              "refId": "B",
+              "refId": "A",
               "step": 240
             },
             {
@@ -4953,7 +5070,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Time offset in between local system and reference clock",
-              "refId": "A",
+              "refId": "B",
               "step": 240
             },
             {
@@ -4988,7 +5105,7 @@
           "yaxes": [
             {
               "format": "s",
-              "label": "Seconds",
+              "label": "seconds",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -4996,7 +5113,7 @@
             },
             {
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -5057,7 +5174,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Phase-locked loop time adjust",
-              "refId": "B",
+              "refId": "A",
               "step": 240
             }
           ],
@@ -5082,7 +5199,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -5156,7 +5273,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Is clock synchronized to a reliable server (1 = yes, 0 = no)",
-              "refId": "B",
+              "refId": "A",
               "step": 240
             },
             {
@@ -5165,7 +5282,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Local clock frequency adjustment",
-              "refId": "A",
+              "refId": "B",
               "step": 240
             }
           ],
@@ -5190,7 +5307,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -5259,7 +5376,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Seconds between clock ticks",
-              "refId": "B",
+              "refId": "A",
               "step": 240
             },
             {
@@ -5268,7 +5385,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "International Atomic Time (TAI) offset",
-              "refId": "A",
+              "refId": "B",
               "step": 240
             }
           ],
@@ -5293,7 +5410,7 @@
           "yaxes": [
             {
               "format": "s",
-              "label": "Seconds",
+              "label": "seconds",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -5383,6 +5500,7 @@
             {
               "expr": "irate(node_intr_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Interrupts",
               "refId": "B",
@@ -5410,7 +5528,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -5519,14 +5637,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:6261",
               "format": "short",
-              "label": "Load",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:6262",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -5624,7 +5744,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -5683,6 +5803,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
+              "$$hashKey": "object:6323",
               "alias": "/.*Max*./",
               "color": "#890F02",
               "fill": 0
@@ -5729,14 +5850,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:6338",
               "format": "short",
-              "label": "Descriptors",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:6339",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -5798,7 +5921,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Entropy available to random number generators",
-              "refId": "C",
+              "refId": "A",
               "step": 240
             }
           ],
@@ -5822,14 +5945,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:6568",
               "format": "short",
-              "label": "Entropy",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:6569",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -5923,14 +6048,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:6500",
               "format": "short",
-              "label": "Processes",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:6501",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -5993,7 +6120,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Processes forks second",
-              "refId": "C",
+              "refId": "A",
               "step": 240
             }
           ],
@@ -6017,14 +6144,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:6640",
               "format": "short",
-              "label": "Forks / sec",
+              "label": "forks / sec",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:6641",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -6091,7 +6220,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Processes virtual memory size in bytes",
-              "refId": "C",
+              "refId": "A",
               "step": 240
             },
             {
@@ -6100,7 +6229,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Maximum amount of virtual memory available in bytes",
-              "refId": "A",
+              "refId": "B",
               "step": 240
             },
             {
@@ -6109,7 +6238,16 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Processes virtual memory size in bytes",
-              "refId": "B",
+              "refId": "C",
+              "step": 240
+            },
+            {
+              "expr": "irate(process_virtual_memory_max_bytes{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "hide": false,
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "Maximum amount of virtual memory available in bytes",
+              "refId": "D",
               "step": 240
             }
           ],
@@ -6134,7 +6272,7 @@
           "yaxes": [
             {
               "format": "decbytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -6169,6 +6307,331 @@
             "y": 51
           },
           "hiddenSeries": false,
+          "id": 305,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "maxPerRow": 6,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "$$hashKey": "object:4963",
+              "alias": "/.*waiting.*/",
+              "transform": "negative-Y"
+            }
+          ],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_schedstat_running_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "CPU {{ cpu }} - seconds spent running a process",
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "expr": "irate(node_schedstat_waiting_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "CPU {{ cpu }} - seconds spent by processing waiting for this CPU",
+              "refId": "B",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Process schdeule stats Running / Waiting",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:4860",
+              "format": "s",
+              "label": "seconds",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:4861",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 2,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 51
+          },
+          "hiddenSeries": false,
+          "id": 306,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "maxPerRow": 6,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_schedstat_timeslices_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "CPU {{ cpu }}",
+              "refId": "A",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Schedule timeslices executed by each cpu",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:4860",
+              "format": "short",
+              "label": "counter",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:4861",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 2,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 61
+          },
+          "hiddenSeries": false,
+          "id": 308,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "maxPerRow": 6,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "$$hashKey": "object:4963",
+              "alias": "/.*waiting.*/",
+              "transform": "negative-Y"
+            }
+          ],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(process_cpu_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "Time spent",
+              "refId": "A",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "CPU time spent in user and system",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:4860",
+              "format": "s",
+              "label": "seconds",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:4861",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "repeat": null,
+      "title": "System Misc",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": "${DS_PROMETHEUS}",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 25
+      },
+      "id": 304,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 2,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 26
+          },
+          "hiddenSeries": false,
           "id": 158,
           "legend": {
             "alignAsTable": true,
@@ -6193,11 +6656,13 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
+              "$$hashKey": "object:6726",
               "alias": "/.*Critical*./",
               "color": "#E24D42",
               "fill": 0
             },
             {
+              "$$hashKey": "object:6727",
               "alias": "/.*Max*./",
               "color": "#EF843C",
               "fill": 0
@@ -6276,14 +6741,224 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:6750",
               "format": "celsius",
-              "label": "Temperature",
+              "label": "temperature",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:6751",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 2,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 26
+          },
+          "hiddenSeries": false,
+          "id": 300,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "$$hashKey": "object:1655",
+              "alias": "/.*Max*./",
+              "color": "#EF843C",
+              "fill": 0
+            }
+          ],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "node_cooling_device_cur_state{instance=~\"$node:$port\",job=~\"$job\"}",
+              "format": "time_series",
+              "hide": false,
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "Current {{ name }} in {{ type }}",
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "expr": "node_cooling_device_max_state{instance=~\"$node:$port\",job=~\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "Max {{ name }} in {{ type }}",
+              "refId": "B",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Throttle cooling device",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:1678",
+              "format": "short",
+              "label": "counter",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:1679",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 2,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 36
+          },
+          "hiddenSeries": false,
+          "id": 302,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "node_power_supply_online{instance=~\"$node:$port\",job=~\"$job\"}",
+              "format": "time_series",
+              "hide": false,
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "{{ power_supply }} online",
+              "refId": "A",
+              "step": 240
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Power supply",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:1678",
+              "format": "short",
+              "label": "counter",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:1679",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -6298,8 +6973,7 @@
           }
         }
       ],
-      "repeat": null,
-      "title": "System Misc",
+      "title": "Hardware Misc",
       "type": "row"
     },
     {
@@ -6309,7 +6983,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 25
+        "y": 26
       },
       "id": 296,
       "panels": [
@@ -6325,7 +6999,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 12
+            "y": 27
           },
           "hiddenSeries": false,
           "id": 297,
@@ -6386,7 +7060,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -6418,7 +7092,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 12
+            "y": 27
           },
           "hiddenSeries": false,
           "id": 298,
@@ -6484,7 +7158,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Active",
-              "refId": "C",
+              "refId": "B",
               "step": 240
             },
             {
@@ -6493,7 +7167,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Deactivating",
-              "refId": "D",
+              "refId": "C",
               "step": 240
             },
             {
@@ -6502,7 +7176,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Failed",
-              "refId": "E",
+              "refId": "D",
               "step": 240
             },
             {
@@ -6511,7 +7185,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Inactive",
-              "refId": "F",
+              "refId": "E",
               "step": 240
             }
           ],
@@ -6536,7 +7210,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -6567,7 +7241,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 27
       },
       "id": 270,
       "panels": [
@@ -6584,7 +7258,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 9
+            "y": 10
           },
           "hiddenSeries": false,
           "id": 9,
@@ -6615,86 +7289,107 @@
           "repeat": null,
           "seriesOverrides": [
             {
+              "$$hashKey": "object:2033",
               "alias": "/.*Read.*/",
               "transform": "negative-Y"
             },
             {
+              "$$hashKey": "object:2034",
               "alias": "/.*sda_.*/",
               "color": "#7EB26D"
             },
             {
+              "$$hashKey": "object:2035",
               "alias": "/.*sdb_.*/",
               "color": "#EAB839"
             },
             {
+              "$$hashKey": "object:2036",
               "alias": "/.*sdc_.*/",
               "color": "#6ED0E0"
             },
             {
+              "$$hashKey": "object:2037",
               "alias": "/.*sdd_.*/",
               "color": "#EF843C"
             },
             {
+              "$$hashKey": "object:2038",
               "alias": "/.*sde_.*/",
               "color": "#E24D42"
             },
             {
+              "$$hashKey": "object:2039",
               "alias": "/.*sda1.*/",
               "color": "#584477"
             },
             {
+              "$$hashKey": "object:2040",
               "alias": "/.*sda2_.*/",
               "color": "#BA43A9"
             },
             {
+              "$$hashKey": "object:2041",
               "alias": "/.*sda3_.*/",
               "color": "#F4D598"
             },
             {
+              "$$hashKey": "object:2042",
               "alias": "/.*sdb1.*/",
               "color": "#0A50A1"
             },
             {
+              "$$hashKey": "object:2043",
               "alias": "/.*sdb2.*/",
               "color": "#BF1B00"
             },
             {
+              "$$hashKey": "object:2044",
               "alias": "/.*sdb3.*/",
               "color": "#E0752D"
             },
             {
+              "$$hashKey": "object:2045",
               "alias": "/.*sdc1.*/",
               "color": "#962D82"
             },
             {
+              "$$hashKey": "object:2046",
               "alias": "/.*sdc2.*/",
               "color": "#614D93"
             },
             {
+              "$$hashKey": "object:2047",
               "alias": "/.*sdc3.*/",
               "color": "#9AC48A"
             },
             {
+              "$$hashKey": "object:2048",
               "alias": "/.*sdd1.*/",
               "color": "#65C5DB"
             },
             {
+              "$$hashKey": "object:2049",
               "alias": "/.*sdd2.*/",
               "color": "#F9934E"
             },
             {
+              "$$hashKey": "object:2050",
               "alias": "/.*sdd3.*/",
               "color": "#EA6460"
             },
             {
+              "$$hashKey": "object:2051",
               "alias": "/.*sde1.*/",
               "color": "#E0F9D7"
             },
             {
+              "$$hashKey": "object:2052",
               "alias": "/.*sdd2.*/",
               "color": "#FCEACA"
             },
             {
+              "$$hashKey": "object:2053",
               "alias": "/.*sde3.*/",
               "color": "#F9E2D2"
             }
@@ -6738,6 +7433,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:2186",
               "format": "iops",
               "label": "IO read (-) / write (+)",
               "logBase": 1,
@@ -6746,6 +7442,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:2187",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -6772,7 +7469,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 9
+            "y": 10
           },
           "hiddenSeries": false,
           "id": 33,
@@ -6928,7 +7625,7 @@
           "yaxes": [
             {
               "format": "Bps",
-              "label": "Bytes read (-) / write (+)",
+              "label": "bytes read (-) / write (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -6961,7 +7658,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 19
+            "y": 20
           },
           "hiddenSeries": false,
           "id": 37,
@@ -7119,7 +7816,7 @@
           "yaxes": [
             {
               "format": "s",
-              "label": "Time. read (-) / write (+)",
+              "label": "time. read (-) / write (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -7152,7 +7849,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 19
+            "y": 20
           },
           "hiddenSeries": false,
           "id": 35,
@@ -7297,7 +7994,7 @@
           "yaxes": [
             {
               "format": "s",
-              "label": "Time",
+              "label": "time",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -7330,7 +8027,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 29
+            "y": 30
           },
           "hiddenSeries": false,
           "id": 133,
@@ -7454,14 +8151,14 @@
               "expr": "irate(node_disk_reads_merged_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Read merged",
-              "refId": "C",
+              "refId": "A",
               "step": 4
             },
             {
               "expr": "irate(node_disk_writes_merged_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Write merged",
-              "refId": "D",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -7519,7 +8216,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 29
+            "y": 30
           },
           "hiddenSeries": false,
           "id": 36,
@@ -7641,6 +8338,14 @@
               "legendFormat": "{{device}} - IO time",
               "refId": "A",
               "step": 8
+            },
+            {
+              "expr": "irate(node_disk_discard_time_seconds_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "interval": "",
+              "intervalFactor": 4,
+              "legendFormat": "{{device}} - discard time",
+              "refId": "B",
+              "step": 8
             }
           ],
           "thresholds": [],
@@ -7664,7 +8369,7 @@
           "yaxes": [
             {
               "format": "s",
-              "label": "Time",
+              "label": "time",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -7697,7 +8402,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 39
+            "y": 40
           },
           "hiddenSeries": false,
           "id": 34,
@@ -7875,17 +8580,18 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 39
+            "y": 40
           },
           "hiddenSeries": false,
-          "id": 66,
+          "id": 301,
           "legend": {
             "alignAsTable": true,
             "avg": true,
             "current": true,
-            "hideZero": false,
+            "hideZero": true,
             "max": true,
             "min": true,
+            "rightSide": false,
             "show": true,
             "total": false,
             "values": true
@@ -7894,7 +8600,7 @@
           "linewidth": 1,
           "links": [],
           "maxPerRow": 6,
-          "nullPointMode": "null",
+          "nullPointMode": "null as zero",
           "options": {
             "dataLinks": []
           },
@@ -7904,82 +8610,102 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
+              "$$hashKey": "object:2034",
               "alias": "/.*sda_.*/",
               "color": "#7EB26D"
             },
             {
+              "$$hashKey": "object:2035",
               "alias": "/.*sdb_.*/",
               "color": "#EAB839"
             },
             {
+              "$$hashKey": "object:2036",
               "alias": "/.*sdc_.*/",
               "color": "#6ED0E0"
             },
             {
+              "$$hashKey": "object:2037",
               "alias": "/.*sdd_.*/",
               "color": "#EF843C"
             },
             {
+              "$$hashKey": "object:2038",
               "alias": "/.*sde_.*/",
               "color": "#E24D42"
             },
             {
+              "$$hashKey": "object:2039",
               "alias": "/.*sda1.*/",
               "color": "#584477"
             },
             {
+              "$$hashKey": "object:2040",
               "alias": "/.*sda2_.*/",
-              "color": "#B7DBAB"
+              "color": "#BA43A9"
             },
             {
+              "$$hashKey": "object:2041",
               "alias": "/.*sda3_.*/",
               "color": "#F4D598"
             },
             {
+              "$$hashKey": "object:2042",
               "alias": "/.*sdb1.*/",
               "color": "#0A50A1"
             },
             {
+              "$$hashKey": "object:2043",
               "alias": "/.*sdb2.*/",
               "color": "#BF1B00"
             },
             {
+              "$$hashKey": "object:2044",
               "alias": "/.*sdb3.*/",
               "color": "#E0752D"
             },
             {
+              "$$hashKey": "object:2045",
               "alias": "/.*sdc1.*/",
               "color": "#962D82"
             },
             {
+              "$$hashKey": "object:2046",
               "alias": "/.*sdc2.*/",
               "color": "#614D93"
             },
             {
+              "$$hashKey": "object:2047",
               "alias": "/.*sdc3.*/",
               "color": "#9AC48A"
             },
             {
+              "$$hashKey": "object:2048",
               "alias": "/.*sdd1.*/",
               "color": "#65C5DB"
             },
             {
+              "$$hashKey": "object:2049",
               "alias": "/.*sdd2.*/",
               "color": "#F9934E"
             },
             {
+              "$$hashKey": "object:2050",
               "alias": "/.*sdd3.*/",
               "color": "#EA6460"
             },
             {
+              "$$hashKey": "object:2051",
               "alias": "/.*sde1.*/",
               "color": "#E0F9D7"
             },
             {
+              "$$hashKey": "object:2052",
               "alias": "/.*sdd2.*/",
               "color": "#FCEACA"
             },
             {
+              "$$hashKey": "object:2053",
               "alias": "/.*sde3.*/",
               "color": "#F9E2D2"
             }
@@ -7989,18 +8715,27 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_textfile_scrape_error{instance=~\"$node:$port\",job=~\"$job\"}",
+              "expr": "irate(node_disk_discards_completed_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "interval": "",
               "intervalFactor": 4,
-              "legendFormat": "Textfile scrape error (1 = true)",
+              "legendFormat": "{{device}} - Discards completed",
               "refId": "A",
               "step": 8
+            },
+            {
+              "expr": "irate(node_disk_discards_merged_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "{{device}} - Discards merged",
+              "refId": "B",
+              "step": 4
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Open Error File",
+          "title": "Disk IOps Discards completed / merged",
           "tooltip": {
             "shared": false,
             "sort": 0,
@@ -8016,14 +8751,16 @@
           },
           "yaxes": [
             {
-              "format": "short",
-              "label": "Errors",
+              "$$hashKey": "object:2186",
+              "format": "iops",
+              "label": "IOs",
               "logBase": 1,
               "max": null,
-              "min": "0",
+              "min": null,
               "show": true
             },
             {
+              "$$hashKey": "object:2187",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -8049,7 +8786,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 28
       },
       "id": 271,
       "panels": [
@@ -8067,7 +8804,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 14
+            "y": 11
           },
           "hiddenSeries": false,
           "id": 43,
@@ -8124,7 +8861,7 @@
               "hide": true,
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}} - Size",
-              "refId": "D",
+              "refId": "C",
               "step": 2
             }
           ],
@@ -8148,14 +8885,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:3826",
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:3827",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -8182,7 +8921,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 14
+            "y": 11
           },
           "hiddenSeries": false,
           "id": 41,
@@ -8220,7 +8959,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}} - Free file nodes",
-              "refId": "B",
+              "refId": "A",
               "step": 4
             }
           ],
@@ -8244,14 +8983,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:3894",
               "format": "short",
-              "label": "File Nodes",
+              "label": "file nodes",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:3895",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -8278,7 +9019,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 24
+            "y": 21
           },
           "hiddenSeries": false,
           "id": 28,
@@ -8347,7 +9088,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Files",
+              "label": "files",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -8380,7 +9121,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 24
+            "y": 21
           },
           "hiddenSeries": false,
           "id": 219,
@@ -8443,7 +9184,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "File Nodes",
+              "label": "file Nodes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -8479,7 +9220,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 34
+            "y": 31
           },
           "hiddenSeries": false,
           "id": 44,
@@ -8518,7 +9259,16 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}} - ReadOnly",
-              "refId": "C",
+              "refId": "A",
+              "step": 4
+            },
+            {
+              "expr": "node_filesystem_device_error{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "{{mountpoint}} - Device error",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -8526,7 +9276,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Filesystem in ReadOnly",
+          "title": "Filesystem in ReadOnly / Error",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -8542,14 +9292,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:3670",
               "format": "short",
-              "label": "Read Only",
+              "label": "counter",
               "logBase": 1,
               "max": "1",
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:3671",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -8575,7 +9327,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 29
       },
       "id": 272,
       "panels": [
@@ -8596,7 +9348,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 15
+            "y": 30
           },
           "hiddenSeries": false,
           "id": 60,
@@ -8636,17 +9388,19 @@
             {
               "expr": "irate(node_network_receive_packets_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive",
-              "refId": "O",
+              "refId": "A",
               "step": 4
             },
             {
               "expr": "irate(node_network_transmit_packets_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit",
-              "refId": "P",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -8671,7 +9425,7 @@
           "yaxes": [
             {
               "format": "pps",
-              "label": "Packets out (-) / in (+)",
+              "label": "packets out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -8703,7 +9457,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 15
+            "y": 30
           },
           "hiddenSeries": false,
           "id": 142,
@@ -8749,7 +9503,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive errors",
-              "refId": "E",
+              "refId": "A",
               "step": 4
             },
             {
@@ -8757,7 +9511,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Rransmit errors",
-              "refId": "F",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -8782,7 +9536,7 @@
           "yaxes": [
             {
               "format": "pps",
-              "label": "Packets out (-) / in (+)",
+              "label": "packets out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -8814,7 +9568,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 25
+            "y": 40
           },
           "hiddenSeries": false,
           "id": 143,
@@ -8860,7 +9614,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive drop",
-              "refId": "G",
+              "refId": "A",
               "step": 4
             },
             {
@@ -8868,7 +9622,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit drop",
-              "refId": "H",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -8893,7 +9647,7 @@
           "yaxes": [
             {
               "format": "pps",
-              "label": "Packets out (-) / in (+)",
+              "label": "packets out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -8925,7 +9679,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 25
+            "y": 40
           },
           "hiddenSeries": false,
           "id": 141,
@@ -8971,7 +9725,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive compressed",
-              "refId": "C",
+              "refId": "A",
               "step": 4
             },
             {
@@ -8979,7 +9733,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit compressed",
-              "refId": "D",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -9004,7 +9758,7 @@
           "yaxes": [
             {
               "format": "pps",
-              "label": "Packets out (-) / in (+)",
+              "label": "packets out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -9036,7 +9790,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 35
+            "y": 50
           },
           "hiddenSeries": false,
           "id": 146,
@@ -9082,7 +9836,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive multicast",
-              "refId": "M",
+              "refId": "A",
               "step": 4
             }
           ],
@@ -9107,7 +9861,7 @@
           "yaxes": [
             {
               "format": "pps",
-              "label": "Packets out (-) / in (+)",
+              "label": "packets out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -9139,7 +9893,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 35
+            "y": 50
           },
           "hiddenSeries": false,
           "id": 144,
@@ -9185,7 +9939,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive fifo",
-              "refId": "I",
+              "refId": "A",
               "step": 4
             },
             {
@@ -9193,7 +9947,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit fifo",
-              "refId": "J",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -9218,7 +9972,7 @@
           "yaxes": [
             {
               "format": "pps",
-              "label": "Packets out (-) / in (+)",
+              "label": "packets out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -9250,7 +10004,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 45
+            "y": 60
           },
           "hiddenSeries": false,
           "id": 145,
@@ -9297,7 +10051,7 @@
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive frame",
-              "refId": "K",
+              "refId": "A",
               "step": 4
             }
           ],
@@ -9322,7 +10076,7 @@
           "yaxes": [
             {
               "format": "pps",
-              "label": "Packets out (-) / in (+)",
+              "label": "packets out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -9354,7 +10108,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 45
+            "y": 60
           },
           "hiddenSeries": false,
           "id": 231,
@@ -9395,7 +10149,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Statistic transmit_carrier",
-              "refId": "C",
+              "refId": "A",
               "step": 4
             }
           ],
@@ -9420,7 +10174,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -9452,7 +10206,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 55
+            "y": 70
           },
           "hiddenSeries": false,
           "id": 232,
@@ -9498,7 +10252,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit colls",
-              "refId": "C",
+              "refId": "A",
               "step": 4
             }
           ],
@@ -9523,7 +10277,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -9555,7 +10309,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 55
+            "y": 70
           },
           "hiddenSeries": false,
           "id": 61,
@@ -9597,7 +10351,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "NF conntrack entries",
-              "refId": "O",
+              "refId": "A",
               "step": 4
             },
             {
@@ -9605,7 +10359,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "NF conntrack limit",
-              "refId": "P",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -9662,7 +10416,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 65
+            "y": 80
           },
           "hiddenSeries": false,
           "id": 230,
@@ -9698,7 +10452,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{ device }} - ARP entries",
-              "refId": "O",
+              "refId": "A",
               "step": 4
             }
           ],
@@ -9755,7 +10509,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 65
+            "y": 80
           },
           "hiddenSeries": false,
           "id": 288,
@@ -9791,7 +10545,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{ device }} - Bytes",
-              "refId": "O",
+              "refId": "A",
               "step": 4
             }
           ],
@@ -9817,7 +10571,7 @@
             {
               "decimals": 0,
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -9849,7 +10603,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 75
+            "y": 90
           },
           "hiddenSeries": false,
           "id": 280,
@@ -9885,7 +10639,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{ device }} - Speed",
-              "refId": "O",
+              "refId": "A",
               "step": 4
             }
           ],
@@ -9911,7 +10665,7 @@
             {
               "decimals": 0,
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -9943,7 +10697,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 75
+            "y": 90
           },
           "hiddenSeries": false,
           "id": 289,
@@ -9979,7 +10733,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{ device }} -   Interface transmit queue length",
-              "refId": "O",
+              "refId": "A",
               "step": 4
             }
           ],
@@ -10005,7 +10759,7 @@
             {
               "decimals": 0,
               "format": "none",
-              "label": "Packets",
+              "label": "packets",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -10037,7 +10791,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 85
+            "y": 100
           },
           "hiddenSeries": false,
           "id": 290,
@@ -10078,7 +10832,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{interface}} - Operational state UP",
-              "refId": "C",
+              "refId": "A",
               "step": 4
             },
             {
@@ -10086,7 +10840,7 @@
               "format": "time_series",
               "instant": false,
               "legendFormat": "{{device}} - Physical link state",
-              "refId": "A"
+              "refId": "B"
             }
           ],
           "thresholds": [],
@@ -10110,7 +10864,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -10142,7 +10896,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 29
+        "y": 30
       },
       "id": 273,
       "panels": [
@@ -10158,7 +10912,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 16
+            "y": 13
           },
           "hiddenSeries": false,
           "id": 63,
@@ -10195,41 +10949,47 @@
             {
               "expr": "node_sockstat_TCP_alloc{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "TCP_alloc - Allocated sockets",
-              "refId": "D",
+              "refId": "A",
               "step": 240
             },
             {
               "expr": "node_sockstat_TCP_inuse{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "TCP_inuse - Tcp sockets currently in use",
-              "refId": "E",
+              "refId": "B",
               "step": 240
             },
             {
               "expr": "node_sockstat_TCP_mem{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "hide": true,
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "TCP_mem - Used memory for tcp",
-              "refId": "F",
+              "refId": "C",
               "step": 240
             },
             {
               "expr": "node_sockstat_TCP_orphan{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "TCP_orphan - Orphan sockets",
-              "refId": "H",
+              "refId": "D",
               "step": 240
             },
             {
               "expr": "node_sockstat_TCP_tw{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "TCP_tw - Sockets wating close",
-              "refId": "I",
+              "refId": "E",
               "step": 240
             }
           ],
@@ -10254,7 +11014,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -10286,7 +11046,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 16
+            "y": 13
           },
           "hiddenSeries": false,
           "id": 124,
@@ -10323,25 +11083,28 @@
             {
               "expr": "node_sockstat_UDPLITE_inuse{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "UDPLITE_inuse - Udplite sockets currently in use",
-              "refId": "J",
+              "refId": "A",
               "step": 240
             },
             {
               "expr": "node_sockstat_UDP_inuse{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "UDP_inuse - Udp sockets currently in use",
-              "refId": "K",
+              "refId": "B",
               "step": 240
             },
             {
               "expr": "node_sockstat_UDP_mem{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "UDP_mem - Used memory for udp",
-              "refId": "L",
+              "refId": "C",
               "step": 240
             }
           ],
@@ -10366,7 +11129,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -10398,7 +11161,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 26
+            "y": 23
           },
           "hiddenSeries": false,
           "id": 126,
@@ -10435,9 +11198,10 @@
             {
               "expr": "node_sockstat_sockets_used{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Sockets_used - Sockets currently in use",
-              "refId": "N",
+              "refId": "A",
               "step": 240
             }
           ],
@@ -10462,7 +11226,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Sockets",
+              "label": "sockets",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -10494,7 +11258,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 26
+            "y": 23
           },
           "hiddenSeries": false,
           "id": 220,
@@ -10531,17 +11295,19 @@
             {
               "expr": "node_sockstat_TCP_mem_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "TCP_mem_bytes - ",
-              "refId": "G",
+              "legendFormat": "mem_bytes - TCP sockets in that state",
+              "refId": "A",
               "step": 240
             },
             {
               "expr": "node_sockstat_UDP_mem_bytes{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "UDP_mem_bytes - ",
-              "refId": "A",
+              "legendFormat": "mem_bytes - UDP sockets in that state",
+              "refId": "B",
               "step": 240
             }
           ],
@@ -10566,7 +11332,7 @@
           "yaxes": [
             {
               "format": "bytes",
-              "label": "Bytes",
+              "label": "bytes",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -10598,7 +11364,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 36
+            "y": 33
           },
           "hiddenSeries": false,
           "id": 125,
@@ -10635,6 +11401,7 @@
             {
               "expr": "node_sockstat_FRAG_inuse{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "FRAG_inuse - Frag sockets currently in use",
               "refId": "A",
@@ -10643,6 +11410,7 @@
             {
               "expr": "node_sockstat_FRAG_memory{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "FRAG_memory - Used memory for frag",
               "refId": "B",
@@ -10651,6 +11419,7 @@
             {
               "expr": "node_sockstat_RAW_inuse{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "RAW_inuse - Raw sockets currently in use",
               "refId": "C",
@@ -10677,14 +11446,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:1572",
               "format": "short",
-              "label": "Sockets",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:1573",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -10710,7 +11481,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 31
       },
       "id": 274,
       "panels": [
@@ -10726,7 +11497,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 17
+            "y": 13
           },
           "height": "",
           "hiddenSeries": false,
@@ -10761,6 +11532,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
+              "$$hashKey": "object:1876",
               "alias": "/.*Out.*/",
               "transform": "negative-Y"
             }
@@ -10772,9 +11544,10 @@
             {
               "expr": "irate(node_netstat_IpExt_InOctets{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "InOctets - Received octets",
-              "refId": "K",
+              "refId": "A",
               "step": 4
             },
             {
@@ -10782,7 +11555,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "OutOctets - Sent octets",
-              "refId": "Q",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -10806,14 +11579,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:1889",
               "format": "short",
-              "label": "Octects out (-) / in (+)",
+              "label": "octects out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
               "show": true
             },
             {
+              "$$hashKey": "object:1890",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -10839,7 +11614,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 17
+            "y": 13
           },
           "height": "",
           "hiddenSeries": false,
@@ -10879,9 +11654,10 @@
             {
               "expr": "irate(node_netstat_Ip_Forwarding{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Forwarding - IP forwarding",
-              "refId": "D",
+              "refId": "A",
               "step": 4
             }
           ],
@@ -10905,14 +11681,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:1957",
               "format": "short",
-              "label": "Datagrams",
+              "label": "datagrams",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:1958",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -10939,7 +11717,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 27
+            "y": 23
           },
           "height": "",
           "hiddenSeries": false,
@@ -10983,17 +11761,19 @@
             {
               "expr": "irate(node_netstat_Icmp_InMsgs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "InMsgs -  Messages which the entity received. Note that this counter includes all those counted by icmpInErrors",
-              "refId": "J",
+              "refId": "A",
               "step": 4
             },
             {
               "expr": "irate(node_netstat_Icmp_OutMsgs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "OutMsgs - Messages which this entity attempted to send. Note that this counter includes all those counted by icmpOutErrors",
-              "refId": "W",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -11018,7 +11798,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Messages out (-) / in (+)",
+              "label": "messages out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -11051,7 +11831,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 27
+            "y": 23
           },
           "height": "",
           "hiddenSeries": false,
@@ -11095,9 +11875,10 @@
             {
               "expr": "irate(node_netstat_Icmp_InErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "InErrors - Messages which the entity received but determined as having ICMP-specific errors (bad ICMP checksums, bad length, etc.)",
-              "refId": "I",
+              "refId": "A",
               "step": 4
             }
           ],
@@ -11122,7 +11903,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Messages out (-) / in (+)",
+              "label": "messages out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -11155,7 +11936,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 37
+            "y": 33
           },
           "height": "",
           "hiddenSeries": false,
@@ -11203,17 +11984,19 @@
             {
               "expr": "irate(node_netstat_Udp_InDatagrams{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "InDatagrams - Datagrams received",
-              "refId": "B",
+              "refId": "A",
               "step": 4
             },
             {
               "expr": "irate(node_netstat_Udp_OutDatagrams{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "OutDatagrams - Datagrams sent",
-              "refId": "E",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -11238,7 +12021,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Datagrams out (-) / in (+)",
+              "label": "datagrams out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -11270,7 +12053,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 37
+            "y": 33
           },
           "height": "",
           "hiddenSeries": false,
@@ -11309,14 +12092,16 @@
             {
               "expr": "irate(node_netstat_Udp_InErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "InErrors - UDP Datagrams that could not be delivered to an application",
-              "refId": "C",
+              "refId": "A",
               "step": 4
             },
             {
               "expr": "irate(node_netstat_Udp_NoPorts{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "NoPorts - UDP Datagrams received on a port with no listener",
               "refId": "B",
@@ -11324,8 +12109,27 @@
             },
             {
               "expr": "irate(node_netstat_UdpLite_InErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "interval": "",
               "legendFormat": "InErrors Lite - UDPLite Datagrams that could not be delivered to an application",
-              "refId": "A"
+              "refId": "C"
+            },
+            {
+              "expr": "irate(node_netstat_Udp_RcvbufErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "RcvbufErrors - UDP buffer errors received",
+              "refId": "D",
+              "step": 4
+            },
+            {
+              "expr": "irate(node_netstat_Udp_SndbufErrors{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "SndbufErrors - UDP buffer errors send",
+              "refId": "E",
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -11348,14 +12152,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:4232",
               "format": "short",
-              "label": "Datagrams out (-) / in (+)",
+              "label": "datagrams",
               "logBase": 1,
               "max": null,
               "min": null,
               "show": true
             },
             {
+              "$$hashKey": "object:4233",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -11382,7 +12188,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 47
+            "y": 43
           },
           "height": "",
           "hiddenSeries": false,
@@ -11430,17 +12236,20 @@
             {
               "expr": "irate(node_netstat_Tcp_InSegs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "instant": false,
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "InSegs - Segments received, including those received in error. This count includes segments received on currently established connections",
-              "refId": "B",
+              "refId": "A",
               "step": 4
             },
             {
               "expr": "irate(node_netstat_Tcp_OutSegs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "OutSegs - Segments sent, including those on current connections but excluding those containing only retransmitted octets",
-              "refId": "E",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -11465,7 +12274,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Datagrams out (-) / in (+)",
+              "label": "datagrams out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -11498,7 +12307,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 47
+            "y": 43
           },
           "height": "",
           "hiddenSeries": false,
@@ -11538,36 +12347,43 @@
             {
               "expr": "irate(node_netstat_TcpExt_ListenOverflows{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "hide": false,
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "ListenOverflows - Times the listen queue of a socket overflowed",
-              "refId": "I",
+              "refId": "A",
               "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_ListenDrops{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "hide": false,
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "ListenDrops - SYNs to LISTEN sockets ignored",
-              "refId": "A",
+              "refId": "B",
               "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_TCPSynRetrans{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "TCPSynRetrans - SYN-SYN/ACK retransmits to break down retransmissions in SYN, fast/timeout retransmits",
-              "refId": "B",
+              "refId": "C",
               "step": 4
             },
             {
               "expr": "irate(node_netstat_Tcp_RetransSegs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "interval": "",
               "legendFormat": "RetransSegs - Segments retransmitted - that is, the number of TCP segments transmitted containing one or more previously transmitted octets",
-              "refId": "C"
+              "refId": "D"
             },
             {
               "expr": "irate(node_netstat_Tcp_InErrs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "interval": "",
               "legendFormat": "InErrs - Segments received in error (e.g., bad TCP checksums)",
-              "refId": "D"
+              "refId": "E"
             }
           ],
           "thresholds": [],
@@ -11591,7 +12407,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -11623,7 +12439,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 57
+            "y": 53
           },
           "height": "",
           "hiddenSeries": false,
@@ -11655,6 +12471,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
+              "$$hashKey": "object:454",
               "alias": "/.*MaxConn *./",
               "color": "#890F02",
               "fill": 0
@@ -11668,18 +12485,20 @@
               "expr": "node_netstat_Tcp_CurrEstab{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "CurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT",
-              "refId": "C",
+              "refId": "A",
               "step": 4
             },
             {
               "expr": "node_netstat_Tcp_MaxConn{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "MaxConn - Limit on the total number of TCP connections the entity can support (Dinamic is \"-1\")",
-              "refId": "H",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -11703,14 +12522,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:469",
               "format": "short",
-              "label": "Connections",
+              "label": "connections",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:470",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -11737,7 +12558,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 57
+            "y": 53
           },
           "height": "",
           "hiddenSeries": false,
@@ -11783,27 +12604,30 @@
               "expr": "irate(node_netstat_TcpExt_SyncookiesFailed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "hide": false,
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "SyncookiesFailed - Invalid SYN cookies received",
-              "refId": "R",
+              "refId": "A",
               "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_SyncookiesRecv{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "hide": false,
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "SyncookiesRecv - SYN cookies received",
-              "refId": "S",
+              "refId": "B",
               "step": 4
             },
             {
               "expr": "irate(node_netstat_TcpExt_SyncookiesSent{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "hide": false,
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "SyncookiesSent - SYN cookies sent",
-              "refId": "T",
+              "refId": "C",
               "step": 4
             }
           ],
@@ -11828,7 +12652,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Counter out (-) / in (+)",
+              "label": "counter out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -11860,7 +12684,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 67
+            "y": 63
           },
           "height": "",
           "hiddenSeries": false,
@@ -11898,6 +12722,7 @@
             {
               "expr": "irate(node_netstat_Tcp_ActiveOpens{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "ActiveOpens - TCP connections that have made a direct transition to the SYN-SENT state from the CLOSED state",
               "refId": "A",
@@ -11906,9 +12731,10 @@
             {
               "expr": "irate(node_netstat_Tcp_PassiveOpens{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "PassiveOpens - TCP connections that have made a direct transition to the SYN-RCVD state from the LISTEN state",
-              "refId": "K",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -11933,7 +12759,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Connections",
+              "label": "connections",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -11965,7 +12791,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 31
+        "y": 32
       },
       "id": 279,
       "panels": [
@@ -11982,7 +12808,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 24
+            "y": 54
           },
           "hiddenSeries": false,
           "id": 40,
@@ -11993,6 +12819,8 @@
             "max": true,
             "min": true,
             "show": true,
+            "sort": "current",
+            "sortDesc": true,
             "total": false,
             "values": true
           },
@@ -12016,6 +12844,7 @@
               "expr": "node_scrape_collector_duration_seconds{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{collector}} - Scrape duration",
               "refId": "A",
@@ -12043,7 +12872,7 @@
           "yaxes": [
             {
               "format": "s",
-              "label": "Seconds",
+              "label": "seconds",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -12076,7 +12905,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 24
+            "y": 54
           },
           "hiddenSeries": false,
           "id": 157,
@@ -12101,18 +12930,36 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [],
+          "seriesOverrides": [
+            {
+              "$$hashKey": "object:1969",
+              "alias": "/.*error.*/",
+              "color": "#F2495C",
+              "transform": "negative-Y"
+            }
+          ],
           "spaceLength": 10,
-          "stack": false,
+          "stack": true,
           "steppedLine": false,
           "targets": [
             {
               "expr": "node_scrape_collector_success{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "hide": false,
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{collector}} - Scrape success",
               "refId": "A",
+              "step": 4
+            },
+            {
+              "expr": "node_textfile_scrape_error{instance=~\"$node:$port\",job=~\"$job\"}",
+              "format": "time_series",
+              "hide": false,
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "{{collector}} - Scrape textfile error (1 = true)",
+              "refId": "B",
               "step": 4
             }
           ],
@@ -12120,7 +12967,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Node Exporter Scrape Success",
+          "title": "Node Exporter Scrape",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -12136,14 +12983,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:1484",
               "format": "short",
-              "label": "Counter",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": null,
               "show": true
             },
             {
+              "$$hashKey": "object:1485",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -12164,14 +13013,16 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 21,
+  "schemaVersion": 22,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "linux"
+  ],
   "templating": {
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "Prometheus",
           "value": "Prometheus"
         },
@@ -12194,6 +13045,7 @@
         "definition": "",
         "hide": 0,
         "includeAll": false,
+        "index": -1,
         "label": "Job",
         "multi": false,
         "name": "job",
@@ -12216,6 +13068,7 @@
         "definition": "",
         "hide": 0,
         "includeAll": false,
+        "index": -1,
         "label": "Host:",
         "multi": false,
         "name": "name",
@@ -12238,6 +13091,7 @@
         "definition": "",
         "hide": 2,
         "includeAll": false,
+        "index": -1,
         "label": "Host:",
         "multi": false,
         "name": "node",
@@ -12260,6 +13114,7 @@
         "definition": "",
         "hide": 0,
         "includeAll": false,
+        "index": -1,
         "label": "Port",
         "multi": false,
         "name": "port",
@@ -12278,7 +13133,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {
@@ -12309,5 +13164,8 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 65
+  "variables": {
+    "list": []
+  },
+  "version": 31
 }
