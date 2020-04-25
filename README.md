@@ -17,15 +17,6 @@ Only requires the default job_name: node, add as many targets as you need in '/e
       - targets: ['localhost:9100']
 ```
 
-By default, not all values from vmstat, netstat and interrupts, are exported by prometheus-node-exporter, so some graphs are empty. For get a fully working dashboard, be sure to start the process with this arguments:
-
-```
---collector.netstat.fields=(.*) --collector.vmstat.fields=(.*)  --collector.interrupts
-
-```
-In a Debian system, add them to the startup configuration file located in '/etc/default/prometheus-node-exporter'.
-
-
 Notes:
 
 For prometheus-node-expter v.0.16 or older, use node-exporter-full-old.json
@@ -88,11 +79,17 @@ The same as Node Exporter Full. Only requires the default job_name: node, add as
 
 ### Bind9 Full
 
-For prometheus-bind-exporter
+For prometheus-bind-exporter https://github.com/prometheus-community/bind_exporter
 
-Monitor Bind9 service.
+Monitor Bind9 service. Required configuration in /etc/bind/named.conf.options:
 
-Only requires a configured target under any job_name. For example:
+```
+statistics-channels {
+  inet 127.0.0.1 port 8053 allow { 127.0.0.1; };
+};
+```
+
+On Grafana, it only requires a configured target under any job_name. For example:
 
 ```
   - job_name: 'bind'
