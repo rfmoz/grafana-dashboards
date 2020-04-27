@@ -59,7 +59,7 @@
   "gnetId": 1860,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1587820452341,
+  "iteration": 1587982493393,
   "links": [],
   "panels": [
     {
@@ -1568,7 +1568,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 3
+            "y": 21
           },
           "hiddenSeries": false,
           "id": 3,
@@ -1753,7 +1753,7 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 3
+            "y": 21
           },
           "hiddenSeries": false,
           "id": 24,
@@ -1932,7 +1932,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 15
+            "y": 33
           },
           "hiddenSeries": false,
           "id": 84,
@@ -2043,7 +2043,7 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 15
+            "y": 33
           },
           "height": "",
           "hiddenSeries": false,
@@ -2141,7 +2141,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 27
+            "y": 45
           },
           "hiddenSeries": false,
           "id": 229,
@@ -2335,7 +2335,7 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 27
+            "y": 45
           },
           "hiddenSeries": false,
           "id": 42,
@@ -2470,7 +2470,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 39
+            "y": 57
           },
           "hiddenSeries": false,
           "id": 127,
@@ -2602,7 +2602,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 4
+            "y": 70
           },
           "hiddenSeries": false,
           "id": 136,
@@ -2724,7 +2724,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 4
+            "y": 70
           },
           "hiddenSeries": false,
           "id": 135,
@@ -2855,7 +2855,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 14
+            "y": 80
           },
           "hiddenSeries": false,
           "id": 191,
@@ -2999,7 +2999,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 14
+            "y": 80
           },
           "hiddenSeries": false,
           "id": 130,
@@ -3129,7 +3129,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 24
+            "y": 90
           },
           "hiddenSeries": false,
           "id": 138,
@@ -3284,7 +3284,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 24
+            "y": 90
           },
           "hiddenSeries": false,
           "id": 131,
@@ -3407,7 +3407,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 34
+            "y": 100
           },
           "hiddenSeries": false,
           "id": 70,
@@ -3540,7 +3540,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 34
+            "y": 100
           },
           "hiddenSeries": false,
           "id": 159,
@@ -3655,7 +3655,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 44
+            "y": 110
           },
           "hiddenSeries": false,
           "id": 129,
@@ -3782,7 +3782,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 44
+            "y": 110
           },
           "hiddenSeries": false,
           "id": 160,
@@ -3906,7 +3906,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 54
+            "y": 120
           },
           "hiddenSeries": false,
           "id": 140,
@@ -4037,7 +4037,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 54
+            "y": 120
           },
           "hiddenSeries": false,
           "id": 71,
@@ -4160,7 +4160,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 64
+            "y": 130
           },
           "hiddenSeries": false,
           "id": 128,
@@ -4294,7 +4294,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 64
+            "y": 130
           },
           "hiddenSeries": false,
           "id": 137,
@@ -4418,7 +4418,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 74
+            "y": 140
           },
           "hiddenSeries": false,
           "id": 132,
@@ -4529,7 +4529,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 5
+            "y": 23
           },
           "hiddenSeries": false,
           "id": 176,
@@ -4636,7 +4636,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 5
+            "y": 23
           },
           "hiddenSeries": false,
           "id": 22,
@@ -4762,7 +4762,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 15
+            "y": 33
           },
           "hiddenSeries": false,
           "id": 175,
@@ -4903,7 +4903,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 15
+            "y": 33
           },
           "hiddenSeries": false,
           "id": 307,
@@ -5457,7 +5457,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 11
+            "y": 25
           },
           "hiddenSeries": false,
           "id": 8,
@@ -5560,7 +5560,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 11
+            "y": 25
           },
           "hiddenSeries": false,
           "id": 7,
@@ -5672,7 +5672,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 21
+            "y": 35
           },
           "hiddenSeries": false,
           "id": 259,
@@ -5776,7 +5776,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 21
+            "y": 35
           },
           "hiddenSeries": false,
           "id": 64,
@@ -5885,7 +5885,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 31
+            "y": 45
           },
           "hiddenSeries": false,
           "id": 151,
@@ -5980,7 +5980,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 31
+            "y": 45
           },
           "hiddenSeries": false,
           "id": 62,
@@ -6083,7 +6083,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 41
+            "y": 55
           },
           "hiddenSeries": false,
           "id": 148,
@@ -6179,7 +6179,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 41
+            "y": 55
           },
           "hiddenSeries": false,
           "id": 149,
@@ -6304,7 +6304,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 51
+            "y": 65
           },
           "hiddenSeries": false,
           "id": 305,
@@ -6415,7 +6415,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 51
+            "y": 65
           },
           "hiddenSeries": false,
           "id": 306,
@@ -6511,7 +6511,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 61
+            "y": 75
           },
           "hiddenSeries": false,
           "id": 308,
@@ -7258,7 +7258,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 10
+            "y": 28
           },
           "hiddenSeries": false,
           "id": 9,
@@ -7469,7 +7469,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 10
+            "y": 28
           },
           "hiddenSeries": false,
           "id": 33,
@@ -7658,7 +7658,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 20
+            "y": 38
           },
           "hiddenSeries": false,
           "id": 37,
@@ -7849,7 +7849,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 20
+            "y": 38
           },
           "hiddenSeries": false,
           "id": 35,
@@ -8027,7 +8027,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 30
+            "y": 48
           },
           "hiddenSeries": false,
           "id": 133,
@@ -8216,7 +8216,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 30
+            "y": 48
           },
           "hiddenSeries": false,
           "id": 36,
@@ -8402,7 +8402,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 40
+            "y": 58
           },
           "hiddenSeries": false,
           "id": 34,
@@ -8580,7 +8580,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 40
+            "y": 58
           },
           "hiddenSeries": false,
           "id": 301,
@@ -8804,7 +8804,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 11
+            "y": 29
           },
           "hiddenSeries": false,
           "id": 43,
@@ -8921,7 +8921,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 11
+            "y": 29
           },
           "hiddenSeries": false,
           "id": 41,
@@ -9019,7 +9019,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 21
+            "y": 39
           },
           "hiddenSeries": false,
           "id": 28,
@@ -9121,7 +9121,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 21
+            "y": 39
           },
           "hiddenSeries": false,
           "id": 219,
@@ -9220,7 +9220,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 31
+            "y": 49
           },
           "hiddenSeries": false,
           "id": 44,
@@ -10037,6 +10037,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
+              "$$hashKey": "object:576",
               "alias": "/.*Trans.*/",
               "transform": "negative-Y"
             }
@@ -10075,6 +10076,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:589",
               "format": "pps",
               "label": "packets out (-) / in (+)",
               "logBase": 1,
@@ -10083,6 +10085,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:590",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -10337,6 +10340,7 @@
           "renderer": "flot",
           "seriesOverrides": [
             {
+              "$$hashKey": "object:663",
               "alias": "NF conntrack limit",
               "color": "#890F02",
               "fill": 0
@@ -10383,14 +10387,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:678",
               "format": "short",
-              "label": "Entries",
+              "label": "entries",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:679",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -10790,11 +10796,228 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 12,
+            "x": 0,
             "y": 100
           },
           "hiddenSeries": false,
           "id": 290,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": 300,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "$$hashKey": "object:232",
+              "alias": "/.*Dropped.*/",
+              "transform": "negative-Y"
+            }
+          ],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_softnet_processed_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "CPU {{cpu}} - Processed",
+              "refId": "A",
+              "step": 4
+            },
+            {
+              "expr": "irate(node_softnet_dropped_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "CPU {{cpu}} - Dropped",
+              "refId": "B",
+              "step": 4
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Softnet Packets",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:207",
+              "format": "short",
+              "label": "packetes drop (-) / process (+)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:208",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 2,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 100
+          },
+          "hiddenSeries": false,
+          "id": 310,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": 300,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(node_softnet_times_squeezed_total{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "CPU {{cpu}} - Squeezed",
+              "refId": "A",
+              "step": 4
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Softnet Out of Quota",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:207",
+              "format": "short",
+              "label": "counter",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:208",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 2,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 110
+          },
+          "hiddenSeries": false,
+          "id": 309,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -11497,7 +11720,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 13
+            "y": 32
           },
           "height": "",
           "hiddenSeries": false,
@@ -11614,7 +11837,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 13
+            "y": 32
           },
           "height": "",
           "hiddenSeries": false,
@@ -11717,7 +11940,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 23
+            "y": 42
           },
           "height": "",
           "hiddenSeries": false,
@@ -11831,7 +12054,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 23
+            "y": 42
           },
           "height": "",
           "hiddenSeries": false,
@@ -11936,7 +12159,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 33
+            "y": 52
           },
           "height": "",
           "hiddenSeries": false,
@@ -12053,7 +12276,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 33
+            "y": 52
           },
           "height": "",
           "hiddenSeries": false,
@@ -12188,7 +12411,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 43
+            "y": 62
           },
           "height": "",
           "hiddenSeries": false,
@@ -12307,7 +12530,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 43
+            "y": 62
           },
           "height": "",
           "hiddenSeries": false,
@@ -12439,7 +12662,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 53
+            "y": 72
           },
           "height": "",
           "hiddenSeries": false,
@@ -12558,7 +12781,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 53
+            "y": 72
           },
           "height": "",
           "hiddenSeries": false,
@@ -12684,7 +12907,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 63
+            "y": 82
           },
           "height": "",
           "hiddenSeries": false,
@@ -13012,7 +13235,7 @@
       "type": "row"
     }
   ],
-  "refresh": false,
+  "refresh": "1m",
   "schemaVersion": 22,
   "style": "dark",
   "tags": [
@@ -13167,5 +13390,5 @@
   "variables": {
     "list": []
   },
-  "version": 32
+  "version": 38
 }
