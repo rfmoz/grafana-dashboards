@@ -106,7 +106,7 @@
           },
           "targets": [
             {
-              "expr": "time() - haproxy_process_start_time_seconds",
+              "expr": "time() - haproxy_process_start_time_seconds{instance=~"$host:$port"}",
               "intervalFactor": 2,
               "refId": "A",
               "step": 1800
