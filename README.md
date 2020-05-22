@@ -19,6 +19,8 @@ Only requires the default job_name: node, add as many targets as you need in '/e
       - targets: ['localhost:9100']
 ```
 
+Recommended for prometheus-node-exporter the arguments '--collector.systemd --collector.processes' because the graph uses some of their metrics.
+
 Notes:
 
 For prometheus-node-expter v.0.16 or older, use node-exporter-full-old.json
