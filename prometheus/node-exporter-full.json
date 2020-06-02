@@ -1483,7 +1483,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'})",
+          "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs|snapfuse'} * 100) / node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs|snapfuse'})",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "{{mountpoint}}",
@@ -2079,7 +2079,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'} - node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs|snapfuse'} - node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs|snapfuse'}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}}",
@@ -9166,7 +9166,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_avail_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs|snapfuse'}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -9176,7 +9176,7 @@
               "step": 4
             },
             {
-              "expr": "node_filesystem_free_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_free_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs|snapfuse'}",
               "format": "time_series",
               "hide": true,
               "intervalFactor": 2,
@@ -9185,7 +9185,7 @@
               "step": 2
             },
             {
-              "expr": "node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_size_bytes{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs|snapfuse'}",
               "format": "time_series",
               "hide": true,
               "intervalFactor": 2,
@@ -9283,7 +9283,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_files_free{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_files_free{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs|snapfuse'}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -9483,7 +9483,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_files{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_files{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs|snapfuse'}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -9584,7 +9584,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_readonly{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_readonly{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs|snapfuse'}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{mountpoint}} - ReadOnly",
@@ -9592,7 +9592,7 @@
               "step": 4
             },
             {
-              "expr": "node_filesystem_device_error{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_device_error{instance=~\"$node:$port\",job=~\"$job\",device!~'rootfs|snapfuse'}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
