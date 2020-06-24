@@ -59,7 +59,7 @@
   "gnetId": 1860,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1590164113592,
+  "iteration": 1592982294997,
   "links": [],
   "panels": [
     {
@@ -7587,7 +7587,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 28
+            "y": 29
           },
           "hiddenSeries": false,
           "id": 9,
@@ -7798,7 +7798,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 28
+            "y": 29
           },
           "hiddenSeries": false,
           "id": 33,
@@ -7987,7 +7987,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 38
+            "y": 39
           },
           "hiddenSeries": false,
           "id": 37,
@@ -8178,7 +8178,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 38
+            "y": 39
           },
           "hiddenSeries": false,
           "id": 35,
@@ -8356,7 +8356,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 48
+            "y": 49
           },
           "hiddenSeries": false,
           "id": 133,
@@ -8545,7 +8545,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 48
+            "y": 49
           },
           "hiddenSeries": false,
           "id": 36,
@@ -8731,7 +8731,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 58
+            "y": 59
           },
           "hiddenSeries": false,
           "id": 34,
@@ -8848,7 +8848,8 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_disk_io_now{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
+              "expr": "node_disk_io_now{instance=~\"$node:$port\",job=~\"$job\"}",
+              "interval": "",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO now",
               "refId": "A",
@@ -8909,7 +8910,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 58
+            "y": 59
           },
           "hiddenSeries": false,
           "id": 301,
