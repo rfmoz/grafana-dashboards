@@ -49,7 +49,7 @@ Only requires a configured target under any job_name.
 
 
 
-### Haproxy 2.0 Full
+### Haproxy 2 Full
 
 For Haproxy compiled with Prometheus support
 
