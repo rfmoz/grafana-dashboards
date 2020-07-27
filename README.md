@@ -39,7 +39,7 @@ Only requires a configured target under any job_name.
 
 
 
-### Haproxy Full
+### Haproxy Full _deprecated_
 
 For haproxy_exporter
 
