@@ -427,7 +427,7 @@
       "pluginVersion": "6.7.3",
       "targets": [
         {
-          "expr": "(node_memory_swap_used_bytes{instance=\"$node\",job=\"$job\"} * 100) / node_memory_swap_in_bytes_total{instance=\"$node\",job=\"$job\"}",
+          "expr": "(node_memory_swap_used_bytes{instance=\"$node\",job=\"$job\"} * 100) / node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"}",
           "intervalFactor": 1,
           "refId": "A",
           "step": 900
