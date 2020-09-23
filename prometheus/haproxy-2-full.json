@@ -54,7 +54,7 @@
   "gnetId": 367,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1595439743162,
+  "iteration": 1600845908202,
   "links": [],
   "panels": [
     {
@@ -157,7 +157,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(haproxy_frontend_http_responses_total{proxy=~\"$frontend\",code=~\"$code\",instance=~\"$host:$port\"}[5m])) by (code)",
+          "expr": "sum(irate(haproxy_frontend_http_responses_total{proxy=~\"$frontend\",code=~\"$code\",instance=\"$host\"}[5m])) by (code)",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "Front {{ code }}",
@@ -166,7 +166,7 @@
           "step": 30
         },
         {
-          "expr": "sum(irate(haproxy_backend_http_responses_total{proxy=~\"$backend\",code=~\"$code\",instance=~\"$host:$port\"}[5m])) by (code)",
+          "expr": "sum(irate(haproxy_backend_http_responses_total{proxy=~\"$backend\",code=~\"$code\",instance=\"$host\"}[5m])) by (code)",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "Back {{ code }}",
@@ -276,7 +276,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(haproxy_frontend_bytes_in_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])*8) by (instance)",
+          "expr": "sum(irate(haproxy_frontend_bytes_in_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])*8) by (instance)",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "IN Front",
@@ -285,7 +285,7 @@
           "step": 30
         },
         {
-          "expr": "sum(irate(haproxy_frontend_bytes_out_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])*8) by (instance)",
+          "expr": "sum(irate(haproxy_frontend_bytes_out_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])*8) by (instance)",
           "interval": "$interval",
           "intervalFactor": 2,
           "legendFormat": "OUT Front",
@@ -293,14 +293,14 @@
           "step": 60
         },
         {
-          "expr": "sum(irate(haproxy_backend_bytes_in_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])*8) by (instance)",
+          "expr": "sum(irate(haproxy_backend_bytes_in_total{proxy=~\"$backend\",instance=\"$host\"}[5m])*8) by (instance)",
           "intervalFactor": 2,
           "legendFormat": "IN Back",
           "refId": "C",
           "step": 240
         },
         {
-          "expr": "sum(irate(haproxy_backend_bytes_out_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])*8) by (instance)",
+          "expr": "sum(irate(haproxy_backend_bytes_out_total{proxy=~\"$backend\",instance=\"$host\"}[5m])*8) by (instance)",
           "intervalFactor": 2,
           "legendFormat": "OUT Back",
           "refId": "D",
@@ -407,7 +407,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(haproxy_frontend_connections_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])) by (instance)",
+          "expr": "sum(irate(haproxy_frontend_connections_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])) by (instance)",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "Front",
@@ -416,7 +416,7 @@
           "step": 30
         },
         {
-          "expr": "sum(irate(haproxy_backend_connection_errors_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])) by (instance)",
+          "expr": "sum(irate(haproxy_backend_connection_errors_total{proxy=~\"$backend\",instance=\"$host\"}[5m])) by (instance)",
           "hide": false,
           "interval": "$interval",
           "intervalFactor": 1,
@@ -535,7 +535,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(haproxy_frontend_http_requests_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])) by (instance)",
+          "expr": "sum(irate(haproxy_frontend_http_requests_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])) by (instance)",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "Front requests",
@@ -544,7 +544,7 @@
           "step": 30
         },
         {
-          "expr": "sum(irate(haproxy_frontend_request_errors_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])) by (instance)",
+          "expr": "sum(irate(haproxy_frontend_request_errors_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])) by (instance)",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "Front requests errors",
@@ -553,7 +553,7 @@
           "step": 30
         },
         {
-          "expr": "sum(irate(haproxy_frontend_requests_denied_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])) by (instance)",
+          "expr": "sum(irate(haproxy_frontend_requests_denied_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])) by (instance)",
           "interval": "$interval",
           "intervalFactor": 2,
           "legendFormat": "Front request denied",
@@ -561,7 +561,7 @@
           "step": 60
         },
         {
-          "expr": "sum(irate(haproxy_backend_redispatch_warnings_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])) by (instance)",
+          "expr": "sum(irate(haproxy_backend_redispatch_warnings_total{proxy=~\"$backend\",instance=\"$host\"}[5m])) by (instance)",
           "interval": "$interval",
           "intervalFactor": 2,
           "legendFormat": "Back redispatch warnings",
@@ -569,7 +569,7 @@
           "step": 60
         },
         {
-          "expr": "sum(irate(haproxy_backend_retry_warnings_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])) by (instance)",
+          "expr": "sum(irate(haproxy_backend_retry_warnings_total{proxy=~\"$backend\",instance=\"$host\"}[5m])) by (instance)",
           "interval": "$interval",
           "intervalFactor": 2,
           "legendFormat": "Back retry warnings",
@@ -577,7 +577,7 @@
           "step": 60
         },
         {
-          "expr": "sum(irate(haproxy_backend_response_errors_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])) by (instance)",
+          "expr": "sum(irate(haproxy_backend_response_errors_total{proxy=~\"$backend\",instance=\"$host\"}[5m])) by (instance)",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "Back response errors",
@@ -586,7 +586,7 @@
           "step": 30
         },
         {
-          "expr": "sum(haproxy_backend_current_queue{proxy=~\"$backend\",instance=~\"$host:$port\"}) by (instance)",
+          "expr": "sum(haproxy_backend_current_queue{proxy=~\"$backend\",instance=\"$host\"}) by (instance)",
           "interval": "$interval",
           "intervalFactor": 2,
           "legendFormat": "Back queued requests",
@@ -594,7 +594,7 @@
           "step": 60
         },
         {
-          "expr": "sum(irate(haproxy_backend_http_requests_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])) by (instance)",
+          "expr": "sum(irate(haproxy_backend_http_requests_total{proxy=~\"$backend\",instance=\"$host\"}[5m])) by (instance)",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "Back requests",
@@ -702,7 +702,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(haproxy_frontend_current_sessions{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])) by (instance)",
+          "expr": "sum(irate(haproxy_frontend_current_sessions{proxy=~\"$frontend\",instance=\"$host\"}[5m])) by (instance)",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "Front",
@@ -711,7 +711,7 @@
           "step": 30
         },
         {
-          "expr": "sum(irate(haproxy_backend_current_sessions{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])) by (instance)",
+          "expr": "sum(irate(haproxy_backend_current_sessions{proxy=~\"$frontend\",instance=\"$host\"}[5m])) by (instance)",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "Back",
@@ -832,7 +832,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "count(haproxy_frontend_status{instance=~\"$host:$port\"} == 1)",
+          "expr": "count(haproxy_frontend_status{instance=\"$host\"} == 1)",
           "hide": false,
           "interval": "$interval",
           "intervalFactor": 2,
@@ -841,7 +841,7 @@
           "step": 60
         },
         {
-          "expr": "count(haproxy_backend_status{instance=~\"$host:$port\"} ==1)",
+          "expr": "count(haproxy_backend_status{instance=\"$host\"} ==1)",
           "interval": "$interval",
           "intervalFactor": 2,
           "legendFormat": "Back Up",
@@ -956,7 +956,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "time() - haproxy_process_start_time_seconds{instance=~\"$host:$port\"}",
+          "expr": "time() - haproxy_process_start_time_seconds{instance=\"$host\"}",
           "intervalFactor": 2,
           "refId": "A",
           "step": 1800
@@ -1044,7 +1044,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_frontend_bytes_in_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])*8",
+              "expr": "irate(haproxy_frontend_bytes_in_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])*8",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "IN {{ proxy }}",
@@ -1053,7 +1053,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_frontend_bytes_out_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])*8",
+              "expr": "irate(haproxy_frontend_bytes_out_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])*8",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "OUT {{ proxy }}",
@@ -1161,7 +1161,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_bytes_in_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])*8",
+              "expr": "irate(haproxy_backend_bytes_in_total{proxy=~\"$backend\",instance=\"$host\"}[5m])*8",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "IN {{ proxy }}",
@@ -1170,7 +1170,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_backend_bytes_out_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])*8",
+              "expr": "irate(haproxy_backend_bytes_out_total{proxy=~\"$backend\",instance=\"$host\"}[5m])*8",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "OUT {{ proxy }}",
@@ -1277,7 +1277,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_frontend_connections_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_connections_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Successful {{ proxy }}",
@@ -1286,7 +1286,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_frontend_denied_connections_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_denied_connections_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Denied {{ proxy }}",
@@ -1394,7 +1394,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_connection_attempts_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_connection_attempts_total{proxy=~\"$backend\",instance=\"$host\"}[5m])",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -1404,7 +1404,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_backend_connection_errors_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_connection_errors_total{proxy=~\"$backend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "Error {{ proxy }}",
@@ -1505,7 +1505,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_frontend_connections_rate_max{proxy=~\"$frontend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_frontend_connections_rate_max{proxy=~\"$frontend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Max {{ proxy }}",
@@ -1607,7 +1607,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_connection_reuses_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_connection_reuses_total{proxy=~\"$backend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "Reuses {{ proxy }}",
@@ -1723,7 +1723,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_current_queue{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_current_queue{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Queued {{ proxy }}",
@@ -1825,7 +1825,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_max_queue{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_max_queue{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Max {{ proxy }}",
@@ -1949,7 +1949,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_http_requests_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_http_requests_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Total {{ proxy }}",
@@ -1958,7 +1958,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_backend_requests_denied_total{proxy=~\"$frontend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_requests_denied_total{proxy=~\"$frontend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "Denied {{ proxy }}",
@@ -2070,7 +2070,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_frontend_http_requests_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_http_requests_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Total {{ proxy }}",
@@ -2079,7 +2079,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_frontend_request_errors_total{proxy=~\"$frontend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_request_errors_total{proxy=~\"$frontend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "Error {{ proxy }}",
@@ -2087,7 +2087,7 @@
               "step": 60
             },
             {
-              "expr": "irate(haproxy_frontend_requests_denied_total{proxy=~\"$frontend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_requests_denied_total{proxy=~\"$frontend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "Denied {{ proxy }}",
@@ -2190,7 +2190,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_responses_denied_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_responses_denied_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Denied {{ proxy }}",
@@ -2298,7 +2298,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_frontend_responses_denied_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_responses_denied_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Denied {{ proxy }}",
@@ -2408,7 +2408,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_redispatch_warnings_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_redispatch_warnings_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Redispatch {{ proxy }}",
@@ -2417,7 +2417,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_backend_retry_warnings_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_retry_warnings_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "Retry {{ proxy }}",
@@ -2425,7 +2425,7 @@
               "step": 60
             },
             {
-              "expr": "irate(haproxy_backend_response_errors_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_response_errors_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "Error {{ proxy }}",
@@ -2534,7 +2534,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_frontend_http_requests_rate_max{proxy=~\"$backend\", instance=~\"$host:$port\"}",
+              "expr": "haproxy_frontend_http_requests_rate_max{proxy=~\"$backend\", instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Max {{ proxy }}",
@@ -2652,7 +2652,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_connect_time_average_seconds{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_connect_time_average_seconds{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -2754,7 +2754,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_max_connect_time_seconds{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_max_connect_time_seconds{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -2856,7 +2856,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_total_time_average_seconds{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_total_time_average_seconds{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -2958,7 +2958,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_max_total_time_seconds{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_max_total_time_seconds{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -3060,7 +3060,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_response_time_average_seconds{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_response_time_average_seconds{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -3162,7 +3162,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_max_response_time_seconds{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_max_response_time_seconds{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -3264,7 +3264,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_queue_time_average_seconds{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_queue_time_average_seconds{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -3367,7 +3367,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_max_queue_time_seconds{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_max_queue_time_seconds{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -3485,7 +3485,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_frontend_http_responses_total{proxy=~\"$frontend\", code=~\"$code\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_http_responses_total{proxy=~\"$frontend\", code=~\"$code\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ code }} {{ proxy }} ",
@@ -3587,7 +3587,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_http_responses_total{proxy=~\"$backend\", code=~\"$code\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_http_responses_total{proxy=~\"$backend\", code=~\"$code\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ code }} {{ proxy }}",
@@ -3689,7 +3689,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_http_responses_total{proxy=~\"$backend\",server=~\"$server\",code=~\"$code\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_http_responses_total{proxy=~\"$backend\",server=~\"$server\",code=~\"$code\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ code }} {{ proxy }} {{ server }}",
@@ -3813,7 +3813,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_frontend_sessions_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_sessions_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -3823,7 +3823,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_frontend_denied_sessions_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_denied_sessions_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -3833,7 +3833,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_frontend_current_sessions{proxy=~\"$frontend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_frontend_current_sessions{proxy=~\"$frontend\",instance=\"$host\"}",
               "hide": true,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -3936,7 +3936,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_sessions_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_sessions_total{proxy=~\"$backend\",instance=\"$host\"}[5m])",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -3946,7 +3946,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_backend_current_sessions{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_current_sessions{proxy=~\"$backend\",instance=\"$host\"}",
               "hide": true,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -4055,7 +4055,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_max_sessions{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_max_sessions{proxy=~\"$backend\",instance=\"$host\"}",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -4065,7 +4065,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_backend_limit_sessions{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_limit_sessions{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "Limit {{ proxy }}",
@@ -4172,7 +4172,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_frontend_max_sessions{proxy=~\"$frontend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_frontend_max_sessions{proxy=~\"$frontend\",instance=\"$host\"}",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -4182,7 +4182,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_frontend_limit_sessions{proxy=~\"$frontend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_frontend_limit_sessions{proxy=~\"$frontend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "Limit {{ proxy }}",
@@ -4283,7 +4283,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_max_session_rate{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_max_session_rate{proxy=~\"$backend\",instance=\"$host\"}",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -4392,7 +4392,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_frontend_max_session_rate{proxy=~\"$frontend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_frontend_max_session_rate{proxy=~\"$frontend\",instance=\"$host\"}",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -4402,7 +4402,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_frontend_limit_session_rate{proxy=~\"$frontend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_frontend_limit_session_rate{proxy=~\"$frontend\",instance=\"$host\"}",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Limit {{ proxy }}",
@@ -4503,7 +4503,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_failed_header_rewriting_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_failed_header_rewriting_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -4605,7 +4605,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_frontend_failed_header_rewriting_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_failed_header_rewriting_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -4718,7 +4718,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_last_session_seconds{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_last_session_seconds{proxy=~\"$frontend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -4820,7 +4820,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_frontend_http_requests_rate_max{proxy=~\"$frontend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_frontend_http_requests_rate_max{proxy=~\"$frontend\",instance=\"$host\"}",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -4929,7 +4929,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_client_aborts_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_client_aborts_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "By client {{ proxy }}",
@@ -4938,7 +4938,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_backend_server_aborts_total{proxy=~\"$frontend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_server_aborts_total{proxy=~\"$frontend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "By server {{ proxy }}",
@@ -5045,7 +5045,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_client_aborts_total{proxy=~\"$frontend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_client_aborts_total{proxy=~\"$frontend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "By client {{ proxy }} / {{ server }}",
@@ -5054,7 +5054,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_server_server_aborts_total{proxy=~\"$frontend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_server_aborts_total{proxy=~\"$frontend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "By server {{ proxy }} / {{ server }}",
@@ -5171,7 +5171,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_check_up_down_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_check_up_down_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -5273,7 +5273,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_weight{proxy=~\"$backend\", instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_weight{proxy=~\"$backend\", instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -5398,7 +5398,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_frontend_http_cache_lookups_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_http_cache_lookups_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Lookups {{ proxy }} ",
@@ -5407,7 +5407,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_frontend_http_cache_hits_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_http_cache_hits_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Hits {{ proxy }} ",
@@ -5516,7 +5516,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_http_cache_lookups_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_http_cache_lookups_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Lookups {{ proxy }} ",
@@ -5525,7 +5525,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_backend_http_cache_hits_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_http_cache_hits_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Hits {{ proxy }} ",
@@ -5639,7 +5639,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_frontend_http_comp_bytes_in_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_http_comp_bytes_in_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Bytes fed {{ proxy }} ",
@@ -5648,7 +5648,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_frontend_http_comp_bytes_out_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_http_comp_bytes_out_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Bytes emitted {{ proxy }} ",
@@ -5657,7 +5657,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_frontend_http_comp_bytes_bypassed_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_http_comp_bytes_bypassed_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Bytes bypassed  {{ proxy }} ",
@@ -5771,7 +5771,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_http_comp_bytes_in_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_http_comp_bytes_in_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Bytes fed {{ proxy }} ",
@@ -5780,7 +5780,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_backend_http_comp_bytes_out_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_http_comp_bytes_out_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Bytes emitted {{ proxy }} ",
@@ -5789,7 +5789,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_backend_http_comp_bytes_bypassed_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_http_comp_bytes_bypassed_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Bytes bypassed  {{ proxy }} ",
@@ -5892,7 +5892,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_frontend_http_comp_responses_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_http_comp_responses_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} ",
@@ -5995,7 +5995,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_http_comp_responses_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_http_comp_responses_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} ",
@@ -6112,7 +6112,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_frontend_status{proxy=~\"$frontend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_frontend_status{proxy=~\"$frontend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -6213,7 +6213,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_status{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_status{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -6314,7 +6314,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_frontend_internal_errors_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_frontend_internal_errors_total{proxy=~\"$backend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -6415,7 +6415,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_backend_internal_errors_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_backend_internal_errors_total{proxy=~\"$backend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -6516,7 +6516,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_active_servers{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_active_servers{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -6617,7 +6617,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_backend_backup_servers{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_backend_backup_servers{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "",
               "legendFormat": "{{ proxy }}",
               "refId": "B"
@@ -6739,7 +6739,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_bytes_in_total{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])*8",
+              "expr": "irate(haproxy_server_bytes_in_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])*8",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "IN {{ proxy }} / {{ server }}",
@@ -6748,7 +6748,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_server_bytes_out_total{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])*8",
+              "expr": "irate(haproxy_server_bytes_out_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])*8",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 2,
@@ -6856,7 +6856,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_connection_attempts_total{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_connection_attempts_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -6866,7 +6866,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_server_connection_errors_total{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_connection_errors_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "Error {{ proxy }} / {{ server }}",
@@ -6967,7 +6967,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_connection_reuses_total{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_connection_reuses_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "Reuses {{ proxy }} / {{ server }}",
@@ -7074,7 +7074,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_server_idle_connections_current{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_server_idle_connections_current{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "Available idle connections {{ proxy }} / {{ server }}",
@@ -7082,7 +7082,7 @@
               "step": 60
             },
             {
-              "expr": "irate(haproxy_server_server_idle_connections_limit{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_server_idle_connections_limit{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 2,
               "legendFormat": "Limit available idle connections {{ proxy }} / {{ server }}{{ proxy }}",
@@ -7200,7 +7200,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_responses_denied_total{proxy=~\"$backend\", instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_responses_denied_total{proxy=~\"$backend\", instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Denied {{ proxy }} / {{ server }}",
@@ -7310,7 +7310,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_redispatch_warnings_total{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_redispatch_warnings_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 2,
@@ -7319,7 +7319,7 @@
               "step": 60
             },
             {
-              "expr": "irate(haproxy_server_retry_warnings_total{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_retry_warnings_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -7329,7 +7329,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_server_response_errors_total{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_response_errors_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 2,
@@ -7431,7 +7431,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_current_queue{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_current_queue{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current {{ proxy }} / {{ server }}",
@@ -7539,7 +7539,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_max_queue{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_max_queue{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -7549,7 +7549,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_server_queue_limit{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_queue_limit{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "",
               "legendFormat": "Limit {{ proxy }} / {{ server }}",
               "refId": "A"
@@ -7663,7 +7663,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_connect_time_average_seconds{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_connect_time_average_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -7765,7 +7765,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_max_connect_time_seconds{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_max_connect_time_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -7867,7 +7867,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_response_time_average_seconds{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_response_time_average_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -7969,7 +7969,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_max_response_time_seconds{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_max_response_time_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -8071,7 +8071,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_total_time_average_seconds{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_total_time_average_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -8173,7 +8173,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_max_total_time_seconds{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_max_total_time_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -8275,7 +8275,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_queue_time_average_seconds{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_queue_time_average_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -8377,7 +8377,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_max_queue_time_seconds{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_max_queue_time_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -8500,7 +8500,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_current_sessions{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_current_sessions{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "hide": true,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -8510,7 +8510,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_server_sessions_total{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_sessions_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Total {{ proxy }} / {{ server }}",
@@ -8519,7 +8519,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_server_max_sessions{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_max_sessions{proxy=~\"$backend\",instance=\"$host\"}[5m])",
               "hide": true,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -8529,7 +8529,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_server_limit_sessions{proxy=~\"$backend\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_limit_sessions{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Limit {{ proxy }} / {{ server }}",
@@ -8642,7 +8642,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_failed_header_rewriting_total{proxy=~\"$frontend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_failed_header_rewriting_total{proxy=~\"$frontend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} /  {{ server }}",
@@ -8750,7 +8750,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_max_session_rate{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_max_session_rate{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Rate {{ proxy }} / {{ server }}",
@@ -8759,7 +8759,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_server_limit_session_rate{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_limit_session_rate{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Limit {{ proxy }} / {{ server }}",
@@ -8876,7 +8876,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_weight{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_weight{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -8979,7 +8979,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_check_up_down_total{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_check_up_down_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -9082,7 +9082,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_check_failures_total{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_check_failures_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -9185,7 +9185,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_check_duration_seconds{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_check_duration_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -9288,7 +9288,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_current_throttle{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_current_throttle{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -9391,7 +9391,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_last_session_seconds{proxy=~\"$backend\", server=~\"$server\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_last_session_seconds{proxy=~\"$backend\", server=~\"$server\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }} / {{ server }}",
@@ -9514,7 +9514,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_server_status{proxy=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
+              "expr": "haproxy_server_status{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -9616,7 +9616,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_server_internal_errors_total{proxy=~\"$backend\",instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_server_internal_errors_total{proxy=~\"$backend\",instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "{{ proxy }}",
@@ -9738,7 +9738,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_current_session_rate{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_current_session_rate{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current number of sessions per second over last elapsed second",
@@ -9747,7 +9747,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_limit_session_rate{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_limit_session_rate{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Configured maximum number of sessions per second",
@@ -9756,7 +9756,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_max_session_rate{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_max_session_rate{instance=\"$host\"}",
               "hide": true,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -9858,7 +9858,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_current_connections{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_current_connections{instance=\"$host\"}",
               "hide": true,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -9868,7 +9868,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_process_connections_total{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_connections_total{instance=\"$host\"}[5m])",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -9878,7 +9878,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_process_requests_total{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_requests_total{instance=\"$host\"}[5m])",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -9986,7 +9986,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_current_connection_rate{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_current_connection_rate{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current number of connections per second over last elapsed second",
@@ -9995,7 +9995,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_limit_connection_rate{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_limit_connection_rate{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Configured maximum number of connections per second.",
@@ -10004,7 +10004,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_max_connection_rate{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_max_connection_rate{instance=\"$host\"}",
               "hide": true,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -10112,7 +10112,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_max_connections{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_max_connections{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Maximum number of concurrent connections",
@@ -10121,7 +10121,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_hard_max_connections{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_hard_max_connections{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Initial Maximum number of concurrent connections",
@@ -10244,7 +10244,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_current_zlib_memory{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_current_zlib_memory{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current memory used for zlib in bytes",
@@ -10253,7 +10253,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_max_zlib_memory{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_max_zlib_memory{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Configured maximum amount of memory for zlib in bytes",
@@ -10366,7 +10366,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_process_http_comp_bytes_in_total{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_http_comp_bytes_in_total{instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Number of bytes per second over last elapsed second, before http compression",
@@ -10375,7 +10375,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_process_http_comp_bytes_out_total{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_http_comp_bytes_out_total{instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Number of bytes per second over last elapsed second, after http compression",
@@ -10384,7 +10384,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_limit_http_comp{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_limit_http_comp{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Configured maximum input compression rate in bytes",
@@ -10507,7 +10507,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_process_ssl_cache_lookups_total{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_ssl_cache_lookups_total{instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Total number of SSL session cache lookups",
@@ -10516,7 +10516,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_process_ssl_cache_misses_total{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_ssl_cache_misses_total{instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Total number of SSL session cache misses",
@@ -10628,7 +10628,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_current_frontend_ssl_key_rate{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_current_frontend_ssl_key_rate{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current frontend SSL Key computation per second over last elapsed second",
@@ -10637,7 +10637,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_max_frontend_ssl_key_rate{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_max_frontend_ssl_key_rate{instance=\"$host\"}",
               "hide": true,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -10647,7 +10647,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_current_backend_ssl_key_rate{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_current_backend_ssl_key_rate{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current backend SSL Key computation per second over last elapsed second",
@@ -10656,7 +10656,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_max_backend_ssl_key_rate{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_max_backend_ssl_key_rate{instance=\"$host\"}",
               "hide": true,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -10764,7 +10764,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_current_ssl_rate{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_current_ssl_rate{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current number of SSL sessions per second over last elapsed second",
@@ -10773,7 +10773,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_limit_ssl_rate{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_limit_ssl_rate{instance=\"$host\"}",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -10783,7 +10783,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_max_ssl_rate{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_max_ssl_rate{instance=\"$host\"}",
               "hide": true,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -10891,7 +10891,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_current_ssl_connections{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_current_ssl_connections{instance=\"$host\"}",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -10901,7 +10901,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_max_ssl_connections{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_max_ssl_connections{instance=\"$host\"}",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -10911,7 +10911,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_process_ssl_connections_total{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_ssl_connections_total{instance=\"$host\"}[5m])",
               "hide": true,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -11013,7 +11013,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_frontent_ssl_reuse{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_frontent_ssl_reuse{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "SSL session reuse ratio (percent)",
@@ -11136,7 +11136,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_max_memory_bytes{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_max_memory_bytes{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Per-process memory limit (in bytes); 0=unset",
@@ -11145,7 +11145,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_process_pool_allocated_bytes{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_pool_allocated_bytes{instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Total amount of memory allocated in pools (in bytes)",
@@ -11154,7 +11154,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_process_pool_used_bytes{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_pool_used_bytes{instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Total amount of memory used in pools (in bytes)",
@@ -11253,7 +11253,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_process_current_tasks{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_current_tasks{instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current number of tasks",
@@ -11262,7 +11262,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_current_run_queue{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_current_run_queue{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current number of tasks in the run-queue",
@@ -11271,7 +11271,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_stopping{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_stopping{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Non zero means stopping in progress",
@@ -11372,7 +11372,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_max_fds{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_max_fds{instance=\"$host\"}",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -11382,7 +11382,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_max_sockets{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_max_sockets{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Maximum numer of open sockets",
@@ -11490,7 +11490,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_max_pipes{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_max_pipes{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Configured maximum number of pipes",
@@ -11499,7 +11499,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_process_pipes_used_total{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_pipes_used_total{instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Number of pipes in used",
@@ -11508,7 +11508,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_process_pipes_free_total{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_pipes_free_total{instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Number of pipes unused",
@@ -11609,7 +11609,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_nbthread{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_nbthread{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Threads",
@@ -11618,7 +11618,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_nbproc{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_nbproc{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Processes",
@@ -11719,7 +11719,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_pool_failures_total{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_pool_failures_total{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Total number of failed pool allocations",
@@ -11820,7 +11820,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_idle_time_percent{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_idle_time_percent{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Idle to total ratio over last sample (percent)",
@@ -11919,7 +11919,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(haproxy_process_jobs{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_jobs{instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current number of active jobs (listeners, sessions, open devices)",
@@ -11928,7 +11928,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_process_unstoppable_jobs{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_unstoppable_jobs{instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current number of active jobs that can't be stopped during a soft stop",
@@ -11937,7 +11937,7 @@
               "step": 30
             },
             {
-              "expr": "irate(haproxy_process_listeners{instance=~\"$host:$port\"}[5m])",
+              "expr": "irate(haproxy_process_listeners{instance=\"$host\"}[5m])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current number of active listeners",
@@ -12038,7 +12038,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_active_peers{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_active_peers{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current number of active peers",
@@ -12047,7 +12047,7 @@
               "step": 30
             },
             {
-              "expr": "haproxy_process_connected_peers{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_connected_peers{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Current number of connected peers",
@@ -12148,7 +12148,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_dropped_logs_total{instance=~\"$host:$port\"}",
+              "expr": "haproxy_process_dropped_logs_total{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Total number of dropped logs",
@@ -12230,35 +12230,12 @@
         "options": [],
         "query": "label_values(haproxy_process_nbproc,instance)",
         "refresh": 1,
-        "regex": "/([^:]+):.*/",
+        "regex": "",
         "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": null,
         "tags": [],
         "tagsQuery": null,
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": null,
-        "current": {},
-        "datasource": "${DS_PROMETHEUS}",
-        "definition": "",
-        "hide": 2,
-        "includeAll": false,
-        "index": -1,
-        "label": null,
-        "multi": false,
-        "name": "port",
-        "options": [],
-        "query": "label_values(haproxy_process_nbproc, instance)",
-        "refresh": 1,
-        "regex": "/[^:]+:(.*)/",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
         "type": "query",
         "useTags": false
       },
@@ -12274,7 +12251,7 @@
         "multi": true,
         "name": "backend",
         "options": [],
-        "query": "label_values(haproxy_backend_status{instance=~\"$host:$port\"}, proxy)",
+        "query": "label_values(haproxy_backend_status{instance=\"$host\"}, proxy)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -12297,7 +12274,7 @@
         "multi": true,
         "name": "frontend",
         "options": [],
-        "query": "label_values(haproxy_frontend_status{instance=~\"$host:$port\"}, proxy)",
+        "query": "label_values(haproxy_frontend_status{instance=\"$host\"}, proxy)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -12320,7 +12297,7 @@
         "multi": true,
         "name": "server",
         "options": [],
-        "query": "label_values(haproxy_server_status{instance=~\"$host:$port\"}, server)",
+        "query": "label_values(haproxy_server_status{instance=\"$host\"}, server)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -12343,7 +12320,7 @@
         "multi": true,
         "name": "code",
         "options": [],
-        "query": "label_values(haproxy_server_http_responses_total{instance=~\"$host:$port\"}, code)",
+        "query": "label_values(haproxy_server_http_responses_total{instance=\"$host\"}, code)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -12445,5 +12422,5 @@
   "variables": {
     "list": []
   },
-  "version": 78
+  "version": 86
 }
