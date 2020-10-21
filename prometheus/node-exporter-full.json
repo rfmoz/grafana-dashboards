@@ -6049,7 +6049,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Process schdeule stats Running / Waiting",
+          "title": "Process schedule stats Running / Waiting",
           "tooltip": {
             "shared": true,
             "sort": 0,
