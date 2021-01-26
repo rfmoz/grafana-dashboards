@@ -9592,7 +9592,7 @@
               "step": 4
             },
             {
-              "expr": "node_filesystem_device_error{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_device_error{instance=\"$node\",job=\"$job\",device!~'rootfs',fstype!~'tmpfs'}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
