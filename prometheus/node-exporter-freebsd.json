@@ -145,7 +145,7 @@
           "intervalFactor": 1,
           "legendFormat": "",
           "refId": "A",
-          "step": 900
+          "step": 240
         }
       ],
       "title": "CPU Busy",
@@ -218,7 +218,7 @@
           "hide": false,
           "intervalFactor": 1,
           "refId": "A",
-          "step": 900
+          "step": 240
         }
       ],
       "title": "Sys Load (5m avg)",
@@ -291,7 +291,7 @@
           "hide": false,
           "intervalFactor": 1,
           "refId": "A",
-          "step": 900
+          "step": 240
         }
       ],
       "title": "Sys Load (15m avg)",
@@ -359,7 +359,7 @@
           "instant": false,
           "intervalFactor": 1,
           "refId": "B",
-          "step": 900
+          "step": 240
         }
       ],
       "title": "RAM Used",
@@ -430,7 +430,7 @@
           "expr": "(node_memory_swap_used_bytes{instance=\"$node\",job=\"$job\"} * 100) / node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"}",
           "intervalFactor": 1,
           "refId": "A",
-          "step": 900
+          "step": 240
         }
       ],
       "title": "SWAP Used",
@@ -502,7 +502,7 @@
           "format": "time_series",
           "intervalFactor": 1,
           "refId": "A",
-          "step": 900
+          "step": 240
         }
       ],
       "title": "Root FS Used",
@@ -574,7 +574,7 @@
           "expr": "count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
           "intervalFactor": 1,
           "refId": "A",
-          "step": 900
+          "step": 240
         }
       ],
       "thresholds": "",
@@ -657,7 +657,7 @@
           "expr": "node_memory_size_bytes{instance=\"$node\",job=\"$job\"}",
           "intervalFactor": 1,
           "refId": "A",
-          "step": 900
+          "step": 240
         }
       ],
       "thresholds": "",
@@ -740,7 +740,7 @@
           "expr": "node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"}",
           "intervalFactor": 1,
           "refId": "A",
-          "step": 900
+          "step": 240
         }
       ],
       "thresholds": "",
@@ -824,7 +824,7 @@
           "hide": false,
           "intervalFactor": 1,
           "refId": "A",
-          "step": 900
+          "step": 240
         }
       ],
       "thresholds": "",
@@ -909,7 +909,7 @@
           "hide": false,
           "intervalFactor": 1,
           "refId": "A",
-          "step": 900
+          "step": 240
         }
       ],
       "thresholds": "70,90",
@@ -994,7 +994,7 @@
           "expr": "node_time_seconds{instance=\"$node\",job=\"$job\"} - node_boot_time_seconds{instance=\"$node\",job=\"$job\"}",
           "intervalFactor": 2,
           "refId": "A",
-          "step": 1800
+          "step": 240
         }
       ],
       "thresholds": "",
@@ -1282,7 +1282,7 @@
           "intervalFactor": 2,
           "legendFormat": "Cache - Memory being used to cache data, can be freed immediately if required",
           "refId": "F",
-          "step": 120
+          "step": 240
         },
         {
           "expr": "node_memory_wired_bytes{instance=\"$node\",job=\"$job\"}",
@@ -1757,7 +1757,7 @@
           "intervalFactor": 2,
           "legendFormat": "{{device}} - {{mountpoint}} - Free",
           "refId": "B",
-          "step": 30
+          "step": 240
         },
         {
           "expr": "node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\"}",
@@ -2589,7 +2589,7 @@
               "intervalFactor": 4,
               "legendFormat": "Load 1m",
               "refId": "A",
-              "step": 480
+              "step": 240
             },
             {
               "expr": "node_load5{instance=\"$node\",job=\"$job\"}",
@@ -2597,7 +2597,7 @@
               "intervalFactor": 4,
               "legendFormat": "Load 5m",
               "refId": "B",
-              "step": 480
+              "step": 240
             },
             {
               "expr": "node_load15{instance=\"$node\",job=\"$job\"}",
@@ -2605,7 +2605,7 @@
               "intervalFactor": 4,
               "legendFormat": "Load 15m",
               "refId": "C",
-              "step": 480
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -3416,7 +3416,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{collector}} - Scrape duration",
               "refId": "A",
-              "step": 30
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -3510,7 +3510,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{collector}} - Scrape fail",
               "refId": "A",
-              "step": 30
+              "step": 240
             },
             {
               "expr": "node_textfile_scrape_error{instance=\"$node\",job=\"$job\"}",
@@ -3519,7 +3519,7 @@
               "intervalFactor": 2,
               "legendFormat": "opening or reading a file  - Scrape fail",
               "refId": "B",
-              "step": 30
+              "step": 240
             }
           ],
           "thresholds": [],

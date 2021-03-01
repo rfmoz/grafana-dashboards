@@ -1013,63 +1013,63 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='FsStat',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "B",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='GetAttr',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "C",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Link',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "D",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Lookup',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "E",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='MkDir',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "F",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Null',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "G",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Read',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "H",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='ReadDir',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "I",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1146,63 +1146,63 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "J",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Remove',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "K",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Rename',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "L",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='RmDir',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "M",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Root',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "N",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='SetAttr',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "O",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='SymLink',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "P",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='WrCache',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "Q",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Write',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "R",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1291,56 +1291,56 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='FsStat',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "B",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='GetAttr',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "C",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Link',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "D",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Lookup',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "E",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='MkDir',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "F",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Read',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "G",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='ReadDir',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "H",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1417,56 +1417,56 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "I",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Remove',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "J",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Rename',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "K",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='RmDir',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "L",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Root',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "M",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='SetAttr',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "N",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='SymLink',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "O",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Write',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "P",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1555,77 +1555,77 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Commit',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "B",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Create',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "C",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='FsInfo',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "D",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='FsStat',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "E",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='GetAttr',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "F",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Link',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "G",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Lookup',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "H",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='MkDir',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "I",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='MkNod',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "J",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Null',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "K",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1702,77 +1702,77 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "L",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Read',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "M",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='ReadDir',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "N",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='ReadDirPlus',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "O",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='ReadLink',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "P",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Rename',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "Q",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='RmDir',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "R",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='SetAttr',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "S",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='SymLink',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "T",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Write',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "U",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Remove',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -1861,77 +1861,77 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Commit',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "B",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Create',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "C",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='FsInfo',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "D",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='FsStat',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "E",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='GetAttr',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "F",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Link',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "G",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Lookup',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "H",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='MkDir',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "I",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='MkNod',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "J",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='PathConf',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "K",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2008,70 +2008,70 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "L",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='ReadDir',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "M",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='ReadDirPlus',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "N",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='ReadLink',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "O",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Remove',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "P",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Rename',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "Q",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='RmDir',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "R",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='SetAttr',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "S",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='SymLink',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "T",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Write',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "U",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2161,77 +2161,77 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Commit',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "B",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Create',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "C",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='FsInfo',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "D",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='GetAttr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "F",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Link',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "G",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Lookup',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "H",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Null',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "K",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Allocate',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "E",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='BindConnToSession',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "I",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Clone',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "J",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2308,77 +2308,77 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "L",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Read',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "M",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='ReadDir',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "N",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='ReadLink',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "P",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Rename',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "Q",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Setattr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "S",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='SymLink',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "T",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Write',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "U",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Close',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='CreateSession',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "B",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Read',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "C",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2455,70 +2455,70 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "L",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='DelegReturn',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "M",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='DestroyClientID',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "N",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='DestroySession',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "P",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='ExchangeID',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "Q",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='FreeStateID',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "S",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='FsLocations',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "T",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='FsidPresent',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "U",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='GetACL',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='GetDeviceInfo',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "B",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2595,70 +2595,70 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "L",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='GetLeaseTime',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "M",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='LayoutCommit',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "N",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='LayoutGet',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "P",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='LayoutReturn',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "Q",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='LayoutStats',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "S",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Lock',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "T",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Lockt',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "U",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Locku',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Lookup',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "B",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2735,70 +2735,70 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "L",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Open',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "M",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='OpenConfirmt',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "N",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='OpenDowngrade',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "P",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='OpenNoattr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "Q",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='ReclaimComplete',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "S",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='ReleaseLockowner',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "T",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Renew',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "U",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Secinfo',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='SecinfoNoName',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "B",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -2875,56 +2875,56 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "L",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='Sequence',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "M",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='ServerCaps',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "N",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='SetACL',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "P",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='SetClientID',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "Q",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='SetClientIDConfirm',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "S",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='StatFs',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "T",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfs_requests_total{method='TestStateID',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "U",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -3013,70 +3013,70 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Commit',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "B",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Create',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "C",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='GetAttr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "F",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Link',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "G",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Lookup',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "H",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Close',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "D",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='DelegPurge',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "E",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='DelegReturn',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "I",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='GetFH',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "J",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -3153,70 +3153,70 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "L",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='ReadDir',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "M",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='ReadLink',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "O",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Remove',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "P",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Rename',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "Q",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='SetAttr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "S",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Write',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "U",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Lock',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Lockt',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "B",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Locku',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "C",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -3293,91 +3293,91 @@
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "L",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Nverify',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Open',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "B",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='OpenAttr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "C",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='OpenConfirm',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "D",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='OpenDgrd',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "E",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='PutFH',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "F",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='RelLockOwner',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "G",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Renew',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "H",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='RestoreFH',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "I",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='SaveFH',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "J",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='SecInfo',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "K",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "irate(node_nfsd_requests_total{method='Verify',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "intervalFactor": 2,
               "legendFormat": "{{ method }}",
               "refId": "M",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],

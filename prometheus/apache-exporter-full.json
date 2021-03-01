@@ -111,7 +111,7 @@
               "format": "time_series",
               "intervalFactor": 2,
               "refId": "A",
-              "step": 1800
+              "step": 240
             }
           ],
           "thresholds": "",
@@ -176,7 +176,7 @@
               "intervalFactor": 2,
               "legendFormat": "Apache Up",
               "refId": "A",
-              "step": 120
+              "step": 240
             },
             {
               "expr": "scalar(count(apache_up{instance=~\"$host:$port\"} == 0))",
@@ -184,7 +184,7 @@
               "intervalFactor": 2,
               "legendFormat": "Apache Down",
               "refId": "B",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -443,7 +443,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{ state }}",
               "refId": "A",
-              "step": 120
+              "step": 240
             }
           ],
           "thresholds": [],
