@@ -11013,7 +11013,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "haproxy_process_frontent_ssl_reuse{instance=\"$host\"}",
+              "expr": "haproxy_process_frontend_ssl_reuse{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "SSL session reuse ratio (percent)",
