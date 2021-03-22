@@ -60,7 +60,22 @@
   "graphTooltip": 0,
   "id": null,
   "iteration": 1614605016686,
-  "links": [],
+  "links": [
+    {
+      "icon": "external link",
+      "tags": [],
+      "title": "Github",
+      "type": "link",
+      "url": "https://github.com/rfrail3/grafana-dashboards"
+    },
+    {
+      "icon": "external link",
+      "tags": [],
+      "title": "Grafana",
+      "type": "link",
+      "url": "https://grafana.com/grafana/dashboards/1860"
+    }
+  ],
   "panels": [
     {
       "collapsed": false,
