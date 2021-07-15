@@ -158,9 +158,9 @@
       "pluginVersion": "7.3.7",
       "targets": [
         {
-          "expr": "(((count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=\"$node\",job=\"$job\"}[$__rate_interval])))) * 100) / count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
+          "expr": "(((count(count(node_cpu_seconds_total{Name=\"prod-1-$project\"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{mode='idle',Name=\"prod-1-$project\"}[$__rate_interval])))) * 100) / count(count(node_cpu_seconds_total{Name=\"prod-1-$project\"}) by (cpu))",
           "hide": false,
-          "intervalFactor": 1,
+          "intervalFactor": 5,
           "legendFormat": "",
           "refId": "A",
           "step": 240
@@ -235,10 +235,10 @@
       "pluginVersion": "7.3.7",
       "targets": [
         {
-          "expr": "avg(node_load5{instance=\"$node\",job=\"$job\"}) /  count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)) * 100",
+          "expr": "avg(node_load5{Name=\"prod-1-$project\"}) /  count(count(node_cpu_seconds_total{Name=\"prod-1-$project\"}) by (cpu)) * 100",
           "format": "time_series",
           "hide": false,
-          "intervalFactor": 1,
+          "intervalFactor": 5,
           "refId": "A",
           "step": 240
         }
@@ -312,9 +312,9 @@
       "pluginVersion": "7.3.7",
       "targets": [
         {
-          "expr": "avg(node_load15{instance=\"$node\",job=\"$job\"}) /  count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)) * 100",
+          "expr": "avg(node_load15{Name=\"prod-1-$project\"}) /  count(count(node_cpu_seconds_total{Name=\"prod-1-$project\"}) by (cpu)) * 100",
           "hide": false,
-          "intervalFactor": 1,
+          "intervalFactor": 5,
           "refId": "A",
           "step": 240
         }
@@ -382,18 +382,18 @@
       "pluginVersion": "7.3.7",
       "targets": [
         {
-          "expr": "((node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}) / (node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"} )) * 100",
+          "expr": "((node_memory_MemTotal_bytes{Name=\"prod-1-$project\"} - node_memory_MemFree_bytes{Name=\"prod-1-$project\"}) / (node_memory_MemTotal_bytes{Name=\"prod-1-$project\"} )) * 100",
           "format": "time_series",
           "hide": true,
-          "intervalFactor": 1,
+          "intervalFactor": 5,
           "refId": "A",
           "step": 240
         },
         {
-          "expr": "100 - ((node_memory_MemAvailable_bytes{instance=\"$node\",job=\"$job\"} * 100) / node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"})",
+          "expr": "100 - ((node_memory_MemAvailable_bytes{Name=\"prod-1-$project\"} * 100) / node_memory_MemTotal_bytes{Name=\"prod-1-$project\"})",
           "format": "time_series",
           "hide": false,
-          "intervalFactor": 1,
+          "intervalFactor": 5,
           "refId": "B",
           "step": 240
         }
@@ -467,8 +467,8 @@
       "pluginVersion": "7.3.7",
       "targets": [
         {
-          "expr": "((node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_SwapFree_bytes{instance=\"$node\",job=\"$job\"}) / (node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"} )) * 100",
-          "intervalFactor": 1,
+          "expr": "((node_memory_SwapTotal_bytes{Name=\"prod-1-$project\"} - node_memory_SwapFree_bytes{Name=\"prod-1-$project\"}) / (node_memory_SwapTotal_bytes{Name=\"prod-1-$project\"} )) * 100",
+          "intervalFactor": 5,
           "refId": "A",
           "step": 240
         }
@@ -542,9 +542,9 @@
       "pluginVersion": "7.3.7",
       "targets": [
         {
-          "expr": "100 - ((node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"})",
+          "expr": "100 - ((node_filesystem_avail_bytes{Name=\"prod-1-$project\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{Name=\"prod-1-$project\",mountpoint=\"/\",fstype!=\"rootfs\"})",
           "format": "time_series",
-          "intervalFactor": 1,
+          "intervalFactor": 5,
           "refId": "A",
           "step": 240
         }
@@ -621,9 +621,9 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
+          "expr": "count(count(node_cpu_seconds_total{Name=\"prod-1-$project\"}) by (cpu))",
           "interval": "",
-          "intervalFactor": 1,
+          "intervalFactor": 5,
           "legendFormat": "",
           "refId": "A",
           "step": 240
@@ -714,8 +714,8 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "node_time_seconds{instance=\"$node\",job=\"$job\"} - node_boot_time_seconds{instance=\"$node\",job=\"$job\"}",
-          "intervalFactor": 2,
+          "expr": "node_time_seconds{Name=\"prod-1-$project\"} - node_boot_time_seconds{Name=\"prod-1-$project\"}",
+          "intervalFactor": 5,
           "refId": "A",
           "step": 240
         }
@@ -804,10 +804,10 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"}",
+          "expr": "node_filesystem_size_bytes{Name=\"prod-1-$project\",mountpoint=\"/\",fstype!=\"rootfs\"}",
           "format": "time_series",
           "hide": false,
-          "intervalFactor": 1,
+          "intervalFactor": 5,
           "refId": "A",
           "step": 240
         }
@@ -895,8 +895,8 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"}",
-          "intervalFactor": 1,
+          "expr": "node_memory_MemTotal_bytes{Name=\"prod-1-$project\"}",
+          "intervalFactor": 5,
           "refId": "A",
           "step": 240
         }
@@ -984,8 +984,8 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"}",
-          "intervalFactor": 1,
+          "expr": "node_memory_SwapTotal_bytes{Name=\"prod-1-$project\"}",
+          "intervalFactor": 5,
           "refId": "A",
           "step": 240
         }
@@ -1112,51 +1112,51 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=\"system\",instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=\"system\",Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
           "format": "time_series",
           "hide": false,
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "Busy System",
           "refId": "A",
           "step": 240
         },
         {
-          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='user',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='user',Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
           "format": "time_series",
           "hide": false,
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "Busy User",
           "refId": "B",
           "step": 240
         },
         {
-          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='iowait',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='iowait',Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
           "format": "time_series",
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "Busy Iowait",
           "refId": "C",
           "step": 240
         },
         {
-          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=~\".*irq\",instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=~\".*irq\",Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
           "format": "time_series",
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "Busy IRQs",
           "refId": "D",
           "step": 240
         },
         {
-          "expr": "sum (rate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum (rate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq',Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
           "format": "time_series",
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "Busy Other",
           "refId": "E",
           "step": 240
         },
         {
-          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='idle',Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
           "format": "time_series",
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "Idle",
           "refId": "F",
           "step": 240
@@ -1302,43 +1302,43 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_MemTotal_bytes{Name=\"prod-1-$project\"}",
           "format": "time_series",
           "hide": false,
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "RAM Total",
           "refId": "A",
           "step": 240
         },
         {
-          "expr": "node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"} - (node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"} + node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"})",
+          "expr": "node_memory_MemTotal_bytes{Name=\"prod-1-$project\"} - node_memory_MemFree_bytes{Name=\"prod-1-$project\"} - (node_memory_Cached_bytes{Name=\"prod-1-$project\"} + node_memory_Buffers_bytes{Name=\"prod-1-$project\"})",
           "format": "time_series",
           "hide": false,
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "RAM Used",
           "refId": "B",
           "step": 240
         },
         {
-          "expr": "node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"} + node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_Cached_bytes{Name=\"prod-1-$project\"} + node_memory_Buffers_bytes{Name=\"prod-1-$project\"}",
           "format": "time_series",
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "RAM Cache + Buffer",
           "refId": "C",
           "step": 240
         },
         {
-          "expr": "node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_MemFree_bytes{Name=\"prod-1-$project\"}",
           "format": "time_series",
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "RAM Free",
           "refId": "D",
           "step": 240
         },
         {
-          "expr": "(node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_SwapFree_bytes{instance=\"$node\",job=\"$job\"})",
+          "expr": "(node_memory_SwapTotal_bytes{Name=\"prod-1-$project\"} - node_memory_SwapFree_bytes{Name=\"prod-1-$project\"})",
           "format": "time_series",
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "SWAP Used",
           "refId": "E",
           "step": 240
@@ -1471,17 +1471,17 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+          "expr": "rate(node_network_receive_bytes_total{Name=\"prod-1-$project\"}[$__rate_interval])*8",
           "format": "time_series",
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "recv {{device}}",
           "refId": "A",
           "step": 240
         },
         {
-          "expr": "rate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+          "expr": "rate(node_network_transmit_bytes_total{Name=\"prod-1-$project\"}[$__rate_interval])*8",
           "format": "time_series",
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "trans {{device}} ",
           "refId": "B",
           "step": 240
@@ -1586,9 +1586,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "100 - ((node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'})",
+          "expr": "100 - ((node_filesystem_avail_bytes{Name=\"prod-1-$project\",device!~'rootfs'} * 100) / node_filesystem_size_bytes{Name=\"prod-1-$project\",device!~'rootfs'})",
           "format": "time_series",
-          "intervalFactor": 2,
+          "intervalFactor": 5,
           "legendFormat": "{{mountpoint}}",
           "refId": "A",
           "step": 240
@@ -1716,74 +1716,74 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode=\"system\",instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode=\"system\",Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
               "format": "time_series",
               "interval": "10s",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "System - Processes executing in kernel mode",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='user',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='user',Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "User - Normal processes executing in user mode",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='nice',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='nice',Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Nice - Niced processes executing in user mode",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='idle',Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Idle - Waiting for something to happen",
               "refId": "D",
               "step": 240
             },
             {
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='iowait',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='iowait',Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Iowait - Waiting for I/O to complete",
               "refId": "E",
               "step": 240
             },
             {
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='irq',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='irq',Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Irq - Servicing interrupts",
               "refId": "F",
               "step": 240
             },
             {
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='softirq',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='softirq',Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Softirq - Servicing softirqs",
               "refId": "G",
               "step": 240
             },
             {
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='steal',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='steal',Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Steal - Time spent in other operating systems when running in a virtualized environment",
               "refId": "H",
               "step": 240
             },
             {
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='guest',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='guest',Name=\"prod-1-$project\"}[$__rate_interval])) * 100",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Guest - Time spent running a virtual CPU for a guest operating system",
               "refId": "I",
               "step": 240
@@ -1913,81 +1913,81 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"} - node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"} - node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"} - node_memory_Slab_bytes{instance=\"$node\",job=\"$job\"} - node_memory_PageTables_bytes{instance=\"$node\",job=\"$job\"} - node_memory_SwapCached_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_MemTotal_bytes{Name=\"prod-1-$project\"} - node_memory_MemFree_bytes{Name=\"prod-1-$project\"} - node_memory_Buffers_bytes{Name=\"prod-1-$project\"} - node_memory_Cached_bytes{Name=\"prod-1-$project\"} - node_memory_Slab_bytes{Name=\"prod-1-$project\"} - node_memory_PageTables_bytes{Name=\"prod-1-$project\"} - node_memory_SwapCached_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Apps - Memory used by user-space applications",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_PageTables_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_PageTables_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "PageTables - Memory used to map between virtual and physical memory addresses",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_memory_SwapCached_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_SwapCached_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "SwapCache - Memory that keeps track of pages that have been fetched from swap but not yet been modified",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "node_memory_Slab_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Slab_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Slab - Memory used by the kernel to cache data structures for its own use (caches like inode, dentry, etc)",
               "refId": "D",
               "step": 240
             },
             {
-              "expr": "node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Cached_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Cache - Parked file data (file content) cache",
               "refId": "E",
               "step": 240
             },
             {
-              "expr": "node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Buffers_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Buffers - Block device (e.g. harddisk) cache",
               "refId": "F",
               "step": 240
             },
             {
-              "expr": "node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_MemFree_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Unused - Free memory unassigned",
               "refId": "G",
               "step": 240
             },
             {
-              "expr": "(node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_SwapFree_bytes{instance=\"$node\",job=\"$job\"})",
+              "expr": "(node_memory_SwapTotal_bytes{Name=\"prod-1-$project\"} - node_memory_SwapFree_bytes{Name=\"prod-1-$project\"})",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Swap - Swap space used",
               "refId": "H",
               "step": 240
             },
             {
-              "expr": "node_memory_HardwareCorrupted_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_HardwareCorrupted_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Hardware Corrupted - Amount of RAM that the kernel identified as corrupted / not working",
               "refId": "I",
               "step": 240
@@ -2097,17 +2097,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+              "expr": "rate(node_network_receive_bytes_total{Name=\"prod-1-$project\"}[$__rate_interval])*8",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Receive",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+              "expr": "rate(node_network_transmit_bytes_total{Name=\"prod-1-$project\"}[$__rate_interval])*8",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Transmit",
               "refId": "B",
               "step": 240
@@ -2214,9 +2214,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'} - node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_size_bytes{Name=\"prod-1-$project\",device!~'rootfs'} - node_filesystem_avail_bytes{Name=\"prod-1-$project\",device!~'rootfs'}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{mountpoint}}",
               "refId": "A",
               "step": 240
@@ -2407,15 +2407,15 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
-              "intervalFactor": 4,
+              "expr": "rate(node_disk_reads_completed_total{Name=\"prod-1-$project\",device=~\"$diskdevices\"}[$__rate_interval])",
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Reads completed",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
-              "intervalFactor": 2,
+              "expr": "rate(node_disk_writes_completed_total{Name=\"prod-1-$project\",device=~\"$diskdevices\"}[$__rate_interval])",
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Writes completed",
               "refId": "B",
               "step": 240
@@ -2546,19 +2546,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+              "expr": "rate(node_disk_read_bytes_total{Name=\"prod-1-$project\",device=~\"$diskdevices\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Successfully read bytes",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+              "expr": "rate(node_disk_written_bytes_total{Name=\"prod-1-$project\",device=~\"$diskdevices\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Successfully written bytes",
               "refId": "B",
               "step": 240
@@ -2666,11 +2666,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"} [$__rate_interval])",
+              "expr": "rate(node_disk_io_time_seconds_total{Name=\"prod-1-$project\",device=~\"$diskdevices\"} [$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}}",
               "refId": "A",
               "step": 240
@@ -2800,17 +2800,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Inactive_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Inactive_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Inactive - Memory which has been less recently used.  It is more eligible to be reclaimed for other purposes",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_Active_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Active_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Active - Memory that has been used more recently and usually not reclaimed unless absolutely necessary",
               "refId": "B",
               "step": 240
@@ -2931,17 +2931,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Committed_AS_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Committed_AS_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Committed_AS - Amount of memory presently allocated on the system",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_CommitLimit_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_CommitLimit_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "CommitLimit - Amount of  memory currently available to be allocated on the system",
               "refId": "B",
               "step": 240
@@ -3053,37 +3053,37 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Inactive_file_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Inactive_file_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Inactive_file - File-backed memory on inactive LRU list",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_Inactive_anon_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Inactive_anon_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Inactive_anon - Anonymous and swap cache on inactive LRU list, including tmpfs (shmem)",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_memory_Active_file_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Active_file_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Active_file - File-backed memory on active LRU list",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "node_memory_Active_anon_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Active_anon_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Active_anon - Anonymous and swap cache on active least-recently-used (LRU) list, including tmpfs",
               "refId": "D",
               "step": 240
@@ -3197,25 +3197,25 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Writeback_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Writeback_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Writeback - Memory which is actively being written back to disk",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_WritebackTmp_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_WritebackTmp_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "WritebackTmp - Memory used by FUSE for temporary writeback buffers",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_memory_Dirty_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Dirty_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Dirty - Memory which is waiting to get written back to the disk",
               "refId": "C",
               "step": 240
@@ -3338,35 +3338,35 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Mapped_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Mapped_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Mapped - Used memory in mapped pages files which have been mmaped, such as libraries",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_Shmem_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Shmem_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Shmem - Used shared memory (shared between several processes, thus including RAM disks)",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_memory_ShmemHugePages_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_ShmemHugePages_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "ShmemHugePages - Memory used by shared memory (shmem) and tmpfs allocated  with huge pages",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "node_memory_ShmemPmdMapped_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_ShmemPmdMapped_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "ShmemPmdMapped - Ammount of shared (shmem/tmpfs) memory backed by huge pages",
               "refId": "D",
               "step": 240
@@ -3482,17 +3482,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_SUnreclaim_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_SUnreclaim_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "SUnreclaim - Part of Slab, that cannot be reclaimed on memory pressure",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_SReclaimable_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_SReclaimable_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "SReclaimable - Part of Slab, that might be reclaimed, such as caches",
               "refId": "B",
               "step": 240
@@ -3605,28 +3605,28 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_VmallocChunk_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_VmallocChunk_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "VmallocChunk - Largest contigious block of vmalloc area which is free",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_VmallocTotal_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_VmallocTotal_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "VmallocTotal - Total size of vmalloc memory area",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_memory_VmallocUsed_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_VmallocUsed_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "VmallocUsed - Amount of vmalloc area which is used",
               "refId": "C",
               "step": 240
@@ -3738,9 +3738,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Bounce_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Bounce_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Bounce - Memory used for block device bounce buffers",
               "refId": "A",
               "step": 240
@@ -3858,17 +3858,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_AnonHugePages_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_AnonHugePages_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "AnonHugePages - Memory in anonymous huge pages",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_AnonPages_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_AnonPages_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "AnonPages - Memory in user pages not backed by files",
               "refId": "B",
               "step": 240
@@ -3980,18 +3980,18 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_KernelStack_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_KernelStack_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "KernelStack - Kernel memory stack. This is not reclaimable",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_Percpu_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Percpu_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "PerCPU - Per CPU memory allocated dynamically by loadable modules",
               "refId": "B",
               "step": 240
@@ -4104,25 +4104,25 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_HugePages_Free{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_HugePages_Free{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "HugePages_Free - Huge pages in the pool that are not yet allocated",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_HugePages_Rsvd{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_HugePages_Rsvd{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "HugePages_Rsvd - Huge pages for which a commitment to allocate from the pool has been made, but no allocation has yet been made",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_memory_HugePages_Surp{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_HugePages_Surp{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "HugePages_Surp - Huge pages in the pool above the value in /proc/sys/vm/nr_hugepages",
               "refId": "C",
               "step": 240
@@ -4235,17 +4235,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_HugePages_Total{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_HugePages_Total{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "HugePages - Total size of the pool of huge pages",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_Hugepagesize_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Hugepagesize_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Hugepagesize - Huge Page size",
               "refId": "B",
               "step": 240
@@ -4360,27 +4360,27 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_DirectMap1G_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_DirectMap1G_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "DirectMap1G - Amount of pages mapped as this size",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_DirectMap2M_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_DirectMap2M_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "DirectMap2M - Amount of pages mapped as this size",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_memory_DirectMap4k_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_DirectMap4k_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "DirectMap4K - Amount of pages mapped as this size",
               "refId": "C",
               "step": 240
@@ -4492,17 +4492,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_Unevictable_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Unevictable_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Unevictable - Amount of unevictable memory that can't be swapped out for a variety of reasons",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_memory_Mlocked_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Mlocked_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "MLocked - Size of pages locked to memory using the mlock() system call",
               "refId": "B",
               "step": 240
@@ -4616,9 +4616,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_memory_NFS_Unstable_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_NFS_Unstable_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "NFS Unstable - Memory in NFS pages sent to the server, but not yet commited to the storage",
               "refId": "A",
               "step": 240
@@ -4731,17 +4731,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_vmstat_pgpgin{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pgpgin{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Pagesin - Page in operations",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_vmstat_pgpgout{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pgpgout{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Pagesout - Page out operations",
               "refId": "B",
               "step": 240
@@ -4838,17 +4838,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_vmstat_pswpin{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pswpin{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Pswpin - Pages swapped in",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_vmstat_pswpout{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pswpout{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Pswpout - Pages swapped out",
               "refId": "B",
               "step": 240
@@ -4967,25 +4967,25 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_vmstat_pgfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pgfault{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Pgfault - Page major and minor fault operations",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_vmstat_pgmajfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pgmajfault{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Pgmajfault - Major page fault operations",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(node_vmstat_pgfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])  - rate(node_vmstat_pgmajfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pgfault{Name=\"prod-1-$project\"}[$__rate_interval])  - rate(node_vmstat_pgmajfault{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Pgminfault - Minor page fault operations",
               "refId": "C",
               "step": 240
@@ -5101,10 +5101,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_vmstat_oom_kill{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_oom_kill{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "oom killer invocations ",
               "refId": "A",
               "step": 240
@@ -5218,31 +5218,31 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_timex_estimated_error_seconds{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_estimated_error_seconds{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Estimated error in seconds",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_timex_offset_seconds{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_offset_seconds{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Time offset in between local system and reference clock",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_timex_maxerror_seconds{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_maxerror_seconds{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Maximum error in seconds",
               "refId": "C",
               "step": 240
@@ -5333,10 +5333,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_timex_loop_time_constant{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_loop_time_constant{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Phase-locked loop time adjust",
               "refId": "A",
               "step": 240
@@ -5432,19 +5432,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_timex_sync_status{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_sync_status{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Is clock synchronized to a reliable server (1 = yes, 0 = no)",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_timex_frequency_adjustment_ratio{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_frequency_adjustment_ratio{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Local clock frequency adjustment",
               "refId": "B",
               "step": 240
@@ -5535,19 +5535,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_timex_tick_seconds{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_tick_seconds{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Seconds between clock ticks",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_timex_tai_offset_seconds{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_timex_tai_offset_seconds{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "International Atomic Time (TAI) offset",
               "refId": "B",
               "step": 240
@@ -5653,17 +5653,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_procs_blocked{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_procs_blocked{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Processes blocked waiting for I/O to complete",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_procs_running{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_procs_running{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Processes in runnable state",
               "refId": "B",
               "step": 240
@@ -5756,10 +5756,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_processes_state{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_processes_state{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{ state }}",
               "refId": "A",
               "step": 240
@@ -5852,10 +5852,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_forks_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_forks_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Processes forks second",
               "refId": "A",
               "step": 240
@@ -5952,37 +5952,37 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(process_virtual_memory_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(process_virtual_memory_bytes{Name=\"prod-1-$project\"}[$__rate_interval])",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Processes virtual memory size in bytes",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "process_resident_memory_max_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "process_resident_memory_max_bytes{Name=\"prod-1-$project\"}",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Maximum amount of virtual memory available in bytes",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(process_virtual_memory_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(process_virtual_memory_bytes{Name=\"prod-1-$project\"}[$__rate_interval])",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Processes virtual memory size in bytes",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "rate(process_virtual_memory_max_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(process_virtual_memory_max_bytes{Name=\"prod-1-$project\"}[$__rate_interval])",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Maximum amount of virtual memory available in bytes",
               "refId": "D",
               "step": 240
@@ -6080,19 +6080,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_processes_pids{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_processes_pids{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Number of PIDs",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_processes_max_processes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_processes_max_processes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "PIDs limit",
               "refId": "B",
               "step": 240
@@ -6191,19 +6191,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_schedstat_running_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_schedstat_running_seconds_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "CPU {{ cpu }} - seconds spent running a process",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_schedstat_waiting_seconds_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "CPU {{ cpu }} - seconds spent by processing waiting for this CPU",
               "refId": "B",
               "step": 240
@@ -6303,19 +6303,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_processes_threads{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_processes_threads{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Allocated threads",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_processes_max_threads{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_processes_max_threads{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Threads limit",
               "refId": "B",
               "step": 240
@@ -6424,18 +6424,18 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_context_switches_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_context_switches_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Context switches",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_intr_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_intr_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Interrupts",
               "refId": "B",
               "step": 240
@@ -6527,25 +6527,25 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_load1{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_load1{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 4,
+              "intervalFactor": 5,
               "legendFormat": "Load 1m",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_load5{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_load5{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 4,
+              "intervalFactor": 5,
               "legendFormat": "Load 5m",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_load15{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_load15{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 4,
+              "intervalFactor": 5,
               "legendFormat": "Load 15m",
               "refId": "C",
               "step": 240
@@ -6648,10 +6648,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_interrupts_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{ type }} - {{ info }}",
               "refId": "A",
               "step": 240
@@ -6742,10 +6742,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_schedstat_timeslices_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_schedstat_timeslices_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "CPU {{ cpu }}",
               "refId": "A",
               "step": 240
@@ -6838,9 +6838,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_entropy_available_bits{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_entropy_available_bits{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Entropy available to random number generators",
               "refId": "A",
               "step": 240
@@ -6933,10 +6933,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(process_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(process_cpu_seconds_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Time spent",
               "refId": "A",
               "step": 240
@@ -7035,17 +7035,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "process_max_fds{instance=\"$node\",job=\"$job\"}",
+              "expr": "process_max_fds{Name=\"prod-1-$project\"}",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Maximum open file descriptors",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "process_open_fds{instance=\"$node\",job=\"$job\"}",
+              "expr": "process_open_fds{Name=\"prod-1-$project\"}",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Open file descriptors",
               "refId": "B",
               "step": 240
@@ -7166,49 +7166,49 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_hwmon_temp_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_celsius{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{ chip }} {{ sensor }} temp",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_hwmon_temp_crit_alarm_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_crit_alarm_celsius{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": true,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{ chip }} {{ sensor }} Critical Alarm",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_hwmon_temp_crit_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_crit_celsius{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{ chip }} {{ sensor }} Critical",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "node_hwmon_temp_crit_hyst_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_crit_hyst_celsius{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": true,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{ chip }} {{ sensor }} Critical Historical",
               "refId": "D",
               "step": 240
             },
             {
-              "expr": "node_hwmon_temp_max_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_max_celsius{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": true,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{ chip }} {{ sensor }} Max",
               "refId": "E",
               "step": 240
@@ -7307,20 +7307,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_cooling_device_cur_state{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_cooling_device_cur_state{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Current {{ name }} in {{ type }}",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_cooling_device_max_state{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_cooling_device_max_state{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Max {{ name }} in {{ type }}",
               "refId": "B",
               "step": 240
@@ -7412,11 +7412,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_power_supply_online{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_power_supply_online{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{ power_supply }} online",
               "refId": "A",
               "step": 240
@@ -7523,10 +7523,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_systemd_socket_accepted_connections_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_systemd_socket_accepted_connections_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{ name }} Connections",
               "refId": "A",
               "step": 240
@@ -7637,46 +7637,46 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_systemd_units{instance=\"$node\",job=\"$job\",state=\"activating\"}",
+              "expr": "node_systemd_units{Name=\"prod-1-$project\",state=\"activating\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Activating",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_systemd_units{instance=\"$node\",job=\"$job\",state=\"active\"}",
+              "expr": "node_systemd_units{Name=\"prod-1-$project\",state=\"active\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Active",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_systemd_units{instance=\"$node\",job=\"$job\",state=\"deactivating\"}",
+              "expr": "node_systemd_units{Name=\"prod-1-$project\",state=\"deactivating\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Deactivating",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "node_systemd_units{instance=\"$node\",job=\"$job\",state=\"failed\"}",
+              "expr": "node_systemd_units{Name=\"prod-1-$project\",state=\"failed\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Failed",
               "refId": "D",
               "step": 240
             },
             {
-              "expr": "node_systemd_units{instance=\"$node\",job=\"$job\",state=\"inactive\"}",
+              "expr": "node_systemd_units{Name=\"prod-1-$project\",state=\"inactive\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Inactive",
               "refId": "E",
               "step": 240
@@ -7900,15 +7900,15 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "intervalFactor": 4,
+              "expr": "rate(node_disk_reads_completed_total{Name=\"prod-1-$project\"}[$__rate_interval])",
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Reads completed",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "intervalFactor": 2,
+              "expr": "rate(node_disk_writes_completed_total{Name=\"prod-1-$project\"}[$__rate_interval])",
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Writes completed",
               "refId": "B",
               "step": 240
@@ -8097,17 +8097,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_read_bytes_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 4,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Read bytes",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_written_bytes_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Written bytes",
               "refId": "B",
               "step": 240
@@ -8298,19 +8298,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_read_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / rate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_read_time_seconds_total{Name=\"prod-1-$project\"}[$__rate_interval]) / rate(node_disk_reads_completed_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "hide": false,
               "interval": "",
-              "intervalFactor": 4,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - r_await",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_disk_write_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / rate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_write_time_seconds_total{Name=\"prod-1-$project\"}[$__rate_interval]) / rate(node_disk_writes_completed_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - w_await",
               "refId": "B",
               "step": 240
@@ -8497,9 +8497,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_io_time_weighted_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_io_time_weighted_seconds_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "interval": "",
-              "intervalFactor": 4,
+              "intervalFactor": 5,
               "legendFormat": "{{device}}",
               "refId": "A",
               "step": 240
@@ -8690,15 +8690,15 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_reads_merged_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "intervalFactor": 2,
+              "expr": "rate(node_disk_reads_merged_total{Name=\"prod-1-$project\"}[$__rate_interval])",
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Read merged",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_disk_writes_merged_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "intervalFactor": 2,
+              "expr": "rate(node_disk_writes_merged_total{Name=\"prod-1-$project\"}[$__rate_interval])",
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Write merged",
               "refId": "B",
               "step": 240
@@ -8885,17 +8885,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_io_time_seconds_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "interval": "",
-              "intervalFactor": 4,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - IO",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_disk_discard_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_discard_time_seconds_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "interval": "",
-              "intervalFactor": 4,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - discard",
               "refId": "B",
               "step": 240
@@ -9082,8 +9082,8 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_io_now{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "intervalFactor": 4,
+              "expr": "rate(node_disk_io_now{Name=\"prod-1-$project\"}[$__rate_interval])",
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - IO now",
               "refId": "A",
               "step": 240
@@ -9288,17 +9288,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_discards_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_discards_completed_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "interval": "",
-              "intervalFactor": 4,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Discards completed",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_disk_discards_merged_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_discards_merged_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Discards merged",
               "refId": "B",
               "step": 240
@@ -9418,29 +9418,29 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_avail_bytes{Name=\"prod-1-$project\",device!~'rootfs'}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{mountpoint}} - Available",
               "metric": "",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_filesystem_free_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_free_bytes{Name=\"prod-1-$project\",device!~'rootfs'}",
               "format": "time_series",
               "hide": true,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{mountpoint}} - Free",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_size_bytes{Name=\"prod-1-$project\",device!~'rootfs'}",
               "format": "time_series",
               "hide": true,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{mountpoint}} - Size",
               "refId": "C",
               "step": 240
@@ -9543,10 +9543,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_files_free{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_files_free{Name=\"prod-1-$project\",device!~'rootfs'}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{mountpoint}} - Free file nodes",
               "refId": "A",
               "step": 240
@@ -9648,17 +9648,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filefd_maximum{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_filefd_maximum{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 4,
+              "intervalFactor": 5,
               "legendFormat": "Max open files",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_filefd_allocated{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_filefd_allocated{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Open files",
               "refId": "B",
               "step": 240
@@ -9759,10 +9759,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_files{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_files{Name=\"prod-1-$project\",device!~'rootfs'}",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{mountpoint}} - File nodes total",
               "refId": "A",
               "step": 240
@@ -9868,18 +9868,18 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_filesystem_readonly{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_readonly{Name=\"prod-1-$project\",device!~'rootfs'}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{mountpoint}} - ReadOnly",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_filesystem_device_error{instance=\"$node\",job=\"$job\",device!~'rootfs',fstype!~'tmpfs'}",
+              "expr": "node_filesystem_device_error{Name=\"prod-1-$project\",device!~'rootfs',fstype!~'tmpfs'}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{mountpoint}} - Device error",
               "refId": "B",
               "step": 240
@@ -9999,19 +9999,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_packets_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Receive",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_network_transmit_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_packets_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Transmit",
               "refId": "B",
               "step": 240
@@ -10112,17 +10112,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_errs_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Receive errors",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_network_transmit_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_errs_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Rransmit errors",
               "refId": "B",
               "step": 240
@@ -10223,17 +10223,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_drop_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Receive drop",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_network_transmit_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_drop_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Transmit drop",
               "refId": "B",
               "step": 240
@@ -10334,17 +10334,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_compressed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_compressed_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Receive compressed",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_network_transmit_compressed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_compressed_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Transmit compressed",
               "refId": "B",
               "step": 240
@@ -10445,9 +10445,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_multicast_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Receive multicast",
               "refId": "A",
               "step": 240
@@ -10548,17 +10548,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_fifo_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_fifo_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Receive fifo",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_network_transmit_fifo_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_fifo_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Transmit fifo",
               "refId": "B",
               "step": 240
@@ -10660,10 +10660,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_receive_frame_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_frame_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Receive frame",
               "refId": "A",
               "step": 240
@@ -10761,9 +10761,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_transmit_carrier_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_carrier_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Statistic transmit_carrier",
               "refId": "A",
               "step": 240
@@ -10864,9 +10864,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_network_transmit_colls_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_colls_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{device}} - Transmit colls",
               "refId": "A",
               "step": 240
@@ -10964,17 +10964,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_nf_conntrack_entries{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_nf_conntrack_entries{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "NF conntrack entries",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_nf_conntrack_entries_limit{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_nf_conntrack_entries_limit{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "NF conntrack limit",
               "refId": "B",
               "step": 240
@@ -11067,9 +11067,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_arp_entries{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_arp_entries{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{ device }} - ARP entries",
               "refId": "A",
               "step": 240
@@ -11160,9 +11160,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_network_mtu_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_network_mtu_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{ device }} - Bytes",
               "refId": "A",
               "step": 240
@@ -11254,9 +11254,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_network_speed_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_network_speed_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{ device }} - Speed",
               "refId": "A",
               "step": 240
@@ -11348,9 +11348,9 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_network_transmit_queue_length{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_network_transmit_queue_length{Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{ device }} -   Interface transmit queue length",
               "refId": "A",
               "step": 240
@@ -11453,19 +11453,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_softnet_processed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_softnet_processed_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "CPU {{cpu}} - Processed",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_softnet_dropped_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_softnet_dropped_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "CPU {{cpu}} - Dropped",
               "refId": "B",
               "step": 240
@@ -11563,10 +11563,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_softnet_times_squeezed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_softnet_times_squeezed_total{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "CPU {{cpu}} - Squeezed",
               "refId": "A",
               "step": 240
@@ -11664,15 +11664,15 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_network_up{operstate=\"up\",instance=\"$node\",job=\"$job\"}",
+              "expr": "node_network_up{operstate=\"up\",Name=\"prod-1-$project\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{interface}} - Operational state UP",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_network_carrier{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_network_carrier{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "instant": false,
               "legendFormat": "{{device}} - Physical link state",
@@ -11783,47 +11783,47 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_sockstat_TCP_alloc{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_TCP_alloc{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "TCP_alloc - Allocated sockets",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_sockstat_TCP_inuse{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_TCP_inuse{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "TCP_inuse - Tcp sockets currently in use",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_sockstat_TCP_mem{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_TCP_mem{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": true,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "TCP_mem - Used memory for tcp",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "node_sockstat_TCP_orphan{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_TCP_orphan{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "TCP_orphan - Orphan sockets",
               "refId": "D",
               "step": 240
             },
             {
-              "expr": "node_sockstat_TCP_tw{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_TCP_tw{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "TCP_tw - Sockets wating close",
               "refId": "E",
               "step": 240
@@ -11917,28 +11917,28 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_sockstat_UDPLITE_inuse{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_UDPLITE_inuse{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "UDPLITE_inuse - Udplite sockets currently in use",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_sockstat_UDP_inuse{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_UDP_inuse{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "UDP_inuse - Udp sockets currently in use",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_sockstat_UDP_mem{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_UDP_mem{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "UDP_mem - Used memory for udp",
               "refId": "C",
               "step": 240
@@ -12032,10 +12032,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_sockstat_sockets_used{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_sockets_used{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Sockets_used - Sockets currently in use",
               "refId": "A",
               "step": 240
@@ -12129,19 +12129,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_sockstat_TCP_mem_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_TCP_mem_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "mem_bytes - TCP sockets in that state",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_sockstat_UDP_mem_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_UDP_mem_bytes{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "mem_bytes - UDP sockets in that state",
               "refId": "B",
               "step": 240
@@ -12235,28 +12235,28 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_sockstat_FRAG_inuse{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_FRAG_inuse{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "FRAG_inuse - Frag sockets currently in use",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_sockstat_FRAG_memory{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_FRAG_memory{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "FRAG_memory - Used memory for frag",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "node_sockstat_RAW_inuse{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_RAW_inuse{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "RAW_inuse - Raw sockets currently in use",
               "refId": "C",
               "step": 240
@@ -12378,18 +12378,18 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_IpExt_InOctets{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_IpExt_InOctets{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "InOctets - Received octets",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_IpExt_OutOctets{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_IpExt_OutOctets{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "OutOctets - Sent octets",
               "refId": "B",
               "step": 240
@@ -12488,10 +12488,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Ip_Forwarding{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Ip_Forwarding{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "Forwarding - IP forwarding",
               "refId": "A",
               "step": 240
@@ -12595,19 +12595,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Icmp_InMsgs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Icmp_InMsgs{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "InMsgs -  Messages which the entity received. Note that this counter includes all those counted by icmpInErrors",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Icmp_OutMsgs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Icmp_OutMsgs{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "OutMsgs - Messages which this entity attempted to send. Note that this counter includes all those counted by icmpOutErrors",
               "refId": "B",
               "step": 240
@@ -12709,10 +12709,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Icmp_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Icmp_InErrors{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "InErrors - Messages which the entity received but determined as having ICMP-specific errors (bad ICMP checksums, bad length, etc.)",
               "refId": "A",
               "step": 240
@@ -12818,19 +12818,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Udp_InDatagrams{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Udp_InDatagrams{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "InDatagrams - Datagrams received",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Udp_OutDatagrams{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Udp_OutDatagrams{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "OutDatagrams - Datagrams sent",
               "refId": "B",
               "step": 240
@@ -12926,43 +12926,43 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Udp_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Udp_InErrors{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "InErrors - UDP Datagrams that could not be delivered to an application",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Udp_NoPorts{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Udp_NoPorts{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "NoPorts - UDP Datagrams received on a port with no listener",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_UdpLite_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_UdpLite_InErrors{Name=\"prod-1-$project\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "InErrors Lite - UDPLite Datagrams that could not be delivered to an application",
               "refId": "C"
             },
             {
-              "expr": "rate(node_netstat_Udp_RcvbufErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Udp_RcvbufErrors{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "RcvbufErrors - UDP buffer errors received",
               "refId": "D",
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Udp_SndbufErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Udp_SndbufErrors{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "SndbufErrors - UDP buffer errors send",
               "refId": "E",
               "step": 240
@@ -13070,20 +13070,20 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Tcp_InSegs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Tcp_InSegs{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "instant": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "InSegs - Segments received, including those received in error. This count includes segments received on currently established connections",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Tcp_OutSegs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Tcp_OutSegs{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "OutSegs - Segments sent, including those on current connections but excluding those containing only retransmitted octets",
               "refId": "B",
               "step": 240
@@ -13181,42 +13181,42 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_TcpExt_ListenOverflows{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_TcpExt_ListenOverflows{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "ListenOverflows - Times the listen queue of a socket overflowed",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_TcpExt_ListenDrops{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_TcpExt_ListenDrops{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "ListenDrops - SYNs to LISTEN sockets ignored",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_TcpExt_TCPSynRetrans{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_TcpExt_TCPSynRetrans{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "TCPSynRetrans - SYN-SYN/ACK retransmits to break down retransmissions in SYN, fast/timeout retransmits",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Tcp_RetransSegs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Tcp_RetransSegs{Name=\"prod-1-$project\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "RetransSegs - Segments retransmitted - that is, the number of TCP segments transmitted containing one or more previously transmitted octets",
               "refId": "D"
             },
             {
-              "expr": "rate(node_netstat_Tcp_InErrs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Tcp_InErrs{Name=\"prod-1-$project\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "InErrs - Segments received in error (e.g., bad TCP checksums)",
               "refId": "E"
@@ -13318,21 +13318,21 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_netstat_Tcp_CurrEstab{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_netstat_Tcp_CurrEstab{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "CurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_netstat_Tcp_MaxConn{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_netstat_Tcp_MaxConn{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "MaxConn - Limit on the total number of TCP connections the entity can support (Dinamic is \"-1\")",
               "refId": "B",
               "step": 240
@@ -13437,31 +13437,31 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_TcpExt_SyncookiesFailed{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_TcpExt_SyncookiesFailed{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "SyncookiesFailed - Invalid SYN cookies received",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_TcpExt_SyncookiesRecv{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_TcpExt_SyncookiesRecv{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "SyncookiesRecv - SYN cookies received",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_TcpExt_SyncookiesSent{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_TcpExt_SyncookiesSent{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "SyncookiesSent - SYN cookies sent",
               "refId": "C",
               "step": 240
@@ -13556,19 +13556,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_netstat_Tcp_ActiveOpens{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Tcp_ActiveOpens{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "ActiveOpens - TCP connections that have made a direct transition to the SYN-SENT state from the CLOSED state",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_netstat_Tcp_PassiveOpens{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_netstat_Tcp_PassiveOpens{Name=\"prod-1-$project\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "PassiveOpens - TCP connections that have made a direct transition to the SYN-RCVD state from the LISTEN state",
               "refId": "B",
               "step": 240
@@ -13677,11 +13677,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_scrape_collector_duration_seconds{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_scrape_collector_duration_seconds{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{collector}} - Scrape duration",
               "refId": "A",
               "step": 240
@@ -13779,21 +13779,21 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_scrape_collector_success{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_scrape_collector_success{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{collector}} - Scrape success",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "node_textfile_scrape_error{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_textfile_scrape_error{Name=\"prod-1-$project\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 5,
               "legendFormat": "{{collector}} - Scrape textfile error (1 = true)",
               "refId": "B",
               "step": 240
@@ -13883,34 +13883,11 @@
         "error": null,
         "hide": 0,
         "includeAll": false,
-        "label": "Job",
+        "label": "Project Ref",
         "multi": false,
-        "name": "job",
+        "name": "project",
         "options": [],
-        "query": "label_values(node_uname_info, job)",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 1,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": null,
-        "current": {},
-        "datasource": "${DS_PROMETHEUS}",
-        "definition": "label_values(node_uname_info{job=\"$job\"}, instance)",
-        "error": null,
-        "hide": 0,
-        "includeAll": false,
-        "label": "Host:",
-        "multi": false,
-        "name": "node",
-        "options": [],
-        "query": "label_values(node_uname_info{job=\"$job\"}, instance)",
+        "query": "label_values(node_uname_info, project)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -13977,7 +13954,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "Node Exporter Full",
-  "uid": "rYdddlPWk",
+  "title": "KPS Exporter Full",
+  "uid": "rYdddlP",
   "version": 56
 }
