@@ -59,7 +59,7 @@
   "gnetId": 1860,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1614605016686,
+  "iteration": 1626960787733,
   "links": [
     {
       "icon": "external link",
@@ -9082,7 +9082,8 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_disk_io_now{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "node_disk_io_now{instance=\"$node\",job=\"$job\"}",
+              "interval": "",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO now",
               "refId": "A",
@@ -9110,8 +9111,8 @@
           "yaxes": [
             {
               "$$hashKey": "object:729",
-              "format": "iops",
-              "label": "I/Os",
+              "format": "none",
+              "label": "Outstanding req.",
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -13979,5 +13980,5 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 56
+  "version": 59
 }
