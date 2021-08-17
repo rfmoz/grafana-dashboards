@@ -13544,7 +13544,7 @@
         "multi": true,
         "name": "host",
         "options": [],
-        "query": "label_values(haproxy_process_nbproc,instance)",
+        "query": "label_values(haproxy_process_nbproc{region=~\"(${region:pipe})\"},instance)"
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -13567,7 +13567,7 @@
         "multi": true,
         "name": "backend",
         "options": [],
-        "query": "label_values(haproxy_backend_status{instance=\"${host:raw}\"}, proxy)",
+        "query": "label_values(haproxy_backend_status{instance=~\"(${host:pipe})\",region=~\"(${region:pipe})\"}, proxy)"
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -13590,7 +13590,7 @@
         "multi": true,
         "name": "frontend",
         "options": [],
-        "query": "label_values(haproxy_frontend_status{instance=\"${host:raw}\"}, proxy)",
+        "query": "label_values(haproxy_frontend_status{instance=~\"(${host:pipe})\",region=~\"(${region:pipe})\"}, proxy)"
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -13613,7 +13613,7 @@
         "multi": true,
         "name": "server",
         "options": [],
-        "query": "label_values(haproxy_server_status{instance=\"${host:raw}\"}, server)",
+        "query": "label_values(haproxy_server_status{instance=~\"(${host:pipe})\",region=~\"(${region:pipe})\"}, server)"
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -13636,7 +13636,7 @@
         "multi": true,
         "name": "code",
         "options": [],
-        "query": "label_values(haproxy_server_http_responses_total{instance=\"${host:raw}\"}, code)",
+        "query": "label_values(haproxy_server_http_responses_total{instance=~\"(${host:pipe})\",region=~\"(${region:pipe})\"}, code)"
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
