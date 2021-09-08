@@ -59,7 +59,7 @@
   "gnetId": 1860,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1626960787733,
+  "iteration": 1631114404607,
   "links": [
     {
       "icon": "external link",
@@ -11743,13 +11743,20 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 2,
           "fillGradient": 0,
           "gridPos": {
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 13
+            "y": 32
           },
           "hiddenSeries": false,
           "id": 63,
@@ -11772,9 +11779,10 @@
           "links": [],
           "nullPointMode": "null",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.3.7",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -11877,13 +11885,20 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 2,
           "fillGradient": 0,
           "gridPos": {
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 13
+            "y": 32
           },
           "hiddenSeries": false,
           "id": 124,
@@ -11906,9 +11921,10 @@
           "links": [],
           "nullPointMode": "null",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.3.7",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -11992,16 +12008,23 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 2,
           "fillGradient": 0,
           "gridPos": {
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 23
+            "y": 42
           },
           "hiddenSeries": false,
-          "id": 126,
+          "id": 125,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -12021,9 +12044,10 @@
           "links": [],
           "nullPointMode": "null",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.3.7",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -12033,12 +12057,21 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_sockstat_sockets_used{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_FRAG_inuse{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "Sockets_used - Sockets currently in use",
+              "legendFormat": "FRAG_inuse - Frag sockets currently in use",
               "refId": "A",
+              "step": 240
+            },
+            {
+              "expr": "node_sockstat_RAW_inuse{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "RAW_inuse - Raw sockets currently in use",
+              "refId": "C",
               "step": 240
             }
           ],
@@ -12046,7 +12079,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Sockstat Used",
+          "title": "Sockstat FRAG / RAW",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -12062,14 +12095,16 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:1572",
               "format": "short",
-              "label": "sockets",
+              "label": "counter",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
+              "$$hashKey": "object:1573",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -12089,13 +12124,20 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 2,
           "fillGradient": 0,
           "gridPos": {
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 23
+            "y": 42
           },
           "hiddenSeries": false,
           "id": 220,
@@ -12118,9 +12160,10 @@
           "links": [],
           "nullPointMode": "null",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.3.7",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -12146,6 +12189,13 @@
               "legendFormat": "mem_bytes - UDP sockets in that state",
               "refId": "B",
               "step": 240
+            },
+            {
+              "expr": "node_sockstat_FRAG_memory{instance=\"$node\",job=\"$job\"}",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "FRAG_memory - Used memory for frag",
+              "refId": "C"
             }
           ],
           "thresholds": [],
@@ -12195,16 +12245,23 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 2,
           "fillGradient": 0,
           "gridPos": {
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 33
+            "y": 52
           },
           "hiddenSeries": false,
-          "id": 125,
+          "id": 126,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -12224,9 +12281,10 @@
           "links": [],
           "nullPointMode": "null",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.3.7",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -12236,30 +12294,12 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "node_sockstat_FRAG_inuse{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_sockstat_sockets_used{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "FRAG_inuse - Frag sockets currently in use",
+              "legendFormat": "Sockets_used - Sockets currently in use",
               "refId": "A",
-              "step": 240
-            },
-            {
-              "expr": "node_sockstat_FRAG_memory{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "FRAG_memory - Used memory for frag",
-              "refId": "B",
-              "step": 240
-            },
-            {
-              "expr": "node_sockstat_RAW_inuse{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "RAW_inuse - Raw sockets currently in use",
-              "refId": "C",
               "step": 240
             }
           ],
@@ -12267,7 +12307,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Sockstat FRAG / RAW",
+          "title": "Sockstat Used",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -12283,16 +12323,14 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:1572",
               "format": "short",
-              "label": "counter",
+              "label": "sockets",
               "logBase": 1,
               "max": null,
               "min": "0",
               "show": true
             },
             {
-              "$$hashKey": "object:1573",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -13980,5 +14018,5 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 59
+  "version": 62
 }
