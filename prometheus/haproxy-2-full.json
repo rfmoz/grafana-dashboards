@@ -303,21 +303,21 @@
         {
           "expr": "sum(rate(haproxy_frontend_bytes_out_total{proxy=~\"$frontend\",instance=\"$host\"}[$__rate_interval])*8) by (instance)",
           "interval": "$interval",
-          "intervalFactor": 2,
+          "intervalFactor": 1,
           "legendFormat": "OUT Front",
           "refId": "B",
           "step": 240
         },
         {
           "expr": "sum(rate(haproxy_backend_bytes_in_total{proxy=~\"$backend\",instance=\"$host\"}[$__rate_interval])*8) by (instance)",
-          "intervalFactor": 2,
+          "intervalFactor": 1,
           "legendFormat": "IN Back",
           "refId": "C",
           "step": 240
         },
         {
           "expr": "sum(rate(haproxy_backend_bytes_out_total{proxy=~\"$backend\",instance=\"$host\"}[$__rate_interval])*8) by (instance)",
-          "intervalFactor": 2,
+          "intervalFactor": 1,
           "legendFormat": "OUT Back",
           "refId": "D",
           "step": 240
@@ -587,7 +587,7 @@
         {
           "expr": "sum(rate(haproxy_frontend_requests_denied_total{proxy=~\"$frontend\",instance=\"$host\"}[$__rate_interval])) by (instance)",
           "interval": "$interval",
-          "intervalFactor": 2,
+          "intervalFactor": 1,
           "legendFormat": "Front request denied",
           "refId": "F",
           "step": 240
@@ -595,7 +595,7 @@
         {
           "expr": "sum(rate(haproxy_backend_redispatch_warnings_total{proxy=~\"$backend\",instance=\"$host\"}[$__rate_interval])) by (instance)",
           "interval": "$interval",
-          "intervalFactor": 2,
+          "intervalFactor": 1,
           "legendFormat": "Back redispatch warnings",
           "refId": "D",
           "step": 240
@@ -603,7 +603,7 @@
         {
           "expr": "sum(rate(haproxy_backend_retry_warnings_total{proxy=~\"$backend\",instance=\"$host\"}[$__rate_interval])) by (instance)",
           "interval": "$interval",
-          "intervalFactor": 2,
+          "intervalFactor": 1,
           "legendFormat": "Back retry warnings",
           "refId": "E",
           "step": 240
@@ -620,7 +620,7 @@
         {
           "expr": "sum(haproxy_backend_current_queue{proxy=~\"$backend\",instance=\"$host\"}) by (instance)",
           "interval": "$interval",
-          "intervalFactor": 2,
+          "intervalFactor": 1,
           "legendFormat": "Back queued requests",
           "refId": "G",
           "step": 240
@@ -883,7 +883,7 @@
           "expr": "count(haproxy_frontend_status{instance=\"$host\"} == 1)",
           "hide": false,
           "interval": "$interval",
-          "intervalFactor": 2,
+          "intervalFactor": 1,
           "legendFormat": "Front Up",
           "refId": "A",
           "step": 240
@@ -891,7 +891,7 @@
         {
           "expr": "count(haproxy_backend_status{instance=\"$host\"} ==1)",
           "interval": "$interval",
-          "intervalFactor": 2,
+          "intervalFactor": 1,
           "legendFormat": "Back Up",
           "refId": "B",
           "step": 240
@@ -1011,7 +1011,7 @@
       "targets": [
         {
           "expr": "time() - haproxy_process_start_time_seconds{instance=\"$host\"}",
-          "intervalFactor": 2,
+          "intervalFactor": 1,
           "refId": "A",
           "step": 240
         }
@@ -1117,7 +1117,7 @@
             {
               "expr": "rate(haproxy_frontend_bytes_out_total{proxy=~\"$frontend\",instance=\"$host\"}[$__rate_interval])*8",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "OUT {{ proxy }}",
               "refId": "B",
               "step": 240
@@ -1242,7 +1242,7 @@
             {
               "expr": "rate(haproxy_backend_bytes_out_total{proxy=~\"$backend\",instance=\"$host\"}[$__rate_interval])*8",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "OUT {{ proxy }}",
               "refId": "B",
               "step": 240
@@ -1492,7 +1492,7 @@
             {
               "expr": "rate(haproxy_backend_connection_errors_total{proxy=~\"$backend\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Error {{ proxy }}",
               "refId": "A",
               "step": 240
@@ -1711,7 +1711,7 @@
             {
               "expr": "rate(haproxy_backend_connection_reuses_total{proxy=~\"$backend\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Reuses {{ proxy }}",
               "refId": "C",
               "step": 240
@@ -2070,7 +2070,7 @@
             {
               "expr": "rate(haproxy_backend_requests_denied_total{proxy=~\"$frontend\", instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Denied {{ proxy }}",
               "refId": "C",
               "step": 240
@@ -2199,7 +2199,7 @@
             {
               "expr": "rate(haproxy_frontend_request_errors_total{proxy=~\"$frontend\", instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Error {{ proxy }}",
               "refId": "B",
               "step": 240
@@ -2207,7 +2207,7 @@
             {
               "expr": "rate(haproxy_frontend_requests_denied_total{proxy=~\"$frontend\", instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Denied {{ proxy }}",
               "refId": "C",
               "step": 240
@@ -2558,7 +2558,7 @@
             {
               "expr": "rate(haproxy_backend_retry_warnings_total{proxy=~\"$backend\", instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Retry {{ proxy }}",
               "refId": "B",
               "step": 240
@@ -2566,7 +2566,7 @@
             {
               "expr": "rate(haproxy_backend_response_errors_total{proxy=~\"$backend\", instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Error {{ proxy }}",
               "refId": "C",
               "step": 240
@@ -4263,7 +4263,7 @@
             {
               "expr": "haproxy_backend_limit_sessions{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Limit {{ proxy }}",
               "refId": "B",
               "step": 240
@@ -4380,7 +4380,7 @@
             {
               "expr": "haproxy_frontend_limit_sessions{proxy=~\"$frontend\",instance=\"$host\"}",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Limit {{ proxy }}",
               "refId": "B",
               "step": 240
@@ -4600,7 +4600,7 @@
             {
               "expr": "haproxy_frontend_limit_session_rate{proxy=~\"$frontend\",instance=\"$host\"}",
               "interval": "",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Limit {{ proxy }}",
               "refId": "B",
               "step": 240
@@ -7177,7 +7177,7 @@
               "expr": "rate(haproxy_server_bytes_out_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])*8",
               "hide": false,
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "OUT {{ proxy }} / {{ server }}",
               "refId": "B",
               "step": 240
@@ -7292,7 +7292,7 @@
             {
               "expr": "rate(haproxy_server_used_connections_current{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "In use {{ proxy }} / {{ server }}{{ proxy }}",
               "refId": "A",
               "step": 240
@@ -7300,7 +7300,7 @@
             {
               "expr": "rate(haproxy_server_idle_connections_current{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Estimated {{ proxy }} / {{ server }}{{ proxy }}",
               "refId": "C",
               "step": 240
@@ -7425,7 +7425,7 @@
             {
               "expr": "rate(haproxy_server_connection_errors_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Error {{ proxy }} / {{ server }}",
               "refId": "A",
               "step": 240
@@ -7534,7 +7534,7 @@
             {
               "expr": "rate(haproxy_server_connection_reuses_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Reuses {{ proxy }} / {{ server }}",
               "refId": "C",
               "step": 240
@@ -7654,7 +7654,7 @@
             {
               "expr": "rate(haproxy_server_idle_connections_current{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Available idle connections {{ proxy }} / {{ server }}",
               "refId": "C",
               "step": 240
@@ -7662,7 +7662,7 @@
             {
               "expr": "rate(haproxy_server_idle_connections_limit{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Limit available idle connections {{ proxy }} / {{ server }}{{ proxy }}",
               "refId": "A",
               "step": 240
@@ -7670,7 +7670,7 @@
             {
               "expr": "rate(haproxy_server_safe_idle_connections_current{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Number of safe idle connections {{ proxy }} / {{ server }}{{ proxy }}",
               "refId": "B",
               "step": 240
@@ -7678,7 +7678,7 @@
             {
               "expr": "rate(haproxy_server_unsafe_idle_connections_current{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Number of unsafe idle connections {{ proxy }} / {{ server }}{{ proxy }}",
               "refId": "D",
               "step": 240
@@ -7907,7 +7907,7 @@
               "expr": "rate(haproxy_server_redispatch_warnings_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "hide": false,
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Redispatch {{ proxy }} / {{ server }}",
               "refId": "B",
               "step": 240
@@ -7926,7 +7926,7 @@
               "expr": "rate(haproxy_server_response_errors_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "hide": false,
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Error {{ proxy }} / {{ server }}",
               "refId": "C",
               "step": 240

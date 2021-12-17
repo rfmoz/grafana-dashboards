@@ -89,7 +89,7 @@
               "expr": "count(haproxy_backend_up{backend=~\"$backend\", instance=~\"$host:$port\"} == 1)",
               "hide": false,
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Backends Up",
               "refId": "A",
               "step": 60
@@ -97,7 +97,7 @@
             {
               "expr": "count(haproxy_backend_up{backend=~\"$backend\",instance=~\"$host:$port\"} == 0)",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Backends Down",
               "refId": "B",
               "step": 60
@@ -325,21 +325,21 @@
             {
               "expr": "sum(irate(haproxy_frontend_bytes_out_total{frontend=~\"$frontend\",instance=~\"$host:$port\"}[5m])*8) by (instance)",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "OUT Front",
               "refId": "B",
               "step": 60
             },
             {
               "expr": "sum(irate(haproxy_backend_bytes_in_total{backend=~\"$backend\",instance=~\"$host:$port\"}[5m])*8) by (instance)",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "IN Back",
               "refId": "C",
               "step": 240
             },
             {
               "expr": "sum(irate(haproxy_backend_bytes_out_total{backend=~\"$backend\",instance=~\"$host:$port\"}[5m])*8) by (instance)",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "OUT Back",
               "refId": "D",
               "step": 240
@@ -541,7 +541,7 @@
             {
               "expr": "sum(irate(haproxy_backend_response_errors_total{backend=~\"$backend\",instance=~\"$host:$port\"}[5m])) by (instance)",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Response errors",
               "refId": "B",
               "step": 60
@@ -558,7 +558,7 @@
             {
               "expr": "sum(irate(haproxy_backend_redispatch_warnings_total{backend=~\"$backend\",instance=~\"$host:$port\"}[5m])) by (instance)",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Backend redispatch",
               "refId": "D",
               "step": 60
@@ -566,7 +566,7 @@
             {
               "expr": "sum(irate(haproxy_backend_retry_warnings_total{backend=~\"$backend\",instance=~\"$host:$port\"}[5m])) by (instance)",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Backend retry",
               "refId": "E",
               "step": 60
@@ -574,7 +574,7 @@
             {
               "expr": "sum(irate(haproxy_frontend_requests_denied_total{frontend=~\"$frontend\",instance=~\"$host:$port\"}[5m])) by (instance)",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Request denied",
               "refId": "F",
               "step": 60
@@ -582,7 +582,7 @@
             {
               "expr": "sum(haproxy_backend_current_queue{backend=~\"$backend\",instance=~\"$host:$port\"}) by (instance)",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Backend Queued",
               "refId": "G",
               "step": 60
@@ -804,7 +804,7 @@
             {
               "expr": "irate(haproxy_backend_bytes_out_total{backend=~\"$backend\",instance=~\"$host:$port\"}[5m])*8",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "OUT-{{ backend }}",
               "refId": "B",
               "step": 60
@@ -900,7 +900,7 @@
             {
               "expr": "irate(haproxy_frontend_bytes_out_total{frontend=~\"$frontend\",instance=~\"$host:$port\"}[5m])*8",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "OUT-{{ frontend }}",
               "refId": "B",
               "step": 60
@@ -1005,7 +1005,7 @@
             },
             {
               "expr": "irate(haproxy_backend_connection_errors_total{backend=~\"$backend\",instance=~\"$host:$port\"}[5m])",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "{{ backend }} Error",
               "refId": "A",
               "step": 240
@@ -1368,14 +1368,14 @@
             {
               "expr": "irate(haproxy_backend_retry_warnings_total{backend=~\"$backend\", instance=~\"$host:$port\"}[5m])",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Retry {{ backend }}",
               "refId": "B",
               "step": 60
             },
             {
               "expr": "irate(haproxy_backend_response_errors_total{backend=~\"$backend\", instance=~\"$host:$port\"}[5m])",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Error {{ backend }}",
               "refId": "C",
               "step": 240
@@ -1472,14 +1472,14 @@
             },
             {
               "expr": "irate(haproxy_frontend_request_errors_total{frontend=~\"$frontend\", instance=~\"$host:$port\"}[5m])",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "{{ frontend }} Error",
               "refId": "B",
               "step": 240
             },
             {
               "expr": "irate(haproxy_frontend_requests_denied_total{frontend=~\"$frontend\", instance=~\"$host:$port\"}[5m])",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "{{ frontend }} Denied",
               "refId": "C",
               "step": 240
@@ -2088,7 +2088,7 @@
             },
             {
               "expr": "haproxy_backend_limit_sessions{backend=~\"$backend\",instance=~\"$host:$port\"}",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "{{ backend }} limit",
               "refId": "B",
               "step": 120
@@ -2182,7 +2182,7 @@
             },
             {
               "expr": "haproxy_frontend_limit_sessions{frontend=~\"$frontend\",instance=~\"$host:$port\"}",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "{{ frontend }} limit",
               "refId": "B",
               "step": 120
@@ -2358,7 +2358,7 @@
             },
             {
               "expr": "haproxy_frontend_limit_session_rate{frontend=~\"$frontend\",instance=~\"$host:$port\"}",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "{{ frontend }} limit",
               "refId": "B",
               "step": 120
@@ -2642,7 +2642,7 @@
             {
               "expr": "irate(haproxy_server_bytes_out_total{backend=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])*8",
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "OUT-{{ backend }} / {{ server }}",
               "refId": "B",
               "step": 60
@@ -3105,7 +3105,7 @@
               "expr": "haproxy_server_redispatch_warnings_total{backend=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}",
               "hide": false,
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Redispatch {{ backend }} {{ server }}",
               "refId": "B",
               "step": 60
@@ -3114,7 +3114,7 @@
               "expr": "irate(haproxy_server_response_errors_total{backend=~\"$backend\",server=~\"$server\",instance=~\"$host:$port\"}[5m])",
               "hide": false,
               "interval": "$interval",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Error {{ backend }} {{ server }}",
               "refId": "C",
               "step": 60

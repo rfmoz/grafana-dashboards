@@ -109,7 +109,7 @@
             {
               "expr": "apache_uptime_seconds_total{instance=~\"$host:$port\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "refId": "A",
               "step": 240
             }
@@ -173,7 +173,7 @@
             {
               "expr": "count(apache_up{instance=~\"$host:$port\"} == 1)",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Apache Up",
               "refId": "A",
               "step": 240
@@ -181,7 +181,7 @@
             {
               "expr": "scalar(count(apache_up{instance=~\"$host:$port\"} == 0))",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Apache Down",
               "refId": "B",
               "step": 240
@@ -271,7 +271,7 @@
             {
               "expr": "rate(apache_sent_kilobytes_total{instance=~\"$host:$port\"}[5m])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Kilobytes Sent",
               "refId": "A",
               "step": 240
@@ -349,7 +349,7 @@
             {
               "expr": "rate(apache_accesses_total{instance=~\"$host:$port\"}[5m])",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Accesses",
               "refId": "A",
               "step": 240
@@ -440,7 +440,7 @@
             {
               "expr": "apache_scoreboard{instance=~\"$host:$port\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "{{ state }}",
               "refId": "A",
               "step": 240
@@ -530,7 +530,7 @@
             {
               "expr": "apache_workers{instance=~\"$host:$port\"}\n",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "{{ state }}",
               "refId": "A",
               "step": 240
@@ -608,7 +608,7 @@
             {
               "expr": "apache_cpuload{instance=~\"$host:$port\"}",
               "format": "time_series",
-              "intervalFactor": 2,
+              "intervalFactor": 1,
               "legendFormat": "Load",
               "refId": "A",
               "step": 240
