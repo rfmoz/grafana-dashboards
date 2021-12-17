@@ -8302,7 +8302,7 @@
               "hide": false,
               "interval": "",
               "intervalFactor": 4,
-              "legendFormat": "{{device}} - r_await",
+              "legendFormat": "{{device}} - Read wait time avg",
               "refId": "A",
               "step": 240
             },
@@ -8311,7 +8311,7 @@
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{device}} - w_await",
+              "legendFormat": "{{device}} - Write wait time avg",
               "refId": "B",
               "step": 240
             }
