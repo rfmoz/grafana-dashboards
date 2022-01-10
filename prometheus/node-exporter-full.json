@@ -14058,8 +14058,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "[a-z]+|nvme[0-9]+n[0-9]+",
-          "value": "[a-z]+|nvme[0-9]+n[0-9]+"
+          "text": "[a-z]+|nvme[0-9]+n[0-9]+|mmcblk[0-9]+",
+          "value": "[a-z]+|nvme[0-9]+n[0-9]+|mmcblk[0-9]+"
         },
         "error": null,
         "hide": 2,
@@ -14070,11 +14070,11 @@
         "options": [
           {
             "selected": true,
-            "text": "[a-z]+|nvme[0-9]+n[0-9]+",
-            "value": "[a-z]+|nvme[0-9]+n[0-9]+"
+            "text": "[a-z]+|nvme[0-9]+n[0-9]+|mmcblk[0-9]+",
+            "value": "[a-z]+|nvme[0-9]+n[0-9]+|mmcblk[0-9]+"
           }
         ],
-        "query": "[a-z]+|nvme[0-9]+n[0-9]+",
+        "query": "[a-z]+|nvme[0-9]+n[0-9]+|mmcblk[0-9]+",
         "skipUrlSync": false,
         "type": "custom"
       }
