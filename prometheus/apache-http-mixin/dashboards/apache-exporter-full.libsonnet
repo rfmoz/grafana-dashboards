@@ -262,7 +262,7 @@ local graphPanel = grafana.graphPanel;
           steppedLine: false,
           targets: [
             {
-              expr: 'rate(apache_sent_kilobytes_total{instance=~"$instance"}[5m])',
+              expr: 'rate(apache_sent_kilobytes_total{instance=~"$instance"}[$__rate_interval])',
               format: 'time_series',
               intervalFactor: 1,
               legendFormat: 'Kilobytes Sent',
@@ -347,7 +347,7 @@ local graphPanel = grafana.graphPanel;
           steppedLine: false,
           targets: [
             {
-              expr: 'rate(apache_accesses_total{instance=~"$instance"}[5m])',
+              expr: 'rate(apache_accesses_total{instance=~"$instance"}[$__rate_interval])',
               format: 'time_series',
               intervalFactor: 1,
               legendFormat: 'Accesses',
