@@ -626,7 +626,7 @@ local dashboard = grafana.dashboard;
             defaults: {
               custom: {
                 drawStyle: 'line',
-                lineInterpolation: 'linear',
+                lineInterpolation: 'stepAfter',
                 barAlignment: 0,
                 lineWidth: 1,
                 fillOpacity: 10,
