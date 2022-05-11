@@ -1,1 +1,3 @@
-prometheus/apache-http-mixin/vendor
+vendor
+dashboards_out
+prometheus_alerts.yaml

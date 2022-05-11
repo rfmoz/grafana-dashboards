@@ -2,10 +2,8 @@ local grafana = import 'github.com/grafana/grafonnet-lib/grafonnet/grafana.libso
 local dashboard = grafana.dashboard;
 local template = grafana.template;
 
-
 {
   grafanaDashboards+:: {
-
 
     'apache-http.json':
       dashboard.new(

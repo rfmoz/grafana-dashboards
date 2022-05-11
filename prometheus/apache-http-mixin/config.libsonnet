@@ -6,6 +6,6 @@
     dashboardRefresh: '1m',
 
     // for alerts
-    alertsWarningWorkersBusy: '80', // %
+    alertsWarningWorkersBusy: '80',  // %
   },
 }
