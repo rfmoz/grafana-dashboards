@@ -29,6 +29,24 @@ dashboards_out: mixin.libsonnet config.libsonnet $(wildcard dashboards/*)
 prometheus_alerts.yaml: mixin.libsonnet alerts/*.libsonnet
 	mixtool generate alerts mixin.libsonnet -a prometheus_alerts.yaml
 
+
+.PHONY: deploy deploy_rules deploy_dashboards
+deploy: deploy_rules deploy_dashboards
+
+deploy_dashboards:
+ifdef GRAFANA_URL
+	grr apply mixin.libsonnet --target "Dashboard.*" --target "DashboardFolder.*"
+else
+	$(warning GRAFANA_URL is not set, skipping grafana dashboards deployment)
+endif
+
+deploy_rules:
+ifdef CORTEX_ADDRESS
+	grr apply mixin.libsonnet --target "PrometheusRuleGroup.*"
+else
+	$(warning CORTEX_ADDRESS is not set, skipping prometheus alerts deployment)
+endif
+
 .PHONY: clean
 clean:
 	rm -rf dashboards_out prometheus_alerts.yaml

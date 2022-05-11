@@ -4,7 +4,7 @@ Apache HTTP mixin is a set of configurable Grafana dashboards and alerts based o
 
 ![image](https://user-images.githubusercontent.com/14870891/167886371-92c60942-bbfa-43d2-ba16-ee13e629020a.png)
 
-Install tools before generating dashboards and alerts:
+## Install tools
 
 ```bash
 go install github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb@latest
@@ -23,10 +23,23 @@ into your Grafana server.  The exact details will be depending on your environme
 
 `prometheus_alerts.yaml` needs to be imported into Prometheus.
 
+## Generate dashboards and alerts
+
 Edit `config.libsonnet` if required and then build JSON dashboard files for Grafana:
 
 ```bash
 make
+```
+
+## Import dashboards and alerts using Grizzly tool
+
+Install grizzly first: https://grafana.github.io/grizzly/installation/
+
+Set env variables GRAFANA_URL and optionally CORTEX_ADDRESS (see for [details](https://grafana.github.io/grizzly/authentication/)).
+
+Then run to actually import the dashboards and alerts into Grafana instance:
+```bash
+make deploy
 ```
 
 For more advanced uses of mixins, see
