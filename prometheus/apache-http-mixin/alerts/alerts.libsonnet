@@ -2,7 +2,7 @@
   prometheusAlerts+:: {
     groups+: [
       {
-        name: 'apache-http-alerts',
+        name: 'apache-http',
         rules: [
           {
             alert: 'ApacheDown',
