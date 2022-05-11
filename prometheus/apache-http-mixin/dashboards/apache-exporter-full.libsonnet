@@ -216,50 +216,36 @@ local graphPanel = grafana.graphPanel;
           timeShift: null,
         },
         {
-          aliasColors: {},
-          bars: false,
-          dashLength: 10,
-          dashes: false,
-          datasource: {
-            uid: '${datasource}',
-          },
-          decimals: 2,
-          fill: 1,
-          fillGradient: 0,
+          id: 3,
           gridPos: {
             h: 10,
             w: 12,
             x: 0,
             y: 3,
           },
-          hiddenSeries: false,
-          id: 3,
-          legend: {
-            alignAsTable: true,
-            avg: true,
-            current: true,
-            max: true,
-            min: true,
-            show: true,
-            total: false,
-            values: true,
+          type: 'timeseries',
+          title: 'Bytes sent',
+          datasource: {
+            uid: '${datasource}',
           },
-          lines: true,
-          linewidth: 1,
-          links: [],
-          nullPointMode: 'null',
-          options: {
-            alertThreshold: true,
-          },
-          percentage: false,
           pluginVersion: '8.4.5',
-          pointradius: 5,
-          points: false,
-          renderer: 'flot',
-          seriesOverrides: [],
-          spaceLength: 10,
-          stack: false,
-          steppedLine: false,
+          links: [],
+          options: {
+            tooltip: {
+              mode: 'multi',
+              sort: 'none',
+            },
+            legend: {
+              displayMode: 'table',
+              placement: 'bottom',
+              calcs: [
+                'mean',
+                'lastNotNull',
+                'max',
+                'min',
+              ],
+            },
+          },
           targets: [
             {
               expr: 'rate(apache_sent_kilobytes_total{instance=~"$instance"}[$__rate_interval]) * 1000',
@@ -270,81 +256,91 @@ local graphPanel = grafana.graphPanel;
               step: 240,
             },
           ],
-          thresholds: [],
-          timeRegions: [],
-          title: 'Bytes sent',
-          tooltip: {
-            shared: true,
-            sort: 0,
-            value_type: 'individual',
-          },
-          type: 'graph',
-          xaxis: {
-            mode: 'time',
-            show: true,
-            values: [],
-          },
-          yaxes: [
-            {
-              format: 'Bps',
-              logBase: 1,
-              show: true,
+          fieldConfig: {
+            defaults: {
+              custom: {
+                drawStyle: 'line',
+                lineInterpolation: 'linear',
+                barAlignment: 0,
+                lineWidth: 1,
+                fillOpacity: 10,
+                gradientMode: 'none',
+                spanNulls: true,
+                showPoints: 'never',
+                pointSize: 5,
+                stacking: {
+                  mode: 'none',
+                  group: 'A',
+                },
+                axisPlacement: 'auto',
+                axisLabel: '',
+                scaleDistribution: {
+                  type: 'linear',
+                },
+                hideFrom: {
+                  tooltip: false,
+                  viz: false,
+                  legend: false,
+                },
+                thresholdsStyle: {
+                  mode: 'off',
+                },
+              },
+              color: {
+                mode: 'palette-classic',
+              },
+              mappings: [],
+              thresholds: {
+                mode: 'absolute',
+                steps: [
+                  {
+                    value: null,
+                    color: 'green',
+                  },
+                  {
+                    value: 80,
+                    color: 'red',
+                  },
+                ],
+              },
+              unit: 'Bps',
             },
-            {
-              format: 'short',
-              logBase: 1,
-              show: false,
-            },
-          ],
-          yaxis: {
-            align: false,
+            overrides: [],
           },
+          timeFrom: null,
+          timeShift: null,
         },
         {
-          aliasColors: {},
-          bars: false,
-          dashLength: 10,
-          dashes: false,
-          datasource: {
-            uid: '${datasource}',
-          },
-          decimals: 2,
-          fill: 1,
-          fillGradient: 0,
+          id: 5,
           gridPos: {
             h: 10,
             w: 12,
             x: 12,
             y: 3,
           },
-          hiddenSeries: false,
-          id: 1,
-          legend: {
-            alignAsTable: true,
-            avg: true,
-            current: true,
-            max: true,
-            min: true,
-            show: true,
-            total: false,
-            values: true,
+          type: 'timeseries',
+          title: 'Apache accesses',
+          datasource: {
+            uid: '${datasource}',
           },
-          lines: true,
-          linewidth: 1,
-          links: [],
-          nullPointMode: 'null',
-          options: {
-            alertThreshold: true,
-          },
-          percentage: false,
           pluginVersion: '8.4.5',
-          pointradius: 5,
-          points: false,
-          renderer: 'flot',
-          seriesOverrides: [],
-          spaceLength: 10,
-          stack: false,
-          steppedLine: false,
+          links: [],
+          options: {
+            tooltip: {
+              mode: 'multi',
+              sort: 'none',
+            },
+            legend: {
+              displayMode: 'table',
+              placement: 'bottom',
+              calcs: [
+                'mean',
+                'lastNotNull',
+                'max',
+                'min',
+              ],
+            },
+          },
           targets: [
             {
               expr: 'rate(apache_accesses_total{instance=~"$instance"}[$__rate_interval])',
@@ -355,82 +351,93 @@ local graphPanel = grafana.graphPanel;
               step: 240,
             },
           ],
-          thresholds: [],
-          timeRegions: [],
-          title: 'Apache accesses',
-          tooltip: {
-            shared: true,
-            sort: 0,
-            value_type: 'individual',
-          },
-          type: 'graph',
-          xaxis: {
-            mode: 'time',
-            show: true,
-            values: [],
-          },
-          yaxes: [
-            {
-              format: 'reqps',
-              logBase: 1,
-              show: true,
+          fieldConfig: {
+            defaults: {
+              custom: {
+                drawStyle: 'line',
+                lineInterpolation: 'linear',
+                barAlignment: 0,
+                lineWidth: 1,
+                fillOpacity: 10,
+                gradientMode: 'none',
+                spanNulls: true,
+                showPoints: 'never',
+                pointSize: 5,
+                stacking: {
+                  mode: 'none',
+                  group: 'A',
+                },
+                axisPlacement: 'auto',
+                axisLabel: '',
+                scaleDistribution: {
+                  type: 'linear',
+                },
+                hideFrom: {
+                  tooltip: false,
+                  viz: false,
+                  legend: false,
+                },
+                thresholdsStyle: {
+                  mode: 'off',
+                },
+              },
+              color: {
+                mode: 'palette-classic',
+              },
+              mappings: [],
+              thresholds: {
+                mode: 'absolute',
+                steps: [
+                  {
+                    value: null,
+                    color: 'green',
+                  },
+                  {
+                    value: 80,
+                    color: 'red',
+                  },
+                ],
+              },
+              unit: 'reqps',
             },
-            {
-              format: 'short',
-              logBase: 1,
-              show: false,
-            },
-          ],
-          yaxis: {
-            align: false,
+            overrides: [],
           },
+          timeFrom: null,
+          timeShift: null,
         },
         {
-          aliasColors: {},
-          bars: false,
-          dashLength: 10,
-          dashes: false,
-          datasource: {
-            uid: '${datasource}',
-          },
-          decimals: 2,
-          fill: 1,
-          fillGradient: 0,
+          id: 2,
           gridPos: {
             h: 10,
             w: 24,
             x: 0,
             y: 13,
           },
-          hiddenSeries: false,
-          id: 2,
-          legend: {
-            alignAsTable: true,
-            avg: true,
-            current: true,
-            max: true,
-            min: true,
-            rightSide: true,
-            show: true,
-            total: false,
-            values: true,
+          type: 'timeseries',
+          title: 'Apache scoreboard statuses',
+          datasource: {
+            uid: '${datasource}',
           },
-          lines: true,
-          linewidth: 1,
-          links: [],
-          nullPointMode: 'null',
-          options: {
-            alertThreshold: true,
-          },
-          percentage: false,
           pluginVersion: '8.4.5',
-          pointradius: 5,
-          points: false,
-          renderer: 'flot',
-          seriesOverrides: [],
-          spaceLength: 10,
-          stack: true,
-          steppedLine: false,
+          links: [],
+          options: {
+            tooltip: {
+              mode: 'multi',
+              sort: 'desc',
+            },
+            legend: {
+              displayMode: 'table',
+              placement: 'right',
+              calcs: [
+                'mean',
+                'lastNotNull',
+                'max',
+                'min',
+              ],
+              sortBy: 'Last *',
+              sortDesc: true,
+            },
+          },
           targets: [
             {
               expr: 'apache_scoreboard{instance=~"$instance"}',
@@ -441,81 +448,91 @@ local graphPanel = grafana.graphPanel;
               step: 240,
             },
           ],
-          thresholds: [],
-          timeRegions: [],
-          title: 'Apache scoreboard statuses',
-          tooltip: {
-            shared: true,
-            sort: 0,
-            value_type: 'individual',
-          },
-          type: 'graph',
-          xaxis: {
-            mode: 'time',
-            show: true,
-            values: [],
-          },
-          yaxes: [
-            {
-              format: 'short',
-              logBase: 1,
-              show: true,
+          fieldConfig: {
+            defaults: {
+              custom: {
+                drawStyle: 'line',
+                lineInterpolation: 'linear',
+                barAlignment: 0,
+                lineWidth: 1,
+                fillOpacity: 10,
+                gradientMode: 'none',
+                spanNulls: true,
+                showPoints: 'never',
+                pointSize: 5,
+                stacking: {
+                  mode: 'normal',
+                  group: 'A',
+                },
+                axisPlacement: 'auto',
+                axisLabel: '',
+                scaleDistribution: {
+                  type: 'linear',
+                },
+                hideFrom: {
+                  tooltip: false,
+                  viz: false,
+                  legend: false,
+                },
+                thresholdsStyle: {
+                  mode: 'off',
+                },
+              },
+              color: {
+                mode: 'palette-classic',
+              },
+              mappings: [],
+              thresholds: {
+                mode: 'absolute',
+                steps: [
+                  {
+                    value: null,
+                    color: 'green',
+                  },
+                  {
+                    value: 80,
+                    color: 'red',
+                  },
+                ],
+              },
+              unit: 'short',
             },
-            {
-              format: 'short',
-              logBase: 1,
-              show: false,
-            },
-          ],
-          yaxis: {
-            align: false,
+            overrides: [],
           },
+          timeFrom: null,
+          timeShift: null,
         },
         {
-          aliasColors: {},
-          bars: false,
-          dashLength: 10,
-          dashes: false,
-          datasource: {
-            uid: '${datasource}',
-          },
-          decimals: 2,
-          fill: 1,
-          fillGradient: 0,
+          id: 7,
           gridPos: {
             h: 10,
             w: 12,
             x: 0,
             y: 23,
           },
-          hiddenSeries: false,
-          id: 7,
-          legend: {
-            alignAsTable: true,
-            avg: true,
-            current: true,
-            max: true,
-            min: true,
-            show: true,
-            total: false,
-            values: true,
+          type: 'timeseries',
+          title: 'Apache worker statuses',
+          datasource: {
+            uid: '${datasource}',
           },
-          lines: true,
-          linewidth: 1,
-          links: [],
-          nullPointMode: 'null',
-          options: {
-            alertThreshold: true,
-          },
-          percentage: false,
           pluginVersion: '8.4.5',
-          pointradius: 5,
-          points: false,
-          renderer: 'flot',
-          seriesOverrides: [],
-          spaceLength: 10,
-          stack: true,
-          steppedLine: false,
+          links: [],
+          options: {
+            tooltip: {
+              mode: 'multi',
+              sort: 'none',
+            },
+            legend: {
+              displayMode: 'table',
+              placement: 'bottom',
+              calcs: [
+                'mean',
+                'lastNotNull',
+                'max',
+                'min',
+              ],
+            },
+          },
           targets: [
             {
               expr: 'apache_workers{instance=~"$instance"}\n',
@@ -526,81 +543,91 @@ local graphPanel = grafana.graphPanel;
               step: 240,
             },
           ],
-          thresholds: [],
-          timeRegions: [],
-          title: 'Apache worker statuses',
-          tooltip: {
-            shared: true,
-            sort: 0,
-            value_type: 'individual',
-          },
-          type: 'graph',
-          xaxis: {
-            mode: 'time',
-            show: true,
-            values: [],
-          },
-          yaxes: [
-            {
-              format: 'short',
-              logBase: 1,
-              show: true,
+          fieldConfig: {
+            defaults: {
+              custom: {
+                drawStyle: 'line',
+                lineInterpolation: 'linear',
+                barAlignment: 0,
+                lineWidth: 1,
+                fillOpacity: 10,
+                gradientMode: 'none',
+                spanNulls: true,
+                showPoints: 'never',
+                pointSize: 5,
+                stacking: {
+                  mode: 'normal',
+                  group: 'A',
+                },
+                axisPlacement: 'auto',
+                axisLabel: '',
+                scaleDistribution: {
+                  type: 'linear',
+                },
+                hideFrom: {
+                  tooltip: false,
+                  viz: false,
+                  legend: false,
+                },
+                thresholdsStyle: {
+                  mode: 'off',
+                },
+              },
+              color: {
+                mode: 'palette-classic',
+              },
+              mappings: [],
+              thresholds: {
+                mode: 'absolute',
+                steps: [
+                  {
+                    value: null,
+                    color: 'green',
+                  },
+                  {
+                    value: 80,
+                    color: 'red',
+                  },
+                ],
+              },
+              unit: 'short',
             },
-            {
-              format: 'short',
-              logBase: 1,
-              show: false,
-            },
-          ],
-          yaxis: {
-            align: false,
+            overrides: [],
           },
+          timeFrom: null,
+          timeShift: null,
         },
         {
-          aliasColors: {},
-          bars: false,
-          dashLength: 10,
-          dashes: false,
-          datasource: {
-            uid: '${datasource}',
-          },
-          decimals: 2,
-          fill: 1,
-          fillGradient: 0,
+          id: 8,
           gridPos: {
             h: 10,
             w: 12,
             x: 12,
             y: 23,
           },
-          hiddenSeries: false,
-          id: 4,
-          legend: {
-            alignAsTable: true,
-            avg: true,
-            current: true,
-            max: true,
-            min: true,
-            show: true,
-            total: false,
-            values: true,
+          type: 'timeseries',
+          title: 'Apache CPU load',
+          datasource: {
+            uid: '${datasource}',
           },
-          lines: true,
-          linewidth: 1,
-          links: [],
-          nullPointMode: 'null',
-          options: {
-            alertThreshold: true,
-          },
-          percentage: false,
           pluginVersion: '8.4.5',
-          pointradius: 5,
-          points: false,
-          renderer: 'flot',
-          seriesOverrides: [],
-          spaceLength: 10,
-          stack: false,
-          steppedLine: false,
+          links: [],
+          options: {
+            tooltip: {
+              mode: 'multi',
+              sort: 'none',
+            },
+            legend: {
+              displayMode: 'table',
+              placement: 'bottom',
+              calcs: [
+                'mean',
+                'lastNotNull',
+                'max',
+                'min',
+              ],
+            },
+          },
           targets: [
             {
               expr: 'apache_cpuload{instance=~"$instance"}',
@@ -611,36 +638,60 @@ local graphPanel = grafana.graphPanel;
               step: 240,
             },
           ],
-          thresholds: [],
-          timeRegions: [],
-          title: 'Apache CPU load',
-          tooltip: {
-            shared: true,
-            sort: 0,
-            value_type: 'individual',
-          },
-          type: 'graph',
-          xaxis: {
-            mode: 'time',
-            show: true,
-            values: [],
-          },
-          yaxes: [
-            {
-              format: 'short',
-              logBase: 1,
-              min: '0',
-              show: true,
+          fieldConfig: {
+            defaults: {
+              custom: {
+                drawStyle: 'line',
+                lineInterpolation: 'linear',
+                barAlignment: 0,
+                lineWidth: 1,
+                fillOpacity: 10,
+                gradientMode: 'none',
+                spanNulls: true,
+                showPoints: 'never',
+                pointSize: 5,
+                stacking: {
+                  mode: 'none',
+                  group: 'A',
+                },
+                axisPlacement: 'auto',
+                axisLabel: '',
+                scaleDistribution: {
+                  type: 'linear',
+                },
+                hideFrom: {
+                  tooltip: false,
+                  viz: false,
+                  legend: false,
+                },
+                thresholdsStyle: {
+                  mode: 'off',
+                },
+              },
+              color: {
+                mode: 'palette-classic',
+              },
+              mappings: [],
+              thresholds: {
+                mode: 'absolute',
+                steps: [
+                  {
+                    value: null,
+                    color: 'green',
+                  },
+                  {
+                    value: 80,
+                    color: 'red',
+                  },
+                ],
+              },
+              unit: 'short',
+              min: 0,
             },
-            {
-              format: 'short',
-              logBase: 1,
-              show: false,
-            },
-          ],
-          yaxis: {
-            align: false,
+            overrides: [],
           },
+          timeFrom: null,
+          timeShift: null,
         },
       ]),
 
