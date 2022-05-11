@@ -1,8 +1,26 @@
 local grafana = import 'github.com/grafana/grafonnet-lib/grafonnet/grafana.libsonnet';
 local dashboard = grafana.dashboard;
+local template = grafana.template;
+
 
 {
   grafanaDashboards+:: {
+
+    local apacheClusterSelectorTemplates =
+      [
+        template.new(
+          name=label,
+          label=label,
+          datasource='$datasource',
+          query='label_values(apache_up, %s)' % label,
+          current='',
+          refresh=2,
+          includeAll=false,
+          sort=1
+        )
+        for label in std.split($._config.apacheClusterLabels, ',')
+      ],
+
     'apache-http.json':
       dashboard.new(
         'Apache HTTP server',
@@ -22,31 +40,31 @@ local dashboard = grafana.dashboard;
             hide: 0,
             label: 'Data Source',
             name: 'datasource',
-            options: [],
             query: 'prometheus',
             refresh: 1,
             regex: '',
             type: 'datasource',
           },
-          {
-            allValue: null,
-            current: {},
-            datasource: '${datasource}',
-            hide: 0,
-            includeAll: false,
-            label: 'instance',
-            multi: false,
-            name: 'instance',
-            options: [],
-            query: 'label_values(apache_up, instance)',
-            refresh: 2,
-            sort: 1,
-            tagValuesQuery: '',
-            tags: [],
-            tagsQuery: '',
-            type: 'query',
-            useTags: false,
-          },
+          template.new(
+            name='job',
+            label='job',
+            datasource='$datasource',
+            query='label_values(apache_up, job)',
+            current='',
+            refresh=2,
+            includeAll=true,
+            sort=1
+          ),
+          template.new(
+            name='instance',
+            label='instance',
+            datasource='$datasource',
+            query='label_values(apache_up{job=~"$job"}, instance)',
+            current='',
+            refresh=2,
+            includeAll=false,
+            sort=1
+          ),
         ]
       )
       .addPanels([
