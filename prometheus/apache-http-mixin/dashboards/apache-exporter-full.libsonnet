@@ -6,20 +6,6 @@ local template = grafana.template;
 {
   grafanaDashboards+:: {
 
-    local apacheClusterSelectorTemplates =
-      [
-        template.new(
-          name=label,
-          label=label,
-          datasource='$datasource',
-          query='label_values(apache_up, %s)' % label,
-          current='',
-          refresh=2,
-          includeAll=false,
-          sort=1
-        )
-        for label in std.split($._config.apacheClusterLabels, ',')
-      ],
 
     'apache-http.json':
       dashboard.new(
