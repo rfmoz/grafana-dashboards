@@ -262,17 +262,17 @@ local graphPanel = grafana.graphPanel;
           steppedLine: false,
           targets: [
             {
-              expr: 'rate(apache_sent_kilobytes_total{instance=~"$instance"}[$__rate_interval])',
+              expr: 'rate(apache_sent_kilobytes_total{instance=~"$instance"}[$__rate_interval]) * 1000',
               format: 'time_series',
               intervalFactor: 1,
-              legendFormat: 'Kilobytes Sent',
+              legendFormat: 'Bytes sent',
               refId: 'A',
               step: 240,
             },
           ],
           thresholds: [],
           timeRegions: [],
-          title: 'Current total kbytes sent',
+          title: 'Bytes sent',
           tooltip: {
             shared: true,
             sort: 0,
@@ -286,7 +286,7 @@ local graphPanel = grafana.graphPanel;
           },
           yaxes: [
             {
-              format: 'deckbytes',
+              format: 'Bps',
               logBase: 1,
               show: true,
             },
@@ -357,7 +357,7 @@ local graphPanel = grafana.graphPanel;
           ],
           thresholds: [],
           timeRegions: [],
-          title: 'Current total apache accesses',
+          title: 'Apache accesses',
           tooltip: {
             shared: true,
             sort: 0,
@@ -371,7 +371,7 @@ local graphPanel = grafana.graphPanel;
           },
           yaxes: [
             {
-              format: 'short',
+              format: 'reqps',
               logBase: 1,
               show: true,
             },
