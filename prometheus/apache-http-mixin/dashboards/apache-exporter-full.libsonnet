@@ -8,7 +8,7 @@ local graphPanel = grafana.graphPanel;
   grafanaDashboards+:: {
     'apache-http.json':
       dashboard.new(
-        'Apache Dashboard',
+        'Apache HTTP server',
         time_from='%s' % $._config.dashboardPeriod,
         editable=false,
         tags=($._config.dashboardTags),
