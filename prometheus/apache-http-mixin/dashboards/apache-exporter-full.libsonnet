@@ -107,7 +107,7 @@ local graphPanel = grafana.graphPanel;
             orientation: 'horizontal',
             reduceOptions: {
               calcs: [
-                'mean',
+                'lastNotNull',
               ],
               fields: '',
               values: false,
