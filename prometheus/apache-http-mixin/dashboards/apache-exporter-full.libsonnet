@@ -128,11 +128,93 @@ local graphPanel = grafana.graphPanel;
           type: 'stat',
         },
         {
+          id: 9,
+          gridPos: {
+            h: 3,
+            w: 4,
+            x: 4,
+            y: 0,
+          },
+          type: 'stat',
+          title: 'Version',
+          datasource: {
+            uid: '${datasource}',
+            type: 'prometheus',
+          },
+          pluginVersion: '8.4.5',
+          maxDataPoints: 100,
+          links: [],
+          fieldConfig: {
+            defaults: {
+              mappings: [
+                {
+                  options: {
+                    match: 'null',
+                    result: {
+                      text: 'N/A',
+                    },
+                  },
+                  type: 'special',
+                },
+              ],
+              thresholds: {
+                mode: 'absolute',
+                steps: [
+                  {
+                    color: 'green',
+                    value: null,
+                  },
+                  {
+                    color: 'red',
+                    value: 80,
+                  },
+                ],
+              },
+              color: {
+                mode: 'thresholds',
+              },
+              decimals: 1,
+              unit: 'none',
+            },
+            overrides: [],
+          },
+          options: {
+            reduceOptions: {
+              values: false,
+              calcs: [
+                'lastNotNull',
+              ],
+              fields: '',
+            },
+            orientation: 'horizontal',
+            textMode: 'auto',
+            colorMode: 'none',
+            graphMode: 'none',
+            justifyMode: 'auto',
+          },
+          targets: [
+            {
+              expr: 'apache_version{instance=~"$instance"}',
+              legendFormat: '',
+              interval: '',
+              exemplar: true,
+              format: 'time_series',
+              intervalFactor: 1,
+              refId: 'A',
+              step: 240,
+              datasource: {
+                type: 'prometheus',
+                uid: 'grafanacloud-prom',
+              },
+            },
+          ],
+        },
+        {
           id: 5,
           gridPos: {
             h: 3,
-            w: 20,
-            x: 4,
+            w: 16,
+            x: 8,
             y: 0,
           },
           type: 'state-timeline',
