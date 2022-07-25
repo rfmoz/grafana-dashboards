@@ -5252,7 +5252,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Time Syncronized Drift",
+          "title": "Time Synchronized Drift",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -5454,7 +5454,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Time Syncronized Status",
+          "title": "Time Synchronized Status",
           "tooltip": {
             "shared": true,
             "sort": 0,
