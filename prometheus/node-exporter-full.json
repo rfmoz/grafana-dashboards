@@ -2,7 +2,7 @@
   "__inputs": [
     {
       "name": "DS_PROMETHEUS",
-      "label": "Prometheus",
+      "label": "prometheus",
       "description": "",
       "type": "datasource",
       "pluginId": "prometheus",
@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.2.0"
+      "version": "9.2.3"
     },
     {
       "type": "datasource",
@@ -94,7 +94,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -108,7 +108,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -181,17 +181,19 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.2.0",
+      "pluginVersion": "9.2.3",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "(((count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=\"$node\",job=\"$job\"}[$__rate_interval])))) * 100) / count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
+          "editorMode": "code",
+          "expr": "(sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode!=\"idle\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))) * 100",
           "hide": false,
           "intervalFactor": 1,
           "legendFormat": "",
+          "range": true,
           "refId": "A",
           "step": 240
         }
@@ -264,7 +266,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.2.0",
+      "pluginVersion": "9.2.3",
       "targets": [
         {
           "datasource": {
@@ -347,7 +349,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.2.0",
+      "pluginVersion": "9.2.3",
       "targets": [
         {
           "datasource": {
@@ -421,7 +423,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.2.0",
+      "pluginVersion": "9.2.3",
       "targets": [
         {
           "datasource": {
@@ -516,7 +518,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.2.0",
+      "pluginVersion": "9.2.3",
       "targets": [
         {
           "datasource": {
@@ -597,7 +599,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.2.0",
+      "pluginVersion": "9.2.3",
       "targets": [
         {
           "datasource": {
@@ -676,7 +678,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.0",
+      "pluginVersion": "9.2.3",
       "targets": [
         {
           "datasource": {
@@ -758,7 +760,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.0",
+      "pluginVersion": "9.2.3",
       "targets": [
         {
           "datasource": {
@@ -841,7 +843,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.0",
+      "pluginVersion": "9.2.3",
       "targets": [
         {
           "datasource": {
@@ -922,7 +924,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.0",
+      "pluginVersion": "9.2.3",
       "targets": [
         {
           "datasource": {
@@ -1001,7 +1003,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.0",
+      "pluginVersion": "9.2.3",
       "targets": [
         {
           "datasource": {
@@ -1021,7 +1023,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -1035,7 +1037,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -1068,7 +1070,7 @@
               "tooltip": false,
               "viz": false
             },
-            "lineInterpolation": "linear",
+            "lineInterpolation": "smooth",
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
@@ -1086,7 +1088,6 @@
           },
           "links": [],
           "mappings": [],
-          "max": 100,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -1101,24 +1102,9 @@
               }
             ]
           },
-          "unit": "short"
+          "unit": "percentunit"
         },
         "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Busy"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#EAB839",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
           {
             "matcher": {
               "id": "byName",
@@ -1137,21 +1123,6 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Busy other"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#1F78C1",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
               "options": "Idle"
             },
             "properties": [
@@ -1159,156 +1130,6 @@
                 "id": "color",
                 "value": {
                   "fixedColor": "#052B51",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Idle - Waiting for something to happen"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#052B51",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "guest"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#9AC48A",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "idle"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#052B51",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "iowait"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#EAB839",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "irq"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#BF1B00",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "nice"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#C15C17",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "softirq"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#E24D42",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "steal"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#FCE2DE",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "system"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#508642",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "user"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#5195CE",
                   "mode": "fixed"
                 }
               }
@@ -1409,7 +1230,7 @@
         },
         "tooltip": {
           "mode": "multi",
-          "sort": "none"
+          "sort": "desc"
         }
       },
       "pluginVersion": "9.2.0",
@@ -1419,11 +1240,13 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=\"system\",instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "editorMode": "code",
+          "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"system\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
           "legendFormat": "Busy System",
+          "range": true,
           "refId": "A",
           "step": 240
         },
@@ -1432,11 +1255,13 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='user',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "editorMode": "code",
+          "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"user\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
           "legendFormat": "Busy User",
+          "range": true,
           "refId": "B",
           "step": 240
         },
@@ -1445,10 +1270,12 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode='iowait',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "editorMode": "code",
+          "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"iowait\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Busy Iowait",
+          "range": true,
           "refId": "C",
           "step": 240
         },
@@ -1457,10 +1284,12 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "sum by (instance)(rate(node_cpu_seconds_total{mode=~\".*irq\",instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "editorMode": "code",
+          "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=~\".*irq\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Busy IRQs",
+          "range": true,
           "refId": "D",
           "step": 240
         },
@@ -1469,10 +1298,12 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "sum (rate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "editorMode": "code",
+          "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Busy Other",
+          "range": true,
           "refId": "E",
           "step": 240
         },
@@ -1481,10 +1312,12 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+          "editorMode": "code",
+          "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"idle\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Idle",
+          "range": true,
           "refId": "F",
           "step": 240
         }
@@ -2455,7 +2288,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "rate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+          "expr": "irate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "recv {{device}}",
@@ -2467,7 +2300,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "rate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+          "expr": "irate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "trans {{device}} ",
@@ -2582,7 +2415,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -2610,15 +2443,15 @@
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "drawStyle": "line",
-                "fillOpacity": 40,
+                "fillOpacity": 70,
                 "gradientMode": "none",
                 "hideFrom": {
                   "legend": false,
                   "tooltip": false,
                   "viz": false
                 },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
+                "lineInterpolation": "smooth",
+                "lineWidth": 2,
                 "pointSize": 5,
                 "scaleDistribution": {
                   "type": "linear"
@@ -2635,13 +2468,13 @@
               },
               "links": [],
               "mappings": [],
-              "max": 100,
               "min": 0,
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2649,7 +2482,7 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "percentunit"
             },
             "overrides": [
               {
@@ -2670,37 +2503,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "guest"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "#9AC48A",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "idle"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "#052B51",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "iowait"
+                  "options": "Iowait - Waiting for I/O to complete"
                 },
                 "properties": [
                   {
@@ -2715,7 +2518,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "irq"
+                  "options": "Irq - Servicing interrupts"
                 },
                 "properties": [
                   {
@@ -2730,7 +2533,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "nice"
+                  "options": "Nice - Niced processes executing in user mode"
                 },
                 "properties": [
                   {
@@ -2745,7 +2548,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "softirq"
+                  "options": "Softirq - Servicing softirqs"
                 },
                 "properties": [
                   {
@@ -2760,7 +2563,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "steal"
+                  "options": "Steal - Time spent in other operating systems when running in a virtualized environment"
                 },
                 "properties": [
                   {
@@ -2775,7 +2578,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "system"
+                  "options": "System - Processes executing in kernel mode"
                 },
                 "properties": [
                   {
@@ -2790,7 +2593,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "user"
+                  "options": "User - Normal processes executing in user mode"
                 },
                 "properties": [
                   {
@@ -2808,7 +2611,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 21
+            "y": 7
           },
           "id": 3,
           "links": [],
@@ -2827,7 +2630,7 @@
             },
             "tooltip": {
               "mode": "multi",
-              "sort": "none"
+              "sort": "desc"
             }
           },
           "pluginVersion": "9.2.0",
@@ -2837,11 +2640,13 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode=\"system\",instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "editorMode": "code",
+              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"system\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
               "format": "time_series",
-              "interval": "10s",
+              "interval": "",
               "intervalFactor": 1,
               "legendFormat": "System - Processes executing in kernel mode",
+              "range": true,
               "refId": "A",
               "step": 240
             },
@@ -2850,10 +2655,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='user',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "editorMode": "code",
+              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"user\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "User - Normal processes executing in user mode",
+              "range": true,
               "refId": "B",
               "step": 240
             },
@@ -2862,10 +2669,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='nice',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "editorMode": "code",
+              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"nice\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Nice - Niced processes executing in user mode",
+              "range": true,
               "refId": "C",
               "step": 240
             },
@@ -2874,10 +2683,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='iowait',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "editorMode": "code",
+              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"iowait\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Iowait - Waiting for I/O to complete",
+              "range": true,
               "refId": "E",
               "step": 240
             },
@@ -2886,10 +2697,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='irq',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "editorMode": "code",
+              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"irq\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Irq - Servicing interrupts",
+              "range": true,
               "refId": "F",
               "step": 240
             },
@@ -2898,10 +2711,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='softirq',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "editorMode": "code",
+              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"softirq\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Softirq - Servicing softirqs",
+              "range": true,
               "refId": "G",
               "step": 240
             },
@@ -2910,10 +2725,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='steal',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "editorMode": "code",
+              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"steal\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Steal - Time spent in other operating systems when running in a virtualized environment",
+              "range": true,
               "refId": "H",
               "step": 240
             },
@@ -2922,23 +2739,13 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='guest',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
-              "format": "time_series",
-              "intervalFactor": 1,
-              "legendFormat": "Guest - Time spent running a virtual CPU for a guest operating system",
-              "refId": "I",
-              "step": 240
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "expr": "sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100",
+              "editorMode": "code",
+              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"idle\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
               "legendFormat": "Idle - Waiting for something to happen",
+              "range": true,
               "refId": "J",
               "step": 240
             }
@@ -2994,7 +2801,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3311,7 +3119,7 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 21
+            "y": 7
           },
           "id": 24,
           "links": [],
@@ -3501,7 +3309,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3590,7 +3399,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 33
+            "y": 19
           },
           "id": 84,
           "links": [],
@@ -3618,7 +3427,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+              "expr": "irate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Receive",
@@ -3630,7 +3439,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+              "expr": "irate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Transmit",
@@ -3689,7 +3498,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3705,7 +3515,7 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 33
+            "y": 19
           },
           "id": 156,
           "links": [],
@@ -3791,7 +3601,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4135,7 +3946,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 45
+            "y": 31
           },
           "id": 229,
           "links": [],
@@ -4163,7 +3974,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+              "expr": "irate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - Reads completed",
               "refId": "A",
@@ -4174,7 +3985,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+              "expr": "irate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Writes completed",
               "refId": "B",
@@ -4231,7 +4042,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4362,7 +4174,7 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 45
+            "y": 31
           },
           "id": 42,
           "links": [],
@@ -4390,7 +4202,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+              "expr": "irate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -4403,7 +4215,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+              "expr": "irate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -4463,7 +4275,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4507,7 +4320,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 57
+            "y": 43
           },
           "id": 127,
           "links": [],
@@ -4535,7 +4348,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"} [$__rate_interval])",
+              "expr": "irate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"} [$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -4547,13 +4360,156 @@
           ],
           "title": "I/O Utilization",
           "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "percentage",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "bars",
+                "fillOpacity": 70,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "smooth",
+                "lineWidth": 2,
+                "pointSize": 3,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "max": 1,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "percentunit"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/^Guest - /"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "#5195ce",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/^GuestNice - /"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "#c15c17",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 12,
+            "w": 12,
+            "x": 12,
+            "y": 43
+          },
+          "id": 319,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "sum by(instance) (irate(node_cpu_guest_seconds_total{instance=\"$node\",job=\"$job\", mode=\"user\"}[1m])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[1m])))",
+              "hide": false,
+              "legendFormat": "Guest - Time spent running a virtual CPU for a guest operating system",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "sum by(instance) (irate(node_cpu_guest_seconds_total{instance=\"$node\",job=\"$job\", mode=\"nice\"}[1m])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[1m])))",
+              "hide": false,
+              "legendFormat": "GuestNice - Time spent running a niced guest  (virtual CPU for guest operating system)",
+              "range": true,
+              "refId": "B"
+            }
+          ],
+          "title": "CPU spent seconds in guests (VMs)",
+          "type": "timeseries"
         }
       ],
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -4565,7 +4521,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -4894,7 +4850,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 22
+            "y": 38
           },
           "id": 136,
           "links": [],
@@ -5284,7 +5240,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 22
+            "y": 38
           },
           "id": 135,
           "links": [],
@@ -5655,7 +5611,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 32
+            "y": 48
           },
           "id": 191,
           "links": [],
@@ -6084,7 +6040,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 32
+            "y": 48
           },
           "id": 130,
           "links": [],
@@ -6490,7 +6446,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 42
+            "y": 58
           },
           "id": 138,
           "links": [],
@@ -6917,7 +6873,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 42
+            "y": 58
           },
           "id": 131,
           "links": [],
@@ -7302,7 +7258,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 52
+            "y": 68
           },
           "id": 70,
           "links": [],
@@ -7687,7 +7643,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 52
+            "y": 68
           },
           "id": 159,
           "links": [],
@@ -8073,7 +8029,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 62
+            "y": 78
           },
           "id": 129,
           "links": [],
@@ -8443,7 +8399,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 62
+            "y": 78
           },
           "id": 160,
           "links": [],
@@ -8830,7 +8786,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 72
+            "y": 88
           },
           "id": 140,
           "links": [],
@@ -9226,7 +9182,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 72
+            "y": 88
           },
           "id": 71,
           "links": [],
@@ -9610,7 +9566,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 82
+            "y": 98
           },
           "id": 128,
           "links": [],
@@ -9993,7 +9949,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 82
+            "y": 98
           },
           "id": 137,
           "links": [],
@@ -10394,7 +10350,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 92
+            "y": 108
           },
           "id": 132,
           "links": [],
@@ -10438,7 +10394,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -10450,7 +10406,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -10535,7 +10491,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 9
+            "y": 25
           },
           "id": 176,
           "links": [],
@@ -10563,7 +10519,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_vmstat_pgpgin{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_vmstat_pgpgin{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pagesin - Page in operations",
@@ -10575,7 +10531,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_vmstat_pgpgout{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_vmstat_pgpgout{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pagesout - Page out operations",
@@ -10661,7 +10617,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 9
+            "y": 25
           },
           "id": 22,
           "links": [],
@@ -10689,7 +10645,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_vmstat_pswpin{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_vmstat_pswpin{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pswpin - Pages swapped in",
@@ -10701,7 +10657,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_vmstat_pswpout{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_vmstat_pswpout{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pswpout - Pages swapped out",
@@ -11050,7 +11006,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 19
+            "y": 35
           },
           "id": 175,
           "links": [],
@@ -11079,7 +11035,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_vmstat_pgfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_vmstat_pgfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pgfault - Page major and minor fault operations",
@@ -11091,7 +11047,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_vmstat_pgmajfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_vmstat_pgmajfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pgmajfault - Major page fault operations",
@@ -11103,7 +11059,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_vmstat_pgfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])  - rate(node_vmstat_pgmajfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_vmstat_pgfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])  - irate(node_vmstat_pgmajfault{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Pgminfault - Minor page fault operations",
@@ -11463,7 +11419,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 19
+            "y": 35
           },
           "id": 307,
           "links": [],
@@ -11491,7 +11447,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_vmstat_oom_kill{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_vmstat_oom_kill{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -11508,7 +11464,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -11520,7 +11476,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -11609,7 +11565,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 24
+            "y": 40
           },
           "id": 260,
           "links": [],
@@ -11741,7 +11697,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 24
+            "y": 40
           },
           "id": 291,
           "links": [],
@@ -11860,7 +11816,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 34
+            "y": 50
           },
           "id": 168,
           "links": [],
@@ -11976,7 +11932,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 34
+            "y": 50
           },
           "id": 294,
           "links": [],
@@ -12034,7 +11990,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -12046,7 +12002,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -12119,7 +12075,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 11
+            "y": 27
           },
           "id": 62,
           "links": [],
@@ -12233,7 +12189,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 11
+            "y": 27
           },
           "id": 315,
           "links": [],
@@ -12336,7 +12292,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 21
+            "y": 37
           },
           "id": 148,
           "links": [],
@@ -12364,7 +12320,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_forks_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_forks_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -12452,7 +12408,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 21
+            "y": 37
           },
           "id": 149,
           "links": [],
@@ -12480,7 +12436,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(process_virtual_memory_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(process_virtual_memory_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
@@ -12506,7 +12462,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(process_virtual_memory_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(process_virtual_memory_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
@@ -12519,7 +12475,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(process_virtual_memory_max_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(process_virtual_memory_max_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
@@ -12614,7 +12570,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 31
+            "y": 47
           },
           "id": 313,
           "links": [],
@@ -12742,7 +12698,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 31
+            "y": 47
           },
           "id": 305,
           "links": [],
@@ -12770,7 +12726,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_schedstat_running_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_schedstat_running_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12783,7 +12739,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -12878,7 +12834,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 41
+            "y": 57
           },
           "id": 314,
           "links": [],
@@ -12936,7 +12892,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -12948,7 +12904,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -13005,8 +12961,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13022,7 +12977,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 26
+            "y": 42
           },
           "id": 8,
           "links": [],
@@ -13050,7 +13005,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_context_switches_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_context_switches_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Context switches",
@@ -13062,7 +13017,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_intr_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_intr_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -13121,8 +13076,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13138,7 +13092,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 26
+            "y": 42
           },
           "id": 7,
           "links": [],
@@ -13248,8 +13202,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13304,7 +13257,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 36
+            "y": 52
           },
           "id": 259,
           "links": [],
@@ -13332,7 +13285,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13390,8 +13343,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13407,7 +13359,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 36
+            "y": 52
           },
           "id": 306,
           "links": [],
@@ -13435,7 +13387,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_schedstat_timeslices_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_schedstat_timeslices_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13494,8 +13446,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13511,7 +13462,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 46
+            "y": 62
           },
           "id": 151,
           "links": [],
@@ -13596,8 +13547,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13613,7 +13563,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 46
+            "y": 62
           },
           "id": 308,
           "links": [],
@@ -13641,7 +13591,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(process_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(process_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -13700,8 +13650,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13737,7 +13686,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 56
+            "y": 72
           },
           "id": 64,
           "links": [],
@@ -13793,7 +13742,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -13805,7 +13754,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -13862,8 +13811,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13918,7 +13866,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 27
+            "y": 43
           },
           "id": 158,
           "links": [],
@@ -14059,8 +14007,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -14096,7 +14043,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 27
+            "y": 43
           },
           "id": 300,
           "links": [],
@@ -14196,8 +14143,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -14213,7 +14159,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 37
+            "y": 53
           },
           "id": 302,
           "links": [],
@@ -14259,7 +14205,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -14271,7 +14217,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -14344,7 +14290,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 14
+            "y": 30
           },
           "id": 297,
           "links": [],
@@ -14372,7 +14318,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_systemd_socket_accepted_connections_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_systemd_socket_accepted_connections_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -14522,7 +14468,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 14
+            "y": 30
           },
           "id": 298,
           "links": [],
@@ -14619,7 +14565,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -14631,7 +14577,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -15017,7 +14963,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 15
+            "y": 31
           },
           "id": 9,
           "links": [],
@@ -15045,7 +14991,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - Reads completed",
               "refId": "A",
@@ -15056,7 +15002,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Writes completed",
               "refId": "B",
@@ -15442,7 +15388,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 15
+            "y": 31
           },
           "id": 33,
           "links": [],
@@ -15470,7 +15416,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - Read bytes",
@@ -15482,7 +15428,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Written bytes",
@@ -15869,7 +15815,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 25
+            "y": 41
           },
           "id": 37,
           "links": [],
@@ -15897,7 +15843,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_read_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / rate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_disk_read_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / irate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "hide": false,
               "interval": "",
               "intervalFactor": 4,
@@ -15910,7 +15856,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_write_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / rate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_disk_write_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / irate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
@@ -16287,7 +16233,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 25
+            "y": 41
           },
           "id": 35,
           "links": [],
@@ -16315,7 +16261,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_io_time_weighted_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_disk_io_time_weighted_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "interval": "",
               "intervalFactor": 4,
               "legendFormat": "{{device}}",
@@ -16702,7 +16648,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 35
+            "y": 51
           },
           "id": 133,
           "links": [],
@@ -16730,7 +16676,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_reads_merged_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_disk_reads_merged_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Read merged",
               "refId": "A",
@@ -16741,7 +16687,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_writes_merged_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_disk_writes_merged_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Write merged",
               "refId": "B",
@@ -17116,7 +17062,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 35
+            "y": 51
           },
           "id": 36,
           "links": [],
@@ -17144,7 +17090,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "interval": "",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - IO",
@@ -17156,7 +17102,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_discard_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_disk_discard_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "interval": "",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - discard",
@@ -17532,7 +17478,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 45
+            "y": 61
           },
           "id": 34,
           "links": [],
@@ -17935,7 +17881,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 45
+            "y": 61
           },
           "id": 301,
           "links": [],
@@ -17963,7 +17909,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_discards_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_disk_discards_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "interval": "",
               "intervalFactor": 4,
               "legendFormat": "{{device}} - Discards completed",
@@ -17975,7 +17921,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_disk_discards_merged_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_disk_discards_merged_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Discards merged",
@@ -17991,7 +17937,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -18003,7 +17949,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -18061,8 +18007,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -18078,7 +18023,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 30
+            "y": 46
           },
           "id": 43,
           "links": [],
@@ -18193,8 +18138,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -18210,7 +18154,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 30
+            "y": 46
           },
           "id": 41,
           "links": [],
@@ -18298,8 +18242,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -18315,7 +18258,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 40
+            "y": 56
           },
           "id": 28,
           "links": [],
@@ -18414,8 +18357,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -18431,7 +18373,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 40
+            "y": 56
           },
           "id": 219,
           "links": [],
@@ -18520,8 +18462,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -18553,7 +18494,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 50
+            "y": 66
           },
           "id": 44,
           "links": [],
@@ -18610,7 +18551,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -18622,7 +18563,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -18767,7 +18708,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 17
+            "y": 33
           },
           "id": 60,
           "links": [],
@@ -18796,7 +18737,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_receive_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_receive_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -18809,7 +18750,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_transmit_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_transmit_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -18896,7 +18837,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 17
+            "y": 33
           },
           "id": 142,
           "links": [],
@@ -18925,7 +18866,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_receive_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_receive_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Receive errors",
@@ -18937,7 +18878,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_transmit_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_transmit_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Rransmit errors",
@@ -19023,7 +18964,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 27
+            "y": 43
           },
           "id": 143,
           "links": [],
@@ -19052,7 +18993,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_receive_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_receive_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Receive drop",
@@ -19064,7 +19005,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_transmit_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_transmit_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Transmit drop",
@@ -19150,7 +19091,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 27
+            "y": 43
           },
           "id": 141,
           "links": [],
@@ -19179,7 +19120,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_receive_compressed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_receive_compressed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Receive compressed",
@@ -19191,7 +19132,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_transmit_compressed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_transmit_compressed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Transmit compressed",
@@ -19277,7 +19218,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 37
+            "y": 53
           },
           "id": 146,
           "links": [],
@@ -19306,7 +19247,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_receive_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_receive_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Receive multicast",
@@ -19392,7 +19333,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 37
+            "y": 53
           },
           "id": 144,
           "links": [],
@@ -19421,7 +19362,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_receive_fifo_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_receive_fifo_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Receive fifo",
@@ -19433,7 +19374,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_transmit_fifo_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_transmit_fifo_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Transmit fifo",
@@ -19519,7 +19460,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 47
+            "y": 63
           },
           "id": 145,
           "links": [],
@@ -19548,7 +19489,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_receive_frame_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_receive_frame_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -19622,7 +19563,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 47
+            "y": 63
           },
           "id": 231,
           "links": [],
@@ -19651,7 +19592,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_transmit_carrier_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_transmit_carrier_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Statistic transmit_carrier",
@@ -19737,7 +19678,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 57
+            "y": 73
           },
           "id": 232,
           "links": [],
@@ -19766,7 +19707,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_network_transmit_colls_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_network_transmit_colls_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Transmit colls",
@@ -19860,7 +19801,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 57
+            "y": 73
           },
           "id": 61,
           "links": [],
@@ -19974,7 +19915,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 67
+            "y": 83
           },
           "id": 230,
           "links": [],
@@ -20077,7 +20018,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 67
+            "y": 83
           },
           "id": 288,
           "links": [],
@@ -20180,7 +20121,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 77
+            "y": 93
           },
           "id": 280,
           "links": [],
@@ -20283,7 +20224,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 77
+            "y": 93
           },
           "id": 289,
           "links": [],
@@ -20397,7 +20338,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 87
+            "y": 103
           },
           "id": 290,
           "links": [],
@@ -20426,7 +20367,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_softnet_processed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_softnet_processed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -20439,7 +20380,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_softnet_dropped_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_softnet_dropped_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -20513,7 +20454,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 87
+            "y": 103
           },
           "id": 310,
           "links": [],
@@ -20542,7 +20483,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_softnet_times_squeezed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_softnet_times_squeezed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -20616,7 +20557,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 97
+            "y": 113
           },
           "id": 309,
           "links": [],
@@ -20672,7 +20613,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -20684,7 +20625,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -20741,8 +20682,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -20758,7 +20698,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 32
+            "y": 48
           },
           "id": 63,
           "links": [],
@@ -20899,8 +20839,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -20916,7 +20855,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 32
+            "y": 48
           },
           "id": 124,
           "links": [],
@@ -21030,8 +20969,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -21047,7 +20985,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 42
+            "y": 58
           },
           "id": 125,
           "links": [],
@@ -21148,8 +21086,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -21165,7 +21102,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 42
+            "y": 58
           },
           "id": 220,
           "links": [],
@@ -21293,7 +21230,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 52
+            "y": 68
           },
           "id": 126,
           "links": [],
@@ -21339,7 +21276,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -21351,7 +21288,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -21407,8 +21344,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -21437,7 +21373,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 33
+            "y": 49
           },
           "id": 221,
           "links": [],
@@ -21466,7 +21402,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_IpExt_InOctets{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_IpExt_InOctets{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -21479,7 +21415,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_IpExt_OutOctets{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_IpExt_OutOctets{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "OutOctets - Sent octets",
@@ -21537,8 +21473,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -21554,7 +21489,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 33
+            "y": 49
           },
           "id": 81,
           "links": [],
@@ -21583,7 +21518,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Ip_Forwarding{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Ip_Forwarding{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -21641,8 +21576,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -21671,7 +21605,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 43
+            "y": 59
           },
           "id": 115,
           "links": [],
@@ -21699,7 +21633,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Icmp_InMsgs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Icmp_InMsgs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -21712,7 +21646,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Icmp_OutMsgs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Icmp_OutMsgs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -21770,8 +21704,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -21800,7 +21733,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 43
+            "y": 59
           },
           "id": 50,
           "links": [],
@@ -21828,7 +21761,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Icmp_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Icmp_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -21927,7 +21860,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 53
+            "y": 69
           },
           "id": 55,
           "links": [],
@@ -21955,7 +21888,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Udp_InDatagrams{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Udp_InDatagrams{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -21968,7 +21901,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Udp_OutDatagrams{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Udp_OutDatagrams{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -22042,7 +21975,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 53
+            "y": 69
           },
           "id": 109,
           "links": [],
@@ -22070,7 +22003,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Udp_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Udp_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -22083,7 +22016,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Udp_NoPorts{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Udp_NoPorts{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -22096,7 +22029,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_UdpLite_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_UdpLite_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "InErrors Lite - UDPLite Datagrams that could not be delivered to an application",
               "refId": "C"
@@ -22106,7 +22039,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Udp_RcvbufErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Udp_RcvbufErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -22119,7 +22052,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Udp_SndbufErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Udp_SndbufErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -22218,7 +22151,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 63
+            "y": 79
           },
           "id": 299,
           "links": [],
@@ -22246,7 +22179,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Tcp_InSegs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Tcp_InSegs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "instant": false,
               "interval": "",
@@ -22260,7 +22193,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Tcp_OutSegs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Tcp_OutSegs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -22336,7 +22269,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 63
+            "y": 79
           },
           "id": 104,
           "links": [],
@@ -22364,7 +22297,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_TcpExt_ListenOverflows{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_TcpExt_ListenOverflows{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -22378,7 +22311,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_TcpExt_ListenDrops{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_TcpExt_ListenDrops{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -22392,7 +22325,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_TcpExt_TCPSynRetrans{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_TcpExt_TCPSynRetrans{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -22405,7 +22338,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Tcp_RetransSegs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Tcp_RetransSegs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "RetransSegs - Segments retransmitted - that is, the number of TCP segments transmitted containing one or more previously transmitted octets",
               "refId": "D"
@@ -22415,7 +22348,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Tcp_InErrs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Tcp_InErrs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "InErrs - Segments received in error (e.g., bad TCP checksums)",
               "refId": "E"
@@ -22425,7 +22358,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Tcp_OutRsts{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Tcp_OutRsts{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "OutRsts - Segments sent with RST flag",
               "refId": "F"
@@ -22517,7 +22450,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 73
+            "y": 89
           },
           "id": 85,
           "links": [],
@@ -22648,7 +22581,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 73
+            "y": 89
           },
           "id": 91,
           "links": [],
@@ -22676,7 +22609,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_TcpExt_SyncookiesFailed{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_TcpExt_SyncookiesFailed{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -22690,7 +22623,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_TcpExt_SyncookiesRecv{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_TcpExt_SyncookiesRecv{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -22704,7 +22637,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_TcpExt_SyncookiesSent{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_TcpExt_SyncookiesSent{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -22780,7 +22713,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 83
+            "y": 99
           },
           "id": 82,
           "links": [],
@@ -22808,7 +22741,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Tcp_ActiveOpens{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Tcp_ActiveOpens{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -22821,7 +22754,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "rate(node_netstat_Tcp_PassiveOpens{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "irate(node_netstat_Tcp_PassiveOpens{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -22838,7 +22771,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -22850,7 +22783,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -22907,8 +22840,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -22924,7 +22856,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 34
+            "y": 50
           },
           "id": 40,
           "links": [],
@@ -23015,8 +22947,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -23052,7 +22983,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 34
+            "y": 50
           },
           "id": 157,
           "links": [],
@@ -23112,7 +23043,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${DS_PROMETHEUS}"
           },
           "refId": "A"
         }
@@ -23121,7 +23052,7 @@
       "type": "row"
     }
   ],
-  "refresh": "1m",
+  "refresh": false,
   "schemaVersion": 37,
   "style": "dark",
   "tags": [
@@ -23254,6 +23185,6 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 73,
+  "version": 9,
   "weekStart": ""
 }
