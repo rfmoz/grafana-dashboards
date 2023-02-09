@@ -62,16 +62,6 @@
           "type": "dashboard"
         },
         "type": "dashboard"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
-        },
-        "enable": true,
-        "expr": "changes(node_boot_time_seconds{instance=\"$node\"}[$__rate_interval])",
-        "iconColor": "red",
-        "name": "Reboot"
       }
     ]
   },
