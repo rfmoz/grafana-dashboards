@@ -541,7 +541,7 @@
           "refId": "A"
         }
       ],
-      "title": "Incomming Requests",
+      "title": "Incoming Requests",
       "type": "timeseries"
     },
     {
@@ -1856,7 +1856,7 @@
               },
               "expr": "sum by (instance, view)(irate(bind_resolver_dnssec_validation_success_total{instance=~\"$host:$port\",view=~\"$view\"}[5m]))",
               "interval": "",
-              "legendFormat": "Sucess {{ view }}",
+              "legendFormat": "Success {{ view }}",
               "refId": "A"
             }
           ],

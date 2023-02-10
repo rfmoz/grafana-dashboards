@@ -13130,7 +13130,7 @@
               "expr": "haproxy_process_max_sockets{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
-              "legendFormat": "Maximum numer of open sockets",
+              "legendFormat": "Maximum number of open sockets",
               "metric": "",
               "refId": "B",
               "step": 240
