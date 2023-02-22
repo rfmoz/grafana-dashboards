@@ -13270,7 +13270,6 @@
               "custom": {
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "counter",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "drawStyle": "line",
@@ -13467,7 +13466,7 @@
               "step": 240
             }
           ],
-          "title": "CPU Frequency scaling",
+          "title": "CPU Frequency Scaling",
           "type": "timeseries"
         },
         {
