@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.2.3"
+      "version": "9.4.3"
     },
     {
       "type": "datasource",
@@ -181,7 +181,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "9.4.3",
       "targets": [
         {
           "datasource": {
@@ -266,7 +266,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "9.4.3",
       "targets": [
         {
           "datasource": {
@@ -349,7 +349,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "9.4.3",
       "targets": [
         {
           "datasource": {
@@ -423,7 +423,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "9.4.3",
       "targets": [
         {
           "datasource": {
@@ -518,7 +518,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "9.4.3",
       "targets": [
         {
           "datasource": {
@@ -599,7 +599,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "9.4.3",
       "targets": [
         {
           "datasource": {
@@ -678,7 +678,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "9.4.3",
       "targets": [
         {
           "datasource": {
@@ -760,7 +760,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "9.4.3",
       "targets": [
         {
           "datasource": {
@@ -843,7 +843,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "9.4.3",
       "targets": [
         {
           "datasource": {
@@ -924,7 +924,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "9.4.3",
       "targets": [
         {
           "datasource": {
@@ -1003,7 +1003,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "9.4.3",
       "targets": [
         {
           "datasource": {
@@ -2473,8 +2473,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2801,8 +2800,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3309,8 +3307,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3498,8 +3495,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3601,8 +3597,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -4042,8 +4037,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -4275,8 +4269,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -4407,8 +4400,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -18619,7 +18611,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -18708,7 +18701,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 33
+            "y": 31
           },
           "id": 60,
           "links": [],
@@ -18808,7 +18801,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -18837,7 +18831,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 33
+            "y": 31
           },
           "id": 142,
           "links": [],
@@ -18935,7 +18929,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -18964,7 +18959,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 43
+            "y": 41
           },
           "id": 143,
           "links": [],
@@ -19062,7 +19057,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -19091,7 +19087,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 43
+            "y": 41
           },
           "id": 141,
           "links": [],
@@ -19189,7 +19185,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -19218,7 +19215,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 53
+            "y": 51
           },
           "id": 146,
           "links": [],
@@ -19304,7 +19301,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -19333,7 +19331,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 53
+            "y": 51
           },
           "id": 144,
           "links": [],
@@ -19431,7 +19429,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -19460,7 +19459,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 63
+            "y": 61
           },
           "id": 145,
           "links": [],
@@ -19547,7 +19546,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -19563,7 +19563,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 63
+            "y": 61
           },
           "id": 231,
           "links": [],
@@ -19649,7 +19649,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -19678,7 +19679,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 73
+            "y": 71
           },
           "id": 232,
           "links": [],
@@ -19765,7 +19766,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -19801,7 +19803,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 73
+            "y": 71
           },
           "id": 61,
           "links": [],
@@ -19899,7 +19901,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -19915,7 +19918,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 83
+            "y": 81
           },
           "id": 230,
           "links": [],
@@ -20002,7 +20005,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -20018,7 +20022,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 83
+            "y": 81
           },
           "id": 288,
           "links": [],
@@ -20105,7 +20109,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -20121,7 +20126,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 93
+            "y": 91
           },
           "id": 280,
           "links": [],
@@ -20208,7 +20213,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -20224,7 +20230,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 93
+            "y": 91
           },
           "id": 289,
           "links": [],
@@ -20309,7 +20315,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -20338,7 +20345,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 103
+            "y": 101
           },
           "id": 290,
           "links": [],
@@ -20438,7 +20445,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -20454,7 +20462,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 103
+            "y": 101
           },
           "id": 310,
           "links": [],
@@ -20541,7 +20549,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -20557,7 +20566,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 113
+            "y": 111
           },
           "id": 309,
           "links": [],
@@ -20682,7 +20691,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -20698,7 +20708,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 48
+            "y": 32
           },
           "id": 63,
           "links": [],
@@ -20839,7 +20849,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -20855,7 +20866,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 48
+            "y": 32
           },
           "id": 124,
           "links": [],
@@ -20969,7 +20980,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -20985,7 +20997,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 58
+            "y": 42
           },
           "id": 125,
           "links": [],
@@ -21086,7 +21098,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -21102,7 +21115,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 58
+            "y": 42
           },
           "id": 220,
           "links": [],
@@ -21214,7 +21227,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -21230,7 +21244,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 68
+            "y": 52
           },
           "id": 126,
           "links": [],
@@ -21344,7 +21358,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -21373,7 +21388,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 49
+            "y": 33
           },
           "id": 221,
           "links": [],
@@ -21473,7 +21488,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -21489,7 +21505,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 49
+            "y": 33
           },
           "id": 81,
           "links": [],
@@ -21576,7 +21592,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -21605,7 +21622,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 59
+            "y": 43
           },
           "id": 115,
           "links": [],
@@ -21704,7 +21721,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -21733,7 +21751,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 59
+            "y": 43
           },
           "id": 50,
           "links": [],
@@ -21819,7 +21837,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -21860,7 +21879,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 69
+            "y": 53
           },
           "id": 55,
           "links": [],
@@ -21959,7 +21978,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -21975,7 +21995,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 69
+            "y": 53
           },
           "id": 109,
           "links": [],
@@ -22110,7 +22130,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -22151,7 +22172,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 79
+            "y": 63
           },
           "id": 299,
           "links": [],
@@ -22253,7 +22274,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -22269,7 +22291,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 79
+            "y": 63
           },
           "id": 104,
           "links": [],
@@ -22414,7 +22436,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -22450,7 +22473,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 89
+            "y": 73
           },
           "id": 85,
           "links": [],
@@ -22552,7 +22575,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -22581,7 +22605,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 89
+            "y": 73
           },
           "id": 91,
           "links": [],
@@ -22697,7 +22721,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -22713,7 +22738,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 99
+            "y": 83
           },
           "id": 82,
           "links": [],
@@ -22764,6 +22789,157 @@
             }
           ],
           "title": "TCP Direct Transition",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Enable with --collector.tcpstat argument on node-exporter",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "connections",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 83
+          },
+          "id": 320,
+          "links": [],
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "9.2.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "node_tcp_connection_states{state=\"established\",instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "established - TCP sockets in established state",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "node_tcp_connection_states{state=\"fin_wait2\",instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "hide": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "fin_wait2 - TCP sockets in fin_wait2 state",
+              "range": true,
+              "refId": "B",
+              "step": 240
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "node_tcp_connection_states{state=\"listen\",instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "hide": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "listen - TCP sockets in listen state",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "node_tcp_connection_states{state=\"time_wait\",instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "hide": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "time_wait - TCP sockets in time_wait state",
+              "range": true,
+              "refId": "D",
+              "step": 240
+            }
+          ],
+          "title": "TCP Stat",
           "type": "timeseries"
         }
       ],
@@ -23052,8 +23228,9 @@
       "type": "row"
     }
   ],
-  "refresh": false,
-  "schemaVersion": 37,
+  "refresh": "",
+  "revision": 1,
+  "schemaVersion": 38,
   "style": "dark",
   "tags": [
     "linux"
@@ -23185,6 +23362,6 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 9,
+  "version": 82,
   "weekStart": ""
 }
