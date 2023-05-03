@@ -95,5 +95,5 @@ On Grafana, it only requires a configured target under any job_name. For example
   - job_name: 'bind'
     static_configs:
         - targets:
-           - server_hostname:9119
+           - server_hostname:9000
 ```
