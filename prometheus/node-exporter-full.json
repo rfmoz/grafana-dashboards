@@ -23290,7 +23290,7 @@
         "definition": "label_values(node_uname_info{job=\"$job\"}, instance)",
         "hide": 0,
         "includeAll": false,
-        "label": "Host:",
+        "label": "Host",
         "multi": false,
         "name": "node",
         "options": [],
