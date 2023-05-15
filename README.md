@@ -9,7 +9,7 @@ For node_exporter
 Monitor Linux system.
 
 Only requires the default job_name: node, add as many targets as you need in '/etc/prometheus/prometheus.yml'.
-
+ddc
 
 ```
   - job_name: node
