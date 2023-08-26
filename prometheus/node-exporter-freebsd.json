@@ -5101,10 +5101,32 @@
   "refresh": "",
   "schemaVersion": 37,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "freebsd"
+  ],
   "templating": {
     "list": [
       {
+        "current": {
+          "selected": false,
+          "text": "default",
+          "value": "default"
+        },
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "datasource",
+        "multi": false,
+        "name": "DS_PROMETHEUS",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
+        "allValue": null,
         "current": {},
         "datasource": {
           "type": "prometheus",
