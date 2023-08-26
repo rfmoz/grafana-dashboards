@@ -59,11 +59,9 @@ Only requires a configured target under any job_name.
 
 ### Apache Full
 
-For apache_exporter
-
 Monitor Apache service.
 
-Only requires a configured target under any job_name.
+Moved to https://github.com/grafana/jsonnet-libs
 
 
 
