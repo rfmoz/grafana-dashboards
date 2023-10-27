@@ -14374,11 +14374,11 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "node_hwmon_temp_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_celsius{instance=\"$node\",job=\"$job\"} * on(chip) group_left(chip_name) node_hwmon_chip_names",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{ chip }} {{ sensor }} temp",
+              "legendFormat": "{{ chip_name }} {{ sensor }} temp",
               "refId": "A",
               "step": 240
             },
@@ -14387,12 +14387,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "node_hwmon_temp_crit_alarm_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_crit_alarm_celsius{instance=\"$node\",job=\"$job\"} * on(chip) group_left(chip_name) node_hwmon_chip_names",
               "format": "time_series",
               "hide": true,
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{ chip }} {{ sensor }} Critical Alarm",
+              "legendFormat": "{{ chip_name }} {{ sensor }} Critical Alarm",
               "refId": "B",
               "step": 240
             },
@@ -14401,11 +14401,11 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "node_hwmon_temp_crit_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_crit_celsius{instance=\"$node\",job=\"$job\"} * on(chip) group_left(chip_name) node_hwmon_chip_names",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{ chip }} {{ sensor }} Critical",
+              "legendFormat": "{{ chip_name }} {{ sensor }} Critical",
               "refId": "C",
               "step": 240
             },
@@ -14414,12 +14414,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "node_hwmon_temp_crit_hyst_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_crit_hyst_celsius{instance=\"$node\",job=\"$job\"} * on(chip) group_left(chip_name) node_hwmon_chip_names",
               "format": "time_series",
               "hide": true,
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{ chip }} {{ sensor }} Critical Historical",
+              "legendFormat": "{{ chip_name }} {{ sensor }} Critical Historical",
               "refId": "D",
               "step": 240
             },
@@ -14428,12 +14428,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "node_hwmon_temp_max_celsius{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_hwmon_temp_max_celsius{instance=\"$node\",job=\"$job\"} * on(chip) group_left(chip_name) node_hwmon_chip_names",
               "format": "time_series",
               "hide": true,
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{ chip }} {{ sensor }} Max",
+              "legendFormat": "{{ chip_name }} {{ sensor }} Max",
               "refId": "E",
               "step": 240
             }
