@@ -15,9 +15,9 @@ Only requires the default job_name: node, add as many targets as you need in `/e
 
 Recommended for prometheus-node-exporter the arguments `--collector.systemd` and `--collector.processes` because the graph uses some of their metrics.
 
-Notes:
-- For prometheus-node-exporter v.0.16 or older, use `node-exporter-full-old.json`
-- Thanks to the [PCP project](http://pcp.io) for document the values reported by the kernel in `/proc` (in their `/pmdas/linux/help` src file mainly).
+> - `timeInterval` in the Grafana data source has to be set accordingly to the > `scrape_interval` configured in Prometheus
+> - For prometheus-node-exporter v.0.16 or older, use `node-exporter-full-old.> json`
+> - Thanks to the [PCP project](http://pcp.io) for document the values reported > by the kernel in `/proc` (in their `/pmdas/linux/help` src file mainly).
 
 
 
