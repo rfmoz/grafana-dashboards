@@ -1,8 +1,6 @@
 # Grafana Dashboards
-Grafana dashboards
 
-
-### Node Exporter Full
+## Node Exporter Full
 
 For node_exporter
 
@@ -27,7 +25,7 @@ Thanks to the PCP project for document the values reported by the kernel in /pro
 
 
 
-### Node Exporter FreeBSD
+## Node Exporter FreeBSD
 
 For node_exporter in FreeBSD system
 
@@ -37,7 +35,7 @@ Only requires a configured target under any job_name.
 
 
 
-### Haproxy Full _deprecated_
+## Haproxy Full _deprecated_
 
 For haproxy_exporter
 
@@ -47,7 +45,7 @@ Only requires a configured target under any job_name.
 
 
 
-### Haproxy 2 Full
+## Haproxy 2 Full
 
 For Haproxy compiled with Prometheus support
 
@@ -57,7 +55,7 @@ Only requires a configured target under any job_name.
 
 
 
-### Apache Full
+## Apache Full
 
 Monitor Apache service.
 
@@ -65,7 +63,7 @@ Moved to https://github.com/grafana/jsonnet-libs
 
 
 
-### NFS Full
+## NFS Full
 
 For node_exporter
 
@@ -77,7 +75,7 @@ The same as Node Exporter Full. Only requires the default job_name: node, add as
 
 
 
-### Bind9 Full
+## Bind9 Full
 
 For prometheus-bind-exporter https://github.com/prometheus-community/bind_exporter
 
