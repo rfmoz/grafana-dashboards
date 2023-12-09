@@ -9,7 +9,7 @@ Monitor Linux system.
 Only requires the default job_name: node, add as many targets as you need in '/etc/prometheus/prometheus.yml'.
 
 
-```
+```yaml
   - job_name: node
     static_configs:
       - targets: ['localhost:9100']
@@ -81,7 +81,7 @@ For prometheus-bind-exporter https://github.com/prometheus-community/bind_export
 
 Monitor Bind9 service. Required configuration in /etc/bind/named.conf.options:
 
-```
+```c++
 statistics-channels {
   inet 127.0.0.1 port 8053 allow { 127.0.0.1; };
 };
@@ -89,7 +89,7 @@ statistics-channels {
 
 On Grafana, it only requires a configured target under any job_name. For example:
 
-```
+```yaml
   - job_name: 'bind'
     static_configs:
         - targets:
