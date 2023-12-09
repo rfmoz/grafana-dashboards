@@ -63,7 +63,7 @@ Only requires a configured target under any `job_name`.
 
 Check that the process was started with the arguments `--collector.nfs` and `--collector.nfsd`.
 
-The same as Node Exporter Full. Only requires the default job_name: node, add as many targets as you need in `/etc/prometheus/prometheus.yml`.
+The same as Node Exporter Full. Only requires the default `job_name: node`, add as many targets as you need in `/etc/prometheus/prometheus.yml`.
 
 
 
