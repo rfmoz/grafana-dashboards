@@ -2,12 +2,10 @@
 
 ## Node Exporter Full
 
-For node_exporter
-
-Monitor Linux system.
+- For node_exporter
+- Monitor Linux system.
 
 Only requires the default job_name: node, add as many targets as you need in `/etc/prometheus/prometheus.yml`.
-
 
 ```yaml
   - job_name: node
@@ -18,46 +16,41 @@ Only requires the default job_name: node, add as many targets as you need in `/e
 Recommended for prometheus-node-exporter the arguments `--collector.systemd` and `--collector.processes` because the graph uses some of their metrics.
 
 Notes:
-
-For prometheus-node-expter v.0.16 or older, use `node-exporter-full-old.json`
-
-Thanks to the [PCP project](http://pcp.io) for document the values reported by the kernel in `/proc` (in their `/pmdas/linux/help` src file mainly).
+- For prometheus-node-exporter v.0.16 or older, use `node-exporter-full-old.json`
+- Thanks to the [PCP project](http://pcp.io) for document the values reported by the kernel in `/proc` (in their `/pmdas/linux/help` src file mainly).
 
 
 
 ## Node Exporter FreeBSD
 
-For node_exporter in FreeBSD system
+- For node_exporter in FreeBSD system
+- Monitor FreeBSD system.
 
-Monitor FreeBSD system.
-
-Only requires a configured target under any job_name.
+Only requires a configured target under any `job_name`.
 
 
 
 ## Haproxy Full _(deprecated)_
 
-For haproxy_exporter
+- For haproxy_exporter
+- Monitor Haproxy service.
 
-Monitor Haproxy service.
-
-Only requires a configured target under any job_name.
+Only requires a configured target under any `job_name`.
 
 
 
 ## Haproxy 2 Full
 
-For Haproxy compiled with Prometheus support
+- For Haproxy compiled with Prometheus support
+- Monitor Haproxy service direct.
 
-Monitor Haproxy service direct.
-
-Only requires a configured target under any job_name.
+Only requires a configured target under any `job_name`.
 
 
 
 ## Apache Full
 
-Monitor Apache service.
+- Monitor Apache service.
 
 >  Moved to https://github.com/grafana/jsonnet-libs
 
@@ -65,9 +58,8 @@ Monitor Apache service.
 
 ## NFS Full
 
-For node_exporter
-
-Monitor all NFS and NFSd exported values.
+- For node_exporter
+- Monitor all NFS and NFSd exported values.
 
 Check that the process was started with the arguments `--collector.nfs` and `--collector.nfsd`.
 
@@ -77,9 +69,10 @@ The same as Node Exporter Full. Only requires the default job_name: node, add as
 
 ## BIND 9 Full
 
-For [prometheus-bind-exporter](https://github.com/prometheus-community/bind_exporter)
-
-Monitor BIND 9 service. Required configuration in `/etc/bind/named.conf.options`:
+- For [prometheus-bind-exporter](https://github.com/prometheus-community/bind_exporter)
+- Monitor BIND 9 service. 
+ 
+Required configuration in `/etc/bind/named.conf.options`:
 
 ```c++
 statistics-channels {
