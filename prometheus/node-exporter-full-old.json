@@ -3285,7 +3285,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
-              "legendFormat": "VmallocChunk - Largest contigious block of vmalloc area which is free",
+              "legendFormat": "VmallocChunk - Largest contiguous block of vmalloc area which is free",
               "refId": "H",
               "step": 10
             },
@@ -4166,7 +4166,7 @@
               "expr": "node_memory_NFS_Unstable{instance=~\"$node:$port\",job=~\"$job\"}",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "NFS Unstable - Memory in NFS pages sent to the server, but not yet commited to the storage",
+              "legendFormat": "NFS Unstable - Memory in NFS pages sent to the server, but not yet committed to the storage",
               "refId": "L",
               "step": 10
             }
@@ -10288,7 +10288,7 @@
               "expr": "irate(node_disk_bytes_written{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "{{device}} - Writeen bytes",
+              "legendFormat": "{{device}} - Written bytes",
               "refId": "B",
               "step": 10
             }
@@ -12173,7 +12173,7 @@
               "expr": "irate(node_network_transmit_errs{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "{{device}} - Rransmit errors",
+              "legendFormat": "{{device}} - Transmit errors",
               "refId": "F",
               "step": 240
             }
@@ -13656,7 +13656,7 @@
           "yaxes": [
             {
               "format": "short",
-              "label": "Octects out (-) / in (+)",
+              "label": "Octets out (-) / in (+)",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -13757,7 +13757,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Netstat IP Bcast",
+          "title": "Netstat IP Broadcast",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -13867,7 +13867,7 @@
               "expr": "irate(node_netstat_IpExt_OutBcastOctets{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "OutBcastOctets - Sent IP broadcast octects",
+              "legendFormat": "OutBcastOctets - Sent IP broadcast octets",
               "refId": "M",
               "step": 240
             }
@@ -13875,7 +13875,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Netstat IP Bcast Octets",
+          "title": "Netstat IP Broadcast Octets",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -13995,7 +13995,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Netstat IP Mcast",
+          "title": "Netstat IP Multicast",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -14115,7 +14115,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Netstat IP Mcast Octets",
+          "title": "Netstat IP Multicast Octets",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -14527,7 +14527,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Netstat IP Reasambled",
+          "title": "Netstat IP Reassembled",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -14932,7 +14932,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
-              "legendFormat": "MaxConn - Limit on the total number of TCP connections the entity can support (Dinamic is \"-1\")",
+              "legendFormat": "MaxConn - Limit on the total number of TCP connections the entity can support (Dynamic is \"-1\")",
               "refId": "H",
               "step": 600
             }
@@ -15280,7 +15280,7 @@
               "expr": "irate(node_netstat_TcpExt_TCPAbortFailed{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "TCPAbortFailed - Connections aborted without send RST due insuffient memory",
+              "legendFormat": "TCPAbortFailed - Connections aborted without send RST due insufficient memory",
               "refId": "A",
               "step": 600
             },
@@ -15750,7 +15750,7 @@
               "expr": "irate(node_netstat_TcpExt_TCPBacklogDrop{instance=~\"$node:$port\",job=~\"$job\"}[5m])",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "TCPBacklogDrop - Packets dropped bacause the socket's receive queue was full",
+              "legendFormat": "TCPBacklogDrop - Packets dropped because the socket's receive queue was full",
               "refId": "P",
               "step": 600
             },

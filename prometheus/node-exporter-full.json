@@ -19361,7 +19361,7 @@
               "expr": "irate(node_network_transmit_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "{{device}} - Rransmit errors",
+              "legendFormat": "{{device}} - Transmit errors",
               "refId": "B",
               "step": 240
             }
@@ -20329,7 +20329,7 @@
               "step": 240
             }
           ],
-          "title": "NF Contrack",
+          "title": "NF Conntrack",
           "type": "timeseries"
         },
         {
