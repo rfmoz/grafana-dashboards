@@ -12169,6 +12169,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
+          "description": "Enable with --collector.processes argument on node-exporter",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -12530,6 +12531,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
+          "description": "Enable with --collector.processes argument on node-exporter",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -12794,6 +12796,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
+          "description": "Enable with --collector.processes argument on node-exporter",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -13640,6 +13643,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
+          "description": "Enable with --collector.interrupts argument on node-exporter",
           "fieldConfig": {
             "defaults": {
               "color": {
