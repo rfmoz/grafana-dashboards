@@ -191,7 +191,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "(sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode!=\"idle\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))) * 100",
+          "expr": "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\", instance=\"$node\"}[$__rate_interval])))",
           "hide": false,
           "instant": true,
           "intervalFactor": 1,
@@ -279,7 +279,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "avg_over_time(node_load5{instance=\"$node\",job=\"$job\"}[$__rate_interval]) * 100 / on(instance) group_left sum by (instance)(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
+          "expr": "scalar(avg_over_time(node_load5{instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100 / count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\",mode=\"system\"})",
           "format": "time_series",
           "hide": false,
           "instant": true,
@@ -367,7 +367,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "avg_over_time(node_load15{instance=\"$node\",job=\"$job\"}[$__rate_interval]) * 100 / on(instance) group_left sum by (instance)(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
+          "expr": "scalar(avg_over_time(node_load15{instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100 / count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\",mode=\"system\"})",
           "hide": false,
           "instant": true,
           "intervalFactor": 1,
@@ -13243,8 +13243,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13459,8 +13458,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -23686,7 +23684,7 @@
       "type": "row"
     }
   ],
-  "refresh": "",
+  "refresh": "1m",
   "revision": 1,
   "schemaVersion": 38,
   "style": "dark",
@@ -23708,6 +23706,7 @@
         "name": "datasource",
         "options": [],
         "query": "prometheus",
+        "queryValue": "",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -23820,6 +23819,6 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 87,
+  "version": 88,
   "weekStart": ""
 }
