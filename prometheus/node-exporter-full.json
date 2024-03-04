@@ -209,7 +209,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Busy state of all CPU cores together (5 min average)",
+      "description": "System load  over all CPU cores together (5 min average)",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -279,7 +279,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "scalar(avg_over_time(node_load5{instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100 / count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\",mode=\"system\"})",
+          "expr": "scalar(node_load5{instance=\"$node\",job=\"$job\"}) * 100 / count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
           "format": "time_series",
           "hide": false,
           "instant": true,
@@ -297,7 +297,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Busy state of all CPU cores together (15 min average)",
+      "description": "System load  over all CPU cores together (15 min average)",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -367,7 +367,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "scalar(avg_over_time(node_load15{instance=\"$node\",job=\"$job\"}[$__rate_interval])) * 100 / count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\",mode=\"system\"})",
+          "expr": "scalar(node_load15{instance=\"$node\",job=\"$job\"}) * 100 / count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
           "hide": false,
           "instant": true,
           "intervalFactor": 1,
@@ -445,7 +445,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "((avg_over_time(node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval]) - avg_over_time(node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])) / (avg_over_time(node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval]) )) * 100",
+          "expr": "((node_memory_MemTotal_bytes{instance=\"$node\", job=\"$job\"} - node_memory_MemFree_bytes{instance=\"$node\", job=\"$job\"}) / node_memory_MemTotal_bytes{instance=\"$node\", job=\"$job\"}) * 100",
           "format": "time_series",
           "hide": true,
           "instant": true,
@@ -461,7 +461,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "100 - ((avg_over_time(node_memory_MemAvailable_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval]) * 100) / avg_over_time(node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
+          "expr": "(1 - (node_memory_MemAvailable_bytes{instance=\"$node\", job=\"$job\"} / node_memory_MemTotal_bytes{instance=\"$node\", job=\"$job\"})) * 100",
           "format": "time_series",
           "hide": false,
           "instant": true,
@@ -549,7 +549,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "((avg_over_time(node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval]) - avg_over_time(node_memory_SwapFree_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval])) / (avg_over_time(node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"}[$__rate_interval]) )) * 100",
+          "expr": "((node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_SwapFree_bytes{instance=\"$node\",job=\"$job\"}) / (node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"})) * 100",
           "instant": true,
           "intervalFactor": 1,
           "range": false,
@@ -635,7 +635,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "100 - ((avg_over_time(node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"}[$__rate_interval]) * 100) / avg_over_time(node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"}[$__rate_interval]))",
+          "expr": "100 - ((node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"})",
           "format": "time_series",
           "instant": true,
           "intervalFactor": 1,
@@ -717,9 +717,11 @@
             "uid": "${datasource}"
           },
           "editorMode": "code",
+          "exemplar": false,
           "expr": "count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
+          "instant": true,
           "legendFormat": "__auto",
-          "range": true,
+          "range": false,
           "refId": "A"
         }
       ],
@@ -1287,9 +1289,11 @@
             "uid": "${datasource}"
           },
           "editorMode": "code",
-          "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"system\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+          "exemplar": false,
+          "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"system\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
           "format": "time_series",
           "hide": false,
+          "instant": false,
           "intervalFactor": 1,
           "legendFormat": "Busy System",
           "range": true,
@@ -1302,7 +1306,7 @@
             "uid": "${datasource}"
           },
           "editorMode": "code",
-          "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"user\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+          "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"user\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -1317,7 +1321,7 @@
             "uid": "${datasource}"
           },
           "editorMode": "code",
-          "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"iowait\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+          "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"iowait\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Busy Iowait",
@@ -1331,7 +1335,7 @@
             "uid": "${datasource}"
           },
           "editorMode": "code",
-          "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=~\".*irq\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+          "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=~\".*irq\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Busy IRQs",
@@ -1345,7 +1349,7 @@
             "uid": "${datasource}"
           },
           "editorMode": "code",
-          "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+          "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\",  mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Busy Other",
@@ -1359,7 +1363,7 @@
             "uid": "${datasource}"
           },
           "editorMode": "code",
-          "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"idle\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+          "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"idle\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Idle",
@@ -2656,7 +2660,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 23
+            "y": 21
           },
           "id": 3,
           "links": [],
@@ -2686,7 +2690,7 @@
                 "uid": "${datasource}"
               },
               "editorMode": "code",
-              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"system\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+              "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"system\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
@@ -2701,7 +2705,7 @@
                 "uid": "${datasource}"
               },
               "editorMode": "code",
-              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"user\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+              "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"user\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "User - Normal processes executing in user mode",
@@ -2715,7 +2719,7 @@
                 "uid": "${datasource}"
               },
               "editorMode": "code",
-              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"nice\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+              "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"nice\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Nice - Niced processes executing in user mode",
@@ -2729,7 +2733,7 @@
                 "uid": "${datasource}"
               },
               "editorMode": "code",
-              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"iowait\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"iowait\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Iowait - Waiting for I/O to complete",
@@ -2743,7 +2747,7 @@
                 "uid": "${datasource}"
               },
               "editorMode": "code",
-              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"irq\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+              "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"irq\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Irq - Servicing interrupts",
@@ -2757,7 +2761,7 @@
                 "uid": "${datasource}"
               },
               "editorMode": "code",
-              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"softirq\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+              "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"softirq\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Softirq - Servicing softirqs",
@@ -2771,7 +2775,7 @@
                 "uid": "${datasource}"
               },
               "editorMode": "code",
-              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"steal\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+              "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"steal\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Steal - Time spent in other operating systems when running in a virtualized environment",
@@ -2785,7 +2789,7 @@
                 "uid": "${datasource}"
               },
               "editorMode": "code",
-              "expr": "sum by(instance) (irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"idle\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+              "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"idle\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -3163,7 +3167,7 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 23
+            "y": 21
           },
           "id": 24,
           "links": [],
@@ -3442,7 +3446,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 35
+            "y": 33
           },
           "id": 84,
           "links": [],
@@ -3557,7 +3561,7 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 35
+            "y": 33
           },
           "id": 156,
           "links": [],
@@ -3987,7 +3991,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 47
+            "y": 45
           },
           "id": 229,
           "links": [],
@@ -4214,7 +4218,7 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 47
+            "y": 45
           },
           "id": 42,
           "links": [],
@@ -4359,7 +4363,7 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 59
+            "y": 57
           },
           "id": 127,
           "links": [],
@@ -4493,7 +4497,7 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 59
+            "y": 57
           },
           "id": 319,
           "options": {
@@ -11603,7 +11607,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 56
+            "y": 24
           },
           "id": 260,
           "links": [],
@@ -11735,7 +11739,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 56
+            "y": 24
           },
           "id": 291,
           "links": [],
@@ -11854,7 +11858,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 66
+            "y": 34
           },
           "id": 168,
           "links": [],
@@ -11970,7 +11974,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 66
+            "y": 34
           },
           "id": 294,
           "links": [],
@@ -12113,7 +12117,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 43
+            "y": 73
           },
           "id": 62,
           "links": [],
@@ -12228,7 +12232,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 43
+            "y": 73
           },
           "id": 315,
           "links": [],
@@ -12331,7 +12335,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 53
+            "y": 83
           },
           "id": 148,
           "links": [],
@@ -12447,7 +12451,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 53
+            "y": 83
           },
           "id": 149,
           "links": [],
@@ -12610,7 +12614,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 63
+            "y": 93
           },
           "id": 313,
           "links": [],
@@ -12738,7 +12742,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 63
+            "y": 93
           },
           "id": 305,
           "links": [],
@@ -12875,7 +12879,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 73
+            "y": 103
           },
           "id": 314,
           "links": [],
@@ -13018,7 +13022,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 26
+            "y": 74
           },
           "id": 8,
           "links": [],
@@ -13133,7 +13137,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 26
+            "y": 74
           },
           "id": 7,
           "links": [],
@@ -13220,7 +13224,6 @@
                   "tooltip": false,
                   "viz": false
                 },
-                "insertNulls": false,
                 "lineInterpolation": "linear",
                 "lineWidth": 1,
                 "pointSize": 5,
@@ -13334,7 +13337,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 36
+            "y": 84
           },
           "id": 321,
           "links": [],
@@ -13434,7 +13437,6 @@
                   "tooltip": false,
                   "viz": false
                 },
-                "insertNulls": false,
                 "lineInterpolation": "linear",
                 "lineWidth": 1,
                 "pointSize": 5,
@@ -13535,7 +13537,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 36
+            "y": 84
           },
           "id": 322,
           "links": [],
@@ -13739,7 +13741,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 46
+            "y": 94
           },
           "id": 259,
           "links": [],
@@ -13841,7 +13843,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 46
+            "y": 94
           },
           "id": 306,
           "links": [],
@@ -13944,7 +13946,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 56
+            "y": 104
           },
           "id": 151,
           "links": [],
@@ -14045,7 +14047,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 56
+            "y": 104
           },
           "id": 308,
           "links": [],
@@ -14168,7 +14170,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 66
+            "y": 114
           },
           "id": 64,
           "links": [],
@@ -23819,6 +23821,6 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 88,
+  "version": 89,
   "weekStart": ""
 }
