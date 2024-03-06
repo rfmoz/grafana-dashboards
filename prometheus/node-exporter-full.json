@@ -13,6 +13,12 @@
   "__requires": [
     {
       "type": "panel",
+      "id": "bargauge",
+      "name": "Bar gauge",
+      "version": ""
+    },
+    {
+      "type": "panel",
       "id": "gauge",
       "name": "Gauge",
       "version": ""
@@ -121,44 +127,35 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Busy state of all CPU cores together",
+      "description": "Resource pressure via PSI",
       "fieldConfig": {
         "defaults": {
           "color": {
             "mode": "thresholds"
           },
           "decimals": 1,
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
-          "max": 100,
+          "links": [],
+          "mappings": [],
+          "max": 1,
           "min": 0,
           "thresholds": {
-            "mode": "absolute",
+            "mode": "percentage",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)",
+                "color": "green",
                 "value": null
               },
               {
-                "color": "rgba(237, 129, 40, 0.89)",
-                "value": 85
+                "color": "dark-yellow",
+                "value": 70
               },
               {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": 95
+                "color": "dark-red",
+                "value": 90
               }
             ]
           },
-          "unit": "percent"
+          "unit": "percentunit"
         },
         "overrides": []
       },
@@ -168,10 +165,13 @@
         "x": 0,
         "y": 1
       },
-      "id": 20,
+      "id": 323,
       "links": [],
       "options": {
-        "orientation": "auto",
+        "displayMode": "basic",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -179,8 +179,8 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        "showUnfilled": true,
+        "text": {}
       },
       "pluginVersion": "9.4.3",
       "targets": [
@@ -191,25 +191,59 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\", instance=\"$node\"}[$__rate_interval])))",
+          "expr": "irate(node_pressure_cpu_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+          "format": "time_series",
+          "instant": true,
+          "intervalFactor": 1,
+          "legendFormat": "CPU",
+          "range": false,
+          "refId": "CPU some",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "irate(node_pressure_memory_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+          "format": "time_series",
           "hide": false,
           "instant": true,
           "intervalFactor": 1,
-          "legendFormat": "",
+          "legendFormat": "Mem",
           "range": false,
-          "refId": "A",
+          "refId": "Memory some",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "irate(node_pressure_io_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+          "format": "time_series",
+          "hide": false,
+          "instant": true,
+          "intervalFactor": 1,
+          "legendFormat": "I/O",
+          "range": false,
+          "refId": "I/O some",
           "step": 240
         }
       ],
-      "title": "CPU Busy",
-      "type": "gauge"
+      "title": "Pressure",
+      "type": "bargauge"
     },
     {
       "datasource": {
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "System load  over all CPU cores together (5 min average)",
+      "description": "Busy state of all CPU cores together",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -256,7 +290,7 @@
         "x": 3,
         "y": 1
       },
-      "id": 155,
+      "id": 20,
       "links": [],
       "options": {
         "orientation": "auto",
@@ -279,17 +313,17 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "scalar(node_load5{instance=\"$node\",job=\"$job\"}) * 100 / count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
-          "format": "time_series",
+          "expr": "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\", instance=\"$node\"}[$__rate_interval])))",
           "hide": false,
           "instant": true,
           "intervalFactor": 1,
+          "legendFormat": "",
           "range": false,
           "refId": "A",
           "step": 240
         }
       ],
-      "title": "Sys Load (5m avg)",
+      "title": "CPU Busy",
       "type": "gauge"
     },
     {
@@ -297,7 +331,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "System load  over all CPU cores together (15 min average)",
+      "description": "System load  over all CPU cores together",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -344,7 +378,7 @@
         "x": 6,
         "y": 1
       },
-      "id": 19,
+      "id": 155,
       "links": [],
       "options": {
         "orientation": "auto",
@@ -367,7 +401,8 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "scalar(node_load15{instance=\"$node\",job=\"$job\"}) * 100 / count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
+          "expr": "scalar(node_load1{instance=\"$node\",job=\"$job\"}) * 100 / count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
+          "format": "time_series",
           "hide": false,
           "instant": true,
           "intervalFactor": 1,
@@ -376,7 +411,7 @@
           "step": 240
         }
       ],
-      "title": "Sys Load (15m avg)",
+      "title": "Sys Load",
       "type": "gauge"
     },
     {
@@ -13006,7 +13041,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -13022,7 +13058,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 74
+            "y": 26
           },
           "id": 8,
           "links": [],
@@ -13121,7 +13157,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -13137,7 +13174,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 74
+            "y": 26
           },
           "id": 7,
           "links": [],
@@ -13246,7 +13283,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -13337,7 +13375,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 84
+            "y": 36
           },
           "id": 321,
           "links": [],
@@ -13460,7 +13498,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -13537,7 +13576,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 84
+            "y": 36
           },
           "id": 322,
           "links": [],
@@ -13686,7 +13725,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -13741,7 +13781,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 94
+            "y": 46
           },
           "id": 259,
           "links": [],
@@ -13827,7 +13867,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -13843,7 +13884,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 94
+            "y": 46
           },
           "id": 306,
           "links": [],
@@ -13930,7 +13971,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -13946,7 +13988,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 104
+            "y": 56
           },
           "id": 151,
           "links": [],
@@ -14031,7 +14073,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -14047,7 +14090,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 104
+            "y": 56
           },
           "id": 308,
           "links": [],
@@ -14134,7 +14177,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -14170,7 +14214,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 114
+            "y": 66
           },
           "id": 64,
           "links": [],
@@ -23821,6 +23865,6 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 89,
+  "version": 90,
   "weekStart": ""
 }
