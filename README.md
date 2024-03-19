@@ -15,7 +15,7 @@ Only requires the default job_name: node, add as many targets as you need in `/e
 
 Recommended for prometheus-node-exporter the arguments `--collector.systemd` and `--collector.processes` because the graph uses some of their metrics.
 
-> - `timeInterval` in the Grafana data source has to be set accordingly to the > `scrape_interval` configured in Prometheus
+> - `timeInterval` in the Grafana data source has to be set accordingly to the > `scrape_interval` configured in Prometheus. You can do this by navigating to connections > Data sources > Prometheus and set Scrape Interval under Interval behaviour. When using provisioning, this is set with the attribute jsonData.timeInterval.
 > - For prometheus-node-exporter v.0.16 or older, use `node-exporter-full-old.> json`
 > - Thanks to the [PCP project](http://pcp.io) for document the values reported > by the kernel in `/proc` (in their `/pmdas/linux/help` src file mainly).
 
