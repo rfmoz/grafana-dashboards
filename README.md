@@ -88,3 +88,29 @@ On Grafana, it only requires a configured target under any `job_name`. For examp
         - targets:
            - server_hostname:9000
 ```
+
+
+
+## Unbound Full
+
+- For [unbound_exporter](https://github.com/letsencrypt/unbound_exporter)
+- Monitor Unbound DNS service. 
+ 
+Required configuration in `/etc/unbound/unbound.conf`:
+
+```server:
+        extended-statistics: yes
+
+remote-control:
+        control-enable: yes
+        control-interface: /run/unbound.ctl
+```
+
+On Grafana, it only requires a configured target under any `job_name`. For example:
+
+```yaml
+  - job_name: 'unbound'
+    static_configs:
+        - targets:
+           - server_hostname:9167
+```
