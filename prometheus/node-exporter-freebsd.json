@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "10.3.3"
+      "version": "11.0.0"
     },
     {
       "type": "datasource",
@@ -68,7 +68,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "gnetId": 1860,
-  "graphTooltip": 0,
+  "graphTooltip": 1,
   "id": null,
   "links": [
     {
@@ -164,8 +164,7 @@
               }
             ]
           },
-          "unit": "percent",
-          "unitScale": true
+          "unit": "percent"
         },
         "overrides": []
       },
@@ -176,7 +175,6 @@
         "y": 1
       },
       "id": 20,
-      "links": [],
       "options": {
         "minVizHeight": 75,
         "minVizWidth": 75,
@@ -192,7 +190,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "10.3.3",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -255,8 +253,7 @@
               }
             ]
           },
-          "unit": "percent",
-          "unitScale": true
+          "unit": "percent"
         },
         "overrides": []
       },
@@ -267,7 +264,6 @@
         "y": 1
       },
       "id": 155,
-      "links": [],
       "options": {
         "minVizHeight": 75,
         "minVizWidth": 75,
@@ -283,7 +279,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "10.3.3",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -345,8 +341,7 @@
               }
             ]
           },
-          "unit": "percent",
-          "unitScale": true
+          "unit": "percent"
         },
         "overrides": []
       },
@@ -357,7 +352,6 @@
         "y": 1
       },
       "id": 246,
-      "links": [],
       "options": {
         "minVizHeight": 75,
         "minVizWidth": 75,
@@ -373,7 +367,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "10.3.3",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -427,8 +421,7 @@
               }
             ]
           },
-          "unit": "percent",
-          "unitScale": true
+          "unit": "percent"
         },
         "overrides": []
       },
@@ -440,7 +433,6 @@
       },
       "hideTimeOverride": false,
       "id": 16,
-      "links": [],
       "options": {
         "minVizHeight": 75,
         "minVizWidth": 75,
@@ -456,7 +448,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "10.3.3",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -518,8 +510,7 @@
               }
             ]
           },
-          "unit": "percent",
-          "unitScale": true
+          "unit": "percent"
         },
         "overrides": []
       },
@@ -530,7 +521,6 @@
         "y": 1
       },
       "id": 21,
-      "links": [],
       "options": {
         "minVizHeight": 75,
         "minVizWidth": 75,
@@ -546,7 +536,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "10.3.3",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -606,8 +596,7 @@
               }
             ]
           },
-          "unit": "percent",
-          "unitScale": true
+          "unit": "percent"
         },
         "overrides": []
       },
@@ -618,7 +607,6 @@
         "y": 1
       },
       "id": 154,
-      "links": [],
       "options": {
         "minVizHeight": 75,
         "minVizWidth": 75,
@@ -634,7 +622,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "10.3.3",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -690,8 +678,7 @@
               }
             ]
           },
-          "unit": "short",
-          "unitScale": true
+          "unit": "short"
         },
         "overrides": []
       },
@@ -702,7 +689,6 @@
         "y": 1
       },
       "id": 14,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -720,7 +706,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.3.3",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -776,8 +762,7 @@
               }
             ]
           },
-          "unit": "s",
-          "unitScale": true
+          "unit": "s"
         },
         "overrides": []
       },
@@ -789,7 +774,6 @@
       },
       "hideTimeOverride": true,
       "id": 15,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -807,7 +791,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.3.3",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -867,8 +851,7 @@
               }
             ]
           },
-          "unit": "bytes",
-          "unitScale": true
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -879,7 +862,6 @@
         "y": 3
       },
       "id": 23,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -897,7 +879,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.3.3",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -955,8 +937,7 @@
               }
             ]
           },
-          "unit": "bytes",
-          "unitScale": true
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -967,7 +948,6 @@
         "y": 3
       },
       "id": 75,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -985,7 +965,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.3.3",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -1041,8 +1021,7 @@
               }
             ]
           },
-          "unit": "bytes",
-          "unitScale": true
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -1053,7 +1032,6 @@
         "y": 3
       },
       "id": 18,
-      "links": [],
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -1071,7 +1049,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.3.3",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -1176,8 +1154,7 @@
               }
             ]
           },
-          "unit": "short",
-          "unitScale": true
+          "unit": "short"
         },
         "overrides": [
           {
@@ -1399,7 +1376,6 @@
         "y": 6
       },
       "id": 77,
-      "links": [],
       "options": {
         "legend": {
           "calcs": [
@@ -1414,6 +1390,7 @@
           "width": 250
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -1556,8 +1533,7 @@
               }
             ]
           },
-          "unit": "bytes",
-          "unitScale": true
+          "unit": "bytes"
         },
         "overrides": [
           {
@@ -1869,7 +1845,6 @@
         "y": 6
       },
       "id": 24,
-      "links": [],
       "options": {
         "legend": {
           "calcs": [
@@ -1884,6 +1859,7 @@
           "width": 350
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -2028,8 +2004,7 @@
               }
             ]
           },
-          "unit": "bps",
-          "unitScale": true
+          "unit": "bps"
         },
         "overrides": [
           {
@@ -2173,7 +2148,6 @@
         "y": 17
       },
       "id": 84,
-      "links": [],
       "options": {
         "legend": {
           "calcs": [
@@ -2187,6 +2161,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -2198,10 +2173,12 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "(irate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[5m]))*8",
+          "editorMode": "code",
+          "expr": "(irate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))*8",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "{{device}} - Receive",
+          "range": true,
           "refId": "O",
           "step": 240
         },
@@ -2210,10 +2187,12 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "(irate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[5m]))*8",
+          "editorMode": "code",
+          "expr": "(irate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))*8",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "{{device}} - Transmit",
+          "range": true,
           "refId": "P",
           "step": 240
         }
@@ -2278,8 +2257,7 @@
               }
             ]
           },
-          "unit": "Bps",
-          "unitScale": true
+          "unit": "Bps"
         },
         "overrides": [
           {
@@ -2363,7 +2341,6 @@
         "y": 17
       },
       "id": 233,
-      "links": [],
       "options": {
         "legend": {
           "calcs": [
@@ -2377,6 +2354,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -2388,10 +2366,12 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "irate(node_memory_swap_in_bytes_total{instance=\"$node\",job=\"$job\"}[5m])",
+          "editorMode": "code",
+          "expr": "irate(node_memory_swap_in_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "Swap in",
+          "range": true,
           "refId": "O",
           "step": 240
         },
@@ -2400,10 +2380,12 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "irate(node_memory_swap_out_bytes_total{instance=\"$node\",job=\"$job\"}[5m])",
+          "editorMode": "code",
+          "expr": "irate(node_memory_swap_out_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "Swap out",
+          "range": true,
           "refId": "P",
           "step": 240
         }
@@ -2471,8 +2453,7 @@
               }
             ]
           },
-          "unit": "percent",
-          "unitScale": true
+          "unit": "percent"
         },
         "overrides": []
       },
@@ -2483,7 +2464,6 @@
         "y": 28
       },
       "id": 152,
-      "links": [],
       "options": {
         "legend": {
           "calcs": [
@@ -2497,6 +2477,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -2577,8 +2558,7 @@
               }
             ]
           },
-          "unit": "bytes",
-          "unitScale": true
+          "unit": "bytes"
         },
         "overrides": [
           {
@@ -2632,7 +2612,6 @@
         "y": 28
       },
       "id": 156,
-      "links": [],
       "options": {
         "legend": {
           "calcs": [
@@ -2646,6 +2625,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -2764,8 +2744,7 @@
                   }
                 ]
               },
-              "unit": "pps",
-              "unitScale": true
+              "unit": "pps"
             },
             "overrides": [
               {
@@ -2906,10 +2885,9 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 40
+            "y": 7
           },
           "id": 232,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -2923,6 +2901,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -2934,10 +2913,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_network_transmit_packets_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_network_transmit_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit packets",
+              "range": true,
               "refId": "P",
               "step": 240
             },
@@ -2946,10 +2927,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_network_receive_packets_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_network_receive_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive packets",
+              "range": true,
               "refId": "B",
               "step": 240
             }
@@ -3014,8 +2997,7 @@
                   }
                 ]
               },
-              "unit": "pps",
-              "unitScale": true
+              "unit": "pps"
             },
             "overrides": [
               {
@@ -3156,10 +3138,9 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 40
+            "y": 7
           },
           "id": 229,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -3173,6 +3154,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -3184,10 +3166,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_network_receive_drop_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_network_receive_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive drop",
+              "range": true,
               "refId": "O",
               "step": 240
             },
@@ -3196,10 +3180,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_network_transmit_drop_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_network_transmit_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit drop",
+              "range": true,
               "refId": "A",
               "step": 240
             }
@@ -3264,8 +3250,7 @@
                   }
                 ]
               },
-              "unit": "pps",
-              "unitScale": true
+              "unit": "pps"
             },
             "overrides": [
               {
@@ -3406,10 +3391,9 @@
             "h": 12,
             "w": 12,
             "x": 0,
-            "y": 52
+            "y": 19
           },
           "id": 230,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -3423,6 +3407,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -3434,10 +3419,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_network_transmit_errs_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_network_transmit_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit errors",
+              "range": true,
               "refId": "P",
               "step": 240
             },
@@ -3446,10 +3433,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_network_receive_errs_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_network_receive_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive errors",
+              "range": true,
               "refId": "B",
               "step": 240
             }
@@ -3514,8 +3503,7 @@
                   }
                 ]
               },
-              "unit": "pps",
-              "unitScale": true
+              "unit": "pps"
             },
             "overrides": [
               {
@@ -3656,10 +3644,9 @@
             "h": 12,
             "w": 12,
             "x": 12,
-            "y": 52
+            "y": 19
           },
           "id": 231,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -3673,6 +3660,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -3684,10 +3672,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_network_transmit_multicast_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_network_transmit_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Transmit multicast",
+              "range": true,
               "refId": "P",
               "step": 240
             },
@@ -3696,10 +3686,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_network_receive_multicast_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_network_receive_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{device}} - Receive multicast",
+              "range": true,
               "refId": "B",
               "step": 240
             }
@@ -3792,8 +3784,7 @@
                   }
                 ]
               },
-              "unit": "short",
-              "unitScale": true
+              "unit": "short"
             },
             "overrides": []
           },
@@ -3801,10 +3792,9 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 41
+            "y": 8
           },
           "id": 8,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -3818,6 +3808,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -3829,10 +3820,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_exec_context_switches_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_exec_context_switches_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Context switches",
+              "range": true,
               "refId": "A",
               "step": 240
             }
@@ -3898,8 +3891,7 @@
                   }
                 ]
               },
-              "unit": "short",
-              "unitScale": true
+              "unit": "short"
             },
             "overrides": []
           },
@@ -3907,10 +3899,9 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 41
+            "y": 8
           },
           "id": 236,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -3924,6 +3915,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -3935,10 +3927,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_exec_device_interrupts_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_exec_device_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Device Interrupts",
+              "range": true,
               "refId": "B",
               "step": 240
             },
@@ -3947,10 +3941,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_exec_software_interrupts_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_exec_software_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Software Interrupts",
+              "range": true,
               "refId": "C",
               "step": 240
             }
@@ -4016,8 +4012,7 @@
                   }
                 ]
               },
-              "unit": "short",
-              "unitScale": true
+              "unit": "short"
             },
             "overrides": []
           },
@@ -4025,10 +4020,9 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 51
+            "y": 18
           },
           "id": 7,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -4042,6 +4036,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -4146,8 +4141,7 @@
                   }
                 ]
               },
-              "unit": "short",
-              "unitScale": true
+              "unit": "short"
             },
             "overrides": []
           },
@@ -4155,10 +4149,9 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 51
+            "y": 18
           },
           "id": 237,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -4172,6 +4165,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -4183,10 +4177,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_exec_system_calls_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_exec_system_calls_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "System calls",
+              "range": true,
               "refId": "A",
               "step": 240
             }
@@ -4252,8 +4248,7 @@
                   }
                 ]
               },
-              "unit": "short",
-              "unitScale": true
+              "unit": "short"
             },
             "overrides": []
           },
@@ -4261,10 +4256,9 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 61
+            "y": 28
           },
           "id": 148,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -4278,6 +4272,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -4289,11 +4284,13 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_exec_forks_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_exec_forks_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Processes forks second",
+              "range": true,
               "refId": "C",
               "step": 240
             }
@@ -4359,8 +4356,7 @@
                   }
                 ]
               },
-              "unit": "short",
-              "unitScale": true
+              "unit": "short"
             },
             "overrides": []
           },
@@ -4368,10 +4364,9 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 61
+            "y": 28
           },
           "id": 238,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -4385,6 +4380,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -4396,10 +4392,12 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_exec_traps_total{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_exec_traps_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Traps",
+              "range": true,
               "refId": "A",
               "step": 240
             }
@@ -4466,8 +4464,7 @@
                   }
                 ]
               },
-              "unit": "s",
-              "unitScale": true
+              "unit": "s"
             },
             "overrides": [
               {
@@ -4491,10 +4488,9 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 71
+            "y": 38
           },
           "id": 168,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -4508,6 +4504,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -4519,11 +4516,13 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_time_seconds{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_time_seconds{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Of reported time",
+              "range": true,
               "refId": "B",
               "step": 240
             }
@@ -4617,8 +4616,7 @@
                   }
                 ]
               },
-              "unit": "bytes",
-              "unitScale": true
+              "unit": "bytes"
             },
             "overrides": []
           },
@@ -4626,10 +4624,9 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 42
+            "y": 9
           },
           "id": 43,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -4643,6 +4640,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -4725,8 +4723,7 @@
                   }
                 ]
               },
-              "unit": "short",
-              "unitScale": true
+              "unit": "short"
             },
             "overrides": []
           },
@@ -4734,10 +4731,9 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 42
+            "y": 9
           },
           "id": 234,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -4751,6 +4747,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -4846,8 +4843,7 @@
                   }
                 ]
               },
-              "unit": "short",
-              "unitScale": true
+              "unit": "short"
             },
             "overrides": [
               {
@@ -4871,10 +4867,9 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 53
+            "y": 20
           },
           "id": 44,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -4888,6 +4883,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -4995,8 +4991,7 @@
                   }
                 ]
               },
-              "unit": "s",
-              "unitScale": true
+              "unit": "s"
             },
             "overrides": []
           },
@@ -5004,10 +4999,9 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 43
+            "y": 10
           },
           "id": 40,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -5021,6 +5015,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -5032,11 +5027,13 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(node_scrape_collector_duration_seconds{instance=\"$node\",job=\"$job\"}[5m])",
+              "editorMode": "code",
+              "expr": "irate(node_scrape_collector_duration_seconds{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{collector}} - Scrape duration",
+              "range": true,
               "refId": "A",
               "step": 30
             }
@@ -5104,8 +5101,7 @@
                   }
                 ]
               },
-              "unit": "short",
-              "unitScale": true
+              "unit": "short"
             },
             "overrides": []
           },
@@ -5113,10 +5109,9 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 43
+            "y": 10
           },
           "id": 157,
-          "links": [],
           "options": {
             "legend": {
               "calcs": [
@@ -5130,6 +5125,7 @@
               "showLegend": true
             },
             "tooltip": {
+              "maxHeight": 600,
               "mode": "multi",
               "sort": "none"
             }
@@ -5201,6 +5197,7 @@
         "name": "DS_PROMETHEUS",
         "options": [],
         "query": "prometheus",
+        "queryValue": "",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -5264,6 +5261,7 @@
     "from": "now-24h",
     "to": "now"
   },
+  "timeRangeUpdatedDuringEditOrView": false,
   "timepicker": {
     "refresh_intervals": [
       "5s",
@@ -5292,6 +5290,6 @@
   "timezone": "browser",
   "title": "Node Exporter FreeBSD",
   "uid": "Kczn-jPZz",
-  "version": 17,
+  "version": 18,
   "weekStart": ""
 }
