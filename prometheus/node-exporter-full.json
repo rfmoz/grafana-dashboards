@@ -13041,8 +13041,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13157,8 +13156,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13283,8 +13281,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13498,8 +13495,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13725,8 +13721,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13867,8 +13862,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13971,8 +13965,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -14073,8 +14066,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -14177,8 +14169,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -21872,7 +21863,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -21901,7 +21893,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 49
+            "y": 33
           },
           "id": 221,
           "links": [],
@@ -22001,7 +21993,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -22017,7 +22010,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 49
+            "y": 33
           },
           "id": 81,
           "links": [],
@@ -22104,7 +22097,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -22133,7 +22127,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 59
+            "y": 43
           },
           "id": 115,
           "links": [],
@@ -22232,7 +22226,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -22261,7 +22256,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 59
+            "y": 43
           },
           "id": 50,
           "links": [],
@@ -22347,7 +22342,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -22388,7 +22384,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 69
+            "y": 53
           },
           "id": 55,
           "links": [],
@@ -22487,7 +22483,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -22503,7 +22500,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 69
+            "y": 53
           },
           "id": 109,
           "links": [],
@@ -22638,7 +22635,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -22679,7 +22677,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 79
+            "y": 63
           },
           "id": 299,
           "links": [],
@@ -22781,7 +22779,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -22797,7 +22796,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 79
+            "y": 63
           },
           "id": 104,
           "links": [],
@@ -22890,6 +22889,32 @@
               "interval": "",
               "legendFormat": "OutRsts - Segments sent with RST flag",
               "refId": "F"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "editorMode": "code",
+              "expr": "irate(node_netstat_TcpExt_TCPRcvQDrop{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "hide": false,
+              "interval": "",
+              "legendFormat": "TCPRcvQDrop - Packets meant to be queued in rcv queue but dropped because socket rcvbuf limit hit",
+              "range": true,
+              "refId": "G"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "editorMode": "code",
+              "expr": "irate(node_netstat_TcpExt_TCPOFOQueue{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "hide": false,
+              "interval": "",
+              "legendFormat": "TCPOFOQueue - TCP layer receives an out of order packet and has enough memory to queue it",
+              "range": true,
+              "refId": "H"
             }
           ],
           "title": "TCP Errors",
@@ -22942,7 +22967,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -22978,7 +23004,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 89
+            "y": 73
           },
           "id": 85,
           "links": [],
@@ -23080,7 +23106,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -23109,7 +23136,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 89
+            "y": 73
           },
           "id": 91,
           "links": [],
@@ -23225,7 +23252,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -23241,7 +23269,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 99
+            "y": 83
           },
           "id": 82,
           "links": [],
@@ -23342,7 +23370,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -23354,7 +23383,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 99
+            "y": 83
           },
           "id": 320,
           "links": [],
@@ -23865,6 +23894,6 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 90,
+  "version": 92,
   "weekStart": ""
 }
