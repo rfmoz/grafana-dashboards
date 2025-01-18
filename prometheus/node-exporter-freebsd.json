@@ -1961,7 +1961,7 @@
             "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Bites out (-) / in (+)",
+            "axisLabel": "Bits out (-) / in (+)",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
