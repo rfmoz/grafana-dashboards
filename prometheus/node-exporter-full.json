@@ -12261,7 +12261,92 @@
               },
               "unit": "short"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "D"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Uninterruptible Sleeping"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "I"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Idle Kernel Thread"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "R"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Running"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "S"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Interruptible Sleeping"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "T"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Stopped"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "X"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Dead"
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Z"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "Zombie"
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
