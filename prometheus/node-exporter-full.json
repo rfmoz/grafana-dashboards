@@ -1221,36 +1221,6 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Busy Iowait"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#890F02",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Idle"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#7EB26D",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
               "options": "Busy System"
             },
             "properties": [
@@ -3858,21 +3828,6 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*sdb2.*/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "#BF1B00",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byRegexp",
                   "options": "/.*sdb3.*/"
                 },
                 "properties": [
@@ -3985,21 +3940,6 @@
                     "id": "color",
                     "value": {
                       "fixedColor": "#E0F9D7",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/.*sdd2.*/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "#FCEACA",
                       "mode": "fixed"
                     }
                   }
@@ -6490,18 +6430,6 @@
                       "fixedColor": "#EAB839",
                       "mode": "fixed"
                     }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "ShmemHugePages - Memory used by shared memory (shmem) and tmpfs allocated  with huge pages"
-                },
-                "properties": [
-                  {
-                    "id": "custom.fillOpacity",
-                    "value": 0
                   }
                 ]
               },
@@ -15534,21 +15462,6 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*sdd2.*/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "#FCEACA",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byRegexp",
                   "options": "/.*sde3.*/"
                 },
                 "properties": [
@@ -15951,21 +15864,6 @@
                     "id": "color",
                     "value": {
                       "fixedColor": "#E0F9D7",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/.*sdd2.*/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "#FCEACA",
                       "mode": "fixed"
                     }
                   }
@@ -16386,21 +16284,6 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*sdd2.*/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "#FCEACA",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byRegexp",
                   "options": "/.*sde3.*/"
                 },
                 "properties": [
@@ -16796,21 +16679,6 @@
                     "id": "color",
                     "value": {
                       "fixedColor": "#E0F9D7",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/.*sdd2.*/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "#FCEACA",
                       "mode": "fixed"
                     }
                   }
@@ -17219,21 +17087,6 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*sdd2.*/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "#FCEACA",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byRegexp",
                   "options": "/.*sde3.*/"
                 },
                 "properties": [
@@ -17625,21 +17478,6 @@
                     "id": "color",
                     "value": {
                       "fixedColor": "#E0F9D7",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/.*sdd2.*/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "#FCEACA",
                       "mode": "fixed"
                     }
                   }
@@ -18049,21 +17887,6 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*sdd2.*/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "#FCEACA",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byRegexp",
                   "options": "/.*sde3.*/"
                 },
                 "properties": [
@@ -18444,21 +18267,6 @@
                     "id": "color",
                     "value": {
                       "fixedColor": "#E0F9D7",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/.*sdd2.*/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "#FCEACA",
                       "mode": "fixed"
                     }
                   }
