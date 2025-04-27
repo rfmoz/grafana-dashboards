@@ -21,10 +21,10 @@ Recommended for prometheus-node-exporter the arguments `--collector.systemd` and
 
 
 
-## Node Exporter FreeBSD
+## Node Exporter BSD
 
-- For node_exporter in FreeBSD system
-- Monitor FreeBSD system.
+- For node_exporter in BSD system
+- Monitor BSD system.
 
 Only requires a configured target under any `job_name`.
 
