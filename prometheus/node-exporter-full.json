@@ -17216,7 +17216,7 @@
         "current": {},
         "includeAll": false,
         "label": "Datasource",
-        "name": "datasource",
+        "name": "DS_PROMETHEUS",
         "options": [],
         "query": "prometheus",
         "refresh": 1,
