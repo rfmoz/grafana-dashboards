@@ -1187,8 +1187,7 @@
           "calcs": [
             "min",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
@@ -1428,8 +1427,7 @@
           "calcs": [
             "min",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
@@ -1620,8 +1618,7 @@
           "calcs": [
             "min",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
@@ -1750,8 +1747,7 @@
           "calcs": [
             "min",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
@@ -1869,8 +1865,7 @@
           "calcs": [
             "min",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
@@ -1986,8 +1981,7 @@
           "calcs": [
             "min",
             "mean",
-            "max",
-            "lastNotNull"
+            "max"
           ],
           "displayMode": "table",
           "placement": "bottom",
@@ -2141,8 +2135,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -2271,8 +2264,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -2401,8 +2393,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -2531,8 +2522,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -2648,8 +2638,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -2751,8 +2740,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -2869,8 +2857,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -2973,8 +2960,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -3121,8 +3107,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -3269,8 +3254,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -3373,8 +3357,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -3493,8 +3476,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -3624,8 +3606,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -3755,8 +3736,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -3873,8 +3853,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -3976,8 +3955,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -4096,8 +4074,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
@@ -4226,8 +4203,7 @@
               "calcs": [
                 "min",
                 "mean",
-                "max",
-                "lastNotNull"
+                "max"
               ],
               "displayMode": "table",
               "placement": "bottom",
