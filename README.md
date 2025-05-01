@@ -30,19 +30,10 @@ Only requires a configured target under any `job_name`.
 
 
 
-## Haproxy Full _(deprecated)_
+## Haproxy
 
-- For haproxy_exporter
+- For Haproxy v.2 or avobe compiled with Prometheus support
 - Monitor Haproxy service.
-
-Only requires a configured target under any `job_name`.
-
-
-
-## Haproxy 2 Full
-
-- For Haproxy compiled with Prometheus support
-- Monitor Haproxy service direct.
 
 Only requires a configured target under any `job_name`.
 
