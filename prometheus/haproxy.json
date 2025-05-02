@@ -1135,7 +1135,7 @@
           "step": 240
         }
       ],
-      "title": "Started...",
+      "title": "Uptime",
       "type": "stat"
     },
     {
@@ -5082,7 +5082,7 @@
               "step": 240
             }
           ],
-          "title": "Back - Average total time",
+          "title": "Back - Average total conn. time",
           "type": "timeseries"
         },
         {
@@ -5288,7 +5288,7 @@
               "step": 240
             }
           ],
-          "title": "Server - Average total time",
+          "title": "Server - Average total conn. time",
           "type": "timeseries"
         },
         {
