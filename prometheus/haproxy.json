@@ -1235,7 +1235,7 @@
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 8869
+            "y": 8987
           },
           "id": 46,
           "options": {
@@ -1379,7 +1379,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 8869
+            "y": 8987
           },
           "id": 134,
           "options": {
@@ -1496,7 +1496,7 @@
             "h": 13,
             "w": 12,
             "x": 0,
-            "y": 11857
+            "y": 11975
           },
           "id": 47,
           "options": {
@@ -1599,7 +1599,7 @@
             "h": 13,
             "w": 12,
             "x": 12,
-            "y": 11857
+            "y": 11975
           },
           "id": 24,
           "options": {
@@ -1702,7 +1702,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 11870
+            "y": 11988
           },
           "id": 242,
           "options": {
@@ -1807,7 +1807,7 @@
             "h": 13,
             "w": 12,
             "x": 0,
-            "y": 11878
+            "y": 11996
           },
           "id": 245,
           "options": {
@@ -1910,7 +1910,7 @@
             "h": 13,
             "w": 12,
             "x": 12,
-            "y": 11878
+            "y": 11996
           },
           "id": 246,
           "options": {
@@ -2013,7 +2013,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 11891
+            "y": 12009
           },
           "id": 240,
           "options": {
@@ -2131,7 +2131,7 @@
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 11900
+            "y": 12018
           },
           "id": 115,
           "options": {
@@ -2234,7 +2234,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 11900
+            "y": 12018
           },
           "id": 126,
           "options": {
@@ -2338,7 +2338,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 11914
+            "y": 12032
           },
           "id": 187,
           "options": {
@@ -2454,7 +2454,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 11923
+            "y": 12041
           },
           "id": 35,
           "options": {
@@ -2599,7 +2599,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 11937
+            "y": 12055
           },
           "id": 71,
           "options": {
@@ -2760,7 +2760,7 @@
             "h": 15,
             "w": 12,
             "x": 0,
-            "y": 8870
+            "y": 8988
           },
           "id": 42,
           "options": {
@@ -2890,7 +2890,7 @@
             "h": 15,
             "w": 12,
             "x": 12,
-            "y": 8870
+            "y": 8988
           },
           "id": 1,
           "options": {
@@ -3021,7 +3021,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 11859
+            "y": 11977
           },
           "id": 129,
           "options": {
@@ -3152,7 +3152,7 @@
             "h": 15,
             "w": 12,
             "x": 0,
-            "y": 11866
+            "y": 11984
           },
           "id": 43,
           "options": {
@@ -3283,7 +3283,7 @@
             "h": 15,
             "w": 12,
             "x": 12,
-            "y": 11866
+            "y": 11984
           },
           "id": 27,
           "options": {
@@ -3415,7 +3415,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 11881
+            "y": 11999
           },
           "id": 130,
           "options": {
@@ -3533,7 +3533,7 @@
             "h": 15,
             "w": 12,
             "x": 12,
-            "y": 11888
+            "y": 12006
           },
           "id": 131,
           "options": {
@@ -3636,7 +3636,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 11903
+            "y": 12021
           },
           "id": 179,
           "options": {
@@ -3765,7 +3765,7 @@
             "h": 13,
             "w": 12,
             "x": 0,
-            "y": 8871
+            "y": 8989
           },
           "id": 45,
           "options": {
@@ -3901,7 +3901,7 @@
             "h": 13,
             "w": 12,
             "x": 12,
-            "y": 8871
+            "y": 8989
           },
           "id": 30,
           "options": {
@@ -4022,7 +4022,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 10824
+            "y": 10942
           },
           "id": 61,
           "options": {
@@ -4137,7 +4137,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 10831
+            "y": 10949
           },
           "id": 221,
           "options": {
@@ -4251,7 +4251,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 10831
+            "y": 10949
           },
           "id": 243,
           "options": {
@@ -4354,7 +4354,7 @@
             "h": 13,
             "w": 12,
             "x": 0,
-            "y": 10842
+            "y": 10960
           },
           "id": 119,
           "options": {
@@ -4457,7 +4457,7 @@
             "h": 13,
             "w": 12,
             "x": 12,
-            "y": 10842
+            "y": 10960
           },
           "id": 117,
           "options": {
@@ -4561,7 +4561,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 10855
+            "y": 10973
           },
           "id": 137,
           "options": {
@@ -4677,7 +4677,7 @@
             "h": 13,
             "w": 12,
             "x": 12,
-            "y": 10862
+            "y": 10980
           },
           "id": 128,
           "options": {
@@ -4809,7 +4809,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 10875
+            "y": 10993
           },
           "id": 146,
           "options": {
@@ -4941,7 +4941,7 @@
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 8872
+            "y": 8990
           },
           "id": 132,
           "options": {
@@ -5044,7 +5044,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 8872
+            "y": 8990
           },
           "id": 178,
           "options": {
@@ -5147,7 +5147,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9878
+            "y": 9996
           },
           "id": 135,
           "options": {
@@ -5250,7 +5250,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9885
+            "y": 10003
           },
           "id": 184,
           "options": {
@@ -5353,7 +5353,7 @@
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 9892
+            "y": 10010
           },
           "id": 177,
           "options": {
@@ -5456,7 +5456,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 9892
+            "y": 10010
           },
           "id": 127,
           "options": {
@@ -5559,7 +5559,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9906
+            "y": 10024
           },
           "id": 183,
           "options": {
@@ -5662,7 +5662,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9913
+            "y": 10031
           },
           "id": 133,
           "options": {
@@ -5779,7 +5779,7 @@
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 8873
+            "y": 8991
           },
           "id": 38,
           "options": {
@@ -5895,7 +5895,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 8873
+            "y": 8991
           },
           "id": 39,
           "options": {
@@ -6015,7 +6015,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9414
+            "y": 9532
           },
           "id": 56,
           "options": {
@@ -6131,7 +6131,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9421
+            "y": 9539
           },
           "id": 73,
           "options": {
@@ -6251,7 +6251,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9428
+            "y": 9546
           },
           "id": 185,
           "options": {
@@ -6354,7 +6354,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9435
+            "y": 9553
           },
           "id": 204,
           "options": {
@@ -6458,7 +6458,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9442
+            "y": 9560
           },
           "id": 144,
           "options": {
@@ -6588,7 +6588,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 8874
+            "y": 8992
           },
           "id": 121,
           "options": {
@@ -6719,7 +6719,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 8874
+            "y": 8992
           },
           "id": 139,
           "options": {
@@ -6862,7 +6862,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 9144
+            "y": 9262
           },
           "id": 231,
           "options": {
@@ -7020,7 +7020,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 9144
+            "y": 9262
           },
           "id": 140,
           "options": {
@@ -7153,7 +7153,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 9155
+            "y": 9273
           },
           "id": 123,
           "options": {
@@ -7257,7 +7257,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 9155
+            "y": 9273
           },
           "id": 141,
           "options": {
@@ -7387,7 +7387,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 8875
+            "y": 8993
           },
           "id": 113,
           "options": {
@@ -7503,7 +7503,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 8875
+            "y": 8993
           },
           "id": 238,
           "options": {
@@ -7620,7 +7620,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 9004
+            "y": 9122
           },
           "id": 145,
           "options": {
@@ -7729,7 +7729,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 9012
+            "y": 9130
           },
           "id": 237,
           "options": {
@@ -7835,7 +7835,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 9020
+            "y": 9138
           },
           "id": 205,
           "options": {
@@ -7938,7 +7938,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 9020
+            "y": 9138
           },
           "id": 171,
           "options": {
@@ -8040,7 +8040,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9031
+            "y": 9149
           },
           "id": 172,
           "options": {
@@ -8142,7 +8142,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 9038
+            "y": 9156
           },
           "id": 173,
           "options": {
@@ -8260,7 +8260,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 9038
+            "y": 9156
           },
           "id": 244,
           "options": {
@@ -8362,7 +8362,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 9049
+            "y": 9167
           },
           "id": 208,
           "options": {
@@ -8506,7 +8506,7 @@
             "h": 10,
             "w": 8,
             "x": 0,
-            "y": 8876
+            "y": 43
           },
           "id": 100,
           "options": {
@@ -8654,7 +8654,7 @@
             "h": 10,
             "w": 8,
             "x": 8,
-            "y": 8876
+            "y": 43
           },
           "id": 249,
           "options": {
@@ -8803,7 +8803,7 @@
             "h": 10,
             "w": 8,
             "x": 16,
-            "y": 8876
+            "y": 43
           },
           "id": 101,
           "options": {
@@ -8956,7 +8956,7 @@
             "h": 10,
             "w": 8,
             "x": 0,
-            "y": 8930
+            "y": 53
           },
           "id": 248,
           "options": {
@@ -9057,6 +9057,7 @@
               },
               "links": [],
               "mappings": [],
+              "min": -1,
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
@@ -9065,17 +9066,51 @@
                   }
                 ]
               },
-              "unit": "percent"
+              "unit": "short"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/.*limit.*/"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  },
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "dark-red",
+                      "mode": "fixed"
+                    }
+                  },
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
             "w": 8,
             "x": 8,
-            "y": 8930
+            "y": 53
           },
-          "id": 150,
+          "id": 252,
           "options": {
             "legend": {
               "calcs": [
@@ -9101,17 +9136,32 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "haproxy_process_frontend_ssl_reuse{instance=\"$host\"}",
+              "expr": "haproxy_process_current_ssl_connections{instance=\"$host\"}",
               "interval": "$interval",
               "intervalFactor": 1,
-              "legendFormat": "Frontend SSL connections which did not require a new key",
+              "legendFormat": "SSL endpoints",
               "metric": "",
               "range": true,
-              "refId": "C",
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_process_max_ssl_connections{instance=\"$host\"}",
+              "interval": "$interval",
+              "intervalFactor": 1,
+              "legendFormat": "Hard limit  SSL endpoints",
+              "metric": "",
+              "range": true,
+              "refId": "B",
               "step": 240
             }
           ],
-          "title": "Process - SSL reuse ratio",
+          "title": "Process - SSL conn. limits",
           "type": "timeseries"
         },
         {
@@ -9200,7 +9250,7 @@
             "h": 10,
             "w": 8,
             "x": 16,
-            "y": 8930
+            "y": 53
           },
           "id": 103,
           "options": {
@@ -9343,7 +9393,7 @@
             "h": 10,
             "w": 8,
             "x": 0,
-            "y": 8940
+            "y": 63
           },
           "id": 104,
           "options": {
@@ -9413,6 +9463,260 @@
             }
           ],
           "title": "Process - SSL cache",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 8,
+            "x": 8,
+            "y": 63
+          },
+          "id": 150,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_process_frontend_ssl_reuse{instance=\"$host\"}",
+              "interval": "$interval",
+              "intervalFactor": 1,
+              "legendFormat": "Frontend SSL connections which did not require a new key",
+              "metric": "",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            }
+          ],
+          "title": "Process - SSL reuse ratio",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "min": -1,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/.*limit.*/"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  },
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "dark-red",
+                      "mode": "fixed"
+                    }
+                  },
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 8,
+            "x": 16,
+            "y": 63
+          },
+          "id": 253,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_process_current_zlib_memory{instance=\"$host\"}",
+              "interval": "$interval",
+              "intervalFactor": 1,
+              "legendFormat": "Amount of memory currently used by HTTP compression",
+              "metric": "",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_process_max_zlib_memory{instance=\"$host\"}",
+              "interval": "$interval",
+              "intervalFactor": 1,
+              "legendFormat": "Limit memory used by HTTP compression,  above is auto disabled (in bytes, see global.maxzlibmem)",
+              "metric": "",
+              "range": true,
+              "refId": "B",
+              "step": 240
+            }
+          ],
+          "title": "Process - Zlib (HTTP compression) memory limits",
           "type": "timeseries"
         }
       ],
@@ -9507,7 +9811,7 @@
             "h": 11,
             "w": 8,
             "x": 0,
-            "y": 8877
+            "y": 44
           },
           "id": 216,
           "options": {
@@ -9650,7 +9954,7 @@
             "h": 11,
             "w": 8,
             "x": 8,
-            "y": 8877
+            "y": 44
           },
           "id": 99,
           "options": {
@@ -9783,7 +10087,7 @@
             "h": 11,
             "w": 8,
             "x": 16,
-            "y": 8877
+            "y": 44
           },
           "id": 247,
           "options": {
@@ -9915,7 +10219,7 @@
             "h": 11,
             "w": 8,
             "x": 0,
-            "y": 8888
+            "y": 55
           },
           "id": 87,
           "options": {
@@ -10048,7 +10352,7 @@
             "h": 11,
             "w": 8,
             "x": 8,
-            "y": 8888
+            "y": 55
           },
           "id": 88,
           "options": {
@@ -10151,7 +10455,7 @@
             "h": 11,
             "w": 8,
             "x": 16,
-            "y": 8888
+            "y": 55
           },
           "id": 109,
           "options": {
@@ -10268,7 +10572,7 @@
             "h": 11,
             "w": 8,
             "x": 0,
-            "y": 8899
+            "y": 66
           },
           "id": 86,
           "options": {
@@ -10385,7 +10689,7 @@
             "h": 11,
             "w": 8,
             "x": 8,
-            "y": 8899
+            "y": 66
           },
           "id": 111,
           "options": {
@@ -10502,7 +10806,7 @@
             "h": 11,
             "w": 8,
             "x": 16,
-            "y": 8899
+            "y": 66
           },
           "id": 110,
           "options": {
@@ -10619,7 +10923,7 @@
             "h": 11,
             "w": 8,
             "x": 0,
-            "y": 8910
+            "y": 77
           },
           "id": 251,
           "options": {
@@ -10738,7 +11042,7 @@
             "h": 11,
             "w": 8,
             "x": 8,
-            "y": 8910
+            "y": 77
           },
           "id": 108,
           "options": {
@@ -10856,7 +11160,7 @@
             "h": 11,
             "w": 8,
             "x": 16,
-            "y": 8910
+            "y": 77
           },
           "id": 218,
           "options": {
@@ -11081,6 +11385,6 @@
   "timezone": "browser",
   "title": "HAProxy",
   "uid": "rEqu1u5ue",
-  "version": 23,
+  "version": 24,
   "weekStart": ""
 }
