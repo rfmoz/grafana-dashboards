@@ -62,10 +62,6 @@
   "panels": [
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "000000001"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -74,15 +70,6 @@
       },
       "id": 260,
       "panels": [],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "NFS",
       "type": "row"
     },
@@ -1435,10 +1422,6 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "000000001"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1824,24 +1807,11 @@
           "type": "timeseries"
         }
       ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "NFS v2 Detail",
       "type": "row"
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "000000001"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2205,24 +2175,11 @@
           "type": "timeseries"
         }
       ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "NFSd v2 Detail",
       "type": "row"
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "000000001"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2652,24 +2609,11 @@
           "type": "timeseries"
         }
       ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "NFS v3 Detail",
       "type": "row"
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "000000001"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -3088,24 +3032,11 @@
           "type": "timeseries"
         }
       ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "NFSd v3 Detail",
       "type": "row"
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "000000001"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -4309,24 +4240,11 @@
           "type": "timeseries"
         }
       ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "NFS v4 Detail",
       "type": "row"
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "000000001"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -4964,15 +4882,6 @@
           ],
           "title": "NFSd v4 NFSd Requests by Method 3",
           "type": "timeseries"
-        }
-      ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "refId": "A"
         }
       ],
       "title": "NFSd v4 Detail",
