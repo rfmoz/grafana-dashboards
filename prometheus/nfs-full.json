@@ -1332,7 +1332,7 @@
       "pluginVersion": "9.4.3",
       "targets": [
         {
-          "expr": "rate(node_nfsd_server_threads{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "node_nfsd_server_threads{instance=~\"$node:$port\",job=~\"$job\"}",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
