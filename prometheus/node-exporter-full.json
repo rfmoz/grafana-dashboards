@@ -1731,7 +1731,6 @@
           },
           "links": [],
           "mappings": [],
-          "max": 100,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -1753,12 +1752,6 @@
       },
       "id": 152,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
         "tooltip": {
           "hideZeros": false,
           "mode": "multi",
