@@ -1040,7 +1040,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(haproxy_frontend_status{instance=\"$host\"} == 1)",
+          "expr": "sum(haproxy_frontend_status{instance=\"$host\",state=\"UP\"} == 1)",
           "hide": false,
           "interval": "$interval",
           "intervalFactor": 1,
@@ -1055,7 +1055,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(haproxy_backend_status{instance=\"$host\"} ==1)",
+          "expr": "sum(haproxy_backend_status{instance=\"$host\",state=\"UP\"} ==1)",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "Back Up",
