@@ -284,16 +284,19 @@
               {
                 "id": "custom.lineStyle",
                 "value": {
-                  "dash": [
-                    10,
-                    10
-                  ],
-                  "fill": "dash"
+                  "fill": "solid"
                 }
               },
               {
                 "id": "custom.lineWidth",
-                "value": 2
+                "value": 1
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "text",
+                  "mode": "fixed"
+                }
               }
             ]
           },
@@ -310,22 +313,25 @@
               {
                 "id": "custom.lineStyle",
                 "value": {
-                  "dash": [
-                    10,
-                    10
-                  ],
-                  "fill": "dash"
+                  "fill": "solid"
                 }
               },
               {
                 "id": "custom.lineWidth",
-                "value": 2
+                "value": 1
               },
               {
                 "id": "custom.stacking",
                 "value": {
                   "group": "A",
                   "mode": "none"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "text",
+                  "mode": "fixed"
                 }
               }
             ]
