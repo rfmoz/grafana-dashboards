@@ -3683,7 +3683,7 @@
           "type": "timeseries"
         }
       ],
-      "title": "Throughtput / Connections",
+      "title": "Throughput / Connections",
       "type": "row"
     },
     {
@@ -8863,7 +8863,7 @@
               "step": 240
             }
           ],
-          "title": "Process - Sessions limts",
+          "title": "Process - Sessions limits",
           "type": "timeseries"
         },
         {
