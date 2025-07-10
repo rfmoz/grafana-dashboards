@@ -4171,7 +4171,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(haproxy_frontend_sessions_total{proxy=~\"$frontend\",instance=\"$host\"}[$__rate_interval]) / haproxy_frontend_limit_sessions{proxy=~\"$frontend\",instance=\"$host\"} * 100",
+              "expr": "max_over_time(haproxy_frontend_current_sessions{proxy=~\"$frontend\", instance=\"$host\"}[$__rate_interval]) / haproxy_frontend_limit_sessions{proxy=~\"$frontend\", instance=\"$host\"} * 100",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -4285,7 +4285,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(haproxy_backend_sessions_total{proxy=~\"$backend\",instance=\"$host\"}[$__rate_interval]) / haproxy_backend_limit_sessions{proxy=~\"$backend\",instance=\"$host\"} * 100",
+              "expr": "max_over_time(haproxy_backend_current_sessions{proxy=~\"$backend\", instance=\"$host\"}[$__rate_interval]) / haproxy_backend_limit_sessions{proxy=~\"$backend\", instance=\"$host\"} * 100",
               "hide": false,
               "interval": "$interval",
               "intervalFactor": 1,
@@ -4858,7 +4858,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(haproxy_server_server_aborts_total{proxy=~\"$frontend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
+              "expr": "rate(haproxy_server_server_aborts_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
               "intervalFactor": 1,
               "legendFormat": "Server {{ proxy }} / {{ server }}",
@@ -11391,6 +11391,6 @@
   "timezone": "browser",
   "title": "HAProxy",
   "uid": "rEqu1u5ue",
-  "version": 24,
+  "version": 25,
   "weekStart": ""
 }
