@@ -728,83 +728,7 @@
           "color": {
             "mode": "thresholds"
           },
-          "decimals": 1,
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              }
-            ]
-          },
-          "unit": "bool_yes_no"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 20,
-        "y": 1
-      },
-      "id": 328,
-      "maxDataPoints": 100,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
-        "percentChangeColorMode": "standard",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
-      },
-      "pluginVersion": "11.6.1",
-      "targets": [
-        {
-          "editorMode": "code",
-          "exemplar": false,
-          "expr": "node_reboot_required{instance=\"$node\",job=\"$job\"}",
-          "instant": true,
-          "intervalFactor": 1,
-          "range": false,
-          "refId": "A",
-          "step": 240
-        }
-      ],
-      "title": "Reboot Required",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "decimals": 1,
+          "decimals": 0,
           "mappings": [
             {
               "options": {
@@ -828,17 +752,17 @@
               }
             ]
           },
-          "unit": "s"
+          "unit": "bytes"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 2,
         "w": 2,
-        "x": 22,
+        "x": 20,
         "y": 1
       },
-      "id": 15,
+      "id": 75,
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -862,7 +786,7 @@
         {
           "editorMode": "code",
           "exemplar": false,
-          "expr": "node_time_seconds{instance=\"$node\",job=\"$job\"} - node_boot_time_seconds{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"}",
           "instant": true,
           "intervalFactor": 1,
           "range": false,
@@ -870,7 +794,87 @@
           "step": 240
         }
       ],
-      "title": "Uptime",
+      "title": "RAM Total",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 22,
+        "y": 1
+      },
+      "id": 18,
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.6.1",
+      "targets": [
+        {
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"}",
+          "instant": true,
+          "intervalFactor": 1,
+          "range": false,
+          "refId": "A",
+          "step": 240
+        }
+      ],
+      "title": "SWAP Total",
       "type": "stat"
     },
     {
@@ -970,7 +974,7 @@
           "color": {
             "mode": "thresholds"
           },
-          "decimals": 0,
+          "decimals": 1,
           "mappings": [
             {
               "options": {
@@ -994,17 +998,17 @@
               }
             ]
           },
-          "unit": "bytes"
+          "unit": "s"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 2,
-        "w": 2,
+        "w": 4,
         "x": 20,
         "y": 3
       },
-      "id": 75,
+      "id": 15,
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -1028,7 +1032,7 @@
         {
           "editorMode": "code",
           "exemplar": false,
-          "expr": "node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "node_time_seconds{instance=\"$node\",job=\"$job\"} - node_boot_time_seconds{instance=\"$node\",job=\"$job\"}",
           "instant": true,
           "intervalFactor": 1,
           "range": false,
@@ -1036,87 +1040,7 @@
           "step": 240
         }
       ],
-      "title": "RAM Total",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "decimals": 0,
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "bytes"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 22,
-        "y": 3
-      },
-      "id": 18,
-      "maxDataPoints": 100,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
-        "percentChangeColorMode": "standard",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
-      },
-      "pluginVersion": "11.6.1",
-      "targets": [
-        {
-          "editorMode": "code",
-          "exemplar": false,
-          "expr": "node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"}",
-          "instant": true,
-          "intervalFactor": 1,
-          "range": false,
-          "refId": "A",
-          "step": 240
-        }
-      ],
-      "title": "SWAP Total",
+      "title": "Uptime",
       "type": "stat"
     },
     {
