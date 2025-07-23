@@ -1241,7 +1241,7 @@
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 8987
+            "y": 16203
           },
           "id": 46,
           "options": {
@@ -1385,7 +1385,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 8987
+            "y": 16203
           },
           "id": 134,
           "options": {
@@ -1502,7 +1502,7 @@
             "h": 13,
             "w": 12,
             "x": 0,
-            "y": 11975
+            "y": 19191
           },
           "id": 47,
           "options": {
@@ -1605,7 +1605,7 @@
             "h": 13,
             "w": 12,
             "x": 12,
-            "y": 11975
+            "y": 19191
           },
           "id": 24,
           "options": {
@@ -1708,7 +1708,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 11988
+            "y": 19204
           },
           "id": 242,
           "options": {
@@ -1813,7 +1813,7 @@
             "h": 13,
             "w": 12,
             "x": 0,
-            "y": 11996
+            "y": 19212
           },
           "id": 245,
           "options": {
@@ -1916,7 +1916,7 @@
             "h": 13,
             "w": 12,
             "x": 12,
-            "y": 11996
+            "y": 19212
           },
           "id": 246,
           "options": {
@@ -2019,7 +2019,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 12009
+            "y": 19225
           },
           "id": 240,
           "options": {
@@ -2137,7 +2137,7 @@
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 12018
+            "y": 19234
           },
           "id": 115,
           "options": {
@@ -2240,7 +2240,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 12018
+            "y": 19234
           },
           "id": 126,
           "options": {
@@ -2344,7 +2344,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 12032
+            "y": 19248
           },
           "id": 187,
           "options": {
@@ -2460,7 +2460,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 12041
+            "y": 19257
           },
           "id": 35,
           "options": {
@@ -2605,7 +2605,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 12055
+            "y": 19271
           },
           "id": 71,
           "options": {
@@ -2766,7 +2766,7 @@
             "h": 15,
             "w": 12,
             "x": 0,
-            "y": 8988
+            "y": 16204
           },
           "id": 42,
           "options": {
@@ -2896,7 +2896,7 @@
             "h": 15,
             "w": 12,
             "x": 12,
-            "y": 8988
+            "y": 16204
           },
           "id": 1,
           "options": {
@@ -3027,7 +3027,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 11977
+            "y": 19193
           },
           "id": 129,
           "options": {
@@ -3158,7 +3158,7 @@
             "h": 15,
             "w": 12,
             "x": 0,
-            "y": 11984
+            "y": 19200
           },
           "id": 43,
           "options": {
@@ -3289,7 +3289,7 @@
             "h": 15,
             "w": 12,
             "x": 12,
-            "y": 11984
+            "y": 19200
           },
           "id": 27,
           "options": {
@@ -3421,7 +3421,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 11999
+            "y": 19215
           },
           "id": 130,
           "options": {
@@ -3539,7 +3539,7 @@
             "h": 15,
             "w": 12,
             "x": 12,
-            "y": 12006
+            "y": 19222
           },
           "id": 131,
           "options": {
@@ -3642,7 +3642,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 12021
+            "y": 19237
           },
           "id": 179,
           "options": {
@@ -3771,7 +3771,7 @@
             "h": 13,
             "w": 12,
             "x": 0,
-            "y": 8989
+            "y": 38
           },
           "id": 45,
           "options": {
@@ -3907,7 +3907,7 @@
             "h": 13,
             "w": 12,
             "x": 12,
-            "y": 8989
+            "y": 38
           },
           "id": 30,
           "options": {
@@ -4028,7 +4028,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 10942
+            "y": 51
           },
           "id": 61,
           "options": {
@@ -4143,7 +4143,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 10949
+            "y": 58
           },
           "id": 221,
           "options": {
@@ -4257,7 +4257,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 10949
+            "y": 58
           },
           "id": 243,
           "options": {
@@ -4336,6 +4336,351 @@
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
+                  "mode": "normal"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 13,
+            "w": 12,
+            "x": 0,
+            "y": 69
+          },
+          "id": 254,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_frontend_max_sessions{proxy=~\"$frontend\",instance=\"$host\"}",
+              "hide": false,
+              "interval": "$interval",
+              "intervalFactor": 1,
+              "legendFormat": "{{ proxy }}",
+              "metric": "",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_frontend_current_sessions{proxy=~\"$frontend\",instance=\"$host\"}",
+              "hide": true,
+              "interval": "$interval",
+              "intervalFactor": 1,
+              "legendFormat": "Current active {{ proxy }}",
+              "metric": "",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            }
+          ],
+          "title": "Front - Sessions Max",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "normal"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 13,
+            "w": 12,
+            "x": 12,
+            "y": 69
+          },
+          "id": 256,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_backend_max_sessions{proxy=~\"$backend\",instance=\"$host\"}",
+              "hide": false,
+              "interval": "$interval",
+              "intervalFactor": 1,
+              "legendFormat": "{{ proxy }}",
+              "metric": "",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_backend_current_sessions{proxy=~\"$backend\",instance=\"$host\"}",
+              "hide": true,
+              "interval": "$interval",
+              "intervalFactor": 1,
+              "legendFormat": "Current active {{ proxy }}",
+              "metric": "",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            }
+          ],
+          "title": "Back - Sessions Max",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "decimals": 1,
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 82
+          },
+          "id": 257,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_server_max_sessions{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
+              "hide": false,
+              "interval": "$interval",
+              "intervalFactor": 1,
+              "legendFormat": "{{ proxy }} / {{ server }}",
+              "metric": "",
+              "range": true,
+              "refId": "B",
+              "step": 240
+            }
+          ],
+          "title": "Server - Session Max",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
                   "mode": "none"
                 },
                 "thresholdsStyle": {
@@ -4360,7 +4705,7 @@
             "h": 13,
             "w": 12,
             "x": 0,
-            "y": 10960
+            "y": 89
           },
           "id": 119,
           "options": {
@@ -4463,7 +4808,7 @@
             "h": 13,
             "w": 12,
             "x": 12,
-            "y": 10960
+            "y": 89
           },
           "id": 117,
           "options": {
@@ -4567,7 +4912,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 10973
+            "y": 102
           },
           "id": 137,
           "options": {
@@ -4683,7 +5028,7 @@
             "h": 13,
             "w": 12,
             "x": 12,
-            "y": 10980
+            "y": 109
           },
           "id": 128,
           "options": {
@@ -4815,7 +5160,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 10993
+            "y": 122
           },
           "id": 146,
           "options": {
@@ -4947,7 +5292,7 @@
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 8990
+            "y": 130
           },
           "id": 132,
           "options": {
@@ -5050,7 +5395,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 8990
+            "y": 130
           },
           "id": 178,
           "options": {
@@ -5153,7 +5498,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9996
+            "y": 720
           },
           "id": 135,
           "options": {
@@ -5256,7 +5601,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 10003
+            "y": 727
           },
           "id": 184,
           "options": {
@@ -5359,7 +5704,7 @@
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 10010
+            "y": 734
           },
           "id": 177,
           "options": {
@@ -5462,7 +5807,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 10010
+            "y": 734
           },
           "id": 127,
           "options": {
@@ -5565,7 +5910,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 10024
+            "y": 748
           },
           "id": 183,
           "options": {
@@ -5668,7 +6013,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 10031
+            "y": 755
           },
           "id": 133,
           "options": {
@@ -5785,7 +6130,7 @@
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 8991
+            "y": 131
           },
           "id": 38,
           "options": {
@@ -5901,7 +6246,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 8991
+            "y": 131
           },
           "id": 39,
           "options": {
@@ -6021,7 +6366,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9532
+            "y": 145
           },
           "id": 56,
           "options": {
@@ -6137,7 +6482,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9539
+            "y": 152
           },
           "id": 73,
           "options": {
@@ -6257,7 +6602,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9546
+            "y": 159
           },
           "id": 185,
           "options": {
@@ -6360,7 +6705,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9553
+            "y": 166
           },
           "id": 204,
           "options": {
@@ -6464,7 +6809,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9560
+            "y": 173
           },
           "id": 144,
           "options": {
@@ -6594,7 +6939,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 8992
+            "y": 16208
           },
           "id": 121,
           "options": {
@@ -6725,7 +7070,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 8992
+            "y": 16208
           },
           "id": 139,
           "options": {
@@ -6868,7 +7213,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 9262
+            "y": 16478
           },
           "id": 231,
           "options": {
@@ -7026,7 +7371,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 9262
+            "y": 16478
           },
           "id": 140,
           "options": {
@@ -7159,7 +7504,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 9273
+            "y": 16489
           },
           "id": 123,
           "options": {
@@ -7263,7 +7608,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 9273
+            "y": 16489
           },
           "id": 141,
           "options": {
@@ -7393,7 +7738,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 8993
+            "y": 16209
           },
           "id": 113,
           "options": {
@@ -7509,7 +7854,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 8993
+            "y": 16209
           },
           "id": 238,
           "options": {
@@ -7626,7 +7971,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 9122
+            "y": 16338
           },
           "id": 145,
           "options": {
@@ -7735,7 +8080,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 9130
+            "y": 16346
           },
           "id": 237,
           "options": {
@@ -7841,7 +8186,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 9138
+            "y": 16354
           },
           "id": 205,
           "options": {
@@ -7944,7 +8289,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 9138
+            "y": 16354
           },
           "id": 171,
           "options": {
@@ -8046,7 +8391,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 9149
+            "y": 16365
           },
           "id": 172,
           "options": {
@@ -8148,7 +8493,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 9156
+            "y": 16372
           },
           "id": 173,
           "options": {
@@ -8266,7 +8611,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 9156
+            "y": 16372
           },
           "id": 244,
           "options": {
@@ -8368,7 +8713,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 9167
+            "y": 16383
           },
           "id": 208,
           "options": {
@@ -8512,7 +8857,7 @@
             "h": 10,
             "w": 8,
             "x": 0,
-            "y": 43
+            "y": 7259
           },
           "id": 100,
           "options": {
@@ -8660,7 +9005,7 @@
             "h": 10,
             "w": 8,
             "x": 8,
-            "y": 43
+            "y": 7259
           },
           "id": 249,
           "options": {
@@ -8809,7 +9154,7 @@
             "h": 10,
             "w": 8,
             "x": 16,
-            "y": 43
+            "y": 7259
           },
           "id": 101,
           "options": {
@@ -8962,7 +9307,7 @@
             "h": 10,
             "w": 8,
             "x": 0,
-            "y": 53
+            "y": 7269
           },
           "id": 248,
           "options": {
@@ -9114,7 +9459,7 @@
             "h": 10,
             "w": 8,
             "x": 8,
-            "y": 53
+            "y": 7269
           },
           "id": 252,
           "options": {
@@ -9256,7 +9601,7 @@
             "h": 10,
             "w": 8,
             "x": 16,
-            "y": 53
+            "y": 7269
           },
           "id": 103,
           "options": {
@@ -9399,7 +9744,7 @@
             "h": 10,
             "w": 8,
             "x": 0,
-            "y": 63
+            "y": 7279
           },
           "id": 104,
           "options": {
@@ -9532,7 +9877,7 @@
             "h": 10,
             "w": 8,
             "x": 8,
-            "y": 63
+            "y": 7279
           },
           "id": 150,
           "options": {
@@ -9669,7 +10014,7 @@
             "h": 10,
             "w": 8,
             "x": 16,
-            "y": 63
+            "y": 7279
           },
           "id": 253,
           "options": {
@@ -9817,7 +10162,7 @@
             "h": 11,
             "w": 8,
             "x": 0,
-            "y": 44
+            "y": 7260
           },
           "id": 216,
           "options": {
@@ -9960,7 +10305,7 @@
             "h": 11,
             "w": 8,
             "x": 8,
-            "y": 44
+            "y": 7260
           },
           "id": 99,
           "options": {
@@ -10093,7 +10438,7 @@
             "h": 11,
             "w": 8,
             "x": 16,
-            "y": 44
+            "y": 7260
           },
           "id": 247,
           "options": {
@@ -10225,7 +10570,7 @@
             "h": 11,
             "w": 8,
             "x": 0,
-            "y": 55
+            "y": 7271
           },
           "id": 87,
           "options": {
@@ -10358,7 +10703,7 @@
             "h": 11,
             "w": 8,
             "x": 8,
-            "y": 55
+            "y": 7271
           },
           "id": 88,
           "options": {
@@ -10461,7 +10806,7 @@
             "h": 11,
             "w": 8,
             "x": 16,
-            "y": 55
+            "y": 7271
           },
           "id": 109,
           "options": {
@@ -10578,7 +10923,7 @@
             "h": 11,
             "w": 8,
             "x": 0,
-            "y": 66
+            "y": 7282
           },
           "id": 86,
           "options": {
@@ -10695,7 +11040,7 @@
             "h": 11,
             "w": 8,
             "x": 8,
-            "y": 66
+            "y": 7282
           },
           "id": 111,
           "options": {
@@ -10812,7 +11157,7 @@
             "h": 11,
             "w": 8,
             "x": 16,
-            "y": 66
+            "y": 7282
           },
           "id": 110,
           "options": {
@@ -10929,7 +11274,7 @@
             "h": 11,
             "w": 8,
             "x": 0,
-            "y": 77
+            "y": 7293
           },
           "id": 251,
           "options": {
@@ -11048,7 +11393,7 @@
             "h": 11,
             "w": 8,
             "x": 8,
-            "y": 77
+            "y": 7293
           },
           "id": 108,
           "options": {
@@ -11166,7 +11511,7 @@
             "h": 11,
             "w": 8,
             "x": 16,
-            "y": 77
+            "y": 7293
           },
           "id": 218,
           "options": {
@@ -11391,6 +11736,6 @@
   "timezone": "browser",
   "title": "HAProxy",
   "uid": "rEqu1u5ue",
-  "version": 25,
+  "version": 26,
   "weekStart": ""
 }
