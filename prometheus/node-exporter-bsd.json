@@ -107,7 +107,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Busy state of all CPU cores together",
       "fieldConfig": {
@@ -174,7 +174,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -195,7 +195,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Busy state of all CPU cores together (5 min average)",
       "fieldConfig": {
@@ -262,7 +262,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -282,7 +282,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Busy state of all CPU cores together (5 min average)",
       "fieldConfig": {
@@ -349,7 +349,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -369,7 +369,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Non available RAM memory",
       "fieldConfig": {
@@ -428,7 +428,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -448,7 +448,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Percentage of swap space currently used by the system",
       "fieldConfig": {
@@ -515,7 +515,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -533,7 +533,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Used Root FS",
       "fieldConfig": {
@@ -600,7 +600,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -619,7 +619,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Total number of CPU cores",
       "fieldConfig": {
@@ -680,7 +680,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -698,7 +698,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "System uptime - Pending https://github.com/prometheus/node_exporter/pull/550",
       "fieldConfig": {
@@ -760,7 +760,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -778,7 +778,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Total RootFS",
       "fieldConfig": {
@@ -840,7 +840,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -860,7 +860,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Total RAM",
       "fieldConfig": {
@@ -922,7 +922,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -940,7 +940,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Total SWAP",
       "fieldConfig": {
@@ -1002,7 +1002,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1033,7 +1033,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "CPU time usage split by state, normalized across all CPU cores",
       "fieldConfig": {
@@ -1195,7 +1195,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"system\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
@@ -1210,7 +1210,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"user\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
@@ -1225,7 +1225,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"idle\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
@@ -1239,7 +1239,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"interrupt\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
@@ -1253,7 +1253,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "sum(irate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"nice\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
@@ -1272,7 +1272,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Memory usage breakdown",
       "fieldConfig": {
@@ -1434,7 +1434,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "node_memory_inactive_bytes{instance=\"$node\",job=\"$job\"}",
@@ -1449,7 +1449,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "node_memory_active_bytes{instance=\"$node\",job=\"$job\"}",
@@ -1464,7 +1464,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "node_memory_buffer_bytes{instance=\"$node\",job=\"$job\"}",
@@ -1479,7 +1479,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "node_memory_cache_bytes{instance=\"$node\",job=\"$job\"}",
@@ -1494,7 +1494,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "node_memory_wired_bytes{instance=\"$node\",job=\"$job\"}",
@@ -1509,7 +1509,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "node_memory_free_bytes{instance=\"$node\",job=\"$job\"}",
@@ -1527,7 +1527,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Incoming and outgoing network traffic per interface",
       "fieldConfig": {
@@ -1624,7 +1624,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "(irate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))*8",
@@ -1638,7 +1638,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "(irate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))*8",
@@ -1656,7 +1656,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Rate of swap memory bytes moved in and out per second",
       "fieldConfig": {
@@ -1753,7 +1753,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "irate(node_memory_swapped_in_pages_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -1767,7 +1767,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "irate(node_memory_swapped_out_pages_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -1785,7 +1785,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Filesystem space used by percentage",
       "fieldConfig": {
@@ -1871,7 +1871,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "100 - ((node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\"} * 100) / node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\"})",
@@ -1889,7 +1889,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "${ds_prometheus}"
       },
       "description": "Disk space used, free, and available for user operations",
       "fieldConfig": {
@@ -1987,7 +1987,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "node_filesystem_size_bytes{instance=\"$node\",job=\"$job\"} - node_filesystem_free_bytes{instance=\"$node\",job=\"$job\"}",
@@ -2001,7 +2001,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "node_filesystem_free_bytes{instance=\"$node\",job=\"$job\"}",
@@ -2016,7 +2016,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\"}",
@@ -2044,7 +2044,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Rate of network packets transmitted and received per second",
           "fieldConfig": {
@@ -2141,7 +2141,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_network_transmit_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -2155,7 +2155,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_network_receive_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -2173,7 +2173,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Rate of dropped network packets during transmission and reception per second",
           "fieldConfig": {
@@ -2270,7 +2270,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_network_receive_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -2284,7 +2284,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_network_transmit_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -2302,7 +2302,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Rate of network transmission and reception errors per second",
           "fieldConfig": {
@@ -2399,7 +2399,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_network_transmit_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -2413,7 +2413,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_network_receive_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -2431,7 +2431,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Rate of multicast packets transmitted and received per second",
           "fieldConfig": {
@@ -2528,7 +2528,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_network_transmit_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -2542,7 +2542,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_network_receive_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -2560,7 +2560,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Rate of network packets received without a recognized protocol per second",
           "fieldConfig": {
@@ -2644,7 +2644,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_network_noproto_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -2662,7 +2662,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Rate of packet collisions detected during transmission",
           "fieldConfig": {
@@ -2746,7 +2746,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_network_transmit_colls_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -2778,7 +2778,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Per-second rate of context switches",
           "fieldConfig": {
@@ -2863,7 +2863,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_exec_context_switches_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -2881,7 +2881,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Per-second rate of hardware and software interrupts",
           "fieldConfig": {
@@ -2966,7 +2966,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_exec_device_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -2980,7 +2980,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_exec_software_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -2998,7 +2998,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "System load average over 1, 5, and 15 minutes. Reflects the number of active or waiting processes",
           "fieldConfig": {
@@ -3114,7 +3114,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "node_load1{instance=\"$node\",job=\"$job\"}",
@@ -3128,7 +3128,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "node_load5{instance=\"$node\",job=\"$job\"}",
@@ -3142,7 +3142,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "node_load15{instance=\"$node\",job=\"$job\"}",
@@ -3156,7 +3156,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
@@ -3175,7 +3175,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Rate of system calls executed per second",
           "fieldConfig": {
@@ -3260,7 +3260,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_exec_system_calls_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -3278,7 +3278,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Rate of process forks and processor traps handled per second",
           "fieldConfig": {
@@ -3363,7 +3363,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_exec_forks_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -3378,7 +3378,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_exec_traps_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -3397,7 +3397,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Rate of change in system-reported time per second",
           "fieldConfig": {
@@ -3482,7 +3482,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_time_seconds{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -3515,7 +3515,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Number of I/O operations completed per second",
           "fieldConfig": {
@@ -3612,7 +3612,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -3626,7 +3626,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -3645,7 +3645,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Number of bytes read from or written to the device per second",
           "fieldConfig": {
@@ -3742,7 +3742,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -3756,7 +3756,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -3775,7 +3775,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Percentage of time the disk spent actively processing I/O operations",
           "fieldConfig": {
@@ -3859,7 +3859,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
@@ -3877,7 +3877,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Number of free file nodes (inodes) available per mounted filesystem",
           "fieldConfig": {
@@ -3961,7 +3961,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "node_filesystem_files_free{instance=\"$node\",job=\"$job\"}",
@@ -3975,7 +3975,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "node_filesystem_files{instance=\"$node\",job=\"$job\"}",
@@ -3994,7 +3994,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Filesystems mounted in read-only mode or reporting device-level I/O errors",
           "fieldConfig": {
@@ -4080,7 +4080,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "expr": "node_filesystem_readonly{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
               "format": "time_series",
@@ -4092,7 +4092,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "node_filesystem_device_error{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
@@ -4125,7 +4125,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Duration of each individual collector executed during a Node Exporter scrape",
           "fieldConfig": {
@@ -4209,7 +4209,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "node_scrape_collector_duration_seconds{instance=\"$node\",job=\"$job\"}",
@@ -4228,7 +4228,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "${ds_prometheus}"
           },
           "description": "Shows whether each Node Exporter collector scraped successfully (1 = success, 0 = failure), and whether the textfile collector returned an error.",
           "fieldConfig": {
@@ -4296,7 +4296,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "node_scrape_collector_success{instance=\"$node\",job=\"$job\"}",
@@ -4311,7 +4311,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
               "expr": "1 - node_textfile_scrape_error{instance=\"$node\",job=\"$job\"}",
@@ -4343,7 +4343,7 @@
         "current": {},
         "includeAll": false,
         "label": "datasource",
-        "name": "DS_PROMETHEUS",
+        "name": "ds_prometheus",
         "options": [],
         "query": "prometheus",
         "refresh": 1,
@@ -4354,7 +4354,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "${ds_prometheus}"
         },
         "definition": "",
         "includeAll": false,
@@ -4373,7 +4373,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "${ds_prometheus}"
         },
         "definition": "label_values(node_uname_info{job=\"$job\"}, instance)",
         "includeAll": false,
