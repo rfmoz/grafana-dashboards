@@ -2868,7 +2868,7 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "irate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+              "expr": "irate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Read",
               "range": true,
@@ -2877,7 +2877,7 @@
             },
             {
               "editorMode": "code",
-              "expr": "irate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+              "expr": "irate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "intervalFactor": 1,
               "legendFormat": "{{device}} - Write",
               "range": true,
@@ -2987,7 +2987,7 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "irate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+              "expr": "irate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -2998,7 +2998,7 @@
             },
             {
               "editorMode": "code",
-              "expr": "irate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
+              "expr": "irate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 1,
@@ -3320,7 +3320,7 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "irate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"} [$__rate_interval])",
+              "expr": "irate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\"} [$__rate_interval])",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -16104,24 +16104,6 @@
         "regex": "",
         "sort": 1,
         "type": "query"
-      },
-      {
-        "current": {
-          "text": "[a-z]+|nvme[0-9]+n[0-9]+|mmcblk[0-9]+",
-          "value": "[a-z]+|nvme[0-9]+n[0-9]+|mmcblk[0-9]+"
-        },
-        "hide": 2,
-        "includeAll": false,
-        "name": "diskdevices",
-        "options": [
-          {
-            "selected": true,
-            "text": "[a-z]+|nvme[0-9]+n[0-9]+|mmcblk[0-9]+",
-            "value": "[a-z]+|nvme[0-9]+n[0-9]+|mmcblk[0-9]+"
-          }
-        ],
-        "query": "[a-z]+|nvme[0-9]+n[0-9]+|mmcblk[0-9]+",
-        "type": "custom"
       }
     ]
   },
@@ -16133,6 +16115,6 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 97,
+  "version": 98,
   "weekStart": ""
 }
