@@ -2820,7 +2820,6 @@
             {
               "editorMode": "code",
               "expr": "irate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\",device=~\"[a-z]+|nvme[0-9]+n[0-9]+|mmcblk[0-9]+\"}[$__rate_interval])",
-              "intervalFactor": 1,
               "legendFormat": "{{device}} - Read",
               "range": true,
               "refId": "A",
@@ -12965,7 +12964,6 @@
               "editorMode": "code",
               "expr": "node_sockstat_FRAG_memory{instance=\"$node\",job=\"$job\"}",
               "interval": "",
-              "intervalFactor": 1,
               "legendFormat": "Fragmentation",
               "range": true,
               "refId": "C"
@@ -13185,7 +13183,6 @@
               "expr": "node_sockstat_UDP_mem{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "interval": "",
-              "intervalFactor": 1,
               "legendFormat": "UDP",
               "range": true,
               "refId": "B",
