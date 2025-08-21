@@ -2869,7 +2869,7 @@
             {
               "editorMode": "code",
               "expr": "irate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}[$__rate_interval])",
-              "intervalFactor": 4,
+              "intervalFactor": 1,
               "legendFormat": "{{device}} - Read",
               "range": true,
               "refId": "A",
