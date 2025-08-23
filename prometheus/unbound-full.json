@@ -455,7 +455,6 @@
           },
           "editorMode": "code",
           "expr": "sum(irate(unbound_cache_misses_total{instance=\"$instance\"}[$__rate_interval]))",
-          "hide": false,
           "legendFormat": "misses",
           "range": true,
           "refId": "B"
@@ -467,7 +466,6 @@
           },
           "editorMode": "code",
           "expr": "sum(irate(unbound_cache_hits_total{instance=\"$instance\"}[$__rate_interval]))",
-          "hide": false,
           "legendFormat": "hits",
           "range": true,
           "refId": "A"
@@ -682,7 +680,6 @@
           "editorMode": "code",
           "expr": "irate(unbound_response_time_seconds_bucket{instance=\"$instance\",le=~\"3.2e-05|6.4e-05|0.000128|0.000256|0.000512|0.001024|0.002048|0.004096|0.008192|0.016384|0.032768|0.065536|0.131072|0.262144|0.524288|1|2|4|8|16|32|64\"}[$__rate_interval])",
           "format": "heatmap",
-          "hide": false,
           "instant": false,
           "legendFormat": "{{le}}",
           "refId": "A"
@@ -1042,7 +1039,6 @@
               },
               "editorMode": "code",
               "expr": "irate(unbound_query_udpout_total{instance=\"$instance\"}[$__rate_interval])",
-              "hide": false,
               "legendFormat": "UDP out",
               "range": true,
               "refId": "C"
@@ -1054,7 +1050,6 @@
               },
               "editorMode": "code",
               "expr": "irate(unbound_query_tcp_total{instance=\"$instance\"}[$__rate_interval])",
-              "hide": false,
               "legendFormat": "TCP in",
               "range": true,
               "refId": "A"
@@ -1257,7 +1252,6 @@
               },
               "editorMode": "code",
               "expr": "irate(unbound_query_opcodes_total{instance=\"$instance\"}[$__rate_interval])",
-              "hide": false,
               "legendFormat": "{{opcode}}",
               "range": true,
               "refId": "B"
@@ -1369,7 +1363,6 @@
               },
               "editorMode": "code",
               "expr": "irate(unbound_query_tls_total{instance=\"$instance\"}[$__rate_interval])",
-              "hide": false,
               "legendFormat": "TLS",
               "range": true,
               "refId": "D"
@@ -1596,7 +1589,6 @@
               },
               "editorMode": "code",
               "expr": "irate(unbound_answers_bogus{instance=\"$instance\"}[$__rate_interval])",
-              "hide": false,
               "legendFormat": "Bogus",
               "range": true,
               "refId": "A"
@@ -1709,7 +1701,6 @@
               },
               "editorMode": "code",
               "expr": "irate(unbound_answers_secure_total{instance=\"$instance\"}[$__rate_interval])",
-              "hide": false,
               "legendFormat": "Secure",
               "range": true,
               "refId": "B"
@@ -1839,7 +1830,6 @@
               },
               "editorMode": "code",
               "expr": "sum(irate(unbound_rrset_cache_count{instance=\"$instance\"}[$__rate_interval]))",
-              "hide": false,
               "legendFormat": "rrset",
               "range": true,
               "refId": "B"
@@ -2080,7 +2070,6 @@
               },
               "editorMode": "code",
               "expr": "sum(unbound_request_list_current_user{instance=\"$instance\"})",
-              "hide": false,
               "legendFormat": "only counting the requests from client queries",
               "range": true,
               "refId": "B"
@@ -2193,7 +2182,6 @@
               },
               "editorMode": "code",
               "expr": "sum(irate(unbound_request_list_exceeded_total{instance=\"$instance\"}[$__rate_interval]))",
-              "hide": false,
               "legendFormat": "queries that were dropped because the request list was full",
               "range": true,
               "refId": "B"
@@ -2434,7 +2422,6 @@
               },
               "editorMode": "code",
               "expr": "unbound_memory_doh_bytes{buffer=\"response_buffer\",instance=\"$instance\"}",
-              "hide": false,
               "legendFormat": "response buffer",
               "range": true,
               "refId": "B"
@@ -2762,7 +2749,6 @@
               },
               "editorMode": "code",
               "expr": "irate(unbound_unwanted_replies_total{instance=\"$instance\"}[$__rate_interval])",
-              "hide": false,
               "legendFormat": "replies",
               "range": true,
               "refId": "B"
@@ -2874,7 +2860,6 @@
               },
               "editorMode": "code",
               "expr": "unbound_recursion_time_seconds_median{instance=\"$instance\"}",
-              "hide": false,
               "legendFormat": "median",
               "range": true,
               "refId": "B"
