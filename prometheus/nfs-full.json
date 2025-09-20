@@ -162,7 +162,6 @@
         {
           "expr": "rate(node_nfs_connections_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "hide": false,
           "legendFormat": "Number of NFS TCP connections",
           "refId": "C",
           "step": 240
@@ -260,7 +259,6 @@
         {
           "expr": "rate(node_nfsd_connections_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "hide": false,
           "legendFormat": "Number of NFSd TCP connections",
           "refId": "C",
           "step": 240
@@ -688,7 +686,6 @@
         {
           "expr": "rate(node_nfs_rpc_authentication_refreshes_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "hide": false,
           "legendFormat": "Number of RPC authentication refreshes performed",
           "refId": "C",
           "step": 240
@@ -696,7 +693,6 @@
         {
           "expr": "rate(node_nfs_rpc_retransmissions_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "hide": false,
           "legendFormat": "Number of RPC transmissions performed",
           "refId": "A",
           "step": 240
@@ -704,7 +700,6 @@
         {
           "expr": "rate(node_nfs_rpcs_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "hide": false,
           "legendFormat": "Total number of RPCs performed",
           "refId": "B",
           "step": 240
@@ -814,7 +809,6 @@
         {
           "expr": "rate(node_nfsd_rpc_errors_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "hide": false,
           "legendFormat": "{{ error }} - NFSd RPC errors",
           "refId": "C",
           "step": 240
@@ -822,7 +816,6 @@
         {
           "expr": "rate(node_nfsd_server_rpcs_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "hide": false,
           "legendFormat": "NFSd RPCs",
           "refId": "A",
           "step": 240
@@ -1096,7 +1089,6 @@
         {
           "expr": "rate(node_nfsd_file_handles_stale_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "hide": false,
           "legendFormat": "NFSd stale file handles",
           "refId": "C",
           "step": 240
@@ -1194,7 +1186,6 @@
         {
           "expr": "rate(node_nfsd_read_ahead_cache_not_found_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "hide": false,
           "legendFormat": "NFSd read ahead cache not found",
           "refId": "C",
           "step": 240
@@ -1202,7 +1193,6 @@
         {
           "expr": "rate(node_nfsd_reply_cache_hits_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "hide": false,
           "legendFormat": "NFSd Reply Cache hits (client lost server response)",
           "refId": "A",
           "step": 240
@@ -1210,7 +1200,6 @@
         {
           "expr": "rate(node_nfsd_reply_cache_misses_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "hide": false,
           "legendFormat": "NFSd Reply Cache an operation that requires caching (idempotent)",
           "refId": "B",
           "step": 240
@@ -1218,7 +1207,6 @@
         {
           "expr": "rate(node_nfsd_reply_cache_nocache_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "hide": false,
           "legendFormat": "NFSd Reply Cache non-idempotent operations (rename/delete/…)",
           "refId": "D",
           "step": 240
@@ -1316,7 +1304,6 @@
         {
           "expr": "node_nfsd_server_threads{instance=~\"$node:$port\",job=~\"$job\"}",
           "format": "time_series",
-          "hide": false,
           "legendFormat": "NFSd kernel threads that are running",
           "refId": "C",
           "step": 240
