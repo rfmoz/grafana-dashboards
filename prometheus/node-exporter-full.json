@@ -301,7 +301,7 @@
         "type": "prometheus",
         "uid": "${ds_prometheus}"
       },
-      "description": "System load  over all CPU cores together",
+      "description": "System load over all CPU cores together",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1552,7 +1552,7 @@
           "editorMode": "code",
           "expr": "rate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
           "format": "time_series",
-          "legendFormat": "Tx {{device}} ",
+          "legendFormat": "Tx {{device}}",
           "range": true,
           "refId": "B",
           "step": 240
@@ -8323,7 +8323,7 @@
               "expr": "100 * node_cooling_device_cur_state{instance=\"$node\",job=\"$job\"} / node_cooling_device_max_state{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "{{ name }} - {{ type }} ",
+              "legendFormat": "{{name}} - {{type}}",
               "range": true,
               "refId": "A",
               "step": 240
@@ -12075,7 +12075,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Operational and physical link status of each network interface. Values are Yes for 'up' or link present, and No for 'down' or no carrier.\"",
+          "description": "Operational and physical link status of each network interface. Values are Yes for 'up' or link present, and No for 'down' or no carrier.",
           "fieldConfig": {
             "defaults": {
               "color": {
