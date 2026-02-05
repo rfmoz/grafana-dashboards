@@ -1321,7 +1321,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Inactive - Memory that is completely free and ready to use"
+              "options": "Inactive - Memory not recently accessed, can be reclaimed"
             },
             "properties": [
               {
@@ -1351,7 +1351,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Free -  Memory that has been freed but is still cached since it may be used again"
+              "options": "Free - Completely unused memory available for allocation"
             },
             "properties": [
               {
@@ -1415,7 +1415,7 @@
           "editorMode": "code",
           "expr": "node_memory_inactive_bytes{instance=\"$node\",job=\"$job\"}",
           "format": "time_series",
-          "legendFormat": "Inactive - Memory that is completely free and ready to use",
+          "legendFormat": "Inactive - Memory not recently accessed, can be reclaimed",
           "range": true,
           "refId": "A",
           "step": 240
@@ -1479,7 +1479,7 @@
           },
           "editorMode": "code",
           "expr": "node_memory_free_bytes{instance=\"$node\",job=\"$job\"}",
-          "legendFormat": "Free -  Memory that has been freed but is still cached since it may be used again",
+          "legendFormat": "Free - Completely unused memory available for allocation",
           "range": true,
           "refId": "F",
           "step": 240
