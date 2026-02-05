@@ -5160,7 +5160,7 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "node_memory_HugePages_Free{instance=\"$node\",job=\"$job\"} * node_memory_Hugepagesize_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "(node_memory_HugePages_Total{instance=\"$node\",job=\"$job\"} - node_memory_HugePages_Free{instance=\"$node\",job=\"$job\"}) * node_memory_Hugepagesize_bytes{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "legendFormat": "HugePages Used – Currently allocated",
               "range": true,
