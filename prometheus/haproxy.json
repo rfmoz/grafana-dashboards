@@ -4101,7 +4101,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "max_over_time(haproxy_frontend_current_sessions{proxy=~\"$frontend\", instance=\"$host\"}[$__rate_interval]) / haproxy_frontend_limit_sessions{proxy=~\"$frontend\", instance=\"$host\"} * 100",
+              "expr": "(haproxy_frontend_limit_sessions{proxy=~\"$frontend\", instance=\"$host\"} > bool 0) * (max_over_time(haproxy_frontend_current_sessions{proxy=~\"$frontend\", instance=\"$host\"}[$__rate_interval]) / haproxy_frontend_limit_sessions{proxy=~\"$frontend\", instance=\"$host\"} * 100)",
               "interval": "$interval",
               "legendFormat": "{{ proxy }}",
               "range": true,
@@ -4213,7 +4213,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "max_over_time(haproxy_backend_current_sessions{proxy=~\"$backend\", instance=\"$host\"}[$__rate_interval]) / haproxy_backend_limit_sessions{proxy=~\"$backend\", instance=\"$host\"} * 100",
+              "expr": "(haproxy_backend_limit_sessions{proxy=~\"$backend\", instance=\"$host\"} > bool 0) * (max_over_time(haproxy_backend_current_sessions{proxy=~\"$backend\", instance=\"$host\"}[$__rate_interval]) / haproxy_backend_limit_sessions{proxy=~\"$backend\", instance=\"$host\"} * 100)",
               "interval": "$interval",
               "legendFormat": "{{ proxy }}",
               "range": true,

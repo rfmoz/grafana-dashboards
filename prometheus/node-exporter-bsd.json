@@ -511,7 +511,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "(node_memory_swap_used_bytes{instance=\"$node\",job=\"$job\"} * 100) / node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "(node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"} > bool 0) * (node_memory_swap_used_bytes{instance=\"$node\",job=\"$job\"} * 100) / node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"}",
           "instant": true,
           "range": false,
           "refId": "A",
