@@ -3498,7 +3498,7 @@
                   }
                 ]
               },
-              "unit": "Bps"
+              "unit": "iops"
             },
             "overrides": [
               {
@@ -3625,7 +3625,7 @@
                   }
                 ]
               },
-              "unit": "iops"
+              "unit": "Bps"
             },
             "overrides": [
               {
