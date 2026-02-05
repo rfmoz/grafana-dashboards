@@ -86,7 +86,7 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Connections",
+            "axisLabel": "Connections/s",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -128,7 +128,7 @@
               }
             ]
           },
-          "unit": "short"
+          "unit": "cps"
         },
         "overrides": []
       },
@@ -162,7 +162,7 @@
         {
           "expr": "rate(node_nfs_connections_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "legendFormat": "Number of NFS TCP connections",
+          "legendFormat": "NFS TCP connections/s",
           "refId": "C",
           "step": 240
         }
@@ -183,7 +183,7 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Connections",
+            "axisLabel": "Connections/s",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -225,7 +225,7 @@
               }
             ]
           },
-          "unit": "short"
+          "unit": "cps"
         },
         "overrides": []
       },
@@ -259,7 +259,7 @@
         {
           "expr": "rate(node_nfsd_connections_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "legendFormat": "Number of NFSd TCP connections",
+          "legendFormat": "NFSd TCP connections/s",
           "refId": "C",
           "step": 240
         }
@@ -610,7 +610,7 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Counter",
+            "axisLabel": "Operations/s",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -652,7 +652,7 @@
               }
             ]
           },
-          "unit": "short"
+          "unit": "ops"
         },
         "overrides": []
       },
@@ -1013,7 +1013,7 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Counter",
+            "axisLabel": "Operations/s",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -1055,7 +1055,7 @@
               }
             ]
           },
-          "unit": "short"
+          "unit": "ops"
         },
         "overrides": []
       },
@@ -1094,7 +1094,7 @@
           "step": 240
         }
       ],
-      "title": "NFS File Handles",
+      "title": "NFSd File Handles",
       "type": "timeseries"
     },
     {
@@ -1110,7 +1110,7 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Counter",
+            "axisLabel": "Operations/s",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -1152,7 +1152,7 @@
               }
             ]
           },
-          "unit": "short"
+          "unit": "ops"
         },
         "overrides": []
       },
