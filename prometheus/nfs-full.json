@@ -280,7 +280,7 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Packets",
+            "axisLabel": "Packets/s",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -445,7 +445,7 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Packets",
+            "axisLabel": "Packets/s",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -693,7 +693,7 @@
         {
           "expr": "rate(node_nfs_rpc_retransmissions_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "legendFormat": "Number of RPC transmissions performed",
+          "legendFormat": "Number of RPC retransmissions performed",
           "refId": "A",
           "step": 240
         },
@@ -721,7 +721,7 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Counter errors (-) / success (+)",
+            "axisLabel": "Operations/s errors (-) / success (+)",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -762,7 +762,7 @@
               }
             ]
           },
-          "unit": "short"
+          "unit": "ops"
         },
         "overrides": [
           {
@@ -1212,7 +1212,7 @@
           "step": 240
         }
       ],
-      "title": "NFS Cache",
+      "title": "NFSd Cache",
       "type": "timeseries"
     },
     {

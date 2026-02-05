@@ -1038,7 +1038,7 @@
               },
               "expr": "irate(bind_query_recursions_total{instance=~\"$host:$port\"}[5m])",
               "interval": "",
-              "legendFormat": "Queries causing recursionries received",
+              "legendFormat": "Queries causing recursions",
               "refId": "C"
             }
           ],
