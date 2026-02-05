@@ -3255,7 +3255,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "How often tasks experience CPU, memory, or I/O delays. “Some” indicates partial slowdown; “Full” indicates all tasks are stalled. Based on Linux PSI metrics:\nhttps://docs.kernel.org/accounting/psi.html",
+          "description": "How often tasks experience CPU, memory, or I/O delays. 'Some' indicates partial slowdown; 'Full' indicates all tasks are stalled. Based on Linux PSI metrics:\nhttps://docs.kernel.org/accounting/psi.html",
           "fieldConfig": {
             "defaults": {
               "color": {

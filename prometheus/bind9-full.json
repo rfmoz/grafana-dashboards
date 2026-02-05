@@ -918,7 +918,7 @@
               },
               "expr": "irate(bind_resolver_query_retries_total{instance=~\"$host:$port\",view=~\"$view\"}[5m])",
               "interval": "",
-              "legendFormat": "queries retry {{ view }} ",
+              "legendFormat": "queries retry {{ view }}",
               "refId": "B"
             }
           ],
@@ -1471,7 +1471,7 @@
               },
               "expr": "irate(bind_resolver_query_duration_seconds_count{instance=~\"$host:$port\",view=~\"$view\"}[5m])",
               "interval": "",
-              "legendFormat": "count {{ view }} ",
+              "legendFormat": "count {{ view }}",
               "refId": "A"
             },
             {
@@ -1690,7 +1690,7 @@
               },
               "expr": "irate(bind_resolver_response_mismatch_total{instance=~\"$host:$port\",view=~\"$view\"}[5m])",
               "interval": "",
-              "legendFormat": "mismatch  {{ view }}",
+              "legendFormat": "mismatch {{ view }}",
               "refId": "A"
             },
             {
@@ -1700,7 +1700,7 @@
               },
               "expr": "irate(bind_resolver_response_lame_total{instance=~\"$host:$port\",view=~\"$view\"}[5m])",
               "interval": "",
-              "legendFormat": "lame  {{ view }}",
+              "legendFormat": "lame {{ view }}",
               "refId": "C"
             }
           ],

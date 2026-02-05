@@ -280,7 +280,7 @@
         "type": "prometheus",
         "uid": "${ds_prometheus}"
       },
-      "description": "Busy state of all CPU cores together (5 min average)",
+      "description": "Busy state of all CPU cores together (15 min average)",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1836,7 +1836,7 @@
           "editorMode": "code",
           "expr": "100 - ((node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\"} * 100) / node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\"})",
           "format": "time_series",
-          "legendFormat": "{{device}} - {{mountpoint}} ",
+          "legendFormat": "{{device}} - {{mountpoint}}",
           "range": true,
           "refId": "A",
           "step": 240
