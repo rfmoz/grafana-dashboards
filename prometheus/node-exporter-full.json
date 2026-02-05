@@ -15038,7 +15038,258 @@
               "step": 240
             }
           ],
-          "title": "TCP Stat",
+          "title": "TCP Stat Persistent",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "description": "Transient TCP connection states. These are typically short-lived during connection establishment and teardown",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "min": 0,
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 243
+          },
+          "id": 339,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "node_tcp_connection_states{state=\"syn_sent\",instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "SYN_SENT",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_tcp_connection_states{state=\"syn_recv\",instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "SYN_RECV",
+              "range": true,
+              "refId": "B",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_tcp_connection_states{state=\"fin_wait1\",instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "FIN_WAIT1",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_tcp_connection_states{state=\"close\",instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "CLOSE",
+              "range": true,
+              "refId": "D",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_tcp_connection_states{state=\"last_ack\",instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "LAST_ACK",
+              "range": true,
+              "refId": "E",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_tcp_connection_states{state=\"closing\",instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "CLOSING",
+              "range": true,
+              "refId": "F",
+              "step": 240
+            }
+          ],
+          "title": "TCP Stat Transient",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "description": "TCP socket queue sizes. High rx_queued_bytes indicates application not reading fast enough. High tx_queued_bytes indicates network congestion or slow receiver",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "bytes"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 243
+          },
+          "id": 340,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "node_tcp_connection_states{state=\"rx_queued_bytes\",instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "RX Queued (waiting to be read)",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_tcp_connection_states{state=\"tx_queued_bytes\",instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "TX Queued (waiting to be sent)",
+              "range": true,
+              "refId": "B",
+              "step": 240
+            }
+          ],
+          "title": "TCP Socket Queue",
           "type": "timeseries"
         }
       ],
