@@ -1834,7 +1834,7 @@
             "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "100 - ((node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\"} * 100) / node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\"})",
+          "expr": "100 - ((node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\"} * 100) / node_filesystem_size_bytes{instance=\"$node\",job=\"$job\"})",
           "format": "time_series",
           "legendFormat": "{{device}} - {{mountpoint}}",
           "range": true,
