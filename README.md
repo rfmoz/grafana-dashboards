@@ -1,5 +1,10 @@
 # Grafana Dashboards
 
+[![License](https://img.shields.io/github/license/rfmoz/grafana-dashboards)](https://github.com/rfmoz/grafana-dashboards/blob/master/LICENSE)
+[![Grafana](https://img.shields.io/badge/grafana-dashboard-F46800?logo=grafana)](https://grafana.com/)
+[![Prometheus](https://img.shields.io/badge/prometheus-exporter-E6522C?logo=prometheus)](https://prometheus.io/)
+[![GitHub stars](https://img.shields.io/github/stars/rfmoz/grafana-dashboards)](https://github.com/rfmoz/grafana-dashboards/stargazers)
+
 ## Node Exporter Full
 
 - For node_exporter
