@@ -1591,7 +1591,7 @@
             "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "(irate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))*8",
+          "expr": "(rate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))*8",
           "format": "time_series",
           "legendFormat": "{{device}} - Rx in",
           "range": true,
@@ -1604,7 +1604,7 @@
             "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "(irate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))*8",
+          "expr": "(rate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))*8",
           "format": "time_series",
           "legendFormat": "{{device}} - Tx out",
           "range": true,
@@ -1718,7 +1718,7 @@
             "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "irate(node_memory_swapped_in_pages_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_memory_swapped_in_pages_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "Swap in",
           "range": true,
@@ -1731,7 +1731,7 @@
             "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "irate(node_memory_swapped_out_pages_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_memory_swapped_out_pages_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "Swap out",
           "range": true,
@@ -2100,7 +2100,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_network_transmit_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Tx out",
               "range": true,
@@ -2113,7 +2113,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_network_receive_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_packets_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Rx in",
               "range": true,
@@ -2227,7 +2227,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_network_receive_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Rx in",
               "range": true,
@@ -2240,7 +2240,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_network_transmit_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_drop_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Tx out",
               "range": true,
@@ -2354,7 +2354,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_network_transmit_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Tx out",
               "range": true,
@@ -2367,7 +2367,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_network_receive_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_errs_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Rx in",
               "range": true,
@@ -2481,7 +2481,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_network_transmit_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Tx out",
               "range": true,
@@ -2494,7 +2494,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_network_receive_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_receive_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Rx in",
               "range": true,
@@ -2595,7 +2595,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_network_noproto_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_noproto_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Rx in",
               "range": true,
@@ -2696,7 +2696,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_network_transmit_colls_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_network_transmit_colls_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Tx out",
               "range": true,
@@ -2812,7 +2812,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_exec_context_switches_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_exec_context_switches_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "Context switches",
               "range": true,
@@ -2914,7 +2914,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_exec_device_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_exec_device_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "Device",
               "range": true,
@@ -2927,7 +2927,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_exec_software_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_exec_software_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "Software",
               "range": true,
@@ -3201,7 +3201,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_exec_system_calls_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_exec_system_calls_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "System calls",
               "range": true,
@@ -3303,7 +3303,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_exec_forks_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_exec_forks_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "Forks",
               "range": true,
@@ -3316,7 +3316,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_exec_traps_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_exec_traps_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "Traps",
               "range": true,
@@ -3418,7 +3418,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_time_seconds{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_time_seconds{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
               "legendFormat": "Time Drift/sec",
@@ -3547,7 +3547,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Read",
               "range": true,
@@ -3560,7 +3560,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Write",
               "range": true,
@@ -3674,7 +3674,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Read",
               "range": true,
@@ -3687,7 +3687,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}} - Write",
               "range": true,
@@ -3788,7 +3788,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "irate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "legendFormat": "{{device}}",
               "range": true,
