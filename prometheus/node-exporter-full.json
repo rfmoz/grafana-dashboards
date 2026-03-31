@@ -1186,7 +1186,7 @@
         {
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"system\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
+          "expr": "avg(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"system\"}[$__rate_interval]))",
           "format": "time_series",
           "instant": false,
           "legendFormat": "Busy System",
@@ -1196,7 +1196,7 @@
         },
         {
           "editorMode": "code",
-          "expr": "sum(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"user\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
+          "expr": "avg(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"user\"}[$__rate_interval]))",
           "format": "time_series",
           "legendFormat": "Busy User",
           "range": true,
@@ -1205,7 +1205,7 @@
         },
         {
           "editorMode": "code",
-          "expr": "sum(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"iowait\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
+          "expr": "avg(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"iowait\"}[$__rate_interval]))",
           "format": "time_series",
           "legendFormat": "Busy Iowait",
           "range": true,
@@ -1214,7 +1214,7 @@
         },
         {
           "editorMode": "code",
-          "expr": "sum(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=~\".*irq\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
+          "expr": "sum(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=~\".*irq\"}[$__rate_interval]))",
           "format": "time_series",
           "legendFormat": "Busy IRQs",
           "range": true,
@@ -1223,7 +1223,7 @@
         },
         {
           "editorMode": "code",
-          "expr": "sum(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\",  mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
+          "expr": "avg(sum without (mode) (rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\",  mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[$__rate_interval])))",
           "format": "time_series",
           "legendFormat": "Busy Other",
           "range": true,
@@ -1232,7 +1232,7 @@
         },
         {
           "editorMode": "code",
-          "expr": "sum(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"idle\"}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)))",
+          "expr": "avg(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"idle\"}[$__rate_interval]))",
           "format": "time_series",
           "legendFormat": "Idle",
           "range": true,
