@@ -2767,7 +2767,7 @@
               },
               "links": [],
               "mappings": [],
-              "min": -1,
+              "min": 0,
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
@@ -4312,6 +4312,6 @@
   "timezone": "browser",
   "title": "Node Exporter BSD",
   "uid": "Kczn-jPZz",
-  "version": 5,
+  "version": 6,
   "weekStart": ""
 }
