@@ -2875,7 +2875,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Read*./"
+                  "options": "/.*Read.*/"
                 },
                 "properties": [
                   {
@@ -8119,7 +8119,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Critical*./"
+                  "options": "/.*Critical.*/"
                 },
                 "properties": [
                   {
@@ -8274,7 +8274,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Max*./"
+                  "options": "/.*Max.*/"
                 },
                 "properties": [
                   {
@@ -14606,7 +14606,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Max*./"
+                  "options": "/.*Max.*/"
                 },
                 "properties": [
                   {
@@ -15728,7 +15728,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Max*./"
+                  "options": "/.*Max.*/"
                 },
                 "properties": [
                   {
