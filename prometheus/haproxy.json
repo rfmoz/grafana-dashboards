@@ -4928,7 +4928,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Sserver.*/"
+                  "options": "/.*Server.*/"
                 },
                 "properties": [
                   {
@@ -5058,7 +5058,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Sserver.*/"
+                  "options": "/.*Server.*/"
                 },
                 "properties": [
                   {
