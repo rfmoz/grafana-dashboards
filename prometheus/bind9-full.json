@@ -62,7 +62,7 @@
   "description": "Bind9 exporter monitoring",
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "graphTooltip": 0,
+  "graphTooltip": 1,
   "id": null,
   "links": [
     {
