@@ -1579,7 +1579,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_resolver_cache_rrsets{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+              "expr": "bind_resolver_cache_rrsets{instance=~\"$host:$port\",view=~\"$view\"}",
               "interval": "",
               "legendFormat": "{{ type }} {{ view }}",
               "refId": "A"
