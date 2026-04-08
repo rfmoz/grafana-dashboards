@@ -648,7 +648,7 @@
           "color": "rgba(255,0,255,0.7)"
         },
         "filterValues": {
-          "le": 1e-9
+          "le": 1e-09
         },
         "legend": {
           "show": false
@@ -1818,7 +1818,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "sum(irate(unbound_msg_cache_count{instance=\"$instance\"}[$__rate_interval]))",
+              "expr": "unbound_msg_cache_count{instance=\"$instance\"}",
               "legendFormat": "messages",
               "range": true,
               "refId": "A"
@@ -1829,7 +1829,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "sum(irate(unbound_rrset_cache_count{instance=\"$instance\"}[$__rate_interval]))",
+              "expr": "unbound_rrset_cache_count{instance=\"$instance\"}",
               "legendFormat": "rrset",
               "range": true,
               "refId": "B"
