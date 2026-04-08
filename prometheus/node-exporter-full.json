@@ -11188,7 +11188,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "out (-) / in (+)",
+                "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -11229,20 +11229,7 @@
               },
               "unit": "pps"
             },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/.*out.*/"
-                },
-                "properties": [
-                  {
-                    "id": "custom.transform",
-                    "value": "negative-Y"
-                  }
-                ]
-              }
-            ]
+            "overrides": []
           },
           "gridPos": {
             "h": 10,
@@ -11299,7 +11286,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "out (-) / in (+)",
+                "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -11340,20 +11327,7 @@
               },
               "unit": "pps"
             },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/.*out.*/"
-                },
-                "properties": [
-                  {
-                    "id": "custom.transform",
-                    "value": "negative-Y"
-                  }
-                ]
-              }
-            ]
+            "overrides": []
           },
           "gridPos": {
             "h": 10,
@@ -11410,7 +11384,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "out (-) / in (+)",
+                "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -11451,20 +11425,7 @@
               },
               "unit": "pps"
             },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/.*out.*/"
-                },
-                "properties": [
-                  {
-                    "id": "custom.transform",
-                    "value": "negative-Y"
-                  }
-                ]
-              }
-            ]
+            "overrides": []
           },
           "gridPos": {
             "h": 10,
@@ -14315,7 +14276,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "out (-) / in (+)",
+                "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -14356,20 +14317,7 @@
               },
               "unit": "pps"
             },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/.*out.*/"
-                },
-                "properties": [
-                  {
-                    "id": "custom.transform",
-                    "value": "negative-Y"
-                  }
-                ]
-              }
-            ]
+            "overrides": []
           },
           "gridPos": {
             "h": 10,
@@ -15107,7 +15055,7 @@
             "x": 0,
             "y": 243
           },
-          "id": 339,
+          "id": 341,
           "options": {
             "legend": {
               "calcs": [
@@ -16011,6 +15959,6 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 100,
+  "version": 101,
   "weekStart": ""
 }
