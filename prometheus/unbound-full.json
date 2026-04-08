@@ -1717,7 +1717,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -1956,7 +1956,7 @@
       "collapsed": true,
       "datasource": {
         "type": "prometheus",
-        "uid": "000000001"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 1,
@@ -3033,6 +3033,6 @@
   "timezone": "",
   "title": "Unbound",
   "uid": "9FQf4fEWz",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
