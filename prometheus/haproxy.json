@@ -10131,8 +10131,8 @@
               },
               {
                 "matcher": {
-                  "id": "byName",
-                  "options": "Hard limit on the number of pipes for splicing, 0=unlimited"
+                  "id": "byRegexp",
+                  "options": "/.*limit.*/"
                 },
                 "properties": [
                   {
@@ -10177,7 +10177,7 @@
               "editorMode": "code",
               "expr": "haproxy_process_max_pipes{instance=\"$host\"}",
               "interval": "$interval",
-              "legendFormat": "Hard limit on the number of pipes for splicing, 0=unlimited",
+              "legendFormat": "Pipes limit",
               "metric": "",
               "range": true,
               "refId": "A",
