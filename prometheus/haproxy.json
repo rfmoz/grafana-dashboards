@@ -2087,20 +2087,7 @@
               },
               "unit": "reqps"
             },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/.*Denied.*/"
-                },
-                "properties": [
-                  {
-                    "id": "custom.transform",
-                    "value": "negative-Y"
-                  }
-                ]
-              }
-            ]
+            "overrides": []
           },
           "gridPos": {
             "h": 14,
@@ -8255,7 +8242,7 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "ops"
             },
             "overrides": []
           },
@@ -10099,7 +10086,7 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "ops"
             },
             "overrides": [
               {
@@ -10139,6 +10126,18 @@
                       "fixedColor": "dark-red",
                       "mode": "fixed"
                     }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Hard limit on the number of pipes for splicing, 0=unlimited"
+                },
+                "properties": [
+                  {
+                    "id": "unit",
+                    "value": "short"
                   }
                 ]
               }
@@ -10531,7 +10530,7 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "ops"
             },
             "overrides": []
           },
@@ -10863,7 +10862,7 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "ops"
             },
             "overrides": []
           },
@@ -11556,6 +11555,6 @@
   "timezone": "browser",
   "title": "HAProxy",
   "uid": "rEqu1u5ue",
-  "version": 27,
+  "version": 28,
   "weekStart": ""
 }
