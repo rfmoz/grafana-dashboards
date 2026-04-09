@@ -3984,7 +3984,7 @@
               "step": 240
             }
           ],
-          "title": "Server - Session",
+          "title": "Server - Sessions",
           "type": "timeseries"
         },
         {
@@ -4981,7 +4981,7 @@
               "step": 240
             }
           ],
-          "title": "Back -  Data transfers aborted",
+          "title": "Back - Data transfers aborted",
           "type": "timeseries"
         },
         {
@@ -5111,7 +5111,7 @@
               "step": 240
             }
           ],
-          "title": "Server -  Data transfers aborted",
+          "title": "Server - Data transfers aborted",
           "type": "timeseries"
         }
       ],
@@ -8381,7 +8381,7 @@
               "editorMode": "code",
               "expr": "haproxy_sticktable_size{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
-              "legendFormat": "{{ proxy }}",
+              "legendFormat": "{{ proxy }} - Size",
               "metric": "",
               "range": true,
               "refId": "A",
@@ -8395,7 +8395,7 @@
               "editorMode": "code",
               "expr": "haproxy_sticktable_used{proxy=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
-              "legendFormat": "{{ proxy }}",
+              "legendFormat": "{{ proxy }} - Used",
               "metric": "",
               "range": true,
               "refId": "B",
