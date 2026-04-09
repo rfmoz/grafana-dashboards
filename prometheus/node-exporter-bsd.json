@@ -511,7 +511,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "(node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"} > bool 0) * (node_memory_swap_used_bytes{instance=\"$node\",job=\"$job\"} * 100) / node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"}",
+          "expr": "(node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"} > bool 0) * ((node_memory_swap_used_bytes{instance=\"$node\",job=\"$job\"} / node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"}) * 100)",
           "instant": true,
           "range": false,
           "refId": "A",
@@ -927,7 +927,7 @@
         "type": "prometheus",
         "uid": "${ds_prometheus}"
       },
-      "description": "System uptime - Pending https://github.com/prometheus/node_exporter/pull/550",
+      "description": "System uptime",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1373,6 +1373,21 @@
                 "id": "color",
                 "value": {
                   "fixedColor": "orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Buffers - Disk cache"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "purple",
                   "mode": "fixed"
                 }
               }
@@ -2935,7 +2950,7 @@
               "step": 240
             }
           ],
-          "title": "Context Interrupts",
+          "title": "Interrupts",
           "type": "timeseries"
         },
         {
@@ -3324,7 +3339,7 @@
               "step": 240
             }
           ],
-          "title": "Processes  Forks / Traps",
+          "title": "Processes Forks / Traps",
           "type": "timeseries"
         },
         {
@@ -3459,7 +3474,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "read (–) / write (+)",
+                "axisLabel": "read (\u2013) / write (+)",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -3586,7 +3601,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "read (–) / write (+)",
+                "axisLabel": "read (\u2013) / write (+)",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -3905,7 +3920,7 @@
               "expr": "node_filesystem_files{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "hide": true,
-              "legendFormat": "{{device}} - {{mountpoint}}  - Filenodes total",
+              "legendFormat": "{{device}} - {{mountpoint}} - Filenodes total",
               "range": true,
               "refId": "B",
               "step": 240
