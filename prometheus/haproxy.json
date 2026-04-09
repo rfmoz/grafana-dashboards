@@ -7459,7 +7459,6 @@
               },
               "links": [],
               "mappings": [],
-              "min": -1,
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
