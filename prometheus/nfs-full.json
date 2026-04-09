@@ -15,7 +15,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.4.3"
+      "version": "11.6.1"
     },
     {
       "type": "datasource",
@@ -57,7 +57,16 @@
   "gnetId": 1860,
   "graphTooltip": 1,
   "id": null,
-  "links": [],
+  "links": [
+    {
+      "icon": "external link",
+      "tags": [],
+      "targetBlank": true,
+      "title": "GitHub",
+      "type": "link",
+      "url": "https://github.com/rfmoz/grafana-dashboards"
+    }
+  ],
   "liveNow": false,
   "panels": [
     {
@@ -3750,13 +3759,31 @@
   ],
   "refresh": "1m",
   "revision": 1,
-  "schemaVersion": 38,
+  "schemaVersion": 41,
   "style": "dark",
   "tags": [
     "nfs"
   ],
   "templating": {
     "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "default",
+          "value": "default"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "datasource",
+        "multi": false,
+        "name": "DS_PROMETHEUS",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
       {
         "current": {},
         "datasource": {
