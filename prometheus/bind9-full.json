@@ -15,7 +15,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.2.0"
+      "version": "11.6.1"
     },
     {
       "type": "datasource",
@@ -601,23 +601,7 @@
           },
           "unit": "ops"
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byRegexp",
-              "options": "/.*Errors.*/"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#F2495C",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 10,
@@ -1334,7 +1318,7 @@
                   }
                 ]
               },
-              "unit": "s"
+              "unit": "ops"
             },
             "overrides": []
           },
@@ -1433,7 +1417,7 @@
                   }
                 ]
               },
-              "unit": "s"
+              "unit": "ops"
             },
             "overrides": []
           },
@@ -1482,10 +1466,11 @@
               "expr": "irate(bind_resolver_query_duration_seconds_sum{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "sum {{ view }}",
-              "refId": "B"
+              "refId": "B",
+              "hide": true
             }
           ],
-          "title": "Resolver Query round-trip Count / Sum",
+          "title": "Resolver Query round-trip Count",
           "type": "timeseries"
         },
         {
@@ -1878,7 +1863,7 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 37,
+  "schemaVersion": 41,
   "style": "dark",
   "tags": [
     "bind",
