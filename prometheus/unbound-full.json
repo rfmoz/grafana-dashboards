@@ -15,7 +15,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.4.3"
+      "version": "11.6.1"
     },
     {
       "type": "panel",
@@ -72,10 +72,10 @@
       "keepTime": false,
       "tags": [],
       "targetBlank": true,
-      "title": "Github",
+      "title": "GitHub",
       "tooltip": "",
       "type": "link",
-      "url": " https://github.com/rfmoz/grafana-dashboards"
+      "url": "https://github.com/rfmoz/grafana-dashboards"
     }
   ],
   "liveNow": false,
@@ -1063,7 +1063,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries with a given query class.\n\nNumber of queries with a given query opcode.",
+          "description": "Number of queries with a given query class.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1265,7 +1265,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of DoH queries that were made towards the Unbound server.\n\nNmber of queries that were made using TCP TLS towards the Unbound server, including DoT and DoH queries.\n\nNumber of queries that were made using TCP TLS Resume towards the Unbound server.",
+          "description": "Number of DoH queries that were made towards the Unbound server.\n\nNumber of queries that were made using TCP TLS towards the Unbound server, including DoT and DoH queries.\n\nNumber of queries that were made using TCP TLS Resume towards the Unbound server.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2961,7 +2961,7 @@
               },
               "editorMode": "code",
               "expr": "irate(unbound_query_aggressive_nsec{instance=\"$instance\"}[$__rate_interval])",
-              "legendFormat": "{{rcode}}",
+              "legendFormat": "Aggressive NSEC",
               "range": true,
               "refId": "A"
             }
@@ -2976,7 +2976,7 @@
   ],
   "refresh": "1m",
   "revision": 1,
-  "schemaVersion": 38,
+  "schemaVersion": 41,
   "style": "dark",
   "tags": [
     "unbound",
@@ -2985,6 +2985,24 @@
   ],
   "templating": {
     "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "default",
+          "value": "default"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "datasource",
+        "multi": false,
+        "name": "DS_PROMETHEUS",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
       {
         "current": {},
         "datasource": {
