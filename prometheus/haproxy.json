@@ -3080,7 +3080,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Denied*/"
+                  "options": "/.*Denied.*/"
                 },
                 "properties": [
                   {
@@ -9415,24 +9415,12 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Backend.*/"
+                  "options": "/.*backend.*/"
                 },
                 "properties": [
                   {
                     "id": "custom.transform",
                     "value": "negative-Y"
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/.*Maximum.*/"
-                },
-                "properties": [
-                  {
-                    "id": "custom.fillOpacity",
-                    "value": 0
                   }
                 ]
               }
@@ -9555,7 +9543,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*misses.*/"
+                  "options": "/.*Miss.*/"
                 },
                 "properties": [
                   {
@@ -9567,7 +9555,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "Connections"
+                  "options": "SSL Connections"
                 },
                 "properties": [
                   {
@@ -9811,7 +9799,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*limit.*/"
+                  "options": "/.*[Ll]imit.*/"
                 },
                 "properties": [
                   {
