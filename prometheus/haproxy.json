@@ -2326,7 +2326,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(haproxy_server_responses_denied_total{proxy=~\"$backend\", instance=\"$host\"}[$__rate_interval])",
+              "expr": "rate(haproxy_server_responses_denied_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
@@ -8242,7 +8242,7 @@
                   }
                 ]
               },
-              "unit": "ops"
+              "unit": "eps"
             },
             "overrides": []
           },
@@ -8278,7 +8278,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(haproxy_server_internal_errors_total{proxy=~\"$backend\",instance=\"$host\"}[$__rate_interval])",
+              "expr": "rate(haproxy_server_internal_errors_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
