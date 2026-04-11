@@ -21,9 +21,9 @@ Only requires the default job_name: node, add as many targets as you need in `/e
 
 Recommended for prometheus-node-exporter the arguments `--collector.systemd` and `--collector.processes` because the graph uses some of their metrics.
 
-> - `timeInterval` in the Grafana data source has to be set accordingly to the > `scrape_interval` configured in Prometheus. You can do this by navigating to connections > Data sources > Prometheus and set Scrape Interval under Interval behaviour. When using provisioning, this is set with the attribute jsonData.timeInterval.
-> - For prometheus-node-exporter v.0.16 or older, use `node-exporter-full-old.> json`
-> - Thanks to the [PCP project](http://pcp.io) for document the values reported > by the kernel in `/proc` (in their `/pmdas/linux/help` src file mainly).
+> - `timeInterval` in the Grafana data source has to be set accordingly to the `scrape_interval` configured in Prometheus. You can do this by navigating to connections > Data sources > Prometheus and set Scrape Interval under Interval behaviour. When using provisioning, this is set with the attribute `jsonData.timeInterval`.
+> - For prometheus-node-exporter v.0.16 or older, use `node-exporter-full-old.json`
+> - Thanks to the [PCP project](http://pcp.io) for documenting the values reported by the kernel in `/proc` (in their `/pmdas/linux/help` src file mainly).
 
 
 
@@ -36,10 +36,10 @@ Only requires a configured target under any `job_name`.
 
 
 
-## Haproxy
+## HAProxy
 
-- For Haproxy v.2 or avobe compiled with Prometheus support
-- Monitor Haproxy service.
+- For HAProxy v.2 or above compiled with Prometheus support
+- Monitor HAProxy service.
 
 Only requires a configured target under any `job_name`.
 
@@ -49,7 +49,7 @@ Only requires a configured target under any `job_name`.
 
 - Monitor Apache service.
 
->  Moved to https://github.com/grafana/jsonnet-libs
+> Moved to <https://github.com/grafana/jsonnet-libs>
 
 
 
@@ -67,8 +67,8 @@ The same as Node Exporter Full. Only requires the default `job_name: node`, add 
 ## BIND 9 Full
 
 - For [prometheus-bind-exporter](https://github.com/prometheus-community/bind_exporter)
-- Monitor BIND 9 service. 
- 
+- Monitor BIND 9 service.
+
 Required configuration in `/etc/bind/named.conf.options`:
 
 ```c++
@@ -91,11 +91,12 @@ On Grafana, it only requires a configured target under any `job_name`. For examp
 ## Unbound Full
 
 - For [unbound_exporter](https://github.com/letsencrypt/unbound_exporter)
-- Monitor Unbound DNS service. 
- 
+- Monitor Unbound DNS service.
+
 Required configuration in `/etc/unbound/unbound.conf`:
 
-```server:
+```yaml
+server:
         extended-statistics: yes
 
 remote-control:
