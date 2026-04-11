@@ -6130,7 +6130,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Processes currently in runnable or blocked states. Helps identify CPU contention or I/O wait bottlenecks.",
+          "description": "Running and blocked processes, plus kernel hung tasks (processes stuck in uninterruptible D state beyond the kernel timeout threshold)",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -6230,6 +6230,15 @@
               "legendFormat": "Runnable (Ready for CPU)",
               "range": true,
               "refId": "B",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_kernel_hung_tasks{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "Hung Tasks (D state > timeout)",
+              "range": true,
+              "refId": "C",
               "step": 240
             }
           ],
