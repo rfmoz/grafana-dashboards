@@ -1270,6 +1270,18 @@
               "legendFormat": "Denied {{ proxy }}",
               "range": true,
               "refId": "C"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_frontend_intercepted_requests_total{proxy=~\"$frontend\",instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "Intercepted {{ proxy }}",
+              "range": true,
+              "refId": "D"
             }
           ],
           "title": "Front - HTTP requests Total / Error / Denied",
