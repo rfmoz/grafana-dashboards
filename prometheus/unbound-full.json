@@ -186,7 +186,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "irate(unbound_query_types_total{instance=\"$instance\"}[$__rate_interval])",
+          "expr": "rate(unbound_query_types_total{instance=\"$instance\"}[$__rate_interval])",
           "legendFormat": "{{type}}",
           "range": true,
           "refId": "A"
@@ -319,7 +319,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "irate(unbound_answer_rcodes_total{instance=\"$instance\"}[$__rate_interval])",
+          "expr": "rate(unbound_answer_rcodes_total{instance=\"$instance\"}[$__rate_interval])",
           "legendFormat": "{{rcode}}",
           "range": true,
           "refId": "A"
@@ -454,7 +454,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(unbound_cache_misses_total{instance=\"$instance\"}[$__rate_interval]))",
+          "expr": "sum(rate(unbound_cache_misses_total{instance=\"$instance\"}[$__rate_interval]))",
           "legendFormat": "misses",
           "range": true,
           "refId": "B"
@@ -465,7 +465,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(unbound_cache_hits_total{instance=\"$instance\"}[$__rate_interval]))",
+          "expr": "sum(rate(unbound_cache_hits_total{instance=\"$instance\"}[$__rate_interval]))",
           "legendFormat": "hits",
           "range": true,
           "refId": "A"
@@ -567,7 +567,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "irate(unbound_queries_total{instance=\"$instance\"}[$__rate_interval])",
+          "expr": "rate(unbound_queries_total{instance=\"$instance\"}[$__rate_interval])",
           "legendFormat": "thread {{thread}}",
           "range": true,
           "refId": "A"
@@ -678,7 +678,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "irate(unbound_response_time_seconds_bucket{instance=\"$instance\",le=~\"3.2e-05|6.4e-05|0.000128|0.000256|0.000512|0.001024|0.002048|0.004096|0.008192|0.016384|0.032768|0.065536|0.131072|0.262144|0.524288|1|2|4|8|16|32|64\"}[$__rate_interval])",
+          "expr": "rate(unbound_response_time_seconds_bucket{instance=\"$instance\",le=~\"3.2e-05|6.4e-05|0.000128|0.000256|0.000512|0.001024|0.002048|0.004096|0.008192|0.016384|0.032768|0.065536|0.131072|0.262144|0.524288|1|2|4|8|16|32|64\"}[$__rate_interval])",
           "format": "heatmap",
           "instant": false,
           "legendFormat": "{{le}}",
@@ -905,7 +905,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_query_flags_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_query_flags_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "{{flag}}",
               "range": true,
               "refId": "A"
@@ -916,7 +916,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_query_edns_present_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_query_edns_present_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "EDNS OPT",
               "range": true,
               "refId": "B"
@@ -927,7 +927,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_query_edns_DO_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_query_edns_DO_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "DO (DNSSEC OK)",
               "range": true,
               "refId": "C"
@@ -1027,7 +1027,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_query_tcpout_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_query_tcpout_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "TCP out",
               "range": true,
               "refId": "B"
@@ -1038,7 +1038,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_query_udpout_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_query_udpout_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "UDP out",
               "range": true,
               "refId": "C"
@@ -1049,7 +1049,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_query_tcp_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_query_tcp_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "TCP in",
               "range": true,
               "refId": "A"
@@ -1150,7 +1150,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_query_classes_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_query_classes_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "{{class}}",
               "range": true,
               "refId": "A"
@@ -1251,7 +1251,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_query_opcodes_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_query_opcodes_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "{{opcode}}",
               "range": true,
               "refId": "B"
@@ -1351,7 +1351,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_query_https_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_query_https_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "HTTPS",
               "range": true,
               "refId": "A"
@@ -1362,7 +1362,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_query_tls_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_query_tls_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "TLS",
               "range": true,
               "refId": "D"
@@ -1373,7 +1373,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_query_tls_resume_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_query_tls_resume_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "TLS Resume",
               "range": true,
               "refId": "B"
@@ -1473,7 +1473,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_query_ipv6_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_query_ipv6_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "IPv6",
               "range": true,
               "refId": "C"
@@ -1588,7 +1588,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_answers_bogus{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_answers_bogus{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "Bogus",
               "range": true,
               "refId": "A"
@@ -1599,7 +1599,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_rrset_bogus_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_rrset_bogus_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "RRset bogus",
               "range": true,
               "refId": "D"
@@ -1700,7 +1700,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_answers_secure_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_answers_secure_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "Secure",
               "range": true,
               "refId": "B"
@@ -1930,7 +1930,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_prefetches_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_prefetches_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "thread {{thread}}",
               "range": true,
               "refId": "A"
@@ -2170,7 +2170,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "sum(irate(unbound_request_list_overwritten_total{instance=\"$instance\"}[$__rate_interval]))",
+              "expr": "sum(rate(unbound_request_list_overwritten_total{instance=\"$instance\"}[$__rate_interval]))",
               "legendFormat": "requests in the request list that were overwritten by newer entries",
               "range": true,
               "refId": "A"
@@ -2181,7 +2181,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "sum(irate(unbound_request_list_exceeded_total{instance=\"$instance\"}[$__rate_interval]))",
+              "expr": "sum(rate(unbound_request_list_exceeded_total{instance=\"$instance\"}[$__rate_interval]))",
               "legendFormat": "queries that were dropped because the request list was full",
               "range": true,
               "refId": "B"
@@ -2535,7 +2535,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_expired_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_expired_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "thread {{thread}}",
               "range": true,
               "refId": "A"
@@ -2636,7 +2636,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_recursive_replies_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_recursive_replies_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "thread {{thread}}",
               "range": true,
               "refId": "A"
@@ -2737,7 +2737,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_unwanted_queries_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_unwanted_queries_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "queries",
               "range": true,
               "refId": "A"
@@ -2748,7 +2748,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_unwanted_replies_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_unwanted_replies_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "replies",
               "range": true,
               "refId": "B"
@@ -2960,7 +2960,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "irate(unbound_query_aggressive_nsec{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "rate(unbound_query_aggressive_nsec{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "Aggressive NSEC",
               "range": true,
               "refId": "A"
