@@ -102,7 +102,11 @@
       "id": 152,
       "panels": [],
       "title": "Basic General Info",
-      "type": "row"
+      "type": "row",
+      "datasource": {
+        "uid": "${DS_PROMETHEUS}",
+        "type": "prometheus"
+      }
     },
     {
       "datasource": {
@@ -2591,7 +2595,11 @@
         }
       ],
       "title": "Requests / Responses",
-      "type": "row"
+      "type": "row",
+      "datasource": {
+        "uid": "${DS_PROMETHEUS}",
+        "type": "prometheus"
+      }
     },
     {
       "collapsed": true,
@@ -3565,7 +3573,11 @@
         }
       ],
       "title": "Throughput / Connections",
-      "type": "row"
+      "type": "row",
+      "datasource": {
+        "uid": "${DS_PROMETHEUS}",
+        "type": "prometheus"
+      }
     },
     {
       "collapsed": true,
@@ -5050,7 +5062,11 @@
         }
       ],
       "title": "Sessions",
-      "type": "row"
+      "type": "row",
+      "datasource": {
+        "uid": "${DS_PROMETHEUS}",
+        "type": "prometheus"
+      }
     },
     {
       "collapsed": true,
@@ -5872,7 +5888,11 @@
         }
       ],
       "title": "Times",
-      "type": "row"
+      "type": "row",
+      "datasource": {
+        "uid": "${DS_PROMETHEUS}",
+        "type": "prometheus"
+      }
     },
     {
       "collapsed": true,
@@ -6648,7 +6668,11 @@
         }
       ],
       "title": "Health and Weight",
-      "type": "row"
+      "type": "row",
+      "datasource": {
+        "uid": "${DS_PROMETHEUS}",
+        "type": "prometheus"
+      }
     },
     {
       "collapsed": true,
@@ -7422,7 +7446,11 @@
         }
       ],
       "title": "Cache / Compressor",
-      "type": "row"
+      "type": "row",
+      "datasource": {
+        "uid": "${DS_PROMETHEUS}",
+        "type": "prometheus"
+      }
     },
     {
       "collapsed": true,
@@ -8501,7 +8529,11 @@
         }
       ],
       "title": "Status",
-      "type": "row"
+      "type": "row",
+      "datasource": {
+        "uid": "${DS_PROMETHEUS}",
+        "type": "prometheus"
+      }
     },
     {
       "collapsed": true,
@@ -9767,7 +9799,11 @@
         }
       ],
       "title": "Process Traffic",
-      "type": "row"
+      "type": "row",
+      "datasource": {
+        "uid": "${DS_PROMETHEUS}",
+        "type": "prometheus"
+      }
     },
     {
       "collapsed": true,
@@ -11215,7 +11251,11 @@
         }
       ],
       "title": "Process Misc",
-      "type": "row"
+      "type": "row",
+      "datasource": {
+        "uid": "${DS_PROMETHEUS}",
+        "type": "prometheus"
+      }
     }
   ],
   "refresh": "1m",
