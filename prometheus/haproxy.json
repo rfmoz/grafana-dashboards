@@ -11394,7 +11394,7 @@
         "name": "host",
         "options": [],
         "query": {
-          "query": "label_values(haproxy_process_nbproc,instance)",
+          "query": "label_values(haproxy_process_start_time_seconds,instance)",
           "refId": "Prometheus-host-Variable-Query"
         },
         "refresh": 1,
