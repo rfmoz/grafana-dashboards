@@ -8598,10 +8598,11 @@
               },
               "editorMode": "code",
               "expr": "haproxy_backend_backup_servers{proxy=~\"$backend\",instance=\"$host\"}",
-              "interval": "",
+              "interval": "$interval",
               "legendFormat": "{{ proxy }}",
               "range": true,
-              "refId": "B"
+              "refId": "B",
+              "step": 240
             }
           ],
           "title": "Back - Backup servers",
