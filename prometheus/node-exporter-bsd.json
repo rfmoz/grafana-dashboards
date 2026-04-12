@@ -426,7 +426,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "( 1 - ( (node_memory_free_bytes{instance=\"$node\",job=\"$job\"} + node_memory_cache_bytes{instance=\"$node\",job=\"$job\"} + node_memory_inactive_bytes{instance=\"$node\",job=\"$job\"}) / node_memory_size_bytes{instance=\"$node\",job=\"$job\"} ) ) * 100\n",
+          "expr": "( 1 - ( (node_memory_free_bytes{instance=\"$node\",job=\"$job\"} + node_memory_buffer_bytes{instance=\"$node\",job=\"$job\"} + node_memory_cache_bytes{instance=\"$node\",job=\"$job\"} + node_memory_inactive_bytes{instance=\"$node\",job=\"$job\"}) / node_memory_size_bytes{instance=\"$node\",job=\"$job\"} ) ) * 100\n",
           "format": "time_series",
           "instant": true,
           "range": false,
