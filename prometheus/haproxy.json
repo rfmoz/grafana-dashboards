@@ -659,7 +659,8 @@
           "legendFormat": "IN Back",
           "range": true,
           "refId": "C",
-          "step": 240
+          "step": 240,
+          "interval": "$interval"
         },
         {
           "datasource": {
@@ -671,7 +672,8 @@
           "legendFormat": "OUT Back",
           "range": true,
           "refId": "D",
-          "step": 240
+          "step": 240,
+          "interval": "$interval"
         }
       ],
       "title": "Back - Data transfer",
