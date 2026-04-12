@@ -724,7 +724,7 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Bytes read (-) / write (+)",
+            "axisLabel": "Bytes read (+) / write (-)",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -771,7 +771,7 @@
           {
             "matcher": {
               "id": "byRegexp",
-              "options": "/.*read.*/"
+              "options": "/.*written.*/"
             },
             "properties": [
               {
