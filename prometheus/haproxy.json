@@ -1120,7 +1120,8 @@
           "expr": "time() - haproxy_process_start_time_seconds{instance=\"$host\"}",
           "range": true,
           "refId": "A",
-          "step": 240
+          "step": 240,
+          "legendFormat": "{{ instance }}"
         }
       ],
       "title": "Uptime",
