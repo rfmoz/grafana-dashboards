@@ -2578,7 +2578,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "read (-) / write (+)",
+                "axisLabel": "read (+) / write (\u2013)",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -2623,7 +2623,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Read.*/"
+                  "options": "/.*Write.*/"
                 },
                 "properties": [
                   {
@@ -2695,7 +2695,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "read (-) / write (+)",
+                "axisLabel": "read (+) / write (\u2013)",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -2740,7 +2740,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Read.*/"
+                  "options": "/.*Write.*/"
                 },
                 "properties": [
                   {
@@ -8781,7 +8781,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "read (\u2013) / write (+)",
+                "axisLabel": "read (+) / write (\u2013)",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -8826,7 +8826,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Read.*/"
+                  "options": "/.*Write.*/"
                 },
                 "properties": [
                   {
@@ -8913,7 +8913,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "read (\u2013) / write (+)",
+                "axisLabel": "read (+) / write (\u2013)",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -8958,7 +8958,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Read.*/"
+                  "options": "/.*Write.*/"
                 },
                 "properties": [
                   {
@@ -9049,7 +9049,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "read (\u2013) / write (+)",
+                "axisLabel": "read (+) / write (\u2013)",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -9094,7 +9094,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Read.*/"
+                  "options": "/.*Write.*/"
                 },
                 "properties": [
                   {
@@ -9297,7 +9297,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "read (\u2013) / write (+)",
+                "axisLabel": "read (+) / write (\u2013)",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -9342,7 +9342,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*Read.*/"
+                  "options": "/.*Write.*/"
                 },
                 "properties": [
                   {
