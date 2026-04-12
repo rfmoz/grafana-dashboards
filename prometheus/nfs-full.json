@@ -1718,6 +1718,12 @@
               "legendFormat": "{{ method }}",
               "refId": "P",
               "step": 240
+            },
+            {
+              "expr": "rate(node_nfsd_requests_total{method='WrCache',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "legendFormat": "{{ method }}",
+              "refId": "I",
+              "step": 240
             }
           ],
           "title": "NFSd v2 NFSd Requests by Method 2",
@@ -3746,6 +3752,24 @@
               "expr": "rate(node_nfsd_requests_total{method='Verify',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "M",
+              "step": 240
+            },
+            {
+              "expr": "rate(node_nfsd_requests_total{method='SetClientID',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "legendFormat": "{{ method }}",
+              "refId": "N",
+              "step": 240
+            },
+            {
+              "expr": "rate(node_nfsd_requests_total{method='SetClientIDConfirm',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "legendFormat": "{{ method }}",
+              "refId": "O",
+              "step": 240
+            },
+            {
+              "expr": "rate(node_nfsd_requests_total{method='WdelegGetattr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "legendFormat": "{{ method }}",
+              "refId": "P",
               "step": 240
             }
           ],
