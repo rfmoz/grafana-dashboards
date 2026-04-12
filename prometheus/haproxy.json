@@ -6076,7 +6076,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*User diff - .*/"
+                  "options": "/.*Weight reduction - .*/"
                 },
                 "properties": [
                   {
@@ -6134,7 +6134,7 @@
               "editorMode": "code",
               "expr": "haproxy_backend_uweight{proxy=~\"$backend\", instance=\"$host\"} - haproxy_backend_weight{proxy=~\"$backend\", instance=\"$host\"}",
               "interval": "$interval",
-              "legendFormat": "User diff - {{ proxy }}",
+              "legendFormat": "Weight reduction - {{ proxy }}",
               "metric": "",
               "range": true,
               "refId": "B"
@@ -6305,7 +6305,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/.*User diff - .*/"
+                  "options": "/.*Weight reduction - .*/"
                 },
                 "properties": [
                   {
@@ -6363,7 +6363,7 @@
               "editorMode": "code",
               "expr": "haproxy_server_uweight{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"} - haproxy_server_weight{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
-              "legendFormat": "User diff - {{ proxy }} / {{ server }}",
+              "legendFormat": "Weight reduction - {{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
               "refId": "B"
