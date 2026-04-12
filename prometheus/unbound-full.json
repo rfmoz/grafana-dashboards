@@ -1487,7 +1487,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries that the Unbound server generated response using Aggressive NSEC.",
+          "description": "Number of DNS-over-QUIC (DoQ) queries performed towards the Unbound server.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1588,7 +1588,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries that the Unbound server generated response using Aggressive NSEC.",
+          "description": "Number of queries with DNS cookies: client, valid, and invalid.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1938,7 +1938,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries that the Unbound server generated response using Aggressive NSEC.",
+          "description": "Number of DNSSEC signature validation operations performed by the validator module.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2269,7 +2269,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries that the Unbound server generated response using Aggressive NSEC.",
+          "description": "Number of entries in the infrastructure cache.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2370,7 +2370,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries that the Unbound server generated response using Aggressive NSEC.",
+          "description": "Maximum number of hashtable collisions in message and rrset caches.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2421,7 +2421,7 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "ops"
             },
             "overrides": []
           },
@@ -2457,7 +2457,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "unbound_msg_cache_max_collisions_total{instance=\"$instance\"}",
+              "expr": "rate(unbound_msg_cache_max_collisions_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "msg cache",
               "range": true,
               "refId": "A"
@@ -2468,7 +2468,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "unbound_rrset_cache_max_collisions_total{instance=\"$instance\"}",
+              "expr": "rate(unbound_rrset_cache_max_collisions_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "rrset cache",
               "range": true,
               "refId": "B"
@@ -2744,7 +2744,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries that the Unbound server generated response using Aggressive NSEC.",
+          "description": "Number of queries removed due to discard-timeout, replyaddr limits, or wait-limit.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3107,7 +3107,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries that the Unbound server generated response using Aggressive NSEC.",
+          "description": "Memory used by DNS-over-QUIC buffers, in bytes.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3208,7 +3208,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries that the Unbound server generated response using Aggressive NSEC.",
+          "description": "Memory allocated through sbrk, in bytes.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3848,7 +3848,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries that the Unbound server generated response using Aggressive NSEC.",
+          "description": "Uptime since server boot in seconds.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3949,7 +3949,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries that the Unbound server generated response using Aggressive NSEC.",
+          "description": "Number of triggered Response Policy Zone actions, by type.",
           "fieldConfig": {
             "defaults": {
               "color": {
