@@ -375,8 +375,7 @@
           "legendFormat": "Front {{ code }}",
           "metric": "",
           "range": true,
-          "refId": "A",
-          "step": 240
+          "refId": "A"
         },
         {
           "datasource": {
@@ -389,8 +388,7 @@
           "legendFormat": "Back {{ code }}",
           "metric": "",
           "range": true,
-          "refId": "B",
-          "step": 240
+          "refId": "B"
         },
         {
           "datasource": {
@@ -403,8 +401,7 @@
           "legendFormat": "Front requests",
           "metric": "",
           "range": true,
-          "refId": "C",
-          "step": 240
+          "refId": "C"
         },
         {
           "datasource": {
@@ -417,8 +414,7 @@
           "legendFormat": "Back requests",
           "metric": "",
           "range": true,
-          "refId": "D",
-          "step": 240
+          "refId": "D"
         }
       ],
       "title": "HTTP response / request",
@@ -532,8 +528,7 @@
           "legendFormat": "IN Front",
           "metric": "",
           "range": true,
-          "refId": "A",
-          "step": 240
+          "refId": "A"
         },
         {
           "datasource": {
@@ -545,8 +540,7 @@
           "interval": "$interval",
           "legendFormat": "OUT Front",
           "range": true,
-          "refId": "B",
-          "step": 240
+          "refId": "B"
         }
       ],
       "title": "Front - Data transfer",
@@ -659,7 +653,6 @@
           "legendFormat": "IN Back",
           "range": true,
           "refId": "C",
-          "step": 240,
           "interval": "$interval"
         },
         {
@@ -672,7 +665,6 @@
           "legendFormat": "OUT Back",
           "range": true,
           "refId": "D",
-          "step": 240,
           "interval": "$interval"
         }
       ],
@@ -787,8 +779,7 @@
           "legendFormat": "Front",
           "metric": "",
           "range": true,
-          "refId": "A",
-          "step": 240
+          "refId": "A"
         },
         {
           "datasource": {
@@ -801,8 +792,7 @@
           "legendFormat": "Back",
           "metric": "",
           "range": true,
-          "refId": "B",
-          "step": 240
+          "refId": "B"
         }
       ],
       "title": "Sessions",
@@ -916,8 +906,7 @@
           "legendFormat": "Front",
           "metric": "",
           "range": true,
-          "refId": "A",
-          "step": 240
+          "refId": "A"
         },
         {
           "datasource": {
@@ -930,8 +919,7 @@
           "legendFormat": "Back",
           "metric": "",
           "range": true,
-          "refId": "B",
-          "step": 240
+          "refId": "B"
         }
       ],
       "title": "Connections",
@@ -1030,8 +1018,7 @@
           "interval": "$interval",
           "legendFormat": "Front Up",
           "range": true,
-          "refId": "A",
-          "step": 240
+          "refId": "A"
         },
         {
           "datasource": {
@@ -1043,8 +1030,7 @@
           "interval": "$interval",
           "legendFormat": "Back Up",
           "range": true,
-          "refId": "B",
-          "step": 240
+          "refId": "B"
         }
       ],
       "title": "Status UP",
@@ -1120,7 +1106,6 @@
           "expr": "time() - haproxy_process_start_time_seconds{instance=\"$host\"}",
           "range": true,
           "refId": "A",
-          "step": 240,
           "legendFormat": "{{ instance }}"
         }
       ],
@@ -1257,8 +1242,7 @@
               "legendFormat": "Total {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -1270,8 +1254,7 @@
               "interval": "$interval",
               "legendFormat": "Error {{ proxy }}",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -1283,8 +1266,7 @@
               "interval": "$interval",
               "legendFormat": "Denied {{ proxy }}",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Front - HTTP requests Total / Error / Denied",
@@ -1398,8 +1380,7 @@
               "legendFormat": "Total {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -1411,8 +1392,7 @@
               "interval": "$interval",
               "legendFormat": "Denied {{ proxy }}",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Back - HTTP requests Total / Denied",
@@ -1513,8 +1493,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Front - HTTP responses",
@@ -1615,8 +1594,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Back - HTTP responses",
@@ -1719,8 +1697,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Server - HTTP responses",
@@ -1821,8 +1798,7 @@
               "legendFormat": "{{ code }} {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Front - HTTP responses code",
@@ -1923,8 +1899,7 @@
               "legendFormat": "{{ code }} {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Back - HTTP responses code",
@@ -2027,8 +2002,7 @@
               "legendFormat": "{{ code }} - {{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Server - HTTP responses code",
@@ -2129,8 +2103,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Front - HTTP responses denied",
@@ -2231,8 +2204,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Back - HTTP responses denied",
@@ -2334,8 +2306,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Server - HTTP responses denied",
@@ -2449,8 +2420,7 @@
               "legendFormat": "Redispatch {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -2462,8 +2432,7 @@
               "interval": "$interval",
               "legendFormat": "Retry {{ proxy }}",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -2475,8 +2444,7 @@
               "interval": "$interval",
               "legendFormat": "Error {{ proxy }}",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Back - Error / Redispatch / Retry",
@@ -2590,8 +2558,7 @@
               "interval": "$interval",
               "legendFormat": "Redispatch {{ proxy }} / {{ server }}",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -2604,8 +2571,7 @@
               "legendFormat": "Retry {{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -2617,8 +2583,7 @@
               "interval": "$interval",
               "legendFormat": "Error {{ proxy }} / {{ server }}",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Server - Error / Redispatch / Retry",
@@ -2746,8 +2711,7 @@
               "legendFormat": "IN {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -2759,8 +2723,7 @@
               "interval": "$interval",
               "legendFormat": "OUT {{ proxy }}",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Front - Data transfer",
@@ -2874,8 +2837,7 @@
               "legendFormat": "IN {{ proxy }}",
               "metric": "haproxy_backend_",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -2887,8 +2849,7 @@
               "interval": "$interval",
               "legendFormat": "OUT {{ proxy }}",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Back - Data transfer",
@@ -3003,8 +2964,7 @@
               "legendFormat": "IN {{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -3016,8 +2976,7 @@
               "interval": "$interval",
               "legendFormat": "OUT {{ proxy }} / {{ server }}",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Server - Data transfer",
@@ -3131,8 +3090,7 @@
               "legendFormat": "Accepted {{ proxy }}",
               "metric": "haproxy_backe",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -3145,8 +3103,7 @@
               "legendFormat": "Denied {{ proxy }}",
               "metric": "haproxy_backe",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Front - Connections Accepted / Denied",
@@ -3260,8 +3217,7 @@
               "legendFormat": "Attempt {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -3273,8 +3229,7 @@
               "interval": "$interval",
               "legendFormat": "Error {{ proxy }}",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Back - Connections Attempts / Errors",
@@ -3389,8 +3344,7 @@
               "legendFormat": "Attempts {{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -3402,8 +3356,7 @@
               "interval": "$interval",
               "legendFormat": "Error {{ proxy }} / {{ server }}",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Server - Connections Attempts / Error",
@@ -3503,8 +3456,7 @@
               "interval": "$interval",
               "legendFormat": "{{ proxy }}",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Back - Connections reuses",
@@ -3605,8 +3557,7 @@
               "interval": "$interval",
               "legendFormat": "Reuses {{ proxy }} / {{ server }}",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Server - Connections reuses",
@@ -3734,8 +3685,7 @@
               "legendFormat": "Total {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -3748,8 +3698,7 @@
               "legendFormat": "Denied {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -3763,8 +3712,7 @@
               "legendFormat": "Current active {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Front - Sessions",
@@ -3865,8 +3813,7 @@
               "legendFormat": "Total {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -3880,8 +3827,7 @@
               "legendFormat": "Current active {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Back - Sessions",
@@ -3983,8 +3929,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Server - Sessions",
@@ -4095,8 +4040,7 @@
               "interval": "$interval",
               "legendFormat": "{{ proxy }}",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Front - Session usage",
@@ -4207,8 +4151,7 @@
               "interval": "$interval",
               "legendFormat": "{{ proxy }}",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Back - Session usage",
@@ -4309,8 +4252,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -4324,8 +4266,7 @@
               "legendFormat": "Current active {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Front - Sessions Max",
@@ -4426,8 +4367,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -4441,8 +4381,7 @@
               "legendFormat": "Current active {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Back - Sessions Max",
@@ -4544,8 +4483,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Server - Sessions Max",
@@ -4646,8 +4584,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Front - Failed HTTP header rewrites",
@@ -4748,8 +4685,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Back - Failed HTTP header rewrites",
@@ -4851,8 +4787,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Server - Failed HTTP header rewrites",
@@ -4966,8 +4901,7 @@
               "legendFormat": "Client {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -4980,8 +4914,7 @@
               "legendFormat": "Server {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Back - Data transfers aborted",
@@ -5096,8 +5029,7 @@
               "legendFormat": "Client {{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -5110,8 +5042,7 @@
               "legendFormat": "Server {{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Server - Data transfers aborted",
@@ -5226,8 +5157,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "haproxy_backend_current_queue",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Back - Average connection time",
@@ -5328,8 +5258,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "haproxy_backend_current_queue",
               "range": true,
-              "refId": "D",
-              "step": 240
+              "refId": "D"
             }
           ],
           "title": "Back - Average total conn. time",
@@ -5430,8 +5359,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "haproxy_backend_current_queue",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Server - Average connection time",
@@ -5532,8 +5460,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "haproxy_backend_current_queue",
               "range": true,
-              "refId": "D",
-              "step": 240
+              "refId": "D"
             }
           ],
           "title": "Server - Average total conn. time",
@@ -5634,8 +5561,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "haproxy_backend_current_queue",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Back - Average response time",
@@ -5736,8 +5662,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Back - Average queue time",
@@ -5838,8 +5763,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "haproxy_backend_current_queue",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Server - Average response time",
@@ -5940,8 +5864,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Server - Average queue time",
@@ -6056,8 +5979,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Back - UP->DOWN transitions",
@@ -6171,8 +6093,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -6185,8 +6106,7 @@
               "legendFormat": "User diff - {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Back - Service weight",
@@ -6288,8 +6208,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Server - UP->DOWN transitions",
@@ -6403,8 +6322,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -6417,8 +6335,7 @@
               "legendFormat": "User diff - {{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Server - Service weight",
@@ -6520,8 +6437,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Server - Checks failures",
@@ -6622,8 +6538,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Server - Checks duration",
@@ -6725,8 +6640,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Server - Last session assigned",
@@ -6854,8 +6768,7 @@
               "legendFormat": "Lookups {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -6868,8 +6781,7 @@
               "legendFormat": "Hits {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Front - Cache Lookups / Hits",
@@ -6983,8 +6895,7 @@
               "legendFormat": "Lookups {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -6997,8 +6908,7 @@
               "legendFormat": "Hits {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Back - Cache Lookups / Hits",
@@ -7124,8 +7034,7 @@
               "legendFormat": "IN {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -7138,8 +7047,7 @@
               "legendFormat": "OUT {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -7152,8 +7060,7 @@
               "legendFormat": "Bypass {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Front - Data transfer http compressor",
@@ -7279,8 +7186,7 @@
               "legendFormat": "IN {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -7293,8 +7199,7 @@
               "legendFormat": "OUT {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -7307,8 +7212,7 @@
               "legendFormat": "Bypass {{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Back - Data transfer http compressor",
@@ -7409,8 +7313,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Front - Responses compressed",
@@ -7511,8 +7414,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Back - Responses compressed",
@@ -7640,8 +7542,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Front - Status",
@@ -7755,8 +7656,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Back - Status",
@@ -7873,8 +7773,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Server - Status",
@@ -7980,8 +7879,7 @@
               "legendFormat": "{{ proxy }} / {{ server }} - {{state}}",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Server - Status other",
@@ -8082,8 +7980,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Front - Internal errors",
@@ -8184,8 +8081,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Back - Internal errors",
@@ -8285,8 +8181,7 @@
               "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Server - Internal errors",
@@ -8386,8 +8281,7 @@
               "legendFormat": "{{ proxy }} - Size",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -8400,8 +8294,7 @@
               "legendFormat": "{{ proxy }} - Used",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Sticktable usage",
@@ -8501,8 +8394,7 @@
               "legendFormat": "{{ proxy }}",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Back - Active servers",
@@ -8601,8 +8493,7 @@
               "interval": "$interval",
               "legendFormat": "{{ proxy }}",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Back - Backup servers",
@@ -8747,8 +8638,7 @@
               "legendFormat": "Highest ConnRate reached on this worker process since started (in connections per second)",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -8761,8 +8651,7 @@
               "legendFormat": "Hard limit for ConnRate (global.maxconnrate)",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Process - Connection rate limits",
@@ -8893,8 +8782,7 @@
               "legendFormat": "Current number of connections on this worker process",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -8907,8 +8795,7 @@
               "legendFormat": "Hard limit on the number of per-process connections (imposed by Memmax_MB or ulimit -n)",
               "metric": "",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Process - Connections limits",
@@ -9038,8 +8925,7 @@
               "legendFormat": "Highest SessRate reached on this worker process since started (in sessions per second)",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -9052,8 +8938,7 @@
               "legendFormat": "Hard limit for SessRate (global.maxsessrate)",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Process - Sessions limits",
@@ -9188,8 +9073,7 @@
               "legendFormat": "Highest ConnRate reached on this worker process since started (in connections per second)",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -9202,8 +9086,7 @@
               "legendFormat": "Hard limit for SslRate (global.maxsslrate)",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Process - SSL conn. rate limits",
@@ -9338,8 +9221,7 @@
               "legendFormat": "SSL endpoints",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -9352,8 +9234,7 @@
               "legendFormat": "Hard limit SSL endpoints",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Process - SSL conn. limits",
@@ -9466,8 +9347,7 @@
               "legendFormat": "SSL keys created on frontends",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -9480,8 +9360,7 @@
               "legendFormat": "SSL keys created on backend",
               "metric": "",
               "range": true,
-              "refId": "D",
-              "step": 240
+              "refId": "D"
             }
           ],
           "title": "Process - SSL key rate",
@@ -9606,8 +9485,7 @@
               "legendFormat": "Lookups",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -9620,8 +9498,7 @@
               "legendFormat": "Miss",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -9634,8 +9511,7 @@
               "legendFormat": "SSL Connections",
               "metric": "",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Process - SSL cache",
@@ -9735,8 +9611,7 @@
               "legendFormat": "Frontend SSL connections which did not require a new key",
               "metric": "",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Process - SSL reuse ratio",
@@ -9871,8 +9746,7 @@
               "legendFormat": "Amount of memory currently used by HTTP compression",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -9885,8 +9759,7 @@
               "legendFormat": "Limit memory used by HTTP compression, above is auto disabled (in bytes, see global.maxzlibmem)",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Process - Zlib (HTTP compression) memory limits",
@@ -10017,8 +9890,7 @@
               "legendFormat": "Total number of failed DNS resolutions in current worker process since started",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Process - Failed DNS resolutions",
@@ -10171,8 +10043,7 @@
               "legendFormat": "Pipes limit",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -10185,8 +10056,7 @@
               "legendFormat": "Used pipes",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -10199,8 +10069,7 @@
               "legendFormat": "Free pipes",
               "metric": "",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Process - Pipes",
@@ -10301,8 +10170,7 @@
               "legendFormat": "Current number of active listeners",
               "metric": "",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Process - Listeners",
@@ -10432,8 +10300,7 @@
               "legendFormat": "Memory limit; 0=unset",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -10446,8 +10313,7 @@
               "legendFormat": "Memory allocated in pools",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -10460,8 +10326,7 @@
               "legendFormat": "Memory used in pools",
               "metric": "",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Process - Memory",
@@ -10562,8 +10427,7 @@
               "legendFormat": "Failed pool allocations",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Process - Pool allocations",
@@ -10664,8 +10528,7 @@
               "legendFormat": "Current number of active jobs (listeners, sessions, open devices)",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -10678,8 +10541,7 @@
               "legendFormat": "Current number of active jobs that can't be stopped during a soft stop",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Process - Jobs",
@@ -10779,8 +10641,7 @@
               "legendFormat": "Threads",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -10793,8 +10654,7 @@
               "legendFormat": "Processes",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Process - Configured Threads / Processes",
@@ -10894,8 +10754,7 @@
               "legendFormat": "Total number of dropped logs",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -10908,8 +10767,7 @@
               "legendFormat": "Total number of log messages received by log-forwarding listeners",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Process - Logs",
@@ -11009,8 +10867,7 @@
               "legendFormat": "Active peers",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -11023,8 +10880,7 @@
               "legendFormat": "Connected peers",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Process - Peers",
@@ -11124,8 +10980,7 @@
               "legendFormat": "Total number of tasks in the current worker process (active + sleeping)",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -11138,8 +10993,7 @@
               "legendFormat": "Total number of active tasks+tasklets in the current worker process",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Process - Tasks / Runqueue",
@@ -11240,8 +11094,7 @@
               "legendFormat": "Idle to total ratio over last sample (percent)",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -11254,8 +11107,7 @@
               "legendFormat": "Non zero means stopping in progress",
               "metric": "",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Process - Idle / Stopping",
@@ -11355,8 +11207,7 @@
               "legendFormat": "How long ago this worker process was started",
               "metric": "",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Process - Uptime",
