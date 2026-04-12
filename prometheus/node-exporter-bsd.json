@@ -3433,7 +3433,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "rate(node_time_seconds{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_time_seconds{instance=\"$node\",job=\"$job\"}[$__rate_interval]) - 1",
               "format": "time_series",
               "interval": "",
               "legendFormat": "Time Drift/sec",
