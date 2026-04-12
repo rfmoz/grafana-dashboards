@@ -724,7 +724,7 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Bytes read (+) / write (-)",
+            "axisLabel": "Bytes write (-) / read (+)",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
