@@ -595,7 +595,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "(\n  (node_filesystem_size_bytes{instance=\"$node\", job=\"$job\", mountpoint=\"/\", fstype!=\"rootfs\"}\n   - node_filesystem_avail_bytes{instance=\"$node\", job=\"$job\", mountpoint=\"/\", fstype!=\"rootfs\"})\n  / node_filesystem_size_bytes{instance=\"$node\", job=\"$job\", mountpoint=\"/\", fstype!=\"rootfs\"}\n) * 100\n",
+          "expr": "(\n  (node_filesystem_size_bytes{instance=\"$node\", job=\"$job\", mountpoint=\"/\"}\n   - node_filesystem_avail_bytes{instance=\"$node\", job=\"$job\", mountpoint=\"/\"})\n  / node_filesystem_size_bytes{instance=\"$node\", job=\"$job\", mountpoint=\"/\"}\n) * 100\n",
           "format": "time_series",
           "instant": true,
           "range": false,
@@ -4020,7 +4020,7 @@
                 "type": "prometheus",
                 "uid": "${ds_prometheus}"
               },
-              "expr": "node_filesystem_readonly{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_readonly{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "legendFormat": "{{device}} - {{mountpoint}} - ReadOnly",
               "refId": "C",
@@ -4032,7 +4032,7 @@
                 "uid": "${ds_prometheus}"
               },
               "editorMode": "code",
-              "expr": "node_filesystem_device_error{instance=\"$node\",job=\"$job\",device!~'rootfs'}",
+              "expr": "node_filesystem_device_error{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "legendFormat": "{{device}} - {{mountpoint}} - Error",
               "range": true,
