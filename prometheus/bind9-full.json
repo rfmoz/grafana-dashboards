@@ -222,7 +222,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "sum (irate(bind_incoming_queries_total{instance=~\"$host:$port\"}[$__rate_interval]))",
+          "expr": "sum (rate(bind_incoming_queries_total{instance=\"$host:$port\"}[$__rate_interval]))",
           "interval": "",
           "legendFormat": "Incoming",
           "refId": "A"
@@ -232,7 +232,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "sum (irate(bind_resolver_queries_total{instance=~\"$host:$port\"}[$__rate_interval]))",
+          "expr": "sum (rate(bind_resolver_queries_total{instance=\"$host:$port\"}[$__rate_interval]))",
           "interval": "",
           "legendFormat": "Outgoing",
           "refId": "B"
@@ -333,7 +333,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "irate(bind_incoming_queries_total{instance=~\"$host:$port\"}[$__rate_interval])",
+          "expr": "rate(bind_incoming_queries_total{instance=\"$host:$port\"}[$__rate_interval])",
           "interval": "",
           "legendFormat": "{{ type }}",
           "refId": "A"
@@ -434,7 +434,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "irate(bind_resolver_queries_total{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+          "expr": "rate(bind_resolver_queries_total{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
           "interval": "",
           "legendFormat": "{{ type }} {{ view }}",
           "refId": "A"
@@ -535,7 +535,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "irate(bind_incoming_requests_total{instance=~\"$host:$port\"}[$__rate_interval])",
+          "expr": "rate(bind_incoming_requests_total{instance=\"$host:$port\"}[$__rate_interval])",
           "interval": "",
           "legendFormat": "{{ opcode }}",
           "refId": "A"
@@ -635,7 +635,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "irate(bind_responses_total{instance=~\"$host:$port\"}[$__rate_interval])",
+          "expr": "rate(bind_responses_total{instance=\"$host:$port\"}[$__rate_interval])",
           "interval": "",
           "legendFormat": "{{ result }}",
           "refId": "B"
@@ -711,7 +711,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "bind_config_time_seconds{instance=~\"$host:$port\"} * 1000",
+          "expr": "bind_config_time_seconds{instance=\"$host:$port\"} * 1000",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -787,7 +787,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "bind_boot_time_seconds{instance=~\"$host:$port\"} * 1000",
+          "expr": "bind_boot_time_seconds{instance=\"$host:$port\"} * 1000",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -900,7 +900,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_resolver_query_retries_total{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+              "expr": "rate(bind_resolver_query_retries_total{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "queries retry {{ view }}",
               "refId": "B"
@@ -1000,7 +1000,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_query_duplicates_total{instance=~\"$host:$port\"}[$__rate_interval])",
+              "expr": "rate(bind_query_duplicates_total{instance=\"$host:$port\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "Duplicated queries received",
               "refId": "A"
@@ -1010,7 +1010,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_query_errors_total{instance=~\"$host:$port\"}[$__rate_interval])",
+              "expr": "rate(bind_query_errors_total{instance=\"$host:$port\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "{{ error }} queries",
               "refId": "B"
@@ -1020,7 +1020,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_query_recursions_total{instance=~\"$host:$port\"}[$__rate_interval])",
+              "expr": "rate(bind_query_recursions_total{instance=\"$host:$port\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "Queries causing recursions",
               "refId": "C"
@@ -1119,7 +1119,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_resolver_response_errors_total{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+              "expr": "rate(bind_resolver_response_errors_total{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "{{ error }} {{ view }}",
               "refId": "B"
@@ -1218,7 +1218,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_resolver_query_errors_total{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+              "expr": "rate(bind_resolver_query_errors_total{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "{{ error }} {{ view }}",
               "refId": "B"
@@ -1228,7 +1228,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_resolver_query_edns0_errors_total{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+              "expr": "rate(bind_resolver_query_edns0_errors_total{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "EDNS(0) error {{ view }}",
               "refId": "A"
@@ -1354,7 +1354,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_resolver_query_duration_seconds_bucket{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+              "expr": "rate(bind_resolver_query_duration_seconds_bucket{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "{{ le }} round-trip {{ view }}",
               "refId": "B"
@@ -1453,7 +1453,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_resolver_query_duration_seconds_count{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+              "expr": "rate(bind_resolver_query_duration_seconds_count{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "count {{ view }}",
               "refId": "A"
@@ -1463,7 +1463,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_resolver_query_duration_seconds_sum{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+              "expr": "rate(bind_resolver_query_duration_seconds_sum{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "sum {{ view }}",
               "refId": "B",
@@ -1564,7 +1564,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "bind_resolver_cache_rrsets{instance=~\"$host:$port\",view=~\"$view\"}",
+              "expr": "bind_resolver_cache_rrsets{instance=\"$host:$port\",view=~\"$view\"}",
               "interval": "",
               "legendFormat": "{{ type }} {{ view }}",
               "refId": "A"
@@ -1663,7 +1663,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_resolver_response_truncated_total{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+              "expr": "rate(bind_resolver_response_truncated_total{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "truncated {{ view }}",
               "refId": "B"
@@ -1673,7 +1673,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_resolver_response_mismatch_total{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+              "expr": "rate(bind_resolver_response_mismatch_total{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "mismatch {{ view }}",
               "refId": "A"
@@ -1683,7 +1683,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_resolver_response_lame_total{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+              "expr": "rate(bind_resolver_response_lame_total{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "lame {{ view }}",
               "refId": "C"
@@ -1829,7 +1829,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "irate(bind_resolver_dnssec_validation_errors_total{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+              "expr": "rate(bind_resolver_dnssec_validation_errors_total{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
               "legendFormat": "Errors {{ view }}",
               "refId": "B"
@@ -1839,7 +1839,7 @@
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "expr": "sum by (instance, view)(irate(bind_resolver_dnssec_validation_success_total{instance=~\"$host:$port\",view=~\"$view\"}[$__rate_interval]))",
+              "expr": "sum by (instance, view)(rate(bind_resolver_dnssec_validation_success_total{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval]))",
               "interval": "",
               "legendFormat": "Success {{ view }}",
               "refId": "A"
