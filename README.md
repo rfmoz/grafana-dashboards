@@ -48,8 +48,18 @@ Only requires a configured target under any `job_name`.
 ## Apache Full
 
 - Monitor Apache service.
+- For [apache_exporter](https://github.com/Lusitaniae/apache_exporter)
 
-> Moved to <https://github.com/grafana/jsonnet-libs>
+Only requires a configured target under any `job_name`. For example:
+
+```yaml
+  - job_name: 'apache'
+    static_configs:
+        - targets:
+           - server_hostname:9117
+```
+
+> Also available as [apache-http-mixin](https://github.com/grafana/jsonnet-libs/tree/master/apache-http-mixin) in Grafana jsonnet-libs.
 
 
 
