@@ -539,7 +539,7 @@
         "type": "prometheus",
         "uid": "${ds_prometheus}"
       },
-      "description": "Used Root FS",
+      "description": "Percentage of root filesystem space currently used",
       "fieldConfig": {
         "defaults": {
           "color": {
