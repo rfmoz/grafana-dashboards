@@ -9550,9 +9550,9 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "haproxy_sticktable_size{proxy=~\"$backend\",instance=\"$host\"}",
+              "expr": "haproxy_sticktable_size{name=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
-              "legendFormat": "{{ proxy }} - Size",
+              "legendFormat": "{{ name }} - Size",
               "metric": "",
               "range": true,
               "refId": "A"
@@ -9563,9 +9563,9 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "haproxy_sticktable_used{proxy=~\"$backend\",instance=\"$host\"}",
+              "expr": "haproxy_sticktable_used{name=~\"$backend\",instance=\"$host\"}",
               "interval": "$interval",
-              "legendFormat": "{{ proxy }} - Used",
+              "legendFormat": "{{ name }} - Used",
               "metric": "",
               "range": true,
               "refId": "B"
