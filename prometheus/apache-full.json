@@ -118,7 +118,6 @@
         {
           "expr": "apache_uptime_seconds_total{job=\"$job\", instance=\"$instance\"}",
           "format": "time_series",
-          "intervalFactor": 1,
           "step": 240
         }
       ],
@@ -197,7 +196,6 @@
           "format": "time_series",
           "instant": true,
           "interval": "",
-          "intervalFactor": 1,
           "legendFormat": "{{ version }}",
           "step": 240
         }
@@ -277,7 +275,6 @@
           "expr": "apache_up{job=\"$job\", instance=\"$instance\"}",
           "format": "time_series",
           "interval": "",
-          "intervalFactor": 1,
           "legendFormat": "Apache up",
           "refId": "A",
           "step": 240
@@ -483,7 +480,6 @@
           "expr": "rate(apache_accesses_total{job=\"$job\", instance=\"$instance\"}[$__rate_interval])",
           "format": "time_series",
           "interval": "",
-          "intervalFactor": 1,
           "legendFormat": "Calls",
           "refId": "A",
           "step": 240
@@ -593,7 +589,6 @@
           "expr": "increase(apache_duration_ms_total{job=\"$job\", instance=\"$instance\"}[$__rate_interval])/increase(apache_accesses_total{job=\"$job\", instance=\"$instance\"}[$__rate_interval])",
           "format": "time_series",
           "interval": "",
-          "intervalFactor": 1,
           "legendFormat": "Average response time",
           "refId": "A",
           "step": 240
@@ -688,7 +683,6 @@
         {
           "expr": "apache_scoreboard{job=\"$job\", instance=\"$instance\"}",
           "format": "time_series",
-          "intervalFactor": 1,
           "legendFormat": "{{ state }}",
           "refId": "A",
           "step": 240
@@ -784,7 +778,6 @@
         {
           "expr": "apache_workers{job=\"$job\", instance=\"$instance\"}\n",
           "format": "time_series",
-          "intervalFactor": 1,
           "legendFormat": "{{ state }}",
           "step": 240
         }
