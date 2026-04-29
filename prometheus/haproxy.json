@@ -142,7 +142,6 @@
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -458,7 +457,6 @@
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -584,7 +582,6 @@
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -709,7 +706,6 @@
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -836,7 +832,6 @@
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -962,7 +957,6 @@
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -1159,7 +1153,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1321,7 +1314,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1447,7 +1439,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1548,7 +1539,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1648,7 +1638,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1752,7 +1741,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1853,7 +1841,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -1953,7 +1940,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2057,7 +2043,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2158,7 +2143,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2259,7 +2243,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2361,7 +2344,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2499,7 +2481,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2656,7 +2637,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2782,7 +2762,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -2908,7 +2887,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3035,7 +3013,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3162,7 +3139,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3288,7 +3264,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3415,7 +3390,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3515,7 +3489,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3615,7 +3588,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3715,7 +3687,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3816,7 +3787,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3943,7 +3913,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4071,7 +4040,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4195,7 +4163,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4325,7 +4292,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4466,7 +4432,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4581,7 +4546,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4683,7 +4647,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "auto",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4794,7 +4757,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "auto",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4905,7 +4867,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5020,7 +4981,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5135,7 +5095,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5237,7 +5196,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5338,7 +5296,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5439,7 +5396,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5559,7 +5515,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5660,7 +5615,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5761,7 +5715,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5862,7 +5815,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5963,7 +5915,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6064,7 +6015,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6165,7 +6115,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6266,7 +6215,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6385,7 +6333,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6486,7 +6433,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6613,7 +6559,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6715,7 +6660,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6841,7 +6785,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6941,7 +6884,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7041,7 +6983,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7143,7 +7084,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7244,7 +7184,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7346,7 +7285,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7446,7 +7384,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7546,7 +7483,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7646,7 +7582,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7746,7 +7681,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7846,7 +7780,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7964,7 +7897,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8091,7 +8023,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8218,7 +8149,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8370,7 +8300,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8522,7 +8451,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8623,7 +8551,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8741,7 +8668,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8855,7 +8781,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8970,7 +8895,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9087,7 +9011,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9192,7 +9115,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9293,7 +9215,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9394,7 +9315,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9494,7 +9414,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9625,7 +9544,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9769,7 +9687,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9913,7 +9830,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -10056,7 +9972,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -10204,7 +10119,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -10352,7 +10266,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -10478,7 +10391,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -10629,7 +10541,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -10729,7 +10640,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -10896,7 +10806,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11012,7 +10921,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11191,7 +11099,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11292,7 +11199,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11448,7 +11354,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11549,7 +11454,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11663,7 +11567,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11776,7 +11679,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11889,7 +11791,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -12002,7 +11903,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -12115,7 +12015,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -12229,7 +12128,6 @@
                 "scaleDistribution": {
                   "type": "linear"
                 },
-                "showPoints": "never",
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
