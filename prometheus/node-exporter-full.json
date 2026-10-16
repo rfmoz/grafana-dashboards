@@ -4864,7 +4864,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Rate of memory pages being read from or written to disk (page-in and page-out operations). High page-out may indicate memory pressure or swapping activity",
+          "description": "Rate of data read from and written to block devices. Despite the historical name, it covers all block I/O, not only memory paging",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4912,7 +4912,7 @@
                   }
                 ]
               },
-              "unit": "ops"
+              "unit": "Bps"
             },
             "overrides": [
               {
@@ -4957,18 +4957,18 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "rate(node_vmstat_pgpgin{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pgpgin{instance=\"$node\",job=\"$job\"}[$__rate_interval]) * 1024",
               "format": "time_series",
-              "legendFormat": "Pagesin - Page in ops",
+              "legendFormat": "Pagesin - Data paged in",
               "range": true,
               "refId": "A",
               "step": 240
             },
             {
               "editorMode": "code",
-              "expr": "rate(node_vmstat_pgpgout{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_vmstat_pgpgout{instance=\"$node\",job=\"$job\"}[$__rate_interval]) * 1024",
               "format": "time_series",
-              "legendFormat": "Pagesout - Page out ops",
+              "legendFormat": "Pagesout - Data paged out",
               "range": true,
               "refId": "B",
               "step": 240
