@@ -4716,7 +4716,7 @@
               "editorMode": "code",
               "expr": "node_memory_HugePages_Total{instance=\"$node\",job=\"$job\"} * node_memory_Hugepagesize_bytes{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
-              "legendFormat": "HugePages Total \u2013 Reserved memory",
+              "legendFormat": "HugePages Total \u2013 Preallocated pool size",
               "range": true,
               "refId": "D",
               "step": 240
