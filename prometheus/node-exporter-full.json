@@ -12908,7 +12908,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Tracks the number of packets processed or dropped by Receive Packet Steering (RPS), a mechanism to distribute packet processing across CPUs",
+          "description": "Times each CPU was woken up by Receive Packet Steering (RPS) to process packets steered from other CPUs, and packets dropped for exceeding the flow limit",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -13012,7 +13012,7 @@
               "expr": "rate(node_softnet_received_rps_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "CPU {{cpu}} - Processed",
+              "legendFormat": "CPU {{cpu}} - RPS Wakeups",
               "range": true,
               "refId": "A",
               "step": 240
