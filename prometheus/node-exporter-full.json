@@ -524,7 +524,7 @@
         {
           "editorMode": "code",
           "exemplar": false,
-          "expr": "(node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"} > bool 0) * ((node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_SwapFree_bytes{instance=\"$node\",job=\"$job\"}) / (node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"})) * 100",
+          "expr": "((node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_SwapFree_bytes{instance=\"$node\",job=\"$job\"}) / (node_memory_SwapTotal_bytes{instance=\"$node\",job=\"$job\"} > 0)) * 100",
           "instant": true,
           "range": false,
           "refId": "A",
@@ -6601,7 +6601,7 @@
             },
             {
               "editorMode": "code",
-              "expr": "((rate(node_schedstat_running_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) + rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])) > bool 0) * (rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / (rate(node_schedstat_running_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) + rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])))",
+              "expr": "rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / ((rate(node_schedstat_running_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) + rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])) > 0)",
               "format": "time_series",
               "interval": "",
               "legendFormat": "CPU {{cpu}}",
@@ -7952,7 +7952,7 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "(node_cooling_device_max_state{instance=\"$node\",job=\"$job\"} > bool 0) * (100 * node_cooling_device_cur_state{instance=\"$node\",job=\"$job\"} / node_cooling_device_max_state{instance=\"$node\",job=\"$job\"})",
+              "expr": "100 * node_cooling_device_cur_state{instance=\"$node\",job=\"$job\"} / (node_cooling_device_max_state{instance=\"$node\",job=\"$job\"} > 0)",
               "format": "time_series",
               "interval": "",
               "legendFormat": "{{name}} - {{type}}",
@@ -9088,7 +9088,7 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "(rate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) > bool 0) * (rate(node_disk_read_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / rate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
+              "expr": "rate(node_disk_read_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / (rate(node_disk_reads_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) > 0)",
               "interval": "",
               "legendFormat": "{{device}} - Read",
               "range": true,
@@ -9097,7 +9097,7 @@
             },
             {
               "editorMode": "code",
-              "expr": "(rate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) > bool 0) * (rate(node_disk_write_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / rate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
+              "expr": "rate(node_disk_write_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / (rate(node_disk_writes_completed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) > 0)",
               "interval": "",
               "legendFormat": "{{device}} - Write",
               "range": true,
@@ -12549,7 +12549,7 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "(node_sockstat_TCP_inuse{instance=\"$node\",job=\"$job\"} > bool 0) * (node_sockstat_TCP_mem_bytes{instance=\"$node\",job=\"$job\"} / node_sockstat_TCP_inuse{instance=\"$node\",job=\"$job\"})",
+              "expr": "node_sockstat_TCP_mem_bytes{instance=\"$node\",job=\"$job\"} / (node_sockstat_TCP_inuse{instance=\"$node\",job=\"$job\"} > 0)",
               "format": "time_series",
               "interval": "",
               "legendFormat": "TCP",
@@ -12559,7 +12559,7 @@
             },
             {
               "editorMode": "code",
-              "expr": "(node_sockstat_UDP_inuse{instance=\"$node\",job=\"$job\"} > bool 0) * (node_sockstat_UDP_mem_bytes{instance=\"$node\",job=\"$job\"} / node_sockstat_UDP_inuse{instance=\"$node\",job=\"$job\"})",
+              "expr": "node_sockstat_UDP_mem_bytes{instance=\"$node\",job=\"$job\"} / (node_sockstat_UDP_inuse{instance=\"$node\",job=\"$job\"} > 0)",
               "format": "time_series",
               "interval": "",
               "legendFormat": "UDP",
