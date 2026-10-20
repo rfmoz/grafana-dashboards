@@ -5816,7 +5816,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Tracks PPS signal timing jitter and shift compared to system clock",
+          "description": "Tracks PPS signal timing jitter and the duration of the PPS calibration interval",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5909,7 +5909,7 @@
               "expr": "node_timex_pps_shift_seconds{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "PPS Shift",
+              "legendFormat": "PPS Interval",
               "range": true,
               "refId": "B",
               "step": 240
