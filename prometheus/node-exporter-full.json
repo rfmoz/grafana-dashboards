@@ -14171,7 +14171,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Number of UDP packets currently queued in the receive (RX) and transmit (TX) buffers. A growing queue may indicate a bottleneck",
+          "description": "Memory currently queued in the UDP receive (RX) and transmit (TX) buffers. A growing queue may indicate a bottleneck",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -14219,7 +14219,7 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "bytes"
             },
             "overrides": []
           },
