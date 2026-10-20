@@ -1842,7 +1842,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "Guest CPU usage"
+                  "options": "Guest - Running virtual CPUs, included in User/Nice"
                 },
                 "properties": [
                   {
@@ -1974,7 +1974,7 @@
               "editorMode": "code",
               "expr": "sum by(instance) (rate(node_cpu_guest_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))) > 0",
               "format": "time_series",
-              "legendFormat": "Guest CPU usage",
+              "legendFormat": "Guest - Running virtual CPUs, included in User/Nice",
               "range": true,
               "refId": "I",
               "step": 240
