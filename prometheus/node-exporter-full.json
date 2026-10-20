@@ -7502,7 +7502,7 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "rate(node_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "sum without (cpu) (rate(node_interrupts_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
               "format": "time_series",
               "interval": "",
               "legendFormat": "{{ type }} - {{ info }}",
