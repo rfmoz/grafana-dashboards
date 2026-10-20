@@ -242,14 +242,14 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "dark-green"
               },
               {
-                "color": "rgba(237, 129, 40, 0.89)",
+                "color": "orange",
                 "value": 85
               },
               {
-                "color": "rgba(245, 54, 54, 0.9)",
+                "color": "red",
                 "value": 95
               }
             ]
@@ -325,14 +325,14 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "dark-green"
               },
               {
-                "color": "rgba(237, 129, 40, 0.89)",
+                "color": "orange",
                 "value": 85
               },
               {
-                "color": "rgba(245, 54, 54, 0.9)",
+                "color": "red",
                 "value": 95
               }
             ]
@@ -398,14 +398,14 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "dark-green"
               },
               {
-                "color": "rgba(237, 129, 40, 0.89)",
+                "color": "orange",
                 "value": 80
               },
               {
-                "color": "rgba(245, 54, 54, 0.9)",
+                "color": "red",
                 "value": 90
               }
             ]
@@ -481,14 +481,14 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "dark-green"
               },
               {
-                "color": "rgba(237, 129, 40, 0.89)",
+                "color": "orange",
                 "value": 10
               },
               {
-                "color": "rgba(245, 54, 54, 0.9)",
+                "color": "red",
                 "value": 25
               }
             ]
@@ -563,14 +563,14 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "dark-green"
               },
               {
-                "color": "rgba(237, 129, 40, 0.89)",
+                "color": "orange",
                 "value": 80
               },
               {
-                "color": "rgba(245, 54, 54, 0.9)",
+                "color": "red",
                 "value": 90
               }
             ]
@@ -718,11 +718,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -797,11 +794,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -876,15 +870,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
-              },
-              {
-                "color": "rgba(237, 129, 40, 0.89)",
-                "value": 70
-              },
-              {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": 90
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -960,11 +947,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -1743,7 +1727,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#EAB839",
+                      "fixedColor": "#890F02",
                       "mode": "fixed"
                     }
                   }
@@ -1773,7 +1757,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#C15C17",
+                      "fixedColor": "#6D1F62",
                       "mode": "fixed"
                     }
                   }
@@ -1788,7 +1772,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#E24D42",
+                      "fixedColor": "#A06D99",
                       "mode": "fixed"
                     }
                   }
@@ -1803,7 +1787,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#FCE2DE",
+                      "fixedColor": "#CCB1C8",
                       "mode": "fixed"
                     }
                   }
@@ -1818,7 +1802,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#508642",
+                      "fixedColor": "#EAB839",
                       "mode": "fixed"
                     }
                   }
@@ -1833,7 +1817,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#5195CE",
+                      "fixedColor": "#0A437C",
                       "mode": "fixed"
                     }
                   }
@@ -2064,7 +2048,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#052B51",
+                      "fixedColor": "#7EB26D",
                       "mode": "fixed"
                     }
                   }
@@ -2079,7 +2063,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#629E51",
+                      "fixedColor": "#EAB839",
                       "mode": "fixed"
                     }
                   }
@@ -2139,7 +2123,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#6D1F62",
+                      "fixedColor": "#052B51",
                       "mode": "fixed"
                     }
                   }
@@ -2154,7 +2138,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#614D93",
+                      "fixedColor": "#698097",
                       "mode": "fixed"
                     }
                   }
@@ -3333,7 +3317,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#BF1B00",
+                      "fixedColor": "dark-red",
                       "mode": "fixed"
                     }
                   },
@@ -6651,7 +6635,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#F2495C",
+                      "fixedColor": "dark-red",
                       "mode": "fixed"
                     }
                   },
@@ -6789,7 +6773,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#F2495C",
+                      "fixedColor": "dark-red",
                       "mode": "fixed"
                     }
                   },
@@ -7730,7 +7714,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#E24D42",
+                      "fixedColor": "dark-red",
                       "mode": "fixed"
                     }
                   },
@@ -7884,7 +7868,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#EF843C",
+                      "fixedColor": "dark-red",
                       "mode": "fixed"
                     }
                   },
@@ -9140,13 +9124,13 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "/sda_*/"
+                  "options": "/sda.*/"
                 },
                 "properties": [
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#7EB26D",
+                      "fixedColor": "orange",
                       "mode": "fixed"
                     }
                   }
@@ -15192,7 +15176,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#890F02",
+                      "fixedColor": "dark-red",
                       "mode": "fixed"
                     }
                   },
