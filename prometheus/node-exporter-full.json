@@ -11728,7 +11728,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Maximum speed of each network interface as reported by the operating system. This is a static hardware capability, not current throughput",
+          "description": "Maximum speed of each network interface as reported by the operating system. This is a static hardware capability, not current throughput. A value of -1 means unknown speed",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11889,7 +11889,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Tracks TCP socket usage and memory per node",
+          "description": "Tracks TCP socket usage per node",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -13279,7 +13279,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Rate of UDP datagrams sent and received per second, based on /proc/net/netstat",
+          "description": "Rate of UDP datagrams sent and received per second, based on /proc/net/snmp",
           "fieldConfig": {
             "defaults": {
               "color": {
