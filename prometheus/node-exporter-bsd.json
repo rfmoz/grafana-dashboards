@@ -636,7 +636,8 @@
               }
             ]
           },
-          "unit": "short"
+          "unit": "short",
+          "displayName": "CPU Cores"
         },
         "overrides": []
       },
@@ -651,7 +652,7 @@
       "options": {
         "colorMode": "none",
         "graphMode": "none",
-        "justifyMode": "auto",
+        "justifyMode": "center",
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
@@ -662,8 +663,12 @@
           "values": false
         },
         "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
+        "textMode": "value_and_name",
+        "wideLayout": false,
+        "text": {
+          "titleSize": 12,
+          "valueSize": 20
+        }
       },
       "pluginVersion": "11.6.1",
       "targets": [
@@ -681,7 +686,7 @@
           "step": 900
         }
       ],
-      "title": "CPU Cores",
+      "title": "",
       "type": "stat"
     },
     {
@@ -715,7 +720,8 @@
               }
             ]
           },
-          "unit": "bytes"
+          "unit": "bytes",
+          "displayName": "RAM Total"
         },
         "overrides": []
       },
@@ -730,7 +736,7 @@
       "options": {
         "colorMode": "none",
         "graphMode": "none",
-        "justifyMode": "auto",
+        "justifyMode": "center",
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
@@ -741,8 +747,12 @@
           "values": false
         },
         "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
+        "textMode": "value_and_name",
+        "wideLayout": false,
+        "text": {
+          "titleSize": 12,
+          "valueSize": 20
+        }
       },
       "pluginVersion": "11.6.1",
       "targets": [
@@ -760,7 +770,7 @@
           "step": 900
         }
       ],
-      "title": "RAM Total",
+      "title": "",
       "type": "stat"
     },
     {
@@ -794,7 +804,8 @@
               }
             ]
           },
-          "unit": "bytes"
+          "unit": "bytes",
+          "displayName": "SWAP Total"
         },
         "overrides": []
       },
@@ -809,7 +820,7 @@
       "options": {
         "colorMode": "none",
         "graphMode": "none",
-        "justifyMode": "auto",
+        "justifyMode": "center",
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
@@ -820,8 +831,12 @@
           "values": false
         },
         "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
+        "textMode": "value_and_name",
+        "wideLayout": false,
+        "text": {
+          "titleSize": 12,
+          "valueSize": 20
+        }
       },
       "pluginVersion": "11.6.1",
       "targets": [
@@ -839,7 +854,7 @@
           "step": 900
         }
       ],
-      "title": "SWAP Total",
+      "title": "",
       "type": "stat"
     },
     {
@@ -873,13 +888,14 @@
               }
             ]
           },
-          "unit": "bytes"
+          "unit": "bytes",
+          "displayName": "RootFS Total"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 2,
-        "w": 2,
+        "w": 3,
         "x": 18,
         "y": 3
       },
@@ -888,7 +904,7 @@
       "options": {
         "colorMode": "none",
         "graphMode": "none",
-        "justifyMode": "auto",
+        "justifyMode": "center",
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
@@ -899,8 +915,12 @@
           "values": false
         },
         "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
+        "textMode": "value_and_name",
+        "wideLayout": false,
+        "text": {
+          "titleSize": 12,
+          "valueSize": 20
+        }
       },
       "pluginVersion": "11.6.1",
       "targets": [
@@ -919,7 +939,7 @@
           "step": 900
         }
       ],
-      "title": "RootFS Total",
+      "title": "",
       "type": "stat"
     },
     {
@@ -953,14 +973,15 @@
               }
             ]
           },
-          "unit": "s"
+          "unit": "s",
+          "displayName": "Uptime"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 2,
-        "w": 4,
-        "x": 20,
+        "w": 3,
+        "x": 21,
         "y": 3
       },
       "id": 15,
@@ -968,7 +989,7 @@
       "options": {
         "colorMode": "none",
         "graphMode": "none",
-        "justifyMode": "auto",
+        "justifyMode": "center",
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
@@ -979,8 +1000,12 @@
           "values": false
         },
         "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
+        "textMode": "value_and_name",
+        "wideLayout": false,
+        "text": {
+          "titleSize": 12,
+          "valueSize": 20
+        }
       },
       "pluginVersion": "11.6.1",
       "targets": [
@@ -998,7 +1023,7 @@
           "step": 1800
         }
       ],
-      "title": "Uptime",
+      "title": "",
       "type": "stat"
     },
     {
