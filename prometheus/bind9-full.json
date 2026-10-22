@@ -1682,7 +1682,7 @@
               "custom": {
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "time",
+                "axisLabel": "queries/s",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "drawStyle": "line",
@@ -1760,7 +1760,7 @@
               },
               "expr": "rate(bind_resolver_query_duration_seconds_bucket{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
-              "legendFormat": "{{ le }} round-trip {{ view }}",
+              "legendFormat": "RTT ≤ {{ le }} - {{ view }}",
               "refId": "B"
             }
           ],
@@ -1780,7 +1780,7 @@
               "custom": {
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "time",
+                "axisLabel": "queries/s",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "drawStyle": "line",
