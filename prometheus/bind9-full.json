@@ -123,6 +123,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "Incoming queries received and outgoing queries sent to other servers",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -245,6 +246,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "Queries received from clients, by record type",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -345,6 +347,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "Queries sent to other servers during recursion, by record type and view",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -445,6 +448,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "Requests received, by opcode",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -545,6 +549,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "Responses sent to clients, by result",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -644,6 +649,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "Time of the last configuration load",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -716,6 +722,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "Time the BIND process started",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -802,6 +809,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Outgoing queries retried because of no answer",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -900,6 +908,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Duplicate queries received, dropped or failed queries and queries that required recursion",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1019,6 +1028,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Error responses received from other servers, by type",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1117,6 +1127,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Outgoing queries that failed (abort, socket failure, timeout) and EDNS(0) failures",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1252,6 +1263,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Clients currently waiting for a recursive resolution",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1351,6 +1363,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Responses sent, by response code",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1449,6 +1462,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Record sets currently held in the cache, by type",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1548,6 +1562,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Transfers requested as secondary (success and failure) and client transfer requests rejected",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1666,6 +1681,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Outgoing queries answered within each time bucket (cumulative, +Inf is the total)",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1764,6 +1780,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Outgoing queries answered",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1873,6 +1890,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Responses from other servers that were truncated, did not match a query or came from a lame server",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1991,6 +2009,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Responses rewritten by response policy zones",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2226,6 +2245,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Successful and failed DNSSEC validations",
           "fieldConfig": {
             "defaults": {
               "color": {
