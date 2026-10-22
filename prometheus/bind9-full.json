@@ -1642,7 +1642,7 @@
               },
               "expr": "rate(bind_zone_transfer_success_total{instance=\"$host:$port\"}[$__rate_interval])",
               "interval": "",
-              "legendFormat": "Success",
+              "legendFormat": "Success - inbound as secondary",
               "refId": "A"
             },
             {
@@ -1652,7 +1652,7 @@
               },
               "expr": "rate(bind_zone_transfer_failure_total{instance=\"$host:$port\"}[$__rate_interval])",
               "interval": "",
-              "legendFormat": "Failure",
+              "legendFormat": "Failure - inbound as secondary",
               "refId": "B"
             },
             {
@@ -1662,7 +1662,7 @@
               },
               "expr": "rate(bind_zone_transfer_rejected_total{instance=\"$host:$port\"}[$__rate_interval])",
               "interval": "",
-              "legendFormat": "Rejected",
+              "legendFormat": "Rejected - requests from clients",
               "refId": "C"
             }
           ],
@@ -2097,6 +2097,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Running tasks and worker threads (BIND 9.18 or older)",
           "fieldConfig": {
             "defaults": {
               "color": {
