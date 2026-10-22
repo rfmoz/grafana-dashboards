@@ -2455,7 +2455,7 @@
           "type": "prometheus",
           "uid": "${DS_PROMETHEUS}"
         },
-        "definition": "label_values(bind_resolver_query_errors_total, view)",
+        "definition": "label_values(bind_resolver_query_duration_seconds_count, view)",
         "hide": 0,
         "includeAll": false,
         "label": "BIND view",
@@ -2463,11 +2463,11 @@
         "name": "view",
         "options": [],
         "query": {
-          "query": "label_values(bind_resolver_query_errors_total, view)",
+          "query": "label_values(bind_resolver_query_duration_seconds_count, view)",
           "refId": "Prometheus-view-Variable-Query"
         },
         "refresh": 1,
-        "regex": "",
+        "regex": "/^(?!_bind$).*/",
         "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
