@@ -1576,7 +1576,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries with DNS cookies: client, valid, and invalid.",
+          "description": "Number of queries with DNS cookies: client and valid.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1662,7 +1662,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(unbound_queries_cookie_client_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "sum(rate(unbound_queries_cookie_client_total{instance=\"$instance\"}[$__rate_interval]))",
               "legendFormat": "Client cookie",
               "range": true,
               "refId": "A"
@@ -1673,21 +1673,10 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(unbound_queries_cookie_valid_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "sum(rate(unbound_queries_cookie_valid_total{instance=\"$instance\"}[$__rate_interval]))",
               "legendFormat": "Valid cookie",
               "range": true,
               "refId": "B"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "rate(unbound_queries_cookie_invalid_total{instance=\"$instance\"}[$__rate_interval])",
-              "legendFormat": "Invalid cookie",
-              "range": true,
-              "refId": "C"
             }
           ],
           "title": "DNS Cookies",
