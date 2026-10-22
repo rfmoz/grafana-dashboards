@@ -665,10 +665,6 @@
             "steps": [
               {
                 "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -692,7 +688,7 @@
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "mean"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -741,10 +737,6 @@
             "steps": [
               {
                 "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -768,7 +760,7 @@
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "mean"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -2294,7 +2286,7 @@
                   {
                     "id": "color",
                     "value": {
-                      "fixedColor": "#F2495C",
+                      "fixedColor": "red",
                       "mode": "fixed"
                     }
                   },
@@ -2499,6 +2491,6 @@
   "timezone": "",
   "title": "Bind9 Full",
   "uid": "Ug7DI83Wz",
-  "version": 45,
+  "version": 46,
   "weekStart": ""
 }
