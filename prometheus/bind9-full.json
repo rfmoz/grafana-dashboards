@@ -649,7 +649,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
-      "description": "Time of the last configuration load",
+      "description": "Time since the last configuration load",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -674,12 +674,12 @@
               }
             ]
           },
-          "unit": "dateTimeAsIso"
+          "unit": "s"
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 2,
+        "h": 3,
         "w": 12,
         "x": 0,
         "y": 31
@@ -699,6 +699,9 @@
           "fields": "",
           "values": false
         },
+        "text": {
+          "valueSize": 20
+        },
         "textMode": "auto"
       },
       "pluginVersion": "9.2.0",
@@ -708,7 +711,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "bind_config_time_seconds{instance=\"$host:$port\"} * 1000",
+          "expr": "time() - bind_config_time_seconds{instance=\"$host:$port\"}",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -722,7 +725,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
-      "description": "Time the BIND process started",
+      "description": "Time since the BIND process started",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -747,12 +750,12 @@
               }
             ]
           },
-          "unit": "dateTimeAsIso"
+          "unit": "s"
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 2,
+        "h": 3,
         "w": 12,
         "x": 12,
         "y": 31
@@ -772,6 +775,9 @@
           "fields": "",
           "values": false
         },
+        "text": {
+          "valueSize": 20
+        },
         "textMode": "auto"
       },
       "pluginVersion": "9.2.0",
@@ -781,13 +787,13 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "bind_boot_time_seconds{instance=\"$host:$port\"} * 1000",
+          "expr": "time() - bind_boot_time_seconds{instance=\"$host:$port\"}",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
         }
       ],
-      "title": "BIND Process Start Time",
+      "title": "BIND Uptime",
       "type": "stat"
     },
     {
@@ -800,7 +806,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 34
       },
       "id": 29,
       "panels": [
@@ -1254,7 +1260,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 35
       },
       "id": 27,
       "panels": [
@@ -2236,7 +2242,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 36
       },
       "id": 25,
       "panels": [
