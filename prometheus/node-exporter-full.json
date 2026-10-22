@@ -301,7 +301,7 @@
         "type": "prometheus",
         "uid": "${ds_prometheus}"
       },
-      "description": "System load over all CPU cores together",
+      "description": "Tasks running or waiting (CPU, I/O) per core",
       "fieldConfig": {
         "defaults": {
           "color": {
