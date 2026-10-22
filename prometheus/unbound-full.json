@@ -2340,7 +2340,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Maximum number of hashtable collisions in message and rrset caches.",
+          "description": "Maximum number of hashtable collisions in message and rrset caches since start.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2390,7 +2390,7 @@
                   }
                 ]
               },
-              "unit": "ops"
+              "unit": "short"
             },
             "overrides": []
           },
@@ -2426,7 +2426,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(unbound_msg_cache_max_collisions_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "unbound_msg_cache_max_collisions_total{instance=\"$instance\"}",
               "legendFormat": "msg cache",
               "range": true,
               "refId": "A"
@@ -2437,7 +2437,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(unbound_rrset_cache_max_collisions_total{instance=\"$instance\"}[$__rate_interval])",
+              "expr": "unbound_rrset_cache_max_collisions_total{instance=\"$instance\"}",
               "legendFormat": "rrset cache",
               "range": true,
               "refId": "B"
