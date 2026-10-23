@@ -915,12 +915,108 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "eps"
+        }
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 21,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "8.4.5",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "exemplar": false,
+          "expr": "rate(apache_exporter_scrape_failures_total{job=\"$job\", instance=\"$instance\"}[$__rate_interval])",
+          "format": "time_series",
+          "interval": "",
+          "legendFormat": "Scrape failures",
+          "refId": "A"
+        }
+      ],
+      "title": "Exporter Scrape Failures",
+      "type": "timeseries",
+      "description": "Failed attempts by the exporter to read the Apache status page, even when Up is green"
+    },
+    {
       "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 30
       },
       "id": 14,
       "title": "Proxy Balancer",
@@ -1341,7 +1437,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 25
+        "y": 31
       },
       "id": 20,
       "title": "Server Status",
@@ -1632,7 +1728,7 @@
                   }
                 ]
               },
-              "unit": "ms"
+              "unit": "percentunit"
             },
             "overrides": []
           },
@@ -1668,7 +1764,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(apache_cpu_time_ms_total{job=\"$job\", instance=\"$instance\", type=\"user\"}[$__rate_interval])",
+              "expr": "rate(apache_cpu_time_ms_total{job=\"$job\", instance=\"$instance\", type=\"user\"}[$__rate_interval]) / 1000",
               "legendFormat": "User",
               "range": true,
               "refId": "A"
@@ -1679,13 +1775,13 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(apache_cpu_time_ms_total{job=\"$job\", instance=\"$instance\", type=\"system\"}[$__rate_interval])",
+              "expr": "rate(apache_cpu_time_ms_total{job=\"$job\", instance=\"$instance\", type=\"system\"}[$__rate_interval]) / 1000",
               "legendFormat": "System",
               "range": true,
               "refId": "B"
             }
           ],
-          "title": "CPU Time (User / System)",
+          "title": "CPU Time - User / System",
           "type": "timeseries"
         },
         {
