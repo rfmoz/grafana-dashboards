@@ -87,6 +87,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "TCP connections opened by the NFS client",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -183,6 +184,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "TCP connections accepted by the NFS server",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -279,6 +281,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "Network packets sent and received by the NFS client",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -382,6 +385,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "Network packets received by the NFS server",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -485,6 +489,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "RPC calls made by the NFS client, with retransmissions and authentication refreshes",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -595,6 +600,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "RPC calls handled by the NFS server, with errors by type",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -710,6 +716,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "Data read from and written to disk by the NFS server",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -825,6 +832,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "File handles the NFS server rejected as stale",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -921,6 +929,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "NFS server reply cache and read ahead cache activity",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1038,6 +1047,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "Kernel threads running in the NFS server",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1144,6 +1154,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v2 procedures invoked by the client",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1286,6 +1297,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v2 procedures invoked by the client",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1442,6 +1454,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v2 requests handled by the server, by method",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1578,6 +1591,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v2 requests handled by the server, by method",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1734,6 +1748,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v3 procedures invoked by the client",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1888,6 +1903,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v3 procedures invoked by the client",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2056,6 +2072,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v3 requests handled by the server, by method",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2210,6 +2227,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v3 requests handled by the server, by method",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2372,6 +2390,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v4 procedures invoked by the client",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2526,6 +2545,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v4 procedures invoked by the client",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2680,6 +2700,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v4 procedures invoked by the client",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2828,6 +2849,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v4 procedures invoked by the client",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2970,6 +2992,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v4 procedures invoked by the client",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3118,6 +3141,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v4 procedures invoked by the client",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3268,6 +3292,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v4 requests handled by the server, by method",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3416,6 +3441,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v4 requests handled by the server, by method",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3564,6 +3590,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "NFS v4 requests handled by the server, by method",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3887,6 +3914,6 @@
   "timezone": "browser",
   "title": "NFS",
   "uid": "vfsuyqfSk",
-  "version": 3,
+  "version": 4,
   "weekStart": ""
 }
