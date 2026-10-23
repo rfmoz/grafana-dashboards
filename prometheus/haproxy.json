@@ -10925,7 +10925,7 @@
                   }
                 ]
               },
-              "unit": "ops"
+              "unit": "short"
             },
             "overrides": [
               {
@@ -10965,18 +10965,6 @@
                       "fixedColor": "dark-red",
                       "mode": "fixed"
                     }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/.*limit.*/"
-                },
-                "properties": [
-                  {
-                    "id": "unit",
-                    "value": "short"
                   }
                 ]
               }
@@ -11027,7 +11015,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(haproxy_process_pipes_used_total{instance=\"$host\"}[$__rate_interval])",
+              "expr": "haproxy_process_pipes_used_total{instance=\"$host\"}",
               "interval": "$interval",
               "legendFormat": "Used pipes",
               "metric": "",
@@ -11040,7 +11028,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(haproxy_process_pipes_free_total{instance=\"$host\"}[$__rate_interval])",
+              "expr": "haproxy_process_pipes_free_total{instance=\"$host\"}",
               "interval": "$interval",
               "legendFormat": "Free pipes",
               "metric": "",
