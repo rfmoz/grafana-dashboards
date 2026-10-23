@@ -1685,8 +1685,8 @@
                 "mode": "palette-classic"
               },
               "custom": {
-                "axisLabel": "",
-                "axisPlacement": "auto",
+                "axisLabel": "CPU usage (%)",
+                "axisPlacement": "left",
                 "barAlignment": 0,
                 "drawStyle": "line",
                 "fillOpacity": 10,
