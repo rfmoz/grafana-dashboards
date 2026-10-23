@@ -1773,6 +1773,32 @@
           "range": true,
           "refId": "B",
           "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "editorMode": "code",
+          "expr": "rate(node_memory_swap_in_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+          "format": "time_series",
+          "legendFormat": "Swap in",
+          "range": true,
+          "refId": "C",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "editorMode": "code",
+          "expr": "rate(node_memory_swap_out_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+          "format": "time_series",
+          "legendFormat": "Swap out",
+          "range": true,
+          "refId": "D",
+          "step": 240
         }
       ],
       "title": "Memory Swap In / Out",
