@@ -6381,7 +6381,7 @@
             "tooltip": {
               "hideZeros": false,
               "mode": "multi",
-              "sort": "asc"
+              "sort": "desc"
             }
           },
           "pluginVersion": "11.6.1",
@@ -6494,7 +6494,7 @@
             "tooltip": {
               "hideZeros": false,
               "mode": "multi",
-              "sort": "asc"
+              "sort": "desc"
             }
           },
           "pluginVersion": "11.6.1",
@@ -7233,7 +7233,7 @@
             "tooltip": {
               "hideZeros": false,
               "mode": "multi",
-              "sort": "asc"
+              "sort": "desc"
             }
           },
           "pluginVersion": "11.6.1",
@@ -7958,7 +7958,7 @@
             "tooltip": {
               "hideZeros": false,
               "mode": "multi",
-              "sort": "asc"
+              "sort": "desc"
             }
           },
           "pluginVersion": "11.6.1",
@@ -8084,7 +8084,7 @@
             "tooltip": {
               "hideZeros": false,
               "mode": "multi",
-              "sort": "asc"
+              "sort": "desc"
             }
           },
           "pluginVersion": "11.6.1",
@@ -8222,7 +8222,7 @@
             "tooltip": {
               "hideZeros": false,
               "mode": "multi",
-              "sort": "asc"
+              "sort": "desc"
             }
           },
           "pluginVersion": "11.6.1",
@@ -8373,7 +8373,7 @@
             "tooltip": {
               "hideZeros": false,
               "mode": "multi",
-              "sort": "asc"
+              "sort": "desc"
             }
           },
           "pluginVersion": "11.6.1",
@@ -8499,7 +8499,7 @@
             "tooltip": {
               "hideZeros": false,
               "mode": "multi",
-              "sort": "asc"
+              "sort": "desc"
             }
           },
           "pluginVersion": "11.6.1",
@@ -8599,7 +8599,7 @@
             "tooltip": {
               "hideZeros": false,
               "mode": "multi",
-              "sort": "asc"
+              "sort": "desc"
             }
           },
           "pluginVersion": "11.6.1",
