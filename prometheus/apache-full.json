@@ -489,7 +489,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
-          "expr": "rate(apache_sent_kilobytes_total{job=\"$job\", instance=\"$instance\"}[$__rate_interval]) * 1000",
+          "expr": "rate(apache_sent_kilobytes_total{job=\"$job\", instance=\"$instance\"}[$__rate_interval]) * 1024",
           "hide": false,
           "interval": "",
           "legendFormat": "Bytes sent",
@@ -1820,7 +1820,6 @@
         "type": "datasource"
       },
       {
-        "allValue": ".+",
         "current": {
           "text": "",
           "value": ""
@@ -1830,9 +1829,9 @@
           "uid": "${DS_PROMETHEUS}"
         },
         "hide": 0,
-        "includeAll": true,
+        "includeAll": false,
         "label": "job",
-        "multi": true,
+        "multi": false,
         "name": "job",
         "options": [],
         "query": "label_values(apache_up, job)",
