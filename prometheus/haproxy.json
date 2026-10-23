@@ -2458,7 +2458,7 @@
               "editorMode": "code",
               "expr": "rate(haproxy_backend_response_errors_total{proxy=~\"$backend\", instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "legendFormat": "Error {{ proxy }}",
+              "legendFormat": "Response Error {{ proxy }}",
               "range": true,
               "refId": "C"
             }
@@ -2596,7 +2596,7 @@
               "editorMode": "code",
               "expr": "rate(haproxy_server_response_errors_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "legendFormat": "Error {{ proxy }} / {{ server }}",
+              "legendFormat": "Response Error {{ proxy }} / {{ server }}",
               "range": true,
               "refId": "C"
             }
@@ -9940,7 +9940,7 @@
               "refId": "B"
             }
           ],
-          "title": "Process - Sessions limits",
+          "title": "Process - Session rate limits",
           "type": "timeseries"
         },
         {
