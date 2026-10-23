@@ -196,7 +196,7 @@
           "format": "time_series",
           "instant": true,
           "interval": "",
-          "legendFormat": "{{ version }}",
+          "legendFormat": "{{ version }} - {{ mpm }}",
           "step": 240
         }
       ],
@@ -363,7 +363,7 @@
       ],
       "title": "CPU Load",
       "type": "stat",
-      "description": "Current percentage of CPU used by Apache workers."
+      "description": "Average CPU percentage used by Apache since server start"
     },
     {
       "datasource": {
