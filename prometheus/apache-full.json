@@ -1461,7 +1461,7 @@
           "datasource": {
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Apache server load average over 1, 5 and 15 minutes.",
+          "description": "System load average reported by Apache",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1547,7 +1547,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "apache_load{job=\"$job\", instance=\"$instance\", interval=\"1\"}",
+              "expr": "apache_load{job=\"$job\", instance=\"$instance\", interval=\"1min\"}",
               "legendFormat": "1m",
               "range": true,
               "refId": "A"
@@ -1558,7 +1558,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "apache_load{job=\"$job\", instance=\"$instance\", interval=\"5\"}",
+              "expr": "apache_load{job=\"$job\", instance=\"$instance\", interval=\"5min\"}",
               "legendFormat": "5m",
               "range": true,
               "refId": "B"
@@ -1569,7 +1569,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "apache_load{job=\"$job\", instance=\"$instance\", interval=\"15\"}",
+              "expr": "apache_load{job=\"$job\", instance=\"$instance\", interval=\"15min\"}",
               "legendFormat": "15m",
               "range": true,
               "refId": "C"
