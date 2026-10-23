@@ -7950,7 +7950,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Shows the online status of power supplies (e.g., AC, battery). A value of 1-Yes indicates the power supply is active/online",
+          "description": "Correctable and uncorrectable ECC memory errors reported by EDAC. Correctable errors indicate a degrading DIMM; uncorrectable errors can cause data corruption. Only available on bare metal hosts that expose EDAC.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7990,21 +7990,53 @@
               },
               "links": [],
               "mappings": [],
+              "min": 0,
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
                   {
                     "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
-              "unit": "bool_yes_no"
+              "unit": "short"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/ - Correctable$/"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "orange",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/ - Uncorrectable$/"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "dark-red",
+                      "mode": "fixed"
+                    }
+                  },
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 30
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
@@ -8034,16 +8066,26 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "node_power_supply_online{instance=\"$node\",job=\"$job\"}",
+              "expr": "increase(node_edac_correctable_errors_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "{{ power_supply }} online",
+              "legendFormat": "{{controller}} - Correctable",
               "range": true,
               "refId": "A",
               "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "increase(node_edac_uncorrectable_errors_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "interval": "",
+              "legendFormat": "{{controller}} - Uncorrectable",
+              "range": true,
+              "refId": "B",
+              "step": 240
             }
           ],
-          "title": "Power Supply",
+          "title": "ECC Memory Errors",
           "type": "timeseries"
         },
         {
