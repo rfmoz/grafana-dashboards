@@ -465,14 +465,14 @@
         {
           "expr": "rate(node_nfsd_packets_total{proto=\"tcp\",instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "legendFormat": "TCP - NFSd network packets (sent+received)",
+          "legendFormat": "TCP - NFSd network packets received",
           "refId": "O",
           "step": 240
         },
         {
           "expr": "rate(node_nfsd_packets_total{proto=\"udp\",instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "legendFormat": "UDP - NFSd network packets (sent+received)",
+          "legendFormat": "UDP - NFSd network packets received",
           "refId": "A",
           "step": 240
         }
@@ -568,21 +568,21 @@
         {
           "expr": "rate(node_nfs_rpc_authentication_refreshes_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "legendFormat": "Number of RPC authentication refreshes performed",
+          "legendFormat": "NFS RPC authentication refreshes",
           "refId": "C",
           "step": 240
         },
         {
           "expr": "rate(node_nfs_rpc_retransmissions_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "legendFormat": "Number of RPC retransmissions performed",
+          "legendFormat": "NFS RPC retransmissions",
           "refId": "A",
           "step": 240
         },
         {
           "expr": "rate(node_nfs_rpcs_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "legendFormat": "Total number of RPCs performed",
+          "legendFormat": "NFS RPCs",
           "refId": "B",
           "step": 240
         }
@@ -1011,21 +1011,21 @@
         {
           "expr": "rate(node_nfsd_reply_cache_hits_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "legendFormat": "NFSd Reply Cache hits (client lost server response)",
+          "legendFormat": "NFSd Reply Cache hits - client lost server response",
           "refId": "A",
           "step": 240
         },
         {
           "expr": "rate(node_nfsd_reply_cache_misses_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "legendFormat": "NFSd Reply Cache misses (idempotent operations)",
+          "legendFormat": "NFSd Reply Cache misses - cacheable non-idempotent operations",
           "refId": "B",
           "step": 240
         },
         {
           "expr": "rate(node_nfsd_reply_cache_nocache_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "legendFormat": "NFSd Reply Cache non-idempotent operations (rename/delete/\u2026)",
+          "legendFormat": "NFSd Reply Cache nocache - idempotent operations, not cached",
           "refId": "D",
           "step": 240
         }
@@ -1708,7 +1708,7 @@
             {
               "expr": "rate(node_nfsd_requests_total{method='WrCache',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
-              "refId": "I",
+              "refId": "A",
               "step": 240
             }
           ],
