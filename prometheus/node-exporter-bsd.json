@@ -511,7 +511,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "(node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"} > bool 0) * ((node_memory_swap_used_bytes{instance=\"$node\",job=\"$job\"} / node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"}) * 100)",
+          "expr": "(node_memory_swap_used_bytes{instance=\"$node\",job=\"$job\"} / (node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"} > 0)) * 100",
           "instant": true,
           "range": false,
           "refId": "A",
@@ -1443,6 +1443,21 @@
                 }
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Laundry - Dirty memory waiting to be swapped or written"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
           }
         ]
       },
@@ -1548,6 +1563,19 @@
           "legendFormat": "Free - Completely unused memory available for allocation",
           "range": true,
           "refId": "F",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "editorMode": "code",
+          "expr": "node_memory_laundry_bytes{instance=\"$node\",job=\"$job\"}",
+          "format": "time_series",
+          "legendFormat": "Laundry - Dirty memory waiting to be swapped or written",
+          "range": true,
+          "refId": "G",
           "step": 240
         }
       ],
