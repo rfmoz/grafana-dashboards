@@ -12091,7 +12091,7 @@
               "expr": "node_sockstat_TCP_alloc{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "Allocated Sockets",
+              "legendFormat": "IPv4 Allocated Sockets",
               "range": true,
               "refId": "A",
               "step": 240
@@ -12101,7 +12101,7 @@
               "expr": "node_sockstat_TCP_inuse{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "In-Use Sockets",
+              "legendFormat": "IPv4 In-Use Sockets",
               "range": true,
               "refId": "B",
               "step": 240
@@ -12111,7 +12111,7 @@
               "expr": "node_sockstat_TCP_orphan{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "Orphaned Sockets",
+              "legendFormat": "IPv4 Orphaned Sockets",
               "range": true,
               "refId": "C",
               "step": 240
@@ -12121,9 +12121,18 @@
               "expr": "node_sockstat_TCP_tw{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "TIME_WAIT Sockets",
+              "legendFormat": "IPv4 TIME_WAIT Sockets",
               "range": true,
               "refId": "D",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_sockstat_TCP6_inuse{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "IPv6 In-Use Sockets",
+              "range": true,
+              "refId": "E",
               "step": 240
             }
           ],
@@ -12220,7 +12229,7 @@
               "expr": "node_sockstat_UDPLITE_inuse{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "UDPLite - In-Use Sockets",
+              "legendFormat": "IPv4 UDPLite - In-Use Sockets",
               "range": true,
               "refId": "A",
               "step": 240
@@ -12230,9 +12239,27 @@
               "expr": "node_sockstat_UDP_inuse{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "UDP - In-Use Sockets",
+              "legendFormat": "IPv4 UDP - In-Use Sockets",
               "range": true,
               "refId": "B",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_sockstat_UDPLITE6_inuse{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "IPv6 UDPLite - In-Use Sockets",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_sockstat_UDP6_inuse{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "IPv6 UDP - In-Use Sockets",
+              "range": true,
+              "refId": "D",
               "step": 240
             }
           ],
@@ -12428,7 +12455,7 @@
               "expr": "node_sockstat_FRAG_inuse{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "FRAG - In-Use Sockets",
+              "legendFormat": "IPv4 FRAG - In-Use Sockets",
               "range": true,
               "refId": "A",
               "step": 240
@@ -12438,9 +12465,27 @@
               "expr": "node_sockstat_RAW_inuse{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "RAW - In-Use Sockets",
+              "legendFormat": "IPv4 RAW - In-Use Sockets",
               "range": true,
               "refId": "C",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_sockstat_FRAG6_inuse{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "IPv6 FRAG - In-Use Sockets",
+              "range": true,
+              "refId": "D",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_sockstat_RAW6_inuse{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "IPv6 RAW - In-Use Sockets",
+              "range": true,
+              "refId": "E",
               "step": 240
             }
           ],
@@ -13249,7 +13294,7 @@
               "expr": "rate(node_netstat_IpExt_InOctets{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "IP Rx in",
+              "legendFormat": "IPv4 Rx in",
               "range": true,
               "refId": "A",
               "step": 240
@@ -13258,9 +13303,27 @@
               "editorMode": "code",
               "expr": "rate(node_netstat_IpExt_OutOctets{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
-              "legendFormat": "IP Tx out",
+              "legendFormat": "IPv4 Tx out",
               "range": true,
               "refId": "B",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_netstat_Ip6_InOctets{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "IPv6 Rx in",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_netstat_Ip6_OutOctets{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "IPv6 Tx out",
+              "range": true,
+              "refId": "D",
               "step": 240
             }
           ],
@@ -13492,7 +13555,7 @@
               "expr": "rate(node_netstat_Udp_InDatagrams{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "UDP Rx in",
+              "legendFormat": "IPv4 UDP Rx in",
               "range": true,
               "refId": "A",
               "step": 240
@@ -13502,9 +13565,27 @@
               "expr": "rate(node_netstat_Udp_OutDatagrams{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "UDP Tx out",
+              "legendFormat": "IPv4 UDP Tx out",
               "range": true,
               "refId": "B",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_netstat_Udp6_InDatagrams{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "IPv6 UDP Rx in",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_netstat_Udp6_OutDatagrams{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "IPv6 UDP Tx out",
+              "range": true,
+              "refId": "D",
               "step": 240
             }
           ],
@@ -13616,7 +13697,7 @@
               "expr": "rate(node_netstat_Icmp_InMsgs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "ICMP Rx in",
+              "legendFormat": "IPv4 ICMP Rx in",
               "range": true,
               "refId": "A",
               "step": 240
@@ -13626,9 +13707,27 @@
               "expr": "rate(node_netstat_Icmp_OutMsgs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "ICMP Tx out",
+              "legendFormat": "IPv4 ICMP Tx out",
               "range": true,
               "refId": "B",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_netstat_Icmp6_InMsgs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "IPv6 ICMP Rx in",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_netstat_Icmp6_OutMsgs{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "IPv6 ICMP Tx out",
+              "range": true,
+              "refId": "D",
               "step": 240
             }
           ],
@@ -13893,7 +13992,7 @@
               "expr": "rate(node_netstat_Udp_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "UDP Rx in Errors",
+              "legendFormat": "IPv4 UDP Rx in Errors",
               "range": true,
               "refId": "A",
               "step": 240
@@ -13903,7 +14002,7 @@
               "expr": "rate(node_netstat_Udp_NoPorts{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "UDP No Listener",
+              "legendFormat": "IPv4 UDP No Listener",
               "range": true,
               "refId": "B",
               "step": 240
@@ -13912,7 +14011,7 @@
               "editorMode": "code",
               "expr": "rate(node_netstat_UdpLite_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "interval": "",
-              "legendFormat": "UDPLite Rx in Errors",
+              "legendFormat": "IPv4 UDPLite Rx in Errors",
               "range": true,
               "refId": "C"
             },
@@ -13921,7 +14020,7 @@
               "expr": "rate(node_netstat_Udp_RcvbufErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "UDP Rx in Buffer Errors",
+              "legendFormat": "IPv4 UDP Rx in Buffer Errors",
               "range": true,
               "refId": "D",
               "step": 240
@@ -13931,9 +14030,54 @@
               "expr": "rate(node_netstat_Udp_SndbufErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "UDP Tx out Buffer Errors",
+              "legendFormat": "IPv4 UDP Tx out Buffer Errors",
               "range": true,
               "refId": "E",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_netstat_Udp6_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "IPv6 UDP Rx in Errors",
+              "range": true,
+              "refId": "F",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_netstat_Udp6_NoPorts{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "IPv6 UDP No Listener",
+              "range": true,
+              "refId": "G",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_netstat_UdpLite6_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "IPv6 UDPLite Rx in Errors",
+              "range": true,
+              "refId": "H",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_netstat_Udp6_RcvbufErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "IPv6 UDP Rx in Buffer Errors",
+              "range": true,
+              "refId": "I",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_netstat_Udp6_SndbufErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "IPv6 UDP Tx out Buffer Errors",
+              "range": true,
+              "refId": "J",
               "step": 240
             }
           ],
@@ -14028,9 +14172,18 @@
               "expr": "rate(node_netstat_Icmp_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "ICMP Rx In",
+              "legendFormat": "IPv4 ICMP Rx In",
               "range": true,
               "refId": "A",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_netstat_Icmp6_InErrors{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "IPv6 ICMP Rx In",
+              "range": true,
+              "refId": "B",
               "step": 240
             }
           ],
@@ -14356,7 +14509,7 @@
               "expr": "node_udp_queues{instance=\"$node\",job=\"$job\",ip=\"v4\",queue=\"rx\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "UDP Rx in Queue",
+              "legendFormat": "IPv4 UDP Rx in Queue",
               "range": true,
               "refId": "A",
               "step": 240
@@ -14366,9 +14519,27 @@
               "expr": "node_udp_queues{instance=\"$node\",job=\"$job\",ip=\"v4\",queue=\"tx\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "UDP Tx out Queue",
+              "legendFormat": "IPv4 UDP Tx out Queue",
               "range": true,
               "refId": "B",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_udp_queues{instance=\"$node\",job=\"$job\",ip=\"v6\",queue=\"rx\"}",
+              "format": "time_series",
+              "legendFormat": "IPv6 UDP Rx in Queue",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_udp_queues{instance=\"$node\",job=\"$job\",ip=\"v6\",queue=\"tx\"}",
+              "format": "time_series",
+              "legendFormat": "IPv6 UDP Tx out Queue",
+              "range": true,
+              "refId": "D",
               "step": 240
             }
           ],
