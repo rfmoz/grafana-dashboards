@@ -123,7 +123,7 @@
       ],
       "title": "Uptime",
       "type": "stat",
-      "description": "Current uptime of the Apache server."
+      "description": "Current uptime of the Apache server"
     },
     {
       "datasource": {
@@ -202,7 +202,7 @@
       ],
       "title": "Version",
       "type": "stat",
-      "description": "Apache server version and MPM module."
+      "description": "Apache server version and MPM module"
     },
     {
       "datasource": {
@@ -282,7 +282,7 @@
       ],
       "title": "Up / Down",
       "type": "state-timeline",
-      "description": "Whether the Apache server is reachable."
+      "description": "Whether the Apache server is reachable"
     },
     {
       "datasource": {
@@ -369,7 +369,7 @@
       "datasource": {
         "uid": "${DS_PROMETHEUS}"
       },
-      "description": "Request rate and bytes sent per second.",
+      "description": "Request rate and bytes sent",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -594,7 +594,7 @@
       ],
       "title": "Average Response Time",
       "type": "timeseries",
-      "description": "Average response time per request."
+      "description": "Average response time per request"
     },
     {
       "datasource": {
@@ -689,7 +689,7 @@
       "timeShift": null,
       "title": "Scoreboard",
       "type": "timeseries",
-      "description": "Current state of each Apache slot (idle, read, reply, keepalive, etc.)."
+      "description": "Current state of each Apache slot (idle, read, reply, keepalive, etc.)"
     },
     {
       "datasource": {
@@ -780,13 +780,13 @@
       ],
       "title": "Workers",
       "type": "timeseries",
-      "description": "Number of busy and idle Apache workers."
+      "description": "Number of busy and idle Apache workers"
     },
     {
       "datasource": {
         "uid": "${DS_PROMETHEUS}"
       },
-      "description": "Current Apache connections by state.",
+      "description": "Current Apache connections by state",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1026,7 +1026,7 @@
           "datasource": {
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Request rate per proxy balancer worker.",
+          "description": "Request rate per proxy balancer worker",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1125,7 +1125,7 @@
           "datasource": {
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of active requests per proxy balancer worker.",
+          "description": "Number of active requests per proxy balancer worker",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1224,7 +1224,7 @@
           "datasource": {
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Request and response throughput per proxy balancer worker.",
+          "description": "Request and response throughput per proxy balancer worker",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1334,7 +1334,7 @@
           "datasource": {
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Status of each proxy balancer worker.",
+          "description": "Status of each proxy balancer worker",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1447,7 +1447,7 @@
           "datasource": {
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Apache process count including stopping processes.",
+          "description": "Apache process count including stopping processes",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1678,7 +1678,7 @@
           "datasource": {
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "CPU time consumed by Apache, split by user and system.",
+          "description": "CPU time consumed by Apache, split by user and system",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1788,7 +1788,7 @@
           "datasource": {
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Apache config and MPM restart generation counters. Increments on graceful restart.",
+          "description": "Apache config and MPM restart generation counters. Increments on graceful restart",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2000,5 +2000,5 @@
   "timezone": "browser",
   "title": "Apache Full",
   "uid": "apache-http",
-  "version": 0
+  "version": 1
 }
