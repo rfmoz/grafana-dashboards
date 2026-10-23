@@ -2960,12 +2960,6 @@
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
-            },
-            {
-              "expr": "rate(node_nfs_requests_total{method='Lookup',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
-              "legendFormat": "{{ method }}",
-              "refId": "B",
-              "step": 240
             }
           ],
           "title": "NFS v4 NFS Procedures Invoked 4",
