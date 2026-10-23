@@ -131,14 +131,14 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "dark-green"
               },
               {
-                "color": "rgba(237, 129, 40, 0.89)",
+                "color": "orange",
                 "value": 85
               },
               {
-                "color": "rgba(245, 54, 54, 0.9)",
+                "color": "red",
                 "value": 95
               }
             ]
@@ -217,14 +217,14 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "dark-green"
               },
               {
-                "color": "rgba(237, 129, 40, 0.89)",
+                "color": "orange",
                 "value": 85
               },
               {
-                "color": "rgba(245, 54, 54, 0.9)",
+                "color": "red",
                 "value": 95
               }
             ]
@@ -302,14 +302,14 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "dark-green"
               },
               {
-                "color": "rgba(237, 129, 40, 0.89)",
+                "color": "orange",
                 "value": 85
               },
               {
-                "color": "rgba(245, 54, 54, 0.9)",
+                "color": "red",
                 "value": 95
               }
             ]
@@ -379,14 +379,14 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "dark-green"
               },
               {
-                "color": "rgba(237, 129, 40, 0.89)",
+                "color": "orange",
                 "value": 80
               },
               {
-                "color": "rgba(245, 54, 54, 0.9)",
+                "color": "red",
                 "value": 90
               }
             ]
@@ -464,14 +464,14 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "dark-green"
               },
               {
-                "color": "rgba(237, 129, 40, 0.89)",
+                "color": "orange",
                 "value": 10
               },
               {
-                "color": "rgba(245, 54, 54, 0.9)",
+                "color": "red",
                 "value": 25
               }
             ]
@@ -548,14 +548,14 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "dark-green"
               },
               {
-                "color": "rgba(237, 129, 40, 0.89)",
+                "color": "orange",
                 "value": 80
               },
               {
-                "color": "rgba(245, 54, 54, 0.9)",
+                "color": "red",
                 "value": 90
               }
             ]
@@ -884,7 +884,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(50, 172, 45, 0.97)"
+                "color": "green"
               }
             ]
           },
@@ -1713,7 +1713,7 @@
         "type": "prometheus",
         "uid": "${ds_prometheus}"
       },
-      "description": "Rate of swap memory bytes moved in and out per second",
+      "description": "Rate of swap memory bytes moved in and out",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2118,7 +2118,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Rate of network packets transmitted and received per second",
+          "description": "Rate of network packets transmitted and received",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2244,7 +2244,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Rate of dropped network packets during transmission and reception per second",
+          "description": "Rate of dropped network packets during transmission and reception",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2370,7 +2370,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Rate of network transmission and reception errors per second",
+          "description": "Rate of network transmission and reception errors",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2496,7 +2496,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Rate of multicast packets transmitted and received per second",
+          "description": "Rate of multicast packets transmitted and received",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2622,7 +2622,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Rate of network packets received without a recognized protocol per second",
+          "description": "Rate of network packets received without a recognized protocol",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2836,7 +2836,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Per-second rate of context switches",
+          "description": "Rate of context switches",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2937,7 +2937,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Per-second rate of hardware and software interrupts",
+          "description": "Rate of hardware and software interrupts",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3222,7 +3222,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Rate of system calls executed per second",
+          "description": "Rate of system calls executed",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3323,7 +3323,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Rate of process forks and processor traps handled per second",
+          "description": "Rate of process forks and processor traps handled",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3553,7 +3553,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Number of I/O operations completed per second. On FreeBSD it needs the devstat collector enabled",
+          "description": "Number of I/O operations completed. On FreeBSD it needs the devstat collector enabled",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3705,7 +3705,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Number of bytes read from or written to the device per second. On FreeBSD it needs the devstat collector enabled",
+          "description": "Number of bytes read from or written to the device. On FreeBSD it needs the devstat collector enabled",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4311,7 +4311,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Shows whether each Node Exporter collector scraped successfully (1 = success, 0 = failure), and whether the textfile collector returned an error.",
+          "description": "Shows whether each Node Exporter collector scraped successfully (1 = success, 0 = failure), and whether the textfile collector returned an error",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4475,6 +4475,6 @@
   "timezone": "browser",
   "title": "Node Exporter BSD",
   "uid": "Kczn-jPZz",
-  "version": 6,
+  "version": 7,
   "weekStart": ""
 }
