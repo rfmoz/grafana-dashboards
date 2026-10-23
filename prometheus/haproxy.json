@@ -114,6 +114,7 @@
         "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
+      "description": "HTTP responses by status code and total requests, with backends shown below zero",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -429,6 +430,7 @@
         "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
+      "description": "Data received and sent by frontends",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -554,6 +556,7 @@
         "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
+      "description": "Data received and sent by backends",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -678,6 +681,7 @@
         "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
+      "description": "Sessions created on frontends and backends",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -804,6 +808,7 @@
         "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
+      "description": "Connections accepted by frontends and connection attempts to backends",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -929,6 +934,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "Frontends and backends currently UP",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1039,6 +1045,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
+      "description": "Time since the HAProxy process started",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1125,6 +1132,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Requests received by frontends, with errors, denied and intercepted ones",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1305,6 +1313,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Requests received by backends, with denied ones",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1430,6 +1439,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "HTTP responses sent by frontends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1530,6 +1540,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "HTTP responses received by backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1629,6 +1640,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "HTTP responses received from servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1732,6 +1744,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "HTTP responses sent by frontends, by status code",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1832,6 +1845,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "HTTP responses received by backends, by status code",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1931,6 +1945,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "HTTP responses received from servers, by status code",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2034,6 +2049,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "HTTP responses denied by rules on frontends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2134,6 +2150,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "HTTP responses denied by rules on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2234,6 +2251,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "HTTP responses denied by rules on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2335,6 +2353,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Connection retries and redispatches to servers, plus invalid server responses, by backend",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2472,6 +2491,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Connection retries and redispatches to servers, plus invalid server responses, by server",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2628,6 +2648,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Data received and sent by frontends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2753,6 +2774,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Data received and sent by backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2878,6 +2900,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Data received and sent by servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3004,6 +3027,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Connections accepted and denied by frontends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3130,6 +3154,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Connection attempts and failed connections to backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3255,6 +3280,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Connection attempts and failed connections to servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3381,6 +3407,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Connections waiting in queue on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3480,6 +3507,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Connections waiting in queue on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3579,6 +3607,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Reused connections on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3678,6 +3707,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Reused connections on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3778,6 +3808,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Requests or connections aborted by the client or the server, on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3904,6 +3935,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Requests or connections aborted by the client or the server, on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4031,6 +4063,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Server connections in use, idle and estimated as needed",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4154,6 +4187,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Idle server connections that are safe or unsafe to reuse",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4283,6 +4317,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Sessions created on frontends, with denied ones",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4409,6 +4444,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Sessions created on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4509,6 +4545,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Sessions created on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4610,6 +4647,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Current sessions as a percentage of the frontend limit",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4720,6 +4758,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Current sessions as a percentage of the backend limit, which is fullconn",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4830,6 +4869,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Highest concurrent sessions reached on frontends, with the current ones",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4944,6 +4984,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Highest concurrent sessions reached on backends, with the current ones",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5058,6 +5099,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Highest concurrent sessions reached on servers, with the current ones",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5172,6 +5214,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Failed HTTP header rewrites on frontends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5272,6 +5315,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Failed HTTP header rewrites on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5372,6 +5416,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Failed HTTP header rewrites on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5491,6 +5536,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Average time to connect to servers, over the last requests, on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5591,6 +5637,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Average total time of the last requests, including queue, connect and response, on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5691,6 +5738,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Average time to connect to servers, over the last requests, on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5791,6 +5839,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Average total time of the last requests, including queue, connect and response, on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5891,6 +5940,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Average time waiting for the server response, over the last requests, on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -5991,6 +6041,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Average time spent in queue, over the last requests, on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -6091,6 +6142,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Average time waiting for the server response, over the last requests, on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -6191,6 +6243,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Average time spent in queue, over the last requests, on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -6309,6 +6362,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Backend transitions from UP to DOWN",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -6409,6 +6463,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "User and effective weight of backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -6535,6 +6590,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Server transitions from UP to DOWN",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -6636,6 +6692,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "User and effective weight of servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -6761,6 +6818,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Active servers that are UP in each backend",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -6860,6 +6918,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Backup servers that are UP in each backend",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -6959,6 +7018,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Failed health checks on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7060,6 +7120,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Duration of the last health check on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7160,6 +7221,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Time since traffic was last seen on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7261,6 +7323,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Total time spent in DOWN state by backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7360,6 +7423,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Total time spent in DOWN state by servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7459,6 +7523,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Time since traffic was last seen on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7558,6 +7623,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Time since the last state change of servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7657,6 +7723,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Requests routed by load balancing on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7756,6 +7823,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Requests routed by load balancing on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7873,6 +7941,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Cache lookups and hits on frontends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7999,6 +8068,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Cache lookups and hits on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -8125,6 +8195,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Data in, out and bypassed by the HTTP compressor on frontends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -8276,6 +8347,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Data in, out and bypassed by the HTTP compressor on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -8427,6 +8499,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Responses compressed on frontends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -8527,6 +8600,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Responses compressed on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -8644,6 +8718,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Frontend status, ON when UP",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -8757,6 +8832,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Backend status, ON when UP",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -8871,6 +8947,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Server status, ON when UP",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -8987,6 +9064,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Servers in any state other than UP or DOWN, such as MAINT or DRAIN",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -9091,6 +9169,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Internal errors on frontends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -9191,6 +9270,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Internal errors on backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -9291,6 +9371,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Internal errors on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -9390,6 +9471,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Stick table entries in use and table size",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -9520,6 +9602,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Highest connection rate reached and its configured limit",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -9663,6 +9746,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Current connections and the hard limit per process",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -9806,6 +9890,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Highest session rate reached and its configured limit",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -9948,6 +10033,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Highest SSL connection rate reached and its configured limit",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -10095,6 +10181,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Current SSL connections, frontend and backend, and the hard limit",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -10242,6 +10329,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "SSL keys created on frontends and backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -10367,6 +10455,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "SSL session cache lookups and misses, and SSL connections",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -10517,6 +10606,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Frontend SSL connections that reused a session instead of creating a new key",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -10616,6 +10706,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Memory used by HTTP compression and its configured limit",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -10782,6 +10873,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
+          "description": "Failed DNS resolutions",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -10897,6 +10989,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Pipes in use and free for splicing, with the configured limit",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11063,6 +11156,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Active listeners in the process",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11163,6 +11257,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Memory allocated and used by pools, with the configured limit",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11318,6 +11413,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Failed pool allocations",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11418,6 +11514,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Active jobs and those that cannot be stopped during a soft stop",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11531,6 +11628,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Configured threads and processes",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11643,6 +11741,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Dropped logs and log messages received by log-forwarding listeners",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11755,6 +11854,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Active peers and peers that have completed the connection step",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11867,6 +11967,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Tasks in the process, active and sleeping, and tasks waiting to run",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11979,6 +12080,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Percentage of time the process was idle, and whether it is stopping",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -12092,6 +12194,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Time since the worker process started, drops show restarts",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -12374,6 +12477,6 @@
   "timezone": "browser",
   "title": "HAProxy",
   "uid": "rEqu1u5ue",
-  "version": 29,
+  "version": 30,
   "weekStart": ""
 }
