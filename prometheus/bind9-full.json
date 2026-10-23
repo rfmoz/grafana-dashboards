@@ -1786,7 +1786,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Outgoing queries answered",
+          "description": "Outgoing queries answered per second",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1796,7 +1796,7 @@
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
                 "axisLabel": "queries/s",
-                "axisPlacement": "auto",
+                "axisPlacement": "left",
                 "barAlignment": 0,
                 "drawStyle": "line",
                 "fillOpacity": 20,
