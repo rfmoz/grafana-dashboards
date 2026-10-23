@@ -5663,7 +5663,7 @@
               "refId": "D"
             }
           ],
-          "title": "Back - Average total conn. time",
+          "title": "Back - Average total time",
           "type": "timeseries"
         },
         {
@@ -5863,7 +5863,7 @@
               "refId": "D"
             }
           ],
-          "title": "Server - Average total conn. time",
+          "title": "Server - Average total time",
           "type": "timeseries"
         },
         {
@@ -10049,7 +10049,7 @@
               "editorMode": "code",
               "expr": "haproxy_process_max_ssl_rate{instance=\"$host\"}",
               "interval": "$interval",
-              "legendFormat": "Highest ConnRate reached on this worker process since started (in connections per second)",
+              "legendFormat": "Highest SslRate reached on this worker process since started (in connections per second)",
               "metric": "",
               "range": true,
               "refId": "A"
@@ -10645,7 +10645,7 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "bytes"
             },
             "overrides": [
               {
@@ -10864,7 +10864,7 @@
               "editorMode": "code",
               "expr": "rate(haproxy_process_failed_resolutions{instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "legendFormat": "Total number of failed DNS resolutions in current worker process since started",
+              "legendFormat": "Failed DNS resolutions",
               "metric": "",
               "range": true,
               "refId": "A"
@@ -11485,7 +11485,7 @@
               "editorMode": "code",
               "expr": "haproxy_process_jobs{instance=\"$host\"}",
               "interval": "$interval",
-              "legendFormat": "Current number of active jobs (listeners, sessions, open devices)",
+              "legendFormat": "Current number of active jobs (frontend connections, master connections, listeners)",
               "metric": "",
               "range": true,
               "refId": "A"
@@ -11709,7 +11709,7 @@
               "editorMode": "code",
               "expr": "rate(haproxy_process_dropped_logs_total{instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "legendFormat": "Total number of dropped logs",
+              "legendFormat": "Dropped logs",
               "metric": "",
               "range": true,
               "refId": "A"
@@ -11722,7 +11722,7 @@
               "editorMode": "code",
               "expr": "rate(haproxy_process_recv_logs_total{instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "legendFormat": "Total number of log messages received by log-forwarding listeners",
+              "legendFormat": "Received log messages - by log-forwarding listeners",
               "metric": "",
               "range": true,
               "refId": "B"
