@@ -717,7 +717,7 @@
           "refId": "A"
         }
       ],
-      "title": "Last Reconfiguration",
+      "title": "Time Since Last Reconfiguration",
       "type": "stat"
     },
     {
