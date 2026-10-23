@@ -1169,6 +1169,21 @@
                 }
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Spin - Waiting for a kernel lock"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#EAB839",
+                  "mode": "fixed"
+                }
+              }
+            ]
           }
         ]
       },
@@ -1263,6 +1278,19 @@
           "legendFormat": "Nice - Niced processes executing in user mode",
           "range": true,
           "refId": "E",
+          "step": 240
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "editorMode": "code",
+          "expr": "avg(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"spin\"}[$__rate_interval]))",
+          "format": "time_series",
+          "legendFormat": "Spin - Waiting for a kernel lock",
+          "range": true,
+          "refId": "F",
           "step": 240
         }
       ],
