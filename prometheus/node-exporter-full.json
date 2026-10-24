@@ -7658,6 +7658,105 @@
           ],
           "title": "Entropy",
           "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "description": "Core-level CPU thermal throttling events per package. Values above zero indicate cores were throttled during the interval. Requires hardware that exposes thermal_throttle counters (mostly Intel); absent on AMD and most virtual machines.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "throttle events",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "decimals": 0,
+              "links": [],
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 24,
+            "x": 0,
+            "y": 846
+          },
+          "id": 344,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true,
+              "width": 300
+            },
+            "tooltip": {
+              "hideZeros": true,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "sum by (package) (increase(node_cpu_core_throttles_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
+              "format": "time_series",
+              "legendFormat": "Package {{package}}",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            }
+          ],
+          "title": "CPU Throttling",
+          "type": "timeseries"
         }
       ],
       "title": "System Misc",
