@@ -11414,7 +11414,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Number of link up and down transitions per interface. Repeated changes usually indicate a faulty cable, SFP, or switch port.",
+          "description": "Number of link-down transitions (flaps) per interface. Repeated flaps usually indicate a faulty cable, SFP, or switch port. The negative series shows link-down state: 0 when the carrier is present and -1 when it is absent.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11424,7 +11424,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "events",
+                "axisLabel": "down (-) / flaps (+)",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -11455,7 +11455,7 @@
               "decimals": 0,
               "links": [],
               "mappings": [],
-              "min": 0,
+              "min": -1,
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
@@ -11466,7 +11466,27 @@
               },
               "unit": "short"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/.*Down state.*/"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "mode": "fixed",
+                      "fixedColor": "red"
+                    }
+                  },
+                  {
+                    "id": "custom.lineWidth",
+                    "value": 2
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
@@ -11499,16 +11519,16 @@
               "editorMode": "code",
               "expr": "increase(node_network_carrier_down_changes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
-              "legendFormat": "{{device}} - Link down",
+              "legendFormat": "{{device}} - Link flaps",
               "range": true,
               "refId": "A",
               "step": 240
             },
             {
               "editorMode": "code",
-              "expr": "increase(node_network_carrier_up_changes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "node_network_carrier{instance=\"$node\",job=\"$job\"} - 1",
               "format": "time_series",
-              "legendFormat": "{{device}} - Link up",
+              "legendFormat": "{{device}} - Down state",
               "range": true,
               "refId": "B",
               "step": 240
@@ -11546,7 +11566,7 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 20,
+            "h": 10,
             "w": 6,
             "x": 12,
             "y": 91
@@ -11619,7 +11639,7 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 20,
+            "h": 10,
             "w": 6,
             "x": 18,
             "y": 91
@@ -11663,102 +11683,6 @@
           ],
           "title": "MTU",
           "type": "bargauge"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
-          "description": "Physical link status of each network interface. Values are Yes when a carrier is present and No when there is no carrier.",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "bool_yes_no"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 101
-          },
-          "id": 309,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true,
-              "width": 300
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "node_network_carrier{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "instant": false,
-              "legendFormat": "{{device}} - Physical link",
-              "refId": "B"
-            }
-          ],
-          "title": "Network Operational Status",
-          "type": "timeseries"
         }
       ],
       "title": "Network Traffic",
