@@ -14956,7 +14956,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Tracks the memory usage of the process exposing this metric (e.g., node_exporter), including resident memory (RSS), current virtual memory and maximum virtual memory limit",
+          "description": "Tracks the memory usage of the process exposing this metric (e.g., node_exporter), including resident memory (RSS), current virtual memory and maximum virtual memory limit. The limit is shown in the legend and tooltip but hidden from the graph to preserve scale.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -15038,18 +15038,9 @@
                 ]
               },
               {
-                "__systemRef": "hideSeriesFrom",
                 "matcher": {
-                  "id": "byNames",
-                  "options": {
-                    "mode": "exclude",
-                    "names": [
-                      "Virtual Memory",
-                      "Resident Memory (RSS)"
-                    ],
-                    "prefix": "All except:",
-                    "readOnly": true
-                  }
+                  "id": "byName",
+                  "options": "Virtual Memory Limit"
                 },
                 "properties": [
                   {
@@ -15126,7 +15117,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Number of file descriptors used by the exporter process versus its configured limit",
+          "description": "Number of file descriptors used by the exporter process versus its configured limit. The limit is shown in the legend and tooltip but hidden from the graph to preserve scale.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -15208,17 +15199,9 @@
                 ]
               },
               {
-                "__systemRef": "hideSeriesFrom",
                 "matcher": {
-                  "id": "byNames",
-                  "options": {
-                    "mode": "exclude",
-                    "names": [
-                      "Open file descriptors"
-                    ],
-                    "prefix": "All except:",
-                    "readOnly": true
-                  }
+                  "id": "byName",
+                  "options": "Maximum open file descriptors"
                 },
                 "properties": [
                   {
