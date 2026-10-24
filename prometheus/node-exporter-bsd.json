@@ -5183,7 +5183,7 @@
               },
               "expr": "node_filesystem_readonly{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
-              "legendFormat": "{{mountpoint}} - ReadOnly",
+              "legendFormat": "{{mountpoint}}",
               "refId": "C",
               "step": 240
             }
