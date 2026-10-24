@@ -5344,7 +5344,7 @@
           "type": "timeseries"
         }
       ],
-      "title": "Memory",
+      "title": "Memory Details",
       "type": "row"
     },
     {
