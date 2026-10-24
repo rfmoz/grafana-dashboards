@@ -1325,7 +1325,7 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 8,
             "x": 0,
             "y": 0
           },
@@ -1424,8 +1424,8 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
+            "w": 8,
+            "x": 8,
             "y": 0
           },
           "id": 31,
@@ -1524,9 +1524,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 10
+            "w": 8,
+            "x": 16,
+            "y": 0
           },
           "id": 8,
           "interval": "",
@@ -1623,8 +1623,8 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
+            "w": 8,
+            "x": 0,
             "y": 10
           },
           "id": 35,
@@ -1742,9 +1742,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 20
+            "w": 8,
+            "x": 8,
+            "y": 10
           },
           "id": 11,
           "interval": "",
@@ -1841,9 +1841,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 20
+            "w": 8,
+            "x": 16,
+            "y": 10
           },
           "id": 12,
           "interval": "",
@@ -1875,106 +1875,20 @@
               "interval": "",
               "legendFormat": "count {{ view }}",
               "refId": "A"
-            }
-          ],
-          "title": "Resolver Query round-trip Count",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Average round-trip time per outgoing query, derived from the duration histogram",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "Round-trip time (s)",
-                "axisPlacement": "left",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "s"
             },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 30
-          },
-          "id": 36,
-          "interval": "",
-          "options": {
-            "legend": {
-              "calcs": [
-                "mean",
-                "lastNotNull",
-                "max",
-                "min"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "9.2.0",
-          "targets": [
             {
               "datasource": {
                 "type": "prometheus",
                 "uid": "${DS_PROMETHEUS}"
               },
-              "editorMode": "code",
-              "expr": "rate(bind_resolver_query_duration_seconds_sum{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval]) / rate(bind_resolver_query_duration_seconds_count{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
+              "expr": "rate(bind_resolver_query_duration_seconds_sum{instance=\"$host:$port\",view=~\"$view\"}[$__rate_interval])",
               "interval": "",
-              "legendFormat": "{{ view }}",
-              "range": true,
-              "refId": "A"
+              "legendFormat": "sum {{ view }}",
+              "refId": "B",
+              "hide": true
             }
           ],
-          "title": "Resolver Query Average Round-trip",
+          "title": "Resolver Query round-trip Count",
           "type": "timeseries"
         },
         {
@@ -2037,9 +1951,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 8,
             "x": 0,
-            "y": 30
+            "y": 20
           },
           "id": 19,
           "interval": "",
@@ -2156,9 +2070,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 40
+            "w": 8,
+            "x": 8,
+            "y": 20
           },
           "id": 33,
           "interval": "",
@@ -2256,9 +2170,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 40
+            "w": 8,
+            "x": 16,
+            "y": 20
           },
           "id": 32,
           "interval": "",
