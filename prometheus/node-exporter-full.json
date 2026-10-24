@@ -5366,708 +5366,6 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 23
-      },
-      "id": 293,
-      "panels": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
-          "description": "Tracks the system clock's estimated and maximum error, as well as its offset from the reference clock (e.g., via NTP). Useful for detecting synchronization drift",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "s"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 734
-          },
-          "id": 260,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "node_timex_estimated_error_seconds{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "Estimated error",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "node_timex_offset_seconds{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "Offset local vs reference",
-              "range": true,
-              "refId": "B",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "node_timex_maxerror_seconds{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "Maximum error",
-              "range": true,
-              "refId": "C",
-              "step": 240
-            }
-          ],
-          "title": "Time Synchronized Drift",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
-          "description": "NTP phase-locked loop (PLL) time constant used by the kernel to control time adjustments. Lower values mean faster correction but less stability",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 734
-          },
-          "id": 291,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "node_timex_loop_time_constant{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "PLL Time Constant",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            }
-          ],
-          "title": "Time PLL Adjust",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
-          "description": "Shows whether the system clock is synchronized to a reliable time source, and the current frequency correction ratio applied by the kernel to maintain synchronization",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 884
-          },
-          "id": 168,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "node_timex_sync_status{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "Sync status (1 = ok)",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "node_timex_frequency_adjustment_ratio{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "Frequency Adjustment",
-              "range": true,
-              "refId": "B",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "node_timex_tick_seconds{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "hide": true,
-              "interval": "",
-              "legendFormat": "Tick Interval",
-              "range": true,
-              "refId": "C",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "node_timex_tai_offset_seconds{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "hide": true,
-              "interval": "",
-              "legendFormat": "TAI Offset",
-              "range": true,
-              "refId": "D",
-              "step": 240
-            }
-          ],
-          "title": "Time Synchronized Status",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
-          "description": "Displays the PPS signal's frequency offset and stability (jitter) in hertz. Useful for monitoring high-precision time sources like GPS or atomic clocks",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "hertz"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 884
-          },
-          "id": 333,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "node_timex_pps_frequency_hertz{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "PPS Frequency Offset",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "node_timex_pps_stability_hertz{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "PPS Frequency Stability",
-              "range": true,
-              "refId": "B",
-              "step": 240
-            }
-          ],
-          "title": "PPS Frequency / Stability",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
-          "description": "Tracks PPS signal timing jitter and the duration of the PPS calibration interval",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "s"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 894
-          },
-          "id": 334,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "node_timex_pps_jitter_seconds{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "PPS Jitter",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "node_timex_pps_shift_seconds{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "PPS Interval",
-              "range": true,
-              "refId": "B",
-              "step": 240
-            }
-          ],
-          "title": "PPS Time Accuracy",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
-          "description": "Rate of PPS synchronization diagnostics including calibration events, jitter violations, errors, and frequency stability exceedances",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "ops"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 894
-          },
-          "id": 335,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "rate(node_timex_pps_calibration_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "PPS Calibrations/sec",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "rate(node_timex_pps_error_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "PPS Errors/sec",
-              "range": true,
-              "refId": "B",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "rate(node_timex_pps_stability_exceeded_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "PPS Stability Exceeded/sec",
-              "range": true,
-              "refId": "C",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "rate(node_timex_pps_jitter_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "PPS Jitter Events/sec",
-              "range": true,
-              "refId": "D",
-              "step": 240
-            }
-          ],
-          "title": "PPS Sync Events",
-          "type": "timeseries"
-        }
-      ],
-      "title": "System Timesync",
-      "type": "row"
-    },
-    {
-      "collapsed": true,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
         "y": 24
       },
       "id": 312,
@@ -7658,105 +6956,6 @@
           ],
           "title": "Entropy",
           "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
-          "description": "Core-level CPU thermal throttling events per package. Values above zero indicate cores were throttled during the interval. Requires hardware that exposes thermal_throttle counters (mostly Intel); absent on AMD and most virtual machines.",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "throttle events",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "decimals": 0,
-              "links": [],
-              "mappings": [],
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 24,
-            "x": 0,
-            "y": 846
-          },
-          "id": 344,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true,
-              "width": 300
-            },
-            "tooltip": {
-              "hideZeros": true,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "sum by (package) (increase(node_cpu_core_throttles_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
-              "format": "time_series",
-              "legendFormat": "Package {{package}}",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            }
-          ],
-          "title": "CPU Throttling",
-          "type": "timeseries"
         }
       ],
       "title": "System Misc",
@@ -8294,6 +7493,448 @@
             }
           ],
           "title": "Hardware Fan Speed",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "description": "Tracks the system clock's estimated and maximum error, as well as its offset from the reference clock (e.g., via NTP). Useful for detecting synchronization drift",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 757
+          },
+          "id": 260,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "node_timex_estimated_error_seconds{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "legendFormat": "Estimated error",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_timex_offset_seconds{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "legendFormat": "Offset local vs reference",
+              "range": true,
+              "refId": "B",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_timex_maxerror_seconds{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "legendFormat": "Maximum error",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            }
+          ],
+          "title": "Time Synchronized Drift",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "description": "NTP phase-locked loop (PLL) time constant used by the kernel to control time adjustments. Lower values mean faster correction but less stability",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 757
+          },
+          "id": 291,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "node_timex_loop_time_constant{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "legendFormat": "PLL Time Constant",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            }
+          ],
+          "title": "Time PLL Adjust",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "description": "Shows whether the system clock is synchronized to a reliable time source, and the current frequency correction ratio applied by the kernel to maintain synchronization",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 767
+          },
+          "id": 168,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "node_timex_sync_status{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "legendFormat": "Sync status (1 = ok)",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_timex_frequency_adjustment_ratio{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "legendFormat": "Frequency Adjustment",
+              "range": true,
+              "refId": "B",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_timex_tick_seconds{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "hide": true,
+              "interval": "",
+              "legendFormat": "Tick Interval",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_timex_tai_offset_seconds{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "hide": true,
+              "interval": "",
+              "legendFormat": "TAI Offset",
+              "range": true,
+              "refId": "D",
+              "step": 240
+            }
+          ],
+          "title": "Time Synchronized Status",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "description": "Core-level CPU thermal throttling events per package. Values above zero indicate cores were throttled during the interval. Requires hardware that exposes thermal_throttle counters (mostly Intel); absent on AMD and most virtual machines.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "throttle events",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "decimals": 0,
+              "links": [],
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 767
+          },
+          "id": 344,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true,
+              "width": 300
+            },
+            "tooltip": {
+              "hideZeros": true,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "sum by (package) (increase(node_cpu_core_throttles_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
+              "format": "time_series",
+              "legendFormat": "Package {{package}}",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            }
+          ],
+          "title": "CPU Throttling",
           "type": "timeseries"
         }
       ],
