@@ -4816,6 +4816,7 @@
               "sort": "desc"
             }
           },
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
