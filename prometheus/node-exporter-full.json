@@ -3532,7 +3532,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Kernel slab memory usage, separated into reclaimable and non-reclaimable categories. Reclaimable memory can be freed under memory pressure (e.g., caches), while unreclaimable memory is locked by the kernel for core functions",
+          "description": "Memory used by anonymous pages (not backed by files), including standard and huge page allocations. Includes heap, stack, and memory-mapped anonymous regions",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3564,7 +3564,7 @@
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
-                  "mode": "normal"
+                  "mode": "none"
                 },
                 "thresholdsStyle": {
                   "mode": "off"
@@ -3591,7 +3591,7 @@
             "x": 0,
             "y": 932
           },
-          "id": 131,
+          "id": 129,
           "options": {
             "legend": {
               "calcs": [
@@ -3613,24 +3613,24 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "node_memory_SUnreclaim_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_AnonHugePages_bytes{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
-              "legendFormat": "SUnreclaim \u2013 Non-reclaimable slab memory (kernel objects)",
+              "legendFormat": "AnonHugePages \u2013 Anonymous memory using HugePages",
               "range": true,
               "refId": "A",
               "step": 240
             },
             {
               "editorMode": "code",
-              "expr": "node_memory_SReclaimable_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_AnonPages_bytes{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
-              "legendFormat": "SReclaimable \u2013 Potentially reclaimable slab memory (e.g., inode cache)",
+              "legendFormat": "AnonPages \u2013 Anonymous memory (non-file-backed)",
               "range": true,
               "refId": "B",
               "step": 240
             }
           ],
-          "title": "Memory Slab",
+          "title": "Memory Anonymous",
           "type": "timeseries"
         },
         {
@@ -4028,7 +4028,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Tracks kernel memory used for CPU-local structures and per-thread stacks. These areas are typically small but critical for low-level operations",
+          "description": "Kernel slab memory usage, separated into reclaimable and non-reclaimable categories. Reclaimable memory can be freed under memory pressure (e.g., caches), while unreclaimable memory is locked by the kernel for core functions",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4060,7 +4060,7 @@
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
-                  "mode": "none"
+                  "mode": "normal"
                 },
                 "thresholdsStyle": {
                   "mode": "off"
@@ -4087,7 +4087,7 @@
             "x": 0,
             "y": 952
           },
-          "id": 160,
+          "id": 131,
           "options": {
             "legend": {
               "calcs": [
@@ -4097,8 +4097,7 @@
               ],
               "displayMode": "table",
               "placement": "bottom",
-              "showLegend": true,
-              "width": 350
+              "showLegend": true
             },
             "tooltip": {
               "hideZeros": false,
@@ -4110,25 +4109,24 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "node_memory_KernelStack_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_SUnreclaim_bytes{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
-              "legendFormat": "KernelStack \u2013 Kernel stack memory (per-thread, non-reclaimable)",
+              "legendFormat": "SUnreclaim \u2013 Non-reclaimable slab memory (kernel objects)",
               "range": true,
               "refId": "A",
               "step": 240
             },
             {
               "editorMode": "code",
-              "expr": "node_memory_Percpu_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_SReclaimable_bytes{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
-              "interval": "",
-              "legendFormat": "PerCPU \u2013 Dynamically allocated per-CPU memory (used by kernel modules)",
+              "legendFormat": "SReclaimable \u2013 Potentially reclaimable slab memory (e.g., inode cache)",
               "range": true,
               "refId": "B",
               "step": 240
             }
           ],
-          "title": "Memory Kernel / CPU",
+          "title": "Memory Slab",
           "type": "timeseries"
         },
         {
@@ -4281,7 +4279,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Memory used by anonymous pages (not backed by files), including standard and huge page allocations. Includes heap, stack, and memory-mapped anonymous regions",
+          "description": "Tracks kernel memory used for CPU-local structures and per-thread stacks. These areas are typically small but critical for low-level operations",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4340,113 +4338,7 @@
             "x": 0,
             "y": 962
           },
-          "id": 129,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "node_memory_AnonHugePages_bytes{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "legendFormat": "AnonHugePages \u2013 Anonymous memory using HugePages",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "node_memory_AnonPages_bytes{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "legendFormat": "AnonPages \u2013 Anonymous memory (non-file-backed)",
-              "range": true,
-              "refId": "B",
-              "step": 240
-            }
-          ],
-          "title": "Memory Anonymous",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
-          "description": "Memory that is locked in RAM and cannot be swapped out. Includes both kernel-unevictable memory and user-level memory locked with mlock()",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "bytes"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 962
-          },
-          "id": 137,
+          "id": 160,
           "options": {
             "legend": {
               "calcs": [
@@ -4469,24 +4361,25 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "node_memory_Unevictable_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_KernelStack_bytes{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
-              "legendFormat": "Unevictable \u2013 Kernel-pinned memory (not swappable)",
+              "legendFormat": "KernelStack \u2013 Kernel stack memory (per-thread, non-reclaimable)",
               "range": true,
               "refId": "A",
               "step": 240
             },
             {
               "editorMode": "code",
-              "expr": "node_memory_Mlocked_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Percpu_bytes{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
-              "legendFormat": "Mlocked \u2013 Application-locked memory via mlock()",
+              "interval": "",
+              "legendFormat": "PerCPU \u2013 Dynamically allocated per-CPU memory (used by kernel modules)",
               "range": true,
               "refId": "B",
               "step": 240
             }
           ],
-          "title": "Memory Unevictable and MLocked",
+          "title": "Memory Kernel / CPU",
           "type": "timeseries"
         },
         {
@@ -4554,8 +4447,8 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 0,
-            "y": 972
+            "x": 12,
+            "y": 962
           },
           "id": 128,
           "options": {
@@ -4608,6 +4501,113 @@
             }
           ],
           "title": "Memory DirectMap",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "description": "Memory that is locked in RAM and cannot be swapped out. Includes both kernel-unevictable memory and user-level memory locked with mlock()",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "bytes"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 972
+          },
+          "id": 137,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true,
+              "width": 350
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "node_memory_Unevictable_bytes{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "Unevictable \u2013 Kernel-pinned memory (not swappable)",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_memory_Mlocked_bytes{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "legendFormat": "Mlocked \u2013 Application-locked memory via mlock()",
+              "range": true,
+              "refId": "B",
+              "step": 240
+            }
+          ],
+          "title": "Memory Unevictable and MLocked",
           "type": "timeseries"
         },
         {
@@ -4794,7 +4794,7 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 24,
             "x": 0,
             "y": 982
           },
@@ -6324,6 +6324,129 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
+          "description": "Shows CPU saturation per core, calculated as the proportion of time spent waiting to run relative to total time demanded (running + waiting).",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "CPU saturation (%)",
+                "axisPlacement": "left",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 0.8
+                  }
+                ]
+              },
+              "unit": "percentunit"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 816
+          },
+          "id": 305,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "rate(node_schedstat_running_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "hide": true,
+              "interval": "",
+              "legendFormat": "CPU {{ cpu }} - Running",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "hide": true,
+              "interval": "",
+              "legendFormat": "CPU {{cpu}} - Waiting Queue",
+              "range": true,
+              "refId": "B",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / ((rate(node_schedstat_running_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) + rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])) > 0)",
+              "format": "time_series",
+              "interval": "",
+              "legendFormat": "CPU {{cpu}}",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            }
+          ],
+          "title": "CPU Saturation per Core",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
           "description": "Real-time CPU frequency scaling per core, including average minimum and maximum allowed scaling frequencies",
           "fieldConfig": {
             "defaults": {
@@ -6833,129 +6956,6 @@
           ],
           "title": "Entropy",
           "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
-          "description": "Shows CPU saturation per core, calculated as the proportion of time spent waiting to run relative to total time demanded (running + waiting).",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "CPU saturation (%)",
-                "axisPlacement": "left",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 0.8
-                  }
-                ]
-              },
-              "unit": "percentunit"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 816
-          },
-          "id": 305,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "rate(node_schedstat_running_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "format": "time_series",
-              "hide": true,
-              "interval": "",
-              "legendFormat": "CPU {{ cpu }} - Running",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "format": "time_series",
-              "hide": true,
-              "interval": "",
-              "legendFormat": "CPU {{cpu}} - Waiting Queue",
-              "range": true,
-              "refId": "B",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) / ((rate(node_schedstat_running_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]) + rate(node_schedstat_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])) > 0)",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "CPU {{cpu}}",
-              "range": true,
-              "refId": "C",
-              "step": 240
-            }
-          ],
-          "title": "CPU Saturation per Core",
-          "type": "timeseries"
         }
       ],
       "title": "CPU & Scheduler",
@@ -7248,149 +7248,6 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Correctable and uncorrectable ECC memory errors reported by EDAC. Correctable errors indicate a degrading DIMM; uncorrectable errors can cause data corruption. Only available on bare metal hosts that expose EDAC.",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/ - Correctable$/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "orange",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/ - Uncorrectable$/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "dark-red",
-                      "mode": "fixed"
-                    }
-                  },
-                  {
-                    "id": "custom.fillOpacity",
-                    "value": 30
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 747
-          },
-          "id": 302,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "increase(node_edac_correctable_errors_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "{{controller}} - Correctable",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "increase(node_edac_uncorrectable_errors_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "format": "time_series",
-              "interval": "",
-              "legendFormat": "{{controller}} - Uncorrectable",
-              "range": true,
-              "refId": "B",
-              "step": 240
-            }
-          ],
-          "title": "ECC Memory Errors",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
           "description": "Displays the current fan speeds (RPM) from hardware sensors via the hwmon interface",
           "fieldConfig": {
             "defaults": {
@@ -7447,7 +7304,7 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 12,
+            "x": 0,
             "y": 747
           },
           "id": 325,
@@ -7493,6 +7350,105 @@
             }
           ],
           "title": "Hardware Fan Speed",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "description": "Core-level CPU thermal throttling events per package. Values above zero indicate cores were throttled during the interval. Requires hardware that exposes thermal_throttle counters (mostly Intel); absent on AMD and most virtual machines.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "throttle events",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "decimals": 0,
+              "links": [],
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 747
+          },
+          "id": 344,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true,
+              "width": 300
+            },
+            "tooltip": {
+              "hideZeros": true,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "sum by (package) (increase(node_cpu_core_throttles_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
+              "format": "time_series",
+              "legendFormat": "Package {{package}}",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            }
+          ],
+          "title": "CPU Throttling",
           "type": "timeseries"
         },
         {
@@ -7843,7 +7799,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Core-level CPU thermal throttling events per package. Values above zero indicate cores were throttled during the interval. Requires hardware that exposes thermal_throttle counters (mostly Intel); absent on AMD and most virtual machines.",
+          "description": "Correctable and uncorrectable ECC memory errors reported by EDAC. Correctable errors indicate a degrading DIMM; uncorrectable errors can cause data corruption. Only available on bare metal hosts that expose EDAC.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7853,7 +7809,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "throttle events",
+                "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -7881,7 +7837,6 @@
                   "mode": "off"
                 }
               },
-              "decimals": 0,
               "links": [],
               "mappings": [],
               "min": 0,
@@ -7895,7 +7850,42 @@
               },
               "unit": "short"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/ - Correctable$/"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "orange",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/ - Uncorrectable$/"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "dark-red",
+                      "mode": "fixed"
+                    }
+                  },
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 30
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
@@ -7903,7 +7893,7 @@
             "x": 12,
             "y": 767
           },
-          "id": 344,
+          "id": 302,
           "options": {
             "legend": {
               "calcs": [
@@ -7913,11 +7903,10 @@
               ],
               "displayMode": "table",
               "placement": "bottom",
-              "showLegend": true,
-              "width": 300
+              "showLegend": true
             },
             "tooltip": {
-              "hideZeros": true,
+              "hideZeros": false,
               "mode": "multi",
               "sort": "desc"
             }
@@ -7926,15 +7915,26 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "sum by (package) (increase(node_cpu_core_throttles_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
+              "expr": "increase(node_edac_correctable_errors_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
-              "legendFormat": "Package {{package}}",
+              "interval": "",
+              "legendFormat": "{{controller}} - Correctable",
               "range": true,
               "refId": "A",
               "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "increase(node_edac_uncorrectable_errors_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "interval": "",
+              "legendFormat": "{{controller}} - Uncorrectable",
+              "range": true,
+              "refId": "B",
+              "step": 240
             }
           ],
-          "title": "CPU Throttling",
+          "title": "ECC Memory Errors",
           "type": "timeseries"
         }
       ],
@@ -8876,6 +8876,137 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
+          "description": "Percentage of time the disk spent actively processing I/O operations, including general I/O, discards (TRIM), and write cache flushes",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "percentunit"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/sda.*/"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "orange",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 389
+          },
+          "id": 36,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "rate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "interval": "",
+              "legendFormat": "{{device}} - General IO",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_disk_discard_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "interval": "",
+              "legendFormat": "{{device}} - Discard/TRIM",
+              "range": true,
+              "refId": "B",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_disk_flush_requests_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "interval": "",
+              "legendFormat": "{{device}} - Flush (write cache)",
+              "range": true,
+              "refId": "C",
+              "step": 240
+            }
+          ],
+          "title": "Time Spent Doing I/Os",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
           "description": "Average queue length of the requests that were issued to the device",
           "fieldConfig": {
             "defaults": {
@@ -8948,8 +9079,8 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 12,
-            "y": 389
+            "x": 0,
+            "y": 399
           },
           "id": 35,
           "options": {
@@ -8982,6 +9113,119 @@
             }
           ],
           "title": "Average Queue Size",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "description": "Number of in-progress I/O requests at the time of sampling (active requests in the disk queue)",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/sda.*/"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "orange",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 399
+          },
+          "id": 34,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "node_disk_io_now{instance=\"$node\",job=\"$job\"}",
+              "interval": "",
+              "legendFormat": "{{device}}",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            }
+          ],
+          "title": "Instantaneous Queue Size",
           "type": "timeseries"
         },
         {
@@ -9073,7 +9317,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 399
+            "y": 409
           },
           "id": 133,
           "options": {
@@ -9113,137 +9357,6 @@
             }
           ],
           "title": "Disk R/W Merged",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
-          "description": "Percentage of time the disk spent actively processing I/O operations, including general I/O, discards (TRIM), and write cache flushes",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "percentunit"
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/sda.*/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "orange",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 399
-          },
-          "id": 36,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "rate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "interval": "",
-              "legendFormat": "{{device}} - General IO",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "rate(node_disk_discard_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "interval": "",
-              "legendFormat": "{{device}} - Discard/TRIM",
-              "range": true,
-              "refId": "B",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "rate(node_disk_flush_requests_time_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "interval": "",
-              "legendFormat": "{{device}} - Flush (write cache)",
-              "range": true,
-              "refId": "C",
-              "step": 240
-            }
-          ],
-          "title": "Time Spent Doing I/Os",
           "type": "timeseries"
         },
         {
@@ -9322,7 +9435,7 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 0,
+            "x": 12,
             "y": 409
           },
           "id": 301,
@@ -9452,8 +9565,8 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 12,
-            "y": 409
+            "x": 0,
+            "y": 419
           },
           "id": 326,
           "options": {
@@ -9486,119 +9599,6 @@
             }
           ],
           "title": "Disk Sectors Discarded Successfully",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
-          "description": "Number of in-progress I/O requests at the time of sampling (active requests in the disk queue)",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/sda.*/"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "orange",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 419
-          },
-          "id": 34,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "node_disk_io_now{instance=\"$node\",job=\"$job\"}",
-              "interval": "",
-              "legendFormat": "{{device}}",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            }
-          ],
-          "title": "Instantaneous Queue Size",
           "type": "timeseries"
         }
       ],
@@ -10431,222 +10431,6 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Rate of compressed network packets received and transmitted per interface. These are common in low-bandwidth or special interfaces like PPP or SLIP",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "out (-) / in (+)",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "pps"
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/.*out.*/"
-                },
-                "properties": [
-                  {
-                    "id": "custom.transform",
-                    "value": "negative-Y"
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 251
-          },
-          "id": 141,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true,
-              "width": 300
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "rate(node_network_receive_compressed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "format": "time_series",
-              "legendFormat": "{{device}} - Rx in",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "rate(node_network_transmit_compressed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "format": "time_series",
-              "legendFormat": "{{device}} - Tx out",
-              "range": true,
-              "refId": "B",
-              "step": 240
-            }
-          ],
-          "title": "Network Traffic Compressed",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
-          "description": "Rate of incoming multicast packets received per network interface. Multicast is used by protocols such as mDNS, SSDP, and some streaming or cluster services",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "pps"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 261
-          },
-          "id": 146,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true,
-              "width": 300
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "rate(node_network_receive_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "format": "time_series",
-              "legendFormat": "{{device}} - Rx in",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            }
-          ],
-          "title": "Network Traffic Multicast",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${ds_prometheus}"
-          },
           "description": "Rate of received packets that could not be processed due to missing protocol or handler in the kernel. May indicate unsupported traffic or misconfiguration",
           "fieldConfig": {
             "defaults": {
@@ -10703,7 +10487,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 261
+            "y": 251
           },
           "id": 327,
           "options": {
@@ -10800,7 +10584,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 271
+            "y": 261
           },
           "id": 145,
           "options": {
@@ -10910,7 +10694,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 271
+            "y": 261
           },
           "id": 144,
           "options": {
@@ -11029,7 +10813,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 281
+            "y": 271
           },
           "id": 232,
           "options": {
@@ -11139,7 +10923,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 281
+            "y": 271
           },
           "id": 231,
           "options": {
@@ -11173,6 +10957,222 @@
             }
           ],
           "title": "Network Traffic Carrier Errors",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "description": "Rate of compressed network packets received and transmitted per interface. These are common in low-bandwidth or special interfaces like PPP or SLIP",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "out (-) / in (+)",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "pps"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/.*out.*/"
+                },
+                "properties": [
+                  {
+                    "id": "custom.transform",
+                    "value": "negative-Y"
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 281
+          },
+          "id": 141,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true,
+              "width": 300
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "rate(node_network_receive_compressed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "{{device}} - Rx in",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "rate(node_network_transmit_compressed_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "{{device}} - Tx out",
+              "range": true,
+              "refId": "B",
+              "step": 240
+            }
+          ],
+          "title": "Network Traffic Compressed",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "description": "Rate of incoming multicast packets received per network interface. Multicast is used by protocols such as mDNS, SSDP, and some streaming or cluster services",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "pps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 281
+          },
+          "id": 146,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true,
+              "width": 300
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "rate(node_network_receive_multicast_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "{{device}} - Rx in",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            }
+          ],
+          "title": "Network Traffic Multicast",
           "type": "timeseries"
         },
         {
@@ -11413,7 +11413,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Physical link status of each network interface. Values are Yes when a carrier is present and No when there is no carrier.",
+          "description": "Number of link up and down transitions per interface. Repeated changes usually indicate a faulty cable, SFP, or switch port.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11423,7 +11423,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "",
+                "axisLabel": "events",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -11451,8 +11451,10 @@
                   "mode": "off"
                 }
               },
+              "decimals": 0,
               "links": [],
               "mappings": [],
+              "min": 0,
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
@@ -11461,7 +11463,7 @@
                   }
                 ]
               },
-              "unit": "bool_yes_no"
+              "unit": "short"
             },
             "overrides": []
           },
@@ -11469,9 +11471,9 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 311
+            "y": 301
           },
-          "id": 309,
+          "id": 343,
           "options": {
             "legend": {
               "calcs": [
@@ -11485,7 +11487,7 @@
               "width": 300
             },
             "tooltip": {
-              "hideZeros": false,
+              "hideZeros": true,
               "mode": "multi",
               "sort": "desc"
             }
@@ -11494,14 +11496,24 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "node_network_carrier{instance=\"$node\",job=\"$job\"}",
+              "expr": "increase(node_network_carrier_down_changes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
               "format": "time_series",
-              "instant": false,
-              "legendFormat": "{{device}} - Physical link",
-              "refId": "B"
+              "legendFormat": "{{device}} - Link down",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "increase(node_network_carrier_up_changes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "format": "time_series",
+              "legendFormat": "{{device}} - Link up",
+              "range": true,
+              "refId": "B",
+              "step": 240
             }
           ],
-          "title": "Network Operational Status",
+          "title": "Network Link Flaps",
           "type": "timeseries"
         },
         {
@@ -11656,7 +11668,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Number of link up and down transitions per interface. Repeated changes usually indicate a faulty cable, SFP, or switch port.",
+          "description": "Physical link status of each network interface. Values are Yes when a carrier is present and No when there is no carrier.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11666,7 +11678,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "events",
+                "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -11694,10 +11706,8 @@
                   "mode": "off"
                 }
               },
-              "decimals": 0,
               "links": [],
               "mappings": [],
-              "min": 0,
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
@@ -11706,7 +11716,7 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "bool_yes_no"
             },
             "overrides": []
           },
@@ -11714,9 +11724,9 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 301
+            "y": 311
           },
-          "id": 343,
+          "id": 309,
           "options": {
             "legend": {
               "calcs": [
@@ -11730,7 +11740,7 @@
               "width": 300
             },
             "tooltip": {
-              "hideZeros": true,
+              "hideZeros": false,
               "mode": "multi",
               "sort": "desc"
             }
@@ -11739,24 +11749,14 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "increase(node_network_carrier_down_changes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
+              "expr": "node_network_carrier{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
-              "legendFormat": "{{device}} - Link down",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            },
-            {
-              "editorMode": "code",
-              "expr": "increase(node_network_carrier_up_changes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])",
-              "format": "time_series",
-              "legendFormat": "{{device}} - Link up",
-              "range": true,
-              "refId": "B",
-              "step": 240
+              "instant": false,
+              "legendFormat": "{{device}} - Physical link",
+              "refId": "B"
             }
           ],
-          "title": "Network Link Flaps",
+          "title": "Network Operational Status",
           "type": "timeseries"
         }
       ],
