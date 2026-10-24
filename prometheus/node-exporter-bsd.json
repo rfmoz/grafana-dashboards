@@ -195,7 +195,7 @@
         "type": "prometheus",
         "uid": "${ds_prometheus}"
       },
-      "description": "Busy state of all CPU cores together (5 min average)",
+      "description": "Tasks running or waiting per core, 5 min average",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -280,7 +280,7 @@
         "type": "prometheus",
         "uid": "${ds_prometheus}"
       },
-      "description": "Busy state of all CPU cores together (15 min average)",
+      "description": "Tasks running or waiting per core, 15 min average",
       "fieldConfig": {
         "defaults": {
           "color": {
