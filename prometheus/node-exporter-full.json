@@ -7511,7 +7511,7 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 8,
             "x": 0,
             "y": 757
           },
@@ -7628,8 +7628,8 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
+            "w": 8,
+            "x": 8,
             "y": 757
           },
           "id": 291,
@@ -7725,9 +7725,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 767
+            "w": 8,
+            "x": 16,
+            "y": 757
           },
           "id": 168,
           "options": {
@@ -7891,7 +7891,7 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 12,
+            "x": 0,
             "y": 767
           },
           "id": 302,
@@ -7936,6 +7936,136 @@
             }
           ],
           "title": "ECC Memory Errors",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${ds_prometheus}"
+          },
+          "description": "Online and present state of each power supply exposed by /sys/class/power_supply. 1 = OK, 0 = failed or missing. Only available on hardware that exposes node_power_supply_online or node_power_supply_present; absent on most virtual machines.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "state (1 = OK)",
+                "axisPlacement": "left",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "decimals": 0,
+              "links": [],
+              "mappings": [
+                {
+                  "options": {
+                    "0": {
+                      "color": "red",
+                      "index": 1,
+                      "text": "DOWN"
+                    },
+                    "1": {
+                      "color": "green",
+                      "index": 0,
+                      "text": "OK"
+                    }
+                  },
+                  "type": "value"
+                }
+              ],
+              "max": 1,
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red"
+                  },
+                  {
+                    "color": "green",
+                    "value": 0.5
+                  }
+                ]
+              },
+              "unit": "bool_yes_no"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 767
+          },
+          "id": 345,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "node_power_supply_online{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "legendFormat": "{{power_supply}} online",
+              "range": true,
+              "refId": "A",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "node_power_supply_present{instance=\"$node\",job=\"$job\"}",
+              "format": "time_series",
+              "interval": "",
+              "legendFormat": "{{power_supply}} present",
+              "range": true,
+              "refId": "B",
+              "step": 240
+            }
+          ],
+          "title": "Power Supply Status",
           "type": "timeseries"
         }
       ],
