@@ -426,7 +426,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "( 1 - ( (node_memory_free_bytes{instance=\"$node\",job=\"$job\"} + (node_memory_buffer_bytes{instance=\"$node\",job=\"$job\"} or 0 * node_memory_free_bytes{instance=\"$node\",job=\"$job\"}) + node_memory_cache_bytes{instance=\"$node\",job=\"$job\"} + node_memory_inactive_bytes{instance=\"$node\",job=\"$job\"}) / node_memory_size_bytes{instance=\"$node\",job=\"$job\"} ) ) * 100\n",
+          "expr": "( 1 - ( (node_memory_free_bytes{instance=\"$node\",job=\"$job\"} + (node_memory_buffer_bytes{instance=\"$node\",job=\"$job\"} or 0 * node_memory_free_bytes{instance=\"$node\",job=\"$job\"}) + (node_memory_cache_bytes{instance=\"$node\",job=\"$job\"} or 0 * node_memory_free_bytes{instance=\"$node\",job=\"$job\"}) + node_memory_inactive_bytes{instance=\"$node\",job=\"$job\"}) / node_memory_size_bytes{instance=\"$node\",job=\"$job\"} ) ) * 100\n",
           "format": "time_series",
           "instant": true,
           "range": false,
@@ -1221,7 +1221,7 @@
             "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "avg(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=\"system\"}[$__rate_interval]))",
+          "expr": "avg(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\", mode=~\"system|sys\"}[$__rate_interval]))",
           "format": "time_series",
           "legendFormat": "System - Processes executing in kernel mode",
           "range": true,
@@ -4084,7 +4084,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Filesystems mounted in read-only mode or reporting device-level I/O errors",
+          "description": "Filesystems currently mounted in read-only mode",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4174,22 +4174,9 @@
               "legendFormat": "{{device}} - {{mountpoint}} - ReadOnly",
               "refId": "C",
               "step": 240
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${ds_prometheus}"
-              },
-              "editorMode": "code",
-              "expr": "node_filesystem_device_error{instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "legendFormat": "{{device}} - {{mountpoint}} - Error",
-              "range": true,
-              "refId": "A",
-              "step": 240
             }
           ],
-          "title": "Filesystem in ReadOnly / Error",
+          "title": "Filesystem ReadOnly",
           "type": "timeseries"
         }
       ],
@@ -4433,13 +4420,13 @@
           "type": "prometheus",
           "uid": "${ds_prometheus}"
         },
-        "definition": "",
+        "definition": "label_values(node_time_seconds, job)",
         "includeAll": false,
         "label": "job",
         "name": "job",
         "options": [],
         "query": {
-          "query": "label_values(node_uname_info, job)",
+          "query": "label_values(node_time_seconds, job)",
           "refId": "Prometheus-job-Variable-Query"
         },
         "refresh": 1,
@@ -4452,13 +4439,13 @@
           "type": "prometheus",
           "uid": "${ds_prometheus}"
         },
-        "definition": "label_values(node_uname_info{job=\"$job\"}, instance)",
+        "definition": "label_values(node_time_seconds{job=\"$job\"}, instance)",
         "includeAll": false,
         "label": "Host:",
         "name": "node",
         "options": [],
         "query": {
-          "query": "label_values(node_uname_info{job=\"$job\"}, instance)",
+          "query": "label_values(node_time_seconds{job=\"$job\"}, instance)",
           "refId": "Prometheus-node-Variable-Query"
         },
         "refresh": 1,
