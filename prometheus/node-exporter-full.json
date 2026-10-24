@@ -1572,7 +1572,7 @@
         "type": "prometheus",
         "uid": "${ds_prometheus}"
       },
-      "description": "Percentage of filesystem space used for each mounted device",
+      "description": "Percentage of filesystem space used for each mounted filesystem",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1650,7 +1650,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "((node_filesystem_size_bytes{instance=\"$node\", job=\"$job\", device!~'rootfs'} - node_filesystem_avail_bytes{instance=\"$node\", job=\"$job\", device!~'rootfs'}) / node_filesystem_size_bytes{instance=\"$node\", job=\"$job\", device!~'rootfs'}) * 100",
+          "expr": "((node_filesystem_size_bytes{instance=\"$node\", job=\"$job\", fstype!~'rootfs'} - node_filesystem_avail_bytes{instance=\"$node\", job=\"$job\", fstype!~'rootfs'}) / node_filesystem_size_bytes{instance=\"$node\", job=\"$job\", fstype!~'rootfs'}) * 100",
           "format": "time_series",
           "legendFormat": "{{mountpoint}}",
           "range": true,
@@ -11673,7 +11673,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Operational and physical link status of each network interface. Values are Yes for 'up' or link present, and No for 'down' or no carrier.",
+          "description": "Physical link status of each network interface. Values are Yes when a carrier is present and No when there is no carrier.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11752,16 +11752,6 @@
           },
           "pluginVersion": "11.6.1",
           "targets": [
-            {
-              "editorMode": "code",
-              "expr": "node_network_up{operstate=\"up\",instance=\"$node\",job=\"$job\"}",
-              "format": "time_series",
-              "hide": true,
-              "legendFormat": "{{interface}} - Operational state UP",
-              "range": true,
-              "refId": "A",
-              "step": 240
-            },
             {
               "editorMode": "code",
               "expr": "node_network_carrier{instance=\"$node\",job=\"$job\"}",
@@ -15301,7 +15291,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Tracks the memory usage of the process exposing this metric (e.g., node_exporter), including current virtual memory and maximum virtual memory limit",
+          "description": "Tracks the memory usage of the process exposing this metric (e.g., node_exporter), including resident memory (RSS), current virtual memory and maximum virtual memory limit",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -15389,7 +15379,8 @@
                   "options": {
                     "mode": "exclude",
                     "names": [
-                      "Virtual Memory"
+                      "Virtual Memory",
+                      "Resident Memory (RSS)"
                     ],
                     "prefix": "All except:",
                     "readOnly": true
@@ -15450,6 +15441,15 @@
               "legendFormat": "Virtual Memory Limit",
               "range": true,
               "refId": "B",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "process_resident_memory_bytes{instance=\"$node\",job=\"$job\"}",
+              "interval": "",
+              "legendFormat": "Resident Memory (RSS)",
+              "range": true,
+              "refId": "C",
               "step": 240
             }
           ],
