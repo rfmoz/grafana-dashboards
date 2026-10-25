@@ -534,8 +534,8 @@
       "gridPos": {
         "h": 11,
         "w": 12,
-        "x": 12,
-        "y": 12
+        "x": 0,
+        "y": 23
       },
       "id": 34,
       "options": {
@@ -588,7 +588,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
-      "description": "Query response time in seconds",
+      "description": "Time to answer queries that required recursion, excluding cache hits",
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -607,8 +607,8 @@
       "gridPos": {
         "h": 11,
         "w": 12,
-        "x": 0,
-        "y": 23
+        "x": 12,
+        "y": 12
       },
       "heatmap": {},
       "hideZeroBuckets": false,
@@ -681,7 +681,7 @@
           "refId": "A"
         }
       ],
-      "title": "Response time",
+      "title": "Recursive response time",
       "tooltip": {
         "show": true,
         "showHistogram": true
