@@ -1263,7 +1263,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Left axis: current recursive clients waiting for a resolution (clients). Right axis: queries that required recursion, in queries per second.",
+          "description": "Clients currently waiting for recursion and rate of queries that caused recursion.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1272,7 +1272,7 @@
               "custom": {
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "clients | queries/s",
+                "axisLabel": "clients / queries/s",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "drawStyle": "line",
@@ -1315,24 +1315,7 @@
               },
               "unit": "short"
             },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "Queries requiring recursion (per second)"
-                },
-                "properties": [
-                  {
-                    "id": "custom.axisPlacement",
-                    "value": "right"
-                  },
-                  {
-                    "id": "unit",
-                    "value": "ops"
-                  }
-                ]
-              }
-            ]
+            "overrides": []
           },
           "gridPos": {
             "h": 10,
@@ -1368,7 +1351,7 @@
               },
               "expr": "bind_recursive_clients{instance=\"$host:$port\"}",
               "interval": "",
-              "legendFormat": "Recursive clients (current)",
+              "legendFormat": "Clients",
               "refId": "A"
             },
             {
@@ -1378,7 +1361,7 @@
               },
               "expr": "rate(bind_query_recursions_total{instance=\"$host:$port\"}[$__rate_interval])",
               "interval": "",
-              "legendFormat": "Queries requiring recursion (per second)",
+              "legendFormat": "Queries causing recursion",
               "refId": "B"
             }
           ],
