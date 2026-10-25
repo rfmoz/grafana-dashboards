@@ -130,10 +130,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -142,7 +138,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 12,
         "w": 12,
         "x": 0,
         "y": 1
@@ -169,7 +165,7 @@
       "pluginVersion": "9.4.3",
       "targets": [
         {
-          "expr": "rate(node_nfs_connections_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfs_connections_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "NFS TCP connections/s",
           "refId": "C",
@@ -227,10 +223,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -239,7 +231,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 12,
         "w": 12,
         "x": 12,
         "y": 1
@@ -266,7 +258,7 @@
       "pluginVersion": "9.4.3",
       "targets": [
         {
-          "expr": "rate(node_nfsd_connections_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfsd_connections_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "NFSd TCP connections/s",
           "refId": "C",
@@ -324,10 +316,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -336,10 +324,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 12,
         "w": 12,
         "x": 0,
-        "y": 12
+        "y": 13
       },
       "id": 244,
       "links": [],
@@ -363,14 +351,14 @@
       "pluginVersion": "9.4.3",
       "targets": [
         {
-          "expr": "rate(node_nfs_packets_total{protocol=\"tcp\",instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfs_packets_total{protocol=\"tcp\",instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "TCP - NFS network packets (sent+received)",
           "refId": "O",
           "step": 240
         },
         {
-          "expr": "rate(node_nfs_packets_total{protocol=\"udp\",instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfs_packets_total{protocol=\"udp\",instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "UDP - NFS network packets (sent+received)",
           "refId": "A",
@@ -428,10 +416,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -440,10 +424,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 12,
         "w": 12,
         "x": 12,
-        "y": 12
+        "y": 13
       },
       "id": 247,
       "links": [],
@@ -467,14 +451,14 @@
       "pluginVersion": "9.4.3",
       "targets": [
         {
-          "expr": "rate(node_nfsd_packets_total{proto=\"tcp\",instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfsd_packets_total{proto=\"tcp\",instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "TCP - NFSd network packets received",
           "refId": "O",
           "step": 240
         },
         {
-          "expr": "rate(node_nfsd_packets_total{proto=\"udp\",instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfsd_packets_total{proto=\"udp\",instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "UDP - NFSd network packets received",
           "refId": "A",
@@ -532,10 +516,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -544,10 +524,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 12,
         "w": 12,
         "x": 0,
-        "y": 23
+        "y": 25
       },
       "id": 249,
       "links": [],
@@ -571,21 +551,21 @@
       "pluginVersion": "9.4.3",
       "targets": [
         {
-          "expr": "rate(node_nfs_rpc_authentication_refreshes_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfs_rpc_authentication_refreshes_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "NFS RPC authentication refreshes",
           "refId": "C",
           "step": 240
         },
         {
-          "expr": "rate(node_nfs_rpc_retransmissions_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfs_rpc_retransmissions_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "NFS RPC retransmissions",
           "refId": "A",
           "step": 240
         },
         {
-          "expr": "rate(node_nfs_rpcs_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfs_rpcs_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "NFS RPCs",
           "refId": "B",
@@ -642,10 +622,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -667,10 +643,10 @@
         ]
       },
       "gridPos": {
-        "h": 11,
+        "h": 12,
         "w": 12,
         "x": 12,
-        "y": 23
+        "y": 25
       },
       "id": 257,
       "links": [],
@@ -694,14 +670,14 @@
       "pluginVersion": "9.4.3",
       "targets": [
         {
-          "expr": "rate(node_nfsd_rpc_errors_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfsd_rpc_errors_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "{{ error }} - NFSd RPC errors",
           "refId": "C",
           "step": 240
         },
         {
-          "expr": "rate(node_nfsd_server_rpcs_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfsd_server_rpcs_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "NFSd RPCs",
           "refId": "A",
@@ -758,10 +734,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -783,10 +755,10 @@
         ]
       },
       "gridPos": {
-        "h": 11,
+        "h": 12,
         "w": 12,
         "x": 0,
-        "y": 34
+        "y": 37
       },
       "id": 248,
       "links": [],
@@ -810,21 +782,21 @@
       "pluginVersion": "9.4.3",
       "targets": [
         {
-          "expr": "rate(node_nfsd_disk_bytes_read_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfsd_disk_bytes_read_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "NFSd bytes read",
           "refId": "O",
           "step": 240
         },
         {
-          "expr": "rate(node_nfsd_disk_bytes_written_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfsd_disk_bytes_written_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "NFSd bytes written",
           "refId": "A",
           "step": 240
         }
       ],
-      "title": "NFSd Disk Read / Write",
+      "title": "NFSd Disk I/O",
       "type": "timeseries"
     },
     {
@@ -875,10 +847,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -887,10 +855,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 12,
         "w": 12,
         "x": 12,
-        "y": 34
+        "y": 37
       },
       "id": 245,
       "links": [],
@@ -914,14 +882,14 @@
       "pluginVersion": "9.4.3",
       "targets": [
         {
-          "expr": "rate(node_nfsd_file_handles_stale_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfsd_file_handles_stale_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "NFSd stale file handles",
           "refId": "C",
           "step": 240
         }
       ],
-      "title": "NFSd File Handles",
+      "title": "NFSd Stale Handles",
       "type": "timeseries"
     },
     {
@@ -972,10 +940,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -984,10 +948,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 12,
         "w": 12,
         "x": 0,
-        "y": 45
+        "y": 49
       },
       "id": 250,
       "links": [],
@@ -1011,28 +975,28 @@
       "pluginVersion": "9.4.3",
       "targets": [
         {
-          "expr": "rate(node_nfsd_read_ahead_cache_not_found_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfsd_read_ahead_cache_not_found_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "NFSd read ahead cache not found",
           "refId": "C",
           "step": 240
         },
         {
-          "expr": "rate(node_nfsd_reply_cache_hits_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfsd_reply_cache_hits_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "NFSd Reply Cache hits - client lost server response",
           "refId": "A",
           "step": 240
         },
         {
-          "expr": "rate(node_nfsd_reply_cache_misses_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfsd_reply_cache_misses_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "NFSd Reply Cache misses - cacheable non-idempotent operations",
           "refId": "B",
           "step": 240
         },
         {
-          "expr": "rate(node_nfsd_reply_cache_nocache_total{instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+          "expr": "rate(node_nfsd_reply_cache_nocache_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
           "legendFormat": "NFSd Reply Cache nocache - idempotent operations, not cached",
           "refId": "D",
@@ -1090,10 +1054,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -1102,10 +1062,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 12,
         "w": 12,
         "x": 12,
-        "y": 45
+        "y": 49
       },
       "id": 258,
       "links": [],
@@ -1129,14 +1089,14 @@
       "pluginVersion": "9.4.3",
       "targets": [
         {
-          "expr": "node_nfsd_server_threads{instance=~\"$node:$port\",job=~\"$job\"}",
+          "expr": "node_nfsd_server_threads{instance=\"$node:$port\",job=\"$job\"}",
           "format": "time_series",
           "legendFormat": "NFSd kernel threads that are running",
           "refId": "C",
           "step": 240
         }
       ],
-      "title": "NFSd Server Threads",
+      "title": "NFSd Threads",
       "type": "timeseries"
     },
     {
@@ -1145,7 +1105,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 56
+        "y": 61
       },
       "id": 261,
       "panels": [
@@ -1196,10 +1156,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -1211,7 +1167,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 2
+            "y": 0
           },
           "id": 241,
           "links": [],
@@ -1235,61 +1191,61 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfs_requests_total{method='Create',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Create',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='FsStat',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='FsStat',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='GetAttr',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='GetAttr',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Link',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Link',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "D",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Lookup',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Lookup',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "E",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='MkDir',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='MkDir',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "F",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Null',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Null',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "G",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Read',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Read',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "H",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='ReadDir',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='ReadDir',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "I",
               "step": 240
             }
           ],
-          "title": "NFS v2 NFS Procedures Invoked 1",
+          "title": "NFS v2 Procedures 1",
           "type": "timeseries"
         },
         {
@@ -1339,10 +1295,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -1354,7 +1306,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 12
+            "y": 10
           },
           "id": 242,
           "links": [],
@@ -1378,65 +1330,65 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfs_requests_total{method='ReadLink',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='ReadLink',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "J",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Remove',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Remove',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "K",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Rename',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Rename',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "L",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='RmDir',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='RmDir',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "M",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Root',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Root',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "N",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='SetAttr',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='SetAttr',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "O",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='SymLink',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='SymLink',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "P",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='WrCache',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='WrCache',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "Q",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Write',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Write',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "R",
               "step": 240
             }
           ],
-          "title": "NFS v2 NFS Procedures Invoked 2",
+          "title": "NFS v2 Procedures 2",
           "type": "timeseries"
         }
       ],
-      "title": "NFS v2 Detail",
+      "title": "NFS v2",
       "type": "row"
     },
     {
@@ -1445,7 +1397,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 57
+        "y": 62
       },
       "id": 262,
       "panels": [
@@ -1496,10 +1448,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -1511,7 +1459,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 3
+            "y": 0
           },
           "id": 256,
           "links": [],
@@ -1535,55 +1483,55 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfsd_requests_total{method='Create',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Create',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='FsStat',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='FsStat',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='GetAttr',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='GetAttr',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Link',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Link',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "D",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Lookup',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Lookup',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "E",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='MkDir',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='MkDir',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "F",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Read',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Read',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "G",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='ReadDir',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='ReadDir',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "H",
               "step": 240
             }
           ],
-          "title": "NFSd v2 NFSd Requests by Method 1",
+          "title": "NFSd v2 Requests 1",
           "type": "timeseries"
         },
         {
@@ -1633,10 +1581,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -1648,7 +1592,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 13
+            "y": 10
           },
           "id": 259,
           "links": [],
@@ -1672,65 +1616,65 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfsd_requests_total{method='ReadLink',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='ReadLink',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "I",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Remove',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Remove',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "J",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Rename',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Rename',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "K",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='RmDir',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='RmDir',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "L",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Root',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Root',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "M",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='SetAttr',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='SetAttr',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "N",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='SymLink',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='SymLink',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "O",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Write',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Write',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "P",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='WrCache',proto='2',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='WrCache',proto='2',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             }
           ],
-          "title": "NFSd v2 NFSd Requests by Method 2",
+          "title": "NFSd v2 Requests 2",
           "type": "timeseries"
         }
       ],
-      "title": "NFSd v2 Detail",
+      "title": "NFSd v2",
       "type": "row"
     },
     {
@@ -1739,7 +1683,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 58
+        "y": 63
       },
       "id": 263,
       "panels": [
@@ -1790,10 +1734,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -1805,7 +1745,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 4
+            "y": 0
           },
           "id": 233,
           "links": [],
@@ -1829,73 +1769,73 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfs_requests_total{method='Access',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Access',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Commit',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Commit',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Create',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Create',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='FsInfo',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='FsInfo',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "D",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='FsStat',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='FsStat',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "E",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='GetAttr',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='GetAttr',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "F",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Link',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Link',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "G",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Lookup',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Lookup',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "H",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='MkDir',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='MkDir',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "I",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='MkNod',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='MkNod',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "J",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Null',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Null',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "K",
               "step": 240
             }
           ],
-          "title": "NFS v3 NFS Procedures Invoked 1",
+          "title": "NFS v3 Procedures 1",
           "type": "timeseries"
         },
         {
@@ -1945,10 +1885,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -1960,7 +1896,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 14
+            "y": 10
           },
           "id": 234,
           "links": [],
@@ -1984,77 +1920,77 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfs_requests_total{method='PathConf',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='PathConf',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "L",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Read',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Read',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "M",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='ReadDir',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='ReadDir',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "N",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='ReadDirPlus',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='ReadDirPlus',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "O",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='ReadLink',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='ReadLink',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "P",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Rename',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Rename',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "Q",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='RmDir',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='RmDir',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "R",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='SetAttr',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='SetAttr',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "S",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='SymLink',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='SymLink',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "T",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Write',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Write',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "U",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Remove',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Remove',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             }
           ],
-          "title": "NFS v3 NFS Procedures Invoked 2",
+          "title": "NFS v3 Procedures 2",
           "type": "timeseries"
         }
       ],
-      "title": "NFS v3 Detail",
+      "title": "NFS v3",
       "type": "row"
     },
     {
@@ -2063,7 +1999,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 59
+        "y": 64
       },
       "id": 264,
       "panels": [
@@ -2114,10 +2050,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -2129,7 +2061,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 5
+            "y": 0
           },
           "id": 251,
           "links": [],
@@ -2153,73 +2085,73 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfsd_requests_total{method='Access',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Access',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Commit',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Commit',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Create',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Create',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='FsInfo',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='FsInfo',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "D",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='FsStat',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='FsStat',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "E",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='GetAttr',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='GetAttr',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "F",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Link',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Link',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "G",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Lookup',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Lookup',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "H",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='MkDir',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='MkDir',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "I",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='MkNod',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='MkNod',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "J",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='PathConf',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='PathConf',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "K",
               "step": 240
             }
           ],
-          "title": "NFSd v3 NFSd Requests by Method 1",
+          "title": "NFSd v3 Requests 1",
           "type": "timeseries"
         },
         {
@@ -2269,10 +2201,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -2284,7 +2212,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 15
+            "y": 10
           },
           "id": 252,
           "links": [],
@@ -2308,71 +2236,71 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfsd_requests_total{method='Read',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Read',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "L",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='ReadDir',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='ReadDir',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "M",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='ReadDirPlus',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='ReadDirPlus',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "N",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='ReadLink',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='ReadLink',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "O",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Remove',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Remove',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "P",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Rename',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Rename',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "Q",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='RmDir',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='RmDir',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "R",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='SetAttr',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='SetAttr',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "S",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='SymLink',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='SymLink',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "T",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Write',proto='3',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Write',proto='3',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "U",
               "step": 240
             }
           ],
-          "title": "NFSd v3 NFSd Requests by Method 2",
+          "title": "NFSd v3 Requests 2",
           "type": "timeseries"
         }
       ],
-      "title": "NFSd v3 Detail",
+      "title": "NFSd v3",
       "type": "row"
     },
     {
@@ -2381,7 +2309,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 60
+        "y": 65
       },
       "id": 265,
       "panels": [
@@ -2432,10 +2360,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -2447,7 +2371,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 6
+            "y": 0
           },
           "id": 235,
           "links": [],
@@ -2471,73 +2395,73 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfs_requests_total{method='Access',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Access',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Commit',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Commit',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Create',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Create',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='FsInfo',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='FsInfo',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "D",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Getattr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Getattr',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "F",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Link',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Link',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "G",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Lookup',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Lookup',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "H",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Null',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Null',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "K",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Allocate',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Allocate',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "E",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='BindConnToSession',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='BindConnToSession',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "I",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Clone',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Clone',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "J",
               "step": 240
             }
           ],
-          "title": "NFS v4 NFS Procedures Invoked 1",
+          "title": "NFS v4 Procedures 1",
           "type": "timeseries"
         },
         {
@@ -2587,10 +2511,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -2602,7 +2522,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 16
+            "y": 10
           },
           "id": 236,
           "links": [],
@@ -2626,73 +2546,73 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfs_requests_total{method='Pathconf',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Pathconf',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "L",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Read',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Read',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "M",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='ReadDir',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='ReadDir',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "N",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='ReadLink',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='ReadLink',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "P",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Rename',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Rename',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "Q",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Setattr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Setattr',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "S",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Symlink',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Symlink',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "T",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Write',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Write',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "U",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Close',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Close',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='CreateSession',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='CreateSession',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Remove',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Remove',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "C",
               "step": 240
             }
           ],
-          "title": "NFS v4 NFS Procedures Invoked 2",
+          "title": "NFS v4 Procedures 2",
           "type": "timeseries"
         },
         {
@@ -2742,10 +2662,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -2757,7 +2673,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 26
+            "y": 20
           },
           "id": 237,
           "links": [],
@@ -2781,67 +2697,67 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfs_requests_total{method='DeAllocate',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='DeAllocate',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "L",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='DelegReturn',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='DelegReturn',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "M",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='DestroyClientID',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='DestroyClientID',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "N",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='DestroySession',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='DestroySession',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "P",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='ExchangeID',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='ExchangeID',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "Q",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='FreeStateID',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='FreeStateID',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "S",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='FsLocations',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='FsLocations',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "T",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='FsidPresent',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='FsidPresent',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "U",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='GetACL',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='GetACL',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='GetDeviceInfo',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='GetDeviceInfo',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "B",
               "step": 240
             }
           ],
-          "title": "NFS v4 NFS Procedures Invoked 3",
+          "title": "NFS v4 Procedures 3",
           "type": "timeseries"
         },
         {
@@ -2891,10 +2807,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -2906,7 +2818,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 36
+            "y": 30
           },
           "id": 238,
           "links": [],
@@ -2930,61 +2842,61 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfs_requests_total{method='GetDeviceList',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='GetDeviceList',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "L",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='GetLeaseTime',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='GetLeaseTime',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "M",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='LayoutCommit',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='LayoutCommit',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "N",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='LayoutGet',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='LayoutGet',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "P",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='LayoutReturn',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='LayoutReturn',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "Q",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='LayoutStats',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='LayoutStats',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "S",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Lock',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Lock',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "T",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Lockt',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Lockt',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "U",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Locku',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Locku',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             }
           ],
-          "title": "NFS v4 NFS Procedures Invoked 4",
+          "title": "NFS v4 Procedures 4",
           "type": "timeseries"
         },
         {
@@ -3034,10 +2946,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -3049,7 +2957,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 46
+            "y": 40
           },
           "id": 239,
           "links": [],
@@ -3073,67 +2981,67 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfs_requests_total{method='LookupRoot',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='LookupRoot',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "L",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Open',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Open',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "M",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='OpenConfirm',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='OpenConfirm',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "N",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='OpenDowngrade',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='OpenDowngrade',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "P",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='OpenNoattr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='OpenNoattr',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "Q",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='ReclaimComplete',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='ReclaimComplete',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "S",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='ReleaseLockowner',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='ReleaseLockowner',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "T",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Renew',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Renew',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "U",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Secinfo',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Secinfo',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='SecinfoNoName',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='SecinfoNoName',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "B",
               "step": 240
             }
           ],
-          "title": "NFS v4 NFS Procedures Invoked 5",
+          "title": "NFS v4 Procedures 5",
           "type": "timeseries"
         },
         {
@@ -3183,10 +3091,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -3198,7 +3102,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 56
+            "y": 50
           },
           "id": 240,
           "links": [],
@@ -3222,59 +3126,59 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfs_requests_total{method='Seek',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Seek',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "L",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='Sequence',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='Sequence',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "M",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='ServerCaps',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='ServerCaps',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "N",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='SetACL',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='SetACL',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "P",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='SetClientID',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='SetClientID',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "Q",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='SetClientIDConfirm',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='SetClientIDConfirm',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "S",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='StatFs',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='StatFs',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "T",
               "step": 240
             },
             {
-              "expr": "rate(node_nfs_requests_total{method='TestStateID',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfs_requests_total{method='TestStateID',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "U",
               "step": 240
             }
           ],
-          "title": "NFS v4 NFS Procedures Invoked 6",
+          "title": "NFS v4 Procedures 6",
           "type": "timeseries"
         }
       ],
-      "title": "NFS v4 Detail",
+      "title": "NFS v4",
       "type": "row"
     },
     {
@@ -3283,7 +3187,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 61
+        "y": 66
       },
       "id": 266,
       "panels": [
@@ -3334,10 +3238,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -3349,7 +3249,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 7
+            "y": 0
           },
           "id": 253,
           "links": [],
@@ -3373,67 +3273,67 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfsd_requests_total{method='Access',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Access',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Commit',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Commit',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Create',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Create',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='GetAttr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='GetAttr',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "F",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Link',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Link',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "G",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Lookup',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Lookup',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "H",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Close',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Close',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "D",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='DelegPurge',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='DelegPurge',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "E",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='DelegReturn',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='DelegReturn',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "I",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='GetFH',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='GetFH',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "J",
               "step": 240
             }
           ],
-          "title": "NFSd v4 NFSd Requests by Method 1",
+          "title": "NFSd v4 Requests 1",
           "type": "timeseries"
         },
         {
@@ -3483,10 +3383,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -3498,7 +3394,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 17
+            "y": 10
           },
           "id": 254,
           "links": [],
@@ -3522,67 +3418,67 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfsd_requests_total{method='Read',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Read',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "L",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='ReadDir',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='ReadDir',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "M",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='ReadLink',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='ReadLink',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "O",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Remove',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Remove',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "P",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Rename',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Rename',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "Q",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='SetAttr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='SetAttr',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "S",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Write',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Write',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "U",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Lock',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Lock',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Lockt',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Lockt',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Locku',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Locku',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "C",
               "step": 240
             }
           ],
-          "title": "NFSd v4 NFSd Requests by Method 2",
+          "title": "NFSd v4 Requests 2",
           "type": "timeseries"
         },
         {
@@ -3632,10 +3528,6 @@
                   {
                     "color": "green",
                     "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
                   }
                 ]
               },
@@ -3647,7 +3539,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 27
+            "y": 20
           },
           "id": 255,
           "links": [],
@@ -3671,107 +3563,107 @@
           "pluginVersion": "9.4.3",
           "targets": [
             {
-              "expr": "rate(node_nfsd_requests_total{method='LookupRoot',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='LookupRoot',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "L",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Nverify',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Nverify',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "A",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Open',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Open',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "B",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='OpenAttr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='OpenAttr',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "C",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='OpenConfirm',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='OpenConfirm',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "D",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='OpenDgrd',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='OpenDgrd',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "E",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='PutFH',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='PutFH',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "F",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='RelLockOwner',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='RelLockOwner',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "G",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Renew',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Renew',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "H",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='RestoreFH',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='RestoreFH',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "I",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='SaveFH',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='SaveFH',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "J",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='SecInfo',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='SecInfo',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "K",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='Verify',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='Verify',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "M",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='SetClientID',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='SetClientID',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "N",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='SetClientIDConfirm',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='SetClientIDConfirm',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "O",
               "step": 240
             },
             {
-              "expr": "rate(node_nfsd_requests_total{method='WdelegGetattr',proto='4',instance=~\"$node:$port\",job=~\"$job\"}[$__rate_interval])",
+              "expr": "rate(node_nfsd_requests_total{method='WdelegGetattr',proto='4',instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
               "legendFormat": "{{ method }}",
               "refId": "P",
               "step": 240
             }
           ],
-          "title": "NFSd v4 NFSd Requests by Method 3",
+          "title": "NFSd v4 Requests 3",
           "type": "timeseries"
         }
       ],
-      "title": "NFSd v4 Detail",
+      "title": "NFSd v4",
       "type": "row"
     }
   ],
@@ -3808,7 +3700,7 @@
           "type": "prometheus",
           "uid": "${DS_PROMETHEUS}"
         },
-        "definition": "",
+        "definition": "label_values({__name__=~\"node_nfs_.*|node_nfsd_.*\"}, job)",
         "hide": 0,
         "includeAll": false,
         "label": "Job",
@@ -3816,7 +3708,7 @@
         "name": "job",
         "options": [],
         "query": {
-          "query": "label_values(node_boot_time_seconds, job)",
+          "query": "label_values({__name__=~\"node_nfs_.*|node_nfsd_.*\"}, job)",
           "refId": "Prometheus-job-Variable-Query"
         },
         "refresh": 1,
@@ -3834,7 +3726,7 @@
           "type": "prometheus",
           "uid": "${DS_PROMETHEUS}"
         },
-        "definition": "",
+        "definition": "label_values({__name__=~\"node_nfs_.*|node_nfsd_.*\", job=\"$job\"}, instance)",
         "hide": 0,
         "includeAll": false,
         "label": "Host:",
@@ -3842,7 +3734,7 @@
         "name": "node",
         "options": [],
         "query": {
-          "query": "label_values(node_boot_time_seconds{job=~\"$job\"}, instance)",
+          "query": "label_values({__name__=~\"node_nfs_.*|node_nfsd_.*\", job=\"$job\"}, instance)",
           "refId": "Prometheus-node-Variable-Query"
         },
         "refresh": 1,
@@ -3860,7 +3752,7 @@
           "type": "prometheus",
           "uid": "${DS_PROMETHEUS}"
         },
-        "definition": "",
+        "definition": "label_values({__name__=~\"node_nfs_.*|node_nfsd_.*\", job=\"$job\", instance=~\"$node:.*\"}, instance)",
         "hide": 0,
         "includeAll": false,
         "label": "Port",
@@ -3868,7 +3760,7 @@
         "name": "port",
         "options": [],
         "query": {
-          "query": "label_values(node_boot_time_seconds{instance=~\"$node:(.*)\"}, instance)",
+          "query": "label_values({__name__=~\"node_nfs_.*|node_nfsd_.*\", job=\"$job\", instance=~\"$node:.*\"}, instance)",
           "refId": "Prometheus-port-Variable-Query"
         },
         "refresh": 1,

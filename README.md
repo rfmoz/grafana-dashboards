@@ -67,12 +67,14 @@ The Apache `mod_status` module must be enabled. The exporter scrapes `/server-st
 
 ## NFS Full
 
-- For node_exporter
-- Monitor all NFS and NFSd exported values.
+- For node_exporter on Linux.
+- Monitor all NFS client and NFSd server values exported by node_exporter.
 
-Check that the process was started with the arguments `--collector.nfs` and `--collector.nfsd`.
+The `nfs` and `nfsd` collectors are enabled by default. If they have been disabled, start node_exporter with `--collector.nfs --collector.nfsd` (or remove `--no-collector.nfs` and `--no-collector.nfsd`).
 
-The same as Node Exporter Full. Only requires the default `job_name: node`, add as many targets as you need in `/etc/prometheus/prometheus.yml`.
+NFS client metrics are only available on NFS clients, and NFSd metrics only on NFS servers. The dashboard variables only list hosts that export at least one `node_nfs_*` or `node_nfsd_*` metric.
+
+The scrape configuration is the same as Node Exporter Full. It only requires the default `job_name: node`; add as many targets as you need in `/etc/prometheus/prometheus.yml`.
 
 
 
