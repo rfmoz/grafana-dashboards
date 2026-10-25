@@ -580,7 +580,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
-      "description": "RPC calls handled by the NFS server, with errors by type",
+      "description": "RPC calls handled by the NFS server. The positive axis shows valid RPCs; errors are shown on the negative axis.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -589,7 +589,7 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Operations/s errors (-) / success (+)",
+            "axisLabel": "RPCs/s errors (-) / valid (+)",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -991,14 +991,14 @@
         {
           "expr": "rate(node_nfsd_reply_cache_misses_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "legendFormat": "NFSd Reply Cache misses - cacheable non-idempotent operations",
+          "legendFormat": "NFSd Reply Cache misses - idempotent operations requiring cache",
           "refId": "B",
           "step": 240
         },
         {
           "expr": "rate(node_nfsd_reply_cache_nocache_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
           "format": "time_series",
-          "legendFormat": "NFSd Reply Cache nocache - idempotent operations, not cached",
+          "legendFormat": "NFSd Reply Cache nocache - non-idempotent operations not cached",
           "refId": "D",
           "step": 240
         }
