@@ -79,7 +79,7 @@
       },
       "id": 260,
       "panels": [],
-      "title": "NFS",
+      "title": "NFS Client",
       "type": "row"
     },
     {
@@ -180,99 +180,6 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
-      "description": "TCP connections accepted by the NFS server",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "Connections/s",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 20,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "cps"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 12,
-        "w": 12,
-        "x": 12,
-        "y": 1
-      },
-      "id": 246,
-      "links": [],
-      "options": {
-        "legend": {
-          "calcs": [
-            "mean",
-            "lastNotNull",
-            "max",
-            "min"
-          ],
-          "displayMode": "table",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      },
-      "pluginVersion": "9.4.3",
-      "targets": [
-        {
-          "expr": "rate(node_nfsd_connections_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
-          "format": "time_series",
-          "legendFormat": "NFSd TCP connections/s",
-          "refId": "C",
-          "step": 240
-        }
-      ],
-      "title": "NFSd Connections",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
       "description": "Network packets sent and received by the NFS client",
       "fieldConfig": {
         "defaults": {
@@ -326,8 +233,8 @@
       "gridPos": {
         "h": 12,
         "w": 12,
-        "x": 0,
-        "y": 13
+        "x": 12,
+        "y": 1
       },
       "id": 244,
       "links": [],
@@ -366,6 +273,219 @@
         }
       ],
       "title": "NFS Packets",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "RPC calls made by the NFS client, with retransmissions and authentication refreshes",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Operations/s",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 20,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 13
+      },
+      "id": 249,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "9.4.3",
+      "targets": [
+        {
+          "expr": "rate(node_nfs_rpc_authentication_refreshes_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
+          "format": "time_series",
+          "legendFormat": "NFS RPC authentication refreshes",
+          "refId": "C",
+          "step": 240
+        },
+        {
+          "expr": "rate(node_nfs_rpc_retransmissions_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
+          "format": "time_series",
+          "legendFormat": "NFS RPC retransmissions",
+          "refId": "A",
+          "step": 240
+        },
+        {
+          "expr": "rate(node_nfs_rpcs_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
+          "format": "time_series",
+          "legendFormat": "NFS RPCs",
+          "refId": "B",
+          "step": 240
+        }
+      ],
+      "title": "NFS RPC",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 25
+      },
+      "id": 267,
+      "panels": [],
+      "title": "NFS Server",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "TCP connections accepted by the NFS server",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Connections/s",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 20,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "cps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 0,
+        "y": 26
+      },
+      "id": 246,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "9.4.3",
+      "targets": [
+        {
+          "expr": "rate(node_nfsd_connections_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
+          "format": "time_series",
+          "legendFormat": "NFSd TCP connections/s",
+          "refId": "C",
+          "step": 240
+        }
+      ],
+      "title": "NFSd Connections",
       "type": "timeseries"
     },
     {
@@ -427,7 +547,7 @@
         "h": 12,
         "w": 12,
         "x": 12,
-        "y": 13
+        "y": 26
       },
       "id": 247,
       "links": [],
@@ -466,113 +586,6 @@
         }
       ],
       "title": "NFSd Packets",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
-      },
-      "description": "RPC calls made by the NFS client, with retransmissions and authentication refreshes",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "Operations/s",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 20,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "ops"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 12,
-        "w": 12,
-        "x": 0,
-        "y": 25
-      },
-      "id": 249,
-      "links": [],
-      "options": {
-        "legend": {
-          "calcs": [
-            "mean",
-            "lastNotNull",
-            "max",
-            "min"
-          ],
-          "displayMode": "table",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      },
-      "pluginVersion": "9.4.3",
-      "targets": [
-        {
-          "expr": "rate(node_nfs_rpc_authentication_refreshes_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
-          "format": "time_series",
-          "legendFormat": "NFS RPC authentication refreshes",
-          "refId": "C",
-          "step": 240
-        },
-        {
-          "expr": "rate(node_nfs_rpc_retransmissions_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
-          "format": "time_series",
-          "legendFormat": "NFS RPC retransmissions",
-          "refId": "A",
-          "step": 240
-        },
-        {
-          "expr": "rate(node_nfs_rpcs_total{instance=\"$node:$port\",job=\"$job\"}[$__rate_interval])",
-          "format": "time_series",
-          "legendFormat": "NFS RPCs",
-          "refId": "B",
-          "step": 240
-        }
-      ],
-      "title": "NFS RPC",
       "type": "timeseries"
     },
     {
@@ -645,8 +658,8 @@
       "gridPos": {
         "h": 12,
         "w": 12,
-        "x": 12,
-        "y": 25
+        "x": 0,
+        "y": 38
       },
       "id": 257,
       "links": [],
@@ -757,8 +770,8 @@
       "gridPos": {
         "h": 12,
         "w": 12,
-        "x": 0,
-        "y": 37
+        "x": 12,
+        "y": 38
       },
       "id": 248,
       "links": [],
@@ -857,8 +870,8 @@
       "gridPos": {
         "h": 12,
         "w": 12,
-        "x": 12,
-        "y": 37
+        "x": 0,
+        "y": 50
       },
       "id": 245,
       "links": [],
@@ -950,8 +963,8 @@
       "gridPos": {
         "h": 12,
         "w": 12,
-        "x": 0,
-        "y": 49
+        "x": 12,
+        "y": 50
       },
       "id": 250,
       "links": [],
@@ -1063,9 +1076,9 @@
       },
       "gridPos": {
         "h": 12,
-        "w": 12,
-        "x": 12,
-        "y": 49
+        "w": 24,
+        "x": 0,
+        "y": 62
       },
       "id": 258,
       "links": [],
@@ -1105,7 +1118,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 61
+        "y": 74
       },
       "id": 261,
       "panels": [
@@ -1397,7 +1410,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 62
+        "y": 75
       },
       "id": 262,
       "panels": [
@@ -1683,7 +1696,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 63
+        "y": 76
       },
       "id": 263,
       "panels": [
@@ -1999,7 +2012,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 64
+        "y": 77
       },
       "id": 264,
       "panels": [
@@ -2309,7 +2322,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 65
+        "y": 78
       },
       "id": 265,
       "panels": [
@@ -3187,7 +3200,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 66
+        "y": 79
       },
       "id": 266,
       "panels": [
@@ -3806,6 +3819,6 @@
   "timezone": "browser",
   "title": "NFS",
   "uid": "vfsuyqfSk",
-  "version": 4,
+  "version": 5,
   "weekStart": ""
 }
