@@ -1964,7 +1964,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of Messages cached.\n\nNumber of rrset cached.",
+          "description": "Number of entries in the message, RRset and infrastructure caches.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2013,7 +2013,8 @@
                   }
                 ]
               },
-              "unit": "none"
+              "unit": "short",
+              "min": 0
             },
             "overrides": []
           },
@@ -2021,7 +2022,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 52
+            "y": 0
           },
           "id": 70,
           "options": {
@@ -2050,7 +2051,7 @@
               },
               "editorMode": "code",
               "expr": "unbound_msg_cache_count{instance=\"$instance\"}",
-              "legendFormat": "messages",
+              "legendFormat": "Messages",
               "range": true,
               "refId": "A"
             },
@@ -2061,12 +2062,23 @@
               },
               "editorMode": "code",
               "expr": "unbound_rrset_cache_count{instance=\"$instance\"}",
-              "legendFormat": "rrset",
+              "legendFormat": "RRsets",
               "range": true,
               "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "unbound_infra_cache_count{instance=\"$instance\"}",
+              "legendFormat": "Infra",
+              "range": true,
+              "refId": "C"
             }
           ],
-          "title": "Cached messages / rrset",
+          "title": "Cache entries",
           "type": "timeseries"
         },
         {
@@ -2074,7 +2086,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of cache prefetches performed.",
+          "description": "Rate of cache prefetches performed, by thread.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2132,7 +2144,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 52
+            "y": 0
           },
           "id": 61,
           "options": {
@@ -2174,7 +2186,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of entries in the infrastructure cache.",
+          "description": "Rate of expired entries served from cache, by thread. Requires serve-expired: yes; otherwise stays at zero.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2203,7 +2215,7 @@
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
-                  "mode": "none"
+                  "mode": "normal"
                 },
                 "thresholdsStyle": {
                   "mode": "off"
@@ -2211,7 +2223,6 @@
               },
               "links": [],
               "mappings": [],
-              "min": 0,
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
@@ -2224,7 +2235,7 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "reqps"
             },
             "overrides": []
           },
@@ -2232,9 +2243,9 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 63
+            "y": 11
           },
-          "id": 93,
+          "id": 68,
           "options": {
             "legend": {
               "calcs": [
@@ -2260,13 +2271,13 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "unbound_infra_cache_count{instance=\"$instance\"}",
-              "legendFormat": "Infra cache",
+              "expr": "rate(unbound_expired_total{instance=\"$instance\"}[$__rate_interval])",
+              "legendFormat": "thread {{thread}}",
               "range": true,
               "refId": "A"
             }
           ],
-          "title": "Infra Cache Entries",
+          "title": "Expired entries served - stacked",
           "type": "timeseries"
         },
         {
@@ -2274,7 +2285,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Maximum number of hashtable collisions in message and rrset caches since start.",
+          "description": "Maximum number of hashtable collisions in the message and rrset caches since start.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2332,7 +2343,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 74
+            "y": 11
           },
           "id": 97,
           "options": {
@@ -2377,7 +2388,7 @@
               "refId": "B"
             }
           ],
-          "title": "Cache Collisions",
+          "title": "Max cache collisions",
           "type": "timeseries"
         }
       ],
@@ -3214,105 +3225,6 @@
       },
       "id": 67,
       "panels": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Number of expired entries served",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "normal"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "reqps"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 12,
-            "x": 0,
-            "y": 55
-          },
-          "id": 68,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "max",
-                "mean",
-                "last"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "9.4.3",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "rate(unbound_expired_total{instance=\"$instance\"}[$__rate_interval])",
-              "legendFormat": "thread {{thread}}",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "Expired entries - stacked",
-          "type": "timeseries"
-        },
         {
           "datasource": {
             "type": "prometheus",
