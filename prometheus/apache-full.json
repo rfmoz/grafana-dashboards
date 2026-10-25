@@ -64,7 +64,7 @@
       },
       "id": 22,
       "panels": [],
-      "title": "Default",
+      "title": "Principal",
       "type": "row"
     },
     {
@@ -147,7 +147,7 @@
         ]
       },
       "gridPos": {
-        "h": 10,
+        "h": 12,
         "w": 12,
         "x": 0,
         "y": 1
@@ -255,7 +255,7 @@
         }
       },
       "gridPos": {
-        "h": 10,
+        "h": 12,
         "w": 12,
         "x": 12,
         "y": 1
@@ -352,10 +352,10 @@
         }
       },
       "gridPos": {
-        "h": 10,
+        "h": 12,
         "w": 12,
         "x": 0,
-        "y": 11
+        "y": 13
       },
       "id": 7,
       "links": [],
@@ -449,10 +449,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 12,
         "w": 12,
         "x": 12,
-        "y": 11
+        "y": 13
       },
       "id": 9,
       "options": {
@@ -577,10 +577,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 12,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 25
       },
       "id": 6,
       "links": [],
@@ -623,7 +623,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 31
+        "y": 37
       },
       "id": 14,
       "title": "Proxy Balancer",
@@ -1044,7 +1044,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 38
       },
       "id": 20,
       "title": "Server health",
@@ -1395,22 +1395,43 @@
           "datasource": {
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Percentage of Apache workers currently busy. High values mean the worker pool is saturated.",
           "fieldConfig": {
             "defaults": {
               "color": {
-                "mode": "thresholds"
+                "mode": "palette-classic"
               },
-              "mappings": [
-                {
-                  "options": {
-                    "match": "null",
-                    "result": {
-                      "text": "N/A"
-                    }
-                  },
-                  "type": "special"
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
                 }
-              ],
+              },
+              "mappings": [],
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
@@ -1432,7 +1453,8 @@
               "min": 0,
               "max": 100,
               "decimals": 0
-            }
+            },
+            "overrides": []
           },
           "gridPos": {
             "h": 10,
@@ -1441,19 +1463,21 @@
             "y": 10
           },
           "id": 19,
-          "maxDataPoints": 100,
           "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "auto",
-            "textMode": "auto",
-            "wideLayout": true,
-            "reduceOptions": {
+            "legend": {
               "calcs": [
-                "lastNotNull"
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
               ],
-              "fields": "",
-              "values": false
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
             }
           },
           "pluginVersion": "8.4.5",
@@ -1471,8 +1495,7 @@
             }
           ],
           "title": "Worker utilization",
-          "type": "stat",
-          "description": "Percentage of Apache workers currently busy. High values mean the worker pool is saturated."
+          "type": "timeseries"
         },
         {
           "datasource": {
@@ -1729,7 +1752,7 @@
         "h": 3,
         "w": 12,
         "x": 0,
-        "y": 33
+        "y": 39
       },
       "id": 3,
       "options": {
@@ -1799,7 +1822,7 @@
         "h": 3,
         "w": 6,
         "x": 12,
-        "y": 33
+        "y": 39
       },
       "id": 1,
       "maxDataPoints": 100,
@@ -1869,7 +1892,7 @@
         "h": 3,
         "w": 6,
         "x": 18,
-        "y": 33
+        "y": 39
       },
       "id": 2,
       "maxDataPoints": 100,
