@@ -2660,7 +2660,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Current size of the request list",
+          "description": "Current number of entries in the request list: all queries, client queries and replies waiting.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2718,7 +2718,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 53
+            "y": 0
           },
           "id": 55,
           "options": {
@@ -2747,7 +2747,7 @@
               },
               "editorMode": "code",
               "expr": "sum(unbound_request_list_current_all{instance=\"$instance\"})",
-              "legendFormat": "including internally generated queries",
+              "legendFormat": "All (incl. internal)",
               "range": true,
               "refId": "A"
             },
@@ -2758,7 +2758,7 @@
               },
               "editorMode": "code",
               "expr": "sum(unbound_request_list_current_user{instance=\"$instance\"})",
-              "legendFormat": "only counting the requests from client queries",
+              "legendFormat": "Client queries",
               "range": true,
               "refId": "B"
             },
@@ -2769,7 +2769,7 @@
               },
               "editorMode": "code",
               "expr": "sum(unbound_request_list_current_replies{instance=\"$instance\"})",
-              "legendFormat": "replies waiting",
+              "legendFormat": "Replies waiting",
               "range": true,
               "refId": "C"
             }
@@ -2782,7 +2782,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Unexpected events over request list",
+          "description": "Rate of request-list overflows, overwritten entries and queries removed by discard-timeout, replyaddr or wait-limit limits.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2840,7 +2840,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 53
+            "y": 0
           },
           "id": 57,
           "options": {
@@ -2869,7 +2869,7 @@
               },
               "editorMode": "code",
               "expr": "sum(rate(unbound_request_list_overwritten_total{instance=\"$instance\"}[$__rate_interval]))",
-              "legendFormat": "requests in the request list that were overwritten by newer entries",
+              "legendFormat": "Request list overwritten",
               "range": true,
               "refId": "A"
             },
@@ -2880,99 +2880,10 @@
               },
               "editorMode": "code",
               "expr": "sum(rate(unbound_request_list_exceeded_total{instance=\"$instance\"}[$__rate_interval]))",
-              "legendFormat": "queries that were dropped because the request list was full",
+              "legendFormat": "Request list full",
               "range": true,
               "refId": "B"
-            }
-          ],
-          "title": "Request list issues",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Number of queries removed due to discard-timeout, replyaddr limits, or wait-limit.",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "ops"
             },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 12,
-            "x": 0,
-            "y": 64
-          },
-          "id": 94,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "max",
-                "mean",
-                "last"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "9.4.3",
-          "targets": [
             {
               "datasource": {
                 "type": "prometheus",
@@ -2982,7 +2893,7 @@
               "expr": "sum(rate(unbound_queries_discard_timeout{instance=\"$instance\"}[$__rate_interval]))",
               "legendFormat": "Discard timeout",
               "range": true,
-              "refId": "A"
+              "refId": "C"
             },
             {
               "datasource": {
@@ -2993,7 +2904,7 @@
               "expr": "sum(rate(unbound_queries_replyaddr_limit{instance=\"$instance\"}[$__rate_interval]))",
               "legendFormat": "Replyaddr limit",
               "range": true,
-              "refId": "B"
+              "refId": "D"
             },
             {
               "datasource": {
@@ -3004,10 +2915,10 @@
               "expr": "sum(rate(unbound_queries_wait_limit{instance=\"$instance\"}[$__rate_interval]))",
               "legendFormat": "Wait limit",
               "range": true,
-              "refId": "C"
+              "refId": "E"
             }
           ],
-          "title": "Queries Discarded / Limited",
+          "title": "Overload events",
           "type": "timeseries"
         }
       ],
@@ -3020,7 +2931,7 @@
           "refId": "A"
         }
       ],
-      "title": "Request list",
+      "title": "Request list / Overload",
       "type": "row"
     },
     {
