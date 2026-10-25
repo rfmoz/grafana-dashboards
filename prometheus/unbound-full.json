@@ -814,7 +814,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries that had a given flag set in the header",
+          "description": "Number of queries that had a given header flag set, plus EDNS OPT presence and the DO (DNSSEC OK) bit",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -871,7 +871,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 2
+            "y": 11
           },
           "id": 14,
           "options": {
@@ -927,7 +927,7 @@
               "refId": "C"
             }
           ],
-          "title": "Queries by flag",
+          "title": "Queries by flag / EDNS",
           "type": "timeseries"
         },
         {
@@ -935,7 +935,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries that the Unbound server made using TCP outgoing towards other servers.\n\nNumber of queries that the Unbound server made using UDP outgoing towards other servers.\n\nNumber of queries that were made using TCP towards the Unbound server, including DoT and DoH queries.",
+          "description": "Queries received by protocol and address family (TCP, IPv6), and queries sent upstream (TCP, UDP). TCP in includes DoT and DoH.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -991,8 +991,8 @@
           "gridPos": {
             "h": 11,
             "w": 12,
-            "x": 12,
-            "y": 2
+            "x": 0,
+            "y": 22
           },
           "id": 73,
           "options": {
@@ -1014,6 +1014,17 @@
           },
           "pluginVersion": "9.4.3",
           "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(unbound_query_tcp_total{instance=\"$instance\"}[$__rate_interval])",
+              "legendFormat": "TCP in",
+              "range": true,
+              "refId": "A"
+            },
             {
               "datasource": {
                 "type": "prometheus",
@@ -1042,10 +1053,10 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(unbound_query_tcp_total{instance=\"$instance\"}[$__rate_interval])",
-              "legendFormat": "TCP in",
+              "expr": "rate(unbound_query_ipv6_total{instance=\"$instance\"}[$__rate_interval])",
+              "legendFormat": "IPv6 in",
               "range": true,
-              "refId": "A"
+              "refId": "D"
             }
           ],
           "title": "Queries by protocol in / out",
@@ -1114,7 +1125,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 13
+            "y": 0
           },
           "id": 84,
           "options": {
@@ -1214,7 +1225,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 24
+            "y": 0
           },
           "id": 38,
           "options": {
@@ -1256,128 +1267,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of DoH queries that were made towards the Unbound server.\n\nNumber of queries that were made using TCP TLS towards the Unbound server, including DoT and DoH queries.\n\nNumber of queries that were made using TCP TLS Resume towards the Unbound server.",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "reqps"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 12,
-            "x": 0,
-            "y": 35
-          },
-          "id": 72,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "max",
-                "mean",
-                "last"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "9.4.3",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "rate(unbound_query_https_total{instance=\"$instance\"}[$__rate_interval])",
-              "legendFormat": "HTTPS",
-              "range": true,
-              "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "rate(unbound_query_tls_total{instance=\"$instance\"}[$__rate_interval])",
-              "legendFormat": "TLS",
-              "range": true,
-              "refId": "D"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "rate(unbound_query_tls_resume_total{instance=\"$instance\"}[$__rate_interval])",
-              "legendFormat": "TLS Resume",
-              "range": true,
-              "refId": "B"
-            }
-          ],
-          "title": "Queries by method",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Number of queries that were made using IPv6 towards the Unbound server.",
+          "description": "Queries received over encrypted transports: DoH (HTTPS), TLS (including DoT and DoH), TLS session resumption and DoQ (QUIC).",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1434,9 +1324,9 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 46
+            "y": 22
           },
-          "id": 83,
+          "id": 72,
           "options": {
             "legend": {
               "calcs": [
@@ -1462,100 +1352,33 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "rate(unbound_query_ipv6_total{instance=\"$instance\"}[$__rate_interval])",
-              "legendFormat": "IPv6",
+              "expr": "rate(unbound_query_https_total{instance=\"$instance\"}[$__rate_interval])",
+              "legendFormat": "HTTPS",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(unbound_query_tls_total{instance=\"$instance\"}[$__rate_interval])",
+              "legendFormat": "TLS (incl. DoH)",
+              "range": true,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(unbound_query_tls_resume_total{instance=\"$instance\"}[$__rate_interval])",
+              "legendFormat": "TLS Resume",
               "range": true,
               "refId": "C"
-            }
-          ],
-          "title": "Queries by IPv6",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Number of DNS-over-QUIC (DoQ) queries performed towards the Unbound server.",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "reqps"
             },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 12,
-            "x": 0,
-            "y": 57
-          },
-          "id": 90,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "max",
-                "mean",
-                "last"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "9.4.3",
-          "targets": [
             {
               "datasource": {
                 "type": "prometheus",
@@ -1565,10 +1388,10 @@
               "expr": "rate(unbound_query_quic_total{instance=\"$instance\"}[$__rate_interval])",
               "legendFormat": "QUIC",
               "range": true,
-              "refId": "A"
+              "refId": "D"
             }
           ],
-          "title": "Queries by DoQ (QUIC)",
+          "title": "Queries by method",
           "type": "timeseries"
         },
         {
@@ -1634,7 +1457,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 68
+            "y": 11
           },
           "id": 91,
           "options": {
