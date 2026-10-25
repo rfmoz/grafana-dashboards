@@ -3378,7 +3378,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries that were refused or dropped because they failed the access control settings.\n\nNumber of replies that were unwanted or unsolicited.",
+          "description": "Rate of refused or dropped queries, unsolicited replies and triggered Response Policy Zone actions.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3428,7 +3428,7 @@
                   }
                 ]
               },
-              "unit": "reqps"
+              "unit": "ops"
             },
             "overrides": []
           },
@@ -3436,7 +3436,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 66
+            "y": 0
           },
           "id": 76,
           "options": {
@@ -3465,7 +3465,7 @@
               },
               "editorMode": "code",
               "expr": "rate(unbound_unwanted_queries_total{instance=\"$instance\"}[$__rate_interval])",
-              "legendFormat": "queries",
+              "legendFormat": "Refused / dropped queries",
               "range": true,
               "refId": "A"
             },
@@ -3476,12 +3476,23 @@
               },
               "editorMode": "code",
               "expr": "rate(unbound_unwanted_replies_total{instance=\"$instance\"}[$__rate_interval])",
-              "legendFormat": "replies",
+              "legendFormat": "Unsolicited replies",
               "range": true,
               "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(unbound_rpz_action_count{instance=\"$instance\"}[$__rate_interval])",
+              "legendFormat": "RPZ {{type}}",
+              "range": true,
+              "refId": "C"
             }
           ],
-          "title": "Queries refused / Unsolicited replies",
+          "title": "Security events",
           "type": "timeseries"
         },
         {
@@ -3547,7 +3558,7 @@
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 99
+            "y": 0
           },
           "id": 88,
           "options": {
@@ -3583,109 +3594,9 @@
           ],
           "title": "Uptime",
           "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Number of triggered Response Policy Zone actions, by type.",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "ops"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 12,
-            "x": 0,
-            "y": 110
-          },
-          "id": 89,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "max",
-                "mean",
-                "last"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "9.4.3",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "rate(unbound_rpz_action_count{instance=\"$instance\"}[$__rate_interval])",
-              "legendFormat": "{{type}}",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "RPZ Actions",
-          "type": "timeseries"
         }
       ],
-      "title": "Misc",
+      "title": "Security / Status",
       "type": "row"
     }
   ],
