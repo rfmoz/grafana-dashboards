@@ -961,7 +961,7 @@
             "spanNulls": false,
             "stacking": {
               "group": "A",
-              "mode": "normal"
+              "mode": "none"
             },
             "thresholdsStyle": {
               "mode": "off"
@@ -1531,7 +1531,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "HTTP responses received by backends",
+          "description": "HTTP responses sent by backends",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2386,7 +2386,7 @@
                   }
                 ]
               },
-              "unit": "reqps"
+              "unit": "ops"
             },
             "overrides": [
               {
@@ -2524,7 +2524,7 @@
                   }
                 ]
               },
-              "unit": "reqps"
+              "unit": "ops"
             },
             "overrides": [
               {
@@ -4865,7 +4865,7 @@
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
-                  "mode": "normal"
+                  "mode": "none"
                 },
                 "thresholdsStyle": {
                   "mode": "off"
@@ -4931,7 +4931,7 @@
               },
               "editorMode": "code",
               "expr": "haproxy_frontend_current_sessions{proxy=~\"$frontend\",instance=\"$host\"}",
-              "hide": true,
+              "hide": false,
               "interval": "$interval",
               "legendFormat": "Current active {{ proxy }}",
               "metric": "",
@@ -4979,7 +4979,7 @@
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
-                  "mode": "normal"
+                  "mode": "none"
                 },
                 "thresholdsStyle": {
                   "mode": "off"
@@ -5045,7 +5045,7 @@
               },
               "editorMode": "code",
               "expr": "haproxy_backend_current_sessions{proxy=~\"$backend\",instance=\"$host\"}",
-              "hide": true,
+              "hide": false,
               "interval": "$interval",
               "legendFormat": "Current active {{ proxy }}",
               "metric": "",
@@ -5160,7 +5160,7 @@
               },
               "editorMode": "code",
               "expr": "haproxy_server_current_sessions{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
-              "hide": true,
+              "hide": false,
               "interval": "$interval",
               "legendFormat": "Current active {{ proxy }} / {{ server }}",
               "range": true,
@@ -7258,7 +7258,7 @@
               "refId": "A"
             }
           ],
-          "title": "Server - Last session assigned",
+          "title": "Server - Time since last session",
           "type": "timeseries"
         },
         {
@@ -7266,7 +7266,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Total time spent in DOWN state by backends",
+          "description": "Downtime accrued by backends in the selected interval",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7365,7 +7365,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Total time spent in DOWN state by servers",
+          "description": "Downtime accrued by servers in the selected interval",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7555,7 +7555,7 @@
               "refId": "A"
             }
           ],
-          "title": "Back - Last Session",
+          "title": "Back - Time since last session",
           "type": "timeseries"
         },
         {
@@ -8994,7 +8994,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Servers in any state other than UP or DOWN, such as MAINT or DRAIN",
+          "description": "Servers currently in a state other than UP or DOWN, such as MAINT, DRAIN or NOLB",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -9083,7 +9083,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "haproxy_server_status{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\",state!~\"UP|DOWN\"}",
+              "expr": "haproxy_server_status{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\",state!~\"UP|DOWN\"} > 0",
               "interval": "$interval",
               "legendFormat": "{{ proxy }} / {{ server }} - {{state}}",
               "metric": "",
@@ -9401,7 +9401,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Stick table entries in use and table size",
+          "description": "Stick table entries in use and table size, by stick table",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -9485,7 +9485,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "haproxy_sticktable_size{name=~\"$backend\",instance=\"$host\"}",
+              "expr": "haproxy_sticktable_size{name=~\"$sticktable\",instance=\"$host\"}",
               "interval": "$interval",
               "legendFormat": "{{ name }} - Size",
               "metric": "",
@@ -9498,7 +9498,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "haproxy_sticktable_used{name=~\"$backend\",instance=\"$host\"}",
+              "expr": "haproxy_sticktable_used{name=~\"$sticktable\",instance=\"$host\"}",
               "interval": "$interval",
               "legendFormat": "{{ name }} - Used",
               "metric": "",
@@ -9581,7 +9581,7 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "ops"
             },
             "overrides": [
               {
@@ -9868,7 +9868,7 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "ops"
             },
             "overrides": [
               {
@@ -10012,7 +10012,7 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "ops"
             },
             "overrides": [
               {
@@ -10982,13 +10982,9 @@
                   {
                     "id": "custom.stacking",
                     "value": {
-                      "group": false,
-                      "mode": "normal"
+                      "group": "A",
+                      "mode": "none"
                     }
-                  },
-                  {
-                    "id": "custom.fillOpacity",
-                    "value": 0
                   },
                   {
                     "id": "custom.lineStyle",
@@ -11342,7 +11338,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Failed pool allocations",
+          "description": "Rate of failed pool allocations",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -11435,7 +11431,7 @@
               "refId": "A"
             }
           ],
-          "title": "Process - Pool allocations",
+          "title": "Process - Pool allocation failures",
           "type": "timeseries"
         },
         {
@@ -11702,7 +11698,7 @@
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
-                  "mode": "normal"
+                  "mode": "none"
                 },
                 "thresholdsStyle": {
                   "mode": "off"
@@ -12009,7 +12005,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Percentage of time the process was idle, and whether it is stopping",
+          "description": "Percentage of time the process was idle (left axis) and whether it is stopping (right axis)",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -12060,7 +12056,24 @@
               },
               "unit": "percent"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Non zero means stopping in progress"
+                },
+                "properties": [
+                  {
+                    "id": "unit",
+                    "value": "bool_on_off"
+                  },
+                  {
+                    "id": "custom.axisPlacement",
+                    "value": "right"
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
@@ -12321,7 +12334,7 @@
         "name": "server",
         "options": [],
         "query": {
-          "query": "label_values(haproxy_server_status{instance=\"$host\"}, server)",
+          "query": "label_values(haproxy_server_status{instance=\"$host\",proxy=~\"$backend\"}, server)",
           "refId": "Prometheus-server-Variable-Query"
         },
         "refresh": 1,
@@ -12342,8 +12355,29 @@
         "name": "code",
         "options": [],
         "query": {
-          "query": "label_values(haproxy_server_http_responses_total{instance=\"$host\"}, code)",
+          "query": "label_values(haproxy_frontend_http_responses_total{instance=\"$host\"}, code)",
           "refId": "Prometheus-code-Variable-Query"
+        },
+        "refresh": 1,
+        "regex": "",
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "definition": "",
+        "includeAll": true,
+        "label": "Stick table",
+        "multi": true,
+        "name": "sticktable",
+        "options": [],
+        "query": {
+          "query": "label_values(haproxy_sticktable_size{instance=\"$host\"}, name)",
+          "refId": "Prometheus-sticktable-Variable-Query"
         },
         "refresh": 1,
         "regex": "",
@@ -12406,6 +12440,6 @@
   "timezone": "browser",
   "title": "HAProxy",
   "uid": "rEqu1u5ue",
-  "version": 30,
+  "version": 31,
   "weekStart": ""
 }
