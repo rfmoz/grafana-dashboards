@@ -4894,6 +4894,151 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
+          "description": "Current and peak sessions as a percentage of each server's maxconn; servers without maxconn are not shown",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "fieldMinMax": false,
+              "links": [],
+              "mappings": [],
+              "max": 100,
+              "min": 0,
+              "thresholds": {
+                "mode": "percentage",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "#EAB839",
+                    "value": 70
+                  },
+                  {
+                    "color": "red",
+                    "value": 90
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/^Peak/"
+                },
+                "properties": [
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  },
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 27
+          },
+          "id": 274,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_server_current_sessions{proxy=~\"$backend\", server=~\"$server\", instance=\"$host\"} / on(proxy, server, instance) (haproxy_server_limit_sessions{proxy=~\"$backend\", server=~\"$server\", instance=\"$host\"} > 0) * 100",
+              "interval": "$interval",
+              "legendFormat": "{{ proxy }} / {{ server }}",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_server_max_sessions{proxy=~\"$backend\", server=~\"$server\", instance=\"$host\"} / on(proxy, server, instance) (haproxy_server_limit_sessions{proxy=~\"$backend\", server=~\"$server\", instance=\"$host\"} > 0) * 100",
+              "interval": "$interval",
+              "legendFormat": "Peak {{ proxy }} / {{ server }}",
+              "range": true,
+              "refId": "B"
+            }
+          ],
+          "title": "Server - Session usage",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "description": "Failed HTTP header rewrites on frontends",
           "fieldConfig": {
             "defaults": {
@@ -4950,7 +5095,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 37
+            "y": 34
           },
           "id": 119,
           "options": {
@@ -5050,7 +5195,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 37
+            "y": 34
           },
           "id": 117,
           "options": {
@@ -5151,7 +5296,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 47
+            "y": 44
           },
           "id": 137,
           "options": {
@@ -5188,151 +5333,6 @@
             }
           ],
           "title": "Server - Failed HTTP header rewrites",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Current and peak sessions as a percentage of each server's maxconn; servers without maxconn are not shown",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "fieldMinMax": false,
-              "links": [],
-              "mappings": [],
-              "max": 100,
-              "min": 0,
-              "thresholds": {
-                "mode": "percentage",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "#EAB839",
-                    "value": 70
-                  },
-                  {
-                    "color": "red",
-                    "value": 90
-                  }
-                ]
-              },
-              "unit": "percent"
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": "/^Peak/"
-                },
-                "properties": [
-                  {
-                    "id": "custom.lineStyle",
-                    "value": {
-                      "dash": [
-                        10,
-                        10
-                      ],
-                      "fill": "dash"
-                    }
-                  },
-                  {
-                    "id": "custom.fillOpacity",
-                    "value": 0
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 24,
-            "x": 0,
-            "y": 27
-          },
-          "id": 274,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_server_current_sessions{proxy=~\"$backend\", server=~\"$server\", instance=\"$host\"} / on(proxy, server, instance) (haproxy_server_limit_sessions{proxy=~\"$backend\", server=~\"$server\", instance=\"$host\"} > 0) * 100",
-              "interval": "$interval",
-              "legendFormat": "{{ proxy }} / {{ server }}",
-              "range": true,
-              "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_server_max_sessions{proxy=~\"$backend\", server=~\"$server\", instance=\"$host\"} / on(proxy, server, instance) (haproxy_server_limit_sessions{proxy=~\"$backend\", server=~\"$server\", instance=\"$host\"} > 0) * 100",
-              "interval": "$interval",
-              "legendFormat": "Peak {{ proxy }} / {{ server }}",
-              "range": true,
-              "refId": "B"
-            }
-          ],
-          "title": "Server - Session usage",
           "type": "timeseries"
         }
       ],
@@ -12689,6 +12689,6 @@
   "timezone": "browser",
   "title": "HAProxy",
   "uid": "rEqu1u5ue",
-  "version": 35,
+  "version": 36,
   "weekStart": ""
 }
