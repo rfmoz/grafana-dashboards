@@ -4404,7 +4404,7 @@
               "refId": "B"
             }
           ],
-          "title": "Front - Sessions",
+          "title": "Front - Session rate",
           "type": "timeseries"
         },
         {
@@ -4504,7 +4504,7 @@
               "refId": "A"
             }
           ],
-          "title": "Back - Sessions",
+          "title": "Back - Session rate",
           "type": "timeseries"
         },
         {
@@ -4605,7 +4605,7 @@
               "refId": "B"
             }
           ],
-          "title": "Server - Sessions",
+          "title": "Server - Session rate",
           "type": "timeseries"
         },
         {
@@ -4613,7 +4613,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Current sessions as a percentage of the frontend limit",
+          "description": "Current and peak sessions as a percentage of each frontend's configured maxconn",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4674,7 +4674,30 @@
               },
               "unit": "percent"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/^Peak/"
+                },
+                "properties": [
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  },
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
@@ -4712,7 +4735,19 @@
               "interval": "$interval",
               "legendFormat": "{{ proxy }}",
               "range": true,
-              "refId": "C"
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_frontend_max_sessions{proxy=~\"$frontend\", instance=\"$host\"} / on(proxy, instance) (haproxy_frontend_limit_sessions{proxy=~\"$frontend\", instance=\"$host\"} > 0) * 100",
+              "interval": "$interval",
+              "legendFormat": "Peak {{ proxy }}",
+              "range": true,
+              "refId": "B"
             }
           ],
           "title": "Front - Session usage",
@@ -4723,7 +4758,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Current sessions as a percentage of the backend limit, which is fullconn",
+          "description": "Current and highest concurrent sessions on backends; backends have no session limit, so values are absolute",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -4764,27 +4799,41 @@
               "fieldMinMax": false,
               "links": [],
               "mappings": [],
-              "max": 100,
               "min": 0,
               "thresholds": {
-                "mode": "percentage",
+                "mode": "absolute",
                 "steps": [
                   {
                     "color": "green"
-                  },
-                  {
-                    "color": "#EAB839",
-                    "value": 70
-                  },
-                  {
-                    "color": "red",
-                    "value": 90
                   }
                 ]
               },
-              "unit": "percent"
+              "unit": "none"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/^Peak/"
+                },
+                "properties": [
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  },
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
@@ -4818,109 +4867,9 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "haproxy_backend_current_sessions{proxy=~\"$backend\", instance=\"$host\"} / on(proxy, instance) (haproxy_backend_limit_sessions{proxy=~\"$backend\", instance=\"$host\"} > 0) * 100",
+              "expr": "haproxy_backend_current_sessions{proxy=~\"$backend\", instance=\"$host\"}",
               "interval": "$interval",
               "legendFormat": "{{ proxy }}",
-              "range": true,
-              "refId": "C"
-            }
-          ],
-          "title": "Back - Session usage",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Highest concurrent sessions reached on frontends, with the current ones",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 27
-          },
-          "id": 254,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_frontend_max_sessions{proxy=~\"$frontend\",instance=\"$host\"}",
-              "interval": "$interval",
-              "legendFormat": "{{ proxy }}",
-              "metric": "",
               "range": true,
               "refId": "A"
             },
@@ -4930,244 +4879,14 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "haproxy_frontend_current_sessions{proxy=~\"$frontend\",instance=\"$host\"}",
-              "hide": false,
+              "expr": "haproxy_backend_max_sessions{proxy=~\"$backend\", instance=\"$host\"}",
               "interval": "$interval",
-              "legendFormat": "Current active {{ proxy }}",
-              "metric": "",
-              "range": true,
-              "refId": "C"
-            }
-          ],
-          "title": "Front - Sessions Max",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Highest concurrent sessions reached on backends, with the current ones",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 27
-          },
-          "id": 256,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_backend_max_sessions{proxy=~\"$backend\",instance=\"$host\"}",
-              "interval": "$interval",
-              "legendFormat": "{{ proxy }}",
-              "metric": "",
-              "range": true,
-              "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_backend_current_sessions{proxy=~\"$backend\",instance=\"$host\"}",
-              "hide": false,
-              "interval": "$interval",
-              "legendFormat": "Current active {{ proxy }}",
-              "metric": "",
-              "range": true,
-              "refId": "C"
-            }
-          ],
-          "title": "Back - Sessions Max",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Highest concurrent sessions reached on servers, with the current ones",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "decimals": 1,
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 37
-          },
-          "id": 257,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "right",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_server_max_sessions{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
-              "interval": "$interval",
-              "legendFormat": "{{ proxy }} / {{ server }}",
-              "metric": "",
+              "legendFormat": "Peak {{ proxy }}",
               "range": true,
               "refId": "B"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_server_current_sessions{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
-              "hide": false,
-              "interval": "$interval",
-              "legendFormat": "Current active {{ proxy }} / {{ server }}",
-              "range": true,
-              "refId": "C"
             }
           ],
-          "title": "Server - Sessions Max",
+          "title": "Back - Sessions (current / peak)",
           "type": "timeseries"
         },
         {
@@ -5231,7 +4950,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 44
+            "y": 37
           },
           "id": 119,
           "options": {
@@ -5331,7 +5050,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 44
+            "y": 37
           },
           "id": 117,
           "options": {
@@ -5432,7 +5151,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 54
+            "y": 47
           },
           "id": 137,
           "options": {
@@ -5469,6 +5188,151 @@
             }
           ],
           "title": "Server - Failed HTTP header rewrites",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Current and peak sessions as a percentage of each server's maxconn; servers without maxconn are not shown",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "fieldMinMax": false,
+              "links": [],
+              "mappings": [],
+              "max": 100,
+              "min": 0,
+              "thresholds": {
+                "mode": "percentage",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "#EAB839",
+                    "value": 70
+                  },
+                  {
+                    "color": "red",
+                    "value": 90
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/^Peak/"
+                },
+                "properties": [
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  },
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 24,
+            "x": 0,
+            "y": 27
+          },
+          "id": 274,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_server_current_sessions{proxy=~\"$backend\", server=~\"$server\", instance=\"$host\"} / on(proxy, server, instance) (haproxy_server_limit_sessions{proxy=~\"$backend\", server=~\"$server\", instance=\"$host\"} > 0) * 100",
+              "interval": "$interval",
+              "legendFormat": "{{ proxy }} / {{ server }}",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_server_max_sessions{proxy=~\"$backend\", server=~\"$server\", instance=\"$host\"} / on(proxy, server, instance) (haproxy_server_limit_sessions{proxy=~\"$backend\", server=~\"$server\", instance=\"$host\"} > 0) * 100",
+              "interval": "$interval",
+              "legendFormat": "Peak {{ proxy }} / {{ server }}",
+              "range": true,
+              "refId": "B"
+            }
+          ],
+          "title": "Server - Session usage",
           "type": "timeseries"
         }
       ],
@@ -12825,6 +12689,6 @@
   "timezone": "browser",
   "title": "HAProxy",
   "uid": "rEqu1u5ue",
-  "version": 33,
+  "version": 34,
   "weekStart": ""
 }
