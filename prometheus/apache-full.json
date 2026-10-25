@@ -64,7 +64,7 @@
       },
       "id": 22,
       "panels": [],
-      "title": "Traffic",
+      "title": "Default",
       "type": "row"
     },
     {
@@ -299,19 +299,6 @@
       "description": "Average response time per request"
     },
     {
-      "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 11
-      },
-      "id": 23,
-      "panels": [],
-      "title": "Workers & connections",
-      "type": "row"
-    },
-    {
       "datasource": {
         "uid": "${DS_PROMETHEUS}"
       },
@@ -368,7 +355,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 12
+        "y": 11
       },
       "id": 7,
       "links": [],
@@ -465,7 +452,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 12
+        "y": 11
       },
       "id": 9,
       "options": {
@@ -593,7 +580,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 21
       },
       "id": 6,
       "links": [],
@@ -629,6 +616,427 @@
       "title": "Scoreboard",
       "type": "timeseries",
       "description": "Current state of each Apache slot (idle, read, reply, keepalive, etc.)"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 31
+      },
+      "id": 14,
+      "title": "Proxy Balancer",
+      "type": "row",
+      "panels": [
+        {
+          "datasource": {
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Request rate per proxy balancer worker",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "reqps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 0
+          },
+          "id": 15,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "8.4.5",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(apache_proxy_balancer_accesses_total{job=\"$job\", instance=\"$instance\"}[$__rate_interval])",
+              "legendFormat": "{{balancer}} / {{worker}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Proxy Balancer Requests",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Number of active requests per proxy balancer worker",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 0
+          },
+          "id": 16,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "8.4.5",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "apache_proxy_balancer_busy{job=\"$job\", instance=\"$instance\"}",
+              "legendFormat": "{{balancer}} / {{worker}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Proxy Balancer Active Requests",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Request and response throughput per proxy balancer worker",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "Bps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 10
+          },
+          "id": 17,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "8.4.5",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(apache_proxy_balancer_request_kbytes_total{job=\"$job\", instance=\"$instance\"}[$__rate_interval]) * 1024",
+              "legendFormat": "{{balancer}} / {{worker}} - Request",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(apache_proxy_balancer_response_kbytes_total{job=\"$job\", instance=\"$instance\"}[$__rate_interval]) * 1024",
+              "legendFormat": "{{balancer}} / {{worker}} - Response",
+              "range": true,
+              "refId": "B"
+            }
+          ],
+          "title": "Proxy Balancer Traffic",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Status of each proxy balancer worker",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 10
+          },
+          "id": 18,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "8.4.5",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "apache_proxy_balancer_status{job=\"$job\", instance=\"$instance\"}",
+              "legendFormat": "{{balancer}} / {{worker}} - {{status}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Proxy Balancer Status",
+          "type": "timeseries"
+        }
+      ]
     },
     {
       "collapsed": true,
@@ -1275,19 +1683,6 @@
       ]
     },
     {
-      "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 33
-      },
-      "id": 24,
-      "panels": [],
-      "title": "Overview",
-      "type": "row"
-    },
-    {
       "datasource": {
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
@@ -1334,7 +1729,7 @@
         "h": 3,
         "w": 12,
         "x": 0,
-        "y": 34
+        "y": 33
       },
       "id": 3,
       "options": {
@@ -1404,7 +1799,7 @@
         "h": 3,
         "w": 6,
         "x": 12,
-        "y": 34
+        "y": 33
       },
       "id": 1,
       "maxDataPoints": 100,
@@ -1474,7 +1869,7 @@
         "h": 3,
         "w": 6,
         "x": 18,
-        "y": 34
+        "y": 33
       },
       "id": 2,
       "maxDataPoints": 100,
@@ -1511,427 +1906,6 @@
       "title": "Version",
       "type": "stat",
       "description": "Apache server version and MPM"
-    },
-    {
-      "collapsed": true,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 37
-      },
-      "id": 14,
-      "title": "Proxy Balancer",
-      "type": "row",
-      "panels": [
-        {
-          "datasource": {
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Request rate per proxy balancer worker",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineStyle": {
-                  "fill": "solid"
-                },
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "reqps"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 0
-          },
-          "id": 15,
-          "options": {
-            "legend": {
-              "calcs": [
-                "mean",
-                "lastNotNull",
-                "max",
-                "min"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "8.4.5",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "rate(apache_proxy_balancer_accesses_total{job=\"$job\", instance=\"$instance\"}[$__rate_interval])",
-              "legendFormat": "{{balancer}} / {{worker}}",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "Proxy Balancer Requests",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Number of active requests per proxy balancer worker",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineStyle": {
-                  "fill": "solid"
-                },
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 0
-          },
-          "id": 16,
-          "options": {
-            "legend": {
-              "calcs": [
-                "mean",
-                "lastNotNull",
-                "max",
-                "min"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "8.4.5",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "apache_proxy_balancer_busy{job=\"$job\", instance=\"$instance\"}",
-              "legendFormat": "{{balancer}} / {{worker}}",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "Proxy Balancer Active Requests",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Request and response throughput per proxy balancer worker",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineStyle": {
-                  "fill": "solid"
-                },
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "Bps"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 10
-          },
-          "id": 17,
-          "options": {
-            "legend": {
-              "calcs": [
-                "mean",
-                "lastNotNull",
-                "max",
-                "min"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "8.4.5",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "rate(apache_proxy_balancer_request_kbytes_total{job=\"$job\", instance=\"$instance\"}[$__rate_interval]) * 1024",
-              "legendFormat": "{{balancer}} / {{worker}} - Request",
-              "range": true,
-              "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "rate(apache_proxy_balancer_response_kbytes_total{job=\"$job\", instance=\"$instance\"}[$__rate_interval]) * 1024",
-              "legendFormat": "{{balancer}} / {{worker}} - Response",
-              "range": true,
-              "refId": "B"
-            }
-          ],
-          "title": "Proxy Balancer Traffic",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Status of each proxy balancer worker",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineStyle": {
-                  "fill": "solid"
-                },
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 10
-          },
-          "id": 18,
-          "options": {
-            "legend": {
-              "calcs": [
-                "mean",
-                "lastNotNull",
-                "max",
-                "min"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "8.4.5",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "apache_proxy_balancer_status{job=\"$job\", instance=\"$instance\"}",
-              "legendFormat": "{{balancer}} / {{worker}} - {{status}}",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "Proxy Balancer Status",
-          "type": "timeseries"
-        }
-      ]
     }
   ],
   "refresh": "1m",
