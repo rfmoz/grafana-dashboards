@@ -1576,7 +1576,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Number of queries with DNS cookies: client and valid.",
+          "description": "Number of queries with DNS cookies: client, valid and invalid.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1677,6 +1677,17 @@
               "legendFormat": "Valid cookie",
               "range": true,
               "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "sum(rate(unbound_queries_cookie_invalid_total{instance=\"$instance\"}[$__rate_interval]))",
+              "legendFormat": "Invalid cookie",
+              "range": true,
+              "refId": "C"
             }
           ],
           "title": "DNS Cookies",
