@@ -523,107 +523,12 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "uid": "${DS_PROMETHEUS}"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "stepAfter",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "normal"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 12,
-        "w": 24,
-        "x": 0,
-        "y": 25
-      },
-      "id": 6,
-      "links": [],
-      "options": {
-        "legend": {
-          "calcs": [
-            "mean",
-            "lastNotNull",
-            "max",
-            "min"
-          ],
-          "displayMode": "table",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      },
-      "pluginVersion": "8.4.5",
-      "targets": [
-        {
-          "expr": "apache_scoreboard{job=\"$job\", instance=\"$instance\"}",
-          "format": "time_series",
-          "legendFormat": "{{ state }}",
-          "refId": "A",
-          "step": 240
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Scoreboard",
-      "type": "timeseries",
-      "description": "Current state of each Apache slot (idle, read, reply, keepalive, etc.)"
-    },
-    {
       "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 37
+        "y": 25
       },
       "id": 14,
       "title": "Proxy Balancer",
@@ -1044,7 +949,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 26
       },
       "id": 20,
       "title": "Server health",
@@ -1110,7 +1015,7 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 8,
             "x": 0,
             "y": 0
           },
@@ -1220,8 +1125,8 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
+            "w": 8,
+            "x": 8,
             "y": 0
           },
           "id": 11,
@@ -1341,9 +1246,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 10
+            "w": 8,
+            "x": 16,
+            "y": 0
           },
           "id": 12,
           "options": {
@@ -1458,8 +1363,8 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
+            "w": 8,
+            "x": 0,
             "y": 10
           },
           "id": 19,
@@ -1557,9 +1462,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 20
+            "w": 8,
+            "x": 8,
+            "y": 10
           },
           "id": 13,
           "options": {
@@ -1662,9 +1567,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 20
+            "w": 8,
+            "x": 16,
+            "y": 10
           },
           "id": 21,
           "options": {
@@ -1702,6 +1607,101 @@
           "title": "Scrape Failures",
           "type": "timeseries",
           "description": "Failed attempts by the exporter to read the Apache status page, even when Up is green."
+        },
+        {
+          "datasource": {
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "stepAfter",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "normal"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 24,
+            "x": 0,
+            "y": 20
+          },
+          "id": 6,
+          "links": [],
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "8.4.5",
+          "targets": [
+            {
+              "expr": "apache_scoreboard{job=\"$job\", instance=\"$instance\"}",
+              "format": "time_series",
+              "legendFormat": "{{ state }}",
+              "refId": "A",
+              "step": 240
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Scoreboard",
+          "type": "timeseries",
+          "description": "Current state of each Apache slot (idle, read, reply, keepalive, etc.)"
         }
       ]
     },
@@ -1752,7 +1752,7 @@
         "h": 3,
         "w": 12,
         "x": 0,
-        "y": 39
+        "y": 27
       },
       "id": 3,
       "options": {
@@ -1822,7 +1822,7 @@
         "h": 3,
         "w": 6,
         "x": 12,
-        "y": 39
+        "y": 27
       },
       "id": 1,
       "maxDataPoints": 100,
@@ -1892,7 +1892,7 @@
         "h": 3,
         "w": 6,
         "x": 18,
-        "y": 39
+        "y": 27
       },
       "id": 2,
       "maxDataPoints": 100,
