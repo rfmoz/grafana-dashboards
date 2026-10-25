@@ -2949,7 +2949,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Memory in use by modules",
+          "description": "Memory in use by modules, in bytes.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3009,7 +3009,7 @@
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 54
+            "y": 0
           },
           "id": 10,
           "options": {
@@ -3044,6 +3044,106 @@
             }
           ],
           "title": "Memory used by modules",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Memory allocated through sbrk, in bytes.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "bytes"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 12,
+            "x": 12,
+            "y": 0
+          },
+          "id": 96,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "max",
+                "mean",
+                "last"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "9.4.3",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "unbound_memory_sbrk_bytes{instance=\"$instance\"}",
+              "legendFormat": "sbrk",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Memory allocated (sbrk)",
           "type": "timeseries"
         },
         {
@@ -3110,8 +3210,8 @@
           "gridPos": {
             "h": 11,
             "w": 12,
-            "x": 12,
-            "y": 54
+            "x": 0,
+            "y": 11
           },
           "id": 69,
           "options": {
@@ -3140,7 +3240,7 @@
               },
               "editorMode": "code",
               "expr": "unbound_memory_doh_bytes{buffer=\"query_buffer\",instance=\"$instance\"}",
-              "legendFormat": "query buffer",
+              "legendFormat": "Query buffer",
               "range": true,
               "refId": "A"
             },
@@ -3151,7 +3251,7 @@
               },
               "editorMode": "code",
               "expr": "unbound_memory_doh_bytes{buffer=\"response_buffer\",instance=\"$instance\"}",
-              "legendFormat": "response buffer",
+              "legendFormat": "Response buffer",
               "range": true,
               "refId": "B"
             }
@@ -3221,8 +3321,8 @@
           "gridPos": {
             "h": 11,
             "w": 12,
-            "x": 0,
-            "y": 65
+            "x": 12,
+            "y": 11
           },
           "id": 95,
           "options": {
@@ -3251,112 +3351,12 @@
               },
               "editorMode": "code",
               "expr": "unbound_memory_doq_bytes{instance=\"$instance\"}",
-              "legendFormat": "DoQ memory",
+              "legendFormat": "DoQ buffer",
               "range": true,
               "refId": "A"
             }
           ],
           "title": "Memory used by DoQ buffers",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Memory allocated through sbrk, in bytes.",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "bytes"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 11,
-            "w": 12,
-            "x": 12,
-            "y": 65
-          },
-          "id": 96,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "max",
-                "mean",
-                "last"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "9.4.3",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "unbound_memory_sbrk_bytes{instance=\"$instance\"}",
-              "legendFormat": "sbrk",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "Total Memory (sbrk)",
           "type": "timeseries"
         }
       ],
