@@ -59,6 +59,8 @@ Only requires a configured target under any `job_name`. For example:
            - server_hostname:9117
 ```
 
+The Apache `mod_status` module must be enabled. The exporter scrapes `/server-status?auto` by default. Enable `ExtendedStatus On` to get accesses, bytes, duration, CPU and uptime metrics; without it the dashboard will only show a subset.
+
 > Also available as [apache-http-mixin](https://github.com/grafana/jsonnet-libs/tree/master/apache-http-mixin) in Grafana jsonnet-libs.
 
 
