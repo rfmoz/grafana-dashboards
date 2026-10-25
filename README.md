@@ -98,6 +98,8 @@ On Grafana, it only requires a configured target under any `job_name`. For examp
            - server_hostname:9000
 ```
 
+Task stats (`bind_tasks_running`, `bind_worker_threads`) are not collected by default in bind_exporter 0.8.0. Start the exporter with `--bind.stats-groups=server,view,tasks` to populate the Tasks Running / Worker Threads panel. These stats are only available in BIND 9.18 and older.
+
 
 
 ## Unbound Full
