@@ -12238,6 +12238,391 @@
         "uid": "${DS_PROMETHEUS}",
         "type": "prometheus"
       }
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 44
+      },
+      "id": 271,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "DNS queries sent, valid responses and server address updates, by resolver and nameserver",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [
+                {
+                  "options": {
+                    "0": {
+                      "index": 1,
+                      "text": "DOWN"
+                    },
+                    "1": {
+                      "index": 0,
+                      "text": "UP"
+                    }
+                  },
+                  "type": "value"
+                }
+              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "ops"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 0
+          },
+          "id": 272,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_resolver_sent{instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "Sent - {{resolver}} / {{nameserver}}",
+              "metric": "",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_resolver_valid{instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "Valid - {{resolver}} / {{nameserver}}",
+              "metric": "",
+              "range": true,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_resolver_update{instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "Address updates - {{resolver}} / {{nameserver}}",
+              "metric": "",
+              "range": true,
+              "refId": "C"
+            }
+          ],
+          "title": "Resolver - Queries",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "DNS resolution failures by error type, by resolver and nameserver; the error types are mutually exclusive",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "normal"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [
+                {
+                  "options": {
+                    "0": {
+                      "index": 1,
+                      "text": "DOWN"
+                    },
+                    "1": {
+                      "index": 0,
+                      "text": "UP"
+                    }
+                  },
+                  "type": "value"
+                }
+              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "ops"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 0
+          },
+          "id": 273,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_resolver_send_error{instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "Send error - {{resolver}} / {{nameserver}}",
+              "metric": "",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_resolver_nx{instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "NXDOMAIN - {{resolver}} / {{nameserver}}",
+              "metric": "",
+              "range": true,
+              "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_resolver_refused{instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "Refused - {{resolver}} / {{nameserver}}",
+              "metric": "",
+              "range": true,
+              "refId": "C"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_resolver_any_err{instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "No answer - {{resolver}} / {{nameserver}}",
+              "metric": "",
+              "range": true,
+              "refId": "D"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_resolver_cname_error{instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "CNAME error - {{resolver}} / {{nameserver}}",
+              "metric": "",
+              "range": true,
+              "refId": "E"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_resolver_truncated{instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "Truncated - {{resolver}} / {{nameserver}}",
+              "metric": "",
+              "range": true,
+              "refId": "F"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_resolver_other{instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "Other - {{resolver}} / {{nameserver}}",
+              "metric": "",
+              "range": true,
+              "refId": "G"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_resolver_invalid{instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "Invalid - {{resolver}} / {{nameserver}}",
+              "metric": "",
+              "range": true,
+              "refId": "H"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_resolver_too_big{instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "Too big - {{resolver}} / {{nameserver}}",
+              "metric": "",
+              "range": true,
+              "refId": "I"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_resolver_outdated{instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "Outdated - {{resolver}} / {{nameserver}}",
+              "metric": "",
+              "range": true,
+              "refId": "J"
+            }
+          ],
+          "title": "Resolver - Errors",
+          "type": "timeseries"
+        }
+      ],
+      "title": "Resolvers",
+      "type": "row"
     }
   ],
   "refresh": "1m",
@@ -12440,6 +12825,6 @@
   "timezone": "browser",
   "title": "HAProxy",
   "uid": "rEqu1u5ue",
-  "version": 31,
+  "version": 32,
   "weekStart": ""
 }
