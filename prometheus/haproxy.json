@@ -1226,7 +1226,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 0
+            "y": 27
           },
           "id": 46,
           "options": {
@@ -1375,7 +1375,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 0
+            "y": 27
           },
           "id": 134,
           "options": {
@@ -1485,9 +1485,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 8,
             "x": 0,
-            "y": 10
+            "y": 37
           },
           "id": 47,
           "options": {
@@ -1585,9 +1585,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 10
+            "w": 8,
+            "x": 8,
+            "y": 37
           },
           "id": 24,
           "options": {
@@ -1685,10 +1685,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 20
+            "h": 10,
+            "w": 8,
+            "x": 16,
+            "y": 37
           },
           "id": 242,
           "options": {
@@ -1699,7 +1699,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true,
               "sortBy": "Max",
               "sortDesc": true
@@ -1788,9 +1788,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 8,
             "x": 0,
-            "y": 27
+            "y": 47
           },
           "id": 245,
           "options": {
@@ -1888,9 +1888,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 27
+            "w": 8,
+            "x": 8,
+            "y": 47
           },
           "id": 246,
           "options": {
@@ -1988,10 +1988,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 37
+            "h": 10,
+            "w": 8,
+            "x": 16,
+            "y": 47
           },
           "id": 240,
           "options": {
@@ -2002,7 +2002,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true,
               "sortBy": "Name",
               "sortDesc": false
@@ -2091,9 +2091,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 8,
             "x": 0,
-            "y": 44
+            "y": 57
           },
           "id": 115,
           "options": {
@@ -2191,9 +2191,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 44
+            "w": 8,
+            "x": 8,
+            "y": 57
           },
           "id": 126,
           "options": {
@@ -2291,10 +2291,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 54
+            "h": 10,
+            "w": 8,
+            "x": 16,
+            "y": 57
           },
           "id": 187,
           "options": {
@@ -2305,7 +2305,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true
             },
             "tooltip": {
@@ -2406,8 +2406,8 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 12,
-            "y": 61
+            "x": 0,
+            "y": 67
           },
           "id": 35,
           "options": {
@@ -2542,10 +2542,10 @@
             ]
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 71
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 67
           },
           "id": 71,
           "options": {
@@ -2556,7 +2556,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true
             },
             "tooltip": {
@@ -2698,9 +2698,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 8,
             "x": 0,
-            "y": 0
+            "y": 28
           },
           "id": 42,
           "options": {
@@ -2823,9 +2823,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 0
+            "w": 8,
+            "x": 8,
+            "y": 28
           },
           "id": 1,
           "options": {
@@ -2948,10 +2948,10 @@
             ]
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 10
+            "h": 10,
+            "w": 8,
+            "x": 16,
+            "y": 28
           },
           "id": 129,
           "options": {
@@ -2962,7 +2962,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true
             },
             "tooltip": {
@@ -3074,9 +3074,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 8,
             "x": 0,
-            "y": 17
+            "y": 38
           },
           "id": 43,
           "options": {
@@ -3200,9 +3200,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 17
+            "w": 8,
+            "x": 8,
+            "y": 38
           },
           "id": 27,
           "options": {
@@ -3325,10 +3325,10 @@
             ]
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 27
+            "h": 10,
+            "w": 8,
+            "x": 16,
+            "y": 38
           },
           "id": 130,
           "options": {
@@ -3339,7 +3339,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true
             },
             "tooltip": {
@@ -3440,7 +3440,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 34
+            "y": 48
           },
           "id": 258,
           "options": {
@@ -3539,7 +3539,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 34
+            "y": 48
           },
           "id": 259,
           "options": {
@@ -3637,8 +3637,8 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 12,
-            "y": 44
+            "x": 0,
+            "y": 58
           },
           "id": 131,
           "options": {
@@ -3735,10 +3735,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 54
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 58
           },
           "id": 179,
           "options": {
@@ -3749,7 +3749,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true
             },
             "tooltip": {
@@ -3849,8 +3849,8 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 12,
-            "y": 61
+            "x": 0,
+            "y": 68
           },
           "id": 128,
           "options": {
@@ -3974,10 +3974,10 @@
             ]
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 71
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 68
           },
           "id": 146,
           "options": {
@@ -3988,7 +3988,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true
             },
             "tooltip": {
@@ -4353,9 +4353,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 8,
             "x": 0,
-            "y": 0
+            "y": 29
           },
           "id": 45,
           "options": {
@@ -4466,9 +4466,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 0
+            "w": 8,
+            "x": 8,
+            "y": 29
           },
           "id": 30,
           "options": {
@@ -4566,10 +4566,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 10
+            "h": 10,
+            "w": 8,
+            "x": 16,
+            "y": 29
           },
           "id": 61,
           "options": {
@@ -4580,7 +4580,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true
             },
             "tooltip": {
@@ -4607,6 +4607,240 @@
           ],
           "title": "Server - Sessions",
           "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Highest concurrent sessions reached on frontends",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "decimals": 0,
+              "links": [],
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 8,
+            "x": 0,
+            "y": 39
+          },
+          "id": 254,
+          "options": {
+            "displayMode": "basic",
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "maxVizHeight": 300,
+            "minVizHeight": 16,
+            "minVizWidth": 8,
+            "namePlacement": "auto",
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showUnfilled": true,
+            "sizing": "auto",
+            "text": {},
+            "valueMode": "color"
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_frontend_max_sessions{proxy=~\"$frontend\",instance=\"$host\"}",
+              "interval": "$interval",
+              "legendFormat": "{{ proxy }}",
+              "metric": "",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Front - Sessions Max",
+          "type": "bargauge"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Highest concurrent sessions reached on backends",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "decimals": 0,
+              "links": [],
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 8,
+            "x": 8,
+            "y": 39
+          },
+          "id": 256,
+          "options": {
+            "displayMode": "basic",
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "maxVizHeight": 300,
+            "minVizHeight": 16,
+            "minVizWidth": 8,
+            "namePlacement": "auto",
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showUnfilled": true,
+            "sizing": "auto",
+            "text": {},
+            "valueMode": "color"
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_backend_max_sessions{proxy=~\"$backend\",instance=\"$host\"}",
+              "interval": "$interval",
+              "legendFormat": "{{ proxy }}",
+              "metric": "",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Back - Sessions Max",
+          "type": "bargauge"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Highest concurrent sessions reached on servers",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "decimals": 0,
+              "links": [],
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 8,
+            "x": 16,
+            "y": 39
+          },
+          "id": 257,
+          "options": {
+            "displayMode": "basic",
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "maxVizHeight": 300,
+            "minVizHeight": 16,
+            "minVizWidth": 8,
+            "namePlacement": "auto",
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showUnfilled": true,
+            "sizing": "auto",
+            "text": {},
+            "valueMode": "color"
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_server_max_sessions{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
+              "interval": "$interval",
+              "legendFormat": "{{ proxy }} / {{ server }}",
+              "metric": "",
+              "range": true,
+              "refId": "B"
+            }
+          ],
+          "title": "Server - Sessions Max",
+          "type": "bargauge"
         },
         {
           "datasource": {
@@ -4680,7 +4914,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 17
+            "y": 45
           },
           "id": 221,
           "options": {
@@ -4790,7 +5024,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 17
+            "y": 45
           },
           "id": 243,
           "options": {
@@ -4826,348 +5060,6 @@
             }
           ],
           "title": "Back - Session usage",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Highest concurrent sessions reached on frontends, with the current ones",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 27
-          },
-          "id": 254,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_frontend_max_sessions{proxy=~\"$frontend\",instance=\"$host\"}",
-              "interval": "$interval",
-              "legendFormat": "{{ proxy }}",
-              "metric": "",
-              "range": true,
-              "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_frontend_current_sessions{proxy=~\"$frontend\",instance=\"$host\"}",
-              "hide": false,
-              "interval": "$interval",
-              "legendFormat": "Current active {{ proxy }}",
-              "metric": "",
-              "range": true,
-              "refId": "C"
-            }
-          ],
-          "title": "Front - Sessions Max",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Highest concurrent sessions reached on backends, with the current ones",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 27
-          },
-          "id": 256,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_backend_max_sessions{proxy=~\"$backend\",instance=\"$host\"}",
-              "interval": "$interval",
-              "legendFormat": "{{ proxy }}",
-              "metric": "",
-              "range": true,
-              "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_backend_current_sessions{proxy=~\"$backend\",instance=\"$host\"}",
-              "hide": false,
-              "interval": "$interval",
-              "legendFormat": "Current active {{ proxy }}",
-              "metric": "",
-              "range": true,
-              "refId": "C"
-            }
-          ],
-          "title": "Back - Sessions Max",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Highest concurrent sessions reached on servers, with the current ones",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "decimals": 1,
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 37
-          },
-          "id": 257,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "right",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_server_max_sessions{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
-              "interval": "$interval",
-              "legendFormat": "{{ proxy }} / {{ server }}",
-              "metric": "",
-              "range": true,
-              "refId": "B"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_server_current_sessions{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
-              "hide": false,
-              "interval": "$interval",
-              "legendFormat": "Current active {{ proxy }} / {{ server }}",
-              "range": true,
-              "refId": "C"
-            }
-          ],
-          "title": "Server - Sessions Max",
           "type": "timeseries"
         },
         {
@@ -5229,9 +5121,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 8,
             "x": 0,
-            "y": 44
+            "y": 55
           },
           "id": 119,
           "options": {
@@ -5329,9 +5221,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 44
+            "w": 8,
+            "x": 8,
+            "y": 55
           },
           "id": 117,
           "options": {
@@ -5429,10 +5321,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 54
+            "h": 10,
+            "w": 8,
+            "x": 16,
+            "y": 55
           },
           "id": 137,
           "options": {
@@ -5443,7 +5335,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true
             },
             "tooltip": {
@@ -5550,7 +5442,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 0
+            "y": 30
           },
           "id": 132,
           "options": {
@@ -5587,6 +5479,106 @@
             }
           ],
           "title": "Back - Average connection time",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Average time to connect to servers, over the last requests, on servers",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 30
+          },
+          "id": 135,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_server_connect_time_average_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
+              "interval": "$interval",
+              "legendFormat": "{{ proxy }} / {{ server }}",
+              "metric": "haproxy_backend_current_queue",
+              "range": true,
+              "refId": "B"
+            }
+          ],
+          "title": "Server - Average connection time",
           "type": "timeseries"
         },
         {
@@ -5649,8 +5641,8 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 12,
-            "y": 0
+            "x": 0,
+            "y": 40
           },
           "id": 178,
           "options": {
@@ -5687,106 +5679,6 @@
             }
           ],
           "title": "Back - Average total time",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Average time to connect to servers, over the last requests, on servers",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 0,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "s"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 10
-          },
-          "id": 135,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "right",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_server_connect_time_average_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
-              "interval": "$interval",
-              "legendFormat": "{{ proxy }} / {{ server }}",
-              "metric": "haproxy_backend_current_queue",
-              "range": true,
-              "refId": "B"
-            }
-          ],
-          "title": "Server - Average connection time",
           "type": "timeseries"
         },
         {
@@ -5847,10 +5739,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 17
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 40
           },
           "id": 184,
           "options": {
@@ -5861,7 +5753,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true
             },
             "tooltip": {
@@ -5950,7 +5842,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 24
+            "y": 50
           },
           "id": 177,
           "options": {
@@ -5987,6 +5879,106 @@
             }
           ],
           "title": "Back - Average response time",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Average time waiting for the server response, over the last requests, on servers",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 50
+          },
+          "id": 183,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_server_response_time_average_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
+              "interval": "$interval",
+              "legendFormat": "{{ proxy }} / {{ server }}",
+              "metric": "haproxy_backend_current_queue",
+              "range": true,
+              "refId": "C"
+            }
+          ],
+          "title": "Server - Average response time",
           "type": "timeseries"
         },
         {
@@ -6049,8 +6041,8 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 12,
-            "y": 24
+            "x": 0,
+            "y": 60
           },
           "id": 127,
           "options": {
@@ -6087,106 +6079,6 @@
             }
           ],
           "title": "Back - Average queue time",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Average time waiting for the server response, over the last requests, on servers",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 0,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "s"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 34
-          },
-          "id": 183,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "right",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_server_response_time_average_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
-              "interval": "$interval",
-              "legendFormat": "{{ proxy }} / {{ server }}",
-              "metric": "haproxy_backend_current_queue",
-              "range": true,
-              "refId": "C"
-            }
-          ],
-          "title": "Server - Average response time",
           "type": "timeseries"
         },
         {
@@ -6247,10 +6139,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 41
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 60
           },
           "id": 133,
           "options": {
@@ -6261,7 +6153,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true
             },
             "tooltip": {
@@ -6368,7 +6260,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 0
+            "y": 31
           },
           "id": 38,
           "options": {
@@ -6405,6 +6297,107 @@
             }
           ],
           "title": "Back - UP->DOWN transitions",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Server transitions from UP to DOWN",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "decimals": 2,
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "eps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 31
+          },
+          "id": 56,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "rate(haproxy_server_check_up_down_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
+              "interval": "$interval",
+              "legendFormat": "{{ proxy }} / {{ server }}",
+              "metric": "",
+              "range": true,
+              "refId": "B"
+            }
+          ],
+          "title": "Server - UP->DOWN transitions",
           "type": "timeseries"
         },
         {
@@ -6480,8 +6473,8 @@
           "gridPos": {
             "h": 10,
             "w": 12,
-            "x": 12,
-            "y": 0
+            "x": 0,
+            "y": 41
           },
           "id": 39,
           "options": {
@@ -6531,107 +6524,6 @@
             }
           ],
           "title": "Back - Service weight",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Server transitions from UP to DOWN",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "decimals": 2,
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "eps"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 10
-          },
-          "id": 56,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "right",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "rate(haproxy_server_check_up_down_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
-              "interval": "$interval",
-              "legendFormat": "{{ proxy }} / {{ server }}",
-              "metric": "",
-              "range": true,
-              "refId": "B"
-            }
-          ],
-          "title": "Server - UP->DOWN transitions",
           "type": "timeseries"
         },
         {
@@ -6705,10 +6597,10 @@
             ]
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 17
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 41
           },
           "id": 73,
           "options": {
@@ -6719,7 +6611,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true
             },
             "tooltip": {
@@ -6821,7 +6713,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 24
+            "y": 51
           },
           "id": 244,
           "options": {
@@ -6921,7 +6813,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 24
+            "y": 51
           },
           "id": 208,
           "options": {
@@ -7018,10 +6910,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
+            "h": 10,
+            "w": 12,
             "x": 0,
-            "y": 34
+            "y": 61
           },
           "id": 185,
           "options": {
@@ -7032,7 +6924,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true
             },
             "tooltip": {
@@ -7118,10 +7010,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 41
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 61
           },
           "id": 204,
           "options": {
@@ -7132,7 +7024,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true
             },
             "tooltip": {
@@ -7158,107 +7050,6 @@
             }
           ],
           "title": "Server - Checks duration",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Time since traffic was last seen on servers",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 20,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "s"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 48
-          },
-          "id": 144,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "right",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_server_last_session_seconds{proxy=~\"$backend\", server=~\"$server\",instance=\"$host\"}",
-              "interval": "$interval",
-              "legendFormat": "{{ proxy }} / {{ server }}",
-              "metric": "",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "Server - Time since last session",
           "type": "timeseries"
         },
         {
@@ -7322,7 +7113,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 55
+            "y": 71
           },
           "id": 267,
           "options": {
@@ -7421,7 +7212,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 55
+            "y": 71
           },
           "id": 268,
           "options": {
@@ -7520,7 +7311,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 65
+            "y": 81
           },
           "id": 269,
           "options": {
@@ -7563,7 +7354,7 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "description": "Time since the last state change of servers",
+          "description": "Time since traffic was last seen on servers",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7603,6 +7394,7 @@
               },
               "links": [],
               "mappings": [],
+              "min": 0,
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
@@ -7619,9 +7411,9 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 65
+            "y": 81
           },
-          "id": 270,
+          "id": 144,
           "options": {
             "legend": {
               "calcs": [
@@ -7647,14 +7439,15 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "haproxy_server_check_last_change_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
+              "expr": "haproxy_server_last_session_seconds{proxy=~\"$backend\", server=~\"$server\",instance=\"$host\"}",
               "interval": "$interval",
               "legendFormat": "{{ proxy }} / {{ server }}",
+              "metric": "",
               "range": true,
               "refId": "A"
             }
           ],
-          "title": "Server - Check Last Change",
+          "title": "Server - Time since last session",
           "type": "timeseries"
         },
         {
@@ -7718,7 +7511,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 75
+            "y": 91
           },
           "id": 264,
           "options": {
@@ -7817,7 +7610,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 75
+            "y": 91
           },
           "id": 265,
           "options": {
@@ -7853,6 +7646,204 @@
             }
           ],
           "title": "Server - Loadbalanced",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Time since the last state change of backends",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 101
+          },
+          "id": 274,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_backend_check_last_change_seconds{proxy=~\"$backend\",instance=\"$host\"}",
+              "interval": "$interval",
+              "legendFormat": "{{ proxy }}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Back - Check Last Change",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Time since the last state change of servers",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 20,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 101
+          },
+          "id": 270,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_server_check_last_change_seconds{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
+              "interval": "$interval",
+              "legendFormat": "{{ proxy }} / {{ server }}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Server - Check Last Change",
           "type": "timeseries"
         }
       ],
@@ -7947,7 +7938,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 0
+            "y": 32
           },
           "id": 121,
           "options": {
@@ -8073,7 +8064,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 0
+            "y": 32
           },
           "id": 139,
           "options": {
@@ -8211,7 +8202,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 10
+            "y": 42
           },
           "id": 231,
           "options": {
@@ -8362,7 +8353,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 10
+            "y": 42
           },
           "id": 140,
           "options": {
@@ -8488,7 +8479,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 20
+            "y": 52
           },
           "id": 123,
           "options": {
@@ -8588,7 +8579,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 20
+            "y": 52
           },
           "id": 141,
           "options": {
@@ -8718,9 +8709,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 8,
             "x": 0,
-            "y": 0
+            "y": 33
           },
           "id": 113,
           "options": {
@@ -8832,9 +8823,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 0
+            "w": 8,
+            "x": 8,
+            "y": 33
           },
           "id": 238,
           "options": {
@@ -8945,10 +8936,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 10
+            "h": 10,
+            "w": 8,
+            "x": 16,
+            "y": 33
           },
           "id": 145,
           "options": {
@@ -8959,7 +8950,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true,
               "sortBy": "Max",
               "sortDesc": true
@@ -9045,15 +9036,15 @@
                   }
                 ]
               },
-              "unit": "none"
+              "unit": "short"
             },
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
+            "h": 10,
+            "w": 12,
             "x": 0,
-            "y": 17
+            "y": 43
           },
           "id": 237,
           "options": {
@@ -9064,7 +9055,7 @@
                 "max"
               ],
               "displayMode": "table",
-              "placement": "right",
+              "placement": "bottom",
               "showLegend": true,
               "sortBy": "Max",
               "sortDesc": true
@@ -9092,6 +9083,119 @@
             }
           ],
           "title": "Server - Status other",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Stick table entries in use and table size, by stick table",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 43
+          },
+          "id": 173,
+          "options": {
+            "legend": {
+              "calcs": [
+                "min",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "hideZeros": false,
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "11.6.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_sticktable_size{instance=\"$host\"}",
+              "interval": "$interval",
+              "legendFormat": "{{ name }} - Size",
+              "metric": "",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_sticktable_used{instance=\"$host\"}",
+              "interval": "$interval",
+              "legendFormat": "{{ name }} - Used",
+              "metric": "",
+              "range": true,
+              "refId": "B"
+            }
+          ],
+          "title": "Sticktable usage",
           "type": "timeseries"
         },
         {
@@ -9154,9 +9258,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
+            "w": 8,
             "x": 0,
-            "y": 24
+            "y": 53
           },
           "id": 205,
           "options": {
@@ -9255,9 +9359,9 @@
           },
           "gridPos": {
             "h": 10,
-            "w": 12,
-            "x": 12,
-            "y": 24
+            "w": 8,
+            "x": 8,
+            "y": 53
           },
           "id": 171,
           "options": {
@@ -9354,112 +9458,12 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 34
+            "h": 10,
+            "w": 8,
+            "x": 16,
+            "y": 53
           },
           "id": 172,
-          "options": {
-            "legend": {
-              "calcs": [
-                "min",
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "right",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "multi",
-              "sort": "desc"
-            }
-          },
-          "pluginVersion": "11.6.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "rate(haproxy_server_internal_errors_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
-              "interval": "$interval",
-              "legendFormat": "{{ proxy }} / {{ server }}",
-              "metric": "",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "Server - Internal errors",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Stick table entries in use and table size, by stick table",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 0,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 2,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 10,
-            "w": 12,
-            "x": 0,
-            "y": 41
-          },
-          "id": 173,
           "options": {
             "legend": {
               "calcs": [
@@ -9485,28 +9489,15 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "haproxy_sticktable_size{name=~\"$sticktable\",instance=\"$host\"}",
+              "expr": "rate(haproxy_server_internal_errors_total{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "legendFormat": "{{ name }} - Size",
+              "legendFormat": "{{ proxy }} / {{ server }}",
               "metric": "",
               "range": true,
               "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_sticktable_used{name=~\"$sticktable\",instance=\"$host\"}",
-              "interval": "$interval",
-              "legendFormat": "{{ name }} - Used",
-              "metric": "",
-              "range": true,
-              "refId": "B"
             }
           ],
-          "title": "Sticktable usage",
+          "title": "Server - Internal errors",
           "type": "timeseries"
         }
       ],
@@ -9619,7 +9610,7 @@
             "h": 10,
             "w": 8,
             "x": 0,
-            "y": 7259
+            "y": 34
           },
           "id": 100,
           "options": {
@@ -9763,7 +9754,7 @@
             "h": 10,
             "w": 8,
             "x": 8,
-            "y": 7259
+            "y": 34
           },
           "id": 249,
           "options": {
@@ -9906,7 +9897,7 @@
             "h": 10,
             "w": 8,
             "x": 16,
-            "y": 7259
+            "y": 34
           },
           "id": 101,
           "options": {
@@ -10054,7 +10045,7 @@
             "h": 10,
             "w": 8,
             "x": 0,
-            "y": 7269
+            "y": 44
           },
           "id": 248,
           "options": {
@@ -10202,7 +10193,7 @@
             "h": 10,
             "w": 8,
             "x": 8,
-            "y": 7269
+            "y": 44
           },
           "id": 252,
           "options": {
@@ -10328,7 +10319,7 @@
             "h": 10,
             "w": 8,
             "x": 16,
-            "y": 7269
+            "y": 44
           },
           "id": 103,
           "options": {
@@ -10466,7 +10457,7 @@
             "h": 10,
             "w": 8,
             "x": 0,
-            "y": 7279
+            "y": 54
           },
           "id": 104,
           "options": {
@@ -10592,7 +10583,7 @@
             "h": 10,
             "w": 8,
             "x": 8,
-            "y": 7279
+            "y": 54
           },
           "id": 150,
           "options": {
@@ -10727,7 +10718,7 @@
             "h": 10,
             "w": 8,
             "x": 16,
-            "y": 7279
+            "y": 54
           },
           "id": 253,
           "options": {
@@ -10874,7 +10865,7 @@
             "h": 10,
             "w": 8,
             "x": 0,
-            "y": 7260
+            "y": 35
           },
           "id": 216,
           "options": {
@@ -11011,7 +11002,7 @@
             "h": 10,
             "w": 8,
             "x": 8,
-            "y": 7260
+            "y": 35
           },
           "id": 99,
           "options": {
@@ -11138,7 +11129,7 @@
             "h": 10,
             "w": 8,
             "x": 16,
-            "y": 7260
+            "y": 35
           },
           "id": 247,
           "options": {
@@ -11268,7 +11259,7 @@
             "h": 10,
             "w": 8,
             "x": 0,
-            "y": 7270
+            "y": 45
           },
           "id": 87,
           "options": {
@@ -11395,7 +11386,7 @@
             "h": 10,
             "w": 8,
             "x": 8,
-            "y": 7270
+            "y": 45
           },
           "id": 88,
           "options": {
@@ -11496,7 +11487,7 @@
             "h": 10,
             "w": 8,
             "x": 16,
-            "y": 7270
+            "y": 45
           },
           "id": 109,
           "options": {
@@ -11609,7 +11600,7 @@
             "h": 10,
             "w": 8,
             "x": 0,
-            "y": 7280
+            "y": 55
           },
           "id": 86,
           "options": {
@@ -11722,7 +11713,7 @@
             "h": 10,
             "w": 8,
             "x": 8,
-            "y": 7280
+            "y": 55
           },
           "id": 111,
           "options": {
@@ -11835,7 +11826,7 @@
             "h": 10,
             "w": 8,
             "x": 16,
-            "y": 7280
+            "y": 55
           },
           "id": 110,
           "options": {
@@ -11948,7 +11939,7 @@
             "h": 10,
             "w": 8,
             "x": 0,
-            "y": 7290
+            "y": 65
           },
           "id": 251,
           "options": {
@@ -12079,7 +12070,7 @@
             "h": 10,
             "w": 8,
             "x": 8,
-            "y": 7290
+            "y": 65
           },
           "id": 108,
           "options": {
@@ -12192,7 +12183,7 @@
             "h": 10,
             "w": 8,
             "x": 16,
-            "y": 7290
+            "y": 65
           },
           "id": 218,
           "options": {
@@ -12324,7 +12315,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 0
+            "y": 36
           },
           "id": 272,
           "options": {
@@ -12464,7 +12455,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 0
+            "y": 36
           },
           "id": 273,
           "options": {
@@ -12749,27 +12740,6 @@
         "type": "query"
       },
       {
-        "current": {},
-        "datasource": {
-          "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
-        },
-        "definition": "",
-        "includeAll": true,
-        "label": "Stick table",
-        "multi": true,
-        "name": "sticktable",
-        "options": [],
-        "query": {
-          "query": "label_values(haproxy_sticktable_size{instance=\"$host\"}, name)",
-          "refId": "Prometheus-sticktable-Variable-Query"
-        },
-        "refresh": 1,
-        "regex": "",
-        "sort": 1,
-        "type": "query"
-      },
-      {
         "auto": true,
         "auto_count": 30,
         "auto_min": "10s",
@@ -12825,6 +12795,6 @@
   "timezone": "browser",
   "title": "HAProxy",
   "uid": "rEqu1u5ue",
-  "version": 40,
+  "version": 50,
   "weekStart": ""
 }
