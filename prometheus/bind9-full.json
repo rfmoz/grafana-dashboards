@@ -106,15 +106,6 @@
       },
       "id": 23,
       "panels": [],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "General",
       "type": "row"
     },
@@ -1232,15 +1223,6 @@
           "type": "timeseries"
         }
       ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "Issues",
       "type": "row"
     },
@@ -2245,15 +2227,6 @@
           "type": "timeseries"
         }
       ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "Detail",
       "type": "row"
     },
@@ -2401,15 +2374,6 @@
           "type": "timeseries"
         }
       ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "DNSsec",
       "type": "row"
     }
@@ -2542,6 +2506,6 @@
   "timezone": "",
   "title": "Bind9 Full",
   "uid": "Ug7DI83Wz",
-  "version": 47,
+  "version": 48,
   "weekStart": ""
 }
