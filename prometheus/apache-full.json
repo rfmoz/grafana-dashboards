@@ -182,8 +182,7 @@
           "format": "time_series",
           "interval": "",
           "legendFormat": "Calls",
-          "refId": "A",
-          "step": 240
+          "refId": "A"
         },
         {
           "datasource": {
@@ -290,8 +289,7 @@
           "format": "time_series",
           "interval": "",
           "legendFormat": "Average response time",
-          "refId": "A",
-          "step": 240
+          "refId": "A"
         }
       ],
       "title": "Average Response Time",
@@ -382,7 +380,6 @@
           "expr": "apache_workers{job=\"$job\", instance=\"$instance\"}",
           "format": "time_series",
           "legendFormat": "{{ state }}",
-          "step": 240,
           "refId": "A"
         }
       ],
@@ -1693,8 +1690,7 @@
               "expr": "apache_scoreboard{job=\"$job\", instance=\"$instance\"}",
               "format": "time_series",
               "legendFormat": "{{ state }}",
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "timeFrom": null,
@@ -1775,8 +1771,7 @@
               "format": "time_series",
               "interval": "",
               "legendFormat": "Apache up",
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Up / Down",
@@ -1920,7 +1915,6 @@
               "instant": true,
               "interval": "",
               "legendFormat": "{{ version }} - {{ mpm }}",
-              "step": 240,
               "refId": "A"
             }
           ],

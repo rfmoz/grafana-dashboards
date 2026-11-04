@@ -183,8 +183,7 @@
           "interval": "",
           "legendFormat": "",
           "range": false,
-          "refId": "A",
-          "step": 900
+          "refId": "A"
         }
       ],
       "title": "CPU Busy",
@@ -268,8 +267,7 @@
           "format": "time_series",
           "instant": true,
           "range": false,
-          "refId": "A",
-          "step": 900
+          "refId": "A"
         }
       ],
       "title": "Sys Load (5m avg)",
@@ -353,8 +351,7 @@
           "format": "time_series",
           "instant": true,
           "range": false,
-          "refId": "A",
-          "step": 900
+          "refId": "A"
         }
       ],
       "title": "Sys Load (15m avg)",
@@ -430,8 +427,7 @@
           "format": "time_series",
           "instant": true,
           "range": false,
-          "refId": "B",
-          "step": 900
+          "refId": "B"
         }
       ],
       "title": "RAM Used",
@@ -514,8 +510,7 @@
           "expr": "(node_memory_swap_used_bytes{instance=\"$node\",job=\"$job\"} / (node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"} > 0)) * 100",
           "instant": true,
           "range": false,
-          "refId": "A",
-          "step": 900
+          "refId": "A"
         }
       ],
       "title": "SWAP Used",
@@ -599,8 +594,7 @@
           "format": "time_series",
           "instant": true,
           "range": false,
-          "refId": "A",
-          "step": 900
+          "refId": "A"
         }
       ],
       "title": "Root FS Used",
@@ -682,8 +676,7 @@
           "expr": "count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
           "instant": true,
           "range": false,
-          "refId": "A",
-          "step": 900
+          "refId": "A"
         }
       ],
       "title": "",
@@ -766,8 +759,7 @@
           "expr": "node_memory_size_bytes{instance=\"$node\",job=\"$job\"}",
           "instant": true,
           "range": false,
-          "refId": "A",
-          "step": 900
+          "refId": "A"
         }
       ],
       "title": "",
@@ -850,8 +842,7 @@
           "expr": "node_memory_swap_size_bytes{instance=\"$node\",job=\"$job\"}",
           "instant": true,
           "range": false,
-          "refId": "A",
-          "step": 900
+          "refId": "A"
         }
       ],
       "title": "",
@@ -935,8 +926,7 @@
           "format": "time_series",
           "instant": true,
           "range": false,
-          "refId": "A",
-          "step": 900
+          "refId": "A"
         }
       ],
       "title": "",
@@ -1019,8 +1009,7 @@
           "expr": "node_time_seconds{instance=\"$node\",job=\"$job\"} - node_boot_time_seconds{instance=\"$node\",job=\"$job\"}",
           "instant": true,
           "range": false,
-          "refId": "A",
-          "step": 1800
+          "refId": "A"
         }
       ],
       "title": "",
@@ -1221,8 +1210,7 @@
           "format": "time_series",
           "legendFormat": "System - Processes executing in kernel mode",
           "range": true,
-          "refId": "A",
-          "step": 240
+          "refId": "A"
         },
         {
           "datasource": {
@@ -1234,8 +1222,7 @@
           "format": "time_series",
           "legendFormat": "User - Normal processes executing in user mode",
           "range": true,
-          "refId": "B",
-          "step": 240
+          "refId": "B"
         },
         {
           "datasource": {
@@ -1247,8 +1234,7 @@
           "format": "time_series",
           "legendFormat": "Idle - Waiting for something to happen",
           "range": true,
-          "refId": "C",
-          "step": 240
+          "refId": "C"
         },
         {
           "datasource": {
@@ -1260,8 +1246,7 @@
           "format": "time_series",
           "legendFormat": "Interrupt - Servicing interrupts",
           "range": true,
-          "refId": "D",
-          "step": 240
+          "refId": "D"
         },
         {
           "datasource": {
@@ -1273,8 +1258,7 @@
           "format": "time_series",
           "legendFormat": "Nice - Niced processes executing in user mode",
           "range": true,
-          "refId": "E",
-          "step": 240
+          "refId": "E"
         },
         {
           "datasource": {
@@ -1286,8 +1270,7 @@
           "format": "time_series",
           "legendFormat": "Spin - Waiting for a kernel lock",
           "range": true,
-          "refId": "F",
-          "step": 240
+          "refId": "F"
         }
       ],
       "title": "CPU",
@@ -1490,8 +1473,7 @@
           "format": "time_series",
           "legendFormat": "Inactive - Memory not recently accessed, can be reclaimed",
           "range": true,
-          "refId": "A",
-          "step": 240
+          "refId": "A"
         },
         {
           "datasource": {
@@ -1503,8 +1485,7 @@
           "format": "time_series",
           "legendFormat": "Active - Memory currently being used by a process",
           "range": true,
-          "refId": "B",
-          "step": 240
+          "refId": "B"
         },
         {
           "datasource": {
@@ -1516,8 +1497,7 @@
           "format": "time_series",
           "legendFormat": "Buffers - Disk cache",
           "range": true,
-          "refId": "C",
-          "step": 240
+          "refId": "C"
         },
         {
           "datasource": {
@@ -1529,8 +1509,7 @@
           "format": "time_series",
           "legendFormat": "Cache - Memory being used to cache data, can be freed immediately if required",
           "range": true,
-          "refId": "D",
-          "step": 120
+          "refId": "D"
         },
         {
           "datasource": {
@@ -1542,8 +1521,7 @@
           "format": "time_series",
           "legendFormat": "Wired - Memory in use by the Kernel",
           "range": true,
-          "refId": "E",
-          "step": 240
+          "refId": "E"
         },
         {
           "datasource": {
@@ -1554,8 +1532,7 @@
           "expr": "node_memory_free_bytes{instance=\"$node\",job=\"$job\"}",
           "legendFormat": "Free - Completely unused memory available for allocation",
           "range": true,
-          "refId": "F",
-          "step": 240
+          "refId": "F"
         },
         {
           "datasource": {
@@ -1567,8 +1544,7 @@
           "format": "time_series",
           "legendFormat": "Laundry - Dirty memory waiting to be swapped or written",
           "range": true,
-          "refId": "G",
-          "step": 240
+          "refId": "G"
         }
       ],
       "title": "Memory",
@@ -1676,8 +1652,7 @@
           "format": "time_series",
           "legendFormat": "{{device}} - Rx in",
           "range": true,
-          "refId": "O",
-          "step": 240
+          "refId": "O"
         },
         {
           "datasource": {
@@ -1689,8 +1664,7 @@
           "format": "time_series",
           "legendFormat": "{{device}} - Tx out",
           "range": true,
-          "refId": "P",
-          "step": 240
+          "refId": "P"
         }
       ],
       "title": "Network Traffic",
@@ -1798,8 +1772,7 @@
           "format": "time_series",
           "legendFormat": "Swap in",
           "range": true,
-          "refId": "A",
-          "step": 240
+          "refId": "A"
         },
         {
           "datasource": {
@@ -1811,8 +1784,7 @@
           "format": "time_series",
           "legendFormat": "Swap out",
           "range": true,
-          "refId": "B",
-          "step": 240
+          "refId": "B"
         },
         {
           "datasource": {
@@ -1824,8 +1796,7 @@
           "format": "time_series",
           "legendFormat": "Swap in",
           "range": true,
-          "refId": "C",
-          "step": 240
+          "refId": "C"
         },
         {
           "datasource": {
@@ -1837,8 +1808,7 @@
           "format": "time_series",
           "legendFormat": "Swap out",
           "range": true,
-          "refId": "D",
-          "step": 240
+          "refId": "D"
         }
       ],
       "title": "Memory Swap In / Out",
@@ -1935,8 +1905,7 @@
           "format": "time_series",
           "legendFormat": "{{device}} - {{mountpoint}}",
           "range": true,
-          "refId": "A",
-          "step": 240
+          "refId": "A"
         }
       ],
       "title": "Disk Percentage Used",
@@ -2045,8 +2014,7 @@
           "format": "time_series",
           "legendFormat": "{{device}} - {{mountpoint}} - Used",
           "range": true,
-          "refId": "A",
-          "step": 240
+          "refId": "A"
         },
         {
           "datasource": {
@@ -2059,8 +2027,7 @@
           "hide": true,
           "legendFormat": "{{device}} - {{mountpoint}} - Free",
           "range": true,
-          "refId": "B",
-          "step": 30
+          "refId": "B"
         },
         {
           "datasource": {
@@ -2072,8 +2039,7 @@
           "format": "time_series",
           "legendFormat": "{{device}} - {{mountpoint}} - Available",
           "range": true,
-          "refId": "C",
-          "step": 240
+          "refId": "C"
         }
       ],
       "title": "Disk Space Available / Used",
@@ -2195,8 +2161,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Tx out",
               "range": true,
-              "refId": "P",
-              "step": 240
+              "refId": "P"
             },
             {
               "datasource": {
@@ -2208,8 +2173,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Rx in",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Network Traffic Packets",
@@ -2321,8 +2285,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Rx in",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -2334,8 +2297,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Tx out",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Network Traffic Drops",
@@ -2447,8 +2409,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Tx out",
               "range": true,
-              "refId": "P",
-              "step": 240
+              "refId": "P"
             },
             {
               "datasource": {
@@ -2460,8 +2421,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Rx in",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Network Traffic Errors",
@@ -2573,8 +2533,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Tx out",
               "range": true,
-              "refId": "P",
-              "step": 240
+              "refId": "P"
             },
             {
               "datasource": {
@@ -2586,8 +2545,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Rx in",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Network Traffic Multicast",
@@ -2686,8 +2644,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Rx in",
               "range": true,
-              "refId": "P",
-              "step": 240
+              "refId": "P"
             }
           ],
           "title": "Network Traffic No Proto",
@@ -2786,8 +2743,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Tx out",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Network Traffic Collisions",
@@ -2902,8 +2858,7 @@
               "format": "time_series",
               "legendFormat": "{{state}}",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Netstat TCP Connections",
@@ -3015,8 +2970,7 @@
               "format": "time_series",
               "legendFormat": "TCP Tx out",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -3028,8 +2982,7 @@
               "format": "time_series",
               "legendFormat": "TCP Rx in",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Netstat TCP Packets",
@@ -3141,8 +3094,7 @@
               "format": "time_series",
               "legendFormat": "UDP Tx out",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -3154,8 +3106,7 @@
               "format": "time_series",
               "legendFormat": "UDP Rx in",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Netstat UDP Packets",
@@ -3267,8 +3218,7 @@
               "format": "time_series",
               "legendFormat": "IPv4 Tx out",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -3280,8 +3230,7 @@
               "format": "time_series",
               "legendFormat": "IPv4 Rx in",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -3293,8 +3242,7 @@
               "format": "time_series",
               "legendFormat": "IPv4 Delivered",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             },
             {
               "datasource": {
@@ -3306,8 +3254,7 @@
               "format": "time_series",
               "legendFormat": "IPv4 Fragments",
               "range": true,
-              "refId": "D",
-              "step": 240
+              "refId": "D"
             }
           ],
           "title": "Netstat IPv4 Packets",
@@ -3419,8 +3366,7 @@
               "format": "time_series",
               "legendFormat": "IPv6 Tx out",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -3432,8 +3378,7 @@
               "format": "time_series",
               "legendFormat": "IPv6 Rx in",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -3445,8 +3390,7 @@
               "format": "time_series",
               "legendFormat": "IPv6 Delivered",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             },
             {
               "datasource": {
@@ -3458,8 +3402,7 @@
               "format": "time_series",
               "legendFormat": "IPv6 Fragments",
               "range": true,
-              "refId": "D",
-              "step": 240
+              "refId": "D"
             }
           ],
           "title": "Netstat IPv6 Packets",
@@ -3558,8 +3501,7 @@
               "format": "time_series",
               "legendFormat": "IPv4 Forward",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -3571,8 +3513,7 @@
               "format": "time_series",
               "legendFormat": "IPv4 Fast forward",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -3584,8 +3525,7 @@
               "format": "time_series",
               "legendFormat": "IPv4 Raw",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             },
             {
               "datasource": {
@@ -3597,8 +3537,7 @@
               "format": "time_series",
               "legendFormat": "IPv6 Forward",
               "range": true,
-              "refId": "D",
-              "step": 240
+              "refId": "D"
             },
             {
               "datasource": {
@@ -3610,8 +3549,7 @@
               "format": "time_series",
               "legendFormat": "IPv6 Raw",
               "range": true,
-              "refId": "E",
-              "step": 240
+              "refId": "E"
             }
           ],
           "title": "Netstat IP Forwarding / Raw",
@@ -3725,8 +3663,7 @@
               "format": "time_series",
               "legendFormat": "Context switches",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "Context Switches",
@@ -3826,8 +3763,7 @@
               "format": "time_series",
               "legendFormat": "Device",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -3839,8 +3775,7 @@
               "format": "time_series",
               "legendFormat": "Software",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Interrupts",
@@ -3971,8 +3906,7 @@
               "format": "time_series",
               "legendFormat": "Load 1m",
               "range": true,
-              "refId": "A",
-              "step": 480
+              "refId": "A"
             },
             {
               "datasource": {
@@ -3984,8 +3918,7 @@
               "format": "time_series",
               "legendFormat": "Load 5m",
               "range": true,
-              "refId": "B",
-              "step": 480
+              "refId": "B"
             },
             {
               "datasource": {
@@ -3997,8 +3930,7 @@
               "format": "time_series",
               "legendFormat": "Load 15m",
               "range": true,
-              "refId": "C",
-              "step": 480
+              "refId": "C"
             },
             {
               "datasource": {
@@ -4010,8 +3942,7 @@
               "format": "time_series",
               "legendFormat": "CPU Core Count",
               "range": true,
-              "refId": "D",
-              "step": 480
+              "refId": "D"
             }
           ],
           "title": "System Load",
@@ -4111,8 +4042,7 @@
               "format": "time_series",
               "legendFormat": "System calls",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "System Calls",
@@ -4212,8 +4142,7 @@
               "format": "time_series",
               "legendFormat": "Forks",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -4225,8 +4154,7 @@
               "format": "time_series",
               "legendFormat": "Traps",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Processes Forks / Traps",
@@ -4327,8 +4255,7 @@
               "interval": "",
               "legendFormat": "Time Drift/sec",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "System Time Variation",
@@ -4454,8 +4381,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Read",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -4467,8 +4393,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Write",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -4480,8 +4405,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Read",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             },
             {
               "datasource": {
@@ -4493,8 +4417,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Write",
               "range": true,
-              "refId": "D",
-              "step": 240
+              "refId": "D"
             }
           ],
           "title": "Disk Read/Write IOps",
@@ -4606,8 +4529,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Read",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -4619,8 +4541,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Write",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             },
             {
               "datasource": {
@@ -4632,8 +4553,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Read",
               "range": true,
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             },
             {
               "datasource": {
@@ -4645,8 +4565,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Write",
               "range": true,
-              "refId": "D",
-              "step": 240
+              "refId": "D"
             }
           ],
           "title": "Disk Read/Write Data",
@@ -4745,8 +4664,7 @@
               "format": "time_series",
               "legendFormat": "{{device}}",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -4758,8 +4676,7 @@
               "format": "time_series",
               "legendFormat": "{{device}}",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Time Spent Doing I/Os",
@@ -4871,8 +4788,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Read",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             },
             {
               "datasource": {
@@ -4884,8 +4800,7 @@
               "format": "time_series",
               "legendFormat": "{{device}} - Write",
               "range": true,
-              "refId": "B",
-              "step": 240
+              "refId": "B"
             }
           ],
           "title": "Disk Average Wait Time",
@@ -4984,8 +4899,7 @@
               "format": "time_series",
               "legendFormat": "{{mountpoint}}",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "File Nodes Free",
@@ -5084,8 +4998,7 @@
               "format": "time_series",
               "legendFormat": "{{mountpoint}}",
               "range": true,
-              "refId": "A",
-              "step": 240
+              "refId": "A"
             }
           ],
           "title": "File Nodes Size",
@@ -5184,8 +5097,7 @@
               "expr": "node_filesystem_readonly{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
               "legendFormat": "{{mountpoint}}",
-              "refId": "C",
-              "step": 240
+              "refId": "C"
             }
           ],
           "title": "Filesystem ReadOnly",
@@ -5298,8 +5210,7 @@
               "format": "time_series",
               "legendFormat": "{{collector}}",
               "range": true,
-              "refId": "A",
-              "step": 30
+              "refId": "A"
             }
           ],
           "title": "Node Exporter Scrape Time",
@@ -5383,8 +5294,7 @@
               "format": "time_series",
               "legendFormat": "{{collector}}",
               "range": true,
-              "refId": "A",
-              "step": 30
+              "refId": "A"
             },
             {
               "datasource": {
@@ -5396,8 +5306,7 @@
               "format": "time_series",
               "legendFormat": "textfile",
               "range": true,
-              "refId": "B",
-              "step": 30
+              "refId": "B"
             }
           ],
           "title": "Node Exporter Scrape",
