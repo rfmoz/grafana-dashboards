@@ -7480,7 +7480,7 @@
             "type": "prometheus",
             "uid": "${ds_prometheus}"
           },
-          "description": "Core-level CPU thermal throttling events per package. Values above zero indicate cores were throttled during the interval. Requires hardware that exposes thermal_throttle counters (mostly Intel); absent on AMD and most virtual machines.",
+          "description": "CPU thermal throttling asserts per second, core and package. Requires thermal_throttle counters (mostly Intel); absent on AMD and most VMs.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -7490,7 +7490,7 @@
                 "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
-                "axisLabel": "throttle events",
+                "axisLabel": "asserts / s",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
@@ -7532,7 +7532,30 @@
               },
               "unit": "short"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byFrameRefID",
+                  "options": "B"
+                },
+                "properties": [
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "fill": "dash",
+                      "dash": [
+                        10,
+                        10
+                      ]
+                    }
+                  },
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
@@ -7563,11 +7586,20 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "sum by (package) (increase(node_cpu_core_throttles_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
+              "expr": "sum by (package) (rate(node_cpu_core_throttles_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
               "format": "time_series",
-              "legendFormat": "Package {{package}}",
+              "legendFormat": "Core asserts/s (pkg {{package}})",
               "range": true,
               "refId": "A",
+              "step": 240
+            },
+            {
+              "editorMode": "code",
+              "expr": "sum by (package) (rate(node_cpu_package_throttles_total{instance=\"$node\",job=\"$job\"}[$__rate_interval]))",
+              "format": "time_series",
+              "legendFormat": "Package asserts/s (pkg {{package}})",
+              "range": true,
+              "refId": "B",
               "step": 240
             }
           ],
