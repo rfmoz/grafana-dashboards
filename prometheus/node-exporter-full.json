@@ -4702,7 +4702,30 @@
               },
               "unit": "bytes"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Zswap \u2013 Compressed pool size in RAM"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
@@ -4732,17 +4755,17 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "node_memory_Zswap_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Zswapped_bytes{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
-              "legendFormat": "Zswap \u2013 Compressed pool size in RAM",
+              "legendFormat": "Zswapped \u2013 Original data size before compression",
               "range": true,
               "refId": "A"
             },
             {
               "editorMode": "code",
-              "expr": "node_memory_Zswapped_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_Zswap_bytes{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
-              "legendFormat": "Zswapped \u2013 Original data size before compression",
+              "legendFormat": "Zswap \u2013 Compressed pool size in RAM",
               "range": true,
               "refId": "B"
             }
