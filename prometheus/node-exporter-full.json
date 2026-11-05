@@ -3523,7 +3523,30 @@
               },
               "unit": "bytes"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "AnonHugePages \u2013 Anonymous memory using HugePages"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
@@ -3553,17 +3576,17 @@
           "targets": [
             {
               "editorMode": "code",
-              "expr": "node_memory_AnonHugePages_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_AnonPages_bytes{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
-              "legendFormat": "AnonHugePages \u2013 Anonymous memory using HugePages",
+              "legendFormat": "AnonPages \u2013 Anonymous memory (non-file-backed)",
               "range": true,
               "refId": "A"
             },
             {
               "editorMode": "code",
-              "expr": "node_memory_AnonPages_bytes{instance=\"$node\",job=\"$job\"}",
+              "expr": "node_memory_AnonHugePages_bytes{instance=\"$node\",job=\"$job\"}",
               "format": "time_series",
-              "legendFormat": "AnonPages \u2013 Anonymous memory (non-file-backed)",
+              "legendFormat": "AnonHugePages \u2013 Anonymous memory using HugePages",
               "range": true,
               "refId": "B"
             }
@@ -3627,7 +3650,52 @@
               },
               "unit": "bytes"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "ShmemHugePages \u2013 Shared memory (shmem/tmpfs) allocated with HugePages"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "PMD Mapped \u2013 Shmem/tmpfs backed by Transparent HugePages (PMD)"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
@@ -4477,7 +4545,30 @@
               },
               "unit": "bytes"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Mlocked \u2013 Application-locked memory via mlock()"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
@@ -14928,6 +15019,28 @@
                       "legend": false,
                       "tooltip": false,
                       "viz": true
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Resident Memory (RSS)"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
                     }
                   }
                 ]
