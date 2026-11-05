@@ -7929,6 +7929,18 @@
                   {
                     "id": "custom.fillOpacity",
                     "value": 0
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        4,
+                        2,
+                        4
+                      ],
+                      "fill": "dash"
+                    }
                   }
                 ]
               }
@@ -8055,6 +8067,18 @@
                   {
                     "id": "custom.fillOpacity",
                     "value": 0
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        4,
+                        2,
+                        4
+                      ],
+                      "fill": "dash"
+                    }
                   }
                 ]
               }
@@ -11252,6 +11276,30 @@
                     "value": 0
                   }
                 ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Memory used in pools"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        4,
+                        2,
+                        4
+                      ],
+                      "fill": "dash"
+                    }
+                  }
+                ]
               }
             ]
           },
@@ -11481,7 +11529,32 @@
               },
               "unit": "short"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Current number of active jobs that can't be stopped during a soft stop"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        4,
+                        2,
+                        4
+                      ],
+                      "fill": "dash"
+                    }
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
@@ -11933,7 +12006,32 @@
               },
               "unit": "short"
             },
-            "overrides": []
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Total number of active tasks+tasklets in the current worker process"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        4,
+                        2,
+                        4
+                      ],
+                      "fill": "dash"
+                    }
+                  }
+                ]
+              }
+            ]
           },
           "gridPos": {
             "h": 10,
